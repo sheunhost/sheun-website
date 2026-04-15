@@ -4,8 +4,6 @@ import { MessageSquare, X, Send, Bot, User, Loader2 } from "lucide-react";
 import { GoogleGenAI } from "@google/genai";
 import { cn } from "../lib/utils";
 
-const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY });
-
 interface Message {
   role: "user" | "model";
   text: string;
@@ -35,6 +33,10 @@ export default function Chatbot() {
     setIsLoading(true);
 
     try {
+      if (!process.env.GEMINI_API_KEY) {
+        throw new Error("Missing API Key");
+      }
+      const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY });
       const chat = ai.chats.create({
         model: "gemini-2.0-flash",
         config: {

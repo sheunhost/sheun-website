@@ -3,8 +3,6 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Image as ImageIcon, Sparkles, Loader2, Download, RefreshCw, Wand2, Maximize2, X } from "lucide-react";
 import { GoogleGenAI } from "@google/genai";
 
-const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY });
-
 export default function ImageGen() {
   const [prompt, setPrompt] = useState("");
   const [image, setImage] = useState<string | null>(null);
@@ -17,8 +15,12 @@ export default function ImageGen() {
     if (!prompt.trim() || isEnhancing) return;
     setIsEnhancing(true);
     try {
+      if (!process.env.GEMINI_API_KEY) {
+        throw new Error("Missing API Key");
+      }
+      const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY });
       const response = await ai.models.generateContent({
-        model: "gemini-3-flash-preview",
+        model: "gemini-2.0-flash",
         contents: `Enhance this prompt for an e-commerce store hero image generation. Make it highly descriptive, focusing on lighting, mood, style, and high quality. Return ONLY the enhanced prompt text without any quotes or introductory text. Original prompt: ${prompt}`,
       });
       if (response.text) {
@@ -37,6 +39,10 @@ export default function ImageGen() {
     setIsLoading(true);
     setError(null);
     try {
+      if (!process.env.GEMINI_API_KEY) {
+        throw new Error("Missing API Key");
+      }
+      const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY });
       const response = await ai.models.generateContent({
         model: "gemini-2.5-flash-image",
         contents: {
@@ -58,7 +64,7 @@ export default function ImageGen() {
       }
     } catch (err) {
       console.error("Image gen error:", err);
-      setError("Failed to generate image. Please try a different prompt.");
+      setError("Failed to generate image. Please ensure your Gemini API Key is configured in the Secrets panel.");
     } finally {
       setIsLoading(false);
     }
