@@ -88,7 +88,7 @@ export default function About() {
                 className="relative z-10 aspect-[4/5] rounded-[80px] overflow-hidden border-[24px] border-white shadow-[0_40px_100px_-20px_rgba(0,0,0,0.2)]"
               >
                 <img 
-                  src="https://ik.imagekit.io/pedgmrihq/image.png?updatedAt=1776250494698&tr=w-800,q-80" 
+                  src="https://ik.imagekit.io/pedgmrihq/image.png?updatedAt=1776269079485" 
                   alt="Sheun" 
                   referrerPolicy="no-referrer"
                   className="w-full h-full object-cover" 
@@ -185,7 +185,12 @@ export default function About() {
               <div className="flex -space-x-4">
                 {[1, 2, 3, 4, 5].map(i => (
                   <div key={i} className="w-12 h-12 rounded-full border-4 border-green bg-navy/10 overflow-hidden">
-                    <img src={`https://picsum.photos/seed/review${i}/100/100`} alt="Reviewer" loading="lazy" />
+                    <img 
+                      src={`https://picsum.photos/seed/review${i}/100/100`} 
+                      alt="Reviewer" 
+                      referrerPolicy="no-referrer"
+                      loading="lazy" 
+                    />
                   </div>
                 ))}
               </div>

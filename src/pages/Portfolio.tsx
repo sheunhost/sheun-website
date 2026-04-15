@@ -15,7 +15,7 @@ const projects = [
     category: "Real Project",
     desc: "Full Shopify store built from scratch — custom design, product setup, SEO, and full ownership transferred to client.",
     services: ["Store Build", "Theme Customization", "SEO"],
-    image: "https://ik.imagekit.io/pedgmrihq/screencapture-rooibru-2026-04-13-12_16_19%20(1).png",
+    image: "https://images.unsplash.com/photo-1544148103-0773bf10d330?auto=format&fit=crop&q=80&w=800",
     featured: true,
     col: "md:col-span-12",
     height: "h-[600px]",
@@ -27,7 +27,7 @@ const projects = [
     tag: "👗 Fashion — High-End Aris",
     category: "👗 Fashion",
     desc: "Sophisticated, high-end fashion concept featuring clean minimalist layouts, premium typography, and immersive lifestyle imagery. Designed for luxury brands seeking a polished, editorial presence.",
-    image: "https://ik.imagekit.io/pedgmrihq/image.png?updatedAt=1776253607721",
+    image: "https://ik.imagekit.io/pedgmrihq/image.png?updatedAt=1776277769832",
     col: "md:col-span-8",
     height: "h-[500px]",
     label: "🎨 Design Concept by sheun_hub"

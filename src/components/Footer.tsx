@@ -13,6 +13,7 @@ export default function Footer() {
                 src="https://i.postimg.cc/wxQgVCcf/1000031270-removebg-preview.png" 
                 alt="sheun_hub logo" 
                 referrerPolicy="no-referrer"
+                loading="lazy"
                 className="h-48 w-auto" 
               />
             </Link>

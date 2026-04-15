@@ -43,7 +43,7 @@ const portfolio = [
     name: "Rooibru",
     tag: "Real Client Project",
     desc: "Full Shopify build for a premium drink store — custom design, product setup, and store optimization.",
-    image: "https://ik.imagekit.io/pedgmrihq/screencapture-rooibru-2026-04-13-12_16_19%20(1).png?tr=w-800,q-80",
+    image: "https://images.unsplash.com/photo-1544148103-0773bf10d330?auto=format&fit=crop&q=80&w=800",
     link: "https://rooibru.com",
   },
   {
@@ -797,7 +797,7 @@ Return ONLY valid JSON.
                 className="relative z-10 aspect-square rounded-[80px] overflow-hidden border-[20px] border-light shadow-2xl"
               >
                 <img 
-                  src="https://ik.imagekit.io/pedgmrihq/store-concept%20(4).png?tr=w-1000,q-80" 
+                  src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&q=80&w=1000" 
                   alt="Shopify Store Concept" 
                   referrerPolicy="no-referrer"
                   className="w-full h-full object-cover" 
@@ -965,7 +965,7 @@ Return ONLY valid JSON.
               {
                 title: "Aris",
                 category: "High-End Fashion",
-                image: "https://ik.imagekit.io/pedgmrihq/image.png?updatedAt=1776253607721&tr=w-800,q-80",
+                image: "https://ik.imagekit.io/pedgmrihq/image.png?updatedAt=1776277769832",
                 col: "md:col-span-8",
                 height: "h-[500px]"
               }
