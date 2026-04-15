@@ -1,0 +1,21 @@
+{
+  "name": "sheun_hub | Shopify Expert Portfolio",
+  "short_name": "sheun_hub",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#000000",
+  "theme_color": "#00ff9d",
+  "description": "Professional portfolio for Sheun, a Shopify Expert and eCommerce Developer.",
+  "icons": [
+    {
+      "src": "https://ik.imagekit.io/pedgmrihq/image.png?updatedAt=1776253607721",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "https://ik.imagekit.io/pedgmrihq/image.png?updatedAt=1776253607721",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

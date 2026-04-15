@@ -1,0 +1,73 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap');
+
+@theme {
+  --font-sans: "Plus Jakarta Sans", "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Cormorant Garamond", serif;
+  
+  --color-navy: #042f2e; /* Dark Teal matching logo */
+  --color-green: #C69C2D; /* Gold matching logo */
+  --color-muted: #8A8FA8;
+  --color-light: #F8FAF9;
+
+  --animate-marquee: marquee 25s linear infinite;
+  --animate-float: float 6s ease-in-out infinite;
+  --animate-spin-slow: spin 20s linear infinite;
+
+  @keyframes marquee {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+  }
+}
+
+@layer base {
+  body {
+    @apply bg-white text-navy font-sans antialiased selection:bg-green selection:text-navy;
+  }
+  
+  h1, h2, h3 {
+    @apply tracking-tighter;
+  }
+}
+
+@layer utilities {
+  .bg-navy-gradient {
+    background: radial-gradient(circle at top right, #064e4b, #042f2e, #021a1a);
+  }
+  
+  .text-balance {
+    text-wrap: balance;
+  }
+  
+  .border-subtle {
+    @apply border-navy/5;
+  }
+
+  .premium-shadow {
+    box-shadow: 0 40px 100px -20px rgba(4, 47, 46, 0.15);
+  }
+
+  .green-glow {
+    box-shadow: 0 20px 60px -10px rgba(198, 156, 45, 0.3);
+  }
+}
+
+.glass-nav {
+  background: rgba(4, 47, 46, 0.85);
+  @apply backdrop-blur-xl border-b border-white/5 shadow-2xl;
+}
+
+.green-glow {
+  box-shadow: 0 0 30px rgba(198, 156, 45, 0.2);
+}
+
+.text-reveal span {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(20px);
+}
