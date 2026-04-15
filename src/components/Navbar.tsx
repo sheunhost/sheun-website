@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, ChevronRight } from "lucide-react";
 import { cn } from "../lib/utils";
 
@@ -38,8 +38,9 @@ export default function Navbar() {
       <div className="container mx-auto px-6 flex items-center justify-between">
         <Link to="/" className="flex items-center space-x-2 group">
           <img 
-            src="https://ik.imagekit.io/pedgmrihq/image.png" 
+            src="https://i.postimg.cc/wxQgVCcf/1000031270-removebg-preview.png" 
             alt="sheun_hub logo" 
+            referrerPolicy="no-referrer"
             className={cn(
               "h-24 w-auto transition-all duration-500",
               isScrolled ? "h-16" : "h-24"
@@ -127,5 +128,3 @@ export default function Navbar() {
     </nav>
   );
 }
-
-import { AnimatePresence } from "framer-motion";

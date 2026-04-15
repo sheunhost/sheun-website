@@ -43,7 +43,7 @@ const portfolio = [
     name: "Rooibru",
     tag: "Real Client Project",
     desc: "Full Shopify build for a premium drink store — custom design, product setup, and store optimization.",
-    image: "https://ik.imagekit.io/pedgmrihq/screencapture-rooibru-2026-04-13-12_16_19%20(1).png",
+    image: "https://ik.imagekit.io/pedgmrihq/screencapture-rooibru-2026-04-13-12_16_19%20(1).png?tr=w-800,q-80",
     link: "https://rooibru.com",
   },
   {
@@ -674,7 +674,13 @@ Return ONLY valid JSON.
                 transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
                 className="absolute inset-0 bg-white/5 backdrop-blur-3xl border border-white/10 rounded-[80px] shadow-2xl overflow-hidden group"
               >
-                <img src="https://mapplinks.com/wp-content/uploads/2020/06/screen1.png" alt="Shopify Dashboard" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-[2s]" loading="lazy" />
+                <img 
+                  src="https://mapplinks.com/wp-content/uploads/2020/06/screen1.png" 
+                  alt="Shopify Dashboard" 
+                  referrerPolicy="no-referrer"
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-[2s]" 
+                  loading="lazy" 
+                />
                 <div className="absolute inset-0 bg-gradient-to-t from-navy via-navy/40 to-transparent" />
                 <div className="absolute bottom-16 left-12 right-12 space-y-6">
                   <div className="flex gap-2">
@@ -790,7 +796,13 @@ Return ONLY valid JSON.
                 whileInView={{ opacity: 1, scale: 1 }}
                 className="relative z-10 aspect-square rounded-[80px] overflow-hidden border-[20px] border-light shadow-2xl"
               >
-                <img src="https://ik.imagekit.io/pedgmrihq/store-concept%20(4).png" alt="Shopify Store Concept" className="w-full h-full object-cover" loading="lazy" />
+                <img 
+                  src="https://ik.imagekit.io/pedgmrihq/store-concept%20(4).png?tr=w-1000,q-80" 
+                  alt="Shopify Store Concept" 
+                  referrerPolicy="no-referrer"
+                  className="w-full h-full object-cover" 
+                  loading="lazy" 
+                />
                 <div className="absolute inset-0 bg-navy/10" />
               </motion.div>
               <div className="absolute -top-12 -right-12 w-64 h-64 bg-green/20 rounded-full blur-3xl" />
@@ -953,7 +965,7 @@ Return ONLY valid JSON.
               {
                 title: "Aris",
                 category: "High-End Fashion",
-                image: "https://ik.imagekit.io/pedgmrihq/image.png?updatedAt=1776253607721",
+                image: "https://ik.imagekit.io/pedgmrihq/image.png?updatedAt=1776253607721&tr=w-800,q-80",
                 col: "md:col-span-8",
                 height: "h-[500px]"
               }
@@ -965,7 +977,13 @@ Return ONLY valid JSON.
                 transition={{ delay: i * 0.2 }}
                 className={cn("relative group overflow-hidden rounded-[60px] cursor-pointer", item.col, item.height)}
               >
-                <img src={item.image} alt={item.title} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-[2s]" loading="lazy" />
+                <img 
+                  src={item.image} 
+                  alt={item.title} 
+                  referrerPolicy="no-referrer"
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-[2s]" 
+                  loading="lazy" 
+                />
                 <div className="absolute inset-0 bg-gradient-to-t from-navy via-navy/20 to-transparent opacity-60 group-hover:opacity-80 transition-opacity" />
                 <div className="absolute bottom-12 left-12 right-12 flex items-end justify-between">
                   <div className="space-y-4">
@@ -1000,6 +1018,7 @@ Return ONLY valid JSON.
                 <img
                   src={niche.image}
                   alt={niche.name}
+                  referrerPolicy="no-referrer"
                   className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                   loading="lazy"
                 />
@@ -1038,7 +1057,13 @@ Return ONLY valid JSON.
 
             <div className="bg-light p-12 rounded-[40px] border border-navy/5 flex flex-col items-center text-center space-y-8 shadow-xl">
               <div className="w-32 h-32 rounded-full overflow-hidden border-8 border-white shadow-2xl">
-                <img src="https://fiverr-res.cloudinary.com/image/upload/f_auto,q_auto,t_profile_original/v1/attachments/profile/photo/bed47882db24771238091456bc69a699-1765207538189/19e070ae-9c29-498b-ac69-01114e131e68.png" alt="Sheun" className="w-full h-full object-cover" loading="lazy" />
+                <img 
+                  src="https://fiverr-res.cloudinary.com/image/upload/f_auto,q_auto,t_profile_original/v1/attachments/profile/photo/bed47882db24771238091456bc69a699-1765207538189/19e070ae-9c29-498b-ac69-01114e131e68.png" 
+                  alt="Sheun" 
+                  referrerPolicy="no-referrer"
+                  className="w-full h-full object-cover" 
+                  loading="lazy" 
+                />
               </div>
               <div className="space-y-2">
                 <h4 className="text-2xl font-bold text-navy">Sheun</h4>
@@ -1250,6 +1275,7 @@ Return ONLY valid JSON.
                         <img 
                           src={testimonials[testimonialIndex].image} 
                           alt={testimonials[testimonialIndex].name} 
+                          referrerPolicy="no-referrer"
                           className="w-20 h-20 rounded-3xl object-cover border-4 border-white shadow-xl" 
                           loading="lazy"
                         />

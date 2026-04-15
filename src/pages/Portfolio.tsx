@@ -365,6 +365,7 @@ export default function Portfolio() {
                   <img 
                     src={selectedProject.image} 
                     alt={selectedProject.name} 
+                    referrerPolicy="no-referrer"
                     className="w-full h-full object-cover group-hover/img:scale-105 transition-transform duration-700" 
                     loading="lazy"
                   />
@@ -458,6 +459,7 @@ export default function Portfolio() {
                 <img 
                   src={fullScreenImage} 
                   alt="Full Design" 
+                  referrerPolicy="no-referrer"
                   className="w-full h-auto block" 
                 />
               </div>

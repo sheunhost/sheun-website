@@ -9,7 +9,12 @@ export default function Footer() {
           {/* Brand */}
           <div className="lg:col-span-5 space-y-10">
             <Link to="/" className="inline-block">
-              <img src="https://ik.imagekit.io/pedgmrihq/image.png" alt="sheun_hub logo" className="h-48 w-auto" />
+              <img 
+                src="https://i.postimg.cc/wxQgVCcf/1000031270-removebg-preview.png" 
+                alt="sheun_hub logo" 
+                referrerPolicy="no-referrer"
+                className="h-48 w-auto" 
+              />
             </Link>
             <p className="text-white/40 text-xl leading-relaxed max-w-md font-serif italic">
               Your Shopify Growth Partner. Building high-converting eCommerce experiences for global brands.
