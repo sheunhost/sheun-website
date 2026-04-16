@@ -46,10 +46,10 @@ export default function About() {
                 <motion.h1 
                   initial={{ opacity: 0, y: 30 }}
                   animate={{ opacity: 1, y: 0 }}
-                  className="text-7xl md:text-[120px] font-bold text-navy tracking-tighter leading-[0.8]"
+                  className="text-6xl md:text-[101px] font-bold text-navy tracking-tighter leading-[0.8]"
                 >
-                  I'm <br />
-                  <span className="italic font-serif font-light text-navy/40">Sheun</span>.
+                  Shopify Expert <br />
+                  <span className="italic font-serif font-light text-navy/40">Sheun Hub</span>.
                 </motion.h1>
               </div>
 

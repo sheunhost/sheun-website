@@ -254,10 +254,10 @@ export default function Services() {
               <motion.h1 
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
-                className="text-7xl md:text-[140px] font-bold text-white tracking-tighter leading-[0.8]"
+                className="text-6xl md:text-[118px] font-bold text-white tracking-tighter leading-[0.8]"
               >
-                Scale Your <br />
-                <span className="italic font-serif font-light text-white/40">Commerce</span>.
+                Shopify Services <br />
+                <span className="italic font-serif font-light text-white/40">by Sheun Hub</span>.
               </motion.h1>
             </div>
 

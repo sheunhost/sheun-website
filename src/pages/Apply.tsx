@@ -96,9 +96,9 @@ export default function Apply() {
               <span className="text-xs font-bold uppercase tracking-[0.4em]">Elite Partnership</span>
             </div>
             
-            <h1 className="text-7xl md:text-[160px] font-bold text-white tracking-tighter leading-[0.75] mb-12">
-              Scale Your <br />
-              <span className="text-green italic font-serif font-light text-glow">Ambition</span>.
+            <h1 className="text-6xl md:text-[134px] font-bold text-white tracking-tighter leading-[0.75] mb-12">
+              Scale with Shopify <br />
+              <span className="text-green italic font-serif font-light text-glow">Expert Sheun</span>.
             </h1>
             
             <div className="flex flex-col md:flex-row items-center justify-center gap-12 pt-12 border-t border-white/5 mx-auto max-w-4xl">

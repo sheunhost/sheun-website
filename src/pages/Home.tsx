@@ -624,9 +624,9 @@ Return ONLY valid JSON.
                 <span className="text-green text-[10px] font-bold uppercase tracking-[0.2em]">Available for new projects</span>
               </div>
 
-              <h1 className="text-7xl md:text-[140px] font-bold text-white leading-[0.8] tracking-[-0.05em] text-balance">
-                Sheun <br />
-                <span className="text-green italic font-serif font-light">Hub.</span>
+              <h1 className="text-6xl md:text-[118px] font-bold text-white leading-[0.8] tracking-[-0.05em] text-balance">
+                Shopify Expert <br />
+                <span className="text-green italic font-serif font-light">Sheun Hub.</span>
               </h1>
 
               <p className="text-white/60 text-xl md:text-2xl max-w-xl leading-relaxed font-light font-serif italic">

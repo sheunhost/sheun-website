@@ -33,10 +33,10 @@ export default function Visualizer() {
               <motion.h1 
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
-                className="text-7xl md:text-[140px] font-bold text-white tracking-tighter leading-[0.8] mb-12"
+                className="text-6xl md:text-[118px] font-bold text-white tracking-tighter leading-[0.8] mb-12"
               >
-                Store <br />
-                <span className="italic font-serif font-light text-white/40">Visualizer</span>.
+                Shopify Visualizer <br />
+                <span className="italic font-serif font-light text-white/40">by Sheun Hub</span>.
               </motion.h1>
               
               <motion.p

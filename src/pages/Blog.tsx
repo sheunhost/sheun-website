@@ -94,10 +94,10 @@ export default function Blog() {
             <motion.h1 
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
-              className="text-7xl md:text-[140px] font-bold text-white tracking-tighter leading-[0.8]"
+              className="text-6xl md:text-[118px] font-bold text-white tracking-tighter leading-[0.8]"
             >
-              Insights & <br />
-              <span className="italic font-serif font-light text-white/40">Strategies</span><span className="text-white">.</span>
+              Shopify Blog <br />
+              <span className="italic font-serif font-light text-white/40">by Sheun Hub</span>.
             </motion.h1>
           </div>
           <motion.p 
