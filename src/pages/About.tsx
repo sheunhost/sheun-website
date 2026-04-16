@@ -6,8 +6,8 @@ import { Link } from "react-router-dom";
 const timeline = [
   { year: "2023", title: "Graduated, OAU", desc: "B.Sc. Business Management from Obafemi Awolowo University." },
   { year: "2023", title: "Certified Shopify Partner", desc: "Officially recognized as a Shopify Partner." },
-  { year: "2024", title: "Launched sheun_hub", desc: "Started on Fiverr, received first 5-star review." },
-  { year: "2024", title: "Level 2 Seller", desc: "Achieved Level 2 status on Fiverr with consistent quality." },
+  { year: "2024", title: "Launched sheun_hub", desc: "Started on Upwork, received first 5-star review." },
+  { year: "2024", title: "Top Rated Freelancer", desc: "Achieved Top Rated status on Upwork with consistent quality." },
   { year: "Present", title: "Global Impact", desc: "Building stores for clients worldwide, primarily in the USA." },
 ];
 
@@ -60,7 +60,7 @@ export default function About() {
                 className="space-y-10 text-navy/60 text-2xl leading-relaxed max-w-2xl font-serif italic"
               >
                 <p>
-                  I'm Sheun — a certified Shopify Partner and Level 2 Fiverr seller. I combine business strategy with technical Liquid expertise to build stores that don't just look great — they convert.
+                  I'm Sheun — a certified Shopify Partner and Top Rated Upwork freelancer. I combine business strategy with technical Liquid expertise to build stores that don't just look great — they convert.
                 </p>
                 <div className="flex flex-wrap gap-6">
                   <div className="flex items-center gap-4 bg-light px-8 py-4 rounded-full border border-navy/5 shadow-sm text-sm font-bold text-navy uppercase tracking-widest">
@@ -88,7 +88,7 @@ export default function About() {
                 className="relative z-10 aspect-[4/5] rounded-[80px] overflow-hidden border-[24px] border-white shadow-[0_40px_100px_-20px_rgba(0,0,0,0.2)]"
               >
                 <img 
-                  src="https://ik.imagekit.io/pedgmrihq/image.png?updatedAt=1776269079485" 
+                  src="https://ik.imagekit.io/pedgmrihq/image.png?updatedAt=1776339493353" 
                   alt="Sheun" 
                   referrerPolicy="no-referrer"
                   className="w-full h-full object-cover" 
@@ -179,8 +179,8 @@ export default function About() {
             <div className="md:col-span-4 bg-green p-12 rounded-[40px] space-y-8 flex flex-col justify-between">
               <div className="space-y-4">
                 <Star size={48} className="text-navy" />
-                <h3 className="text-4xl font-bold text-navy leading-none">Level 2 <br />Seller</h3>
-                <p className="text-navy/60 font-medium">Top-rated performance on Fiverr with 100% client satisfaction.</p>
+                <h3 className="text-4xl font-bold text-navy leading-none">Top Rated <br />Freelancer</h3>
+                <p className="text-navy/60 font-medium">Top-rated performance on Upwork with 100% client satisfaction.</p>
               </div>
               <div className="flex -space-x-4">
                 {[1, 2, 3, 4, 5].map(i => (

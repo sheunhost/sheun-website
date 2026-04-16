@@ -9,6 +9,8 @@ const navLinks = [
   { name: "About", href: "/about" },
   { name: "Services", href: "/services" },
   { name: "Portfolio", href: "/portfolio" },
+  { name: "Visualizer", href: "/visualizer" },
+  { name: "Apply", href: "/apply" },
   { name: "Blog", href: "/blog" },
   { name: "Contact", href: "/contact" },
 ];
@@ -41,6 +43,7 @@ export default function Navbar() {
             src="https://i.postimg.cc/wxQgVCcf/1000031270-removebg-preview.png" 
             alt="sheun_hub logo" 
             referrerPolicy="no-referrer"
+            loading="lazy"
             className={cn(
               "h-24 w-auto transition-all duration-500",
               isScrolled ? "h-16" : "h-24"

@@ -20,7 +20,7 @@ export default function ImageGen() {
       }
       const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY });
       const response = await ai.models.generateContent({
-        model: "gemini-2.0-flash",
+        model: "gemini-3-flash-preview",
         contents: `Enhance this prompt for an e-commerce store hero image generation. Make it highly descriptive, focusing on lighting, mood, style, and high quality. Return ONLY the enhanced prompt text without any quotes or introductory text. Original prompt: ${prompt}`,
       });
       if (response.text) {
@@ -43,6 +43,7 @@ export default function ImageGen() {
         throw new Error("Missing API Key");
       }
       const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY });
+      console.log("Generating image with prompt:", prompt);
       const response = await ai.models.generateContent({
         model: "gemini-2.5-flash-image",
         contents: {
@@ -55,7 +56,13 @@ export default function ImageGen() {
         },
       });
 
-      for (const part of response.candidates?.[0]?.content?.parts || []) {
+      console.log("Image generation response:", response);
+
+      if (!response.candidates?.[0]?.content?.parts) {
+        throw new Error("No image generated in response");
+      }
+
+      for (const part of response.candidates[0].content.parts) {
         if (part.inlineData) {
           const base64Data = part.inlineData.data;
           setImage(`data:image/png;base64,${base64Data}`);

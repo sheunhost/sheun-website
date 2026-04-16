@@ -514,7 +514,9 @@ Return ONLY valid JSON.
       }
     } catch (error: any) {
       console.error("Error running SEO audit:", error);
-      alert(error.message || "Something went wrong. Please try again.");
+      setAuditResult(null);
+      // Log error instead of alert
+      console.error("SEO Audit Error:", error.message || "Something went wrong");
     } finally {
       setIsAuditing(false);
     }
@@ -638,7 +640,7 @@ Return ONLY valid JSON.
               transition={{ delay: 0.2, duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
               className="flex flex-col sm:flex-row items-center gap-8"
             >
-              <Link to="/contact" className="w-full sm:w-auto bg-green text-navy px-12 py-6 rounded-full font-bold text-lg hover:scale-105 transition-all duration-500 green-glow flex items-center justify-center gap-3 text-center">
+              <Link to="/apply" className="w-full sm:w-auto bg-green text-navy px-12 py-6 rounded-full font-bold text-lg hover:scale-105 transition-all duration-500 green-glow flex items-center justify-center gap-3 text-center">
                 Start Your Store <ArrowRight size={20} />
               </Link>
               <Link to="/portfolio" className="w-full sm:w-auto text-white/80 hover:text-white px-8 py-4 rounded-full font-bold text-lg transition-all flex items-center justify-center gap-4 group text-center">
@@ -653,7 +655,7 @@ Return ONLY valid JSON.
               className="flex flex-wrap items-center gap-12 pt-8 border-t border-white/5"
             >
               {[
-                { label: "Fiverr", value: "Level 2" },
+                { label: "Upwork", value: "Top Rated" },
                 { label: "Rating", value: "5.0/5" },
                 { label: "Projects", value: "20+" },
               ].map((stat, i) => (
@@ -687,7 +689,7 @@ Return ONLY valid JSON.
                     {[...Array(5)].map((_, i) => <Star key={i} size={12} className="fill-green text-green" />)}
                   </div>
                   <h3 className="text-white font-bold text-4xl tracking-tighter leading-none">Top Rated <br />Shopify Expert.</h3>
-                  <p className="text-white/60 text-lg font-serif italic">Level 2 Fiverr Seller</p>
+                  <p className="text-white/60 text-lg font-serif italic">Top Rated Upwork Freelancer</p>
                 </div>
               </motion.div>
 
@@ -965,7 +967,7 @@ Return ONLY valid JSON.
               {
                 title: "Aris",
                 category: "High-End Fashion",
-                image: "https://ik.imagekit.io/pedgmrihq/image.png?updatedAt=1776277769832",
+                image: "https://ik.imagekit.io/pedgmrihq/image.png?updatedAt=1776269079485",
                 col: "md:col-span-8",
                 height: "h-[500px]"
               }
@@ -1074,12 +1076,12 @@ Return ONLY valid JSON.
               </div>
               <p className="text-navy/60 text-sm italic">"Sheun is a true professional. He transformed our store's conversion rate overnight."</p>
               <a 
-                href="https://fiverr.com/sheun_hub" 
+                href="https://upwork.com/freelancers/sheun_hub" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="w-full bg-navy text-white px-8 py-4 rounded-full font-bold hover:bg-navy/90 transition-all shadow-lg text-center block"
               >
-                View Fiverr Profile
+                View Upwork Profile
               </a>
             </div>
 

@@ -27,7 +27,7 @@ const projects = [
     tag: "👗 Fashion — High-End Aris",
     category: "👗 Fashion",
     desc: "Sophisticated, high-end fashion concept featuring clean minimalist layouts, premium typography, and immersive lifestyle imagery. Designed for luxury brands seeking a polished, editorial presence.",
-    image: "https://ik.imagekit.io/pedgmrihq/image.png?updatedAt=1776277769832",
+    image: "https://ik.imagekit.io/pedgmrihq/image.png?updatedAt=1776269079485",
     col: "md:col-span-8",
     height: "h-[500px]",
     label: "🎨 Design Concept by sheun_hub"

@@ -84,7 +84,7 @@ export default function Footer() {
           <div className="flex flex-col md:flex-row items-center gap-8">
             <div className="flex items-center gap-4">
               <span className="bg-white/5 text-green text-[10px] font-bold uppercase tracking-widest px-4 py-2 rounded-full border border-white/5">Shopify Partner</span>
-              <span className="bg-white/5 text-green text-[10px] font-bold uppercase tracking-widest px-4 py-2 rounded-full border border-white/5">Level 2 Seller</span>
+              <span className="bg-white/5 text-green text-[10px] font-bold uppercase tracking-widest px-4 py-2 rounded-full border border-white/5">Top Rated Freelancer</span>
             </div>
             <div className="flex items-center gap-8 text-xs font-medium text-white/20">
               <Link to="/privacy-policy" className="hover:text-white transition-colors">Privacy Policy</Link>

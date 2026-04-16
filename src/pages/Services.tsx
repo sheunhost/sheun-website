@@ -202,7 +202,7 @@ const ServiceModal = ({ service, onClose }: { service: any; onClose: () => void 
 
             <div className="pt-10 border-t border-navy/5">
               <Link
-                to="/contact"
+                to="/apply"
                 onClick={onClose}
                 className="w-full bg-navy text-white py-6 rounded-full font-bold text-xl hover:bg-green hover:text-navy transition-all duration-500 flex items-center justify-center gap-4 shadow-2xl"
               >
@@ -361,7 +361,7 @@ export default function Services() {
                   ))}
                 </ul>
 
-                <Link to="/contact" className={`w-full py-8 rounded-full font-bold text-xl text-center transition-all duration-500 ${
+                <Link to="/apply" className={`w-full py-8 rounded-full font-bold text-xl text-center transition-all duration-500 ${
                   tier.popular ? "bg-green text-navy hover:scale-105 shadow-xl" : "bg-navy text-white hover:bg-navy/90"
                 }`}>
                   Get Started
@@ -445,7 +445,7 @@ export default function Services() {
               Not sure where to start? I'll review your store and send you a growth tips report — completely free.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-12">
-              <Link to="/contact" className="w-full sm:w-auto bg-green text-navy px-16 py-8 rounded-full font-bold text-2xl hover:scale-105 transition-all duration-500 green-glow">
+              <Link to="/apply" className="w-full sm:w-auto bg-green text-navy px-16 py-8 rounded-full font-bold text-2xl hover:scale-105 transition-all duration-500 green-glow">
                 Claim Free Audit
               </Link>
               <Link to="/portfolio" className="w-full sm:w-auto text-white font-bold text-2xl flex items-center gap-6 group">

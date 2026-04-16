@@ -40,7 +40,7 @@ export default function Chatbot() {
       const chat = ai.chats.create({
         model: "gemini-2.0-flash",
         config: {
-          systemInstruction: "You are Sheun's AI assistant for sheun_hub. You help potential clients understand Sheun's services (Shopify store setup, dropshipping, migration, SEO, etc.). You are professional, helpful, and concise. Sheun is a Level 2 Fiverr seller and Shopify Partner based in Nigeria. If someone asks for a quote, suggest they use the 'Get Free Audit' button on the website.",
+          systemInstruction: "You are Sheun's AI assistant for sheun_hub. You help potential clients understand Sheun's services (Shopify store setup, dropshipping, migration, SEO, etc.). You are professional, helpful, and concise. Sheun is a Top Rated Upwork freelancer and Shopify Partner based in Nigeria. If someone asks for a quote or wants to start a project, suggest they use the 'Apply' page or the 'Get Free Audit' button to submit a qualification form.",
         },
         history: messages.map(m => ({ role: m.role, parts: [{ text: m.text }] })),
       });

@@ -8,7 +8,7 @@ const contactInfo = [
   { icon: Mail, label: "Email", value: "sheunhost@gmail.com", href: "mailto:sheunhost@gmail.com", desc: "For project inquiries" },
   { icon: MessageCircle, label: "WhatsApp (NG)", value: "+234 808 431 5743", href: "#", desc: "Instant chat support" },
   { icon: MessageCircle, label: "WhatsApp (UK)", value: "+44 7476 664292", href: "#", desc: "Instant chat support" },
-  { icon: Star, label: "Fiverr", value: "fiverr.com/sheun_hub", href: "https://fiverr.com/sheun_hub", desc: "Order via platform" },
+  { icon: Star, label: "Upwork", value: "upwork.com/freelancers/sheun_hub", href: "https://upwork.com/freelancers/sheun_hub", desc: "Order via platform" },
   { icon: Linkedin, label: "LinkedIn", value: "linkedin.com/in/sheun", href: "#", desc: "Professional network" },
 ];
 
