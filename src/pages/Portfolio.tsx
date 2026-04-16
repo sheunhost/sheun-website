@@ -22,26 +22,15 @@ const projects = [
     isRealProject: true,
   },
   {
-    id: "f1",
-    name: "Aris",
-    tag: "👗 Fashion — High-End Aris",
-    category: "👗 Fashion",
-    desc: "Sophisticated, high-end fashion concept featuring clean minimalist layouts, premium typography, and immersive lifestyle imagery. Designed for luxury brands seeking a polished, editorial presence.",
-    image: "https://ik.imagekit.io/pedgmrihq/image.png?updatedAt=1776269079485",
-    col: "md:col-span-8",
-    height: "h-[500px]",
-    label: "🎨 Design Concept by sheun_hub"
-  },
-  {
     id: "f2",
     name: "Summer Collection",
     tag: "👗 Fashion — Streetwear",
     category: "👗 Fashion",
     desc: "Hi There,\n\nThis is a Website concept for a Trendy Fashion E-commerce Website.\n\nHope you guys will like it.\n\nLet me know your thought's on that. Your feedback and appreciation is always welcome 🙂\n\nI'm available for new projects",
     image: "https://cdn.dribbble.com/userupload/37390836/file/original-13c3c213f022ab00791a6abaa9447322.png?resize=850x638&vertical=center",
-    col: "md:col-span-4",
+    col: "md:col-span-12",
     height: "h-[500px]",
-    label: "🎨 Design Concept by sheun_hub"
+    label: "🎨 Design Concept by sheun.online"
   },
   {
     id: "f3",
@@ -52,7 +41,7 @@ const projects = [
     image: "https://cdn.dribbble.com/userupload/36920984/file/original-ff98dfbecece4eba4c0ef25160306302.png?resize=752x&vertical=center",
     col: "md:col-span-12",
     height: "h-[500px]",
-    label: "🎨 Design Concept by sheun_hub"
+    label: "🎨 Design Concept by sheun.online"
   },
   {
     id: "b1",
@@ -63,7 +52,7 @@ const projects = [
     image: "https://picsum.photos/seed/lume/800/800",
     col: "md:col-span-4",
     height: "h-[500px]",
-    label: "🎨 Design Concept by sheun_hub"
+    label: "🎨 Design Concept by sheun.online"
   },
   {
     id: "b2",
@@ -74,7 +63,7 @@ const projects = [
     image: "https://cdn.dribbble.com/userupload/47314439/file/c6086620d425f60ad8dac40f74cfe1b4.png?resize=752x3909&vertical=center",
     col: "md:col-span-8",
     height: "h-[500px]",
-    label: "🎨 Design Concept by sheun_hub"
+    label: "🎨 Design Concept by sheun.online"
   },
   {
     id: "b3",
@@ -85,7 +74,7 @@ const projects = [
     image: "https://cdn.dribbble.com/userupload/44540941/file/e348fef4b20fc2fa3b6d93da41e73932.jpg?resize=1024x768&vertical=center",
     col: "md:col-span-12",
     height: "h-[500px]",
-    label: "🎨 Design Concept by sheun_hub"
+    label: "🎨 Design Concept by sheun.online"
   },
   {
     id: "p1",
@@ -96,7 +85,7 @@ const projects = [
     image: "https://picsum.photos/seed/pawlux/1200/800",
     col: "md:col-span-8",
     height: "h-[500px]",
-    label: "🎨 Design Concept by sheun_hub"
+    label: "🎨 Design Concept by sheun.online"
   },
   {
     id: "p2",
@@ -107,7 +96,7 @@ const projects = [
     image: "https://picsum.photos/seed/furrfriend/800/800",
     col: "md:col-span-4",
     height: "h-[500px]",
-    label: "🎨 Design Concept by sheun_hub"
+    label: "🎨 Design Concept by sheun.online"
   },
   {
     id: "p3",
@@ -118,7 +107,7 @@ const projects = [
     image: "https://cdn.dribbble.com/userupload/37449048/file/original-6a6b4e4e7ebfed9f6502c61669a61580.png?resize=1024x3374&vertical=center",
     col: "md:col-span-12",
     height: "h-[500px]",
-    label: "🎨 Design Concept by sheun_hub"
+    label: "🎨 Design Concept by sheun.online"
   },
   {
     id: "g1",
@@ -129,7 +118,7 @@ const projects = [
     image: "https://picsum.photos/seed/techvault/800/800",
     col: "md:col-span-4",
     height: "h-[500px]",
-    label: "🎨 Design Concept by sheun_hub"
+    label: "🎨 Design Concept by sheun.online"
   },
   {
     id: "g2",
@@ -140,7 +129,7 @@ const projects = [
     image: "https://picsum.photos/seed/casecraze/1200/800",
     col: "md:col-span-8",
     height: "h-[500px]",
-    label: "🎨 Design Concept by sheun_hub"
+    label: "🎨 Design Concept by sheun.online"
   },
   {
     id: "g3",
@@ -151,7 +140,7 @@ const projects = [
     image: "https://picsum.photos/seed/weariq/1200/800",
     col: "md:col-span-12",
     height: "h-[500px]",
-    label: "🎨 Design Concept by sheun_hub"
+    label: "🎨 Design Concept by sheun.online"
   }
 ];
 
@@ -172,7 +161,7 @@ export default function Portfolio() {
     >
       {/* Top Section Label */}
       <div className="bg-green text-navy py-4 px-6 text-center text-[10px] font-bold uppercase tracking-[0.3em]">
-        <p>Original store concepts designed by sheun_hub — Browse the styles below and let's build your vision.</p>
+        <p>Original store concepts designed by sheun.online — Browse the styles below and let's build your vision.</p>
       </div>
 
       {/* Portfolio Hero */}
@@ -194,7 +183,7 @@ export default function Portfolio() {
                 className="text-6xl md:text-[118px] font-bold text-white tracking-tighter leading-[0.8]"
               >
                 Shopify Portfolio <br />
-                <span className="italic font-serif font-light text-white/40">by Sheun Hub</span>.
+                <span className="italic font-serif font-light text-white/40">by sheun.online</span>.
               </motion.h1>
               <motion.p
                 initial={{ opacity: 0, y: 20 }}
@@ -305,7 +294,7 @@ export default function Portfolio() {
               <Info className="text-navy/40 shrink-0 mt-1" size={32} />
               <p className="text-navy/60 text-lg leading-relaxed font-serif italic">
                 <strong className="text-navy font-sans not-italic font-bold uppercase tracking-widest text-xs block mb-2">Disclaimer</strong>
-                All store concepts above are original designs created by sheun_hub for demonstration purposes only. None are real brands. Your store will be uniquely designed to match your vision and niche.
+                All store concepts above are original designs created by sheun.online for demonstration purposes only. None are real brands. Your store will be uniquely designed to match your vision and niche.
               </p>
             </div>
 

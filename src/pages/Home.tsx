@@ -626,11 +626,11 @@ Return ONLY valid JSON.
 
               <h1 className="text-6xl md:text-[118px] font-bold text-white leading-[0.8] tracking-[-0.05em] text-balance">
                 Shopify Expert <br />
-                <span className="text-green italic font-serif font-light">Sheun Hub.</span>
+                <span className="text-green italic font-serif font-light">sheun.online.</span>
               </h1>
 
               <p className="text-white/60 text-xl md:text-2xl max-w-xl leading-relaxed font-light font-serif italic">
-                I am Sheun, the expert behind sheun_hub. I help startup brands launch and scale on Shopify with high-converting stores and technical excellence.
+                I am Sheun, the expert behind sheun.online. I help startup brands launch and scale on Shopify with high-converting stores and technical excellence.
               </p>
             </motion.div>
 
@@ -961,14 +961,7 @@ Return ONLY valid JSON.
                 title: "Gadgets",
                 category: "Gadgets",
                 image: "https://miro.medium.com/0*G29d-grLDSv2GyEc.jpg",
-                col: "md:col-span-4",
-                height: "h-[500px]"
-              },
-              {
-                title: "Aris",
-                category: "High-End Fashion",
-                image: "https://ik.imagekit.io/pedgmrihq/image.png?updatedAt=1776269079485",
-                col: "md:col-span-8",
+                col: "md:col-span-12",
                 height: "h-[500px]"
               }
             ].map((item, i) => (

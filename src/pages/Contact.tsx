@@ -5,7 +5,7 @@ import { useState, FormEvent } from "react";
 import { Link } from "react-router-dom";
 
 const contactInfo = [
-  { icon: Mail, label: "Email", value: "sheunhost@gmail.com", href: "mailto:sheunhost@gmail.com", desc: "For project inquiries" },
+  { icon: Mail, label: "Email", value: "sheun.online (Sheun Hub)", href: "mailto:sheunhost@gmail.com", desc: "For project inquiries" },
   { icon: MessageCircle, label: "WhatsApp (NG)", value: "+234 808 431 5743", href: "#", desc: "Instant chat support" },
   { icon: MessageCircle, label: "WhatsApp (UK)", value: "+44 7476 664292", href: "#", desc: "Instant chat support" },
   { icon: Star, label: "Upwork", value: "upwork.com/freelancers/sheun_hub", href: "https://upwork.com/freelancers/sheun_hub", desc: "Order via platform" },

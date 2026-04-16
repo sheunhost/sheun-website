@@ -89,7 +89,7 @@ export default function Blog() {
               animate={{ opacity: 1, y: 0 }}
               className="text-green text-[10px] font-bold uppercase tracking-[0.5em]"
             >
-              The sheun_hub Blog
+              The sheun.online Blog
             </motion.p>
             <motion.h1 
               initial={{ opacity: 0, y: 30 }}
@@ -97,7 +97,7 @@ export default function Blog() {
               className="text-6xl md:text-[118px] font-bold text-white tracking-tighter leading-[0.8]"
             >
               Shopify Blog <br />
-              <span className="italic font-serif font-light text-white/40">by Sheun Hub</span>.
+              <span className="italic font-serif font-light text-white/40">by sheun.online</span>.
             </motion.h1>
           </div>
           <motion.p 

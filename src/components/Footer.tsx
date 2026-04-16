@@ -11,7 +11,7 @@ export default function Footer() {
             <Link to="/" className="inline-block">
               <img 
                 src="https://i.postimg.cc/wxQgVCcf/1000031270-removebg-preview.png" 
-                alt="sheun_hub logo" 
+                alt="sheun.online logo" 
                 referrerPolicy="no-referrer"
                 loading="lazy"
                 className="h-48 w-auto" 

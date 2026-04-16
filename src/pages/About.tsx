@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 const timeline = [
   { year: "2023", title: "Graduated, OAU", desc: "B.Sc. Business Management from Obafemi Awolowo University." },
   { year: "2023", title: "Certified Shopify Partner", desc: "Officially recognized as a Shopify Partner." },
-  { year: "2024", title: "Launched sheun_hub", desc: "Started on Upwork, received first 5-star review." },
+  { year: "2024", title: "Launched sheun.online", desc: "Started on Upwork, received first 5-star review." },
   { year: "2024", title: "Top Rated Freelancer", desc: "Achieved Top Rated status on Upwork with consistent quality." },
   { year: "Present", title: "Global Impact", desc: "Building stores for clients worldwide, primarily in the USA." },
 ];
@@ -41,7 +41,7 @@ export default function About() {
                   animate={{ opacity: 1, x: 0 }}
                   className="text-green text-xs font-bold uppercase tracking-[0.5em]"
                 >
-                  The Person Behind sheun_hub
+                  The Person Behind sheun.online
                 </motion.p>
                 <motion.h1 
                   initial={{ opacity: 0, y: 30 }}
@@ -49,7 +49,7 @@ export default function About() {
                   className="text-6xl md:text-[101px] font-bold text-navy tracking-tighter leading-[0.8]"
                 >
                   Shopify Expert <br />
-                  <span className="italic font-serif font-light text-navy/40">Sheun Hub</span>.
+                  <span className="italic font-serif font-light text-navy/40">sheun.online</span>.
                 </motion.h1>
               </div>
 
