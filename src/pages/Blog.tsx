@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Search, Clock, Calendar, ArrowRight, User } from "lucide-react";
+import { Search, Clock, Calendar, ArrowRight, User, ShieldCheck } from "lucide-react";
 import PageWrapper from "../components/PageWrapper";
 import { useState } from "react";
 
@@ -271,8 +271,12 @@ export default function Blog() {
                 <span className="text-green italic font-serif font-light lowercase">in Your Inbox.</span>
               </h2>
               <p className="text-white/60 text-2xl font-serif italic max-w-xl">
-                No spam. Just actionable eCommerce tips, store-building guides, and growth strategies.
+                100% Privacy Guaranteed. I respect your inbox.
               </p>
+              <div className="flex items-center gap-4 bg-white/5 border border-white/10 px-6 py-3 rounded-full w-fit">
+                <ShieldCheck size={16} className="text-green" />
+                <span className="text-[10px] font-bold uppercase tracking-widest text-white/40">Verified Industry Expert</span>
+              </div>
             </div>
             <div className="space-y-8 relative z-10">
               <div className="flex flex-col sm:flex-row gap-6">

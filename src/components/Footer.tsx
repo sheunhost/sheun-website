@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Mail, MessageCircle, Linkedin, Facebook, Twitter, ExternalLink } from "lucide-react";
+import { Mail, MessageCircle, Linkedin, Facebook, Twitter, ExternalLink, ShieldCheck } from "lucide-react";
 
 export default function Footer() {
   return (
@@ -85,6 +85,9 @@ export default function Footer() {
             <div className="flex items-center gap-4">
               <span className="bg-white/5 text-green text-[10px] font-bold uppercase tracking-widest px-4 py-2 rounded-full border border-white/5">Shopify Partner</span>
               <span className="bg-white/5 text-green text-[10px] font-bold uppercase tracking-widest px-4 py-2 rounded-full border border-white/5">Top Rated Freelancer</span>
+              <span className="bg-white/5 text-green text-[10px] font-bold uppercase tracking-widest px-4 py-2 rounded-full border border-white/5 flex items-center gap-2">
+                <ShieldCheck size={12} /> Verified & Secure
+              </span>
             </div>
             <div className="flex items-center gap-8 text-xs font-medium text-white/20">
               <Link to="/privacy-policy" className="hover:text-white transition-colors">Privacy Policy</Link>

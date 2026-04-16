@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { ArrowRight, Star, ShoppingBag, Globe, Trophy, CheckCircle2, Layout, RefreshCw, ShoppingCart, Palette, ExternalLink, Zap, Code2, Rocket, MessageSquare, Send, Mail, MessageCircle, ChevronDown, Quote, TrendingUp, Target, AlertCircle, BarChart3, Search, Lightbulb, Info, AlertTriangle, X, Clock, DollarSign, ListChecks, ChevronLeft, ChevronRight } from "lucide-react";
+import { ArrowRight, Star, ShoppingBag, Globe, Trophy, CheckCircle2, Layout, RefreshCw, ShoppingCart, Palette, ExternalLink, Zap, Code2, Rocket, MessageSquare, Send, Mail, MessageCircle, ChevronDown, Quote, TrendingUp, Target, AlertCircle, BarChart3, Search, Lightbulb, Info, AlertTriangle, X, Clock, DollarSign, ListChecks, ChevronLeft, ChevronRight, ShieldCheck } from "lucide-react";
 import { Link } from "react-router-dom";
 import { GoogleGenAI } from "@google/genai";
 import PageWrapper from "../components/PageWrapper";
@@ -657,7 +657,7 @@ Return ONLY valid JSON.
               {[
                 { label: "Upwork", value: "Top Rated" },
                 { label: "Rating", value: "5.0/5" },
-                { label: "Projects", value: "20+" },
+                { label: "Trust", value: "100% Secure" },
               ].map((stat, i) => (
                 <div key={i} className="space-y-2">
                   <p className="text-[10px] font-bold uppercase tracking-[0.3em] text-white/30">{stat.label}</p>
@@ -1096,6 +1096,17 @@ Return ONLY valid JSON.
                 </div>
                 <p className="text-navy/60 text-sm">Access to exclusive Shopify tools and early-release features for your store.</p>
               </div>
+
+              <div className="bg-navy p-12 rounded-[40px] flex flex-col items-center text-center space-y-6 text-white group hover:bg-navy/95 transition-all">
+                <div className="w-20 h-20 bg-white/5 rounded-3xl flex items-center justify-center text-green shadow-xl border border-white/10 group-hover:bg-green group-hover:text-navy transition-all duration-500">
+                  <ShieldCheck size={40} />
+                </div>
+                <div className="space-y-2">
+                  <h4 className="text-2xl font-bold">100% Trusted</h4>
+                  <p className="text-white/40 text-[10px] font-bold uppercase tracking-widest">Secure & Verified</p>
+                </div>
+                <p className="text-white/40 text-xs">All projects handled with complete technical transparency and secure delivery protocols.</p>
+              </div>
             </div>
           </div>
         </div>
@@ -1485,7 +1496,7 @@ Return ONLY valid JSON.
                 </div>
               )}
               <p className="text-[10px] font-bold text-navy/40 uppercase tracking-widest mt-4 text-center md:text-left">
-                No spam. Unsubscribe anytime.
+                100% Privacy. I respect your data.
               </p>
             </div>
           </div>

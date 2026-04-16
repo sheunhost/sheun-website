@@ -1,5 +1,5 @@
 import { motion, AnimatePresence } from "framer-motion";
-import { Layout, RefreshCw, ShoppingCart, Palette, Bug, Search, Rocket, Gift, ChevronDown, CheckCircle2, ArrowRight, Code2, Zap, MessageSquare, Star, X, Clock, DollarSign, ListChecks } from "lucide-react";
+import { Layout, RefreshCw, ShoppingCart, Palette, Bug, Search, Rocket, Gift, ChevronDown, CheckCircle2, ArrowRight, Code2, Zap, MessageSquare, Star, X, Clock, DollarSign, ListChecks, ShieldCheck } from "lucide-react";
 import PageWrapper from "../components/PageWrapper";
 import { useState } from "react";
 import { Link } from "react-router-dom";
@@ -448,9 +448,10 @@ export default function Services() {
               <Link to="/apply" className="w-full sm:w-auto bg-green text-navy px-16 py-8 rounded-full font-bold text-2xl hover:scale-105 transition-all duration-500 green-glow">
                 Claim Free Audit
               </Link>
-              <Link to="/portfolio" className="w-full sm:w-auto text-white font-bold text-2xl flex items-center gap-6 group">
-                View My Work <div className="w-12 h-px bg-white/20 group-hover:w-20 group-hover:bg-green transition-all duration-500" />
-              </Link>
+              <div className="flex items-center gap-3 bg-white/5 border border-white/10 px-6 py-3 rounded-full text-green">
+                <ShieldCheck size={18} />
+                <span className="text-[10px] font-bold uppercase tracking-widest text-white/60">Trust Guaranteed</span>
+              </div>
             </div>
           </motion.div>
         </div>

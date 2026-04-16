@@ -1,5 +1,5 @@
 import { motion, AnimatePresence } from "framer-motion";
-import { CheckCircle2, Zap, Target, DollarSign, ArrowRight, MessageSquare, Clock, ShieldCheck, Mail, Phone, Globe, Star, Sparkles, User, Briefcase, TrendingUp } from "lucide-react";
+import { CheckCircle2, Zap, Target, DollarSign, ArrowRight, MessageSquare, Clock, ShieldCheck, Lock, Mail, Phone, Globe, Star, Sparkles, User, Briefcase, TrendingUp } from "lucide-react";
 import PageWrapper from "../components/PageWrapper";
 import { useState, FormEvent, useEffect } from "react";
 
@@ -105,14 +105,20 @@ export default function Apply() {
               <p className="text-white/40 text-2xl leading-relaxed font-serif italic text-balance">
                 "I don't just build stores; I build revenue engines for brands that refuse to settle for average."
               </p>
-              <div className="shrink-0 flex -space-x-4">
-                {[1, 2, 3].map(i => (
-                  <div key={i} className="w-16 h-16 rounded-full border-4 border-navy bg-white/10 overflow-hidden">
-                    <img src={`https://picsum.photos/seed/client${i}/100/100`} alt="Client" referrerPolicy="no-referrer" />
+              <div className="shrink-0 flex flex-col items-center gap-4">
+                <div className="flex -space-x-4">
+                  {[1, 2, 3].map(i => (
+                    <div key={i} className="w-16 h-16 rounded-full border-4 border-navy bg-white/10 overflow-hidden">
+                      <img src={`https://picsum.photos/seed/client${i}/100/100`} alt="Client" referrerPolicy="no-referrer" />
+                    </div>
+                  ))}
+                  <div className="w-16 h-16 rounded-full border-4 border-navy bg-green flex items-center justify-center text-navy font-bold text-xs">
+                    5.0
                   </div>
-                ))}
-                <div className="w-16 h-16 rounded-full border-4 border-navy bg-green flex items-center justify-center text-navy font-bold text-xs">
-                  5.0
+                </div>
+                <div className="flex items-center gap-2 bg-green/10 px-4 py-2 rounded-full border border-green/20">
+                  <ShieldCheck size={14} className="text-green" />
+                  <span className="text-[10px] font-bold text-green uppercase tracking-widest text-center">100% Secure & Trustworthy</span>
                 </div>
               </div>
             </div>
@@ -233,6 +239,16 @@ export default function Apply() {
                         </div>
                       </div>
                     ))}
+                  </div>
+
+                  <div className="p-8 bg-white border border-navy/5 rounded-[40px] space-y-6 shadow-xl">
+                    <div className="flex items-center gap-4 text-green">
+                      <Lock size={20} />
+                      <span className="text-xs font-bold uppercase tracking-widest text-navy">Privacy Guaranteed</span>
+                    </div>
+                    <p className="text-navy/60 text-sm leading-relaxed italic font-serif">
+                      Your project details are secured using industry-standard encryption and will never be shared with third parties.
+                    </p>
                   </div>
 
                   <div className="p-8 bg-navy text-white rounded-[40px] space-y-6 shadow-2xl relative overflow-hidden">
