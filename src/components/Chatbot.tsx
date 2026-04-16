@@ -33,25 +33,37 @@ export default function Chatbot() {
     setIsLoading(true);
 
     try {
-      if (!process.env.GEMINI_API_KEY) {
-        throw new Error("Missing API Key");
+      const apiKey = process.env.GEMINI_API_KEY;
+      if (!apiKey) {
+        throw new Error("Gemini API key is not configured");
       }
-      const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY });
+
+      const ai = new GoogleGenAI({ apiKey });
+      
+      // Filter out the initial welcome message from history as models usually expect User first
+      const chatHistory = messages
+        .filter((_, i) => i > 0)
+        .map(m => ({
+          role: m.role,
+          parts: [{ text: m.text }]
+        }));
+
       const chat = ai.chats.create({
-        model: "gemini-2.0-flash",
+        model: "gemini-3-flash-preview",
         config: {
           systemInstruction: "You are Sheun's AI assistant for sheun.online. You help potential clients understand Sheun's services (Shopify store setup, dropshipping, migration, SEO, etc.). You are professional, helpful, and concise. Sheun is a Top Rated Upwork freelancer and Shopify Partner based in Nigeria. If someone asks for a quote or wants to start a project, suggest they use the 'Apply' page or the 'Get Free Audit' button to submit a qualification form.",
         },
-        history: messages.map(m => ({ role: m.role, parts: [{ text: m.text }] })),
+        history: chatHistory,
       });
 
-      const response = await chat.sendMessage({ message: input });
-      const modelText = response.text || "I'm sorry, I couldn't process that.";
+      const result = await chat.sendMessage({ message: input });
+      const modelText = result.text || "I'm sorry, I couldn't process that.";
       
       setMessages(prev => [...prev, { role: "model", text: modelText }]);
     } catch (error) {
       console.error("Chat error:", error);
-      setMessages(prev => [...prev, { role: "model", text: "Sorry, I'm having trouble connecting right now. Please try again later." }]);
+      const errorMessage = error instanceof Error ? error.message : "Unknown error";
+      setMessages(prev => [...prev, { role: "model", text: `Sorry, I'm having trouble connecting (Error: ${errorMessage}). Please try again later.` }]);
     } finally {
       setIsLoading(false);
     }
