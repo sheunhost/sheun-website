@@ -79,7 +79,7 @@ export default function Footer() {
 
         <div className="pt-12 border-t border-white/5 flex flex-col md:flex-row items-center justify-between gap-8">
           <p className="text-xs text-white/20 font-medium">
-            © 2026 sheun_hub. All rights reserved.
+            © 2026 sheun.online (Sheun Hub). All rights reserved.
           </p>
           <div className="flex flex-col md:flex-row items-center gap-8">
             <div className="flex items-center gap-4">

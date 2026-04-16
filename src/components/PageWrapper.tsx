@@ -17,9 +17,9 @@ export default function PageWrapper({
   description,
   canonical 
 }: PageWrapperProps) {
-  const siteTitle = "Sheun | sheun_hub - Shopify Expert & eCommerce Developer";
+  const siteTitle = "Sheun | sheun.online - Shopify Expert & eCommerce Developer";
   const fullTitle = title ? `${title} | ${siteTitle}` : siteTitle;
-  const defaultDesc = "Professional portfolio for Sheun (sheun_hub), a Shopify Expert and eCommerce Developer specializing in high-converting stores.";
+  const defaultDesc = "Professional Shopify Expert Portfolio at sheun.online. High-converting store builds, custom development, and eCommerce growth by Sheun Hub.";
 
   return (
     <motion.div
