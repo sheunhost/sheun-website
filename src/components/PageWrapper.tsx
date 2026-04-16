@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { ReactNode } from "react";
 import { Helmet } from "react-helmet-async";
+import { useLocation } from "react-router-dom";
 
 interface PageWrapperProps {
   children: ReactNode;
@@ -17,9 +18,14 @@ export default function PageWrapper({
   description,
   canonical 
 }: PageWrapperProps) {
+  const location = useLocation();
   const siteTitle = "Sheun | sheun.online - Shopify Expert & eCommerce Developer";
   const fullTitle = title ? `${title} | ${siteTitle}` : siteTitle;
   const defaultDesc = "Professional Shopify Expert Portfolio at sheun.online. High-converting store builds, custom development, and eCommerce growth by Sheun Hub.";
+  
+  // Use provided canonical or fall back to current path
+  const currentPath = canonical || location.pathname;
+  const canonicalUrl = `https://sheun.online${currentPath === "/" ? "" : currentPath}`;
 
   return (
     <motion.div
@@ -32,7 +38,7 @@ export default function PageWrapper({
       <Helmet>
         <title>{fullTitle}</title>
         <meta name="description" content={description || defaultDesc} />
-        {canonical && <link rel="canonical" href={`https://sheun.online${canonical}`} />}
+        <link rel="canonical" href={canonicalUrl} />
         <meta property="og:title" content={fullTitle} />
         <meta property="og:description" content={description || defaultDesc} />
         <meta property="twitter:title" content={fullTitle} />
