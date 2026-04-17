@@ -626,9 +626,54 @@ Return ONLY valid JSON.
               </div>
 
               <h1 className="text-6xl md:text-[118px] font-bold text-white leading-[0.8] tracking-[-0.05em] text-balance">
-                Shopify Expert <br />
-                  <span className="text-green italic font-serif font-light underline decoration-green/30 decoration-offset-8">Sheun Hub.</span>
-                </h1>
+                <span className="block mb-4">
+                  <motion.span
+                    key="headline-1"
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.1 }}
+                  >
+                    Shopify
+                  </motion.span>
+                  {" "}
+                  <motion.span
+                    key="headline-2"
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.2 }}
+                    className="text-green"
+                  >
+                    Expert
+                  </motion.span>
+                </span>
+                <motion.span 
+                  className="text-white italic font-serif font-light opacity-40 block"
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 0.4, x: 0 }}
+                  transition={{ delay: 0.4 }}
+                >
+                  Sheun Hub.
+                </motion.span>
+              </h1>
+
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 pt-8">
+                {[
+                  { title: "Store Setup", desc: "Launch with precision." },
+                  { title: "Conversion", desc: "Turn visitors into buyers." },
+                  { title: "Migration", desc: "Seamless platform moves." }
+                ].map((item, i) => (
+                  <motion.div
+                    key={i}
+                    initial={{ opacity: 0, scale: 0.9 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{ delay: 0.6 + i * 0.1 }}
+                    className="bg-white/5 border border-white/10 p-6 rounded-2xl"
+                  >
+                    <h4 className="text-green text-sm font-bold uppercase tracking-widest mb-1">{item.title}</h4>
+                    <p className="text-white/40 text-xs italic font-serif">{item.desc}</p>
+                  </motion.div>
+                ))}
+              </div>
 
                 <p className="text-white/60 text-xl md:text-2xl max-w-xl leading-relaxed font-light font-serif italic">
                   I am Sheun, the expert behind Sheun Hub. I help startup brands launch and scale on Shopify with high-converting stores and technical excellence.
@@ -718,6 +763,76 @@ Return ONLY valid JSON.
         <div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-40">
           <span className="text-[10px] font-bold uppercase tracking-widest text-white">Scroll</span>
           <div className="w-px h-12 bg-gradient-to-b from-green to-transparent" />
+        </div>
+      </section>
+
+      {/* 2 Sub-banners Section */}
+      <section className="py-24 bg-navy relative overflow-hidden">
+        <div className="container mx-auto px-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+            <motion.div 
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              className="group relative h-[400px] bg-white/5 border border-white/10 rounded-[60px] overflow-hidden p-12 flex flex-col justify-end"
+            >
+              <div className="absolute top-0 right-0 p-12 opacity-10 group-hover:scale-110 transition-transform">
+                <Rocket size={200} className="text-green" />
+              </div>
+              <h3 className="text-4xl font-bold text-white mb-4 tracking-tight">Scale Fast.</h3>
+              <p className="text-white/40 text-lg font-serif italic mb-8">From zero to launch in record time without compromising technical depth.</p>
+              <Link to="/apply" className="inline-flex items-center gap-4 text-green font-bold group">
+                Apply for Scale <ArrowRight size={20} className="group-hover:translate-x-2 transition-transform" />
+              </Link>
+            </motion.div>
+
+            <motion.div 
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              className="group relative h-[400px] bg-green text-navy rounded-[60px] overflow-hidden p-12 flex flex-col justify-end"
+            >
+              <div className="absolute top-0 right-0 p-12 opacity-10 group-hover:scale-110 transition-transform">
+                <Target size={200} className="text-navy" />
+              </div>
+              <h3 className="text-4xl font-bold mb-4 tracking-tight">Convert More.</h3>
+              <p className="text-navy/60 text-lg font-serif italic mb-8">Data-driven design that turns passive scrollers into long-term brand advocates.</p>
+              <Link to="/services" className="inline-flex items-center gap-4 font-bold group">
+                View Strategies <ArrowRight size={20} className="group-hover:translate-x-2 transition-transform" />
+              </Link>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* Narrative Section - The Methodology */}
+      <section className="py-32 bg-light relative overflow-hidden">
+        <div className="container mx-auto px-6">
+          <div className="max-w-4xl mx-auto space-y-12 text-center">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              className="space-y-6"
+            >
+              <h2 className="text-4xl md:text-6xl font-bold text-navy tracking-tight leading-none">
+                More Than Code. <br />
+                <span className="text-green italic font-serif font-light">Strategy In Action.</span>
+              </h2>
+              <div className="w-16 h-1 bg-green mx-auto" />
+            </motion.div>
+            
+            <motion.div
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              transition={{ delay: 0.2 }}
+              className="space-y-8 text-xl md:text-2xl text-navy/70 font-serif italic leading-relaxed"
+            >
+              <p>
+                At Sheun Hub, we believe that a Shopify store is not just a digital catalog, but a high-performance engine for business growth. Every pixel we place and every line of Liquid we write is interrogated for its impact on your bottom line. 
+              </p>
+              <p>
+                Our approach bridges the gap between raw technical capability and sophisticated marketing psychology. We don't just build stores; we create immersive brand experiences that foster trust, drive velocity, and turn casual visitors into loyal, long-term advocates for your vision.
+              </p>
+            </motion.div>
+          </div>
         </div>
       </section>
 

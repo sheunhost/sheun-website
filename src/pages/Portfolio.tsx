@@ -178,12 +178,11 @@ export default function Portfolio() {
           <div className="max-w-5xl space-y-16">
             <div className="space-y-8">
               <motion.h1 
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
                 className="text-6xl md:text-[118px] font-bold text-white tracking-tighter leading-[0.8]"
               >
-                Shopify Portfolio <br />
-                <span className="italic font-serif font-light text-white/40">by Sheun Hub</span>.
+                <motion.span initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} transition={{ delay: 0.1 }} className="block">Shopify Portfolio</motion.span>
+                <motion.span initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} transition={{ delay: 0.2 }} className="italic font-serif font-light text-white/40 block">Design Gallery</motion.span>
+                <motion.span initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} transition={{ delay: 0.3 }} className="text-green block text-3xl md:text-5xl mt-8">by Sheun Hub</motion.span>
               </motion.h1>
               <motion.p
                 initial={{ opacity: 0, y: 20 }}
@@ -220,6 +219,66 @@ export default function Portfolio() {
                 <span className="text-2xl">🏅</span>
                 <span className="text-xs uppercase tracking-[0.2em]">Shopify Partner</span>
               </div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* 2 Sub-banners Section */}
+      <section className="py-24 bg-white relative overflow-hidden border-b border-navy/5">
+        <div className="container mx-auto px-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+            <motion.div 
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              className="bg-light p-12 rounded-[60px] space-y-8 flex flex-col justify-between group"
+            >
+              <h3 className="text-4xl font-bold text-navy tracking-tight">Visual Identity.</h3>
+              <p className="text-navy/40 text-lg font-serif italic max-w-md">Bespoke store themes that reflect your brand's unique character and aesthetic.</p>
+              <div className="w-12 h-1 bg-green group-hover:w-full transition-all duration-700" />
+            </motion.div>
+            <motion.div 
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.1 }}
+              className="bg-navy text-white p-12 rounded-[60px] space-y-8 flex flex-col justify-between group"
+            >
+              <h3 className="text-4xl font-bold tracking-tight">User Journey.</h3>
+              <p className="text-white/40 text-lg font-serif italic max-w-md">Every click is optimized to move the customer closer to purchase with minimal friction.</p>
+              <div className="w-12 h-1 bg-green group-hover:w-full transition-all duration-700" />
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* Narrative Section - The Design Ethos */}
+      <section className="py-32 bg-navy relative overflow-hidden">
+        <div className="container mx-auto px-6">
+          <div className="max-w-4xl space-y-12">
+            <motion.div
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              className="space-y-6"
+            >
+              <h2 className="text-4xl md:text-6xl font-bold text-white tracking-tight leading-none">
+                Aesthetics Driven by <br />
+                <span className="text-green italic font-serif font-light">Performance Metrics.</span>
+              </h2>
+              <div className="w-16 h-1 bg-green" />
+            </motion.div>
+            
+            <motion.div
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              transition={{ delay: 0.2 }}
+              className="space-y-8 text-xl md:text-2xl text-white/60 font-serif italic leading-relaxed"
+            >
+              <p>
+                In the world of eCommerce, beautiful design is a baseline, not a breakthrough. The true challenge lies in creating interfaces that look visually arresting while maintaining zero friction for the end-user. 
+              </p>
+              <p>
+                The projects featured here represent a range of stylistic approaches—from brutalist minimalism to high-end editorial luxury. Each one was built with a specific conversion hypothesis in mind, whether it's reducing the "time to cart" for gadget store scrollers or building high-intent storytelling for fashion boutiques. This gallery is a testament to the belief that every design choice should serve the ultimate goal: moving the needle for your brand.
+              </p>
             </motion.div>
           </div>
         </div>

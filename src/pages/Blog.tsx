@@ -92,12 +92,11 @@ export default function Blog() {
               The Sheun Hub Blog
             </motion.p>
             <motion.h1 
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
               className="text-6xl md:text-[118px] font-bold text-white tracking-tighter leading-[0.8]"
             >
-              Shopify Blog <br />
-              <span className="italic font-serif font-light text-white/40">by Sheun Hub</span>.
+              <motion.span initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} transition={{ delay: 0.1 }} className="block">Shopify Blog</motion.span>
+              <motion.span initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} transition={{ delay: 0.2 }} className="italic font-serif font-light text-white/40 block">Expert Insights</motion.span>
+              <motion.span initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} transition={{ delay: 0.3 }} className="text-green block text-3xl md:text-5xl mt-8">by Sheun Hub</motion.span>
             </motion.h1>
           </div>
           <motion.p 
@@ -124,6 +123,69 @@ export default function Blog() {
               className="w-full bg-white/5 backdrop-blur-xl border border-white/10 rounded-full py-6 pl-16 pr-8 text-white focus:border-green outline-none transition-all shadow-2xl placeholder:text-white/20"
             />
           </motion.div>
+        </div>
+      </section>
+
+      {/* 2 Sub-banners Section */}
+      <section className="py-24 bg-navy relative overflow-hidden border-b border-white/5">
+        <div className="container mx-auto px-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+            <motion.div 
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              className="bg-white/5 border border-white/10 p-12 rounded-[60px] space-y-8 flex flex-col justify-between"
+            >
+              <h3 className="text-4xl font-bold text-white tracking-tight leading-none">Growth <br /><span className="text-green">Strategy.</span></h3>
+              <p className="text-white/40 text-lg font-serif italic">In-depth guides on scaling brands from $0 to $10k+ using proven technical frameworks.</p>
+              <div className="flex gap-2">
+                {[...Array(3)].map((_, i) => <div key={i} className="w-2 h-2 rounded-full bg-green" />)}
+              </div>
+            </motion.div>
+            <motion.div 
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              className="bg-green text-navy p-12 rounded-[60px] space-y-8 flex flex-col justify-between"
+            >
+              <h3 className="text-4xl font-bold tracking-tight leading-none">Technical <br />Mastery.</h3>
+              <p className="text-navy/60 text-lg font-serif italic">Advanced Shopify Liquid tutorials and app integration secrets for power users.</p>
+              <div className="flex gap-2">
+                {[...Array(3)].map((_, i) => <div key={i} className="w-2 h-2 rounded-full bg-navy/20" />)}
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* Narrative Section - The Intel */}
+      <section className="py-32 bg-white relative overflow-hidden">
+        <div className="container mx-auto px-6">
+          <div className="max-w-4xl mx-auto space-y-12 text-center">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              className="space-y-6"
+            >
+              <h2 className="text-4xl md:text-6xl font-bold text-navy tracking-tight leading-none">
+                Open Source <br />
+                <span className="text-green italic font-serif font-light">Insights.</span>
+              </h2>
+              <div className="w-16 h-1 bg-green mx-auto" />
+            </motion.div>
+            
+            <motion.div
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              transition={{ delay: 0.2 }}
+              className="space-y-8 text-xl md:text-2xl text-navy/70 font-serif italic leading-relaxed"
+            >
+              <p>
+                The Sheun Hub blog is built on the philosophy that a rising tide lifts all boats. In an industry often guarded by "proprietary secrets," I choose to document my technical findings, platform experiments, and growth strategies openly.
+              </p>
+              <p>
+                Whether you are a fellow developer looking to master custom Liquid sections or a store owner trying to untangle Shopify's SEO complexities, these articles are designed to be actionable, technical, and grounded in real-world project data. Knowledge sharing isn't just a courtesy—it's how we collectively push the boundaries of what is possible on the Shopify platform.
+              </p>
+            </motion.div>
+          </div>
         </div>
       </section>
 

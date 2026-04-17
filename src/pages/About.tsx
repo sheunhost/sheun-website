@@ -44,12 +44,11 @@ export default function About() {
                   The Person Behind Sheun Hub
                 </motion.p>
                 <motion.h1 
-                  initial={{ opacity: 0, y: 30 }}
-                  animate={{ opacity: 1, y: 0 }}
                   className="text-6xl md:text-[101px] font-bold text-navy tracking-tighter leading-[0.8]"
                 >
-                  Shopify Expert <br />
-                  <span className="italic font-serif font-light text-navy/40">Sheun Hub</span>.
+                  <motion.span initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.1 }} className="block">Shopify Expert</motion.span>
+                  <motion.span initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.2 }} className="italic font-serif font-light text-navy/40 block">Sheun Hub</motion.span>
+                  <motion.span initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.3 }} className="text-green block text-4xl mt-4">Growth Partner</motion.span>
                 </motion.h1>
               </div>
 
@@ -108,6 +107,65 @@ export default function About() {
                 <p className="text-3xl font-bold leading-none tracking-tighter">Shopify <br />Partner</p>
               </motion.div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 2 Sub-banners Section */}
+      <section className="py-24 bg-white relative overflow-hidden border-t border-navy/5">
+        <div className="container mx-auto px-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+            <motion.div 
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              className="bg-light p-12 rounded-[60px] space-y-8 flex flex-col justify-between"
+            >
+              <h3 className="text-4xl font-bold text-navy tracking-tight">Technical Mastery.</h3>
+              <p className="text-navy/40 text-lg font-serif italic">Pushing the boundaries of what's possible with Shopify Liquid and specialized API integrations.</p>
+              <div className="w-12 h-1 bg-green" />
+            </motion.div>
+            <motion.div 
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              className="bg-navy text-white p-12 rounded-[60px] space-y-8 flex flex-col justify-between"
+            >
+              <h3 className="text-4xl font-bold tracking-tight">Strategic Scaling.</h3>
+              <p className="text-white/40 text-lg font-serif italic">Every technical decision is rooted in a deep understanding of multi-region eCommerce growth.</p>
+              <div className="w-12 h-1 bg-green" />
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* Narrative Section - The Standard */}
+      <section className="py-32 bg-navy relative overflow-hidden">
+        <div className="container mx-auto px-6">
+          <div className="max-w-4xl space-y-12">
+            <motion.div
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              className="space-y-6"
+            >
+              <h2 className="text-4xl md:text-6xl font-bold text-white tracking-tight leading-none">
+                The Philosophy of <br />
+                <span className="text-green italic font-serif font-light">Uncompromising Quality.</span>
+              </h2>
+              <div className="w-16 h-1 bg-green" />
+            </motion.div>
+            
+            <motion.div
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              transition={{ delay: 0.2 }}
+              className="space-y-8 text-xl md:text-2xl text-white/60 font-serif italic leading-relaxed"
+            >
+              <p>
+                Founded on the belief that "good enough" is the enemy of enterprise-grade commerce, Sheun Hub was established to give emerging brands the technical advantage typically reserved for the Fortune 500. 
+              </p>
+              <p>
+                My background in Business Management allows me to see past the syntax of code and into the logic of your P&L sheet. I view every client engagement as a deep partnership, where my success is inextricably linked to the performance of the systems I deploy. This isn't just about building a website; it's about engineering a sustainable competitive advantage in an increasingly crowded digital landscape.
+              </p>
+            </motion.div>
           </div>
         </div>
       </section>

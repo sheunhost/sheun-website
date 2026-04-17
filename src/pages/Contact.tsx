@@ -69,12 +69,11 @@ export default function Contact() {
                 Get in Touch
               </motion.p>
               <motion.h1 
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
                 className="text-6xl md:text-[118px] font-bold text-white tracking-tighter leading-[0.8]"
               >
-                Contact Sheun, <br />
-                <span className="italic font-serif font-light text-white/40">Shopify Expert</span>.
+                <motion.span initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} transition={{ delay: 0.1 }} className="block">Contact Sheun,</motion.span>
+                <motion.span initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} transition={{ delay: 0.2 }} className="italic font-serif font-light text-white/40 block">Shopify Expert</motion.span>
+                <motion.span initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} transition={{ delay: 0.3 }} className="text-green block text-3xl md:text-5xl mt-8">Direct Channel</motion.span>
               </motion.h1>
             </div>
 
@@ -101,6 +100,66 @@ export default function Contact() {
                   <span className="text-sm uppercase tracking-[0.2em]">Global Availability</span>
                 </div>
               </div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* 2 Sub-banners Section */}
+      <section className="py-24 bg-navy relative overflow-hidden border-b border-white/5">
+        <div className="container mx-auto px-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+            <motion.div 
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              className="bg-white/5 border border-white/10 p-12 rounded-[60px] space-y-8 flex flex-col justify-between group"
+            >
+              <h3 className="text-4xl font-bold text-white tracking-tight">Project Vetting.</h3>
+              <p className="text-white/40 text-lg font-serif italic">Every inquiry starts with a strategy call to ensure we're the perfect technical match.</p>
+              <div className="w-12 h-1 bg-green group-hover:w-full transition-all duration-700" />
+            </motion.div>
+            <motion.div 
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.1 }}
+              className="bg-green text-navy p-12 rounded-[60px] space-y-8 flex flex-col justify-between group"
+            >
+              <h3 className="text-4xl font-bold tracking-tight">Rapid Response.</h3>
+              <p className="text-navy/60 text-lg font-serif italic">I personally monitor all incoming communications to guarantee a 24-hour turnaround.</p>
+              <div className="w-12 h-1 bg-navy group-hover:w-full transition-all duration-700" />
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* Narrative Section - The Discovery */}
+      <section className="py-32 bg-light relative overflow-hidden">
+        <div className="container mx-auto px-6">
+          <div className="max-w-4xl space-y-12">
+            <motion.div
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              className="space-y-6"
+            >
+              <h2 className="text-4xl md:text-6xl font-bold text-navy tracking-tight leading-none">
+                Begin the <br />
+                <span className="text-green italic font-serif font-light">Discovery Process.</span>
+              </h2>
+              <div className="w-16 h-1 bg-green" />
+            </motion.div>
+            
+            <motion.div
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              transition={{ delay: 0.2 }}
+              className="space-y-8 text-xl md:text-2xl text-navy/70 font-serif italic leading-relaxed"
+            >
+              <p>
+                Reaching out shouldn't feel like a transaction. I treat every initial contact as a strategy session—a chance to audit your current challenges and map out a technical path to your growth targets. 
+              </p>
+              <p>
+                When you contact me, you're not speaking to a sales team; you're speaking directly to the architect who will be writing your Liquid code and overseeing your migration. I value precision and directness, which is why I aim to provide specific, technical feedback within 24 hours of your inquiry. Let's find out if we're a match for your brand's next major evolution.
+              </p>
             </motion.div>
           </div>
         </div>
