@@ -18,6 +18,7 @@ import Apply from "./pages/Apply";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import TermsOfService from "./pages/TermsOfService";
 import Chatbot from "./components/Chatbot";
+import ScrollToTop from "./components/ScrollToTop";
 
 export default function App() {
   return (
@@ -42,6 +43,7 @@ export default function App() {
         </main>
         <Footer />
         <Chatbot />
+        <ScrollToTop />
       </div>
     </Router>
   );

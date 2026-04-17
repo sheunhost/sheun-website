@@ -15,10 +15,11 @@ export default function ImageGen() {
     if (!prompt.trim() || isEnhancing) return;
     setIsEnhancing(true);
     try {
-      if (!process.env.GEMINI_API_KEY) {
-        throw new Error("Missing API Key");
+      const apiKey = process.env.GEMINI_API_KEY;
+      if (!apiKey) {
+        throw new Error("API Key is missing in the environment");
       }
-      const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY });
+      const ai = new GoogleGenAI({ apiKey });
       const response = await ai.models.generateContent({
         model: "gemini-3-flash-preview",
         contents: `Enhance this prompt for an e-commerce store hero image generation. Make it highly descriptive, focusing on lighting, mood, style, and high quality. Return ONLY the enhanced prompt text without any quotes or introductory text. Original prompt: ${prompt}`,
@@ -27,7 +28,8 @@ export default function ImageGen() {
         setPrompt(response.text.trim());
       }
     } catch (err) {
-      console.error("Prompt enhancement error:", err);
+      console.error("Prompt enhancement detailed error:", err);
+      // Don't show critical error to user here as it's an optional enhancement
     } finally {
       setIsEnhancing(false);
     }
@@ -39,15 +41,18 @@ export default function ImageGen() {
     setIsLoading(true);
     setError(null);
     try {
-      if (!process.env.GEMINI_API_KEY) {
-        throw new Error("Missing API Key");
+      const apiKey = process.env.GEMINI_API_KEY;
+      if (!apiKey) {
+        throw new Error("API Key is missing in the environment");
       }
-      const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY });
-      console.log("Generating image with prompt:", prompt);
+
+      const ai = new GoogleGenAI({ apiKey });
+      console.log("Starting image generation for prompt:", prompt);
+
       const response = await ai.models.generateContent({
         model: "gemini-2.5-flash-image",
         contents: {
-          parts: [{ text: `Generate a high-quality, professional Shopify store hero image or product lifestyle shot for: ${prompt}. Style: Modern, clean, eCommerce-ready.` }],
+          parts: [{ text: `Generate a professional, high-quality Shopify store hero image for: ${prompt}. Modern e-commerce photography style.` }],
         },
         config: {
           imageConfig: {
@@ -56,22 +61,39 @@ export default function ImageGen() {
         },
       });
 
-      console.log("Image generation response:", response);
+      console.log("Raw response:", response);
 
-      if (!response.candidates?.[0]?.content?.parts) {
-        throw new Error("No image generated in response");
+      const candidate = response.candidates?.[0];
+      if (!candidate) {
+        throw new Error("Internal error: No response candidates returned from AI.");
       }
 
-      for (const part of response.candidates[0].content.parts) {
+      if (candidate.finishReason === "SAFETY") {
+        throw new Error("Safety filters triggered. Please try a different prompt.");
+      }
+
+      if (!candidate.content?.parts) {
+        throw new Error("No content parts found in response.");
+      }
+
+      let foundImage = false;
+      for (const part of candidate.content.parts) {
         if (part.inlineData) {
           const base64Data = part.inlineData.data;
           setImage(`data:image/png;base64,${base64Data}`);
+          foundImage = true;
           break;
         }
       }
+
+      if (!foundImage) {
+        throw new Error("The AI provided a response but no image data was included.");
+      }
+
     } catch (err) {
-      console.error("Image gen error:", err);
-      setError("Failed to generate image. Please ensure your Gemini API Key is configured in the Secrets panel.");
+      console.error("Image generation detailed error:", err);
+      const errorMessage = err instanceof Error ? err.message : String(err);
+      setError(`Generation failed: ${errorMessage}. If this persists, please check your API key permissions.`);
     } finally {
       setIsLoading(false);
     }

@@ -173,7 +173,7 @@ export default function Contact() {
                           type="text"
                           name="name"
                           placeholder="John Doe"
-                          className="w-full bg-white border-b-2 border-navy/5 rounded-3xl py-6 px-8 focus:border-green outline-none transition-all font-medium text-navy placeholder:text-navy/20"
+                          className="w-full bg-white border-b-2 border-navy/5 hover:border-navy/20 hover:bg-white/80 rounded-3xl py-6 px-8 focus:border-green outline-none transition-all font-medium text-navy placeholder:text-navy/20 shadow-sm"
                         />
                       </div>
                       <div className="space-y-4">
@@ -183,7 +183,7 @@ export default function Contact() {
                           type="email"
                           name="email"
                           placeholder="john@example.com"
-                          className="w-full bg-white border-b-2 border-navy/5 rounded-3xl py-6 px-8 focus:border-green outline-none transition-all font-medium text-navy placeholder:text-navy/20"
+                          className="w-full bg-white border-b-2 border-navy/5 hover:border-navy/20 hover:bg-white/80 rounded-3xl py-6 px-8 focus:border-green outline-none transition-all font-medium text-navy placeholder:text-navy/20 shadow-sm"
                         />
                       </div>
                     </div>
@@ -195,13 +195,13 @@ export default function Contact() {
                           type="text"
                           name="phone"
                           placeholder="+1 (555) 000-0000"
-                          className="w-full bg-white border-b-2 border-navy/5 rounded-3xl py-6 px-8 focus:border-green outline-none transition-all font-medium text-navy placeholder:text-navy/20"
+                          className="w-full bg-white border-b-2 border-navy/5 hover:border-navy/20 hover:bg-white/80 rounded-3xl py-6 px-8 focus:border-green outline-none transition-all font-medium text-navy placeholder:text-navy/20 shadow-sm"
                         />
                       </div>
                       <div className="space-y-4">
                         <label className="text-[10px] font-bold text-navy/40 uppercase tracking-[0.3em] ml-4">Project Type</label>
                         <div className="relative">
-                          <select name="project_type" className="w-full bg-white border-b-2 border-navy/5 rounded-3xl py-6 px-8 focus:border-green outline-none transition-all appearance-none font-medium text-navy">
+                          <select name="project_type" className="w-full bg-white border-b-2 border-navy/5 hover:border-navy/20 hover:bg-white/80 rounded-3xl py-6 px-8 focus:border-green outline-none transition-all appearance-none font-medium text-navy shadow-sm">
                             <option>New Store Build</option>
                             <option>Dropshipping Store</option>
                             <option>Store Migration</option>
@@ -222,13 +222,13 @@ export default function Contact() {
                         name="message"
                         rows={6}
                         placeholder="Tell me about your project goals, timeline, and any specific requirements..."
-                        className="w-full bg-white border-b-2 border-navy/5 rounded-[40px] py-8 px-10 focus:border-green outline-none transition-all resize-none font-medium text-navy placeholder:text-navy/20"
+                        className="w-full bg-white border-b-2 border-navy/5 hover:border-navy/20 hover:bg-white/80 rounded-[40px] py-8 px-10 focus:border-green outline-none transition-all resize-none font-medium text-navy placeholder:text-navy/20 shadow-sm"
                       />
                     </div>
 
                     <button
                       disabled={isSubmitting}
-                      className="w-full bg-navy text-white py-8 rounded-full font-bold text-xl hover:bg-navy/90 transition-all flex items-center justify-center gap-4 group shadow-xl"
+                      className="w-full bg-navy text-white py-8 rounded-full font-bold text-xl hover:bg-navy/90 hover:scale-[1.02] transition-all flex items-center justify-center gap-4 group shadow-xl"
                     >
                       {isSubmitting ? (
                         <div className="w-8 h-8 border-4 border-white/30 border-t-white rounded-full animate-spin" />
@@ -310,7 +310,7 @@ export default function Contact() {
                     name="store_url"
                     required
                     placeholder="yourstore.com"
-                    className="w-full bg-light border-b-2 border-navy/5 rounded-3xl py-6 px-8 focus:border-green outline-none transition-all font-medium text-navy placeholder:text-navy/20"
+                    className="w-full bg-light border-b-2 border-navy/5 hover:border-navy/20 hover:bg-white rounded-3xl py-6 px-8 focus:border-green outline-none transition-all font-medium text-navy placeholder:text-navy/20 shadow-sm"
                   />
                 </div>
                 <div className="space-y-4">
@@ -320,11 +320,11 @@ export default function Contact() {
                     name="email"
                     required
                     placeholder="john@example.com"
-                    className="w-full bg-light border-b-2 border-navy/5 rounded-3xl py-6 px-8 focus:border-green outline-none transition-all font-medium text-navy placeholder:text-navy/20"
+                    className="w-full bg-light border-b-2 border-navy/5 hover:border-navy/20 hover:bg-white rounded-3xl py-6 px-8 focus:border-green outline-none transition-all font-medium text-navy placeholder:text-navy/20 shadow-sm"
                   />
                 </div>
               </div>
-              <button type="submit" disabled={isSubmitting} className="w-full bg-navy text-white py-6 rounded-full font-bold text-lg hover:scale-105 transition-transform shadow-xl disabled:opacity-50">
+              <button type="submit" disabled={isSubmitting} className="w-full bg-navy text-white py-6 rounded-full font-bold text-lg hover:bg-navy/90 hover:scale-105 transition-all shadow-xl disabled:opacity-50">
                 {isSubmitting ? "Sending..." : "Claim Free Audit"}
               </button>
             </form>

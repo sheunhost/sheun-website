@@ -444,12 +444,13 @@ export default function Home() {
 
     try {
       console.log("SEO Audit: Starting...");
-      if (!process.env.GEMINI_API_KEY) {
+      const apiKey = process.env.GEMINI_API_KEY;
+      if (!apiKey) {
         console.error("SEO Audit: Missing API Key");
         throw new Error("API Key is missing. Please configure it in the Secrets panel in the bottom left settings menu.");
       }
 
-      const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY });
+      const ai = new GoogleGenAI({ apiKey });
 
       const prompt = `
 You are an elite Shopify SEO strategist. Perform a deep SEO audit for this store:

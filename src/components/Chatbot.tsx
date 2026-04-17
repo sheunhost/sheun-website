@@ -35,7 +35,7 @@ export default function Chatbot() {
     try {
       const apiKey = process.env.GEMINI_API_KEY;
       if (!apiKey) {
-        throw new Error("Gemini API key is not configured");
+        throw new Error("API Key is missing in the environment. Please check the Secrets panel.");
       }
 
       const ai = new GoogleGenAI({ apiKey });
@@ -63,7 +63,7 @@ export default function Chatbot() {
     } catch (error) {
       console.error("Chat error:", error);
       const errorMessage = error instanceof Error ? error.message : "Unknown error";
-      setMessages(prev => [...prev, { role: "model", text: `Sorry, I'm having trouble connecting (Error: ${errorMessage}). Please try again later.` }]);
+      setMessages(prev => [...prev, { role: "model", text: `Sorry, I'm having trouble connecting (Error: ${errorMessage}). Please ensure your Gemini API Key is configured in the Secrets panel.` }]);
     } finally {
       setIsLoading(false);
     }
