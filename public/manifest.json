@@ -1,11 +1,11 @@
 {
-  "name": "sheun.online | Shopify Expert Portfolio",
-  "short_name": "sheun.online",
+  "name": "Sheun Hub | Shopify Expert Portfolio",
+  "short_name": "Sheun Hub",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#000000",
   "theme_color": "#00ff9d",
-  "description": "Professional Shopify Expert Portfolio at sheun.online.",
+  "description": "Professional Shopify Expert Portfolio for Sheun Hub.",
   "icons": [
     {
       "src": "https://i.postimg.cc/wxQgVCcf/1000031270-removebg-preview.png",

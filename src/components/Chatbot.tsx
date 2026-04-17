@@ -12,7 +12,7 @@ interface Message {
 export default function Chatbot() {
   const [isOpen, setIsOpen] = useState(false);
   const [messages, setMessages] = useState<Message[]>([
-    { role: "model", text: "Hi! I'm Sheun's AI assistant. How can I help you with your Shopify store today?" }
+    { role: "model", text: "Hey 👋 Looking to build a new Shopify store or scale an existing one? Tell me what's on your mind." }
   ]);
   const [input, setInput] = useState("");
   const [isLoading, setIsLoading] = useState(false);
@@ -51,7 +51,7 @@ export default function Chatbot() {
       const chat = ai.chats.create({
         model: "gemini-3-flash-preview",
         config: {
-          systemInstruction: "You are Sheun's AI assistant for Sheun Hub. You help potential clients understand Sheun's services (Shopify store setup, dropshipping, migration, SEO, etc.). You are professional, helpful, and concise. Sheun is a Top Rated Upwork freelancer and Shopify Partner based in Nigeria. If someone asks for a quote or wants to start a project, suggest they use the 'Apply' page or the 'Get Free Audit' button to submit a qualification form.",
+          systemInstruction: "You are a conversion-focused AI assistant for Sheun Hub (eCommerce Experts). Your goal is to qualify leads quickly and move them to the 'Apply' page for a quote. RULES: 1. Be fast, direct, and professional. 2. Keep messages under 2 lines. 3. If a user has a specific need, skip small talk—acknowledge it and suggest they 'Submit an application on our Apply page' so Sheun can review and give a quote. 4. Collect only essential info (Goals/Platform) then CLOSE by suggesting the Apply page or Consultation. 5. If they mention Shopify, say: 'That's our specialty. Are you ready to start now or just getting a quote?'. 6. Once intent is clear, say: 'Got it. Best next step is to fill the form on our Apply page (or click Get Free Audit). Sheun reviews these personally and replies within 24h. Sound good?'. NEVER list services unless asked. NEVER sound like you are delaying the process.",
         },
         history: chatHistory,
       });
@@ -83,8 +83,13 @@ export default function Chatbot() {
             <div className="bg-navy-gradient p-8 flex items-center justify-between text-white relative overflow-hidden">
               <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,_rgba(0,255,157,0.1)_0%,_transparent_70%)]" />
               <div className="flex items-center gap-4 relative z-10">
-                <div className="w-14 h-14 bg-green rounded-2xl flex items-center justify-center text-navy shadow-xl rotate-3">
-                  <Bot size={32} />
+                <div className="w-14 h-14 bg-white rounded-2xl flex items-center justify-center text-navy shadow-xl rotate-3 overflow-hidden">
+                  <img 
+                    src="https://thumbs.dreamstime.com/b/ai-assistant-icon-chat-bot-icon-design-virtual-smart-assistant-bot-icon-chatbot-symbol-concept-artificial-intelligence-ai-361205854.jpg?w=768"
+                    alt="AI Assistant"
+                    referrerPolicy="no-referrer"
+                    className="w-full h-full object-cover"
+                  />
                 </div>
                 <div>
                   <p className="font-bold text-lg tracking-tight">Sheun Hub AI</p>
@@ -107,10 +112,17 @@ export default function Chatbot() {
                   )}
                 >
                   <div className={cn(
-                    "w-10 h-10 rounded-xl flex items-center justify-center shrink-0 shadow-lg",
-                    m.role === "user" ? "bg-navy text-white" : "bg-green text-navy"
+                    "w-10 h-10 rounded-xl flex items-center justify-center shrink-0 shadow-lg overflow-hidden",
+                    m.role === "user" ? "bg-navy text-white" : "bg-white"
                   )}>
-                    {m.role === "user" ? <User size={20} /> : <Bot size={20} />}
+                    {m.role === "user" ? <User size={20} /> : (
+                      <img 
+                        src="https://thumbs.dreamstime.com/b/ai-assistant-icon-chat-bot-icon-design-virtual-smart-assistant-bot-icon-chatbot-symbol-concept-artificial-intelligence-ai-361205854.jpg?w=768"
+                        alt="AI Assistant"
+                        referrerPolicy="no-referrer"
+                        className="w-full h-full object-cover"
+                      />
+                    )}
                   </div>
                   <div className={cn(
                     "p-5 rounded-[24px] text-sm leading-relaxed shadow-sm",
@@ -124,8 +136,13 @@ export default function Chatbot() {
               ))}
               {isLoading && (
                 <div className="flex items-end gap-3 mr-auto">
-                  <div className="w-10 h-10 rounded-xl bg-green text-navy flex items-center justify-center shrink-0 shadow-lg">
-                    <Bot size={20} />
+                  <div className="w-10 h-10 rounded-xl bg-white flex items-center justify-center shrink-0 shadow-lg overflow-hidden">
+                    <img 
+                      src="https://thumbs.dreamstime.com/b/ai-assistant-icon-chat-bot-icon-design-virtual-smart-assistant-bot-icon-chatbot-symbol-concept-artificial-intelligence-ai-361205854.jpg?w=768"
+                      alt="AI Assistant"
+                      referrerPolicy="no-referrer"
+                      className="w-full h-full object-cover"
+                    />
                   </div>
                   <div className="bg-white p-5 rounded-[24px] rounded-bl-none border border-navy/5 shadow-sm">
                     <Loader2 size={20} className="animate-spin text-green" />
