@@ -627,12 +627,12 @@ Return ONLY valid JSON.
 
               <h1 className="text-6xl md:text-[118px] font-bold text-white leading-[0.8] tracking-[-0.05em] text-balance">
                 Shopify Expert <br />
-                <span className="text-green italic font-serif font-light">sheun.online.</span>
-              </h1>
+                  <span className="text-green italic font-serif font-light underline decoration-green/30 decoration-offset-8">Sheun Hub.</span>
+                </h1>
 
-              <p className="text-white/60 text-xl md:text-2xl max-w-xl leading-relaxed font-light font-serif italic">
-                I am Sheun, the expert behind sheun.online. I help startup brands launch and scale on Shopify with high-converting stores and technical excellence.
-              </p>
+                <p className="text-white/60 text-xl md:text-2xl max-w-xl leading-relaxed font-light font-serif italic">
+                  I am Sheun, the expert behind Sheun Hub. I help startup brands launch and scale on Shopify with high-converting stores and technical excellence.
+                </p>
             </motion.div>
 
             <motion.div 

@@ -19,9 +19,9 @@ export default function PageWrapper({
   canonical 
 }: PageWrapperProps) {
   const location = useLocation();
-  const siteTitle = "Sheun | sheun.online - Shopify Expert & eCommerce Developer";
+  const siteTitle = "Sheun | Sheun Hub - Shopify Expert & eCommerce Developer";
   const fullTitle = title ? `${title} | ${siteTitle}` : siteTitle;
-  const defaultDesc = "Professional Shopify Expert Portfolio at sheun.online. High-converting store builds, custom development, and eCommerce growth by Sheun Hub.";
+  const defaultDesc = "Professional Shopify Expert Portfolio for Sheun Hub. High-converting store builds, custom development, and eCommerce growth by Sheun.";
   
   // Use provided canonical or fall back to current path
   const currentPath = canonical || location.pathname;

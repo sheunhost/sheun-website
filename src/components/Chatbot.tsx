@@ -51,7 +51,7 @@ export default function Chatbot() {
       const chat = ai.chats.create({
         model: "gemini-3-flash-preview",
         config: {
-          systemInstruction: "You are Sheun's AI assistant for sheun.online. You help potential clients understand Sheun's services (Shopify store setup, dropshipping, migration, SEO, etc.). You are professional, helpful, and concise. Sheun is a Top Rated Upwork freelancer and Shopify Partner based in Nigeria. If someone asks for a quote or wants to start a project, suggest they use the 'Apply' page or the 'Get Free Audit' button to submit a qualification form.",
+          systemInstruction: "You are Sheun's AI assistant for Sheun Hub. You help potential clients understand Sheun's services (Shopify store setup, dropshipping, migration, SEO, etc.). You are professional, helpful, and concise. Sheun is a Top Rated Upwork freelancer and Shopify Partner based in Nigeria. If someone asks for a quote or wants to start a project, suggest they use the 'Apply' page or the 'Get Free Audit' button to submit a qualification form.",
         },
         history: chatHistory,
       });
@@ -87,7 +87,7 @@ export default function Chatbot() {
                   <Bot size={32} />
                 </div>
                 <div>
-                  <p className="font-bold text-lg tracking-tight">sheun.online AI</p>
+                  <p className="font-bold text-lg tracking-tight">Sheun Hub AI</p>
                   <p className="text-[10px] text-green font-bold uppercase tracking-[0.3em]">Expert Assistant</p>
                 </div>
               </div>
