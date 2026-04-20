@@ -33,9 +33,25 @@
   h1, h2, h3 {
     @apply tracking-tighter;
   }
+
+  label {
+    @apply text-navy/80 font-bold;
+  }
+  
+  .text-xs {
+    @apply text-[0.825rem];
+  }
+  
+  .text-sm {
+    @apply text-[0.95rem];
+  }
 }
 
 @layer utilities {
+  .text-navy\/40 {
+    @apply text-navy/70;
+  }
+  
   .bg-navy-gradient {
     background: radial-gradient(circle at top right, #064e4b, #042f2e, #021a1a);
   }

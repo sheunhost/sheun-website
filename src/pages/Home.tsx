@@ -686,7 +686,7 @@ Return ONLY valid JSON.
               transition={{ delay: 0.2, duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
               className="flex flex-col sm:flex-row items-center gap-8"
             >
-              <Link to="/apply" className="w-full sm:w-auto bg-green text-navy px-12 py-6 rounded-full font-bold text-lg hover:scale-105 transition-all duration-500 green-glow flex items-center justify-center gap-3 text-center">
+              <Link to="/apply#apply-form" className="w-full sm:w-auto bg-green text-navy px-12 py-6 rounded-full font-bold text-lg hover:scale-105 transition-all duration-500 green-glow flex items-center justify-center gap-3 text-center">
                 Start Your Store <ArrowRight size={20} />
               </Link>
               <Link to="/portfolio" className="w-full sm:w-auto text-white/80 hover:text-white px-8 py-4 rounded-full font-bold text-lg transition-all flex items-center justify-center gap-4 group text-center">
@@ -780,7 +780,7 @@ Return ONLY valid JSON.
               </div>
               <h3 className="text-4xl font-bold text-white mb-4 tracking-tight">Scale Fast.</h3>
               <p className="text-white/40 text-lg font-serif italic mb-8">From zero to launch in record time without compromising technical depth.</p>
-              <Link to="/apply" className="inline-flex items-center gap-4 text-green font-bold group">
+              <Link to="/apply#apply-form" className="inline-flex items-center gap-4 text-green font-bold group">
                 Apply for Scale <ArrowRight size={20} className="group-hover:translate-x-2 transition-transform" />
               </Link>
             </motion.div>
@@ -1462,7 +1462,7 @@ Return ONLY valid JSON.
                   <p className="text-white/40 text-sm leading-relaxed">
                     Not sure what your store needs? I'll provide a comprehensive review of your speed, design, and SEO — completely free.
                   </p>
-                  <Link to="/contact" className="inline-flex items-center gap-2 text-green font-bold text-sm border-b border-green/20 pb-1 hover:border-green transition-all">
+                  <Link to="/contact#contact-form" className="inline-flex items-center gap-2 text-green font-bold text-sm border-b border-green/20 pb-1 hover:border-green transition-all">
                     Claim Your Audit <ArrowRight size={16} />
                   </Link>
                 </div>
@@ -1629,7 +1629,7 @@ Return ONLY valid JSON.
               Let's build a store that doesn't just look good, but converts visitors into loyal customers.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-12">
-              <Link to="/contact" className="w-full sm:w-auto bg-green text-navy px-16 py-8 rounded-full font-bold text-2xl hover:scale-105 transition-all duration-500 green-glow flex items-center justify-center text-center">
+              <Link to="/contact#contact-form" className="w-full sm:w-auto bg-green text-navy px-16 py-8 rounded-full font-bold text-2xl hover:scale-105 transition-all duration-500 green-glow flex items-center justify-center text-center">
                 Get Your Free Audit
               </Link>
               <Link to="/portfolio" className="w-full sm:w-auto text-white font-bold text-2xl flex items-center justify-center gap-6 group text-center">

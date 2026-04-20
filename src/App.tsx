@@ -19,10 +19,12 @@ import PrivacyPolicy from "./pages/PrivacyPolicy";
 import TermsOfService from "./pages/TermsOfService";
 import Chatbot from "./components/Chatbot";
 import ScrollToTop from "./components/ScrollToTop";
+import ScrollToTopOnNavigation from "./components/ScrollToTopOnNavigation";
 
 export default function App() {
   return (
     <Router>
+      <ScrollToTopOnNavigation />
       <div className="min-h-screen flex flex-col">
         <Navbar />
         <main className="flex-grow">

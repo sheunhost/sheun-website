@@ -129,7 +129,7 @@ export default function Visualizer() {
                   Visualizing your store is the first step. Building it for revenue is the next. Let's make it happen.
                 </p>
                 <div className="pt-8 flex flex-col sm:flex-row gap-6">
-                  <Link to="/contact" className="bg-green text-navy px-12 py-6 rounded-full font-bold text-lg hover:scale-105 transition-all shadow-xl shadow-green/10 text-center">
+                  <Link to="/contact#contact-form" className="bg-green text-navy px-12 py-6 rounded-full font-bold text-lg hover:scale-105 transition-all shadow-xl shadow-green/10 text-center">
                     Start Real Build
                   </Link>
                   <Link to="/portfolio" className="text-white font-bold px-12 py-6 rounded-full flex items-center justify-center gap-4 group">
@@ -159,7 +159,7 @@ export default function Visualizer() {
               Stop visualizing and start selling. I build high-performance Shopify stores that convert.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-12">
-              <Link to="/contact" className="w-full sm:w-auto bg-green text-navy px-16 py-8 rounded-full font-bold text-2xl hover:scale-105 transition-all duration-500 shadow-2xl shadow-green/20">
+              <Link to="/contact#contact-form" className="w-full sm:w-auto bg-green text-navy px-16 py-8 rounded-full font-bold text-2xl hover:scale-105 transition-all duration-500 shadow-2xl shadow-green/20">
                 Contact Me
               </Link>
               <Link to="/portfolio" className="w-full sm:w-auto text-white font-bold text-2xl flex items-center gap-6 group">

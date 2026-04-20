@@ -10,9 +10,9 @@ const navLinks = [
   { name: "Services", href: "/services" },
   { name: "Portfolio", href: "/portfolio" },
   { name: "Visualizer", href: "/visualizer" },
-  { name: "Apply", href: "/apply" },
+  { name: "Apply", href: "/apply#apply-form" },
   { name: "Blog", href: "/blog" },
-  { name: "Contact", href: "/contact" },
+  { name: "Contact", href: "/contact#contact-form" },
 ];
 
 export default function Navbar() {
@@ -77,7 +77,7 @@ export default function Navbar() {
             </Link>
           ))}
           <Link
-            to="/contact"
+            to="/contact#contact-form"
             className="bg-green text-navy px-8 py-4 rounded-full font-bold text-xs uppercase tracking-widest hover:scale-105 transition-all duration-500 shadow-xl green-glow"
           >
             Get Free Audit
@@ -118,7 +118,7 @@ export default function Navbar() {
                 </Link>
               ))}
               <Link
-                to="/contact"
+                to="/contact#contact-form"
                 onClick={() => setIsMobileMenuOpen(false)}
                 className="bg-green text-navy text-center py-6 rounded-[32px] font-bold text-xl mt-4 shadow-xl"
               >

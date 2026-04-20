@@ -166,7 +166,7 @@ export default function Contact() {
       </section>
 
       {/* Contact Section - Split Visible Grid */}
-      <section className="py-32 bg-white">
+      <section className="py-32 bg-white" id="contact-form">
         <div className="container mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-20">
             {/* Left: Info Cards */}
@@ -191,7 +191,7 @@ export default function Contact() {
                       <div className="space-y-3 w-full">
                         <p className="text-[10px] font-bold text-navy/30 uppercase tracking-[0.3em]">{item.label}</p>
                         <p className="text-xl font-bold text-navy tracking-tight break-all break-words">{item.value}</p>
-                        <p className="text-sm text-navy/40 font-serif italic">{item.desc}</p>
+                        <p className="text-base text-navy/70 font-serif italic">{item.desc}</p>
                       </div>
                     </div>
                   </motion.a>
@@ -226,7 +226,7 @@ export default function Contact() {
                   <form onSubmit={handleSubmit} className="space-y-12 relative z-10">
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-12">
                       <div className="space-y-4">
-                        <label className="text-[10px] font-bold text-navy/40 uppercase tracking-[0.3em] ml-4">Full Name</label>
+                        <label className="text-xs font-bold text-navy/70 uppercase tracking-[0.3em] ml-4">Full Name</label>
                         <input
                           required
                           type="text"
@@ -236,7 +236,7 @@ export default function Contact() {
                         />
                       </div>
                       <div className="space-y-4">
-                        <label className="text-[10px] font-bold text-navy/40 uppercase tracking-[0.3em] ml-4">Email Address</label>
+                        <label className="text-xs font-bold text-navy/70 uppercase tracking-[0.3em] ml-4">Email Address</label>
                         <input
                           required
                           type="email"
@@ -249,7 +249,7 @@ export default function Contact() {
 
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-12">
                       <div className="space-y-4">
-                        <label className="text-[10px] font-bold text-navy/40 uppercase tracking-[0.3em] ml-4">WhatsApp / Phone</label>
+                        <label className="text-xs font-bold text-navy/70 uppercase tracking-[0.3em] ml-4">WhatsApp / Phone</label>
                         <input
                           type="text"
                           name="phone"
@@ -258,7 +258,7 @@ export default function Contact() {
                         />
                       </div>
                       <div className="space-y-4">
-                        <label className="text-[10px] font-bold text-navy/40 uppercase tracking-[0.3em] ml-4">Project Type</label>
+                        <label className="text-xs font-bold text-navy/70 uppercase tracking-[0.3em] ml-4">Project Type</label>
                         <div className="relative">
                           <select name="project_type" className="w-full bg-white border-b-2 border-navy/5 hover:border-navy/20 hover:bg-white/80 rounded-3xl py-6 px-8 focus:border-green outline-none transition-all appearance-none font-medium text-navy shadow-sm">
                             <option>New Store Build</option>
@@ -275,7 +275,7 @@ export default function Contact() {
                     </div>
 
                     <div className="space-y-4">
-                      <label className="text-[10px] font-bold text-navy/40 uppercase tracking-[0.3em] ml-4">Project Description</label>
+                      <label className="text-xs font-bold text-navy/70 uppercase tracking-[0.3em] ml-4">Project Description</label>
                       <textarea
                         required
                         name="message"
@@ -309,7 +309,7 @@ export default function Contact() {
                     </div>
                     <div className="space-y-4">
                       <h3 className="text-5xl font-bold text-navy tracking-tight">Message Sent!</h3>
-                      <p className="text-navy/40 text-xl max-w-md mx-auto leading-relaxed">
+                      <p className="text-navy/70 text-xl max-w-md mx-auto leading-relaxed">
                         Thank you for reaching out. I've received your message and will get back to you within 24 hours.
                       </p>
                     </div>
@@ -341,7 +341,7 @@ export default function Contact() {
               <div className="space-y-6">
                 <h2 className="text-5xl md:text-7xl font-bold text-navy leading-[0.9] tracking-tighter">
                   Not ready <br />
-                  to <span className="italic font-serif font-light text-navy/40">commit?</span>
+                  to <span className="italic font-serif font-light text-navy/70">commit?</span>
                 </h2>
                 <p className="text-navy/60 text-2xl font-medium">Start with a FREE Store Audit.</p>
               </div>
@@ -363,7 +363,7 @@ export default function Contact() {
               <input type="hidden" name="subject" value="New Free Store Audit Request" />
               <div className="space-y-8">
                 <div className="space-y-4">
-                  <label className="text-[10px] font-bold text-navy/40 uppercase tracking-[0.3em] ml-4">Store URL</label>
+                  <label className="text-xs font-bold text-navy/70 uppercase tracking-[0.3em] ml-4">Store URL</label>
                   <input
                     type="text"
                     name="store_url"
