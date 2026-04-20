@@ -90,6 +90,7 @@ export default function Footer() {
               </span>
             </div>
             <div className="flex items-center gap-8 text-xs font-medium text-white/20">
+              <a href="/sitemap.xml" className="hover:text-white transition-colors">Sitemap</a>
               <Link to="/privacy-policy" className="hover:text-white transition-colors">Privacy Policy</Link>
               <Link to="/terms-of-service" className="hover:text-white transition-colors">Terms of Service</Link>
             </div>

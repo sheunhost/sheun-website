@@ -34,25 +34,49 @@
     <meta property="twitter:image" content="https://i.postimg.cc/wxQgVCcf/1000031270-removebg-preview.png" />
 
     <!-- Canonical Link -->
+    <link rel="canonical" href="https://sheun.online/" />
     
+    <!-- Structured Data (JSON-LD) -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Sheun Hub",
+        "url": "https://sheun.online",
+        "jobTitle": "Shopify Expert & eCommerce Developer",
+        "description": "Professional Shopify Expert helping brands build high-converting eCommerce experiences.",
+        "sameAs": [
+          "https://github.com/sheunhost",
+          "https://twitter.com/sheunhub"
+        ],
+        "knowsAbout": ["Shopify", "Liquid Development", "eCommerce Optimization", "React", "SEO"]
+      }
+    </script>
+
     <!-- Manifest -->
     <link rel="manifest" href="/manifest.json" />
   </head>
   <body>
     <div id="root">
-      <h1 style="display:none;">Sheun | Sheun Hub - Shopify Expert & eCommerce Developer</h1>
-      <nav style="display:none;">
-        <a href="/">Home</a>
-        <a href="/about">About</a>
-        <a href="/services">Services</a>
-        <a href="/portfolio">Portfolio</a>
-        <a href="/visualizer">Visualizer</a>
-        <a href="/apply">Apply</a>
-        <a href="/blog">Blog</a>
-        <a href="/contact">Contact</a>
-        <a href="/privacy-policy">Privacy Policy</a>
-        <a href="/terms-of-service">Terms of Service</a>
-      </nav>
+      <!-- Static SEO Fallback for Crawlers -->
+      <section style="display:none;" aria-hidden="false">
+        <h1>Sheun Hub - Shopify Expert & eCommerce Developer</h1>
+        <p>Expert Shopify store builds, migrations, and custom Liquid development. Helping eCommerce brands scale with high-performance storefronts.</p>
+        <nav>
+          <ul>
+            <li><a href="/">Home - Shopify Portfolio</a></li>
+            <li><a href="/about">About Sheun - The Shopify Engineer</a></li>
+            <li><a href="/services">Shopify Services - Store Setup, Migration, Custom Dev</a></li>
+            <li><a href="/portfolio">Portfolio - Successful Store Builds & Case Studies</a></li>
+            <li><a href="/visualizer">Store Visualizer - Real-time Preview Tool</a></li>
+            <li><a href="/apply">Apply for a Project - Start Your Store Build</a></li>
+            <li><a href="/blog">eCommerce Blog - Tips for Shopify Owners</a></li>
+            <li><a href="/contact">Contact Sheun Hub</a></li>
+            <li><a href="/privacy-policy">Privacy Policy</a></li>
+            <li><a href="/terms-of-service">Terms of Service</a></li>
+          </ul>
+        </nav>
+      </section>
     </div>
     <script type="module" src="/src/main.tsx"></script>
   </body>

@@ -39,10 +39,20 @@ export default function PageWrapper({
         <title>{fullTitle}</title>
         <meta name="description" content={description || defaultDesc} />
         <link rel="canonical" href={canonicalUrl} />
+        
+        {/* Open Graph / Facebook */}
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content={canonicalUrl} />
         <meta property="og:title" content={fullTitle} />
         <meta property="og:description" content={description || defaultDesc} />
+        <meta property="og:image" content="https://i.postimg.cc/wxQgVCcf/1000031270-removebg-preview.png" />
+
+        {/* Twitter */}
+        <meta property="twitter:card" content="summary_large_image" />
+        <meta property="twitter:url" content={canonicalUrl} />
         <meta property="twitter:title" content={fullTitle} />
         <meta property="twitter:description" content={description || defaultDesc} />
+        <meta property="twitter:image" content="https://i.postimg.cc/wxQgVCcf/1000031270-removebg-preview.png" />
       </Helmet>
       {children}
     </motion.div>

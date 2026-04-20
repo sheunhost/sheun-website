@@ -350,20 +350,18 @@ export default function Services() {
         <div className="container mx-auto px-6">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 border-t border-l border-navy/5 rounded-[60px] overflow-hidden">
             {services.map((service, i) => (
-              <motion.button
+              <motion.div
                 key={service.id}
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
-                whileTap={{ scale: 0.98 }}
-                onClick={() => setSelectedService(service)}
-                className="p-16 border-r border-b border-navy/5 group hover:bg-light transition-all relative overflow-hidden text-left w-full block"
+                className="p-16 border-r border-b border-navy/5 group hover:bg-light transition-all relative overflow-hidden text-left flex flex-col h-full"
               >
                 <div className="absolute top-0 right-0 p-12 opacity-0 group-hover:opacity-100 transition-opacity">
                   <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-green bg-green/10 px-4 py-2 rounded-full">
                     {service.tag}
                   </span>
                 </div>
-                <div className="space-y-10 relative z-10">
+                <div className="space-y-10 relative z-10 flex-grow">
                   <div className="w-20 h-20 bg-navy/5 rounded-3xl flex items-center justify-center text-navy group-hover:bg-green group-hover:text-navy transition-all duration-500">
                     <service.icon size={40} />
                   </div>
@@ -371,23 +369,24 @@ export default function Services() {
                     <h3 className="text-4xl font-bold text-navy tracking-tight">{service.title}</h3>
                     <p className="text-navy/40 text-lg leading-relaxed font-serif italic">{service.desc}</p>
                   </div>
-                  <ul className="space-y-4">
+                  <ul className="space-y-4 pb-10">
                     {service.includes.map((item, j) => (
                       <li key={j} className="flex items-center gap-4 text-sm text-navy/60 font-bold uppercase tracking-[0.2em]">
                         <div className="w-1.5 h-1.5 bg-green rounded-full" /> {item}
                       </li>
                     ))}
                   </ul>
-                  <div className="pt-10 border-t border-navy/5 flex items-center justify-between">
-                    <span className="text-navy font-bold text-3xl tracking-tighter">{service.price}</span>
-                    <div className="text-navy font-bold text-lg flex items-center gap-3 group/btn">
-                      Learn More <div className="w-12 h-12 rounded-full border border-navy/10 flex items-center justify-center group-hover/btn:bg-navy group-hover/btn:text-white transition-all">
-                        <ArrowRight size={20} />
-                      </div>
-                    </div>
-                  </div>
                 </div>
-              </motion.button>
+                <div className="pt-10 border-t border-navy/5 flex items-center justify-between mt-auto">
+                  <span className="text-navy font-bold text-3xl tracking-tighter">{service.price}</span>
+                  <button 
+                    onClick={() => setSelectedService(service)}
+                    className="bg-navy text-white px-8 py-4 rounded-full font-bold text-sm tracking-widest uppercase flex items-center gap-3 hover:bg-green hover:text-navy transition-all duration-300 shadow-xl hover:shadow-2xl hover:-translate-y-1"
+                  >
+                    Learn More <ArrowRight size={16} />
+                  </button>
+                </div>
+              </motion.div>
             ))}
           </div>
         </div>
