@@ -1,7 +1,7 @@
 import { useParams } from "react-router-dom";
-import BlogPost1 from "./BlogPost1";
-import BlogPost2 from "./BlogPost2";
-import BlogPost3 from "./BlogPost3";
+import ShopifySettingsGuide from "./ShopifySettingsGuide";
+import ShopifySpeedOptimization from "./ShopifySpeedOptimization";
+import BestDropshippingApps from "./BestDropshippingApps";
 import PageWrapper from "../components/PageWrapper";
 
 export default function BlogPost() {
@@ -15,7 +15,7 @@ export default function BlogPost() {
         keywords="Shopify Speed Optimization, Faster Shopify Theme, Shopify Performance, Core Web Vitals, Increase Site Speed, eCommerce Conversion Rate"
         canonical="/blog/2"
       >
-        <BlogPost2 />
+        <ShopifySpeedOptimization />
       </PageWrapper>
     );
   }
@@ -28,11 +28,11 @@ export default function BlogPost() {
         keywords="Shopify Dropshipping Apps, Best Dropshipping Apps, DSers, Zendrop, ReConvert, Loox Reviews, Dropshipping Success 2025"
         canonical="/blog/3"
       >
-        <BlogPost3 />
+        <BestDropshippingApps />
       </PageWrapper>
     );
   }
 
-  // Default to Blog Post 1 for other routes temporarily until more posts are added.
-  return <BlogPost1 />;
+  // Default to ShopifySettingsGuide for other routes temporarily until more posts are added.
+  return <ShopifySettingsGuide />;
 }

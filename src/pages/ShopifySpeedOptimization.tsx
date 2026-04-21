@@ -4,7 +4,7 @@ import PageWrapper from "../components/PageWrapper";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 
-export default function BlogPost2() {
+export default function ShopifySpeedOptimization() {
   const [comments, setComments] = useState<{name: string, text: string, date: string}[]>([
     { name: "Michael T.", text: "I installed a lazy loading app and my mobile speed improved immediately. Thanks for the tip!", date: "April 11, 2026" }
   ]);

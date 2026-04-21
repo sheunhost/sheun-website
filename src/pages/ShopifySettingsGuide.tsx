@@ -4,7 +4,7 @@ import PageWrapper from "../components/PageWrapper";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 
-export default function BlogPost1() {
+export default function ShopifySettingsGuide() {
   const [comments, setComments] = useState<{name: string, text: string, date: string}[]>([
     { name: "Alex R.", text: "This is super helpful. I didn't even realize my checkout was missing phone numbers!", date: "April 13, 2026" },
     { name: "Sarah J.", text: "Great tips! The image compression one saved my site speed immensely.", date: "April 14, 2026" }

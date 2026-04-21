@@ -3,7 +3,7 @@ import { Clock, Calendar, ArrowLeft, ArrowRight, CheckCircle2, ShieldCheck, Tren
 import { Link } from "react-router-dom";
 import { useState } from "react";
 
-export default function BlogPost3() {
+export default function BestDropshippingApps() {
   const [comments, setComments] = useState<{name: string, text: string, date: string}[]>([
     { name: "John D.", text: "Zendrop changed my business. Faster shipping than AliExpress!", date: "April 9, 2026" }
   ]);
