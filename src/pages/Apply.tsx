@@ -63,9 +63,7 @@ export default function Apply() {
     // Validate current section
     const fieldsToValidate = [];
     if (activeFormSection === 1) {
-      fieldsToValidate.push('name', 'email', 'whatsapp');
-    } else if (activeFormSection === 2) {
-      fieldsToValidate.push('project_type', 'goals');
+      fieldsToValidate.push('name', 'email');
     }
 
     const missingField = fieldsToValidate.find(field => !formData[field as keyof typeof formData]);
@@ -75,7 +73,7 @@ export default function Apply() {
       return;
     }
 
-    setActiveFormSection(prev => Math.min(prev + 1, 3));
+    setActiveFormSection(2);
     window.scrollTo({ top: document.getElementById('apply-form')?.offsetTop ? document.getElementById('apply-form')!.offsetTop - 100 : 0, behavior: 'smooth' });
   };
 
@@ -197,6 +195,13 @@ export default function Apply() {
         
         <div className="container mx-auto px-6 relative z-10">
           <div className="max-w-4xl mx-auto">
+            <motion.div 
+              animate={{ y: [0, 15, 0] }} 
+              transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
+              className="flex justify-center mb-8 hidden md:flex"
+            >
+              <ChevronDown size={48} className="text-navy opacity-30" />
+            </motion.div>
             <div className="bg-white p-8 md:p-24 rounded-[80px] border border-navy/5 shadow-3xl relative overflow-hidden group/form">
                   {/* Technical Background Accents */}
                   <div className="absolute top-0 left-0 w-full h-[2px] bg-gradient-to-r from-transparent via-green/30 to-transparent scale-x-0 group-hover/form:scale-x-100 transition-transform duration-1000" />
@@ -215,7 +220,7 @@ export default function Apply() {
                         {/* Progress Stepper */}
                         <div className="flex items-center justify-between mb-16 relative">
                           <div className="absolute top-1/2 left-0 w-full h-[1px] bg-navy/5 -z-0" />
-                          {[1, 2, 3].map((step) => (
+                          {[1, 2].map((step) => (
                             <button
                               key={step}
                               type="button"
@@ -235,7 +240,7 @@ export default function Apply() {
                               <span className={`text-[8px] font-black uppercase tracking-[0.3em] transition-colors ${
                                 activeFormSection === step ? 'text-navy' : 'text-navy/20'
                               }`}>
-                                {step === 1 ? 'Contact' : step === 2 ? 'Details' : 'Finance'}
+                                {step === 1 ? 'Contact' : 'Details'}
                               </span>
                             </button>
                           ))}
@@ -292,23 +297,7 @@ export default function Apply() {
                                     </div>
                                   </div>
                                 </div>
-                                <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
-                                  <div className="space-y-4">
-                                    <label htmlFor="whatsapp" className="text-[10px] font-black uppercase tracking-[0.4em] text-navy/40 ml-4">WhatsApp / Phone</label>
-                                    <div className="relative group">
-                                      <Phone className="absolute left-6 top-1/2 -translate-y-1/2 text-navy/10 group-focus-within:text-green transition-colors" size={20} aria-hidden="true" />
-                                      <input 
-                                        required 
-                                        id="whatsapp" 
-                                        type="text" 
-                                        name="whatsapp" 
-                                        value={formData.whatsapp}
-                                        onChange={handleInputChange}
-                                        placeholder="+1 (555) 000-0000" 
-                                        className="w-full bg-light border-b-2 border-transparent rounded-[24px] py-6 pl-16 pr-8 focus:border-green focus:bg-white outline-none transition-all font-bold text-navy placeholder:text-navy/10" 
-                                      />
-                                    </div>
-                                  </div>
+                                <div className="grid grid-cols-1 md:grid-cols-1 gap-10">
                                   <div className="space-y-4">
                                     <label htmlFor="store_url" className="text-[10px] font-black uppercase tracking-[0.4em] text-navy/40 ml-4">Store Website (Optional)</label>
                                     <div className="relative group">
@@ -409,125 +398,19 @@ export default function Apply() {
                                   ← Back
                                 </button>
                                 <motion.button 
-                                  whileHover={{ x: 5 }}
+                                  whileHover={{ scale: 1.02 }}
                                   whileTap={{ scale: 0.98 }}
-                                  type="button"
-                                  onClick={nextStep}
-                                  className="bg-navy text-white px-10 py-5 rounded-full font-bold shadow-xl flex items-center gap-3 group/btn hover:bg-green hover:text-navy transition-all duration-300"
+                                  disabled={isSubmitting}
+                                  className="bg-navy text-white px-10 py-5 rounded-full font-bold shadow-xl flex items-center gap-3 group/btn hover:bg-green hover:text-navy transition-all duration-300 disabled:opacity-50"
                                 >
-                                  Almost Finished <ArrowRight size={18} className="group-hover/btn:translate-x-1 transition-transform" aria-hidden="true" />
+                                  {isSubmitting ? (
+                                    <div className="w-6 h-6 border-2 border-white/30 border-t-green rounded-full animate-spin" />
+                                  ) : (
+                                    <>
+                                      Submit Application <ArrowRight size={18} className="group-hover/btn:translate-x-1 transition-transform" aria-hidden="true" />
+                                    </>
+                                  )}
                                 </motion.button>
-                              </div>
-                            </motion.div>
-                          )}
-
-                          {/* Section 3: Budget & Timeline */}
-                          {activeFormSection === 3 && (
-                            <motion.div
-                              key="section-3"
-                              initial={{ x: 20, opacity: 0 }}
-                              animate={{ x: 0, opacity: 1 }}
-                              exit={{ x: -20, opacity: 0 }}
-                              transition={{ duration: 0.4 }}
-                              className="space-y-12"
-                            >
-                              <div className="space-y-2">
-                                <h3 className="text-4xl font-bold text-navy tracking-tight">Budget & Scale.</h3>
-                                <p className="text-navy/40 font-serif italic">This helps me understand the project's complexity.</p>
-                              </div>
-
-                              <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
-                                <div className="space-y-4">
-                                  <label htmlFor="revenue" className="text-[10px] font-bold text-navy/40 uppercase tracking-[0.3em] ml-4">Current Monthly Revenue</label>
-                                  <select 
-                                    id="revenue" 
-                                    name="revenue" 
-                                    value={formData.revenue}
-                                    onChange={handleInputChange}
-                                    required 
-                                    className="w-full bg-light border-b-2 border-transparent rounded-[24px] py-6 px-10 focus:border-green focus:bg-white outline-none transition-all appearance-none font-bold text-navy"
-                                  >
-                                    <option value="">Select Range</option>
-                                    <option>$0 – $500</option>
-                                    <option>$500 – $2,000</option>
-                                    <option>$2,000 – $10,000</option>
-                                    <option>$10,000+</option>
-                                  </select>
-                                </div>
-                                <div className="space-y-4">
-                                  <label htmlFor="budget" className="text-[10px] font-bold text-navy/40 uppercase tracking-[0.3em] ml-4">Estimated Budget</label>
-                                  <select 
-                                    id="budget" 
-                                    name="budget" 
-                                    value={formData.budget}
-                                    onChange={handleInputChange}
-                                    required 
-                                    className="w-full bg-light border-b-2 border-transparent rounded-[24px] py-6 px-10 focus:border-green focus:bg-white outline-none transition-all appearance-none font-bold text-navy"
-                                  >
-                                    <option value="">Select Range</option>
-                                    <option>$100 – $300</option>
-                                    <option>$300 – $700</option>
-                                    <option>$700 – $1,500</option>
-                                    <option>$1,500+</option>
-                                  </select>
-                                </div>
-                                <div className="space-y-4">
-                                  <label htmlFor="start_date" className="text-[10px] font-bold text-navy/40 uppercase tracking-[0.3em] ml-4">Launch Priority</label>
-                                  <select 
-                                    id="start_date" 
-                                    name="start_date" 
-                                    value={formData.start_date}
-                                    onChange={handleInputChange}
-                                    required 
-                                    className="w-full bg-light border-b-2 border-transparent rounded-[24px] py-6 px-10 focus:border-green focus:bg-white outline-none transition-all appearance-none font-bold text-navy"
-                                  >
-                                    <option value="">Select Priority</option>
-                                    <option>Immediately</option>
-                                    <option>Within 1 week</option>
-                                    <option>Just checking options</option>
-                                  </select>
-                                </div>
-                              </div>
-
-                              <div className="space-y-8 pt-12">
-                                <div className="flex items-center justify-center gap-6 mb-8 opacity-40">
-                                  <div className="h-px flex-1 bg-navy/5" />
-                                  <div className="flex gap-4">
-                                    <ShieldCheck size={16} />
-                                    <Lock size={16} />
-                                  </div>
-                                  <div className="h-px flex-1 bg-navy/5" />
-                                </div>
-
-                                <div className="flex items-center justify-between gap-6">
-                                  <button 
-                                    type="button"
-                                    onClick={prevStep}
-                                    className="text-navy/40 text-[10px] font-black uppercase tracking-widest hover:text-navy transition-colors"
-                                  >
-                                    ← Back
-                                  </button>
-                                  <motion.button 
-                                    whileHover={{ scale: 1.02 }}
-                                    whileTap={{ scale: 0.98 }}
-                                    disabled={isSubmitting}
-                                    className="flex-1 bg-navy text-white py-8 rounded-full font-bold text-xl hover:bg-green hover:text-navy border-2 border-transparent transition-all duration-500 shadow-3xl flex items-center justify-center gap-6 group disabled:opacity-50"
-                                  >
-                                    {isSubmitting ? (
-                                      <div className="w-8 h-8 border-4 border-white/30 border-t-green rounded-full animate-spin" />
-                                    ) : (
-                                      <>
-                                        Submit Application <ArrowRight size={24} className="group-hover:translate-x-2 transition-transform" />
-                                      </>
-                                    )}
-                                  </motion.button>
-                                </div>
-
-                                <div className="flex flex-col items-center gap-6">
-                                  <div className="flex items-center justify-center gap-4 text-navy/20 text-xs font-bold uppercase tracking-widest text-center italic">
-                                    <ShieldCheck size={16} className="text-green" /> Secure Submission Channel
-                                  </div>
-                                </div>
                               </div>
                             </motion.div>
                           )}

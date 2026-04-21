@@ -11,8 +11,6 @@ const navLinks = [
   { name: "Portfolio", href: "/portfolio" },
   { name: "Visualizer", href: "/visualizer" },
   { name: "Apply", href: "/apply#apply-form" },
-  { name: "Blog", href: "/blog" },
-  { name: "Contact", href: "/contact#contact-form" },
 ];
 
 export default function Navbar() {
@@ -52,13 +50,13 @@ export default function Navbar() {
         </Link>
 
         {/* Desktop Nav */}
-        <div className="hidden md:flex items-center space-x-12">
+        <div className="hidden md:flex items-center space-x-8">
           {navLinks.map((link) => (
             <Link
               key={link.name}
               to={link.href}
               className={cn(
-                "text-[10px] font-bold uppercase tracking-[0.3em] transition-all relative group",
+                "text-sm font-bold uppercase tracking-[0.3em] transition-all relative group",
                 location.pathname === link.href 
                   ? "text-green" 
                   : isScrolled ? "text-navy/60 hover:text-navy" : "text-white/40 hover:text-white"
@@ -76,12 +74,6 @@ export default function Navbar() {
               />
             </Link>
           ))}
-          <Link
-            to="/contact#contact-form"
-            className="bg-green text-navy px-8 py-4 rounded-full font-bold text-xs uppercase tracking-widest hover:scale-105 transition-all duration-500 shadow-xl green-glow"
-          >
-            Get Free Audit
-          </Link>
         </div>
 
         {/* Mobile Toggle */}
@@ -117,13 +109,6 @@ export default function Navbar() {
                   <ChevronRight size={20} className="text-green" />
                 </Link>
               ))}
-              <Link
-                to="/contact#contact-form"
-                onClick={() => setIsMobileMenuOpen(false)}
-                className="bg-green text-navy text-center py-6 rounded-[32px] font-bold text-xl mt-4 shadow-xl"
-              >
-                Get Free Audit
-              </Link>
             </div>
           </motion.div>
         )}

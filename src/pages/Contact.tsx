@@ -6,8 +6,8 @@ import { Link } from "react-router-dom";
 
 const contactInfo = [
   { icon: Mail, label: "Email", value: "Sheun Hub", href: "mailto:sheunhost@gmail.com", desc: "For project inquiries" },
-  { icon: MessageCircle, label: "WhatsApp (NG)", value: "+234 808 431 5743", href: "#", desc: "Instant chat support" },
-  { icon: MessageCircle, label: "WhatsApp (UK)", value: "+44 7476 664292", href: "#", desc: "Instant chat support" },
+  { icon: MessageCircle, label: "WhatsApp (NG)", value: "+234 808 431 5743", href: "https://wa.me/2348084315743", desc: "Instant chat support" },
+  { icon: MessageCircle, label: "WhatsApp (UK)", value: "+44 7476 664292", href: "https://wa.me/447476664292", desc: "Instant chat support" },
   { icon: Star, label: "Upwork", value: "upwork.com/freelancers/sheun_hub", href: "https://upwork.com/freelancers/sheun_hub", desc: "Order via platform" },
   { icon: Linkedin, label: "LinkedIn", value: "linkedin.com/in/sheun", href: "#", desc: "Professional network" },
 ];
@@ -221,6 +221,13 @@ export default function Contact() {
 
             {/* Right: Form - Visible Grid Style */}
             <div className="lg:col-span-7">
+              <motion.div 
+                animate={{ y: [0, 15, 0] }} 
+                transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
+                className="flex justify-center mb-8 hidden md:flex"
+              >
+                <ChevronDown size={48} className="text-green opacity-50" />
+              </motion.div>
               <div className="bg-light p-12 md:p-20 rounded-[60px] border border-navy/5 relative overflow-hidden shadow-sm">
                 {!isSuccess ? (
                   <form onSubmit={handleSubmit} className="space-y-12 relative z-10">

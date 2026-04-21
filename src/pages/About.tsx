@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { CheckCircle2, Award, GraduationCap, Star, MapPin, Globe, ArrowRight, Code2, Rocket, Zap, Layout, MessageSquare } from "lucide-react";
 import PageWrapper from "../components/PageWrapper";
 import { Link } from "react-router-dom";
+import { openCalendlyPopup } from "../lib/utils";
 
 const timeline = [
   { year: "2023", title: "Graduated, OAU", desc: "B.Sc. Business Management from Obafemi Awolowo University." },
@@ -314,9 +315,9 @@ export default function About() {
               Ready to work with someone who genuinely cares about your store's success?
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-12">
-              <Link to="/contact#contact-form" className="w-full sm:w-auto bg-green text-navy px-16 py-8 rounded-full font-bold text-2xl hover:scale-105 transition-all duration-500 shadow-2xl green-glow flex items-center justify-center text-center">
+              <button onClick={openCalendlyPopup} className="w-full sm:w-auto bg-green text-navy px-16 py-8 rounded-full font-bold text-2xl hover:scale-105 transition-all duration-500 shadow-2xl green-glow flex items-center justify-center text-center">
                 Book a 15-Minute Strategy Audit
-              </Link>
+              </button>
               <Link to="/portfolio" className="w-full sm:w-auto text-white font-bold text-2xl flex items-center justify-center gap-6 group text-center">
                 View My Work <div className="w-12 h-px bg-white/20 group-hover:w-20 group-hover:bg-green transition-all duration-500" />
               </Link>

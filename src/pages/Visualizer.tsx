@@ -3,6 +3,7 @@ import PageWrapper from "../components/PageWrapper";
 import ImageGen from "../components/ImageGen";
 import { ListChecks, Sparkles, Rocket, Zap, Globe, MessageSquare, ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
+import { openCalendlyPopup } from "../lib/utils";
 
 export default function Visualizer() {
   return (
@@ -159,9 +160,9 @@ export default function Visualizer() {
               Stop visualizing and start selling. I build high-performance Shopify stores that convert.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-12">
-              <Link to="/contact#contact-form" className="w-full sm:w-auto bg-green text-navy px-16 py-8 rounded-full font-bold text-2xl hover:scale-105 transition-all duration-500 shadow-2xl shadow-green/20">
+              <button onClick={openCalendlyPopup} className="w-full sm:w-auto bg-green text-navy px-16 py-8 rounded-full font-bold text-2xl hover:scale-105 transition-all duration-500 shadow-2xl shadow-green/20">
                 Book a 15-Minute Strategy Audit
-              </Link>
+              </button>
               <Link to="/portfolio" className="w-full sm:w-auto text-white font-bold text-2xl flex items-center gap-6 group">
                 View Work <div className="w-12 h-px bg-white/20 group-hover:w-20 group-hover:bg-green transition-all duration-500" />
               </Link>

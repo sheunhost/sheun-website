@@ -3,6 +3,7 @@ import { ExternalLink, Star, ShoppingBag, Globe, Trophy, ArrowRight, Info, X } f
 import PageWrapper from "../components/PageWrapper";
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { openCalendlyPopup } from "../lib/utils";
 
 const categories = ["All", "👗 Fashion", "💄 Beauty & Skincare", "🐾 Pets", "📱 Gadgets"];
 
@@ -348,7 +349,39 @@ export default function Portfolio() {
           </motion.div>
 
           {/* Bottom Section */}
-          <div className="mt-48 space-y-24">
+          <div className="mt-32 space-y-24">
+            {/* Simple Image Gallery */}
+            <div className="space-y-12">
+              <div className="text-center space-y-4">
+                <h3 className="text-4xl font-bold text-navy tracking-tight">Design Gallery.</h3>
+                <p className="text-navy/60 font-serif italic max-w-xl mx-auto">A quick look at the visual styles and sections we can implement for your brand.</p>
+              </div>
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                {projects.map((project, i) => (
+                  <div 
+                    key={`gallery-${i}`} 
+                    className="relative rounded-2xl overflow-hidden cursor-pointer group hover:shadow-xl transition-all"
+                    onClick={() => {
+                      setSelectedProject(project);
+                      setFullScreenImage(project.image);
+                    }}
+                  >
+                    <img 
+                      src={project.image} 
+                      alt={project.name} 
+                      referrerPolicy="no-referrer"
+                      className="w-full h-48 sm:h-64 object-cover group-hover:scale-105 transition-transform duration-700"
+                    />
+                    <div className="absolute inset-0 bg-navy/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center p-4 text-center">
+                      <span className="text-white font-bold text-sm bg-white/20 px-4 py-2 rounded-full backdrop-blur-sm border border-white/20">
+                        View Full Screen
+                      </span>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
             <div className="flex items-start gap-6 bg-light p-10 rounded-[40px] max-w-4xl mx-auto border border-navy/5">
               <Info className="text-navy/40 shrink-0 mt-1" size={32} />
               <p className="text-navy/60 text-lg leading-relaxed font-serif italic">
@@ -368,9 +401,9 @@ export default function Portfolio() {
                   Pick a concept direction, share your niche, and I'll build a custom Shopify store just for you.
                 </p>
                 <div className="flex flex-col sm:flex-row items-center justify-center gap-8 pt-8">
-                  <Link to="/contact#contact-form" className="w-full sm:w-auto bg-green text-navy px-16 py-8 rounded-full font-bold text-2xl hover:scale-105 transition-all duration-500 shadow-2xl green-glow flex items-center justify-center text-center">
+                  <button onClick={openCalendlyPopup} className="w-full sm:w-auto bg-green text-navy px-16 py-8 rounded-full font-bold text-2xl hover:scale-105 transition-all duration-500 shadow-2xl green-glow flex items-center justify-center text-center">
                     Book a 15-Minute Strategy Audit
-                  </Link>
+                  </button>
                   <Link to="/contact#contact-form" className="w-full sm:w-auto bg-white/5 backdrop-blur-xl text-white px-16 py-8 rounded-full font-bold text-2xl hover:bg-white/10 transition-all duration-500 border border-white/10 flex items-center justify-center text-center">
                     Get Your Custom Roadmap
                   </Link>

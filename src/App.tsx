@@ -17,6 +17,7 @@ import Visualizer from "./pages/Visualizer";
 import Apply from "./pages/Apply";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import TermsOfService from "./pages/TermsOfService";
+import BlogPost from "./pages/BlogPost";
 import Chatbot from "./components/Chatbot";
 import ScrollToTop from "./components/ScrollToTop";
 import ScrollToTopOnNavigation from "./components/ScrollToTopOnNavigation";
@@ -35,6 +36,7 @@ export default function App() {
               <Route path="/services" element={<Services />} />
               <Route path="/portfolio" element={<Portfolio />} />
               <Route path="/blog" element={<Blog />} />
+              <Route path="/blog/:id" element={<BlogPost />} />
               <Route path="/contact" element={<Contact />} />
               <Route path="/visualizer" element={<Visualizer />} />
               <Route path="/apply" element={<Apply />} />

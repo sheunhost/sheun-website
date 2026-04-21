@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { Search, Clock, Calendar, ArrowRight, User, ShieldCheck } from "lucide-react";
 import PageWrapper from "../components/PageWrapper";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 const categories = ["All", "Shopify Tips", "Dropshipping", "Store Migration", "SEO", "eCommerce Growth"];
 
@@ -227,9 +228,9 @@ export default function Blog() {
                       <p className="text-sm text-navy/40 font-serif italic">{featuredPost.date} · {featuredPost.readTime}</p>
                     </div>
                   </div>
-                  <button className="w-full sm:w-auto bg-navy text-white px-10 py-5 rounded-full font-bold text-lg flex items-center justify-center gap-4 group-hover:bg-green group-hover:text-navy transition-all duration-500 shadow-xl">
+                  <Link to="/blog/1" className="w-full sm:w-auto bg-navy text-white px-10 py-5 rounded-full font-bold text-lg flex items-center justify-center gap-4 group-hover:bg-green group-hover:text-navy transition-all duration-500 shadow-xl">
                     Read Article <ArrowRight size={20} />
-                  </button>
+                  </Link>
                 </div>
               </div>
             </motion.div>
@@ -274,39 +275,41 @@ export default function Blog() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.1, duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-                className="group cursor-pointer space-y-8"
+                className="group cursor-pointer space-y-8 block"
               >
-                <div className="aspect-[16/10] rounded-[48px] overflow-hidden relative shadow-2xl">
-                  <img
-                    src={post.image}
-                    alt={post.title}
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000 ease-[0.16, 1, 0.3, 1]"
-                    loading="lazy"
-                  />
-                  <div className="absolute top-6 left-6">
-                    <span className="bg-white/90 backdrop-blur-xl text-navy text-[10px] font-bold uppercase tracking-[0.3em] px-6 py-2 rounded-full shadow-xl">
-                      {post.category}
-                    </span>
-                  </div>
-                </div>
-                
-                <div className="space-y-6 px-4">
-                  <h3 className="text-2xl font-bold text-navy group-hover:text-green transition-colors duration-500 leading-tight tracking-tight line-clamp-2">
-                    {post.title}
-                  </h3>
-                  <p className="text-navy/40 text-lg leading-relaxed line-clamp-2 font-serif italic">
-                    {post.excerpt}
-                  </p>
-                  
-                  <div className="flex items-center justify-between pt-6 border-t border-navy/5">
-                    <div className="flex items-center gap-3 text-xs text-navy/40 font-bold uppercase tracking-widest">
-                      <Clock size={16} className="text-green" /> {post.readTime}
+                <Link to={`/blog/${post.id}`} className="block">
+                  <div className="aspect-[16/10] rounded-[48px] overflow-hidden relative shadow-2xl">
+                    <img
+                      src={post.image}
+                      alt={post.title}
+                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000 ease-[0.16, 1, 0.3, 1]"
+                      loading="lazy"
+                    />
+                    <div className="absolute top-6 left-6">
+                      <span className="bg-white/90 backdrop-blur-xl text-navy text-[10px] font-bold uppercase tracking-[0.3em] px-6 py-2 rounded-full shadow-xl">
+                        {post.category}
+                      </span>
                     </div>
-                    <button className="text-navy font-bold text-sm uppercase tracking-widest flex items-center gap-3 group/btn">
-                      Read More <div className="w-8 h-px bg-navy/10 group-hover/btn:w-12 group-hover/btn:bg-green transition-all duration-500" />
-                    </button>
                   </div>
-                </div>
+                  
+                  <div className="space-y-6 px-4 mt-8">
+                    <h3 className="text-2xl font-bold text-navy group-hover:text-green transition-colors duration-500 leading-tight tracking-tight line-clamp-2">
+                      {post.title}
+                    </h3>
+                    <p className="text-navy/40 text-lg leading-relaxed line-clamp-2 font-serif italic">
+                      {post.excerpt}
+                    </p>
+                    
+                    <div className="flex items-center justify-between pt-6 border-t border-navy/5">
+                      <div className="flex items-center gap-3 text-xs text-navy/40 font-bold uppercase tracking-widest">
+                        <Clock size={16} className="text-green" /> {post.readTime}
+                      </div>
+                      <span className="bg-navy text-white px-6 py-3 rounded-full font-bold text-xs uppercase tracking-widest flex items-center gap-2 group-hover:bg-green group-hover:text-navy transition-all duration-500 shadow-lg group-hover:shadow-xl">
+                        Read More <ArrowRight size={14} />
+                      </span>
+                    </div>
+                  </div>
+                </Link>
               </motion.div>
             ))}
           </div>

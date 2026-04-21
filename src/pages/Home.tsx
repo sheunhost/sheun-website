@@ -5,7 +5,7 @@ import { GoogleGenAI } from "@google/genai";
 import PageWrapper from "../components/PageWrapper";
 import { useState, FormEvent, useEffect } from "react";
 import { AnimatePresence } from "framer-motion";
-import { cn } from "../lib/utils";
+import { cn, openCalendlyPopup } from "../lib/utils";
 import ImageGen from "../components/ImageGen";
 
 const stats = [
@@ -686,9 +686,9 @@ Return ONLY valid JSON.
               transition={{ delay: 0.2, duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
               className="flex flex-col sm:flex-row items-center gap-8"
             >
-              <Link to="/apply#apply-form" className="w-full sm:w-auto bg-green text-navy px-12 py-6 rounded-full font-bold text-lg hover:scale-105 transition-all duration-500 green-glow flex items-center justify-center gap-3 text-center">
+              <button onClick={openCalendlyPopup} className="w-full sm:w-auto bg-green text-navy px-12 py-6 rounded-full font-bold text-lg hover:scale-105 transition-all duration-500 green-glow flex items-center justify-center gap-3 text-center">
                 Book a 15-Minute Strategy Audit <ArrowRight size={20} />
-              </Link>
+              </button>
               <Link to="/portfolio" className="w-full sm:w-auto text-white/80 hover:text-white px-8 py-4 rounded-full font-bold text-lg transition-all flex items-center justify-center gap-4 group text-center">
                 View Portfolio <div className="w-8 h-px bg-white/20 group-hover:w-16 group-hover:bg-green transition-all duration-500" />
               </Link>
@@ -802,6 +802,115 @@ Return ONLY valid JSON.
           </div>
         </div>
       </section>
+
+{/* Services Preview - Visible Grid Recipe */}
+      <section className="py-32 bg-navy-gradient relative" id="services">
+        <div className="container mx-auto px-6">
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-24">
+            <div className="space-y-6">
+              <p className="text-green text-[10px] font-bold uppercase tracking-[0.4em]">Expertise</p>
+              <h2 className="text-6xl md:text-8xl font-bold text-white tracking-tighter leading-[0.85]">
+                Crafting <span className="italic font-serif font-light text-white/40">Digital</span><br />
+                Commerce.
+              </h2>
+            </div>
+            <Link to="/services" className="group flex items-center gap-4 text-white font-bold text-lg">
+              View All Services <div className="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center group-hover:bg-green group-hover:text-navy transition-all">
+                <ArrowRight size={20} />
+              </div>
+            </Link>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px bg-white/5 border border-white/5 rounded-[40px] overflow-hidden">
+            {[
+              {
+                title: "Store Setup",
+                desc: "End-to-end Shopify store creation with premium themes and custom branding.",
+                fullDesc: "Launch your brand with a professional, high-converting Shopify store. I handle everything from theme selection and customization to essential app integrations and payment gateway setup.",
+                icon: ShoppingBag,
+                tags: ["Dropshipping", "Branding", "Launch"],
+                timeline: "1-2 Weeks",
+                price: "$999",
+                roadmap: [
+                  { title: "Discovery & Strategy", desc: "Understanding your products, niche, and target audience." },
+                  { title: "Theme Selection & Branding", desc: "Choosing the right foundation and applying your visual identity." },
+                  { title: "Store Configuration", desc: "Setting up shipping, taxes, payments, and essential apps." },
+                  { title: "Product Import & SEO", desc: "Optimizing product data for search engines and conversions." },
+                  { title: "Testing & Launch", desc: "Rigorous quality checks before going live to the world." }
+                ]
+              },
+              {
+                title: "Custom Dev",
+                desc: "Bespoke Liquid coding, custom features, and complex app integrations.",
+                fullDesc: "Go beyond standard theme limitations. I build custom Liquid sections, unique product page features, and complex logic that sets your store apart from the competition.",
+                icon: Code2,
+                tags: ["Liquid", "API", "Performance"],
+                timeline: "2-4 Weeks",
+                price: "$1,499",
+                roadmap: [
+                  { title: "Technical Audit", desc: "Reviewing your current code and identifying bottlenecks." },
+                  { title: "Feature Scoping", desc: "Defining the exact functionality and user experience." },
+                  { title: "Development Phase", desc: "Writing clean, efficient Liquid and JavaScript code." },
+                  { title: "Integration & Testing", desc: "Ensuring custom features work seamlessly with your apps." },
+                  { title: "Deployment", desc: "Pushing changes to your live store with zero downtime." }
+                ]
+              },
+              {
+                title: "Migrations",
+                desc: "Seamlessly move your store from WooCommerce, Magento, or Etsy to Shopify.",
+                fullDesc: "Switching platforms shouldn't be scary. I ensure a 100% safe migration of your products, customers, orders, and most importantly, your SEO rankings.",
+                icon: Zap,
+                tags: ["Data", "SEO", "Zero Downtime"],
+                timeline: "2-3 Weeks",
+                price: "$1,999",
+                roadmap: [
+                  { title: "Data Mapping", desc: "Planning how data from your old platform fits into Shopify." },
+                  { title: "Migration Setup", desc: "Configuring secure data transfer protocols." },
+                  { title: "Transfer & Validation", desc: "Moving data and verifying every single record." },
+                  { title: "SEO Preservation", desc: "Setting up 301 redirects to keep your Google rankings." },
+                  { title: "Final Cutover", desc: "Switching your domain and launching on Shopify." }
+                ]
+              }
+            ].map((service, i) => (
+              <motion.button
+                key={i}
+                whileHover={{ y: -8 }}
+                whileTap={{ scale: 0.98 }}
+                onClick={() => {
+                  console.log("Service clicked:", service.title);
+                  setSelectedService(service);
+                }}
+                className="p-12 bg-navy space-y-10 group hover:bg-white/[0.02] transition-all cursor-pointer text-center w-full block border-r border-b border-white/5 flex flex-col items-center"
+              >
+                <div className="w-16 h-16 bg-white/5 rounded-2xl flex items-center justify-center text-green group-hover:scale-110 transition-transform duration-500 mx-auto">
+                  <service.icon size={32} />
+                </div>
+                <div className="space-y-6">
+                  <h3 className="text-3xl font-bold text-white tracking-tight line-clamp-1">{service.title}</h3>
+                  <p className="text-white/40 text-lg leading-relaxed font-light font-serif italic line-clamp-2">{service.desc}</p>
+                </div>
+                <div className="flex flex-wrap justify-center gap-3 pt-8 border-t border-white/5 w-full">
+                  {service.tags.map((tag, j) => (
+                    <span key={j} className="text-[10px] font-bold uppercase tracking-[0.2em] text-green bg-green/10 px-4 py-2 rounded-full">
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+              </motion.button>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Service Detail Modal */}
+      <AnimatePresence>
+        {selectedService && (
+          <ServiceModal
+            service={selectedService}
+            onClose={() => setSelectedService(null)}
+          />
+        )}
+      </AnimatePresence>
 
       {/* Narrative Section - The Methodology */}
       <section className="py-32 bg-light relative overflow-hidden">
@@ -930,116 +1039,7 @@ Return ONLY valid JSON.
         </div>
       </section>
 
-      {/* Services Preview - Visible Grid Recipe */}
-      <section className="py-32 bg-navy-gradient relative" id="services">
-        <div className="container mx-auto px-6">
-          <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-24">
-            <div className="space-y-6">
-              <p className="text-green text-[10px] font-bold uppercase tracking-[0.4em]">Expertise</p>
-              <h2 className="text-6xl md:text-8xl font-bold text-white tracking-tighter leading-[0.85]">
-                Crafting <span className="italic font-serif font-light text-white/40">Digital</span><br />
-                Commerce.
-              </h2>
-            </div>
-            <Link to="/services" className="group flex items-center gap-4 text-white font-bold text-lg">
-              View All Services <div className="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center group-hover:bg-green group-hover:text-navy transition-all">
-                <ArrowRight size={20} />
-              </div>
-            </Link>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px bg-white/5 border border-white/5 rounded-[40px] overflow-hidden">
-            {[
-              {
-                title: "Store Setup",
-                desc: "End-to-end Shopify store creation with premium themes and custom branding.",
-                fullDesc: "Launch your brand with a professional, high-converting Shopify store. I handle everything from theme selection and customization to essential app integrations and payment gateway setup.",
-                icon: ShoppingBag,
-                tags: ["Dropshipping", "Branding", "Launch"],
-                timeline: "1-2 Weeks",
-                price: "$999",
-                roadmap: [
-                  { title: "Discovery & Strategy", desc: "Understanding your products, niche, and target audience." },
-                  { title: "Theme Selection & Branding", desc: "Choosing the right foundation and applying your visual identity." },
-                  { title: "Store Configuration", desc: "Setting up shipping, taxes, payments, and essential apps." },
-                  { title: "Product Import & SEO", desc: "Optimizing product data for search engines and conversions." },
-                  { title: "Testing & Launch", desc: "Rigorous quality checks before going live to the world." }
-                ]
-              },
-              {
-                title: "Custom Dev",
-                desc: "Bespoke Liquid coding, custom features, and complex app integrations.",
-                fullDesc: "Go beyond standard theme limitations. I build custom Liquid sections, unique product page features, and complex logic that sets your store apart from the competition.",
-                icon: Code2,
-                tags: ["Liquid", "API", "Performance"],
-                timeline: "2-4 Weeks",
-                price: "$1,499",
-                roadmap: [
-                  { title: "Technical Audit", desc: "Reviewing your current code and identifying bottlenecks." },
-                  { title: "Feature Scoping", desc: "Defining the exact functionality and user experience." },
-                  { title: "Development Phase", desc: "Writing clean, efficient Liquid and JavaScript code." },
-                  { title: "Integration & Testing", desc: "Ensuring custom features work seamlessly with your apps." },
-                  { title: "Deployment", desc: "Pushing changes to your live store with zero downtime." }
-                ]
-              },
-              {
-                title: "Migrations",
-                desc: "Seamlessly move your store from WooCommerce, Magento, or Etsy to Shopify.",
-                fullDesc: "Switching platforms shouldn't be scary. I ensure a 100% safe migration of your products, customers, orders, and most importantly, your SEO rankings.",
-                icon: Zap,
-                tags: ["Data", "SEO", "Zero Downtime"],
-                timeline: "2-3 Weeks",
-                price: "$1,999",
-                roadmap: [
-                  { title: "Data Mapping", desc: "Planning how data from your old platform fits into Shopify." },
-                  { title: "Migration Setup", desc: "Configuring secure data transfer protocols." },
-                  { title: "Transfer & Validation", desc: "Moving data and verifying every single record." },
-                  { title: "SEO Preservation", desc: "Setting up 301 redirects to keep your Google rankings." },
-                  { title: "Final Cutover", desc: "Switching your domain and launching on Shopify." }
-                ]
-              }
-            ].map((service, i) => (
-              <motion.button
-                key={i}
-                whileHover={{ y: -8 }}
-                whileTap={{ scale: 0.98 }}
-                onClick={() => {
-                  console.log("Service clicked:", service.title);
-                  setSelectedService(service);
-                }}
-                className="p-12 bg-navy space-y-10 group hover:bg-white/[0.02] transition-all cursor-pointer text-left w-full block border-r border-b border-white/5"
-              >
-                <div className="w-16 h-16 bg-white/5 rounded-2xl flex items-center justify-center text-green group-hover:scale-110 transition-transform duration-500">
-                  <service.icon size={32} />
-                </div>
-                <div className="space-y-6">
-                  <h3 className="text-3xl font-bold text-white tracking-tight line-clamp-1">{service.title}</h3>
-                  <p className="text-white/40 text-lg leading-relaxed font-light font-serif italic line-clamp-2">{service.desc}</p>
-                </div>
-                <div className="flex flex-wrap gap-3 pt-8 border-t border-white/5">
-                  {service.tags.map((tag, j) => (
-                    <span key={j} className="text-[10px] font-bold uppercase tracking-[0.2em] text-green bg-green/10 px-4 py-2 rounded-full">
-                      {tag}
-                    </span>
-                  ))}
-                </div>
-              </motion.button>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Service Detail Modal */}
-      <AnimatePresence>
-        {selectedService && (
-          <ServiceModal
-            service={selectedService}
-            onClose={() => setSelectedService(null)}
-          />
-        )}
-      </AnimatePresence>
-
-      {/* AI Store Visualizer Tool */}
+            {/* AI Store Visualizer Tool */}
       <ImageGen />
 
       {/* Portfolio Preview - Bento Grid */}

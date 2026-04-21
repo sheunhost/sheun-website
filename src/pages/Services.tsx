@@ -1,8 +1,9 @@
 import { motion, AnimatePresence } from "framer-motion";
-import { Layout, RefreshCw, ShoppingCart, Palette, Bug, Search, Rocket, Gift, ChevronDown, CheckCircle2, ArrowRight, Code2, Zap, MessageSquare, Star, X, Clock, DollarSign, ListChecks, ShieldCheck } from "lucide-react";
+import { Layout, RefreshCw, ShoppingCart, Palette, Bug, Search, Rocket, Gift, ChevronDown, CheckCircle2, ArrowRight, Code2, Zap, MessageSquare, Star, X, Clock, DollarSign, ListChecks, ShieldCheck, Target } from "lucide-react";
 import PageWrapper from "../components/PageWrapper";
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { openCalendlyPopup } from "../lib/utils";
 
 const services = [
   {
@@ -113,6 +114,42 @@ const services = [
       { title: "Performance Tracking", desc: "Setting up Search Console and analytics to monitor growth." }
     ]
   },
+  {
+    id: "cro",
+    icon: Target,
+    title: "Conversion Optimization",
+    desc: "Data-driven UI/UX improvements to turn more visitors into paying customers.",
+    fullDesc: "Stop leaving money on the table. We analyze user recordings, run A/B tests, and optimize your funnel to increase your conversion rate and average order value.",
+    includes: ["UX Audit", "A/B Testing", "Heatmap Analysis", "Funnel Optimization"],
+    price: "$800",
+    timeline: "3 Weeks",
+    tag: "Growth",
+    roadmap: [
+      { title: "Behavior Analysis", desc: "Installing heatmaps and analyzing drop-off points." },
+      { title: "Hypothesis Generation", desc: "Identifying friction points and opportunities." },
+      { title: "Design Solutions", desc: "Creating optimized mockups and new flows." },
+      { title: "A/B Testing", desc: "Running live experiments to validate conversions." },
+      { title: "Implementation", desc: "Rolling out the winning variations." }
+    ]
+  },
+  {
+    id: "apps",
+    icon: Layout,
+    title: "App Configuration",
+    desc: "Seamless integration of marketing, loyalty, and logistics apps without slowing your store.",
+    fullDesc: "Installing apps is easy, but configuring them correctly without destroying your store speed is hard. We handle complex setups for Klaviyo, Recharge, Yotpo, and more.",
+    includes: ["App installation", "Theme integration", "Speed testing", "Workflow setup"],
+    price: "$300",
+    timeline: "3-5 Days",
+    tag: "Support",
+    roadmap: [
+      { title: "Requirements Check", desc: "Finding the best app for your specific needs." },
+      { title: "Integration", desc: "Installing and wiring the app to your theme." },
+      { title: "Custom Styling", desc: "Matching the app's widgets to your brand design." },
+      { title: "Speed Check", desc: "Ensuring the app script doesn't drop your Lighthouse score." },
+      { title: "Handover", desc: "Training you on how to use the new dashboard." }
+    ]
+  }
 ];
 
 const faqs = [
@@ -154,8 +191,8 @@ const ServiceModal = ({ service, onClose }: { service: any; onClose: () => void 
               <service.icon size={40} />
             </div>
             <div className="space-y-6">
-              <h3 className="text-5xl font-bold leading-tight tracking-tighter">{service.title}</h3>
-              <p className="text-white/60 text-xl leading-relaxed font-serif italic">{service.fullDesc}</p>
+              <h3 className="text-4xl md:text-5xl font-bold leading-tight tracking-tighter text-balance break-words">{service.title}</h3>
+              <p className="text-white/60 text-lg md:text-xl leading-relaxed font-serif italic text-balance break-words">{service.fullDesc}</p>
             </div>
             <div className="space-y-6 pt-10 border-t border-white/10">
               <div className="flex items-center gap-6">
@@ -201,13 +238,15 @@ const ServiceModal = ({ service, onClose }: { service: any; onClose: () => void 
             </div>
 
             <div className="pt-10 border-t border-navy/5">
-              <Link
-                to="/apply#apply-form"
-                onClick={onClose}
+              <button
+                onClick={(e) => {
+                  onClose();
+                  openCalendlyPopup(e);
+                }}
                 className="w-full bg-navy text-white py-6 rounded-full font-bold text-xl hover:bg-green hover:text-navy transition-all duration-500 flex items-center justify-center gap-4 shadow-2xl"
               >
                 Book a 15-Minute Strategy Audit <ArrowRight size={24} />
-              </Link>
+              </button>
             </div>
           </div>
         </div>
@@ -354,30 +393,30 @@ export default function Services() {
                 key={service.id}
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
-                className="p-16 border-r border-b border-navy/5 group hover:bg-light transition-all relative overflow-hidden text-left flex flex-col h-full"
+                className="p-16 border-r border-b border-navy/5 group hover:bg-light transition-all relative overflow-hidden text-center flex flex-col h-full items-center"
               >
                 <div className="absolute top-0 right-0 p-12 opacity-0 group-hover:opacity-100 transition-opacity">
                   <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-green bg-green/10 px-4 py-2 rounded-full">
                     {service.tag}
                   </span>
                 </div>
-                <div className="space-y-10 relative z-10 flex-grow">
+                <div className="space-y-10 relative z-10 flex-grow w-full flex flex-col items-center">
                   <div className="w-20 h-20 bg-navy/5 rounded-3xl flex items-center justify-center text-navy group-hover:bg-green group-hover:text-navy transition-all duration-500">
                     <service.icon size={40} />
                   </div>
-                  <div className="space-y-6">
+                  <div className="space-y-6 text-center">
                     <h3 className="text-4xl font-bold text-navy tracking-tight">{service.title}</h3>
                     <p className="text-navy/40 text-lg leading-relaxed font-serif italic">{service.desc}</p>
                   </div>
-                  <ul className="space-y-4 pb-10">
+                  <ul className="space-y-4 pb-10 flex flex-col items-center w-full">
                     {service.includes.map((item, j) => (
-                      <li key={j} className="flex items-center gap-4 text-sm text-navy/60 font-bold uppercase tracking-[0.2em]">
+                      <li key={j} className="flex items-center gap-4 text-sm text-navy/60 font-bold uppercase tracking-[0.2em] text-center">
                         <div className="w-1.5 h-1.5 bg-green rounded-full" /> {item}
                       </li>
                     ))}
                   </ul>
                 </div>
-                <div className="pt-10 border-t border-navy/5 flex items-center justify-between mt-auto">
+                <div className="pt-10 border-t border-navy/5 flex flex-col items-center justify-center gap-6 mt-auto w-full">
                   <span className="text-navy font-bold text-3xl tracking-tighter">{service.price}</span>
                   <button 
                     onClick={() => setSelectedService(service)}
@@ -453,7 +492,7 @@ export default function Services() {
                 <MessageSquare className="text-green" size={32} />
                 <h4 className="text-xl font-bold text-navy">Still have questions?</h4>
                 <p className="text-navy/40 text-sm">I'm here to help. Let's chat about your specific needs.</p>
-                <Link to="/contact#contact-form" className="inline-block text-navy font-bold text-sm border-b-2 border-green pb-1">Book a 15-Minute Strategy Audit</Link>
+                <button onClick={openCalendlyPopup} className="inline-block text-navy font-bold text-sm border-b-2 border-green pb-1 text-left">Book a 15-Minute Strategy Audit</button>
               </div>
             </div>
 
@@ -510,9 +549,9 @@ export default function Services() {
               Not sure where to start? I'll review your store and send you a growth tips report — completely free.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-12">
-              <Link to="/apply#apply-form" className="w-full sm:w-auto bg-green text-navy px-16 py-8 rounded-full font-bold text-2xl hover:scale-105 transition-all duration-500 green-glow">
+              <button onClick={openCalendlyPopup} className="w-full sm:w-auto bg-green text-navy px-16 py-8 rounded-full font-bold text-2xl hover:scale-105 transition-all duration-500 green-glow">
                 Book a 15-Minute Strategy Audit
-              </Link>
+              </button>
               <div className="flex items-center gap-3 bg-white/5 border border-white/10 px-6 py-3 rounded-full text-green">
                 <ShieldCheck size={18} />
                 <span className="text-[10px] font-bold uppercase tracking-widest text-white/60">Trust Guaranteed</span>
