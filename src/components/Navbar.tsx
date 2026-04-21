@@ -9,8 +9,10 @@ const navLinks = [
   { name: "About", href: "/about" },
   { name: "Services", href: "/services" },
   { name: "Portfolio", href: "/portfolio" },
+  { name: "Blog", href: "/blog" },
   { name: "Visualizer", href: "/visualizer" },
   { name: "Apply", href: "/apply#apply-form" },
+  { name: "Contact", href: "/contact" },
 ];
 
 export default function Navbar() {
@@ -36,50 +38,46 @@ export default function Navbar() {
       )}
     >
       <div className="container mx-auto px-6 flex items-center justify-between">
-        <Link to="/" className="flex items-center space-x-1 group">
-          <img 
-            src="https://i.postimg.cc/wxQgVCcf/1000031270-removebg-preview.png" 
-            alt="Sheun Hub logo" 
-            referrerPolicy="no-referrer"
-            loading="lazy"
-            className={cn(
-              "w-auto transition-all duration-500",
-              isScrolled ? "h-[77px]" : "h-[115px]"
-            )} 
-          />
-          <span className={cn(
-            "text-2xl font-bold tracking-tighter transition-all duration-500 leading-none",
-            isScrolled ? "text-navy" : "text-white"
-          )}>
-            Sheun Hub
-          </span>
-        </Link>
-
-        {/* Desktop Nav */}
-        <div className="hidden md:flex items-center space-x-8">
-          {navLinks.map((link) => (
-            <Link
-              key={link.name}
-              to={link.href}
+        <div className="flex items-center gap-12 lg:gap-16">
+          <Link to="/" className="flex items-center group">
+            <img 
+              src="https://i.postimg.cc/wxQgVCcf/1000031270-removebg-preview.png" 
+              alt="Sheun" 
+              referrerPolicy="no-referrer"
+              loading="lazy"
               className={cn(
-                "text-sm font-bold uppercase tracking-[0.3em] transition-all relative group",
-                location.pathname === link.href 
-                  ? "text-green" 
-                  : isScrolled ? "text-navy/60 hover:text-navy" : "text-white/40 hover:text-white"
-              )}
-            >
-              {link.name}
-              <motion.div
-                className="absolute -bottom-2 left-0 right-0 h-0.5 bg-green"
-                initial={false}
-                animate={{
-                  scaleX: location.pathname === link.href ? 1 : 0,
-                  opacity: location.pathname === link.href ? 1 : 0,
-                }}
-                transition={{ duration: 0.3 }}
-              />
-            </Link>
-          ))}
+                "rounded-full object-cover shadow-lg border-2 border-green/20 transition-all duration-500",
+                isScrolled ? "h-16 w-16" : "h-24 w-24"
+              )} 
+            />
+          </Link>
+
+          {/* Desktop Nav */}
+          <div className="hidden md:flex items-center space-x-8">
+            {navLinks.map((link) => (
+              <Link
+                key={link.name}
+                to={link.href}
+                className={cn(
+                  "text-sm font-bold uppercase tracking-[0.3em] transition-all relative group",
+                  location.pathname === link.href 
+                    ? "text-green" 
+                    : isScrolled ? "text-navy/60 hover:text-navy" : "text-white/40 hover:text-white"
+                )}
+              >
+                {link.name}
+                <motion.div
+                  className="absolute -bottom-2 left-0 right-0 h-0.5 bg-green"
+                  initial={false}
+                  animate={{
+                    scaleX: location.pathname === link.href ? 1 : 0,
+                    opacity: location.pathname === link.href ? 1 : 0,
+                  }}
+                  transition={{ duration: 0.3 }}
+                />
+              </Link>
+            ))}
+          </div>
         </div>
 
         {/* Mobile Toggle */}
