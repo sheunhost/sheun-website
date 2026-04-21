@@ -36,17 +36,23 @@ export default function Navbar() {
       )}
     >
       <div className="container mx-auto px-6 flex items-center justify-between">
-        <Link to="/" className="flex items-center space-x-2 group">
+        <Link to="/" className="flex items-center space-x-1 group">
           <img 
             src="https://i.postimg.cc/wxQgVCcf/1000031270-removebg-preview.png" 
             alt="Sheun Hub logo" 
             referrerPolicy="no-referrer"
             loading="lazy"
             className={cn(
-              "h-24 w-auto transition-all duration-500",
-              isScrolled ? "h-16" : "h-24"
+              "w-auto transition-all duration-500",
+              isScrolled ? "h-[77px]" : "h-[115px]"
             )} 
           />
+          <span className={cn(
+            "text-2xl font-bold tracking-tighter transition-all duration-500 leading-none",
+            isScrolled ? "text-navy" : "text-white"
+          )}>
+            Sheun Hub
+          </span>
         </Link>
 
         {/* Desktop Nav */}

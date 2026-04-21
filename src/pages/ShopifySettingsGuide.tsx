@@ -1,6 +1,5 @@
 import { motion } from "framer-motion";
 import { Clock, Calendar, ArrowLeft, ArrowRight, CheckCircle2, ShieldCheck, TrendingUp, AlertTriangle, MessageCircle, Settings, Mail, Target, Phone, Twitter, Facebook, Linkedin, User, Send } from "lucide-react";
-import PageWrapper from "../components/PageWrapper";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 
@@ -46,13 +45,7 @@ export default function ShopifySettingsGuide() {
   };
 
   return (
-    <PageWrapper
-      title="10 Shopify Settings Most Store Owners Miss"
-      description="Discover the 10 hidden settings in your Shopify admin that can make or break your store's conversion rate. Learn how to increase Shopify sales by optimizing your checkout and settings."
-      keywords="Shopify Settings, Shopify SEO, Increase Shopify Sales, Shopify Checkout Optimization, Shopify Expert, eCommerce Growth, Store Setup, Convert More Customers, Abandoned Cart Recovery"
-      canonical="/blog/1"
-    >
-      <article className="pt-32 pb-24 bg-white relative">
+    <article className="pt-32 pb-24 bg-white relative">
         {/* Header Section */}
         <section className="bg-navy-gradient pt-16 pb-32 px-6 rounded-b-[60px] relative overflow-hidden">
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,_rgba(0,255,157,0.1)_0%,_transparent_70%)]" />
@@ -358,6 +351,5 @@ export default function ShopifySettingsGuide() {
           </div>
         </section>
       </article>
-    </PageWrapper>
   );
 }
