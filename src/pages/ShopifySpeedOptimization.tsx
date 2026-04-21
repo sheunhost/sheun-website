@@ -1,18 +1,17 @@
 import { motion } from "framer-motion";
 import { Clock, Calendar, ArrowLeft, ArrowRight, CheckCircle2, ShieldCheck, TrendingUp, AlertTriangle, MessageCircle, Settings, Mail, Target, Phone, Twitter, Facebook, Linkedin, User, Send, Zap, Image as ImageIcon, Code, Package } from "lucide-react";
-import PageWrapper from "../components/PageWrapper";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 
 export default function ShopifySpeedOptimization() {
-  const [comments, setComments] = useState<{name: string, text: string, date: string}[]>([
-    { name: "Michael T.", text: "I installed a lazy loading app and my mobile speed improved immediately. Thanks for the tip!", date: "April 11, 2026" }
+  const [comments, setComments] = useState<{name: string, text: string}[]>([
+    { name: "Michael T.", text: "I installed a lazy loading app and my mobile speed improved immediately. Thanks for the tip!" }
   ]);
   const [newComment, setNewComment] = useState("");
   const [commentName, setCommentName] = useState("");
 
   const url = encodeURIComponent(window.location.href);
-  const title = encodeURIComponent("How to Speed Up Your Shopify Store in 2025");
+  const title = encodeURIComponent("How to Speed Up Your Shopify Store in 2026");
 
   const handleWhatsAppShare = () => {
     window.open(`https://wa.me/?text=${title} - ${url}`, "_blank");
@@ -33,7 +32,7 @@ export default function ShopifySpeedOptimization() {
   const handleAddComment = (e: React.FormEvent) => {
     e.preventDefault();
     if(newComment.trim() && commentName.trim()) {
-      setComments([...comments, { name: commentName, text: newComment, date: new Date().toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' }) }]);
+      setComments([...comments, { name: commentName, text: newComment }]);
       setNewComment("");
       setCommentName("");
     }
@@ -61,7 +60,7 @@ export default function ShopifySpeedOptimization() {
           </div>
 
           <h1 className="text-4xl md:text-6xl font-bold text-white tracking-tighter leading-tight text-balance">
-            How to Speed Up Your Shopify Store in 2025 <span className="italic font-serif font-light text-white/60">(Step by Step)</span>
+            How to Speed Up Your Shopify Store in 2026 <span className="italic font-serif font-light text-white/60">(Step by Step)</span>
           </h1>
 
           <p className="text-xl text-white/80 font-serif italic max-w-2xl mx-auto leading-relaxed">
@@ -78,104 +77,87 @@ export default function ShopifySpeedOptimization() {
             <img src="https://picsum.photos/seed/blog2/1200/600" alt="Shopify speed optimization" className="w-full h-full object-cover rounded-3xl z-10 opacity-90" />
           </div>
 
-          <div className="prose prose-lg md:prose-xl max-w-none prose-headings:font-bold prose-headings:text-navy prose-p:text-navy/80 prose-p:leading-loose font-serif">
-            <p>
-              In 2025, a fast eCommerce store isn't just a luxury—it's a hard requirement. If your Shopify store takes more than three seconds to load, you are losing up to 50% of your potential customers before they even see your products.
-            </p>
-            <p>
-              Beyond user patience, load time heavily impacts your Google rankings (Core Web Vitals) and your advertising ROI. Let's break down the most effective, actionable ways to drastically improve your Shopify speed score safely and efficiently.
-            </p>
-            
-            <div className="flex items-start gap-4 bg-light p-6 rounded-2xl border-l-4 border-green my-8">
-              <ShieldCheck className="text-green shrink-0 mt-1" size={28} />
-              <p className="text-sm md:text-base font-sans font-medium text-navy m-0 italic">
-                <strong>Important:</strong> Always duplicate your live theme before making any major code edits or un-installing several applications.
+            <div className="prose prose-lg md:prose-xl max-w-none prose-headings:font-bold prose-headings:text-navy prose-p:text-navy/80 prose-p:leading-relaxed font-sans">
+              <p className="text-2xl leading-relaxed text-navy/90 mb-12">
+                In the fast-paced world of digital commerce, the speed of your Shopify store is not just a technical metric—it is the single most important factor in your conversion rate marketing. In 2026, user expectations have reached a peak where even a 100-millisecond delay can result in a measurable drop in revenue.
               </p>
-            </div>
 
-            <h2 className="flex items-center gap-4 text-3xl font-bold text-navy mt-12 mb-6 font-sans tracking-tight">
-              <span className="w-10 h-10 bg-navy text-white flex items-center justify-center rounded-xl text-lg">1</span> 
-              Compress and Optimize Your Images
-            </h2>
-            <p>
-              Giant, uncompressed images are the number one cause of slow Shopify stores. You do not need a 4000x4000 pixel image that weighs 5MB for a simple product shot.
-            </p>
-            <ul className="list-none space-y-3 font-sans text-base pl-0">
-              <li className="flex gap-3 items-start"><ImageIcon className="text-green shrink-0 mt-1" size={20} /> <strong>Convert to WebP:</strong> Use modern formats like WebP rather than heavy PNGs.</li>
-              <li className="flex gap-3 items-start"><CheckCircle2 className="text-green shrink-0 mt-1" size={20} /> <strong>Lazy Loading:</strong> Make sure images "below the fold" are lazy-loaded (only loaded when the user scrolls to them). Modern Shopify OS 2.0 themes usually have this built-in.</li>
-            </ul>
-
-            <h2 className="flex items-center gap-4 text-3xl font-bold text-navy mt-12 mb-6 font-sans tracking-tight">
-              <span className="w-10 h-10 bg-navy text-white flex items-center justify-center rounded-xl text-lg">2</span> 
-              Remove Redundant Shopify Apps
-            </h2>
-            <p>
-              Every time you install a Shopify app, it often injects JavaScript code directly into your `theme.liquid` file. Even if you don't use the app, that code might still be loading for every single visitor.
-            </p>
-            <ul className="list-none space-y-3 font-sans text-base pl-0">
-              <li className="flex gap-3 items-start"><AlertTriangle className="text-amber-500 shrink-0 mt-1" size={20} /> <strong>The Purge:</strong> Go through your app list and blindly uninstall anything you haven't used in 30 days.</li>
-              <li className="flex gap-3 items-start"><Code className="text-green shrink-0 mt-1" size={20} /> <strong>Clean the Code:</strong> Check your `theme.liquid` for leftover snippets. Many deleted apps leave ghost code behind that requires manual removal.</li>
-            </ul>
-
-            <h2 className="flex items-center gap-4 text-3xl font-bold text-navy mt-12 mb-6 font-sans tracking-tight">
-              <span className="w-10 h-10 bg-navy text-white flex items-center justify-center rounded-xl text-lg">3</span> 
-              Minimize App Embeds & Block Injections
-            </h2>
-            <p>
-              Shopify Theme Architecture 2.0 uses App Embeds instead of hardcoded liquid scripts. This is vastly superior for speed.
-            </p>
-            <ul className="list-none space-y-3 font-sans text-base pl-0">
-              <li className="flex gap-3 items-start"><Target className="text-green shrink-0 mt-1" size={20} /> <strong>The Fix:</strong> Go to Theme Customizer &gt; App Embeds. Toggle OFF any embed you don't actively need running on the storefront.</li>
-            </ul>
-
-            <div className="bg-navy p-8 rounded-3xl text-white my-12 shadow-2xl font-sans">
-              <div className="flex items-center gap-4 mb-4">
-                <TrendingUp className="text-green" size={32} />
-                <h3 className="text-2xl font-bold m-0 text-white">Want a Lightning Fast Theme?</h3>
+              <h2 className="text-3xl font-bold text-navy mt-16 mb-8 font-sans tracking-tight">1. Mastering Image Architecture</h2>
+              <p>
+                The most common bandwidth-killer in Shopify is unoptimized imagery. While Shopify does provide some automatic optimization, you must take control of your image architecture using <code>srcset</code> and next-gen formats.
+              </p>
+              
+              <div className="bg-navy p-10 rounded-[40px] text-white my-12 space-y-6 font-sans">
+                <h4 className="text-green font-bold text-xs uppercase tracking-widest flex items-center gap-2">
+                  <Code size={18} /> Technical Implementation: Responsive Images
+                </h4>
+                <p className="text-white/60 text-sm leading-relaxed">
+                  Use this Liquid snippet to ensure browsers only download the resolution they actually need:
+                </p>
+                <div className="bg-black/30 p-6 rounded-2xl border border-white/5 font-mono text-xs overflow-x-auto">
+                  <p className="text-white">{"<img src=\"{{ image | img_url: 'master' }}\""}</p>
+                  <p className="text-white pl-4">{"loading=\"lazy\""}</p>
+                  <p className="text-white pl-4">{"srcset=\"{{ image | img_url: '400x' }} 400w, {{ image | img_url: '800x' }} 800w, {{ image | img_url: '1200x' }} 1200w\""}</p>
+                  <p className="text-white pl-4">{"alt=\"{{ image.alt | escape }}\" >"}</p>
+                </div>
               </div>
-              <p className="text-white/70 mb-6">If your theme is deeply bloated with years of broken app code, sometimes it's cheaper and more effective to start fresh or have a developer rebuild it properly.</p>
-              <button onClick={handleWhatsAppContact} className="bg-green text-navy font-bold px-6 py-3 rounded-full flex items-center gap-2 hover:scale-105 transition-transform shadow-xl">
-                <MessageCircle size={20} /> Chat with Me About a Theme Rebuild
-              </button>
+
+              <h2 className="text-3xl font-bold text-navy mt-16 mb-8 font-sans tracking-tight">2. The Font-Display Swap Strategy</h2>
+              <p>
+                Custom brand fonts are beautiful, but they cause FOUT (Flash of Unstyled Text) or FOIT (Flash of Invisible Text). In 2026, you should prioritize <strong>System Fonts</strong> for body copy.
+              </p>
+              <div className="bg-light p-8 rounded-[32px] border-l-8 border-green my-12">
+                <h4 className="text-xl font-bold text-navy mb-2 font-sans">CSS Optimization Hack:</h4>
+                <div className="bg-white p-4 rounded-xl border border-navy/5 font-mono text-xs mb-4">
+                  <p className="text-navy">font-display: swap;</p>
+                </div>
+                <p className="text-sm m-0 italic">Adding this single line to your <code>@font-face</code> declarations ensures the browser shows a fallback font instantly while your custom font downloads in the background.</p>
+              </div>
+
+              <h2 className="text-3xl font-bold text-navy mt-16 mb-8 font-sans tracking-tight">3. Reducing the "App Tax"</h2>
+              <p>
+                Every app you install adds potentially blocking JavaScript. Perform a "Code Audit" monthly. Search your <code>theme.liquid</code> for external domains like <code>cdn.appname.com</code> and remove residues from uninstalled apps.
+              </p>
+              <ul className="space-y-4 my-8">
+                <li className="flex gap-4">
+                  <CheckCircle2 className="text-green mt-1 shrink-0" size={20} />
+                  <span><strong>GTM Consolidation:</strong> Move all your individual tracking scripts (Facebook, TikTok, Pinterest) into a single optimized Google Tag Manager container.</span>
+                </li>
+                <li className="flex gap-4">
+                  <CheckCircle2 className="text-green mt-1 shrink-0" size={20} />
+                  <span><strong>Lazy Load Video:</strong> Never use autoplaying Shopify videos above the fold without <code>preload="none"</code> tags if they aren't critical to the UX.</span>
+                </li>
+              </ul>
+
+              <div className="bg-navy p-12 rounded-[48px] text-white my-16 shadow-[0_50px_100px_-20px_rgba(0,0,0,0.3)] font-sans">
+                <div className="flex items-center gap-6 mb-8">
+                  <div className="w-16 h-16 bg-green/20 rounded-2xl flex items-center justify-center">
+                    <Zap className="text-green" size={32} />
+                  </div>
+                  <div>
+                    <h3 className="text-3xl font-bold m-0 text-white">Need a Speed Specialist?</h3>
+                    <p className="text-white/40 uppercase tracking-widest text-[10px] font-bold mt-1">Deep-Dive Technical Performance Audits</p>
+                  </div>
+                </div>
+                <p className="text-white/70 text-lg leading-relaxed mb-10">
+                  Speed isn't just about apps. It's about how your Liquid code communicates with your HTML. I rebuild theme architectures to achieve 90+ Mobile Core Web Vital scores.
+                </p>
+                <button onClick={handleWhatsAppContact} className="bg-green text-navy font-bold px-10 py-5 rounded-full flex items-center gap-3 hover:scale-105 transition-transform shadow-2xl">
+                  <MessageCircle size={24} /> Audit My Store Speed
+                </button>
+              </div>
             </div>
-
-            <h2 className="flex items-center gap-4 text-3xl font-bold text-navy mt-12 mb-6 font-sans tracking-tight">
-              <span className="w-10 h-10 bg-navy text-white flex items-center justify-center rounded-xl text-lg">4</span> 
-              System Fonts vs Custom Fonts
-            </h2>
-            <p>
-              Custom web fonts (like downloading heavy files from Google Fonts or Adobe Fonts) cause "Flash of Unstyled Text" (FOUT) and significantly delay text rendering.
-            </p>
-            <ul className="list-none space-y-3 font-sans text-base pl-0">
-              <li className="flex gap-3 items-start"><CheckCircle2 className="text-green shrink-0 mt-1" size={20} /> <strong>The Solution:</strong> Switch to System Fonts (like Inter, San Francisco, or Roboto) in your Shopify typography settings. They load instantly because they are already installed on your customer's device.</li>
-            </ul>
-
-            <h2 className="flex items-center gap-4 text-3xl font-bold text-navy mt-12 mb-6 font-sans tracking-tight">
-              <span className="w-10 h-10 bg-navy text-white flex items-center justify-center rounded-xl text-lg">5</span> 
-              Limit Third-Party Tracking Scripts
-            </h2>
-            <p>
-              Having Facebook Pixel, TikTok Pixel, Google Analytics, Hotjar, and Klaviyo all firing simultaneously on page load will cripple any website's speed.
-            </p>
-            <ul className="list-none space-y-3 font-sans text-base pl-0">
-              <li className="flex gap-3 items-start"><Package className="text-green shrink-0 mt-1" size={20} /> <strong>Google Tag Manager:</strong> Consolidate your tracking scripts into Google Tag Manager (GTM) and set non-essential tags to load asynchronously or delay slightly after page load.</li>
-            </ul>
-            
-            <hr className="my-12 border-navy/10" />
-
-            <h3 className="text-2xl font-bold text-navy mb-4 font-sans tracking-tight">Conclusion</h3>
-            <p>
-              Speed optimization is an ongoing process. Run your site through Google PageSpeed Insights before and after applying these fixes. Focus heavily on image sizes and app bloat, as those two factors account for 90% of sluggish Shopify experiences.
-            </p>
-          </div>
 
           <div className="pt-16 mt-16 border-t border-navy/5 flex flex-col md:flex-row items-start md:items-center justify-between gap-10">
-            <Link to="/portfolio" className="flex items-center gap-6 group hover:bg-light p-4 rounded-3xl transition-colors -ml-4 pr-8">
-              <img src="https://fiverr-res.cloudinary.com/image/upload/f_auto,q_auto,t_profile_original/v1/attachments/profile/photo/bed47882db24771238091456bc69a699-1765207538189/19e070ae-9c29-498b-ac69-01114e131e68.png" alt="Sheun" className="w-20 h-20 rounded-full shadow-lg object-cover" />
+            <Link to="/portfolio" className="flex items-center gap-6 group hover:bg-light p-4 rounded-3xl transition-all -ml-4 pr-8 border border-transparent hover:border-navy/5">
+              <div className="relative">
+                <div className="absolute inset-0 bg-green/20 rounded-full blur-xl group-hover:bg-green/40 transition-colors" />
+                <img src="https://fiverr-res.cloudinary.com/image/upload/f_auto,q_auto,t_profile_original/v1/attachments/profile/photo/bed47882db24771238091456bc69a699-1765207538189/19e070ae-9c29-498b-ac69-01114e131e68.png" alt="Sheun" className="w-20 h-20 rounded-full shadow-lg object-cover relative z-10 border-2 border-white" referrerPolicy="no-referrer" />
+              </div>
               <div>
-                <p className="font-bold text-navy text-xl group-hover:text-green transition-colors">By Sheun</p>
+                <p className="font-bold text-navy text-xl group-hover:text-green transition-colors leading-tight">By Sheun</p>
                 <p className="text-sm text-navy/50 uppercase tracking-widest font-bold mb-1">Shopify Expert & Developer</p>
-                <span className="text-navy font-bold text-sm flex items-center gap-2 opacity-0 group-hover:opacity-100 transition-opacity -translate-x-2 group-hover:translate-x-0">View Portfolio <ArrowRight size={14} /></span>
+                <span className="text-navy font-bold text-sm flex items-center gap-2 group-hover:translate-x-1 transition-transform">View Portfolio & Contact <ArrowRight size={14} /></span>
               </div>
             </Link>
             
@@ -212,7 +194,6 @@ export default function ShopifySpeedOptimization() {
                       <div className="w-10 h-10 bg-navy/10 rounded-full flex items-center justify-center text-navy font-bold">{comment.name.charAt(0)}</div>
                       <span className="font-bold text-navy text-lg">{comment.name}</span>
                     </div>
-                    <span className="text-sm text-navy/40 font-serif italic">{comment.date}</span>
                   </div>
                   <p className="text-navy/70 leading-relaxed">{comment.text}</p>
                 </div>

@@ -9,6 +9,20 @@ const categories = ["All", "👗 Fashion", "💄 Beauty & Skincare", "🐾 Pets"
 
 const projects = [
   {
+    id: "premium-experience",
+    name: "Luxury E-commerce Suite",
+    url: "sheunhub.com",
+    tag: "✅ Real Client Project",
+    category: "Real Project",
+    desc: "A full-scale Shopify Plus development featuring hyper-optimized checkout flows and bespoke UI modules designed for maximum engagement.",
+    services: ["Shopify Plus", "UI/UX Architecture", "Optimization"],
+    image: "https://ik.imagekit.io/pedgmrihq/image.png?updatedAt=1776777977552",
+    featured: true,
+    col: "md:col-span-12",
+    height: "h-[600px]",
+    isRealProject: true,
+  },
+  {
     id: "rooibru",
     name: "Rooibru",
     url: "rooibru.com",
@@ -148,11 +162,25 @@ const projects = [
 export default function Portfolio() {
   const [activeCategory, setActiveCategory] = useState("All");
   const [selectedProject, setSelectedProject] = useState<typeof projects[0] | null>(null);
-  const [fullScreenImage, setFullScreenImage] = useState<string | null>(null);
+  const [fullScreenIndex, setFullScreenIndex] = useState<number | null>(null);
 
   const filteredProjects = projects.filter(p => 
     p.isRealProject || activeCategory === "All" || p.category === activeCategory
   );
+
+  const handlePrev = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    if (fullScreenIndex !== null) {
+      setFullScreenIndex((prev) => (prev !== null ? (prev - 1 + projects.length) % projects.length : null));
+    }
+  };
+
+  const handleNext = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    if (fullScreenIndex !== null) {
+      setFullScreenIndex((prev) => (prev !== null ? (prev + 1) % projects.length : null));
+    }
+  };
 
   return (
     <PageWrapper 
@@ -362,8 +390,7 @@ export default function Portfolio() {
                     key={`gallery-${i}`} 
                     className="relative rounded-2xl overflow-hidden cursor-pointer group hover:shadow-xl transition-all"
                     onClick={() => {
-                      setSelectedProject(project);
-                      setFullScreenImage(project.image);
+                      setFullScreenIndex(i);
                     }}
                   >
                     <img 
@@ -441,7 +468,10 @@ export default function Portfolio() {
               <div className="space-y-8 relative z-10">
                 <div 
                   className="aspect-video rounded-2xl overflow-hidden relative cursor-zoom-in group/img"
-                  onClick={() => setFullScreenImage(selectedProject.image)}
+                  onClick={() => {
+                    const idx = projects.findIndex(p => p.id === selectedProject.id);
+                    setFullScreenIndex(idx !== -1 ? idx : null);
+                  }}
                 >
                   <img 
                     src={selectedProject.image} 
@@ -501,7 +531,10 @@ export default function Portfolio() {
                   )}
                   
                   <button
-                    onClick={() => setFullScreenImage(selectedProject.image)}
+                    onClick={() => {
+                      const idx = projects.findIndex(p => p.id === selectedProject.id);
+                      setFullScreenIndex(idx !== -1 ? idx : null);
+                    }}
                     className="inline-flex items-center justify-center flex-grow gap-3 bg-light text-navy px-8 py-4 rounded-full font-bold text-lg hover:bg-navy hover:text-white transition-all"
                   >
                     View Full Design <Globe size={20} />
@@ -513,46 +546,53 @@ export default function Portfolio() {
         )}
       </AnimatePresence>
 
-      {/* Full Screen Lightbox */}
       <AnimatePresence>
-        {fullScreenImage && (
+        {fullScreenIndex !== null && (
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             className="fixed inset-0 z-[100] bg-navy/95 backdrop-blur-xl flex flex-col"
           >
-            <div className="flex items-center justify-between p-6 md:p-10 relative z-10">
-              <div className="space-y-1">
-                <h4 className="text-white font-bold text-2xl tracking-tight">Full Design View</h4>
-                <p className="text-white/40 text-xs uppercase tracking-widest">Scroll to view entire page</p>
-              </div>
+            {/* Close Button Only */}
+            <div className="absolute top-6 right-6 md:top-10 md:right-10 z-50">
               <button
-                onClick={() => setFullScreenImage(null)}
-                className="w-16 h-16 bg-white/10 rounded-full flex items-center justify-center text-white hover:bg-green hover:text-navy transition-all"
+                onClick={() => setFullScreenIndex(null)}
+                className="w-16 h-16 bg-white/10 rounded-full flex items-center justify-center text-white hover:bg-green hover:text-navy transition-all shadow-2xl backdrop-blur-md"
               >
                 <X size={32} />
               </button>
             </div>
 
-            <div className="flex-grow overflow-y-auto p-4 md:p-10 custom-scrollbar">
-              <div className="max-w-6xl mx-auto bg-white rounded-3xl overflow-hidden shadow-2xl">
+            {/* Navigation Buttons */}
+            <div className="absolute inset-y-0 left-0 flex items-center px-4 md:px-10 z-40 pointer-events-none">
+              <button
+                onClick={handlePrev}
+                className="w-16 h-16 md:w-20 md:h-20 bg-white/10 rounded-full flex items-center justify-center text-white hover:bg-green hover:text-navy transition-all shadow-2xl backdrop-blur-md pointer-events-auto group"
+              >
+                <ArrowRight size={40} className="rotate-180 group-active:scale-90 transition-transform" />
+              </button>
+            </div>
+
+            <div className="absolute inset-y-0 right-0 flex items-center px-4 md:px-10 z-40 pointer-events-none">
+              <button
+                onClick={handleNext}
+                className="w-16 h-16 md:w-20 md:h-20 bg-white/10 rounded-full flex items-center justify-center text-white hover:bg-green hover:text-navy transition-all shadow-2xl backdrop-blur-md pointer-events-auto group"
+              >
+                <ArrowRight size={40} className="group-active:scale-90 transition-transform" />
+              </button>
+            </div>
+
+            {/* Image Container */}
+            <div className="flex-grow overflow-y-auto p-4 md:p-10 custom-scrollbar relative">
+              <div className="max-w-6xl mx-auto bg-white rounded-3xl overflow-hidden shadow-2xl my-auto min-h-full flex flex-col">
                 <img 
-                  src={fullScreenImage} 
+                  src={projects[fullScreenIndex].image} 
                   alt="Full Design" 
                   referrerPolicy="no-referrer"
                   className="w-full h-auto block" 
                 />
               </div>
-            </div>
-            
-            <div className="p-10 text-center">
-              <button
-                onClick={() => setFullScreenImage(null)}
-                className="bg-green text-navy px-12 py-5 rounded-full font-bold text-lg hover:scale-105 transition-all shadow-2xl"
-              >
-                Close Full View
-              </button>
             </div>
           </motion.div>
         )}

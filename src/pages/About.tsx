@@ -88,7 +88,7 @@ export default function About() {
                 className="relative z-10 aspect-[4/5] rounded-[80px] overflow-hidden border-[24px] border-white shadow-[0_40px_100px_-20px_rgba(0,0,0,0.2)]"
               >
                 <img 
-                  src="https://ik.imagekit.io/pedgmrihq/image.png?updatedAt=1776339493353" 
+                  src="https://ik.imagekit.io/pedgmrihq/image.png" 
                   alt="Sheun" 
                   referrerPolicy="no-referrer"
                   className="w-full h-full object-cover" 

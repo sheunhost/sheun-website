@@ -5,9 +5,9 @@ import { Link } from "react-router-dom";
 import { useState } from "react";
 
 export default function ShopifySettingsGuide() {
-  const [comments, setComments] = useState<{name: string, text: string, date: string}[]>([
-    { name: "Alex R.", text: "This is super helpful. I didn't even realize my checkout was missing phone numbers!", date: "April 13, 2026" },
-    { name: "Sarah J.", text: "Great tips! The image compression one saved my site speed immensely.", date: "April 14, 2026" }
+  const [comments, setComments] = useState<{name: string, text: string}[]>([
+    { name: "Alex R.", text: "This is super helpful. I didn't even realize my checkout was missing phone numbers!" },
+    { name: "Sarah J.", text: "Great tips! The image compression one saved my site speed immensely." }
   ]);
   const [newComment, setNewComment] = useState("");
   const [commentName, setCommentName] = useState("");
@@ -34,7 +34,7 @@ export default function ShopifySettingsGuide() {
   const handleAddComment = (e: React.FormEvent) => {
     e.preventDefault();
     if(newComment.trim() && commentName.trim()) {
-      setComments([...comments, { name: commentName, text: newComment, date: new Date().toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' }) }]);
+      setComments([...comments, { name: commentName, text: newComment }]);
       setNewComment("");
       setCommentName("");
     }
@@ -87,7 +87,7 @@ export default function ShopifySettingsGuide() {
               <img src="https://picsum.photos/seed/blog1/1200/600" alt="Shopify settings" className="w-full h-full object-cover rounded-3xl z-10 opacity-90" />
             </div>
 
-            <div className="prose prose-lg md:prose-xl max-w-none prose-headings:font-bold prose-headings:text-navy prose-p:text-navy/80 prose-p:leading-loose font-serif">
+            <div className="prose prose-lg md:prose-xl max-w-none prose-headings:font-bold prose-headings:text-navy prose-p:text-navy/80 prose-p:leading-relaxed font-sans">
               <p>
                 You’ve spent weeks perfecting your theme, sourcing products, and running ads. Traffic is flowing, but conversions are stagnant. Sound familiar? 
               </p>
@@ -232,12 +232,15 @@ export default function ShopifySettingsGuide() {
 
             {/* Author / Social / CTA */}
             <div className="pt-16 mt-16 border-t border-navy/5 flex flex-col md:flex-row items-start md:items-center justify-between gap-10">
-              <Link to="/portfolio" className="flex items-center gap-6 group hover:bg-light p-4 rounded-3xl transition-colors -ml-4 pr-8">
-                <img src="https://fiverr-res.cloudinary.com/image/upload/f_auto,q_auto,t_profile_original/v1/attachments/profile/photo/bed47882db24771238091456bc69a699-1765207538189/19e070ae-9c29-498b-ac69-01114e131e68.png" alt="Sheun" className="w-20 h-20 rounded-full shadow-lg object-cover" />
+              <Link to="/portfolio" className="flex items-center gap-6 group hover:bg-light p-4 rounded-3xl transition-all -ml-4 pr-8 border border-transparent hover:border-navy/5">
+                <div className="relative">
+                  <div className="absolute inset-0 bg-green/20 rounded-full blur-xl group-hover:bg-green/40 transition-colors" />
+                  <img src="https://fiverr-res.cloudinary.com/image/upload/f_auto,q_auto,t_profile_original/v1/attachments/profile/photo/bed47882db24771238091456bc69a699-1765207538189/19e070ae-9c29-498b-ac69-01114e131e68.png" alt="Sheun" className="w-20 h-20 rounded-full shadow-lg object-cover relative z-10 border-2 border-white" referrerPolicy="no-referrer" />
+                </div>
                 <div>
-                  <p className="font-bold text-navy text-xl group-hover:text-green transition-colors">By Sheun</p>
+                  <p className="font-bold text-navy text-xl group-hover:text-green transition-colors leading-tight">By Sheun</p>
                   <p className="text-sm text-navy/50 uppercase tracking-widest font-bold mb-1">Shopify Expert & Developer</p>
-                  <span className="text-navy font-bold text-sm flex items-center gap-2 opacity-0 group-hover:opacity-100 transition-opacity -translate-x-2 group-hover:translate-x-0">View Portfolio <ArrowRight size={14} /></span>
+                  <span className="text-navy font-bold text-sm flex items-center gap-2 group-hover:translate-x-1 transition-transform">View Portfolio & Contact <ArrowRight size={14} /></span>
                 </div>
               </Link>
               
@@ -275,7 +278,6 @@ export default function ShopifySettingsGuide() {
                         <div className="w-10 h-10 bg-navy/10 rounded-full flex items-center justify-center text-navy font-bold">{comment.name.charAt(0)}</div>
                         <span className="font-bold text-navy text-lg">{comment.name}</span>
                       </div>
-                      <span className="text-sm text-navy/40 font-serif italic">{comment.date}</span>
                     </div>
                     <p className="text-navy/70 leading-relaxed">{comment.text}</p>
                   </div>
@@ -332,7 +334,7 @@ export default function ShopifySettingsGuide() {
                 </div>
               </div>
               <div className="space-y-4 px-4">
-                <h4 className="text-2xl font-bold text-navy group-hover:text-green transition-colors leading-tight tracking-tight">How to Speed Up Your Shopify Store in 2025</h4>
+                <h4 className="text-2xl font-bold text-navy group-hover:text-green transition-colors leading-tight tracking-tight">How to Speed Up Your Shopify Store in 2026</h4>
                 <div className="flex items-center gap-3 text-xs text-navy/40 font-bold uppercase tracking-widest">
                   <Clock size={16} className="text-green" /> 12 min read
                 </div>

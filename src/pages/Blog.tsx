@@ -11,7 +11,7 @@ const posts = [
     id: 1,
     title: "10 Shopify Settings Most Store Owners Miss (And Why They Cost You Sales)",
     category: "Shopify Tips",
-    excerpt: "Discover the hidden settings in your Shopify admin that can make or break your store's conversion rate.",
+    excerpt: "Hidden configuration errors in your Shopify admin can stifle your growth. In this technical audit, we reveal the high-impact settings—from tax calculation triggers to checkout script optimization—that are often overlooked by even seasoned merchants.",
     date: "April 12, 2026",
     readTime: "8 min read",
     image: "https://picsum.photos/seed/blog1/800/600",
@@ -19,18 +19,18 @@ const posts = [
   },
   {
     id: 2,
-    title: "How to Speed Up Your Shopify Store in 2025 — Step by Step",
+    title: "How to Speed Up Your Shopify Store in 2026 — Step by Step",
     category: "Shopify Tips",
-    excerpt: "A comprehensive guide to optimizing your store's performance for better user experience and SEO.",
+    excerpt: "Mobile conversion rates are directly proportional to page load speeds. Our 2026 performance framework covers server-side Liquid logic, the transition to AVIF image formats, and advanced script management via GTM to achieve <1.5s load times.",
     date: "April 10, 2026",
     readTime: "12 min read",
     image: "https://picsum.photos/seed/blog2/800/600",
   },
   {
     id: 3,
-    title: "The Best Shopify Apps for Dropshipping Stores in 2025",
+    title: "The Best Shopify Apps for Dropshipping Stores in 2026",
     category: "Dropshipping",
-    excerpt: "My handpicked list of essential apps to automate your dropshipping business and increase AOV.",
+    excerpt: "Efficiency is the only path to profit in a competitive ad market. We analyze the technical 'Core Four' ecosystem: Zendrop for supply chain integrity, Loox for visual trust, ReConvert for post-purchase AOV expansion, and Klaviyo for lifecycle retention.",
     date: "April 8, 2026",
     readTime: "10 min read",
     image: "https://picsum.photos/seed/blog3/800/600",
@@ -39,7 +39,7 @@ const posts = [
     id: 4,
     title: "How to Build a Profitable Fashion Dropshipping Store on Shopify",
     category: "Dropshipping",
-    excerpt: "Learn the secrets to success in the highly competitive fashion niche, from sourcing to marketing.",
+    excerpt: "Fashion requires a different architectural DNA. From multi-variant image handling to architecting an influencer-ready storefront, we break down the strategic blueprint for building a high-growth fashion brand that commands premium margins.",
     date: "April 5, 2026",
     readTime: "15 min read",
     image: "https://picsum.photos/seed/blog4/800/600",
@@ -48,16 +48,16 @@ const posts = [
     id: 5,
     title: "How to Migrate from WooCommerce to Shopify Without Losing SEO",
     category: "Store Migration",
-    excerpt: "A technical walkthrough of migrating your store while preserving your hard-earned Google rankings.",
+    excerpt: "Migrating platforms shouldn't mean sacrificing your organic traffic. This technical manual details our zero-loss migration protocol, including URL regex matching, historical metadata structural synchronization, and critical SEO canonical management.",
     date: "April 2, 2026",
     readTime: "20 min read",
     image: "https://picsum.photos/seed/blog5/800/600",
   },
   {
     id: 6,
-    title: "Shopify SEO in 2025: The Beginner's Complete Guide",
+    title: "Shopify SEO in 2026: The Beginner's Complete Guide",
     category: "SEO",
-    excerpt: "Master the basics of Shopify SEO and start driving consistent organic traffic to your storefront.",
+    excerpt: "Break free from the 'paid ad' cycle. This comprehensive primer introduces you to the world of technical and on-page SEO specifically for the Shopify platform, helping you build a compounding asset that drives organic sales on autopilot.",
     date: "March 30, 2026",
     readTime: "25 min read",
     image: "https://picsum.photos/seed/blog6/800/600",
@@ -304,8 +304,8 @@ export default function Blog() {
                       <div className="flex items-center gap-3 text-xs text-navy/40 font-bold uppercase tracking-widest">
                         <Clock size={16} className="text-green" /> {post.readTime}
                       </div>
-                      <span className="bg-navy text-white px-6 py-3 rounded-full font-bold text-xs uppercase tracking-widest flex items-center gap-2 group-hover:bg-green group-hover:text-navy transition-all duration-500 shadow-lg group-hover:shadow-xl">
-                        Read More <ArrowRight size={14} />
+                      <span className="bg-navy text-white px-6 py-3 rounded-full font-bold text-xs uppercase tracking-widest flex items-center gap-2 group-hover:bg-green group-hover:text-navy transition-all duration-500 shadow-lg group-hover:shadow-xl group-hover:scale-105 transform">
+                        Read Story <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
                       </span>
                     </div>
                   </div>

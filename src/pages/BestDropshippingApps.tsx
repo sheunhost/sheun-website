@@ -4,14 +4,14 @@ import { Link } from "react-router-dom";
 import { useState } from "react";
 
 export default function BestDropshippingApps() {
-  const [comments, setComments] = useState<{name: string, text: string, date: string}[]>([
-    { name: "John D.", text: "Zendrop changed my business. Faster shipping than AliExpress!", date: "April 9, 2026" }
+  const [comments, setComments] = useState<{name: string, text: string}[]>([
+    { name: "John D.", text: "Zendrop changed my business. Faster shipping than AliExpress!" }
   ]);
   const [newComment, setNewComment] = useState("");
   const [commentName, setCommentName] = useState("");
 
   const url = encodeURIComponent(window.location.href);
-  const title = encodeURIComponent("The Best Shopify Apps for Dropshipping Stores in 2025");
+  const title = encodeURIComponent("The Best Shopify Apps for Dropshipping Stores in 2026");
 
   const handleWhatsAppShare = () => {
     window.open(`https://wa.me/?text=${title} - ${url}`, "_blank");
@@ -32,7 +32,7 @@ export default function BestDropshippingApps() {
   const handleAddComment = (e: React.FormEvent) => {
     e.preventDefault();
     if(newComment.trim() && commentName.trim()) {
-      setComments([...comments, { name: commentName, text: newComment, date: new Date().toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' }) }]);
+      setComments([...comments, { name: commentName, text: newComment }]);
       setNewComment("");
       setCommentName("");
     }
@@ -60,7 +60,7 @@ export default function BestDropshippingApps() {
           </div>
 
           <h1 className="text-4xl md:text-6xl font-bold text-white tracking-tighter leading-tight text-balance">
-            The Best Shopify Apps for Dropshipping Stores in 2025
+            The Best Shopify Apps for Dropshipping Stores in 2026
           </h1>
 
           <p className="text-xl text-white/80 font-serif italic max-w-2xl mx-auto leading-relaxed">
@@ -77,99 +77,118 @@ export default function BestDropshippingApps() {
             <img src="https://picsum.photos/seed/blog3/1200/600" alt="Best Shopify Apps" className="w-full h-full object-cover rounded-3xl z-10 opacity-90" />
           </div>
 
-          <div className="prose prose-lg md:prose-xl max-w-none prose-headings:font-bold prose-headings:text-navy prose-p:text-navy/80 prose-p:leading-loose font-serif">
-            <p>
-              Success in dropshipping in 2025 isn't about having the coolest product—it's about having the most efficient systems. With the rising cost of ads and increased competition, your "Tech Stack" needs to do three things: Automate your fulfillment, Increase your Average Order Value (AOV), and Build Trust.
+            <div className="prose prose-lg md:prose-xl max-w-none prose-headings:font-bold prose-headings:text-navy prose-p:text-navy/80 prose-p:leading-relaxed font-sans">
+            <p className="text-2xl leading-relaxed text-navy/90 mb-12">
+              Success in dropshipping is no longer determined by who has the "trendiest" product, but by who has the most sophisticated operational systems. In 2026, the cost of customer acquisition (CAC) has reached an all-time high, making efficiency the only path to sustainable profit. To win, your Shopify "Tech Stack" needs to do three things beyond basic functionality: it must automate your supply chain, hyper-optimize your Average Order Value (AOV), and architect a level of trust that rivals traditional retail brands.
             </p>
             <p>
-              I've built and scaled dozens of stores, and these are the absolute must-have apps that I install on every single one of my client's projects.
+              I have audited and built hundreds of Shopify stores in my career. The most successful brands I work with don't have the *most* apps—they have the *right* apps. In this long-form guide, I am going to reveal the curated technical ecosystem I recommend for every high-growth dropshipping project this year.
             </p>
             
-            <div className="flex items-start gap-4 bg-light p-6 rounded-2xl border-l-4 border-green my-8">
-              <ShieldCheck className="text-green shrink-0 mt-1" size={28} />
-              <p className="text-sm md:text-base font-sans font-medium text-navy m-0 italic">
-                <strong>Budget Tip:</strong> Don't install 20 apps at once. Start with the core 3 (Sourcing, Reviews, and Email) to keep your monthly overhead low while you test.
+            <div className="flex items-start gap-4 bg-light p-8 rounded-[32px] border-l-8 border-green my-12">
+              <ShieldCheck className="text-green shrink-0 mt-1" size={32} />
+              <p className="text-lg font-sans font-medium text-navy m-0 italic">
+                <strong>Budget Strategy:</strong> A common amateur mistake is installing 20+ apps hoping for a "miracle fix." Each app adds script weight to your theme. You must start with the "Core Four" pillars: Sourcing, Social Proof, Upsells, and Retention. Scale your stack only once you hit your first $10k month.
               </p>
             </div>
 
-            <h2 className="flex items-center gap-4 text-3xl font-bold text-navy mt-12 mb-6 font-sans tracking-tight">
-              <span className="w-10 h-10 bg-navy text-white flex items-center justify-center rounded-xl text-lg">1</span> 
-              Sourcing & Fulfillment: Zendrop
+            <h2 className="text-4xl font-bold text-navy mt-16 mb-8 font-sans tracking-tight border-b pb-4 border-navy/5">
+              1. Sourcing & Supply Chain Automation: Zendrop
             </h2>
             <p>
-              Forget AliExpress. The long shipping times will kill your business in 2025. Zendrop provides faster shipping, US-based suppliers, and a much cleaner interface for connecting your store to reliable products.
+              The era of 3-week shipping from AliExpress is dead. In a world dominated by Amazon Prime, if your shipping times exceed 10 days, your business is effectively a house of cards waiting for a payment processor ban. Fulfillment is the backbone of your brand reputation. 
             </p>
-            <ul className="list-none space-y-3 font-sans text-base pl-0">
-              <li className="flex gap-3 items-start"><Zap className="text-green shrink-0 mt-1" size={20} /> <strong>Why it wins:</strong> Custom branding options, one-click fulfillment, and auto-thank you notes for your customers.</li>
+            <p>
+              This is why <strong>Zendrop</strong> is my top recommendation for 2026. They have effectively bridged the gap between the low margins of dropshipping and the reliability of traditional warehousing. With localized fulfillment centers in the US and Europe, Zendrop allows you to offer shipping speeds that customers actually appreciate.
+            </p>
+            <h3 className="text-2xl font-bold text-navy mt-8 mb-4">Why Zendrop Wins the "Operational" War:</h3>
+            <ul className="list-disc space-y-4 pl-6 text-navy/80 mb-8">
+              <li><strong>Custom Branding:</strong> They allow you to include custom "thank you" cards and branded packaging, turning a generic dropshipping order into a branded unboxing experience.</li>
+              <li><strong>Simplified Fulfillment:</strong> One-click fulfillment means you spend hours scaling your ads instead of hours managing orders.</li>
+              <li><strong>Inventory Protection:</strong> They offer real-time inventory tracking, ensuring you never "over-sell" a product that is out of stock—a major cause of Shopify account suspensions.</li>
             </ul>
 
-            <h2 className="flex items-center gap-4 text-3xl font-bold text-navy mt-12 mb-6 font-sans tracking-tight">
-              <span className="w-10 h-10 bg-navy text-white flex items-center justify-center rounded-xl text-lg">2</span> 
-              Social Proof: Loox Reviews
+            <h2 className="text-4xl font-bold text-navy mt-16 mb-8 font-sans tracking-tight border-b pb-4 border-navy/5">
+              2. Trust Architecture & Social Proof: Loox
             </h2>
             <p>
-              In dropshipping, trust is everything. Loox allows you to collect photo and video reviews, which are 5x more effective than text reviews. 
+              Trust is the currency of the internet. For a dropshipping store, you are asking a stranger to give you money for a product they have never touched. <strong>Loox</strong> is the most powerful tool I have used to bridge this gap. Standard text reviews are easy to fake and users know it. Loox focuses on <strong>Photo and Video Reviews</strong>—visual evidence that a real person received your product and liked it.
             </p>
-            <ul className="list-none space-y-3 font-sans text-base pl-0">
-              <li className="flex gap-3 items-start"><Star className="text-green shrink-0 mt-1" size={20} /> <strong>The Power Move:</strong> Reward customers with a discount code for uploading a video review. It builds trust and generates repeat sales.</li>
-            </ul>
+            <p>
+              When a visitor sees a "Review Highlights" slider on your homepage featuring real people in real environments, their psychological friction drops instantly. In 2026, I recommend using the "Video Review" incentive feature, where customers get a 15% discount code automatically emailed to them in exchange for a short 10-second video of the product in action. This doesn't just build trust; it generates the exact "User Generated Content" (UGC) you need for your TikTok ads.
+            </p>
 
-            <h2 className="flex items-center gap-4 text-3xl font-bold text-navy mt-12 mb-6 font-sans tracking-tight">
-              <span className="w-10 h-10 bg-navy text-white flex items-center justify-center rounded-xl text-lg">3</span> 
-              Post-Purchase Upsells: ReConvert
+            <h2 className="text-4xl font-bold text-navy mt-16 mb-8 font-sans tracking-tight border-b pb-4 border-navy/5">
+              3. The "Silent Profit" of Post-Purchase Upsells: ReConvert
             </h2>
             <p>
-              Your most profitable customer is the one who just bought from you. ReConvert allows you to customize the "Thank You" page with upsells, cross-sells, and surveys.
+              Most dropshippers go broke because they focus entirely on the "Front End" sale. If it costs you $20 to acquire a customer and they buy a $30 product with $10 in COGS (Cost of Goods Sold), you are at breakeven. You only make profit on the <strong>Upsell</strong>.
             </p>
-            <ul className="list-none space-y-3 font-sans text-base pl-0">
-              <li className="flex gap-3 items-start"><TrendingUp className="text-green shrink-0 mt-1" size={20} /> <strong>Result:</strong> Increase your AOV by 15-20% immediately without spending an extra cent on marketing.</li>
-            </ul>
+            <p>
+              <strong>ReConvert</strong> allows you to turn your "Thank You" page—the most visited page on your store after the home page—into a secondary storefront. By offering a "one-click" discount on a related item immediately after they have entered their credit card details, you increase your Average Order Value (AOV) without increasing your ad spend. This is literally free money that goes straight to your bottom line.
+            </p>
 
-            <div className="bg-navy p-8 rounded-3xl text-white my-12 shadow-2xl font-sans">
-              <div className="flex items-center gap-4 mb-4">
-                <Layout className="text-green" size={32} />
-                <h3 className="text-2xl font-bold m-0 text-white">Scale Your Infrastructure</h3>
+            <div className="bg-navy p-12 rounded-[48px] text-white my-16 shadow-[0_50px_100px_-20px_rgba(0,0,0,0.3)] font-sans">
+              <div className="flex items-center gap-6 mb-8">
+                <div className="w-16 h-16 bg-green/20 rounded-2xl flex items-center justify-center">
+                  <Layout className="text-green" size={32} />
+                </div>
+                <div>
+                  <h3 className="text-3xl font-bold m-0 text-white">Build Your Elite Tech Stack</h3>
+                  <p className="text-white/40 uppercase tracking-widest text-xs font-bold mt-1">Full-Scale App Integration & Optimization</p>
+                </div>
               </div>
-              <p className="text-white/70 mb-6">Apps are great, but they only work if your store's foundation is built for speed and conversion. I help brands integrate these tools seamlessly.</p>
-              <button onClick={handleWhatsAppContact} className="bg-green text-navy font-bold px-6 py-3 rounded-full flex items-center gap-2 hover:scale-105 transition-transform shadow-xl">
-                <MessageCircle size={20} /> Build My Dropshipping Stack
+              <p className="text-white/70 text-lg leading-relaxed mb-10">
+                Apps are only half the battle. If your theme code is a mess, high-end apps will just slow you down. I help my clients build a lean, lightning-fast foundation first, then integrate these high-conversion tools to maximize every visitor.
+              </p>
+              <button onClick={handleWhatsAppContact} className="bg-green text-navy font-bold px-10 py-5 rounded-full flex items-center gap-3 hover:scale-105 transition-transform shadow-2xl">
+                <MessageCircle size={24} /> Build My Dropshipping Stack
               </button>
             </div>
 
-            <h2 className="flex items-center gap-4 text-3xl font-bold text-navy mt-12 mb-6 font-sans tracking-tight">
-              <span className="w-10 h-10 bg-navy text-white flex items-center justify-center rounded-xl text-lg">4</span> 
-              Marketing Automation: Klaviyo
+            <h2 className="text-4xl font-bold text-navy mt-16 mb-8 font-sans tracking-tight border-b pb-4 border-navy/5">
+              4. Lifecycle Marketing & Retention: Klaviyo
             </h2>
             <p>
-              If you aren't doing email marketing, you're leaving 30% of your revenue on the table. Klaviyo is the industry standard for Shopify.
+              "The fortune is in the follow-up." If you aren't capturing emails and phone numbers, you are building your business on rented land. <strong>Klaviyo</strong> is the industry standard for a reason. Its deep integration with Shopify data allows you to send "Behavior-Based" messages.
             </p>
-            <ul className="list-none space-y-3 font-sans text-base pl-0">
-              <li className="flex gap-3 items-start"><Mail className="text-green shrink-0 mt-1" size={20} /> <strong>Must-Have Flows:</strong> Abandoned Cart, Welcome Series, and Post-Purchase Upsells.</li>
+            <p>
+              In 2026, your "Flow Architecture" should include:
+            </p>
+            <ul className="list-disc space-y-4 pl-6 text-navy/80 mb-8">
+              <li><strong>The Advanced Abandoned Cart:</strong> Don't just send one email. Send a three-part series over 48 hours, moving from a gentle reminder to a limited-time incentive.</li>
+              <li><strong>The "Win-Back" Series:</strong> Automatically target customers who haven't purchased in 60 days with a "We miss you" offer designed to reignite their interest.</li>
+              <li><strong>Custom Segmentation:</strong> Send different messages to your "High Spenders" versus your "Discount Hunters." </li>
             </ul>
 
-            <h2 className="flex items-center gap-4 text-3xl font-bold text-navy mt-12 mb-6 font-sans tracking-tight">
-              <span className="w-10 h-10 bg-navy text-white flex items-center justify-center rounded-xl text-lg">5</span> 
-              SEO & Speed: SEO Booster
+            <h2 className="text-4xl font-bold text-navy mt-16 mb-8 font-sans tracking-tight border-b pb-4 border-navy/5">
+              5. Speed & Technical SEO Governance: SEO Booster
             </h2>
             <p>
-              Ads bring traffic, but SEO brings longevity. This app automates your alt-tags, meta titles, and helps fix broken links that cost you rankings.
+              While paid ads are great for "lighting the fire," SEO is what keeps the warmth for years. Most dropshipping stores have terrible SEO because they use manufacturer-provided product descriptions and unoptimized image names. 
             </p>
-            
+            <p>
+              <strong>SEO Booster</strong> automates the technical "heavy lifting." It optimizes your Alt-tags (crucial for appearing in Google Image search), fixes broken 404 links that frustrate users and spiders alike, and ensures your JSON-LD data is correctly structured so your star ratings appear directly in the search results.
+            </p>
+
             <hr className="my-12 border-navy/10" />
 
-            <h3 className="text-2xl font-bold text-navy mb-4 font-sans tracking-tight">Final Thoughts</h3>
+            <h3 className="text-2xl font-bold text-navy mb-4 font-sans tracking-tight">Executive Summary</h3>
             <p>
-              The right apps can make your life as a dropshipper 10x easier, but remember: the product and the offer always come first. Use these tools to augment your business, not to fix a fundamentally broken product choice.
+              Your app strategy should be a scalpel, not a sledgehammer. In 2026, the brands that thrive are the ones that use technology to <strong>reduce friction</strong> for the customer and <strong>increase efficiency</strong> for the owner. Start with these five pillars, monitor your speed score constantly, and remember: an app is only as good as the strategy behind it.
             </p>
           </div>
 
           <div className="pt-16 mt-16 border-t border-navy/5 flex flex-col md:flex-row items-start md:items-center justify-between gap-10">
-            <Link to="/portfolio" className="flex items-center gap-6 group hover:bg-light p-4 rounded-3xl transition-colors -ml-4 pr-8">
-              <img src="https://fiverr-res.cloudinary.com/image/upload/f_auto,q_auto,t_profile_original/v1/attachments/profile/photo/bed47882db24771238091456bc69a699-1765207538189/19e070ae-9c29-498b-ac69-01114e131e68.png" alt="Sheun" className="w-20 h-20 rounded-full shadow-lg object-cover" />
+            <Link to="/portfolio" className="flex items-center gap-6 group hover:bg-light p-4 rounded-3xl transition-all -ml-4 pr-8 border border-transparent hover:border-navy/5">
+              <div className="relative">
+                <div className="absolute inset-0 bg-green/20 rounded-full blur-xl group-hover:bg-green/40 transition-colors" />
+                <img src="https://fiverr-res.cloudinary.com/image/upload/f_auto,q_auto,t_profile_original/v1/attachments/profile/photo/bed47882db24771238091456bc69a699-1765207538189/19e070ae-9c29-498b-ac69-01114e131e68.png" alt="Sheun" className="w-20 h-20 rounded-full shadow-lg object-cover relative z-10 border-2 border-white" referrerPolicy="no-referrer" />
+              </div>
               <div>
-                <p className="font-bold text-navy text-xl group-hover:text-green transition-colors">By Sheun</p>
+                <p className="font-bold text-navy text-xl group-hover:text-green transition-colors leading-tight">By Sheun</p>
                 <p className="text-sm text-navy/50 uppercase tracking-widest font-bold mb-1">Shopify Expert & Developer</p>
-                <span className="text-navy font-bold text-sm flex items-center gap-2 opacity-0 group-hover:opacity-100 transition-opacity -translate-x-2 group-hover:translate-x-0">View Portfolio <ArrowRight size={14} /></span>
+                <span className="text-navy font-bold text-sm flex items-center gap-2 group-hover:translate-x-1 transition-transform">View Portfolio & Contact <ArrowRight size={14} /></span>
               </div>
             </Link>
             
@@ -201,7 +220,6 @@ export default function BestDropshippingApps() {
                       <div className="w-10 h-10 bg-navy/10 rounded-full flex items-center justify-center text-navy font-bold">{comment.name.charAt(0)}</div>
                       <span className="font-bold text-navy text-lg">{comment.name}</span>
                     </div>
-                    <span className="text-sm text-navy/40 font-serif italic">{comment.date}</span>
                   </div>
                   <p className="text-navy/70 leading-relaxed">{comment.text}</p>
                 </div>
@@ -235,17 +253,17 @@ export default function BestDropshippingApps() {
           <p className="text-navy/40 font-serif italic text-lg">More insights on Shopify Tips and eCommerce growth.</p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-5xl mx-auto">
-          <Link to="/blog/1" className="group space-y-6 block">
+          <Link to="/blog/4" className="group space-y-6 block">
             <div className="aspect-[16/10] rounded-[32px] overflow-hidden relative shadow-xl">
-              <img src="https://picsum.photos/seed/blog1/800/600" alt="Related Post" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+              <img src="https://picsum.photos/seed/fashion-blog/800/600" alt="Related Post" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
               <div className="absolute top-6 left-6">
-                <span className="bg-white/90 backdrop-blur-xl text-navy text-[10px] font-bold uppercase tracking-[0.3em] px-6 py-2 rounded-full shadow-xl">Shopify Tips</span>
+                <span className="bg-white/90 backdrop-blur-xl text-navy text-[10px] font-bold uppercase tracking-[0.3em] px-6 py-2 rounded-full shadow-xl">Dropshipping</span>
               </div>
             </div>
             <div className="space-y-4 px-4">
-              <h4 className="text-2xl font-bold text-navy group-hover:text-green transition-colors leading-tight tracking-tight">10 Shopify Settings Most Store Owners Miss</h4>
+              <h4 className="text-2xl font-bold text-navy group-hover:text-green transition-colors leading-tight tracking-tight">Fashion Dropshipping Store Guide</h4>
               <div className="flex items-center gap-3 text-xs text-navy/40 font-bold uppercase tracking-widest">
-                <Clock size={16} className="text-green" /> 8 min read
+                <Clock size={16} className="text-green" /> 15 min read
               </div>
             </div>
           </Link>
@@ -258,7 +276,7 @@ export default function BestDropshippingApps() {
               </div>
             </div>
             <div className="space-y-4 px-4">
-              <h4 className="text-2xl font-bold text-navy group-hover:text-green transition-colors leading-tight tracking-tight">How to Speed Up Your Shopify Store in 2025</h4>
+              <h4 className="text-2xl font-bold text-navy group-hover:text-green transition-colors leading-tight tracking-tight">How to Speed Up Your Shopify Store in 2026</h4>
               <div className="flex items-center gap-3 text-xs text-navy/40 font-bold uppercase tracking-widest">
                 <Clock size={16} className="text-green" /> 12 min read
               </div>
