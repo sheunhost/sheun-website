@@ -293,7 +293,7 @@ export default function Contact() {
                         <div className="w-8 h-8 border-4 border-white/30 border-t-white rounded-full animate-spin" />
                       ) : (
                         <>
-                          Send Message <Send size={24} className="group-hover:translate-x-2 group-hover:-translate-y-2 transition-transform" />
+                          Get Custom Project Roadmap <Send size={24} className="group-hover:translate-x-2 group-hover:-translate-y-2 transition-transform" />
                         </>
                       )}
                     </button>
@@ -373,7 +373,7 @@ export default function Contact() {
                   />
                 </div>
                 <div className="space-y-4">
-                  <label className="text-[10px] font-bold text-navy/40 uppercase tracking-[0.3em] ml-4">Email Address</label>
+                  <label className="text-xs font-bold text-navy/70 uppercase tracking-[0.3em] ml-4">Email Address</label>
                   <input
                     type="email"
                     name="email"
@@ -384,7 +384,7 @@ export default function Contact() {
                 </div>
               </div>
               <button type="submit" disabled={isSubmitting} className="w-full bg-navy text-white py-6 rounded-full font-bold text-lg hover:bg-navy/90 hover:scale-105 transition-all shadow-xl disabled:opacity-50">
-                {isSubmitting ? "Sending..." : "Claim Free Audit"}
+                {isSubmitting ? "Sending..." : "Get Your 15-Minute Audit"}
               </button>
             </form>
           </div>

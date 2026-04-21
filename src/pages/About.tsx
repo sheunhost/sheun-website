@@ -315,7 +315,7 @@ export default function About() {
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-12">
               <Link to="/contact#contact-form" className="w-full sm:w-auto bg-green text-navy px-16 py-8 rounded-full font-bold text-2xl hover:scale-105 transition-all duration-500 shadow-2xl green-glow flex items-center justify-center text-center">
-                Start Your Project
+                Book a 15-Minute Strategy Audit
               </Link>
               <Link to="/portfolio" className="w-full sm:w-auto text-white font-bold text-2xl flex items-center justify-center gap-6 group text-center">
                 View My Work <div className="w-12 h-px bg-white/20 group-hover:w-20 group-hover:bg-green transition-all duration-500" />

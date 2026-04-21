@@ -369,10 +369,10 @@ export default function Portfolio() {
                 </p>
                 <div className="flex flex-col sm:flex-row items-center justify-center gap-8 pt-8">
                   <Link to="/contact#contact-form" className="w-full sm:w-auto bg-green text-navy px-16 py-8 rounded-full font-bold text-2xl hover:scale-105 transition-all duration-500 shadow-2xl green-glow flex items-center justify-center text-center">
-                    Get A Quote
+                    Book a 15-Minute Strategy Audit
                   </Link>
                   <Link to="/contact#contact-form" className="w-full sm:w-auto bg-white/5 backdrop-blur-xl text-white px-16 py-8 rounded-full font-bold text-2xl hover:bg-white/10 transition-all duration-500 border border-white/10 flex items-center justify-center text-center">
-                    Free Store Audit
+                    Get Your Custom Roadmap
                   </Link>
                 </div>
               </div>
@@ -463,7 +463,7 @@ export default function Portfolio() {
                       to={`/contact?concept=${encodeURIComponent(selectedProject.name)}#contact-form`} 
                       className="inline-flex items-center justify-center flex-grow gap-3 bg-navy text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-green hover:text-navy transition-colors"
                     >
-                      Get A Quote <ArrowRight size={20} />
+                      Get Custom Project Roadmap <ArrowRight size={20} />
                     </Link>
                   )}
                   

@@ -206,7 +206,7 @@ const ServiceModal = ({ service, onClose }: { service: any; onClose: () => void 
                 onClick={onClose}
                 className="w-full bg-navy text-white py-6 rounded-full font-bold text-xl hover:bg-green hover:text-navy transition-all duration-500 flex items-center justify-center gap-4 shadow-2xl"
               >
-                Get Started with {service.title} <ArrowRight size={24} />
+                Book a 15-Minute Strategy Audit <ArrowRight size={24} />
               </Link>
             </div>
           </div>
@@ -453,7 +453,7 @@ export default function Services() {
                 <MessageSquare className="text-green" size={32} />
                 <h4 className="text-xl font-bold text-navy">Still have questions?</h4>
                 <p className="text-navy/40 text-sm">I'm here to help. Let's chat about your specific needs.</p>
-                <Link to="/contact#contact-form" className="inline-block text-navy font-bold text-sm border-b-2 border-green pb-1">Contact Me</Link>
+                <Link to="/contact#contact-form" className="inline-block text-navy font-bold text-sm border-b-2 border-green pb-1">Book a 15-Minute Strategy Audit</Link>
               </div>
             </div>
 
@@ -511,7 +511,7 @@ export default function Services() {
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-12">
               <Link to="/apply#apply-form" className="w-full sm:w-auto bg-green text-navy px-16 py-8 rounded-full font-bold text-2xl hover:scale-105 transition-all duration-500 green-glow">
-                Claim Free Audit
+                Book a 15-Minute Strategy Audit
               </Link>
               <div className="flex items-center gap-3 bg-white/5 border border-white/10 px-6 py-3 rounded-full text-green">
                 <ShieldCheck size={18} />

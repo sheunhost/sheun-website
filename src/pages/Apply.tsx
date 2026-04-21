@@ -60,6 +60,21 @@ export default function Apply() {
   };
 
   const nextStep = () => {
+    // Validate current section
+    const fieldsToValidate = [];
+    if (activeFormSection === 1) {
+      fieldsToValidate.push('name', 'email', 'whatsapp');
+    } else if (activeFormSection === 2) {
+      fieldsToValidate.push('project_type', 'goals');
+    }
+
+    const missingField = fieldsToValidate.find(field => !formData[field as keyof typeof formData]);
+
+    if (missingField) {
+      alert(`Please fill in the required field: ${missingField.replace('_', ' ')}`);
+      return;
+    }
+
     setActiveFormSection(prev => Math.min(prev + 1, 3));
     window.scrollTo({ top: document.getElementById('apply-form')?.offsetTop ? document.getElementById('apply-form')!.offsetTop - 100 : 0, behavior: 'smooth' });
   };

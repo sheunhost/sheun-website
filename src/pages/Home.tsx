@@ -687,7 +687,7 @@ Return ONLY valid JSON.
               className="flex flex-col sm:flex-row items-center gap-8"
             >
               <Link to="/apply#apply-form" className="w-full sm:w-auto bg-green text-navy px-12 py-6 rounded-full font-bold text-lg hover:scale-105 transition-all duration-500 green-glow flex items-center justify-center gap-3 text-center">
-                Start Your Store <ArrowRight size={20} />
+                Book a 15-Minute Strategy Audit <ArrowRight size={20} />
               </Link>
               <Link to="/portfolio" className="w-full sm:w-auto text-white/80 hover:text-white px-8 py-4 rounded-full font-bold text-lg transition-all flex items-center justify-center gap-4 group text-center">
                 View Portfolio <div className="w-8 h-px bg-white/20 group-hover:w-16 group-hover:bg-green transition-all duration-500" />
@@ -781,7 +781,7 @@ Return ONLY valid JSON.
               <h3 className="text-4xl font-bold text-white mb-4 tracking-tight">Scale Fast.</h3>
               <p className="text-white/40 text-lg font-serif italic mb-8">From zero to launch in record time without compromising technical depth.</p>
               <Link to="/apply#apply-form" className="inline-flex items-center gap-4 text-green font-bold group">
-                Apply for Scale <ArrowRight size={20} className="group-hover:translate-x-2 transition-transform" />
+                Get Custom Project Roadmap <ArrowRight size={20} className="group-hover:translate-x-2 transition-transform" />
               </Link>
             </motion.div>
 
