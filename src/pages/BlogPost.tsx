@@ -4,6 +4,7 @@ import ShopifySpeedOptimization from "./ShopifySpeedOptimization";
 import BestDropshippingApps from "./BestDropshippingApps";
 import FashionDropshippingGuide from "./FashionDropshippingGuide";
 import WooCommerceToShopifyMigration from "./WooCommerceToShopifyMigration";
+import ShopifySEOGuide from "./ShopifySEOGuide";
 import PageWrapper from "../components/PageWrapper";
 import Breadcrumbs from "../components/Breadcrumbs";
 
@@ -46,6 +47,13 @@ export default function BlogPost() {
           description: "A technical walkthrough of migrating your WooCommerce store to Shopify while preserving your hard-earned Google rankings and organic traffic.",
           component: <WooCommerceToShopifyMigration />, 
           keywords: "WooCommerce to Shopify Migration, WordPress to Shopify SEO, Store Migration Guide, Matrixify, Preserve SEO rankings migration" 
+        };
+      case "6":
+        return { 
+          title: "Shopify SEO in 2026: The Beginner's Complete Guide", 
+          description: "Break free from the 'paid ad' cycle. This comprehensive primer introduces you to the world of technical and on-page SEO specifically for the Shopify platform, helping you build a compounding asset that drives organic sales on autopilot.",
+          component: <ShopifySEOGuide />, 
+          keywords: "Shopify SEO 2026, Shopify SEO Guide, Technical SEO Shopify, Shopify Organic Traffic, eCommerce SEO Strategy, Shopify On-page SEO, Increase Shopify Organic Sales" 
         };
       default:
         return { 
