@@ -9,6 +9,7 @@ interface PageWrapperProps {
   title?: string;
   description?: string;
   canonical?: string;
+  keywords?: string;
 }
 
 export default function PageWrapper({ 
@@ -16,7 +17,8 @@ export default function PageWrapper({
   className, 
   title, 
   description,
-  canonical 
+  canonical,
+  keywords
 }: PageWrapperProps) {
   const location = useLocation();
   const siteTitle = "Sheun | Sheun Hub - Shopify Expert & eCommerce Developer";
@@ -38,6 +40,7 @@ export default function PageWrapper({
       <Helmet>
         <title>{fullTitle}</title>
         <meta name="description" content={description || defaultDesc} />
+        {keywords && <meta name="keywords" content={keywords} />}
         <link rel="canonical" href={canonicalUrl} />
         
         {/* Open Graph / Facebook */}

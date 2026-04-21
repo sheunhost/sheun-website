@@ -48,7 +48,8 @@ export default function BlogPost() {
   return (
     <PageWrapper
       title="10 Shopify Settings Most Store Owners Miss"
-      description="Discover the hidden settings in your Shopify admin that can make or break your store's conversion rate."
+      description="Discover the 10 hidden settings in your Shopify admin that can make or break your store's conversion rate. Learn how to increase Shopify sales by optimizing your checkout and settings."
+      keywords="Shopify Settings, Shopify SEO, Increase Shopify Sales, Shopify Checkout Optimization, Shopify Expert, eCommerce Growth, Store Setup, Convert More Customers, Abandoned Cart Recovery"
       canonical="/blog/1"
     >
       <article className="pt-32 pb-24 bg-white relative">
@@ -166,9 +167,66 @@ export default function BlogPost() {
               
               <hr className="my-12 border-navy/10" />
 
+              <h2 className="flex items-center gap-4 text-3xl font-bold text-navy mt-12 mb-6 font-sans tracking-tight">
+                <span className="w-10 h-10 bg-navy text-white flex items-center justify-center rounded-xl text-lg">6</span> 
+                Abandoned Checkout Automations
+              </h2>
+              <p>
+                Shopify has a built-in abandoned checkout recovery system, but by default, it waits 10 hours to send a generic, plain-text email. That's way too late for most impulse buyers.
+              </p>
+              <ul className="list-none space-y-3 font-sans text-base pl-0">
+                <li className="flex gap-3 items-start"><CheckCircle2 className="text-green shrink-0 mt-1" size={20} /> <strong>The Fix:</strong> Go to Settings &gt; Checkout &gt; Abandoned Checkouts. Change the send time to 1 Hour and customize the email template to include a clear CTA and perhaps a small discount code.</li>
+              </ul>
+
+              <h2 className="flex items-center gap-4 text-3xl font-bold text-navy mt-12 mb-6 font-sans tracking-tight">
+                <span className="w-10 h-10 bg-navy text-white flex items-center justify-center rounded-xl text-lg">7</span> 
+                Shop Pay & Accelerated Checkouts
+              </h2>
+              <p>
+                Friction is the enemy of conversion. Making a customer manually type out their credit card details and address on a mobile device is a guaranteed way to lose sales.
+              </p>
+              <ul className="list-none space-y-3 font-sans text-base pl-0">
+                <li className="flex gap-3 items-start"><Target className="text-green shrink-0 mt-1" size={20} /> <strong>The Fix:</strong> In Settings &gt; Payments, ensure accelerated checkouts like Shop Pay, Apple Pay, and Google Pay are activated. Shop Pay alone can boost conversion rates by up to 18%.</li>
+              </ul>
+
+              <h2 className="flex items-center gap-4 text-3xl font-bold text-navy mt-12 mb-6 font-sans tracking-tight">
+                <span className="w-10 h-10 bg-navy text-white flex items-center justify-center rounded-xl text-lg">8</span> 
+                Brand Customization on Checkout
+              </h2>
+              <p>
+                Many store owners spend thousands on a beautiful theme but leave the Shopify checkout completely default. A generic checkout breaks trust right at the most sensitive moment: entering credit card info.
+              </p>
+              <ul className="list-none space-y-3 font-sans text-base pl-0">
+                <li className="flex gap-3 items-start"><AlertTriangle className="text-amber-500 shrink-0 mt-1" size={20} /> <strong>The Fix:</strong> Go to Settings &gt; Checkout &gt; Customize. Add your logo, match the button colors to your brand, and use your brand's primary font for consistency.</li>
+              </ul>
+
+              <h2 className="flex items-center gap-4 text-3xl font-bold text-navy mt-12 mb-6 font-sans tracking-tight">
+                <span className="w-10 h-10 bg-navy text-white flex items-center justify-center rounded-xl text-lg">9</span> 
+                Store Policies & Legal Pages
+              </h2>
+              <p>
+                Without clear refund policies, Terms of Service, and Shipping info linked directly in your checkout footer, you will trigger trust issues for skeptical buyers.
+              </p>
+              <ul className="list-none space-y-3 font-sans text-base pl-0">
+                <li className="flex gap-3 items-start"><ShieldCheck className="text-green shrink-0 mt-1" size={20} /> <strong>The Fix:</strong> Navigate to Settings &gt; Policies. Generate from templates if you have to, but ensure they exist and are assigned to your footer navigation.</li>
+              </ul>
+
+              <h2 className="flex items-center gap-4 text-3xl font-bold text-navy mt-12 mb-6 font-sans tracking-tight">
+                <span className="w-10 h-10 bg-navy text-white flex items-center justify-center rounded-xl text-lg">10</span> 
+                Multiple Markets Localization
+              </h2>
+              <p>
+                If you ship internationally, you are leaving massive money on the table if customers are forced to view prices in your local currency.
+              </p>
+              <ul className="list-none space-y-3 font-sans text-base pl-0">
+                <li className="flex gap-3 items-start"><TrendingUp className="text-green shrink-0 mt-1" size={20} /> <strong>The Fix:</strong> Go to Settings &gt; Markets. Enable international markets so customers can shop in their local currency and language automatically over Shopify Markets.</li>
+              </ul>
+
+              <hr className="my-12 border-navy/10" />
+
               <h3 className="text-2xl font-bold text-navy mb-4 font-sans tracking-tight">The Bottom Line</h3>
               <p>
-                Shopify is powerful out of the box, but it is built to cater to millions of different business types. By tweaking these 5 settings (and the other 5 we will cover in Part 2), you tailor the platform to prioritize high-converting eCommerce best practices. 
+                Shopify is powerful out of the box, but it is built to cater to millions of different business types. By tweaking these 10 core settings, you tailor the platform to prioritize high-converting eCommerce best practices. Focus on reducing friction, and the sales will follow.
               </p>
             </div>
 
