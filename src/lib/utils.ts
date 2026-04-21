@@ -9,7 +9,7 @@ export const openCalendlyPopup = (e?: React.MouseEvent) => {
   if (e) e.preventDefault();
   if ((window as any).Calendly) {
     (window as any).Calendly.initPopupWidget({ 
-      url: 'https://calendly.com/sheunhost?hide_gdpr_banner=1&background_color=66a609&text_color=ffffff&primary_color=fffb00' 
+      url: 'https://calendly.com/sheunhost?hide_gdpr_banner=1&background_color=042f2e&text_color=ffffff&primary_color=c69c2d' 
     });
   }
 };
