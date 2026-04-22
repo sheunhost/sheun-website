@@ -82,10 +82,16 @@ export default function Navbar() {
 
         {/* Mobile Toggle */}
         <button
-          className="md:hidden text-navy p-2 hover:bg-navy/5 rounded-xl transition-colors"
+          className="lg:hidden text-navy p-2 hover:bg-navy/5 rounded-xl transition-colors"
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
         >
-          {isMobileMenuOpen ? <X size={32} /> : <Menu size={32} />}
+          {isMobileMenuOpen ? <X size={32} /> : (
+            <div className="space-y-1.5 p-1">
+              <div className="w-6 h-0.5 bg-navy rounded-full transition-all"></div>
+              <div className="w-8 h-0.5 bg-navy rounded-full transition-all"></div>
+              <div className="w-5 h-0.5 bg-navy rounded-full transition-all"></div>
+            </div>
+          )}
         </button>
       </div>
 
@@ -96,7 +102,7 @@ export default function Navbar() {
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
-            className="absolute top-full left-0 right-0 bg-white/95 backdrop-blur-2xl border-b border-navy/5 p-8 md:hidden shadow-2xl"
+            className="absolute top-full left-0 right-0 bg-white/95 backdrop-blur-2xl border-b border-navy/5 p-8 lg:hidden shadow-2xl"
           >
             <div className="flex flex-col space-y-6">
               {navLinks.map((link) => (

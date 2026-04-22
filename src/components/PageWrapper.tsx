@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import { motion, useScroll, useSpring } from "framer-motion";
 import { ReactNode } from "react";
 import { Helmet } from "react-helmet-async";
 import { useLocation } from "react-router-dom";
@@ -21,6 +21,8 @@ export default function PageWrapper({
   keywords
 }: PageWrapperProps) {
   const location = useLocation();
+  const { scrollYProgress } = useScroll();
+  const scaleX = useSpring(scrollYProgress, { stiffness: 100, damping: 30, restDelta: 0.001 });
   const siteTitle = "Sheun | Sheun Hub - Shopify Expert & eCommerce Developer";
   const fullTitle = title ? `${title} | ${siteTitle}` : siteTitle;
   const defaultDesc = "Professional Shopify Expert Portfolio for Sheun Hub. High-converting store builds, custom development, and eCommerce growth by Sheun.";
@@ -58,6 +60,7 @@ export default function PageWrapper({
         <meta property="twitter:image" content="https://i.postimg.cc/wxQgVCcf/1000031270-removebg-preview.png" />
       </Helmet>
       {children}
+      <motion.div className="fixed top-0 left-0 right-0 h-1 bg-green origin-left z-[100]" style={{ scaleX }} />
     </motion.div>
   );
 }

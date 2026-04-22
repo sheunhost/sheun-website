@@ -701,8 +701,9 @@ Return ONLY valid JSON.
               className="flex flex-wrap items-center gap-12 pt-8 border-t border-white/5"
             >
               {[
+                { label: "Stores Built", value: "20+" },
+                { label: "Rating", value: "5.0 Stars" },
                 { label: "Upwork", value: "Top Rated" },
-                { label: "Rating", value: "5.0/5" },
                 { label: "Trust", value: "100% Secure" },
               ].map((stat, i) => (
                 <div key={i} className="space-y-2">
@@ -874,22 +875,25 @@ Return ONLY valid JSON.
             ].map((service, i) => (
               <motion.button
                 key={i}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-50px" }}
+                transition={{ delay: i * 0.15, duration: 0.6 }}
                 whileHover={{ y: -8 }}
                 whileTap={{ scale: 0.98 }}
                 onClick={() => {
-                  console.log("Service clicked:", service.title);
                   setSelectedService(service);
                 }}
-                className="p-12 bg-navy space-y-10 group hover:bg-white/[0.02] transition-all cursor-pointer text-center w-full block border-r border-b border-white/5 flex flex-col items-center"
+                className="p-6 md:p-8 lg:p-12 bg-navy space-y-6 md:space-y-10 group hover:bg-white/[0.02] transition-all cursor-pointer text-center w-full block border-r border-b border-white/5 flex flex-col items-center overflow-hidden"
               >
-                <div className="w-16 h-16 bg-white/5 rounded-2xl flex items-center justify-center text-green group-hover:scale-110 transition-transform duration-500 mx-auto">
+                <div className="w-16 h-16 bg-white/5 rounded-2xl flex items-center justify-center text-green group-hover:scale-110 transition-transform duration-500 mx-auto transform-gpu">
                   <service.icon size={32} />
                 </div>
-                <div className="space-y-6">
-                  <h3 className="text-3xl font-bold text-white tracking-tight line-clamp-1">{service.title}</h3>
-                  <p className="text-white/40 text-lg leading-relaxed font-light font-serif italic line-clamp-2">{service.desc}</p>
+                <div className="space-y-4 md:space-y-6">
+                  <h3 className="text-[clamp(1.5rem,2.5vw,2.25rem)] font-bold text-white tracking-tight line-clamp-1">{service.title}</h3>
+                  <p className="text-[clamp(1rem,1.5vw,1.125rem)] text-white/40 leading-relaxed font-light font-serif italic line-clamp-3">{service.desc}</p>
                 </div>
-                <div className="flex flex-wrap justify-center gap-3 pt-8 border-t border-white/5 w-full">
+                <div className="flex flex-wrap justify-center gap-3 pt-6 md:pt-8 border-t border-white/5 w-full">
                   {service.tags.map((tag, j) => (
                     <span key={j} className="text-[10px] font-bold uppercase tracking-[0.2em] text-green bg-green/10 px-4 py-2 rounded-full">
                       {tag}
@@ -912,34 +916,50 @@ Return ONLY valid JSON.
         )}
       </AnimatePresence>
 
-      {/* Narrative Section - The Methodology */}
-      <section className="py-32 bg-light relative overflow-hidden">
+      {/* Narrative Section - The Methodology (Z-Pattern 1: Text Left, Image Right) */}
+      <section className="py-32 bg-light relative overflow-hidden text-left">
         <div className="container mx-auto px-6">
-          <div className="max-w-4xl mx-auto space-y-12 text-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              className="space-y-6"
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              className="space-y-10 order-2 lg:order-1"
             >
-              <h2 className="text-4xl md:text-6xl font-bold text-navy tracking-tight leading-none">
-                More Than Code. <br />
-                <span className="text-green italic font-serif font-light">Strategy In Action.</span>
-              </h2>
-              <div className="w-16 h-1 bg-green mx-auto" />
+              <div className="space-y-6">
+                <p className="text-navy/40 text-[10px] font-bold uppercase tracking-[0.4em]">Methodology</p>
+                <h2 className="text-5xl md:text-7xl font-bold text-navy tracking-tighter leading-[0.9]">
+                  More Than Code. <br />
+                  <span className="text-green italic font-serif font-light">Strategy In Action.</span>
+                </h2>
+              </div>
+              <div className="w-16 h-1 bg-green" />
+              <div className="space-y-6 text-lg md:text-xl text-navy/70 font-serif italic leading-relaxed">
+                <p>
+                  At Sheun Hub, we believe that a Shopify store is not just a digital catalog, but a high-performance engine for business growth. Every pixel we place and every line of Liquid we write is interrogated for its impact on your bottom line. 
+                </p>
+                <p>
+                  Our approach bridges the gap between raw technical capability and sophisticated marketing psychology. We don't just build stores; we create immersive brand experiences that foster trust, drive velocity, and turn casual visitors into loyal, long-term advocates for your vision.
+                </p>
+              </div>
             </motion.div>
             
             <motion.div
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              transition={{ delay: 0.2 }}
-              className="space-y-8 text-xl md:text-2xl text-navy/70 font-serif italic leading-relaxed"
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              className="relative order-1 lg:order-2"
             >
-              <p>
-                At Sheun Hub, we believe that a Shopify store is not just a digital catalog, but a high-performance engine for business growth. Every pixel we place and every line of Liquid we write is interrogated for its impact on your bottom line. 
-              </p>
-              <p>
-                Our approach bridges the gap between raw technical capability and sophisticated marketing psychology. We don't just build stores; we create immersive brand experiences that foster trust, drive velocity, and turn casual visitors into loyal, long-term advocates for your vision.
-              </p>
+              <div className="aspect-[4/3] rounded-3xl overflow-hidden border-[16px] border-white shadow-2xl relative z-10">
+                <img 
+                  src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=1000" 
+                  alt="Data and Strategy" 
+                  referrerPolicy="no-referrer"
+                  className="w-full h-full object-cover" 
+                  loading="lazy" 
+                />
+              </div>
+              <div className="absolute -bottom-10 -right-10 w-64 h-64 bg-green/10 rounded-full blur-3xl z-0" />
             </motion.div>
           </div>
         </div>
@@ -983,18 +1003,44 @@ Return ONLY valid JSON.
         </div>
       </div>
 
-      {/* Why Choose Me - Premium Features */}
+      {/* Why Choose Me - Premium Features (Z-Pattern 2: Image Left, Text Right) */}
       <section className="py-32 bg-white relative overflow-hidden">
         <div className="container mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
-            <div className="space-y-12">
+            
+            <div className="relative order-1">
+              <motion.div
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                className="relative z-10 aspect-square rounded-3xl overflow-hidden border-[16px] border-light shadow-2xl"
+              >
+                <img 
+                  src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&q=80&w=1000" 
+                  alt="Shopify Store Concept" 
+                  referrerPolicy="no-referrer"
+                  className="w-full h-full object-cover" 
+                  loading="lazy" 
+                />
+                <div className="absolute inset-0 bg-navy/10" />
+              </motion.div>
+              <div className="absolute -top-12 -right-12 w-64 h-64 bg-green/20 rounded-full blur-3xl" />
+              <div className="absolute -bottom-12 -left-12 w-64 h-64 bg-navy/5 rounded-full blur-3xl" />
+            </div>
+
+            <motion.div 
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              className="space-y-12 order-2"
+            >
               <div className="space-y-6">
                 <p className="text-navy/40 text-[10px] font-bold uppercase tracking-[0.4em]">The Difference</p>
                 <h2 className="text-6xl md:text-8xl font-bold text-navy tracking-tighter leading-[0.85]">
                   Why Work <br />
                   <span className="italic font-serif font-light text-navy/40">With Me</span>.
                 </h2>
-                <p className="text-navy/60 text-xl leading-relaxed max-w-xl font-serif italic">
+                <p className="text-[clamp(1rem,1.5vw,1.125rem)] text-navy/60 leading-relaxed max-w-xl font-serif italic">
                   I don't just build stores; I build business assets. My approach combines technical precision with conversion-focused strategy.
                 </p>
               </div>
@@ -1011,35 +1057,16 @@ Return ONLY valid JSON.
                       <item.icon size={24} />
                     </div>
                     <h4 className="text-xl font-bold text-navy">{item.title}</h4>
-                    <p className="text-navy/40 text-sm leading-relaxed">{item.desc}</p>
+                    <p className="text-[clamp(0.875rem,1.2vw,1rem)] text-navy/40 leading-relaxed">{item.desc}</p>
                   </div>
                 ))}
               </div>
-            </div>
-
-            <div className="relative">
-              <motion.div
-                initial={{ opacity: 0, scale: 0.9 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                className="relative z-10 aspect-square rounded-xl overflow-hidden border-[20px] border-light shadow-2xl"
-              >
-                <img 
-                  src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&q=80&w=1000" 
-                  alt="Shopify Store Concept" 
-                  referrerPolicy="no-referrer"
-                  className="w-full h-full object-cover" 
-                  loading="lazy" 
-                />
-                <div className="absolute inset-0 bg-navy/10" />
-              </motion.div>
-              <div className="absolute -top-12 -right-12 w-64 h-64 bg-green/20 rounded-full blur-3xl" />
-              <div className="absolute -bottom-12 -left-12 w-64 h-64 bg-navy/5 rounded-full blur-3xl" />
-            </div>
+            </motion.div>
           </div>
         </div>
       </section>
 
-            {/* AI Store Visualizer Tool */}
+      {/* AI Store Visualizer Tool */}
       <ImageGen />
 
       {/* Portfolio Preview - Bento Grid */}
@@ -1085,23 +1112,24 @@ Return ONLY valid JSON.
                 key={i}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: i * 0.2 }}
-                className={cn("relative group overflow-hidden rounded-3xl cursor-pointer", item.col, item.height)}
+                viewport={{ once: true, margin: "-50px" }}
+                transition={{ delay: i * 0.15, duration: 0.6 }}
+                className={cn("relative group overflow-hidden rounded-3xl cursor-pointer p-8 flex flex-col justify-end", item.col, item.height)}
               >
                 <img 
                   src={item.image} 
                   alt={item.title} 
                   referrerPolicy="no-referrer"
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-[2s]" 
+                  className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-[2s]" 
                   loading="lazy" 
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-navy via-navy/20 to-transparent opacity-60 group-hover:opacity-80 transition-opacity" />
-                <div className="absolute bottom-12 left-12 right-12 flex items-end justify-between">
+                <div className="absolute inset-0 bg-gradient-to-t from-navy via-navy/20 to-transparent opacity-80 group-hover:opacity-90 transition-opacity" />
+                <div className="relative z-10 flex items-end justify-between w-full">
                   <div className="space-y-4">
                     <p className="text-green text-[10px] font-bold uppercase tracking-[0.4em]">{item.category}</p>
-                    <h3 className="text-4xl font-bold text-white tracking-tight line-clamp-1">{item.title}</h3>
+                    <h3 className="text-[clamp(1.5rem,3vw,2.25rem)] font-bold text-white tracking-tight line-clamp-1">{item.title}</h3>
                   </div>
-                  <div className="w-16 h-16 rounded-full bg-white/10 backdrop-blur-xl border border-white/20 flex items-center justify-center text-white opacity-0 group-hover:opacity-100 transition-all translate-y-4 group-hover:translate-y-0">
+                  <div className="w-16 h-16 rounded-full bg-white/10 backdrop-blur-xl border border-white/20 flex items-center justify-center text-white opacity-0 group-hover:opacity-100 transition-all translate-y-4 group-hover:translate-y-0 shrink-0">
                     <ArrowRight size={24} className="-rotate-45" />
                   </div>
                 </div>
