@@ -56,7 +56,7 @@ export default function Visualizer() {
       {/* Visualizer Tool Section */}
       <section className="py-24 bg-white relative">
         <div className="container mx-auto px-6">
-          <div className="max-w-6xl mx-auto bg-light rounded-[80px] p-2 md:p-12 border border-navy/5 shadow-2xl relative z-20">
+          <div className="max-w-6xl mx-auto bg-light rounded-xl p-2 md:p-12 border border-navy/5 shadow-2xl relative z-20">
             <ImageGen />
           </div>
         </div>
@@ -65,7 +65,7 @@ export default function Visualizer() {
       {/* Features Grid */}
       <section className="py-32 bg-white">
         <div className="container mx-auto px-6">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 border-t border-l border-navy/5 rounded-[60px] overflow-hidden">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 border-t border-l border-navy/5 rounded-3xl overflow-hidden">
             {[
               { title: "Gemini AI Powered", desc: "Uses Google's Gemini 2.5 Flash for high-speed, high-quality image generation.", icon: Sparkles },
               { title: "Conversion Optimized", desc: "Automatically enhances your prompts to focus on e-commerce best practices.", icon: Rocket },
@@ -120,7 +120,7 @@ export default function Visualizer() {
               </div>
             </div>
 
-            <div className="bg-navy p-16 rounded-[80px] text-white space-y-12 relative overflow-hidden shadow-2xl">
+            <div className="bg-navy p-16 rounded-xl text-white space-y-12 relative overflow-hidden shadow-2xl">
               <div className="absolute top-0 right-0 p-16 opacity-10">
                 <Sparkles size={160} className="text-green" />
               </div>

@@ -134,7 +134,7 @@ export default function Blog() {
             <motion.div 
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
-              className="bg-white/5 border border-white/10 p-12 rounded-[60px] space-y-8 flex flex-col justify-between"
+              className="bg-white/5 border border-white/10 p-12 rounded-3xl space-y-8 flex flex-col justify-between"
             >
               <h3 className="text-4xl font-bold text-white tracking-tight leading-none">Growth <br /><span className="text-green">Strategy.</span></h3>
               <p className="text-white/40 text-lg font-serif italic">In-depth guides on scaling brands from $0 to $10k+ using proven technical frameworks.</p>
@@ -145,7 +145,7 @@ export default function Blog() {
             <motion.div 
               initial={{ opacity: 0, x: 30 }}
               whileInView={{ opacity: 1, x: 0 }}
-              className="bg-green text-navy p-12 rounded-[60px] space-y-8 flex flex-col justify-between"
+              className="bg-green text-navy p-12 rounded-3xl space-y-8 flex flex-col justify-between"
             >
               <h3 className="text-4xl font-bold tracking-tight leading-none">Technical <br />Mastery.</h3>
               <p className="text-navy/60 text-lg font-serif italic">Advanced Shopify Liquid tutorials and app integration secrets for power users.</p>
@@ -197,7 +197,7 @@ export default function Blog() {
             <motion.div
               whileHover={{ y: -10 }}
               transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-              className="bg-light rounded-[80px] overflow-hidden grid grid-cols-1 lg:grid-cols-2 items-center group cursor-pointer shadow-2xl border border-navy/5"
+              className="bg-light rounded-xl overflow-hidden grid grid-cols-1 lg:grid-cols-2 items-center group cursor-pointer shadow-2xl border border-navy/5"
             >
               <div className="aspect-video lg:aspect-square overflow-hidden">
                 <img
@@ -221,7 +221,7 @@ export default function Blog() {
                 <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-8 pt-10 border-t border-navy/5">
                   <div className="flex items-center gap-4">
                     <div className="w-14 h-14 rounded-2xl overflow-hidden shadow-xl">
-                      <img src="https://fiverr-res.cloudinary.com/image/upload/f_auto,q_auto,t_profile_original/v1/attachments/profile/photo/bed47882db24771238091456bc69a699-1765207538189/19e070ae-9c29-498b-ac69-01114e131e68.png" alt="Sheun" loading="lazy" />
+                      <img src="https://ik.imagekit.io/pedgmrihq/image.png" alt="Sheun" loading="lazy" />
                     </div>
                     <div>
                       <p className="text-lg font-bold text-navy">Sheun</p>
@@ -278,7 +278,7 @@ export default function Blog() {
                 className="group cursor-pointer space-y-8 block"
               >
                 <Link to={`/blog/${post.id}`} className="block">
-                  <div className="aspect-[16/10] rounded-[48px] overflow-hidden relative shadow-2xl">
+                  <div className="aspect-[16/10] rounded-3xl overflow-hidden relative shadow-2xl">
                     <img
                       src={post.image}
                       alt={post.title}
@@ -328,7 +328,7 @@ export default function Blog() {
       {/* Newsletter Section */}
       <section className="py-32 bg-light">
         <div className="container mx-auto px-6">
-          <div className="bg-navy-gradient rounded-[80px] p-16 md:p-32 grid grid-cols-1 lg:grid-cols-2 gap-24 items-center relative overflow-hidden shadow-2xl">
+          <div className="bg-navy-gradient rounded-xl p-16 md:p-32 grid grid-cols-1 lg:grid-cols-2 gap-24 items-center relative overflow-hidden shadow-2xl">
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,_rgba(0,255,157,0.1)_0%,_transparent_70%)]" />
             <div className="space-y-10 relative z-10">
               <h2 className="text-6xl md:text-8xl font-bold text-white leading-[0.8] tracking-tighter">

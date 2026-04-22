@@ -227,7 +227,7 @@ export default function Portfolio() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.2 }}
-              className="flex flex-wrap items-center gap-12 bg-white/5 backdrop-blur-xl border border-white/10 p-8 rounded-[32px] w-fit"
+              className="flex flex-wrap items-center gap-12 bg-white/5 backdrop-blur-xl border border-white/10 p-8 rounded-xl w-fit"
             >
               <div className="flex items-center gap-4 text-white font-bold">
                 <span className="text-2xl">🛍️</span>
@@ -260,7 +260,7 @@ export default function Portfolio() {
             <motion.div 
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
-              className="bg-light p-12 rounded-[60px] space-y-8 flex flex-col justify-between group"
+              className="bg-light p-12 rounded-3xl space-y-8 flex flex-col justify-between group"
             >
               <h3 className="text-4xl font-bold text-navy tracking-tight">Visual Identity.</h3>
               <p className="text-navy/40 text-lg font-serif italic max-w-md">Bespoke store themes that reflect your brand's unique character and aesthetic.</p>
@@ -270,7 +270,7 @@ export default function Portfolio() {
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.1 }}
-              className="bg-navy text-white p-12 rounded-[60px] space-y-8 flex flex-col justify-between group"
+              className="bg-navy text-white p-12 rounded-3xl space-y-8 flex flex-col justify-between group"
             >
               <h3 className="text-4xl font-bold tracking-tight">User Journey.</h3>
               <p className="text-white/40 text-lg font-serif italic max-w-md">Every click is optimized to move the customer closer to purchase with minimal friction.</p>
@@ -356,7 +356,7 @@ export default function Portfolio() {
                   exit={{ opacity: 0, scale: 0.95 }}
                   transition={{ duration: 0.6, delay: index * 0.05, ease: [0.16, 1, 0.3, 1] }}
                   onClick={() => setSelectedProject(project)}
-                  className={`${project.col} ${project.height} relative rounded-[60px] overflow-hidden group cursor-pointer shadow-2xl hover:shadow-green/20 transition-all duration-700 border border-navy/5`}
+                  className={`${project.col} ${project.height} relative rounded-3xl overflow-hidden group cursor-pointer shadow-2xl hover:shadow-green/20 transition-all duration-700 border border-navy/5`}
                 >
                   <motion.img
                     src={project.image}
@@ -409,7 +409,7 @@ export default function Portfolio() {
               </div>
             </div>
 
-            <div className="flex items-start gap-6 bg-light p-10 rounded-[40px] max-w-4xl mx-auto border border-navy/5">
+            <div className="flex items-start gap-6 bg-light p-10 rounded-2xl max-w-4xl mx-auto border border-navy/5">
               <Info className="text-navy/40 shrink-0 mt-1" size={32} />
               <p className="text-navy/60 text-lg leading-relaxed font-serif italic">
                 <strong className="text-navy font-sans not-italic font-bold uppercase tracking-widest text-xs block mb-2">Disclaimer</strong>
@@ -417,7 +417,7 @@ export default function Portfolio() {
               </p>
             </div>
 
-            <div className="bg-navy-gradient rounded-[80px] p-20 md:p-32 text-center space-y-12 relative overflow-hidden">
+            <div className="bg-navy-gradient rounded-xl p-20 md:p-32 text-center space-y-12 relative overflow-hidden">
               <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,_rgba(0,255,157,0.1)_0%,_transparent_70%)]" />
               <div className="relative z-10 space-y-10 max-w-4xl mx-auto">
                 <h2 className="text-6xl md:text-8xl font-bold text-white tracking-tighter leading-none">
@@ -456,7 +456,7 @@ export default function Portfolio() {
               animate={{ scale: 1, opacity: 1, y: 0 }}
               exit={{ scale: 0.9, opacity: 0, y: 20 }}
               onClick={(e) => e.stopPropagation()}
-              className="bg-white rounded-[40px] p-8 md:p-12 max-w-2xl w-full shadow-2xl relative overflow-hidden max-h-[90vh] overflow-y-auto"
+              className="bg-white rounded-2xl p-8 md:p-12 max-w-2xl w-full shadow-2xl relative overflow-hidden max-h-[90vh] overflow-y-auto"
             >
               <button
                 onClick={() => setSelectedProject(null)}

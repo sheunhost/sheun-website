@@ -85,7 +85,7 @@ export default function About() {
                 initial={{ opacity: 0, scale: 0.95, rotate: 5 }}
                 animate={{ opacity: 1, scale: 1, rotate: 0 }}
                 transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
-                className="relative z-10 aspect-[4/5] rounded-[80px] overflow-hidden border-[24px] border-white shadow-[0_40px_100px_-20px_rgba(0,0,0,0.2)]"
+                className="relative z-10 aspect-[4/5] rounded-xl overflow-hidden border-[24px] border-white shadow-[0_40px_100px_-20px_rgba(0,0,0,0.2)]"
               >
                 <img 
                   src="https://ik.imagekit.io/pedgmrihq/image.png" 
@@ -101,7 +101,7 @@ export default function About() {
               <motion.div 
                 animate={{ y: [0, -20, 0] }}
                 transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-                className="absolute -bottom-12 -right-12 bg-green text-navy p-12 rounded-[60px] shadow-2xl z-20 space-y-3 border-8 border-white"
+                className="absolute -bottom-12 -right-12 bg-green text-navy p-12 rounded-3xl shadow-2xl z-20 space-y-3 border-8 border-white"
               >
                 <Award size={64} className="mb-6" />
                 <p className="text-[10px] font-bold uppercase tracking-[0.3em] opacity-60">Certified</p>
@@ -119,7 +119,7 @@ export default function About() {
             <motion.div 
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
-              className="bg-light p-12 rounded-[60px] space-y-8 flex flex-col justify-between"
+              className="bg-light p-12 rounded-3xl space-y-8 flex flex-col justify-between"
             >
               <h3 className="text-4xl font-bold text-navy tracking-tight">Technical Mastery.</h3>
               <p className="text-navy/40 text-lg font-serif italic">Pushing the boundaries of what's possible with Shopify Liquid and specialized API integrations.</p>
@@ -128,7 +128,7 @@ export default function About() {
             <motion.div 
               initial={{ opacity: 0, x: 30 }}
               whileInView={{ opacity: 1, x: 0 }}
-              className="bg-navy text-white p-12 rounded-[60px] space-y-8 flex flex-col justify-between"
+              className="bg-navy text-white p-12 rounded-3xl space-y-8 flex flex-col justify-between"
             >
               <h3 className="text-4xl font-bold tracking-tight">Strategic Scaling.</h3>
               <p className="text-white/40 text-lg font-serif italic">Every technical decision is rooted in a deep understanding of multi-region eCommerce growth.</p>
@@ -208,7 +208,7 @@ export default function About() {
         <div className="container mx-auto px-6">
           <div className="grid grid-cols-1 md:grid-cols-12 gap-8">
             {/* Skills Card */}
-            <div className="md:col-span-8 bg-white/5 border border-white/10 rounded-[40px] p-12 space-y-12">
+            <div className="md:col-span-8 bg-white/5 border border-white/10 rounded-2xl p-12 space-y-12">
               <div className="space-y-2">
                 <p className="text-green text-[10px] font-bold uppercase tracking-[0.3em]">Technical</p>
                 <h3 className="text-4xl font-bold text-white">Core Skills</h3>
@@ -235,7 +235,7 @@ export default function About() {
             </div>
 
             {/* Credentials Card */}
-            <div className="md:col-span-4 bg-green p-12 rounded-[40px] space-y-8 flex flex-col justify-between">
+            <div className="md:col-span-4 bg-green p-12 rounded-2xl space-y-8 flex flex-col justify-between">
               <div className="space-y-4">
                 <Star size={48} className="text-navy" />
                 <h3 className="text-4xl font-bold text-navy leading-none">Top Rated <br />Freelancer</h3>
@@ -256,7 +256,7 @@ export default function About() {
             </div>
 
             {/* Tags Card */}
-            <div className="md:col-span-12 bg-white/5 border border-white/10 rounded-[40px] p-12">
+            <div className="md:col-span-12 bg-white/5 border border-white/10 rounded-2xl p-12">
               <div className="flex flex-wrap gap-4">
                 {tags.map((tag, i) => (
                   <span key={i} className="px-6 py-3 bg-white/5 rounded-full text-xs font-bold text-white/40 border border-white/10 hover:border-green hover:text-green transition-all cursor-default">

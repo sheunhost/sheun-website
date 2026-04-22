@@ -47,13 +47,17 @@ export default function ShopifySettingsGuide() {
   return (
     <article className="pt-32 pb-24 bg-white relative">
         {/* Header Section */}
-        <section className="bg-navy-gradient pt-16 pb-32 px-6 rounded-b-[60px] relative overflow-hidden">
+        <section className="bg-navy-gradient pt-16 pb-32 px-6 rounded-b-3xl relative overflow-hidden">
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,_rgba(0,255,157,0.1)_0%,_transparent_70%)]" />
           
           <div className="container mx-auto max-w-4xl relative z-10 text-center space-y-8">
-            <Link to="/blog" className="inline-flex items-center gap-2 text-green font-bold text-sm uppercase tracking-widest hover:text-white transition-colors">
-              <ArrowLeft size={16} /> Back to Blog
-            </Link>
+            <nav className="flex flex-wrap items-center justify-center gap-3 text-xs font-bold uppercase tracking-widest text-white/50 mb-4">
+              <Link to="/" className="hover:text-green transition-colors flex items-center gap-2"><ArrowLeft size={14} /> Home</Link>
+              <span className="opacity-30">/</span>
+              <Link to="/blog" className="hover:text-green transition-colors">Blog</Link>
+              <span className="opacity-30">/</span>
+              <span className="text-white">Article</span>
+            </nav>
             
             <div className="flex flex-wrap items-center justify-center gap-4 text-white/60 text-sm font-bold uppercase tracking-widest">
               <span className="bg-white/10 px-4 py-2 rounded-full text-white">Shopify Tips</span>
@@ -73,7 +77,7 @@ export default function ShopifySettingsGuide() {
 
         {/* Content Section */}
         <section className="container mx-auto px-6 -mt-16 relative z-20">
-          <div className="max-w-4xl mx-auto bg-white rounded-[40px] shadow-2xl p-8 md:p-16 border border-navy/5 space-y-12">
+          <div className="max-w-4xl mx-auto bg-white rounded-2xl shadow-2xl p-8 md:p-16 border border-navy/5 space-y-12">
             
             <div className="aspect-video bg-light w-full rounded-3xl overflow-hidden shadow-inner mb-12 relative flex items-center justify-center group">
               <Settings className="absolute text-navy opacity-10 group-hover:scale-110 transition-transform duration-700" size={160} />
@@ -228,7 +232,7 @@ export default function ShopifySettingsGuide() {
               <Link to="/portfolio" className="flex items-center gap-6 group hover:bg-light p-4 rounded-3xl transition-all -ml-4 pr-8 border border-transparent hover:border-navy/5">
                 <div className="relative">
                   <div className="absolute inset-0 bg-green/20 rounded-full blur-xl group-hover:bg-green/40 transition-colors" />
-                  <img src="https://fiverr-res.cloudinary.com/image/upload/f_auto,q_auto,t_profile_original/v1/attachments/profile/photo/bed47882db24771238091456bc69a699-1765207538189/19e070ae-9c29-498b-ac69-01114e131e68.png" alt="Sheun" className="w-20 h-20 rounded-full shadow-lg object-cover relative z-10 border-2 border-white" referrerPolicy="no-referrer" />
+                  <img src="https://ik.imagekit.io/pedgmrihq/image.png" alt="Sheun" className="w-20 h-20 rounded-full shadow-lg object-cover relative z-10 border-2 border-white" referrerPolicy="no-referrer" />
                 </div>
                 <div>
                   <p className="font-bold text-navy text-xl group-hover:text-green transition-colors leading-tight">By Sheun</p>
@@ -265,7 +269,7 @@ export default function ShopifySettingsGuide() {
 
               <div className="space-y-8 mb-16">
                 {comments.map((comment, i) => (
-                  <div key={i} className="bg-light p-8 rounded-[32px] border border-navy/5 space-y-4">
+                  <div key={i} className="bg-light p-8 rounded-xl border border-navy/5 space-y-4">
                     <div className="flex items-center justify-between">
                       <div className="flex items-center gap-3">
                         <div className="w-10 h-10 bg-navy/10 rounded-full flex items-center justify-center text-navy font-bold">{comment.name.charAt(0)}</div>
@@ -277,7 +281,7 @@ export default function ShopifySettingsGuide() {
                 ))}
               </div>
 
-              <form onSubmit={handleAddComment} className="bg-white p-8 md:p-10 rounded-[40px] shadow-2xl border border-navy/5 space-y-6">
+              <form onSubmit={handleAddComment} className="bg-white p-8 md:p-10 rounded-2xl shadow-2xl border border-navy/5 space-y-6">
                 <h4 className="text-xl font-bold text-navy mb-2">Leave a Comment</h4>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div className="space-y-2 md:col-span-2">
@@ -320,7 +324,7 @@ export default function ShopifySettingsGuide() {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-5xl mx-auto">
             <Link to="/blog/2" className="group space-y-6 block">
-              <div className="aspect-[16/10] rounded-[32px] overflow-hidden relative shadow-xl">
+              <div className="aspect-[16/10] rounded-xl overflow-hidden relative shadow-xl">
                 <img src="https://picsum.photos/seed/blog2/800/600" alt="Related Post" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
                 <div className="absolute top-6 left-6">
                   <span className="bg-white/90 backdrop-blur-xl text-navy text-[10px] font-bold uppercase tracking-[0.3em] px-6 py-2 rounded-full shadow-xl">Shopify Tips</span>
@@ -335,7 +339,7 @@ export default function ShopifySettingsGuide() {
             </Link>
 
             <Link to="/blog/3" className="group space-y-6 block">
-              <div className="aspect-[16/10] rounded-[32px] overflow-hidden relative shadow-xl">
+              <div className="aspect-[16/10] rounded-xl overflow-hidden relative shadow-xl">
                 <img src="https://picsum.photos/seed/blog3/800/600" alt="Related Post" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
                 <div className="absolute top-6 left-6">
                   <span className="bg-white/90 backdrop-blur-xl text-navy text-[10px] font-bold uppercase tracking-[0.3em] px-6 py-2 rounded-full shadow-xl">Dropshipping</span>

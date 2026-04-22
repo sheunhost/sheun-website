@@ -38,7 +38,7 @@ export default function Navbar() {
       )}
     >
       <div className="container mx-auto px-6 flex items-center justify-between">
-        <div className="flex items-center gap-12 lg:gap-16">
+        <div className="flex items-center gap-8 lg:gap-10">
           <Link to="/" className="flex items-center group">
             <img 
               src="https://i.postimg.cc/wxQgVCcf/1000031270-removebg-preview.png" 
@@ -47,19 +47,19 @@ export default function Navbar() {
               loading="lazy"
               className={cn(
                 "rounded-full object-cover shadow-lg border-2 border-green/20 transition-all duration-500",
-                isScrolled ? "h-16 w-16" : "h-24 w-24"
+                isScrolled ? "h-20 w-20" : "h-32 w-32"
               )} 
             />
           </Link>
 
           {/* Desktop Nav */}
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden lg:flex items-center space-x-6 xl:space-x-8">
             {navLinks.map((link) => (
               <Link
                 key={link.name}
                 to={link.href}
                 className={cn(
-                  "text-sm font-bold uppercase tracking-[0.3em] transition-all relative group",
+                  "text-xs font-bold uppercase tracking-[0.2em] transition-all relative group",
                   location.pathname === link.href 
                     ? "text-green" 
                     : isScrolled ? "text-navy/60 hover:text-navy" : "text-white/40 hover:text-white"

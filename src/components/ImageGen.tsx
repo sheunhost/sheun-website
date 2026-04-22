@@ -102,7 +102,7 @@ export default function ImageGen() {
   return (
     <section className="py-24 bg-white">
       <div className="container mx-auto px-6">
-        <div className="max-w-5xl mx-auto bg-navy rounded-[40px] overflow-hidden shadow-2xl flex flex-col lg:flex-row">
+        <div className="max-w-5xl mx-auto bg-navy rounded-2xl overflow-hidden shadow-2xl flex flex-col lg:flex-row">
           {/* Left: Controls */}
           <div className="p-10 lg:p-16 lg:w-1/2 space-y-8">
             <div className="space-y-4">

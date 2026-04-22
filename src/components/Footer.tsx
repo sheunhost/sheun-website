@@ -14,7 +14,7 @@ export default function Footer() {
                 alt="Sheun Hub logo" 
                 referrerPolicy="no-referrer"
                 loading="lazy"
-                className="h-48 w-auto" 
+                className="h-24 md:h-32 w-auto object-contain drop-shadow-xl" 
               />
             </Link>
             <p className="text-white/40 text-xl leading-relaxed max-w-md font-serif italic">
@@ -24,7 +24,7 @@ export default function Footer() {
               {[
                 { icon: Mail, href: "mailto:sheunhost@gmail.com" },
                 { icon: MessageCircle, href: "#" },
-                { icon: Linkedin, href: "#" },
+                { icon: Linkedin, href: "https://www.linkedin.com/in/sheun-hub-26b876321?utm_source=share_via&utm_content=profile&utm_medium=member_android" },
                 { icon: Twitter, href: "#" },
               ].map((social, i) => (
                 <a 

@@ -22,7 +22,7 @@ export default function TermsOfService() {
         <div className="container mx-auto px-6">
           <div className="grid grid-cols-1 md:grid-cols-12 gap-12 max-w-6xl mx-auto">
             <div className="md:col-span-4 space-y-8">
-              <div className="bg-light p-8 rounded-[40px] sticky top-32">
+              <div className="bg-light p-8 rounded-2xl sticky top-32">
                 <h3 className="text-xl font-bold text-navy mb-6">Agreement Overview</h3>
                 <ul className="space-y-4">
                   <li><a href="#acceptance" className="text-navy/60 hover:text-green font-medium transition-colors">1. Acceptance</a></li>

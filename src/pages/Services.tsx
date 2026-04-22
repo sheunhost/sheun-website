@@ -176,7 +176,7 @@ const ServiceModal = ({ service, onClose }: { service: any; onClose: () => void 
         initial={{ opacity: 0, scale: 0.9, y: 20 }}
         animate={{ opacity: 1, scale: 1, y: 0 }}
         exit={{ opacity: 0, scale: 0.9, y: 20 }}
-        className="relative w-full max-w-4xl bg-white rounded-[40px] overflow-hidden shadow-2xl max-h-[90vh] overflow-y-auto"
+        className="relative w-full max-w-4xl bg-white rounded-2xl overflow-hidden shadow-2xl max-h-[90vh] overflow-y-auto"
       >
         <button
           onClick={onClose}
@@ -324,7 +324,7 @@ export default function Services() {
             <motion.div 
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
-              className="group relative h-[400px] border border-white/10 rounded-[60px] overflow-hidden p-12 flex flex-col justify-end bg-gradient-to-br from-white/5 to-transparent backdrop-blur-3xl"
+              className="group relative h-[400px] border border-white/10 rounded-3xl overflow-hidden p-12 flex flex-col justify-end bg-gradient-to-br from-white/5 to-transparent backdrop-blur-3xl"
             >
               <div className="absolute top-0 right-0 p-12 opacity-5 scale-150 group-hover:rotate-12 transition-transform duration-700">
                 <Code2 size={200} className="text-white" />
@@ -338,7 +338,7 @@ export default function Services() {
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.1 }}
-              className="group relative h-[400px] bg-green text-navy rounded-[60px] overflow-hidden p-12 flex flex-col justify-end"
+              className="group relative h-[400px] bg-green text-navy rounded-3xl overflow-hidden p-12 flex flex-col justify-end"
             >
               <div className="absolute top-0 right-0 p-12 opacity-10 scale-150 group-hover:rotate-12 transition-transform duration-700">
                 <Layout size={200} className="text-navy" />
@@ -387,7 +387,7 @@ export default function Services() {
       {/* Services Grid - Visible Grid Recipe */}
       <section className="py-32 bg-white">
         <div className="container mx-auto px-6">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 border-t border-l border-navy/5 rounded-[60px] overflow-hidden">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 border-t border-l border-navy/5 rounded-3xl overflow-hidden">
             {services.map((service, i) => (
               <motion.div
                 key={service.id}
@@ -447,7 +447,7 @@ export default function Services() {
             ].map((tier, i) => (
               <div
                 key={i}
-                className={`p-16 rounded-[60px] border-2 transition-all duration-500 flex flex-col ${
+                className={`p-16 rounded-3xl border-2 transition-all duration-500 flex flex-col ${
                   tier.popular ? "bg-navy-gradient text-white border-green scale-105 shadow-[0_40px_100px_-20px_rgba(0,0,0,0.3)] z-10" : "bg-white text-navy border-transparent"
                 }`}
               >
@@ -488,7 +488,7 @@ export default function Services() {
               <p className="text-navy/40 text-lg leading-relaxed">
                 Everything you need to know about working with me on your Shopify project.
               </p>
-              <div className="bg-light p-8 rounded-[32px] border border-navy/5 space-y-4">
+              <div className="bg-light p-8 rounded-xl border border-navy/5 space-y-4">
                 <MessageSquare className="text-green" size={32} />
                 <h4 className="text-xl font-bold text-navy">Still have questions?</h4>
                 <p className="text-navy/40 text-sm">I'm here to help. Let's chat about your specific needs.</p>
@@ -498,7 +498,7 @@ export default function Services() {
 
             <div className="lg:col-span-8 space-y-4">
               {faqs.map((faq, i) => (
-                <div key={i} className="border border-navy/5 rounded-[32px] overflow-hidden">
+                <div key={i} className="border border-navy/5 rounded-xl overflow-hidden">
                   <button
                     onClick={() => setOpenFaq(openFaq === i ? null : i)}
                     className="w-full p-8 text-left flex items-center justify-between bg-light hover:bg-light/80 transition-colors"
@@ -539,7 +539,7 @@ export default function Services() {
             transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
             className="max-w-5xl mx-auto space-y-16"
           >
-            <div className="w-32 h-32 bg-white/5 rounded-[40px] flex items-center justify-center text-green mx-auto shadow-2xl border border-white/10 backdrop-blur-xl">
+            <div className="w-32 h-32 bg-white/5 rounded-2xl flex items-center justify-center text-green mx-auto shadow-2xl border border-white/10 backdrop-blur-xl">
               <Gift size={64} />
             </div>
             <h2 className="text-7xl md:text-[140px] font-bold text-white leading-[0.8] tracking-[-0.06em] uppercase">

@@ -9,7 +9,7 @@ const contactInfo = [
   { icon: MessageCircle, label: "WhatsApp (NG)", value: "+234 808 431 5743", href: "https://wa.me/2348084315743", desc: "Instant chat support" },
   { icon: MessageCircle, label: "WhatsApp (UK)", value: "+44 7476 664292", href: "https://wa.me/447476664292", desc: "Instant chat support" },
   { icon: Star, label: "Upwork", value: "upwork.com/freelancers/sheun_hub", href: "https://upwork.com/freelancers/sheun_hub", desc: "Order via platform" },
-  { icon: Linkedin, label: "LinkedIn", value: "linkedin.com/in/sheun", href: "#", desc: "Professional network" },
+  { icon: Linkedin, label: "LinkedIn", value: "sheun-hub-26b876321", href: "https://www.linkedin.com/in/sheun-hub-26b876321?utm_source=share_via&utm_content=profile&utm_medium=member_android", desc: "Professional network" },
 ];
 
 export default function Contact() {
@@ -112,7 +112,7 @@ export default function Contact() {
             <motion.div 
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
-              className="bg-white/5 border border-white/10 p-12 rounded-[60px] space-y-8 flex flex-col justify-between group"
+              className="bg-white/5 border border-white/10 p-12 rounded-3xl space-y-8 flex flex-col justify-between group"
             >
               <h3 className="text-4xl font-bold text-white tracking-tight">Project Vetting.</h3>
               <p className="text-white/40 text-lg font-serif italic">Every inquiry starts with a strategy call to ensure we're the perfect technical match.</p>
@@ -122,7 +122,7 @@ export default function Contact() {
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.1 }}
-              className="bg-green text-navy p-12 rounded-[60px] space-y-8 flex flex-col justify-between group"
+              className="bg-green text-navy p-12 rounded-3xl space-y-8 flex flex-col justify-between group"
             >
               <h3 className="text-4xl font-bold tracking-tight">Rapid Response.</h3>
               <p className="text-navy/60 text-lg font-serif italic">I personally monitor all incoming communications to guarantee a 24-hour turnaround.</p>
@@ -179,7 +179,7 @@ export default function Contact() {
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ delay: i * 0.1 }}
-                    className="p-10 md:p-12 bg-light rounded-[60px] border border-transparent hover:border-green/30 transition-all duration-500 group relative overflow-hidden flex flex-col items-center text-center"
+                    className="p-10 md:p-12 bg-light rounded-3xl border border-transparent hover:border-green/30 transition-all duration-500 group relative overflow-hidden flex flex-col items-center text-center"
                   >
                     <div className="absolute top-0 right-0 p-8 opacity-0 group-hover:opacity-100 transition-opacity">
                       <ArrowRight size={20} className="text-green -rotate-45" />
@@ -198,7 +198,7 @@ export default function Contact() {
                 ))}
               </div>
 
-              <div className="p-16 bg-navy-gradient text-white rounded-[80px] space-y-10 relative overflow-hidden shadow-2xl">
+              <div className="p-16 bg-navy-gradient text-white rounded-xl space-y-10 relative overflow-hidden shadow-2xl">
                 <div className="absolute top-0 right-0 p-16 opacity-10">
                   <Globe size={240} className="animate-spin-slow" />
                 </div>
@@ -228,7 +228,7 @@ export default function Contact() {
               >
                 <ChevronDown size={48} className="text-green opacity-50" />
               </motion.div>
-              <div className="bg-light p-12 md:p-20 rounded-[60px] border border-navy/5 relative overflow-hidden shadow-sm">
+              <div className="bg-light p-12 md:p-20 rounded-3xl border border-navy/5 relative overflow-hidden shadow-sm">
                 {!isSuccess ? (
                   <form onSubmit={handleSubmit} className="space-y-12 relative z-10">
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-12">
@@ -288,7 +288,7 @@ export default function Contact() {
                         name="message"
                         rows={6}
                         placeholder="Tell me about your project goals, timeline, and any specific requirements..."
-                        className="w-full bg-white border-b-2 border-navy/5 hover:border-navy/20 hover:bg-white/80 rounded-[40px] py-8 px-10 focus:border-green outline-none transition-all resize-none font-medium text-navy placeholder:text-navy/20 shadow-sm"
+                        className="w-full bg-white border-b-2 border-navy/5 hover:border-navy/20 hover:bg-white/80 rounded-2xl py-8 px-10 focus:border-green outline-none transition-all resize-none font-medium text-navy placeholder:text-navy/20 shadow-sm"
                       />
                     </div>
 
@@ -311,7 +311,7 @@ export default function Contact() {
                     animate={{ opacity: 1, scale: 1 }}
                     className="text-center py-20 space-y-8"
                   >
-                    <div className="w-32 h-32 bg-green/20 text-green rounded-[40px] flex items-center justify-center mx-auto shadow-inner">
+                    <div className="w-32 h-32 bg-green/20 text-green rounded-2xl flex items-center justify-center mx-auto shadow-inner">
                       <CheckCircle2 size={64} />
                     </div>
                     <div className="space-y-4">
@@ -337,12 +337,12 @@ export default function Contact() {
       {/* Free Audit Highlight - Recipe 2 */}
       <section className="py-32 bg-light relative overflow-hidden">
         <div className="container mx-auto px-6">
-          <div className="bg-green rounded-[60px] p-16 md:p-32 grid grid-cols-1 lg:grid-cols-2 gap-24 items-center relative overflow-hidden shadow-2xl">
+          <div className="bg-green rounded-3xl p-16 md:p-32 grid grid-cols-1 lg:grid-cols-2 gap-24 items-center relative overflow-hidden shadow-2xl">
             <div className="absolute top-0 right-0 p-16 opacity-10">
               <Gift size={300} className="text-navy" />
             </div>
             <div className="space-y-12 relative z-10">
-              <div className="w-24 h-24 bg-navy rounded-[32px] flex items-center justify-center text-green shadow-2xl rotate-6">
+              <div className="w-24 h-24 bg-navy rounded-xl flex items-center justify-center text-green shadow-2xl rotate-6">
                 <Gift size={48} />
               </div>
               <div className="space-y-6">
@@ -366,7 +366,7 @@ export default function Contact() {
               </ul>
             </div>
 
-            <form onSubmit={handleSubmit} className="bg-white p-12 md:p-16 rounded-[50px] shadow-2xl space-y-10 relative z-10 border border-white/20">
+            <form onSubmit={handleSubmit} className="bg-white p-12 md:p-16 rounded-3xl shadow-2xl space-y-10 relative z-10 border border-white/20">
               <input type="hidden" name="subject" value="New Free Store Audit Request" />
               <div className="space-y-8">
                 <div className="space-y-4">

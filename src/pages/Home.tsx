@@ -114,7 +114,7 @@ const SEOReport = ({ data }: { data: any }) => {
     <div className="space-y-12 animate-in fade-in slide-in-from-bottom-8 duration-700">
       {/* Summary Header */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-        <div className="md:col-span-2 bg-navy p-8 rounded-[40px] text-white space-y-4 relative overflow-hidden">
+        <div className="md:col-span-2 bg-navy p-8 rounded-2xl text-white space-y-4 relative overflow-hidden">
           <div className="absolute top-0 right-0 p-8 opacity-5">
             <Globe size={120} />
           </div>
@@ -135,7 +135,7 @@ const SEOReport = ({ data }: { data: any }) => {
              </div>
           </div>
         </div>
-        <div className="bg-green p-8 rounded-[40px] flex flex-col items-center justify-center text-center space-y-2 shadow-xl shadow-green/20">
+        <div className="bg-green p-8 rounded-2xl flex flex-col items-center justify-center text-center space-y-2 shadow-xl shadow-green/20">
            <p className="text-navy/60 text-[10px] font-bold uppercase tracking-widest">SEO Score</p>
            <p className="text-7xl font-black text-navy tracking-tighter">{data.store_summary.current_seo_score}</p>
            <Trophy className="text-navy/20" size={40} />
@@ -143,7 +143,7 @@ const SEOReport = ({ data }: { data: any }) => {
       </div>
 
       {/* Biggest Opportunity */}
-      <div className="bg-navy/5 border-2 border-green/20 p-8 rounded-[40px] flex items-start gap-6 group hover:bg-green/5 transition-colors">
+      <div className="bg-navy/5 border-2 border-green/20 p-8 rounded-2xl flex items-start gap-6 group hover:bg-green/5 transition-colors">
         <div className="w-12 h-12 bg-green rounded-2xl flex items-center justify-center text-navy shrink-0 shadow-lg shadow-green/20">
           <Zap size={24} />
         </div>
@@ -196,7 +196,7 @@ const SEOReport = ({ data }: { data: any }) => {
           <TrendingUp className="text-green" size={24} />
           <h4 className="text-2xl font-bold text-navy">Long-tail Opportunities</h4>
         </div>
-        <div className="bg-navy p-8 rounded-[40px] space-y-6 shadow-2xl">
+        <div className="bg-navy p-8 rounded-2xl space-y-6 shadow-2xl">
           {data.longtail.map((lt: any, i: number) => (
             <div key={i} className="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-6 border-b border-white/10 last:border-0 last:pb-0">
               <div className="space-y-1">
@@ -264,7 +264,7 @@ const SEOReport = ({ data }: { data: any }) => {
             <Target className="text-navy" size={24} />
             <h4 className="text-2xl font-bold text-navy">Competitor Gap Analysis</h4>
           </div>
-          <div className="bg-navy p-8 md:p-12 rounded-[40px] text-white relative overflow-hidden">
+          <div className="bg-navy p-8 md:p-12 rounded-2xl text-white relative overflow-hidden">
             <div className="absolute top-0 right-0 p-12 opacity-5">
               <BarChart3 size={160} />
             </div>
@@ -325,7 +325,7 @@ const ServiceModal = ({ service, onClose }: { service: any; onClose: () => void 
         initial={{ opacity: 0, scale: 0.9, y: 20 }}
         animate={{ opacity: 1, scale: 1, y: 0 }}
         exit={{ opacity: 0, scale: 0.9, y: 20 }}
-        className="relative w-full max-w-4xl bg-white rounded-[40px] overflow-hidden shadow-2xl max-h-[90vh] overflow-y-auto"
+        className="relative w-full max-w-4xl bg-white rounded-2xl overflow-hidden shadow-2xl max-h-[90vh] overflow-y-auto"
       >
         <button
           onClick={onClose}
@@ -720,7 +720,7 @@ Return ONLY valid JSON.
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
-                className="absolute inset-0 bg-white/5 backdrop-blur-3xl border border-white/10 rounded-[80px] shadow-2xl overflow-hidden group"
+                className="absolute inset-0 bg-white/5 backdrop-blur-3xl border border-white/10 rounded-3xl shadow-2xl overflow-hidden group"
               >
                 <img 
                   src="https://mapplinks.com/wp-content/uploads/2020/06/screen1.png" 
@@ -743,9 +743,9 @@ Return ONLY valid JSON.
               <motion.div
                 animate={{ y: [0, -30, 0] }}
                 transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
-                className="absolute -top-12 -right-12 w-64 h-64 bg-white/5 backdrop-blur-2xl border border-white/10 rounded-[50px] shadow-2xl p-1 hidden sm:block"
+                className="absolute -top-12 -right-12 w-64 h-64 bg-white/5 backdrop-blur-2xl border border-white/10 rounded-3xl shadow-2xl p-1 hidden sm:block"
               >
-                <div className="w-full h-full rounded-[48px] bg-navy/60 flex flex-col items-center justify-center gap-6 border border-white/5">
+                <div className="w-full h-full rounded-3xl bg-navy/60 flex flex-col items-center justify-center gap-6 border border-white/5">
                   <div className="w-20 h-20 bg-green/10 rounded-3xl flex items-center justify-center text-green shadow-inner">
                     <ShoppingCart size={40} />
                   </div>
@@ -773,7 +773,7 @@ Return ONLY valid JSON.
             <motion.div 
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
-              className="group relative h-[400px] bg-white/5 border border-white/10 rounded-[60px] overflow-hidden p-12 flex flex-col justify-end"
+              className="group relative h-[400px] bg-white/5 border border-white/10 rounded-3xl overflow-hidden p-12 flex flex-col justify-end"
             >
               <div className="absolute top-0 right-0 p-12 opacity-10 group-hover:scale-110 transition-transform">
                 <Rocket size={200} className="text-green" />
@@ -788,7 +788,7 @@ Return ONLY valid JSON.
             <motion.div 
               initial={{ opacity: 0, x: 30 }}
               whileInView={{ opacity: 1, x: 0 }}
-              className="group relative h-[400px] bg-green text-navy rounded-[60px] overflow-hidden p-12 flex flex-col justify-end"
+              className="group relative h-[400px] bg-green text-navy rounded-3xl overflow-hidden p-12 flex flex-col justify-end"
             >
               <div className="absolute top-0 right-0 p-12 opacity-10 group-hover:scale-110 transition-transform">
                 <Target size={200} className="text-navy" />
@@ -821,7 +821,7 @@ Return ONLY valid JSON.
             </Link>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px bg-white/5 border border-white/5 rounded-[40px] overflow-hidden">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px bg-white/5 border border-white/5 rounded-2xl overflow-hidden">
             {[
               {
                 title: "Store Setup",
@@ -1021,7 +1021,7 @@ Return ONLY valid JSON.
               <motion.div
                 initial={{ opacity: 0, scale: 0.9 }}
                 whileInView={{ opacity: 1, scale: 1 }}
-                className="relative z-10 aspect-square rounded-[80px] overflow-hidden border-[20px] border-light shadow-2xl"
+                className="relative z-10 aspect-square rounded-xl overflow-hidden border-[20px] border-light shadow-2xl"
               >
                 <img 
                   src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&q=80&w=1000" 
@@ -1086,7 +1086,7 @@ Return ONLY valid JSON.
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ delay: i * 0.2 }}
-                className={cn("relative group overflow-hidden rounded-[60px] cursor-pointer", item.col, item.height)}
+                className={cn("relative group overflow-hidden rounded-3xl cursor-pointer", item.col, item.height)}
               >
                 <img 
                   src={item.image} 
@@ -1124,7 +1124,7 @@ Return ONLY valid JSON.
               <motion.div
                 key={i}
                 whileHover={{ scale: 1.02 }}
-                className="relative h-[500px] rounded-[40px] overflow-hidden group cursor-pointer shadow-2xl"
+                className="relative h-[500px] rounded-2xl overflow-hidden group cursor-pointer shadow-2xl"
               >
                 <img
                   src={niche.image}
@@ -1166,10 +1166,10 @@ Return ONLY valid JSON.
               </div>
             </div>
 
-            <div className="bg-light p-12 rounded-[40px] border border-navy/5 flex flex-col items-center text-center space-y-8 shadow-xl">
+            <div className="bg-light p-12 rounded-2xl border border-navy/5 flex flex-col items-center text-center space-y-8 shadow-xl">
               <div className="w-32 h-32 rounded-full overflow-hidden border-8 border-white shadow-2xl">
                 <img 
-                  src="https://fiverr-res.cloudinary.com/image/upload/f_auto,q_auto,t_profile_original/v1/attachments/profile/photo/bed47882db24771238091456bc69a699-1765207538189/19e070ae-9c29-498b-ac69-01114e131e68.png" 
+                  src="https://ik.imagekit.io/pedgmrihq/image.png" 
                   alt="Sheun" 
                   referrerPolicy="no-referrer"
                   className="w-full h-full object-cover" 
@@ -1184,18 +1184,28 @@ Return ONLY valid JSON.
                 {[...Array(5)].map((_, i) => <Star key={i} size={20} className="fill-green text-green" />)}
               </div>
               <p className="text-navy/60 text-sm italic">"Sheun is a true professional. He transformed our store's conversion rate overnight."</p>
-              <a 
-                href="https://upwork.com/freelancers/sheun_hub" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="w-full bg-navy text-white px-8 py-4 rounded-full font-bold hover:bg-navy/90 transition-all shadow-lg text-center block"
-              >
-                View Upwork Profile
-              </a>
+              <div className="grid grid-cols-1 gap-4 w-full">
+                <a 
+                  href="https://upwork.com/freelancers/sheun_hub" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="w-full bg-navy text-white px-8 py-4 rounded-full font-bold hover:bg-navy/90 transition-all shadow-lg text-center block"
+                >
+                  View Upwork Profile
+                </a>
+                <a 
+                  href="https://www.linkedin.com/in/sheun-hub-26b876321?utm_source=share_via&utm_content=profile&utm_medium=member_android" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="w-full bg-light border border-navy/10 text-navy px-8 py-4 rounded-full font-bold hover:bg-navy hover:text-white transition-all shadow-lg text-center block"
+                >
+                  LinkedIn Profile
+                </a>
+              </div>
             </div>
 
             <div className="space-y-8">
-              <div className="bg-green/5 p-12 rounded-[40px] border border-green/10 flex flex-col items-center text-center space-y-6">
+              <div className="bg-green/5 p-12 rounded-2xl border border-green/10 flex flex-col items-center text-center space-y-6">
                 <div className="w-20 h-20 bg-white rounded-3xl flex items-center justify-center text-green shadow-xl">
                   <ShoppingBag size={40} />
                 </div>
@@ -1206,7 +1216,7 @@ Return ONLY valid JSON.
                 <p className="text-navy/60 text-sm">Access to exclusive Shopify tools and early-release features for your store.</p>
               </div>
 
-              <div className="bg-navy p-12 rounded-[40px] flex flex-col items-center text-center space-y-6 text-white group hover:bg-navy/95 transition-all">
+              <div className="bg-navy p-12 rounded-2xl flex flex-col items-center text-center space-y-6 text-white group hover:bg-navy/95 transition-all">
                 <div className="w-20 h-20 bg-white/5 rounded-3xl flex items-center justify-center text-green shadow-xl border border-white/10 group-hover:bg-green group-hover:text-navy transition-all duration-500">
                   <ShieldCheck size={40} />
                 </div>
@@ -1235,7 +1245,7 @@ Return ONLY valid JSON.
               </p>
             </div>
 
-            <div className="bg-light p-8 md:p-12 rounded-[40px] shadow-xl border border-navy/5">
+            <div className="bg-light p-8 md:p-12 rounded-2xl shadow-xl border border-navy/5">
               <form onSubmit={handleAuditSubmit} className="space-y-6">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div className="space-y-2">
@@ -1378,7 +1388,7 @@ Return ONLY valid JSON.
                     animate={{ opacity: 1, x: 0 }}
                     exit={{ opacity: 0, x: -50 }}
                     transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
-                    className="w-full bg-light p-12 md:p-20 rounded-[80px] border border-navy/5 relative group shadow-2xl"
+                    className="w-full bg-light p-12 md:p-20 rounded-xl border border-navy/5 relative group shadow-2xl"
                   >
                     <Quote className="absolute top-12 right-12 text-green/10" size={80} />
                     
@@ -1453,7 +1463,7 @@ Return ONLY valid JSON.
                 ))}
               </div>
 
-              <div className="p-10 bg-navy text-white rounded-[40px] space-y-6 relative overflow-hidden shadow-2xl">
+              <div className="p-10 bg-navy text-white rounded-2xl space-y-6 relative overflow-hidden shadow-2xl">
                 <div className="absolute top-0 right-0 p-8 opacity-10">
                   <Zap size={100} className="text-green" />
                 </div>
@@ -1470,7 +1480,7 @@ Return ONLY valid JSON.
             </div>
 
             <div className="lg:col-span-7">
-              <div className="bg-light p-10 md:p-16 rounded-[60px] border border-navy/5 shadow-sm">
+              <div className="bg-light p-10 md:p-16 rounded-3xl border border-navy/5 shadow-sm">
                 {!isSuccess ? (
                   <form onSubmit={handleSubmit} className="space-y-8">
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
@@ -1518,7 +1528,7 @@ Return ONLY valid JSON.
                         name="message"
                         rows={5}
                         placeholder="Tell me about your project goals..."
-                        className="w-full bg-white border-b-2 border-navy/5 rounded-[40px] py-6 px-8 focus:border-green outline-none transition-all resize-none font-medium text-navy placeholder:text-navy/20"
+                        className="w-full bg-white border-b-2 border-navy/5 rounded-2xl py-6 px-8 focus:border-green outline-none transition-all resize-none font-medium text-navy placeholder:text-navy/20"
                       />
                     </div>
 
@@ -1541,7 +1551,7 @@ Return ONLY valid JSON.
                     animate={{ opacity: 1, scale: 1 }}
                     className="text-center py-12 space-y-6"
                   >
-                    <div className="w-24 h-24 bg-green/20 text-green rounded-[32px] flex items-center justify-center mx-auto shadow-inner">
+                    <div className="w-24 h-24 bg-green/20 text-green rounded-xl flex items-center justify-center mx-auto shadow-inner">
                       <CheckCircle2 size={48} />
                     </div>
                     <div className="space-y-2">
@@ -1567,7 +1577,7 @@ Return ONLY valid JSON.
       {/* Newsletter Section */}
       <section className="py-24 bg-light relative overflow-hidden border-y border-navy/5">
         <div className="container mx-auto px-6">
-          <div className="max-w-5xl mx-auto bg-white rounded-[40px] p-10 md:p-16 shadow-xl border border-navy/5 flex flex-col md:flex-row items-center gap-12">
+          <div className="max-w-5xl mx-auto bg-white rounded-2xl p-10 md:p-16 shadow-xl border border-navy/5 flex flex-col md:flex-row items-center gap-12">
             <div className="flex-1 space-y-6 text-center md:text-left">
               <div className="inline-flex items-center justify-center w-16 h-16 bg-green/10 text-green rounded-2xl mb-2">
                 <Mail size={32} />

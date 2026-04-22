@@ -202,7 +202,7 @@ export default function Apply() {
             >
               <ChevronDown size={48} className="text-navy opacity-30" />
             </motion.div>
-            <div className="bg-white p-8 md:p-24 rounded-[80px] border border-navy/5 shadow-3xl relative overflow-hidden group/form">
+            <div className="bg-white p-8 md:p-24 rounded-xl border border-navy/5 shadow-3xl relative overflow-hidden group/form">
                   {/* Technical Background Accents */}
                   <div className="absolute top-0 left-0 w-full h-[2px] bg-gradient-to-r from-transparent via-green/30 to-transparent scale-x-0 group-hover/form:scale-x-100 transition-transform duration-1000" />
                   <div className="absolute top-0 left-0 p-12 opacity-[0.02] -z-0">
@@ -384,7 +384,7 @@ export default function Apply() {
                                     onChange={handleInputChange}
                                     rows={4} 
                                     placeholder="Describe what you want to achieve..." 
-                                    className="w-full bg-light border-b-2 border-transparent rounded-[32px] py-8 px-10 focus:border-green focus:bg-white outline-none transition-all resize-none font-medium text-navy placeholder:text-navy/10" 
+                                    className="w-full bg-light border-b-2 border-transparent rounded-xl py-8 px-10 focus:border-green focus:bg-white outline-none transition-all resize-none font-medium text-navy placeholder:text-navy/10" 
                                   />
                                 </div>
                               </div>
@@ -422,7 +422,7 @@ export default function Apply() {
                         animate={{ opacity: 1, scale: 1 }}
                         className="text-center py-20 space-y-12"
                       >
-                        <div className="w-40 h-40 bg-green/5 text-green rounded-[60px] flex items-center justify-center mx-auto shadow-inner relative overflow-hidden">
+                        <div className="w-40 h-40 bg-green/5 text-green rounded-3xl flex items-center justify-center mx-auto shadow-inner relative overflow-hidden">
                           <motion.div
                             initial={{ scale: 0 }}
                             animate={{ scale: 1 }}
@@ -478,7 +478,7 @@ export default function Apply() {
               <motion.div 
                 key={i}
                 whileHover={{ y: -10 }}
-                className="p-16 bg-white rounded-[50px] space-y-8 border border-navy/5 shadow-xl group transition-all"
+                className="p-16 bg-white rounded-3xl space-y-8 border border-navy/5 shadow-xl group transition-all"
               >
                 <div className="w-20 h-20 bg-light rounded-3xl flex items-center justify-center text-navy group-hover:bg-green group-hover:text-navy transition-all duration-500 shadow-sm border border-navy/5">
                   <box.icon size={40} />

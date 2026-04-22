@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Clock, Calendar, ArrowLeft, ArrowRight, CheckCircle2, ShieldCheck, TrendingUp, AlertTriangle, MessageCircle, ShoppingBag, Star, Mail, Zap, Layout, Phone, Send, Heart, Target, Layers } from "lucide-react";
+import { Clock, Calendar, ArrowLeft, ArrowRight, CheckCircle2, ShieldCheck, TrendingUp, AlertTriangle, MessageCircle, ShoppingBag, Star, Mail, Zap, Layout, Phone, Send, Heart, Target, Layers, Linkedin } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 
@@ -46,13 +46,17 @@ export default function FashionDropshippingGuide() {
   return (
     <div className="pt-32 pb-24 bg-white relative">
       {/* Editorial Hero */}
-      <section className="bg-navy-gradient pt-16 pb-32 px-6 rounded-b-[60px] relative overflow-hidden">
+      <section className="bg-navy-gradient pt-16 pb-32 px-6 rounded-b-3xl relative overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,_rgba(0,255,157,0.1)_0%,_transparent_70%)]" />
         
         <div className="container mx-auto max-w-4xl relative z-10 text-center space-y-8">
-          <Link to="/blog" className="inline-flex items-center gap-2 text-green font-bold text-sm uppercase tracking-widest hover:text-white transition-colors">
-            <ArrowLeft size={16} /> Back to Blog
-          </Link>
+          <nav className="flex flex-wrap items-center justify-center lg:justify-start gap-3 text-xs font-bold uppercase tracking-widest text-white/50 mb-4">
+            <Link to="/" className="hover:text-green transition-colors flex items-center gap-2"><ArrowLeft size={14} /> Home</Link>
+            <span className="opacity-30">/</span>
+            <Link to="/blog" className="hover:text-green transition-colors">Blog</Link>
+            <span className="opacity-30">/</span>
+            <span className="text-white">Article</span>
+          </nav>
           
           <div className="flex flex-wrap items-center justify-center gap-4 text-white/60 text-sm font-bold uppercase tracking-widest">
             <span className="bg-white/10 px-4 py-2 rounded-full text-white">Dropshipping</span>
@@ -71,7 +75,7 @@ export default function FashionDropshippingGuide() {
       </section>
 
       <section className="container mx-auto px-6 -mt-16 relative z-20">
-        <div className="max-w-4xl mx-auto bg-white rounded-[40px] shadow-2xl p-8 md:p-16 border border-navy/5 space-y-12">
+        <div className="max-w-4xl mx-auto bg-white rounded-2xl shadow-2xl p-8 md:p-16 border border-navy/5 space-y-12">
           
           <div className="aspect-video bg-light w-full rounded-3xl overflow-hidden shadow-inner mb-12 relative flex items-center justify-center group">
             <Heart className="absolute text-pink-500 opacity-10 group-hover:scale-110 transition-transform duration-700" size={160} />
@@ -87,7 +91,7 @@ export default function FashionDropshippingGuide() {
               <p>
                 The biggest mistake most aspiring entrepreneurs make is starting a "General Fashion Store." In 2026, the middle ground is a graveyard. You cannot compete with the logistics of Zara or the pricing of Shein. You win by being the <strong>absolute authority</strong> for a very specific tribe.
               </p>
-              <div className="bg-light p-8 rounded-[32px] my-8 space-y-4">
+              <div className="bg-light p-8 rounded-xl my-8 space-y-4">
                 <p className="font-sans font-bold text-navy uppercase text-xs tracking-widest">Recommended Sub-Niches for 2026:</p>
                 <ul className="list-none grid grid-cols-1 md:grid-cols-2 gap-4 pl-0">
                   <li className="flex items-center gap-3 bg-white p-4 rounded-2xl border border-navy/5 shadow-sm">
@@ -110,7 +114,7 @@ export default function FashionDropshippingGuide() {
                 In fashion, your store design must be invisible. It should highlight the photography, not compete with it. Most beginners clutter their store with "trust badges" and timers that scream "dropshipping." Instead, focus on these technical foundations:
               </p>
               
-              <div className="bg-navy p-10 rounded-[40px] text-white my-12 space-y-6">
+              <div className="bg-navy p-10 rounded-2xl text-white my-12 space-y-6">
                 <h4 className="text-green font-bold text-xs uppercase tracking-widest flex items-center gap-2">
                   <Layers size={18} /> Theme Customization Tip: Liquid Sizing Labels
                 </h4>
@@ -138,14 +142,14 @@ export default function FashionDropshippingGuide() {
               <p>
                 Ranking for "blue shirts" is impossible. Ranking for "Blue organic cotton oversized men's shirts for minimalist wardrobe" is where the money is.
               </p>
-              <div className="flex items-start gap-4 bg-light p-8 rounded-[32px] border-l-8 border-green my-12 font-sans italic">
+              <div className="flex items-start gap-4 bg-light p-8 rounded-xl border-l-8 border-green my-12 font-sans italic">
                 <Zap className="text-green shrink-0 mt-1" size={32} />
                 <p className="text-lg font-medium text-navy m-0">
                   <strong>The "Style Guide" Hack:</strong> Create blog posts titled "5 Ways to Style Our [Product Name]". Link directly to the product. Google sees this as deep topical relevance, and it helps you rank for "How to wear" queries which have high buyer intent.
                 </p>
               </div>
 
-              <div className="bg-navy p-12 rounded-[48px] text-white my-16 shadow-[0_50px_100px_-20px_rgba(0,0,0,0.3)] font-sans">
+              <div className="bg-navy p-12 rounded-3xl text-white my-16 shadow-[0_50px_100px_-20px_rgba(0,0,0,0.3)] font-sans">
                 <div className="flex items-center gap-6 mb-8">
                   <div className="w-16 h-16 bg-green/20 rounded-2xl flex items-center justify-center">
                     <ShoppingBag className="text-green" size={32} />
@@ -184,7 +188,7 @@ export default function FashionDropshippingGuide() {
             <Link to="/portfolio" className="flex items-center gap-6 group hover:bg-light p-4 rounded-3xl transition-all -ml-4 pr-8 border border-transparent hover:border-navy/5">
               <div className="relative">
                 <div className="absolute inset-0 bg-green/20 rounded-full blur-xl group-hover:bg-green/40 transition-colors" />
-                <img src="https://fiverr-res.cloudinary.com/image/upload/f_auto,q_auto,t_profile_original/v1/attachments/profile/photo/bed47882db24771238091456bc69a699-1765207538189/19e070ae-9c29-498b-ac69-01114e131e68.png" alt="Sheun" className="w-20 h-20 rounded-full shadow-lg object-cover relative z-10 border-2 border-white" referrerPolicy="no-referrer" />
+                <img src="https://ik.imagekit.io/pedgmrihq/image.png" alt="Sheun" className="w-20 h-20 rounded-full shadow-lg object-cover relative z-10 border-2 border-white" referrerPolicy="no-referrer" />
               </div>
               <div>
                 <p className="font-bold text-navy text-xl group-hover:text-green transition-colors leading-tight">By Sheun</p>
@@ -198,7 +202,10 @@ export default function FashionDropshippingGuide() {
               <div className="flex items-center justify-end gap-3 flex-wrap">
                 <button onClick={handleTwitterShare} className="w-10 h-10 flex items-center justify-center bg-light border border-navy/10 text-navy rounded-full hover:bg-navy hover:text-white transition-colors">
                   <span className="sr-only">Twitter</span>
-                  <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.84 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/></svg>
+                  <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92(0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.84 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/></svg>
+                </button>
+                <button onClick={handleLinkedinShare} className="w-10 h-10 flex items-center justify-center bg-light border border-navy/10 text-navy rounded-full hover:bg-[#0077b5] hover:text-white hover:border-[#0077b5] transition-colors">
+                  <Linkedin size={18} />
                 </button>
                 <button onClick={handleWhatsAppShare} className="w-10 h-10 flex items-center justify-center bg-light border border-navy/10 text-navy rounded-full hover:bg-green hover:text-navy transition-colors">
                   <Phone size={20} />
@@ -216,7 +223,7 @@ export default function FashionDropshippingGuide() {
 
             <div className="space-y-8 mb-16">
               {comments.map((comment, i) => (
-                <div key={i} className="bg-light p-8 rounded-[32px] border border-navy/5 space-y-4">
+                <div key={i} className="bg-light p-8 rounded-xl border border-navy/5 space-y-4">
                   <div className="flex items-center justify-between">
                     <div className="flex items-center gap-3">
                       <div className="w-10 h-10 bg-navy/10 rounded-full flex items-center justify-center text-navy font-bold">{comment.name.charAt(0)}</div>
@@ -228,7 +235,7 @@ export default function FashionDropshippingGuide() {
               ))}
             </div>
 
-            <form onSubmit={handleAddComment} className="bg-white p-8 md:p-10 rounded-[40px] shadow-2xl border border-navy/5 space-y-6">
+            <form onSubmit={handleAddComment} className="bg-white p-8 md:p-10 rounded-2xl shadow-2xl border border-navy/5 space-y-6">
               <h4 className="text-xl font-bold text-navy mb-2">Join the Conversation</h4>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div className="space-y-2 md:col-span-2">
@@ -257,7 +264,7 @@ export default function FashionDropshippingGuide() {
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-5xl mx-auto">
           <Link to="/blog/3" className="group space-y-6 block">
-            <div className="aspect-[16/10] rounded-[32px] overflow-hidden relative shadow-xl">
+            <div className="aspect-[16/10] rounded-xl overflow-hidden relative shadow-xl">
               <img src="https://picsum.photos/seed/blog3/800/600" alt="Related Post" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
               <div className="absolute top-6 left-6">
                 <span className="bg-white/90 backdrop-blur-xl text-navy text-[10px] font-bold uppercase tracking-[0.3em] px-6 py-2 rounded-full shadow-xl">Dropshipping</span>
@@ -272,7 +279,7 @@ export default function FashionDropshippingGuide() {
           </Link>
 
           <Link to="/blog/2" className="group space-y-6 block">
-            <div className="aspect-[16/10] rounded-[32px] overflow-hidden relative shadow-xl">
+            <div className="aspect-[16/10] rounded-xl overflow-hidden relative shadow-xl">
               <img src="https://picsum.photos/seed/blog2/800/600" alt="Related Post" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
               <div className="absolute top-6 left-6">
                 <span className="bg-white/90 backdrop-blur-xl text-navy text-[10px] font-bold uppercase tracking-[0.3em] px-6 py-2 rounded-full shadow-xl">Shopify Tips</span>

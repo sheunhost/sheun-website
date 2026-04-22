@@ -1,14 +1,14 @@
 @import "tailwindcss";
-@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Newsreader:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap');
 
 @theme {
-  --font-sans: "Plus Jakarta Sans", "Inter", ui-sans-serif, system-ui, sans-serif;
-  --font-serif: "Cormorant Garamond", serif;
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Newsreader", "Cormorant Garamond", serif;
   
-  --color-navy: #042f2e; /* Dark Teal matching logo */
-  --color-green: #C69C2D; /* Gold matching logo */
-  --color-muted: #8A8FA8;
-  --color-light: #F8FAF9;
+  --color-navy: #09090b; /* Zinc 950 - modern SaaS dark */
+  --color-green: #10b981; /* Emerald 500 - vibrant accent */
+  --color-muted: #71717a; /* Zinc 500 */
+  --color-light: #f4f4f5; /* Zinc 100 */
 
   --animate-marquee: marquee 25s linear infinite;
   --animate-float: float 6s ease-in-out infinite;
@@ -27,33 +27,25 @@
 
 @layer base {
   body {
-    @apply bg-white text-navy font-sans antialiased selection:bg-green selection:text-navy;
+    @apply bg-white text-navy font-sans antialiased selection:bg-green selection:text-white;
   }
   
-  h1, h2, h3 {
-    @apply tracking-tighter;
+  h1, h2, h3, h4, h5, h6 {
+    @apply tracking-tight font-serif;
   }
 
   label {
-    @apply text-navy/80 font-bold;
-  }
-  
-  .text-xs {
-    @apply text-[0.825rem];
-  }
-  
-  .text-sm {
-    @apply text-[0.95rem];
+    @apply text-navy/80 font-semibold text-sm;
   }
 }
 
 @layer utilities {
   .text-navy\/40 {
-    @apply text-navy/70;
+    @apply text-navy/60;
   }
   
   .bg-navy-gradient {
-    background: radial-gradient(circle at top right, #064e4b, #042f2e, #021a1a);
+    background: linear-gradient(180deg, #09090b 0%, #18181b 100%);
   }
   
   .text-balance {
@@ -61,25 +53,21 @@
   }
   
   .border-subtle {
-    @apply border-navy/5;
+    @apply border-navy/10;
   }
 
   .premium-shadow {
-    box-shadow: 0 40px 100px -20px rgba(4, 47, 46, 0.15);
+    box-shadow: 0 20px 40px -15px rgba(9, 9, 11, 0.1);
   }
 
   .green-glow {
-    box-shadow: 0 20px 60px -10px rgba(198, 156, 45, 0.3);
+    box-shadow: 0 0 40px -10px rgba(16, 185, 129, 0.5);
   }
 }
 
 .glass-nav {
-  background: rgba(4, 47, 46, 0.85);
-  @apply backdrop-blur-xl border-b border-white/5 shadow-2xl;
-}
-
-.green-glow {
-  box-shadow: 0 0 30px rgba(198, 156, 45, 0.2);
+  background: rgba(9, 9, 11, 0.85);
+  @apply backdrop-blur-xl border-b border-white/10 shadow-2xl;
 }
 
 .text-reveal span {
