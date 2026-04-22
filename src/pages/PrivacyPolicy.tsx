@@ -1,6 +1,6 @@
 import PageWrapper from "../components/PageWrapper";
 import { Link } from "react-router-dom";
-import { Shield, Lock, Eye } from "lucide-react";
+import { Facebook,  Shield, Lock, Eye  } from "lucide-react";
 
 export default function PrivacyPolicy() {
   return (

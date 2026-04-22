@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Search, Clock, Calendar, ArrowRight, User, ShieldCheck } from "lucide-react";
+import { Facebook,  Search, Clock, Calendar, ArrowRight, User, ShieldCheck  } from "lucide-react";
 import PageWrapper from "../components/PageWrapper";
 import { useState } from "react";
 import { Link } from "react-router-dom";
@@ -221,7 +221,7 @@ export default function Blog() {
                 <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-8 pt-10 border-t border-navy/5">
                   <div className="flex items-center gap-4">
                     <div className="w-14 h-14 rounded-2xl overflow-hidden shadow-xl">
-                      <img src="https://ik.imagekit.io/pedgmrihq/image.png" alt="Sheun" loading="lazy" />
+                      <img src="https://ui-avatars.com/api/?name=Sheun+Hub&background=10b981&color=fff" alt="Sheun" loading="lazy" />
                     </div>
                     <div>
                       <p className="text-lg font-bold text-navy">Sheun</p>

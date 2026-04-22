@@ -17,8 +17,8 @@ export default function ShopifySEOGuide() {
     window.open(`https://wa.me/?text=${title} - ${url}`, "_blank");
   };
 
-  const handleTwitterShare = () => {
-    window.open(`https://twitter.com/intent/tweet?text=${title}&url=${url}`, "_blank");
+  const handleFacebookShare = () => {
+    window.open(`https://www.facebook.com/sharer/sharer.php?u=${url}`, "_blank");
   };
 
   const handleAddComment = (e: React.FormEvent) => {
@@ -85,7 +85,7 @@ export default function ShopifySEOGuide() {
                 <Link to="/about" className="flex items-center gap-4 pt-4 border-t border-white/10 group">
                   <div className="relative">
                     <div className="absolute inset-0 bg-green/20 rounded-full blur-lg group-hover:bg-green/40 transition-colors" />
-                    <img src="https://ik.imagekit.io/pedgmrihq/image.png" className="w-12 h-12 rounded-full border-2 border-green relative z-10" alt="Sheun" referrerPolicy="no-referrer" />
+                    <img src="https://ui-avatars.com/api/?name=Sheun+Hub&background=10b981&color=fff" className="w-12 h-12 rounded-full border-2 border-green relative z-10" alt="Sheun" referrerPolicy="no-referrer" />
                   </div>
                   <div>
                     <p className="font-bold group-hover:text-green transition-colors">Sheun</p>
@@ -97,7 +97,7 @@ export default function ShopifySEOGuide() {
               <div className="space-y-4">
                 <p className="text-[10px] font-bold uppercase tracking-[0.3em] text-navy/40">Share the Blueprint</p>
                 <div className="flex gap-4">
-                  <button onClick={handleTwitterShare} className="w-12 h-12 bg-white rounded-2xl flex items-center justify-center text-navy hover:bg-navy hover:text-white transition-all shadow-sm border border-navy/5"><ArrowRight className="-rotate-45" size={20} /></button>
+                  <button onClick={handleFacebookShare} className="w-12 h-12 bg-white rounded-2xl flex items-center justify-center text-navy hover:bg-navy hover:text-white transition-all shadow-sm border border-navy/5"><ArrowRight className="-rotate-45" size={20} /></button>
                   <button onClick={handleWhatsAppShare} className="w-12 h-12 bg-white rounded-2xl flex items-center justify-center text-navy hover:bg-green hover:text-navy transition-all shadow-sm border border-navy/5"><MessageCircle size={20} /></button>
                 </div>
               </div>

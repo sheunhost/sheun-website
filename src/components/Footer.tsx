@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Mail, MessageCircle, Linkedin, Twitter, ShieldCheck } from "lucide-react";
+import { Mail, MessageCircle, Linkedin, Facebook, ShieldCheck } from "lucide-react";
 
 export default function Footer() {
   return (
@@ -49,9 +49,9 @@ export default function Footer() {
             <h4 className="text-sm font-bold uppercase tracking-[0.3em] text-white/20 mb-8">Social & Contact</h4>
             <ul className="space-y-4 font-medium">
               <li><a href="mailto:sheunhost@gmail.com" className="text-white/60 hover:text-green transition-colors flex items-center gap-3"><Mail size={16}/> Email</a></li>
-              <li><a href="#" className="text-white/60 hover:text-green transition-colors flex items-center gap-3"><MessageCircle size={16}/> WhatsApp</a></li>
-              <li><a href="https://www.linkedin.com/in/sheun-hub-26b876321" className="text-white/60 hover:text-green transition-colors flex items-center gap-3"><Linkedin size={16}/> LinkedIn</a></li>
-              <li><a href="#" className="text-white/60 hover:text-green transition-colors flex items-center gap-3"><Twitter size={16}/> Twitter</a></li>
+              <li><a href="https://wa.me/2348084315743" target="_blank" rel="noopener noreferrer" className="text-white/60 hover:text-green transition-colors flex items-center gap-3"><MessageCircle size={16}/> WhatsApp</a></li>
+              <li><a href="https://www.linkedin.com/in/sheun-hub-26b876321" target="_blank" rel="noopener noreferrer" className="text-white/60 hover:text-green transition-colors flex items-center gap-3"><Linkedin size={16}/> LinkedIn</a></li>
+              <li><a href="https://www.facebook.com/profile.php?id=61581094591044" target="_blank" rel="noopener noreferrer" className="text-white/60 hover:text-green transition-colors flex items-center gap-3"><Facebook size={16}/> Facebook</a></li>
             </ul>
           </div>
         </div>

@@ -1,5 +1,5 @@
 import { motion, AnimatePresence } from "framer-motion";
-import { ExternalLink, Star, ShoppingBag, Globe, Trophy, ArrowRight, Info, X } from "lucide-react";
+import { Facebook,  ExternalLink, Star, ShoppingBag, Globe, Trophy, ArrowRight, Info, X  } from "lucide-react";
 import PageWrapper from "../components/PageWrapper";
 import { useState } from "react";
 import { Link } from "react-router-dom";
@@ -16,7 +16,7 @@ const projects = [
     category: "Real Project",
     desc: "A full-scale Shopify Plus development featuring hyper-optimized checkout flows and bespoke UI modules designed for maximum engagement.",
     services: ["Shopify Plus", "UI/UX Architecture", "Optimization"],
-    image: "https://ik.imagekit.io/pedgmrihq/image.png?updatedAt=1776777977552",
+    image: "https://ui-avatars.com/api/?name=Sheun+Hub&background=10b981&color=fff",
     featured: true,
     col: "md:col-span-12",
     height: "h-[600px]",

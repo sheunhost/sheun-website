@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import PageWrapper from "../components/PageWrapper";
 import ImageGen from "../components/ImageGen";
-import { ListChecks, Sparkles, Rocket, Zap, Globe, MessageSquare, ArrowRight } from "lucide-react";
+import { Facebook,  ListChecks, Sparkles, Rocket, Zap, Globe, MessageSquare, ArrowRight  } from "lucide-react";
 import { Link } from "react-router-dom";
 import { openCalendlyPopup } from "../lib/utils";
 

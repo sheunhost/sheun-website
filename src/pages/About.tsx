@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { CheckCircle2, Award, GraduationCap, Star, MapPin, Globe, ArrowRight, Code2, Rocket, Zap, Layout, MessageSquare } from "lucide-react";
+import { Facebook,  CheckCircle2, Award, GraduationCap, Star, MapPin, Globe, ArrowRight, Code2, Rocket, Zap, Layout, MessageSquare  } from "lucide-react";
 import PageWrapper from "../components/PageWrapper";
 import { Link } from "react-router-dom";
 import { openCalendlyPopup } from "../lib/utils";

@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { ArrowRight, Star, ShoppingBag, Globe, Trophy, CheckCircle2, Layout, RefreshCw, ShoppingCart, Palette, ExternalLink, Zap, Code2, Rocket, MessageSquare, Send, Mail, MessageCircle, ChevronDown, Quote, TrendingUp, Target, AlertCircle, BarChart3, Search, Lightbulb, Info, AlertTriangle, X, Clock, DollarSign, ListChecks, ChevronLeft, ChevronRight, ShieldCheck } from "lucide-react";
+import { Facebook,  ArrowRight, Star, ShoppingBag, Globe, Trophy, CheckCircle2, Layout, RefreshCw, ShoppingCart, Palette, ExternalLink, Zap, Code2, Rocket, MessageSquare, Send, Mail, MessageCircle, ChevronDown, Quote, TrendingUp, Target, AlertCircle, BarChart3, Search, Lightbulb, Info, AlertTriangle, X, Clock, DollarSign, ListChecks, ChevronLeft, ChevronRight, ShieldCheck  } from "lucide-react";
 import { Link } from "react-router-dom";
 import { GoogleGenAI } from "@google/genai";
 import PageWrapper from "../components/PageWrapper";
@@ -1197,7 +1197,7 @@ Return ONLY valid JSON.
             <div className="bg-light p-12 rounded-2xl border border-navy/5 flex flex-col items-center text-center space-y-8 shadow-xl">
               <div className="w-32 h-32 rounded-full overflow-hidden border-8 border-white shadow-2xl">
                 <img 
-                  src="https://ik.imagekit.io/pedgmrihq/image.png" 
+                  src="https://ui-avatars.com/api/?name=Sheun+Hub&background=10b981&color=fff" 
                   alt="Sheun" 
                   referrerPolicy="no-referrer"
                   className="w-full h-full object-cover" 

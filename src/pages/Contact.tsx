@@ -1,5 +1,5 @@
 import { motion, AnimatePresence } from "framer-motion";
-import { Mail, MessageCircle, Linkedin, Facebook, Twitter, Send, CheckCircle2, Gift, Globe, Star, ArrowRight, MapPin, Clock, Phone, Zap, ChevronDown } from "lucide-react";
+import { Mail, MessageCircle, Facebook, Linkedin,  Send, CheckCircle2, Gift, Globe, Star, ArrowRight, MapPin, Clock, Phone, Zap, ChevronDown } from "lucide-react";
 import PageWrapper from "../components/PageWrapper";
 import { useState, FormEvent } from "react";
 import { Link } from "react-router-dom";
@@ -176,6 +176,8 @@ export default function Contact() {
                   <motion.a
                     key={i}
                     href={item.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ delay: i * 0.1 }}

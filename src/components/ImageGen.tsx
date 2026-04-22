@@ -1,7 +1,16 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Image as ImageIcon, Sparkles, Loader2, Download, RefreshCw, Wand2, Maximize2, X } from "lucide-react";
 import { GoogleGenAI } from "@google/genai";
+
+const LOADING_MESSAGES = [
+  "Initializing AI visual engine...",
+  "Analyzing e-commerce aesthetics...",
+  "Setting up virtual lighting...",
+  "Rendering high-quality details...",
+  "Applying final polish...",
+  "Just a moment longer..."
+];
 
 export default function ImageGen() {
   const [prompt, setPrompt] = useState("");
@@ -10,6 +19,19 @@ export default function ImageGen() {
   const [isEnhancing, setIsEnhancing] = useState(false);
   const [isPreviewOpen, setIsPreviewOpen] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [loadingMsgIdx, setLoadingMsgIdx] = useState(0);
+
+  useEffect(() => {
+    let interval: NodeJS.Timeout;
+    if (isLoading) {
+      interval = setInterval(() => {
+        setLoadingMsgIdx((prev) => (prev + 1) % LOADING_MESSAGES.length);
+      }, 2500);
+    } else {
+      setLoadingMsgIdx(0);
+    }
+    return () => clearInterval(interval);
+  }, [isLoading]);
 
   const enhancePrompt = async () => {
     if (!prompt.trim() || isEnhancing) return;
@@ -29,7 +51,6 @@ export default function ImageGen() {
       }
     } catch (err) {
       console.error("Prompt enhancement detailed error:", err);
-      // Don't show critical error to user here as it's an optional enhancement
     } finally {
       setIsEnhancing(false);
     }
@@ -49,6 +70,7 @@ export default function ImageGen() {
       const ai = new GoogleGenAI({ apiKey });
       console.log("Starting image generation for prompt:", prompt);
 
+      // Using gemini-2.5-flash-image for standard image generation
       const response = await ai.models.generateContent({
         model: "gemini-2.5-flash-image",
         contents: {
@@ -64,31 +86,20 @@ export default function ImageGen() {
       console.log("Raw response:", response);
 
       const candidate = response.candidates?.[0];
-      if (!candidate) {
-        throw new Error("Internal error: No response candidates returned from AI.");
-      }
-
-      if (candidate.finishReason === "SAFETY") {
-        throw new Error("Safety filters triggered. Please try a different prompt.");
-      }
-
-      if (!candidate.content?.parts) {
-        throw new Error("No content parts found in response.");
-      }
+      if (!candidate) throw new Error("Internal error: No response candidates returned from AI.");
+      if (candidate.finishReason === "SAFETY") throw new Error("Safety filters triggered. Please try a different prompt.");
+      if (!candidate.content?.parts) throw new Error("No content parts found in response.");
 
       let foundImage = false;
       for (const part of candidate.content.parts) {
         if (part.inlineData) {
-          const base64Data = part.inlineData.data;
-          setImage(`data:image/png;base64,${base64Data}`);
+          setImage(`data:image/png;base64,${part.inlineData.data}`);
           foundImage = true;
           break;
         }
       }
 
-      if (!foundImage) {
-        throw new Error("The AI provided a response but no image data was included.");
-      }
+      if (!foundImage) throw new Error("The AI provided a response but no image data was included.");
 
     } catch (err) {
       console.error("Image generation detailed error:", err);
@@ -158,7 +169,36 @@ export default function ImageGen() {
           {/* Right: Preview */}
           <div className="lg:w-1/2 bg-white/5 border-l border-white/10 flex items-center justify-center p-8 relative min-h-[400px]">
             <AnimatePresence mode="wait">
-              {image ? (
+              {isLoading ? (
+                <motion.div
+                  key="loading"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  className="w-full h-full flex flex-col items-center justify-center space-y-6"
+                >
+                  <div className="relative">
+                    <div className="w-24 h-24 border-4 border-green/20 rounded-full animate-spin-slow"></div>
+                    <div className="w-24 h-24 border-4 border-green border-t-transparent rounded-full animate-spin absolute inset-0"></div>
+                    <ImageIcon size={32} className="text-green absolute inset-0 m-auto animate-pulse" />
+                  </div>
+                  
+                  <div className="h-6 overflow-hidden relative w-full text-center flex items-center justify-center">
+                    <AnimatePresence mode="popLayout">
+                      <motion.p
+                        key={loadingMsgIdx}
+                        initial={{ y: 20, opacity: 0 }}
+                        animate={{ y: 0, opacity: 1 }}
+                        exit={{ y: -20, opacity: 0 }}
+                        transition={{ duration: 0.3 }}
+                        className="text-green text-sm font-bold uppercase tracking-widest absolute"
+                      >
+                        {LOADING_MESSAGES[loadingMsgIdx]}
+                      </motion.p>
+                    </AnimatePresence>
+                  </div>
+                </motion.div>
+              ) : image ? (
                 <motion.div
                   key="image"
                   initial={{ opacity: 0, scale: 0.9 }}

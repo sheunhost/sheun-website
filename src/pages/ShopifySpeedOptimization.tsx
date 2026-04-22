@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Clock, Calendar, ArrowLeft, ArrowRight, CheckCircle2, ShieldCheck, TrendingUp, AlertTriangle, MessageCircle, Settings, Mail, Target, Phone, Twitter, Facebook, Linkedin, User, Send, Zap, Image as ImageIcon, Code, Package } from "lucide-react";
+import { Clock, Calendar, ArrowLeft, ArrowRight, CheckCircle2, ShieldCheck, TrendingUp, AlertTriangle, MessageCircle, Settings, Mail, Target, Phone,  Facebook, Linkedin, User, Send, Zap, Image as ImageIcon, Code, Package } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 
@@ -17,10 +17,7 @@ export default function ShopifySpeedOptimization() {
     window.open(`https://wa.me/?text=${title} - ${url}`, "_blank");
   };
 
-  const handleTwitterShare = () => {
-    window.open(`https://twitter.com/intent/tweet?text=${title}&url=${url}`, "_blank");
-  };
-
+  
   const handleFacebookShare = () => {
     window.open(`https://www.facebook.com/sharer/sharer.php?u=${url}`, "_blank");
   };
@@ -156,7 +153,7 @@ export default function ShopifySpeedOptimization() {
             <Link to="/portfolio" className="flex items-center gap-6 group hover:bg-light p-4 rounded-3xl transition-all -ml-4 pr-8 border border-transparent hover:border-navy/5">
               <div className="relative">
                 <div className="absolute inset-0 bg-green/20 rounded-full blur-xl group-hover:bg-green/40 transition-colors" />
-                <img src="https://ik.imagekit.io/pedgmrihq/image.png" alt="Sheun" className="w-20 h-20 rounded-full shadow-lg object-cover relative z-10 border-2 border-white" referrerPolicy="no-referrer" />
+                <img src="https://ui-avatars.com/api/?name=Sheun+Hub&background=10b981&color=fff" alt="Sheun" className="w-20 h-20 rounded-full shadow-lg object-cover relative z-10 border-2 border-white" referrerPolicy="no-referrer" />
               </div>
               <div>
                 <p className="font-bold text-navy text-xl group-hover:text-green transition-colors leading-tight">By Sheun</p>
@@ -168,10 +165,7 @@ export default function ShopifySpeedOptimization() {
             <div className="w-full md:w-auto">
               <p className="text-[10px] font-bold uppercase tracking-[0.3em] text-navy/40 mb-4 md:text-right">Share Article</p>
               <div className="flex items-center gap-3 flex-wrap">
-                <button onClick={handleTwitterShare} className="w-12 h-12 flex items-center justify-center bg-light border border-navy/10 text-navy rounded-full hover:bg-[#1DA1F2] hover:text-white hover:border-[#1DA1F2] transition-colors shadow-sm">
-                  <Twitter size={20} />
-                </button>
-                <button onClick={handleFacebookShare} className="w-12 h-12 flex items-center justify-center bg-light border border-navy/10 text-navy rounded-full hover:bg-[#4267B2] hover:text-white hover:border-[#4267B2] transition-colors shadow-sm">
+                <button onClick={handleFacebookShare} className="w-12 h-12 flex items-center justify-center bg-light border border-navy/10 text-navy rounded-full hover:bg-[#1877F2] hover:text-white hover:border-[#1877F2] transition-colors shadow-sm">
                   <Facebook size={20} />
                 </button>
                 <button onClick={handleLinkedinShare} className="w-12 h-12 flex items-center justify-center bg-light border border-navy/10 text-navy rounded-full hover:bg-[#0077b5] hover:text-white hover:border-[#0077b5] transition-colors shadow-sm">
