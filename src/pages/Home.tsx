@@ -900,6 +900,20 @@ Return ONLY valid JSON.
                 </div>
               )}
             </div>
+            
+            {/* Direct CTA next to SEO Audit for manual audit */}
+            <div className="bg-navy p-10 md:p-16 rounded-2xl shadow-xl flex flex-col md:flex-row items-center justify-between gap-10 translate-y-6">
+              <div className="space-y-4 text-center md:text-left">
+                <h4 className="text-3xl font-bold text-white tracking-tight">Need a professional human touch?</h4>
+                <p className="text-white/60 text-lg max-w-lg font-serif italic">
+                  The AI tool above is great for quick keywords, but my completely <strong className="text-white not-italic">Free Store Audit</strong> dives deep into code speed, UX, and conversion bottlenecks.
+                </p>
+              </div>
+              <Link to="/contact#contact-form" className="shrink-0 bg-green text-navy px-12 py-5 rounded-full font-bold text-lg hover:scale-105 transition-all duration-300 shadow-xl flex items-center gap-3 w-full md:w-auto justify-center">
+                Get a Free Audit <ArrowRight size={20} />
+              </Link>
+            </div>
+
           </div>
         </div>
       </section>

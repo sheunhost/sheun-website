@@ -254,133 +254,42 @@ export default function Portfolio() {
         </div>
       </section>
 
-      {/* Filter Tabs */}
-      <section className="py-8 bg-white sticky top-20 z-40 border-b border-navy/5">
+      {/* Portfolio Gallery */}
+      <section className="py-24 bg-white min-h-screen">
         <div className="container mx-auto px-6">
-          <div className="flex flex-wrap items-center justify-center gap-4">
-            {categories.map((cat) => (
-              <button
-                key={cat}
-                onClick={() => setActiveCategory(cat)}
-                className={`px-8 py-3 rounded-full text-sm font-bold transition-all relative ${
-                  activeCategory === cat ? "text-navy" : "text-navy/40 hover:text-navy"
-                }`}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {projects.map((project, i) => (
+              <div 
+                key={`gallery-${i}`} 
+                className="relative rounded-2xl overflow-hidden cursor-pointer group hover:shadow-2xl transition-all border border-navy/5"
+                onClick={() => {
+                  setFullScreenIndex(i);
+                }}
               >
-                {cat}
-                {activeCategory === cat && (
-                  <motion.div
-                    layoutId="activeTab"
-                    className="absolute bottom-0 left-4 right-4 h-1 bg-green rounded-t-full"
-                    transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
-                  />
-                )}
-              </button>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Portfolio Grid */}
-      <section className="py-32 bg-white min-h-screen">
-        <div className="container mx-auto px-6">
-          <motion.div
-            layout
-            className="grid grid-cols-1 md:grid-cols-12 gap-12"
-          >
-            <AnimatePresence mode="popLayout">
-              {filteredProjects.map((project, index) => (
-                <motion.div
-                  key={project.id}
-                  layout
-                  initial={{ opacity: 0, scale: 0.95, y: 30 }}
-                  animate={{ opacity: 1, scale: 1, y: 0 }}
-                  exit={{ opacity: 0, scale: 0.95 }}
-                  transition={{ duration: 0.6, delay: index * 0.05, ease: [0.16, 1, 0.3, 1] }}
-                  onClick={() => setSelectedProject(project)}
-                  className={`${project.col} ${project.height} relative rounded-3xl overflow-hidden group cursor-pointer shadow-2xl hover:shadow-green/20 transition-all duration-700 border border-navy/5`}
-                >
-                  <motion.img
-                    src={project.image}
-                    alt={project.name}
-                    className="w-full h-full object-contain bg-white"
-                    whileHover={{ scale: 1.05 }}
-                    transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
-                    loading="lazy"
-                  />
-                  <div className="absolute inset-0 bg-navy/20 opacity-0 group-hover:opacity-100 transition-all duration-700 flex items-center justify-center">
-                    <div className="w-20 h-20 bg-white/20 backdrop-blur-xl rounded-full flex items-center justify-center border border-white/30 transform scale-50 opacity-0 group-hover:scale-100 group-hover:opacity-100 transition-all duration-500">
-                      <Globe size={32} className="text-white" />
-                    </div>
-                  </div>
-                </motion.div>
-              ))}
-            </AnimatePresence>
-          </motion.div>
-
-          {/* Bottom Section */}
-          <div className="mt-32 space-y-24">
-            {/* Simple Image Gallery */}
-            <div className="space-y-12">
-              <div className="text-center space-y-4">
-                <h3 className="text-4xl font-bold text-navy tracking-tight">Design Gallery.</h3>
-                <p className="text-navy/60 font-serif italic max-w-xl mx-auto">A quick look at the visual styles and sections we can implement for your brand.</p>
-              </div>
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                {projects.map((project, i) => (
-                  <div 
-                    key={`gallery-${i}`} 
-                    className="relative rounded-2xl overflow-hidden cursor-pointer group hover:shadow-xl transition-all"
-                    onClick={() => {
-                      setFullScreenIndex(i);
-                    }}
-                  >
-                    <img 
-                      src={project.image} 
-                      alt={project.name} 
-                      referrerPolicy="no-referrer"
-                      className="w-full h-48 sm:h-64 object-contain bg-light group-hover:scale-105 transition-transform duration-700 p-2"
-                    />
-                    <div className="absolute inset-0 bg-navy/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center p-4 text-center">
-                      <span className="text-white font-bold text-sm bg-white/20 px-4 py-2 rounded-full backdrop-blur-sm border border-white/20">
-                        View Full Screen
-                      </span>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            <div className="flex items-start gap-6 bg-light p-10 rounded-2xl max-w-4xl mx-auto border border-navy/5">
-              <Info className="text-navy/40 shrink-0 mt-1" size={32} />
-              <p className="text-navy/60 text-lg leading-relaxed font-serif italic">
-                <strong className="text-navy font-sans not-italic font-bold uppercase tracking-widest text-xs block mb-2">Disclaimer</strong>
-                All store concepts above are original designs created by Sheun Hub for demonstration purposes only. None are real brands. Your store will be uniquely designed to match your vision and niche.
-              </p>
-            </div>
-
-            <div className="bg-navy-gradient rounded-xl p-20 md:p-32 text-center space-y-12 relative overflow-hidden">
-              <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,_rgba(0,255,157,0.1)_0%,_transparent_70%)]" />
-              <div className="relative z-10 space-y-10 max-w-4xl mx-auto">
-                <h2 className="text-6xl md:text-8xl font-bold text-white tracking-tighter leading-none">
-                  See a style you love? <br />
-                  <span className="italic font-serif font-light text-white/40">Let's bring it to life.</span>
-                </h2>
-                <p className="text-white/60 text-2xl font-serif italic max-w-2xl mx-auto">
-                  Pick a concept direction, share your niche, and I'll build a custom Shopify store just for you.
-                </p>
-                <div className="flex flex-col sm:flex-row items-center justify-center gap-8 pt-8">
-                  <button 
-                    onClick={() => navigate("/apply#apply-form")} 
-                    className="w-full sm:w-auto bg-green text-navy px-16 py-8 rounded-full font-bold text-2xl hover:scale-105 transition-all duration-500 shadow-2xl green-glow flex items-center justify-center text-center"
-                  >
-                    Get Started
-                  </button>
-                  <Link to="/contact#contact-form" className="w-full sm:w-auto bg-white/5 backdrop-blur-xl text-white px-16 py-8 rounded-full font-bold text-2xl hover:bg-white/10 transition-all duration-500 border border-white/10 flex items-center justify-center text-center">
-                    Get Your Custom Roadmap
-                  </Link>
+                <img 
+                  src={project.image} 
+                  alt={project.name} 
+                  referrerPolicy="no-referrer"
+                  className="w-full h-[400px] object-contain bg-light group-hover:scale-105 transition-transform duration-700 p-4"
+                  loading="lazy"
+                />
+                <div className="absolute inset-0 bg-navy/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center p-6 text-center">
+                  <span className="text-green font-bold text-xs uppercase tracking-widest mb-2">{project.category}</span>
+                  <h3 className="text-white text-2xl font-bold mb-4">{project.name}</h3>
+                  <span className="text-white font-bold text-sm bg-white/10 px-6 py-3 rounded-full backdrop-blur-sm border border-white/20">
+                    View Full Screen
+                  </span>
                 </div>
               </div>
-            </div>
+            ))}
+          </div>
+
+          <div className="mt-24 flex items-start gap-6 bg-light p-10 rounded-2xl max-w-4xl mx-auto border border-navy/5">
+            <Info className="text-navy/40 shrink-0 mt-1" size={32} />
+            <p className="text-navy/60 text-lg leading-relaxed font-serif italic">
+              <strong className="text-navy font-sans not-italic font-bold uppercase tracking-widest text-xs block mb-2">Disclaimer</strong>
+              All store concepts above are original designs created by Sheun Hub for demonstration purposes only. None are real brands. Your store will be uniquely designed to match your vision and niche.
+            </p>
           </div>
         </div>
       </section>
