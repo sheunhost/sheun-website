@@ -662,7 +662,7 @@ Return ONLY valid JSON.
                 <span className="text-green text-[10px] font-bold uppercase tracking-[0.2em]">Available for new projects</span>
               </div>
 
-              <h1 className="text-6xl md:text-[118px] font-bold text-white leading-[0.8] tracking-[-0.05em] text-balance">
+              <h1 className="text-6xl md:text-[100px] font-bold text-white leading-[0.8] tracking-[-0.05em] text-balance">
                 <span className="block mb-4">
                   <motion.span
                     key="headline-1"
@@ -670,17 +670,16 @@ Return ONLY valid JSON.
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.1 }}
                   >
-                    Shopify
+                    Shopify Development
                   </motion.span>
-                  {" "}
+                  <br />
                   <motion.span
                     key="headline-2"
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.2 }}
-                    className="text-green"
                   >
-                    Expert
+                    &amp; <span className="text-green">Growth</span>
                   </motion.span>
                 </span>
                 <motion.span 
@@ -689,15 +688,15 @@ Return ONLY valid JSON.
                   animate={{ opacity: 0.4, x: 0 }}
                   transition={{ delay: 0.4 }}
                 >
-                  Sheun Hub.
+                  by Sheun.
                 </motion.span>
               </h1>
 
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6 pt-8">
                 {[
-                  { title: "Store Setup", desc: "Launch with precision." },
-                  { title: "Conversion", desc: "Turn visitors into buyers." },
-                  { title: "Migration", desc: "Seamless platform moves." }
+                  { title: "Custom Development", desc: "Bespoke Liquid coding." },
+                  { title: "Store Optimization", desc: "Speed and UX refinement." },
+                  { title: "E-commerce Scaling", desc: "Conversion focused design." }
                 ].map((item, i) => (
                   <motion.div
                     key={i}
@@ -713,7 +712,7 @@ Return ONLY valid JSON.
               </div>
 
                 <p className="text-white/60 text-xl md:text-2xl max-w-xl leading-relaxed font-light font-serif italic">
-                  I am Sheun, the expert behind Sheun Hub. I help startup brands launch and scale on Shopify with high-converting stores and technical excellence.
+                  Scale your brand with Sheun, a specialist in Custom Shopify Development and E-commerce Growth. From custom theme builds to technical store optimization, Sheun Hub helps businesses maximize revenue on the Shopify platform.
                 </p>
             </motion.div>
 
@@ -765,7 +764,7 @@ Return ONLY valid JSON.
               >
                 <img 
                   src="https://mapplinks.com/wp-content/uploads/2020/06/screen1.png" 
-                  alt="Shopify Dashboard" 
+                  alt="Sheun - Shopify Development and Growth Expert" 
                   referrerPolicy="no-referrer"
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-[2s]" 
                   loading="lazy" 

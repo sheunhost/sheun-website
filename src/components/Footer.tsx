@@ -17,7 +17,7 @@ export default function Footer() {
             <Link to="/" className="inline-block">
               <img 
                 src="https://i.postimg.cc/wxQgVCcf/1000031270-removebg-preview.png" 
-                alt="Sheun Hub logo" 
+                alt="Sheun - Shopify Development and Growth Expert" 
                 referrerPolicy="no-referrer"
                 loading="lazy"
                 className="h-20 w-auto object-contain drop-shadow-xl" 

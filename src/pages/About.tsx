@@ -61,7 +61,10 @@ export default function About() {
                 className="space-y-10 text-navy/60 text-2xl leading-relaxed max-w-2xl font-serif italic"
               >
                 <p>
-                  I'm Sheun — a certified Shopify Partner and Top Rated Upwork freelancer. I combine business strategy with technical Liquid expertise to build stores that don't just look great — they convert.
+                  Meet Sheun, the technical architect behind Sheun Hub and a dedicated Shopify Growth Expert. While many agencies rely on off-the-shelf templates, Sheun specializes in Custom Shopify Development to give emerging brands the technical advantage they need to scale.
+                </p>
+                <p>
+                  Working with Sheun means partnering with a specialist focused strictly on tangible E-commerce Scaling. Beyond writing clean Liquid code, Sheun provides comprehensive Store Optimization—merging rapid site speed with strategic conversion rate improvements to turn casual browsers into loyal customers.
                 </p>
                 <div className="flex flex-wrap gap-6">
                   <div className="flex items-center gap-4 bg-light px-8 py-4 rounded-full border border-navy/5 shadow-sm text-sm font-bold text-navy uppercase tracking-widest">
@@ -90,7 +93,7 @@ export default function About() {
               >
                 <img 
                   src="https://ik.imagekit.io/pedgmrihq/image.png" 
-                  alt="Sheun" 
+                  alt="Sheun - Shopify Development and Growth Expert" 
                   referrerPolicy="no-referrer"
                   className="w-full h-full object-cover" 
                   loading="lazy" 

@@ -42,7 +42,7 @@ export default function Navbar() {
           <Link to="/" className="flex items-center group">
             <img 
               src="https://i.postimg.cc/wxQgVCcf/1000031270-removebg-preview.png" 
-              alt="Sheun" 
+              alt="Sheun - Shopify Development and Growth Expert" 
               referrerPolicy="no-referrer"
               loading="lazy"
               className={cn(
