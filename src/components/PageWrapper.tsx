@@ -51,13 +51,6 @@ export default function PageWrapper({
         <meta property="og:title" content={fullTitle} />
         <meta property="og:description" content={description || defaultDesc} />
         <meta property="og:image" content="https://i.postimg.cc/wxQgVCcf/1000031270-removebg-preview.png" />
-
-        {/* Twitter */}
-        <meta property="twitter:card" content="summary_large_image" />
-        <meta property="twitter:url" content={canonicalUrl} />
-        <meta property="twitter:title" content={fullTitle} />
-        <meta property="twitter:description" content={description || defaultDesc} />
-        <meta property="twitter:image" content="https://i.postimg.cc/wxQgVCcf/1000031270-removebg-preview.png" />
       </Helmet>
       {children}
       <motion.div className="fixed top-0 left-0 right-0 h-1 bg-green origin-left z-[100]" style={{ scaleX }} />

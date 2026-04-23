@@ -2,8 +2,8 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Facebook,  ExternalLink, Star, ShoppingBag, Globe, Trophy, ArrowRight, Info, X  } from "lucide-react";
 import PageWrapper from "../components/PageWrapper";
 import { useState } from "react";
-import { Link } from "react-router-dom";
-import { openCalendlyPopup } from "../lib/utils";
+import { Link, useNavigate } from "react-router-dom";
+
 
 const categories = ["All", "👗 Fashion", "💄 Beauty & Skincare", "🐾 Pets", "📱 Gadgets"];
 
@@ -160,6 +160,7 @@ const projects = [
 ];
 
 export default function Portfolio() {
+  const navigate = useNavigate();
   const [activeCategory, setActiveCategory] = useState("All");
   const [selectedProject, setSelectedProject] = useState<typeof projects[0] | null>(null);
   const [fullScreenIndex, setFullScreenIndex] = useState<number | null>(null);
@@ -428,8 +429,11 @@ export default function Portfolio() {
                   Pick a concept direction, share your niche, and I'll build a custom Shopify store just for you.
                 </p>
                 <div className="flex flex-col sm:flex-row items-center justify-center gap-8 pt-8">
-                  <button onClick={openCalendlyPopup} className="w-full sm:w-auto bg-green text-navy px-16 py-8 rounded-full font-bold text-2xl hover:scale-105 transition-all duration-500 shadow-2xl green-glow flex items-center justify-center text-center">
-                    Book a 15-Minute Strategy Audit
+                  <button 
+                    onClick={() => navigate("/apply#apply-form")} 
+                    className="w-full sm:w-auto bg-green text-navy px-16 py-8 rounded-full font-bold text-2xl hover:scale-105 transition-all duration-500 shadow-2xl green-glow flex items-center justify-center text-center"
+                  >
+                    Get Started
                   </button>
                   <Link to="/contact#contact-form" className="w-full sm:w-auto bg-white/5 backdrop-blur-xl text-white px-16 py-8 rounded-full font-bold text-2xl hover:bg-white/10 transition-all duration-500 border border-white/10 flex items-center justify-center text-center">
                     Get Your Custom Roadmap

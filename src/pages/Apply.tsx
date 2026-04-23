@@ -96,6 +96,7 @@ export default function Apply() {
     });
 
     try {
+      // 1. Submit to Web3Forms for email notification
       const response = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
         body: submissionData
@@ -104,6 +105,17 @@ export default function Apply() {
       const data = await response.json();
 
       if (data.success) {
+        // 2. Submit to Mailchimp (Background)
+        fetch("/api/mailchimp/subscribe", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            email: formData.email,
+            firstName: formData.name.split(" ")[0],
+            lastName: formData.name.split(" ").slice(1).join(" ")
+          })
+        }).catch(err => console.error("Mailchimp Sync Error:", err));
+
         setIsSuccess(true);
         form.reset();
         

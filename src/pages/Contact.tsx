@@ -10,20 +10,25 @@ const contactInfo = [
   { icon: MessageCircle, label: "WhatsApp (UK)", value: "+44 7476 664292", href: "https://wa.me/447476664292", desc: "Instant chat support" },
   { icon: Star, label: "Upwork", value: "upwork.com/freelancers/sheun_hub", href: "https://upwork.com/freelancers/sheun_hub", desc: "Order via platform" },
   { icon: Linkedin, label: "LinkedIn", value: "sheun-hub-26b876321", href: "https://www.linkedin.com/in/sheun-hub-26b876321?utm_source=share_via&utm_content=profile&utm_medium=member_android", desc: "Professional network" },
+  { icon: Facebook, label: "Facebook", value: "Sheun Hub", href: "https://www.facebook.com/profile.php?id=61581094591044", desc: "Digital presence" },
 ];
 
 export default function Contact() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
+  const [isAuditSuccess, setIsAuditSuccess] = useState(false);
+  const [isAuditSubmitting, setIsAuditSubmitting] = useState(false);
 
-  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>, type: 'contact' | 'audit' = 'contact') => {
     e.preventDefault();
-    setIsSubmitting(true);
+    if (type === 'contact') setIsSubmitting(true);
+    else setIsAuditSubmitting(true);
 
     const formData = new FormData(e.currentTarget);
     formData.append("access_key", "c0573f7d-6191-4374-bc31-ee70ee9fa226");
 
     try {
+      // 1. Submit to Web3Forms for email notification
       const response = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
         body: formData
@@ -32,7 +37,30 @@ export default function Contact() {
       const data = await response.json();
 
       if (data.success) {
-        setIsSuccess(true);
+        // 2. Submit to Mailchimp (Background)
+        const email = formData.get("email") as string;
+        const name = (formData.get("name") as string) || "";
+        fetch("/api/mailchimp/subscribe", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            email,
+            firstName: name.split(" ")[0],
+            lastName: name.split(" ").slice(1).join(" ")
+          })
+        })
+        .then(async r => {
+          if (!r.ok) {
+            const err = await r.json();
+            throw new Error(err.details || err.error || "Mailchimp sync failed");
+          }
+          console.log("Mailchimp sync success");
+        })
+        .catch(err => console.error("Mailchimp Sync Error:", err));
+
+        if (type === 'contact') setIsSuccess(true);
+        else setIsAuditSuccess(true);
+        
         e.currentTarget.reset();
       } else {
         console.error("Error submitting form", data);
@@ -42,7 +70,8 @@ export default function Contact() {
       console.error("Error submitting form", error);
       alert("Something went wrong. Please try again.");
     } finally {
-      setIsSubmitting(false);
+      if (type === 'contact') setIsSubmitting(false);
+      else setIsAuditSubmitting(false);
     }
   };
 
@@ -231,9 +260,17 @@ export default function Contact() {
                 <ChevronDown size={48} className="text-green opacity-50" />
               </motion.div>
               <div className="bg-light p-12 md:p-20 rounded-3xl border border-navy/5 relative overflow-hidden shadow-sm">
-                {!isSuccess ? (
-                  <form onSubmit={handleSubmit} className="space-y-12 relative z-10">
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-12">
+                <AnimatePresence mode="wait">
+                  {!isSuccess ? (
+                    <motion.form 
+                      key="contact-form"
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      exit={{ opacity: 0, scale: 0.95 }}
+                      onSubmit={(e) => handleSubmit(e, 'contact')} 
+                      className="space-y-12 relative z-10"
+                    >
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-12">
                       <div className="space-y-4">
                         <label className="text-xs font-bold text-navy/70 uppercase tracking-[0.3em] ml-4">Full Name</label>
                         <input
@@ -306,30 +343,32 @@ export default function Contact() {
                         </>
                       )}
                     </button>
-                  </form>
-                ) : (
-                  <motion.div
-                    initial={{ opacity: 0, scale: 0.9 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    className="text-center py-20 space-y-8"
-                  >
-                    <div className="w-32 h-32 bg-green/20 text-green rounded-2xl flex items-center justify-center mx-auto shadow-inner">
-                      <CheckCircle2 size={64} />
-                    </div>
-                    <div className="space-y-4">
-                      <h3 className="text-5xl font-bold text-navy tracking-tight">Message Sent!</h3>
-                      <p className="text-navy/70 text-xl max-w-md mx-auto leading-relaxed">
-                        Thank you for reaching out. I've received your message and will get back to you within 24 hours.
-                      </p>
-                    </div>
-                    <button
-                      onClick={() => setIsSuccess(false)}
-                      className="text-navy font-bold text-lg border-b-2 border-green pb-1 hover:text-green transition-colors"
+                    </motion.form>
+                  ) : (
+                    <motion.div
+                      key="contact-success"
+                      initial={{ opacity: 0, scale: 0.9, y: 10 }}
+                      animate={{ opacity: 1, scale: 1, y: 0 }}
+                      className="text-center py-20 space-y-8"
                     >
-                      Send another message
-                    </button>
-                  </motion.div>
-                )}
+                      <div className="w-24 h-24 bg-green text-navy rounded-2xl flex items-center justify-center mx-auto shadow-xl rotate-3">
+                        <CheckCircle2 size={48} />
+                      </div>
+                      <div className="space-y-4">
+                        <h3 className="text-5xl font-bold text-navy tracking-tight uppercase">Message Received.</h3>
+                        <p className="text-navy/70 text-xl max-w-md mx-auto leading-relaxed font-serif italic">
+                          I'll review your project details and get back to you personally within 24 hours.
+                        </p>
+                      </div>
+                      <button
+                        onClick={() => setIsSuccess(false)}
+                        className="text-navy font-bold text-lg border-b-2 border-green pb-1 hover:text-green transition-colors"
+                      >
+                        Send another message
+                      </button>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
               </div>
             </div>
           </div>
@@ -368,34 +407,72 @@ export default function Contact() {
               </ul>
             </div>
 
-            <form onSubmit={handleSubmit} className="bg-white p-12 md:p-16 rounded-3xl shadow-2xl space-y-10 relative z-10 border border-white/20">
-              <input type="hidden" name="subject" value="New Free Store Audit Request" />
-              <div className="space-y-8">
-                <div className="space-y-4">
-                  <label className="text-xs font-bold text-navy/70 uppercase tracking-[0.3em] ml-4">Store URL</label>
-                  <input
-                    type="text"
-                    name="store_url"
-                    required
-                    placeholder="yourstore.com"
-                    className="w-full bg-light border-b-2 border-navy/5 hover:border-navy/20 hover:bg-white rounded-3xl py-6 px-8 focus:border-green outline-none transition-all font-medium text-navy placeholder:text-navy/20 shadow-sm"
-                  />
-                </div>
-                <div className="space-y-4">
-                  <label className="text-xs font-bold text-navy/70 uppercase tracking-[0.3em] ml-4">Email Address</label>
-                  <input
-                    type="email"
-                    name="email"
-                    required
-                    placeholder="john@example.com"
-                    className="w-full bg-light border-b-2 border-navy/5 hover:border-navy/20 hover:bg-white rounded-3xl py-6 px-8 focus:border-green outline-none transition-all font-medium text-navy placeholder:text-navy/20 shadow-sm"
-                  />
-                </div>
-              </div>
-              <button type="submit" disabled={isSubmitting} className="w-full bg-navy text-white py-6 rounded-full font-bold text-lg hover:bg-navy/90 hover:scale-105 transition-all shadow-xl disabled:opacity-50">
-                {isSubmitting ? "Sending..." : "Get Your 15-Minute Audit"}
-              </button>
-            </form>
+            <AnimatePresence mode="wait">
+              {!isAuditSuccess ? (
+                <motion.form 
+                  key="audit-form"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0, scale: 0.95 }}
+                  onSubmit={(e) => handleSubmit(e, 'audit')} 
+                  className="bg-white p-12 md:p-16 rounded-3xl shadow-2xl space-y-10 relative z-10 border border-white/20"
+                >
+                  <input type="hidden" name="subject" value="New Free Store Audit Request" />
+                  <div className="space-y-8">
+                    <div className="space-y-4">
+                      <label className="text-xs font-bold text-navy/70 uppercase tracking-[0.3em] ml-4">Store URL</label>
+                      <input
+                        type="text"
+                        name="store_url"
+                        required
+                        placeholder="yourstore.com"
+                        className="w-full bg-light border-b-2 border-navy/5 hover:border-navy/20 hover:bg-white rounded-3xl py-6 px-8 focus:border-green outline-none transition-all font-medium text-navy placeholder:text-navy/20 shadow-sm"
+                      />
+                    </div>
+                    <div className="space-y-4">
+                      <label className="text-xs font-bold text-navy/70 uppercase tracking-[0.3em] ml-4">Email Address</label>
+                      <input
+                        type="email"
+                        name="email"
+                        required
+                        placeholder="john@example.com"
+                        className="w-full bg-light border-b-2 border-navy/5 hover:border-navy/20 hover:bg-white rounded-3xl py-6 px-8 focus:border-green outline-none transition-all font-medium text-navy placeholder:text-navy/20 shadow-sm"
+                      />
+                    </div>
+                  </div>
+                  <button type="submit" disabled={isAuditSubmitting} className="w-full bg-navy text-white py-6 rounded-full font-bold text-lg hover:bg-navy/90 hover:scale-105 transition-all shadow-xl disabled:opacity-50">
+                    {isAuditSubmitting ? (
+                      <div className="w-6 h-6 border-2 border-white/30 border-t-white rounded-full animate-spin mx-auto" />
+                    ) : (
+                      "Get Your 15-Minute Audit"
+                    )}
+                  </button>
+                </motion.form>
+              ) : (
+                <motion.div 
+                  key="audit-success"
+                  initial={{ opacity: 0, scale: 0.9, y: 10 }}
+                  animate={{ opacity: 1, scale: 1, y: 0 }}
+                  className="bg-white p-16 rounded-3xl shadow-2xl text-center space-y-8 relative z-10 border border-white/20"
+                >
+                  <div className="w-20 h-20 bg-green text-navy rounded-2xl flex items-center justify-center mx-auto shadow-xl -rotate-6">
+                    <Star size={40} className="fill-navy" />
+                  </div>
+                  <div className="space-y-4">
+                    <h3 className="text-4xl font-bold text-navy uppercase tracking-tight">Audit Booked!</h3>
+                    <p className="text-navy/60 text-lg font-serif italic">
+                      I've received your store URL. Expect your video audit in your inbox within 24 hours.
+                    </p>
+                  </div>
+                  <button
+                    onClick={() => setIsAuditSuccess(false)}
+                    className="text-navy/40 font-bold text-xs uppercase tracking-widest hover:text-navy transition-colors"
+                  >
+                    Submit another store
+                  </button>
+                </motion.div>
+              )}
+            </AnimatePresence>
           </div>
         </div>
       </section>

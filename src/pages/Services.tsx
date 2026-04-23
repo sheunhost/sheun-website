@@ -2,8 +2,8 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Facebook,  Layout, RefreshCw, ShoppingCart, Palette, Bug, Search, Rocket, Gift, ChevronDown, CheckCircle2, ArrowRight, Code2, Zap, MessageSquare, Star, X, Clock, DollarSign, ListChecks, ShieldCheck, Target  } from "lucide-react";
 import PageWrapper from "../components/PageWrapper";
 import { useState } from "react";
-import { Link } from "react-router-dom";
-import { openCalendlyPopup } from "../lib/utils";
+import { Link, useNavigate } from "react-router-dom";
+
 
 const services = [
   {
@@ -161,6 +161,7 @@ const faqs = [
 ];
 
 const ServiceModal = ({ service, onClose }: { service: any; onClose: () => void }) => {
+  const navigate = useNavigate();
   if (!service) return null;
 
   return (
@@ -239,13 +240,13 @@ const ServiceModal = ({ service, onClose }: { service: any; onClose: () => void 
 
             <div className="pt-10 border-t border-navy/5">
               <button
-                onClick={(e) => {
+                onClick={() => {
                   onClose();
-                  openCalendlyPopup(e);
+                  navigate("/apply#apply-form");
                 }}
                 className="w-full bg-navy text-white py-6 rounded-full font-bold text-xl hover:bg-green hover:text-navy transition-all duration-500 flex items-center justify-center gap-4 shadow-2xl"
               >
-                Book a 15-Minute Strategy Audit <ArrowRight size={24} />
+                Get Started <ArrowRight size={24} />
               </button>
             </div>
           </div>
@@ -258,6 +259,7 @@ const ServiceModal = ({ service, onClose }: { service: any; onClose: () => void 
 export default function Services() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
   const [selectedService, setSelectedService] = useState<any | null>(null);
+  const navigate = useNavigate();
 
   return (
     <PageWrapper 
@@ -492,7 +494,12 @@ export default function Services() {
                 <MessageSquare className="text-green" size={32} />
                 <h4 className="text-xl font-bold text-navy">Still have questions?</h4>
                 <p className="text-navy/40 text-sm">I'm here to help. Let's chat about your specific needs.</p>
-                <button onClick={openCalendlyPopup} className="inline-block text-navy font-bold text-sm border-b-2 border-green pb-1 text-left">Book a 15-Minute Strategy Audit</button>
+                <button 
+                  onClick={() => navigate("/apply#apply-form")} 
+                  className="inline-block text-navy font-bold text-sm border-b-2 border-green pb-1 text-left"
+                >
+                  Get Started
+                </button>
               </div>
             </div>
 
@@ -549,8 +556,11 @@ export default function Services() {
               Not sure where to start? I'll review your store and send you a growth tips report — completely free.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-12">
-              <button onClick={openCalendlyPopup} className="w-full sm:w-auto bg-green text-navy px-16 py-8 rounded-full font-bold text-2xl hover:scale-105 transition-all duration-500 green-glow">
-                Book a 15-Minute Strategy Audit
+              <button 
+                onClick={() => navigate("/apply#apply-form")} 
+                className="w-full sm:w-auto bg-green text-navy px-16 py-8 rounded-full font-bold text-2xl hover:scale-105 transition-all duration-500 green-glow"
+              >
+                Get Started
               </button>
               <div className="flex items-center gap-3 bg-white/5 border border-white/10 px-6 py-3 rounded-full text-green">
                 <ShieldCheck size={18} />

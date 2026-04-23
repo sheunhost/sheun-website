@@ -1,10 +1,16 @@
 import { Link } from "react-router-dom";
 import { Mail, MessageCircle, Linkedin, Facebook, ShieldCheck } from "lucide-react";
+import ConfigChecker from "./ConfigChecker";
 
 export default function Footer() {
   return (
     <footer className="bg-navy-gradient text-white pt-24 pb-12 border-t border-white/5">
       <div className="container mx-auto px-6">
+        {/* API Status Check (Development Only or hidden) */}
+        <div className="hidden">
+           <ConfigChecker />
+        </div>
+
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16 mb-24">
           {/* Company */}
           <div className="space-y-8">

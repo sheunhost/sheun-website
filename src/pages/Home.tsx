@@ -1,11 +1,11 @@
 import { motion } from "framer-motion";
 import { Facebook,  ArrowRight, Star, ShoppingBag, Globe, Trophy, CheckCircle2, Layout, RefreshCw, ShoppingCart, Palette, ExternalLink, Zap, Code2, Rocket, MessageSquare, Send, Mail, MessageCircle, ChevronDown, Quote, TrendingUp, Target, AlertCircle, BarChart3, Search, Lightbulb, Info, AlertTriangle, X, Clock, DollarSign, ListChecks, ChevronLeft, ChevronRight, ShieldCheck  } from "lucide-react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { GoogleGenAI } from "@google/genai";
 import PageWrapper from "../components/PageWrapper";
 import { useState, FormEvent, useEffect } from "react";
 import { AnimatePresence } from "framer-motion";
-import { cn, openCalendlyPopup } from "../lib/utils";
+import { cn } from "../lib/utils";
 import ImageGen from "../components/ImageGen";
 
 const stats = [
@@ -407,6 +407,7 @@ const ServiceModal = ({ service, onClose }: { service: any; onClose: () => void 
 };
 
 export default function Home() {
+  const navigate = useNavigate();
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
   
@@ -533,6 +534,7 @@ Return ONLY valid JSON.
     formData.append("subject", "New Newsletter Subscriber");
 
     try {
+      // 1. Submit to Web3Forms for email notification
       const response = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
         body: formData
@@ -541,6 +543,26 @@ Return ONLY valid JSON.
       const data = await response.json();
 
       if (data.success) {
+        // 2. Submit to Mailchimp (Background)
+        const email = formData.get("email") as string;
+        fetch("/api/mailchimp/subscribe", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ email })
+        })
+        .then(async r => {
+          if (!r.ok) {
+            const err = await r.json();
+            throw new Error(err.details || err.error || "Mailchimp sync failed");
+          }
+          console.log("Mailchimp sync success");
+        })
+        .catch(err => {
+          console.error("Mailchimp Sync Error:", err);
+          // If you want to see the error, we could alert it, but let's just log it for now
+          // and maybe add a toast if we had one.
+        });
+
         setIsSubscribeSuccess(true);
         form.reset();
         setTimeout(() => setIsSubscribeSuccess(false), 5000);
@@ -565,6 +587,7 @@ Return ONLY valid JSON.
     formData.append("access_key", "c0573f7d-6191-4374-bc31-ee70ee9fa226");
 
     try {
+      // 1. Submit to Web3Forms for email notification
       const response = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
         body: formData
@@ -573,6 +596,19 @@ Return ONLY valid JSON.
       const data = await response.json();
 
       if (data.success) {
+        // 2. Submit to Mailchimp (Background)
+        const email = formData.get("email") as string;
+        const name = (formData.get("name") as string) || "";
+        fetch("/api/mailchimp/subscribe", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            email,
+            firstName: name.split(" ")[0],
+            lastName: name.split(" ").slice(1).join(" ")
+          })
+        }).catch(err => console.error("Mailchimp Sync Error:", err));
+
         setIsSuccess(true);
         form.reset();
       } else {
@@ -686,8 +722,11 @@ Return ONLY valid JSON.
               transition={{ delay: 0.2, duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
               className="flex flex-col sm:flex-row items-center gap-8"
             >
-              <button onClick={openCalendlyPopup} className="w-full sm:w-auto bg-green text-navy px-12 py-6 rounded-full font-bold text-lg hover:scale-105 transition-all duration-500 green-glow flex items-center justify-center gap-3 text-center">
-                Book a 15-Minute Strategy Audit <ArrowRight size={20} />
+              <button 
+                onClick={() => navigate("/apply#apply-form")} 
+                className="w-full sm:w-auto bg-green text-navy px-12 py-6 rounded-full font-bold text-lg hover:scale-105 transition-all duration-500 green-glow flex items-center justify-center gap-3 text-center"
+              >
+                Get Started <ArrowRight size={20} />
               </button>
               <Link to="/portfolio" className="w-full sm:w-auto text-white/80 hover:text-white px-8 py-4 rounded-full font-bold text-lg transition-all flex items-center justify-center gap-4 group text-center">
                 View Portfolio <div className="w-8 h-px bg-white/20 group-hover:w-16 group-hover:bg-green transition-all duration-500" />
@@ -1509,93 +1548,103 @@ Return ONLY valid JSON.
 
             <div className="lg:col-span-7">
               <div className="bg-light p-10 md:p-16 rounded-3xl border border-navy/5 shadow-sm">
-                {!isSuccess ? (
-                  <form onSubmit={handleSubmit} className="space-y-8">
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
+                <AnimatePresence mode="wait">
+                  {!isSuccess ? (
+                    <motion.form 
+                      key="home-contact-form"
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      exit={{ opacity: 0, scale: 0.95 }}
+                      onSubmit={handleSubmit} 
+                      className="space-y-8"
+                    >
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
+                        <div className="space-y-3">
+                          <label className="text-[10px] font-bold text-navy/40 uppercase tracking-widest ml-4">Full Name</label>
+                          <input
+                            required
+                            type="text"
+                            name="name"
+                            placeholder="John Doe"
+                            className="w-full bg-white border-b-2 border-navy/5 rounded-3xl py-5 px-8 focus:border-green outline-none transition-all font-medium text-navy placeholder:text-navy/20"
+                          />
+                        </div>
+                        <div className="space-y-3">
+                          <label className="text-[10px] font-bold text-navy/40 uppercase tracking-widest ml-4">Email Address</label>
+                          <input
+                            required
+                            type="email"
+                            name="email"
+                            placeholder="john@example.com"
+                            className="w-full bg-white border-b-2 border-navy/5 rounded-3xl py-5 px-8 focus:border-green outline-none transition-all font-medium text-navy placeholder:text-navy/20"
+                          />
+                        </div>
+                      </div>
+
                       <div className="space-y-3">
-                        <label className="text-[10px] font-bold text-navy/40 uppercase tracking-widest ml-4">Full Name</label>
-                        <input
+                        <label className="text-[10px] font-bold text-navy/40 uppercase tracking-widest ml-4">Project Type</label>
+                        <div className="relative">
+                          <select name="project_type" className="w-full bg-white border-b-2 border-navy/5 rounded-3xl py-5 px-8 focus:border-green outline-none transition-all appearance-none font-medium text-navy">
+                            <option>New Store Build</option>
+                            <option>Dropshipping Store</option>
+                            <option>Store Migration</option>
+                            <option>Theme Redesign</option>
+                            <option>Bug Fix</option>
+                            <option>Free Store Audit</option>
+                          </select>
+                          <ChevronDown className="absolute right-8 top-1/2 -translate-y-1/2 text-navy/20 pointer-events-none" size={20} />
+                        </div>
+                      </div>
+
+                      <div className="space-y-3">
+                        <label className="text-[10px] font-bold text-navy/40 uppercase tracking-widest ml-4">Message</label>
+                        <textarea
                           required
-                          type="text"
-                          name="name"
-                          placeholder="John Doe"
-                          className="w-full bg-white border-b-2 border-navy/5 rounded-3xl py-5 px-8 focus:border-green outline-none transition-all font-medium text-navy placeholder:text-navy/20"
+                          name="message"
+                          rows={5}
+                          placeholder="Tell me about your project goals..."
+                          className="w-full bg-white border-b-2 border-navy/5 rounded-2xl py-6 px-8 focus:border-green outline-none transition-all resize-none font-medium text-navy placeholder:text-navy/20"
                         />
                       </div>
-                      <div className="space-y-3">
-                        <label className="text-[10px] font-bold text-navy/40 uppercase tracking-widest ml-4">Email Address</label>
-                        <input
-                          required
-                          type="email"
-                          name="email"
-                          placeholder="john@example.com"
-                          className="w-full bg-white border-b-2 border-navy/5 rounded-3xl py-5 px-8 focus:border-green outline-none transition-all font-medium text-navy placeholder:text-navy/20"
-                        />
-                      </div>
-                    </div>
 
-                    <div className="space-y-3">
-                      <label className="text-[10px] font-bold text-navy/40 uppercase tracking-widest ml-4">Project Type</label>
-                      <div className="relative">
-                        <select name="project_type" className="w-full bg-white border-b-2 border-navy/5 rounded-3xl py-5 px-8 focus:border-green outline-none transition-all appearance-none font-medium text-navy">
-                          <option>New Store Build</option>
-                          <option>Dropshipping Store</option>
-                          <option>Store Migration</option>
-                          <option>Theme Redesign</option>
-                          <option>Bug Fix</option>
-                          <option>Free Store Audit</option>
-                        </select>
-                        <ChevronDown className="absolute right-8 top-1/2 -translate-y-1/2 text-navy/20 pointer-events-none" size={20} />
-                      </div>
-                    </div>
-
-                    <div className="space-y-3">
-                      <label className="text-[10px] font-bold text-navy/40 uppercase tracking-widest ml-4">Message</label>
-                      <textarea
-                        required
-                        name="message"
-                        rows={5}
-                        placeholder="Tell me about your project goals..."
-                        className="w-full bg-white border-b-2 border-navy/5 rounded-2xl py-6 px-8 focus:border-green outline-none transition-all resize-none font-medium text-navy placeholder:text-navy/20"
-                      />
-                    </div>
-
-                    <button
-                      disabled={isSubmitting}
-                      className="w-full bg-navy text-white py-6 rounded-full font-bold text-lg hover:bg-navy/90 transition-all flex items-center justify-center gap-4 group shadow-xl"
+                      <button
+                        disabled={isSubmitting}
+                        className="w-full bg-navy text-white py-6 rounded-full font-bold text-lg hover:bg-navy/90 transition-all flex items-center justify-center gap-4 group shadow-xl"
+                      >
+                        {isSubmitting ? (
+                          <div className="w-6 h-6 border-4 border-white/30 border-t-white rounded-full animate-spin" />
+                        ) : (
+                          <>
+                            Send Message <Send size={20} className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+                          </>
+                        )}
+                      </button>
+                    </motion.form>
+                  ) : (
+                    <motion.div
+                      key="home-contact-success"
+                      initial={{ opacity: 0, scale: 0.9, y: 10 }}
+                      animate={{ opacity: 1, scale: 1, y: 0 }}
+                      className="text-center py-12 space-y-8"
                     >
-                      {isSubmitting ? (
-                        <div className="w-6 h-6 border-4 border-white/30 border-t-white rounded-full animate-spin" />
-                      ) : (
-                        <>
-                          Send Message <Send size={20} className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
-                        </>
-                      )}
-                    </button>
-                  </form>
-                ) : (
-                  <motion.div
-                    initial={{ opacity: 0, scale: 0.9 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    className="text-center py-12 space-y-6"
-                  >
-                    <div className="w-24 h-24 bg-green/20 text-green rounded-xl flex items-center justify-center mx-auto shadow-inner">
-                      <CheckCircle2 size={48} />
-                    </div>
-                    <div className="space-y-2">
-                      <h3 className="text-4xl font-bold text-navy">Message Sent!</h3>
-                      <p className="text-navy/40 text-lg max-w-xs mx-auto">
-                        I've received your inquiry and will get back to you shortly.
-                      </p>
-                    </div>
-                    <button
-                      onClick={() => setIsSuccess(false)}
-                      className="text-navy font-bold border-b-2 border-green pb-1 hover:text-green transition-colors"
-                    >
-                      Send another message
-                    </button>
-                  </motion.div>
-                )}
+                      <div className="w-24 h-24 bg-green text-navy rounded-2xl flex items-center justify-center mx-auto shadow-xl rotate-3">
+                        <CheckCircle2 size={48} />
+                      </div>
+                      <div className="space-y-4">
+                        <h3 className="text-4xl font-bold text-navy uppercase tracking-tight">Message Received.</h3>
+                        <p className="text-navy/40 text-lg max-w-xs mx-auto leading-relaxed font-serif italic">
+                          I'll review your inquiry and get back to you personally within 24 hours.
+                        </p>
+                      </div>
+                      <button
+                        onClick={() => setIsSuccess(false)}
+                        className="text-navy font-bold border-b-2 border-green pb-1 hover:text-green transition-colors"
+                      >
+                        Send another message
+                      </button>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
               </div>
             </div>
           </div>
@@ -1618,30 +1667,52 @@ Return ONLY valid JSON.
               </p>
             </div>
             <div className="flex-1 w-full">
-              {!isSubscribeSuccess ? (
-                <form onSubmit={handleSubscribe} className="relative flex items-center">
-                  <input 
-                    type="email" 
-                    name="email"
-                    required
-                    placeholder="Enter your email address" 
-                    className="w-full bg-light border-2 border-navy/5 rounded-full py-6 pl-8 pr-40 focus:border-green outline-none transition-all font-medium text-navy placeholder:text-navy/20"
-                  />
-                  <button 
-                    type="submit"
-                    disabled={isSubscribing}
-                    className="absolute right-3 bg-navy text-white px-8 py-4 rounded-full font-bold hover:bg-green hover:text-navy transition-colors disabled:opacity-50"
+              <AnimatePresence mode="wait">
+                {!isSubscribeSuccess ? (
+                  <motion.form 
+                    key="newsletter-form"
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, scale: 0.95 }}
+                    onSubmit={handleSubscribe} 
+                    className="relative flex items-center"
                   >
-                    {isSubscribing ? "Wait..." : "Subscribe"}
-                  </button>
-                </form>
-              ) : (
-                <div className="bg-green/10 border border-green/20 rounded-full py-6 px-8 text-center">
-                  <p className="text-green font-bold flex items-center justify-center gap-2">
-                    <CheckCircle2 size={20} /> You're subscribed!
-                  </p>
-                </div>
-              )}
+                    <input 
+                      type="email" 
+                      name="email"
+                      required
+                      placeholder="Enter your email address" 
+                      className="w-full bg-light border-2 border-navy/5 rounded-full py-6 pl-8 pr-40 focus:border-green outline-none transition-all font-medium text-navy placeholder:text-navy/20"
+                    />
+                    <button 
+                      type="submit"
+                      disabled={isSubscribing}
+                      className="absolute right-3 bg-navy text-white px-8 py-4 rounded-full font-bold hover:bg-green hover:text-navy transition-colors disabled:opacity-50"
+                    >
+                      {isSubscribing ? (
+                        <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin" />
+                      ) : (
+                        "Subscribe"
+                      )}
+                    </button>
+                  </motion.form>
+                ) : (
+                  <motion.div 
+                    key="newsletter-success"
+                    initial={{ opacity: 0, scale: 0.9, y: 10 }}
+                    animate={{ opacity: 1, scale: 1, y: 0 }}
+                    className="bg-green/10 border border-green/20 rounded-2xl p-8 text-center space-y-4"
+                  >
+                    <div className="w-16 h-16 bg-green text-navy rounded-full flex items-center justify-center mx-auto shadow-lg">
+                      <CheckCircle2 size={32} />
+                    </div>
+                    <div className="space-y-1">
+                      <p className="text-navy font-bold text-xl uppercase tracking-tighter">You're in!</p>
+                      <p className="text-navy/60 font-serif italic">Check your inbox for a confirmation soon.</p>
+                    </div>
+                  </motion.div>
+                )}
+              </AnimatePresence>
               <p className="text-[10px] font-bold text-navy/40 uppercase tracking-widest mt-4 text-center md:text-left">
                 100% Privacy. I respect your data.
               </p>
