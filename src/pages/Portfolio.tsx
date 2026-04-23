@@ -254,66 +254,6 @@ export default function Portfolio() {
         </div>
       </section>
 
-      {/* 2 Sub-banners Section */}
-      <section className="py-24 bg-white relative overflow-hidden border-b border-navy/5">
-        <div className="container mx-auto px-6">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-            <motion.div 
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              className="bg-light p-12 rounded-3xl space-y-8 flex flex-col justify-between group"
-            >
-              <h3 className="text-4xl font-bold text-navy tracking-tight">Visual Identity.</h3>
-              <p className="text-navy/40 text-lg font-serif italic max-w-md">Bespoke store themes that reflect your brand's unique character and aesthetic.</p>
-              <div className="w-12 h-1 bg-green group-hover:w-full transition-all duration-700" />
-            </motion.div>
-            <motion.div 
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.1 }}
-              className="bg-navy text-white p-12 rounded-3xl space-y-8 flex flex-col justify-between group"
-            >
-              <h3 className="text-4xl font-bold tracking-tight">User Journey.</h3>
-              <p className="text-white/40 text-lg font-serif italic max-w-md">Every click is optimized to move the customer closer to purchase with minimal friction.</p>
-              <div className="w-12 h-1 bg-green group-hover:w-full transition-all duration-700" />
-            </motion.div>
-          </div>
-        </div>
-      </section>
-
-      {/* Narrative Section - The Design Ethos */}
-      <section className="py-32 bg-navy relative overflow-hidden">
-        <div className="container mx-auto px-6">
-          <div className="max-w-4xl space-y-12">
-            <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              className="space-y-6"
-            >
-              <h2 className="text-4xl md:text-6xl font-bold text-white tracking-tight leading-none">
-                Aesthetics Driven by <br />
-                <span className="text-green italic font-serif font-light">Performance Metrics.</span>
-              </h2>
-              <div className="w-16 h-1 bg-green" />
-            </motion.div>
-            
-            <motion.div
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              transition={{ delay: 0.2 }}
-              className="space-y-8 text-xl md:text-2xl text-white/60 font-serif italic leading-relaxed"
-            >
-              <p>
-                In the world of eCommerce, beautiful design is a baseline, not a breakthrough. The true challenge lies in creating interfaces that look visually arresting while maintaining zero friction for the end-user. 
-              </p>
-              <p>
-                The projects featured here represent a range of stylistic approaches—from brutalist minimalism to high-end editorial luxury. Each one was built with a specific conversion hypothesis in mind, whether it's reducing the "time to cart" for gadget store scrollers or building high-intent storytelling for fashion boutiques. This gallery is a testament to the belief that every design choice should serve the ultimate goal: moving the needle for your brand.
-              </p>
-            </motion.div>
-          </div>
-        </div>
-      </section>
-
       {/* Filter Tabs */}
       <section className="py-8 bg-white sticky top-20 z-40 border-b border-navy/5">
         <div className="container mx-auto px-6">
@@ -362,8 +302,8 @@ export default function Portfolio() {
                   <motion.img
                     src={project.image}
                     alt={project.name}
-                    className="w-full h-full object-cover"
-                    whileHover={{ scale: 1.1 }}
+                    className="w-full h-full object-contain bg-white"
+                    whileHover={{ scale: 1.05 }}
                     transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
                     loading="lazy"
                   />
@@ -398,7 +338,7 @@ export default function Portfolio() {
                       src={project.image} 
                       alt={project.name} 
                       referrerPolicy="no-referrer"
-                      className="w-full h-48 sm:h-64 object-cover group-hover:scale-105 transition-transform duration-700"
+                      className="w-full h-48 sm:h-64 object-contain bg-light group-hover:scale-105 transition-transform duration-700 p-2"
                     />
                     <div className="absolute inset-0 bg-navy/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center p-4 text-center">
                       <span className="text-white font-bold text-sm bg-white/20 px-4 py-2 rounded-full backdrop-blur-sm border border-white/20">

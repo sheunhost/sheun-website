@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Facebook,  ArrowRight, Star, ShoppingBag, Globe, Trophy, CheckCircle2, Layout, RefreshCw, ShoppingCart, Palette, ExternalLink, Zap, Code2, Rocket, MessageSquare, Send, Mail, MessageCircle, ChevronDown, Quote, TrendingUp, Target, AlertCircle, BarChart3, Search, Lightbulb, Info, AlertTriangle, X, Clock, DollarSign, ListChecks, ChevronLeft, ChevronRight, ShieldCheck  } from "lucide-react";
+import { Facebook, Linkedin, ArrowRight, Star, ShoppingBag, Globe, Trophy, CheckCircle2, Layout, RefreshCw, ShoppingCart, Palette, ExternalLink, Zap, Code2, Rocket, MessageSquare, Send, Mail, MessageCircle, ChevronDown, Quote, TrendingUp, Target, AlertCircle, BarChart3, Search, Lightbulb, Info, AlertTriangle, X, Clock, DollarSign, ListChecks, ChevronLeft, ChevronRight, ShieldCheck } from "lucide-react";
 import { Link, useNavigate } from "react-router-dom";
 import { GoogleGenAI } from "@google/genai";
 import PageWrapper from "../components/PageWrapper";
@@ -494,7 +494,8 @@ Return ONLY valid JSON.
         model: "gemini-3-flash-preview",
         contents: prompt,
         config: {
-          responseMimeType: "application/json"
+          responseMimeType: "application/json",
+          temperature: 0
         }
       });
 
@@ -776,6 +777,18 @@ Return ONLY valid JSON.
                   </div>
                   <h3 className="text-white font-bold text-4xl tracking-tighter leading-none">Top Rated <br />Shopify Expert.</h3>
                   <p className="text-white/60 text-lg font-serif italic">Top Rated Upwork Freelancer</p>
+                  
+                  <div className="flex gap-4 pt-4 border-t border-white/10">
+                    <a href="https://www.linkedin.com/in/sheun-hub-26b876321" target="_blank" rel="noopener noreferrer" className="p-2 bg-white/5 hover:bg-green hover:text-navy rounded-full text-white transition-all" title="LinkedIn">
+                      <Linkedin size={20} />
+                    </a>
+                    <a href="https://wa.me/2348084315743" target="_blank" rel="noopener noreferrer" className="p-2 bg-white/5 hover:bg-green hover:text-navy rounded-full text-white transition-all" title="WhatsApp">
+                      <MessageCircle size={20} />
+                    </a>
+                    <a href="mailto:sheunhost@gmail.com" className="p-2 bg-white/5 hover:bg-green hover:text-navy rounded-full text-white transition-all" title="Email">
+                      <Mail size={20} />
+                    </a>
+                  </div>
                 </div>
               </motion.div>
 
@@ -806,44 +819,93 @@ Return ONLY valid JSON.
         </div>
       </section>
 
-      {/* 2 Sub-banners Section */}
-      <section className="py-24 bg-navy relative overflow-hidden">
+      {/* SEO Audit Section */}
+      <section className="py-32 bg-white relative overflow-hidden border-y border-navy/5">
         <div className="container mx-auto px-6">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-            <motion.div 
-              initial={{ opacity: 0, x: -30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              className="group relative h-[400px] bg-white/5 border border-white/10 rounded-3xl overflow-hidden p-12 flex flex-col justify-end"
-            >
-              <div className="absolute top-0 right-0 p-12 opacity-10 group-hover:scale-110 transition-transform">
-                <Rocket size={200} className="text-green" />
-              </div>
-              <h3 className="text-4xl font-bold text-white mb-4 tracking-tight">Scale Fast.</h3>
-              <p className="text-white/40 text-lg font-serif italic mb-8">From zero to launch in record time without compromising technical depth.</p>
-              <Link to="/apply#apply-form" className="inline-flex items-center gap-4 text-green font-bold group">
-                Get Custom Project Roadmap <ArrowRight size={20} className="group-hover:translate-x-2 transition-transform" />
-              </Link>
-            </motion.div>
+          <div className="max-w-4xl mx-auto space-y-12">
+            <div className="text-center space-y-6">
+              <p className="text-green text-[10px] font-bold uppercase tracking-[0.3em]">Free Tool</p>
+              <h2 className="text-5xl md:text-6xl font-bold text-navy tracking-tight">
+                Deep SEO <span className="italic font-serif font-light text-navy/40">Audit</span>
+              </h2>
+              <p className="text-navy/60 text-xl max-w-2xl mx-auto leading-relaxed">
+                Get a comprehensive, AI-powered SEO keyword analysis for your Shopify store. Discover missed opportunities and quick wins.
+              </p>
+            </div>
 
-            <motion.div 
-              initial={{ opacity: 0, x: 30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              className="group relative h-[400px] bg-green text-navy rounded-3xl overflow-hidden p-12 flex flex-col justify-end"
-            >
-              <div className="absolute top-0 right-0 p-12 opacity-10 group-hover:scale-110 transition-transform">
-                <Target size={200} className="text-navy" />
-              </div>
-              <h3 className="text-4xl font-bold mb-4 tracking-tight">Convert More.</h3>
-              <p className="text-navy/60 text-lg font-serif italic mb-8">Data-driven design that turns passive scrollers into long-term brand advocates.</p>
-              <Link to="/services" className="inline-flex items-center gap-4 font-bold group">
-                View Strategies <ArrowRight size={20} className="group-hover:translate-x-2 transition-transform" />
-              </Link>
-            </motion.div>
+            <div className="bg-light p-8 md:p-12 rounded-2xl shadow-xl border border-navy/5">
+              <form onSubmit={handleAuditSubmit} className="space-y-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div className="space-y-2">
+                    <label className="text-sm font-bold text-navy ml-4">Store URL *</label>
+                    <input 
+                      type="url" 
+                      name="storeUrl"
+                      required
+                      placeholder="https://yourstore.com" 
+                      className="w-full bg-white border-2 border-navy/5 rounded-full py-4 px-6 focus:border-green outline-none transition-all"
+                    />
+                  </div>
+                  <div className="space-y-2">
+                    <label className="text-sm font-bold text-navy ml-4">Store Niche *</label>
+                    <input 
+                      type="text" 
+                      name="niche"
+                      required
+                      placeholder="e.g. Women's Fashion, Pet Supplies" 
+                      className="w-full bg-white border-2 border-navy/5 rounded-full py-4 px-6 focus:border-green outline-none transition-all"
+                    />
+                  </div>
+                </div>
+                <div className="space-y-2">
+                  <label className="text-sm font-bold text-navy ml-4">Competitor URL (Optional)</label>
+                  <input 
+                    type="url" 
+                    name="competitorUrl"
+                    placeholder="https://competitor.com" 
+                    className="w-full bg-white border-2 border-navy/5 rounded-full py-4 px-6 focus:border-green outline-none transition-all"
+                  />
+                </div>
+                <button 
+                  type="submit"
+                  disabled={isAuditing}
+                  className="w-full bg-navy text-white py-5 rounded-full font-bold text-lg hover:bg-green hover:text-navy transition-colors disabled:opacity-50 flex items-center justify-center gap-3"
+                >
+                  {isAuditing ? (
+                    <>
+                      <RefreshCw className="animate-spin" size={20} />
+                      Running Deep Audit...
+                    </>
+                  ) : (
+                    <>
+                      <Zap size={20} />
+                      Generate Free SEO Report
+                    </>
+                  )}
+                </button>
+              </form>
+
+              {auditResult && (
+                <div className="mt-12 space-y-8">
+                  <div className="flex items-center justify-between">
+                    <h3 className="text-2xl font-bold text-navy">Your SEO Report</h3>
+                    <button 
+                      onClick={() => setAuditResult(null)}
+                      className="text-sm font-bold text-navy/40 hover:text-navy transition-colors flex items-center gap-2"
+                    >
+                      <RefreshCw size={14} />
+                      Clear Results
+                    </button>
+                  </div>
+                  <SEOReport data={auditResult} />
+                </div>
+              )}
+            </div>
           </div>
         </div>
       </section>
 
-{/* Services Preview - Visible Grid Recipe */}
+      {/* Services Preview - Visible Grid Recipe */}
       <section className="py-32 bg-navy-gradient relative" id="services">
         <div className="container mx-auto px-6">
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-24">
@@ -955,159 +1017,6 @@ Return ONLY valid JSON.
         )}
       </AnimatePresence>
 
-      {/* Narrative Section - The Methodology (Z-Pattern 1: Text Left, Image Right) */}
-      <section className="py-32 bg-light relative overflow-hidden text-left">
-        <div className="container mx-auto px-6">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
-            <motion.div
-              initial={{ opacity: 0, x: -30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              className="space-y-10 order-2 lg:order-1"
-            >
-              <div className="space-y-6">
-                <p className="text-navy/40 text-[10px] font-bold uppercase tracking-[0.4em]">Methodology</p>
-                <h2 className="text-5xl md:text-7xl font-bold text-navy tracking-tighter leading-[0.9]">
-                  More Than Code. <br />
-                  <span className="text-green italic font-serif font-light">Strategy In Action.</span>
-                </h2>
-              </div>
-              <div className="w-16 h-1 bg-green" />
-              <div className="space-y-6 text-lg md:text-xl text-navy/70 font-serif italic leading-relaxed">
-                <p>
-                  At Sheun Hub, we believe that a Shopify store is not just a digital catalog, but a high-performance engine for business growth. Every pixel we place and every line of Liquid we write is interrogated for its impact on your bottom line. 
-                </p>
-                <p>
-                  Our approach bridges the gap between raw technical capability and sophisticated marketing psychology. We don't just build stores; we create immersive brand experiences that foster trust, drive velocity, and turn casual visitors into loyal, long-term advocates for your vision.
-                </p>
-              </div>
-            </motion.div>
-            
-            <motion.div
-              initial={{ opacity: 0, scale: 0.95 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              className="relative order-1 lg:order-2"
-            >
-              <div className="aspect-[4/3] rounded-3xl overflow-hidden border-[16px] border-white shadow-2xl relative z-10">
-                <img 
-                  src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=1000" 
-                  alt="Data and Strategy" 
-                  referrerPolicy="no-referrer"
-                  className="w-full h-full object-cover" 
-                  loading="lazy" 
-                />
-              </div>
-              <div className="absolute -bottom-10 -right-10 w-64 h-64 bg-green/10 rounded-full blur-3xl z-0" />
-            </motion.div>
-          </div>
-        </div>
-      </section>
-
-      {/* Trusted By - Logo Bar */}
-      <section className="py-20 bg-white border-b border-navy/5">
-        <div className="container mx-auto px-6">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-12 opacity-30 grayscale hover:grayscale-0 transition-all duration-700">
-            <p className="text-[10px] font-bold uppercase tracking-[0.4em] text-navy/40">Trusted by brands on</p>
-            <div className="flex flex-wrap justify-center items-center gap-12 md:gap-24">
-              {["Shopify", "WooCommerce", "Magento", "Wix", "Squarespace"].map((brand) => (
-                <span key={brand} className="text-2xl md:text-3xl font-black tracking-tighter text-navy">{brand}</span>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Marquee Ticker - Recipe 5 */}
-      <div className="bg-navy border-y border-white/5 py-12 overflow-hidden relative">
-        <div className="absolute inset-0 bg-gradient-to-r from-navy via-transparent to-navy z-10 pointer-events-none" />
-        <div className="flex whitespace-nowrap animate-marquee items-center">
-          {[...Array(2)].map((_, i) => (
-            <div key={i} className="flex items-center gap-16 px-8">
-              {[
-                "Shopify Plus Expert",
-                "Conversion Focused",
-                "Custom Liquid Dev",
-                "Dropshipping Specialist",
-                "Store Migrations",
-                "SEO Optimized",
-              ].map((text, j) => (
-                <div key={j} className="flex items-center gap-4">
-                  <div className="w-2 h-2 bg-green rounded-full shadow-[0_0_10px_rgba(0,229,160,0.5)]" />
-                  <span className="text-white/40 text-2xl font-bold uppercase tracking-widest">{text}</span>
-                </div>
-              ))}
-            </div>
-          ))}
-        </div>
-      </div>
-
-      {/* Why Choose Me - Premium Features (Z-Pattern 2: Image Left, Text Right) */}
-      <section className="py-32 bg-white relative overflow-hidden">
-        <div className="container mx-auto px-6">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
-            
-            <div className="relative order-1">
-              <motion.div
-                initial={{ opacity: 0, scale: 0.9 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                className="relative z-10 aspect-square rounded-3xl overflow-hidden border-[16px] border-light shadow-2xl"
-              >
-                <img 
-                  src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&q=80&w=1000" 
-                  alt="Shopify Store Concept" 
-                  referrerPolicy="no-referrer"
-                  className="w-full h-full object-cover" 
-                  loading="lazy" 
-                />
-                <div className="absolute inset-0 bg-navy/10" />
-              </motion.div>
-              <div className="absolute -top-12 -right-12 w-64 h-64 bg-green/20 rounded-full blur-3xl" />
-              <div className="absolute -bottom-12 -left-12 w-64 h-64 bg-navy/5 rounded-full blur-3xl" />
-            </div>
-
-            <motion.div 
-              initial={{ opacity: 0, x: 30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              className="space-y-12 order-2"
-            >
-              <div className="space-y-6">
-                <p className="text-navy/40 text-[10px] font-bold uppercase tracking-[0.4em]">The Difference</p>
-                <h2 className="text-6xl md:text-8xl font-bold text-navy tracking-tighter leading-[0.85]">
-                  Why Work <br />
-                  <span className="italic font-serif font-light text-navy/40">With Me</span>.
-                </h2>
-                <p className="text-[clamp(1rem,1.5vw,1.125rem)] text-navy/60 leading-relaxed max-w-xl font-serif italic">
-                  I don't just build stores; I build business assets. My approach combines technical precision with conversion-focused strategy.
-                </p>
-              </div>
-
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-10">
-                {[
-                  { title: "Conversion First", desc: "Every design decision is made to turn visitors into customers.", icon: Rocket },
-                  { title: "Liquid Expert", desc: "Deep technical knowledge to push Shopify beyond its limits.", icon: Code2 },
-                  { title: "Speed Optimized", desc: "Lightning-fast stores that rank higher and convert better.", icon: Zap },
-                  { title: "Global Partner", desc: "Trusted by store owners across the US, UK, and Europe.", icon: Globe },
-                ].map((item, i) => (
-                  <div key={i} className="space-y-4 group">
-                    <div className="w-14 h-14 bg-light rounded-2xl flex items-center justify-center text-navy group-hover:bg-green group-hover:text-navy transition-all duration-500">
-                      <item.icon size={24} />
-                    </div>
-                    <h4 className="text-xl font-bold text-navy">{item.title}</h4>
-                    <p className="text-[clamp(0.875rem,1.2vw,1rem)] text-navy/40 leading-relaxed">{item.desc}</p>
-                  </div>
-                ))}
-              </div>
-            </motion.div>
-          </div>
-        </div>
-      </section>
-
-      {/* AI Store Visualizer Tool */}
-      <ImageGen />
-
       {/* Portfolio Preview - Bento Grid */}
       <section className="py-32 bg-white">
         <div className="container mx-auto px-6">
@@ -1174,324 +1083,6 @@ Return ONLY valid JSON.
                 </div>
               </motion.div>
             ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Niche Specializations */}
-      <section className="py-32 bg-navy overflow-hidden">
-        <div className="container mx-auto px-6">
-          <div className="text-center max-w-3xl mx-auto mb-24 space-y-4">
-            <p className="text-green text-[10px] font-bold uppercase tracking-[0.3em]">Specializations</p>
-            <h2 className="text-5xl md:text-7xl font-bold text-white tracking-tight">Focus <span className="italic font-serif font-light text-white/60">Areas</span>.</h2>
-          </div>
-          
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-            {niches.map((niche, i) => (
-              <motion.div
-                key={i}
-                whileHover={{ scale: 1.02 }}
-                className="relative h-[500px] rounded-2xl overflow-hidden group cursor-pointer shadow-2xl"
-              >
-                <img
-                  src={niche.image}
-                  alt={niche.name}
-                  referrerPolicy="no-referrer"
-                  className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                  loading="lazy"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-navy via-navy/20 to-transparent opacity-80 group-hover:opacity-90 transition-opacity" />
-                <div className="absolute bottom-0 left-0 right-0 p-10">
-                  <h3 className="text-3xl font-bold text-white mb-4 line-clamp-1">{niche.name}</h3>
-                  <p className="text-white/60 text-sm leading-relaxed translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300 line-clamp-2">
-                    {niche.desc}
-                  </p>
-                  <div className="h-1 w-0 bg-green mt-6 group-hover:w-full transition-all duration-500" />
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Trust & Social Proof - Recipe 8 */}
-      <section className="py-32 bg-white">
-        <div className="container mx-auto px-6">
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-16 items-center">
-            <div className="space-y-12">
-              <div className="space-y-4">
-                <p className="text-navy/40 text-[10px] font-bold uppercase tracking-[0.3em]">The Numbers</p>
-                <h2 className="text-5xl font-bold text-navy tracking-tight">Proven <br />Results.</h2>
-              </div>
-              <div className="grid grid-cols-2 gap-12">
-                {stats.map((stat, i) => (
-                  <div key={i} className="space-y-2">
-                    <p className="text-5xl font-bold text-navy">{stat.value}</p>
-                    <p className="text-navy/40 text-xs font-bold uppercase tracking-widest">{stat.label}</p>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            <div className="bg-light p-12 rounded-2xl border border-navy/5 flex flex-col items-center text-center space-y-8 shadow-xl">
-              <div className="w-32 h-32 rounded-full overflow-hidden border-8 border-white shadow-2xl">
-                <img 
-                  src="https://ui-avatars.com/api/?name=Sheun+Hub&background=10b981&color=fff" 
-                  alt="Sheun" 
-                  referrerPolicy="no-referrer"
-                  className="w-full h-full object-cover" 
-                  loading="lazy" 
-                />
-              </div>
-              <div className="space-y-2">
-                <h4 className="text-2xl font-bold text-navy">Sheun</h4>
-                <p className="text-green text-xs font-bold uppercase tracking-[0.2em]">Top Rated Shopify Expert</p>
-              </div>
-              <div className="flex items-center space-x-1">
-                {[...Array(5)].map((_, i) => <Star key={i} size={20} className="fill-green text-green" />)}
-              </div>
-              <p className="text-navy/60 text-sm italic">"Sheun is a true professional. He transformed our store's conversion rate overnight."</p>
-              <div className="grid grid-cols-1 gap-4 w-full">
-                <a 
-                  href="https://upwork.com/freelancers/sheun_hub" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="w-full bg-navy text-white px-8 py-4 rounded-full font-bold hover:bg-navy/90 transition-all shadow-lg text-center block"
-                >
-                  View Upwork Profile
-                </a>
-                <a 
-                  href="https://www.linkedin.com/in/sheun-hub-26b876321?utm_source=share_via&utm_content=profile&utm_medium=member_android" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="w-full bg-light border border-navy/10 text-navy px-8 py-4 rounded-full font-bold hover:bg-navy hover:text-white transition-all shadow-lg text-center block"
-                >
-                  LinkedIn Profile
-                </a>
-              </div>
-            </div>
-
-            <div className="space-y-8">
-              <div className="bg-green/5 p-12 rounded-2xl border border-green/10 flex flex-col items-center text-center space-y-6">
-                <div className="w-20 h-20 bg-white rounded-3xl flex items-center justify-center text-green shadow-xl">
-                  <ShoppingBag size={40} />
-                </div>
-                <div className="space-y-2">
-                  <h4 className="text-2xl font-bold text-navy">Shopify Partner</h4>
-                  <p className="text-navy/40 text-xs font-bold uppercase tracking-widest">Certified Since 2023</p>
-                </div>
-                <p className="text-navy/60 text-sm">Access to exclusive Shopify tools and early-release features for your store.</p>
-              </div>
-
-              <div className="bg-navy p-12 rounded-2xl flex flex-col items-center text-center space-y-6 text-white group hover:bg-navy/95 transition-all">
-                <div className="w-20 h-20 bg-white/5 rounded-3xl flex items-center justify-center text-green shadow-xl border border-white/10 group-hover:bg-green group-hover:text-navy transition-all duration-500">
-                  <ShieldCheck size={40} />
-                </div>
-                <div className="space-y-2">
-                  <h4 className="text-2xl font-bold">100% Trusted</h4>
-                  <p className="text-white/40 text-[10px] font-bold uppercase tracking-widest">Secure & Verified</p>
-                </div>
-                <p className="text-white/40 text-xs">All projects handled with complete technical transparency and secure delivery protocols.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* SEO Audit Section */}
-      <section className="py-32 bg-white relative overflow-hidden border-y border-navy/5">
-        <div className="container mx-auto px-6">
-          <div className="max-w-4xl mx-auto space-y-12">
-            <div className="text-center space-y-6">
-              <p className="text-green text-[10px] font-bold uppercase tracking-[0.3em]">Free Tool</p>
-              <h2 className="text-5xl md:text-6xl font-bold text-navy tracking-tight">
-                Deep SEO <span className="italic font-serif font-light text-navy/40">Audit</span>
-              </h2>
-              <p className="text-navy/60 text-xl max-w-2xl mx-auto leading-relaxed">
-                Get a comprehensive, AI-powered SEO keyword analysis for your Shopify store. Discover missed opportunities and quick wins.
-              </p>
-            </div>
-
-            <div className="bg-light p-8 md:p-12 rounded-2xl shadow-xl border border-navy/5">
-              <form onSubmit={handleAuditSubmit} className="space-y-6">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div className="space-y-2">
-                    <label className="text-sm font-bold text-navy ml-4">Store URL *</label>
-                    <input 
-                      type="url" 
-                      name="storeUrl"
-                      required
-                      placeholder="https://yourstore.com" 
-                      className="w-full bg-white border-2 border-navy/5 rounded-full py-4 px-6 focus:border-green outline-none transition-all"
-                    />
-                  </div>
-                  <div className="space-y-2">
-                    <label className="text-sm font-bold text-navy ml-4">Store Niche *</label>
-                    <input 
-                      type="text" 
-                      name="niche"
-                      required
-                      placeholder="e.g. Women's Fashion, Pet Supplies" 
-                      className="w-full bg-white border-2 border-navy/5 rounded-full py-4 px-6 focus:border-green outline-none transition-all"
-                    />
-                  </div>
-                </div>
-                <div className="space-y-2">
-                  <label className="text-sm font-bold text-navy ml-4">Competitor URL (Optional)</label>
-                  <input 
-                    type="url" 
-                    name="competitorUrl"
-                    placeholder="https://competitor.com" 
-                    className="w-full bg-white border-2 border-navy/5 rounded-full py-4 px-6 focus:border-green outline-none transition-all"
-                  />
-                </div>
-                <button 
-                  type="submit"
-                  disabled={isAuditing}
-                  className="w-full bg-navy text-white py-5 rounded-full font-bold text-lg hover:bg-green hover:text-navy transition-colors disabled:opacity-50 flex items-center justify-center gap-3"
-                >
-                  {isAuditing ? (
-                    <>
-                      <RefreshCw className="animate-spin" size={20} />
-                      Running Deep Audit...
-                    </>
-                  ) : (
-                    <>
-                      <Zap size={20} />
-                      Generate Free SEO Report
-                    </>
-                  )}
-                </button>
-              </form>
-
-              {auditResult && (
-                <div className="mt-12 space-y-8">
-                  <div className="flex items-center justify-between">
-                    <h3 className="text-2xl font-bold text-navy">Your SEO Report</h3>
-                    <button 
-                      onClick={() => setAuditResult(null)}
-                      className="text-sm font-bold text-navy/40 hover:text-navy transition-colors flex items-center gap-2"
-                    >
-                      <RefreshCw size={14} />
-                      Clear Results
-                    </button>
-                  </div>
-                  <SEOReport data={auditResult} />
-                </div>
-              )}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Happy Clients / Testimonials Section */}
-      <section className="py-32 bg-white relative overflow-hidden">
-        <div className="container mx-auto px-6">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-20 items-center">
-            <div className="lg:col-span-5 space-y-12">
-              <div className="space-y-8">
-                <motion.p 
-                  initial={{ opacity: 0, y: 10 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  className="text-navy/30 text-[10px] font-bold uppercase tracking-[0.4em]"
-                >
-                  Success Stories
-                </motion.p>
-                <motion.h2 
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: 0.1 }}
-                  className="text-6xl md:text-8xl font-bold text-navy tracking-tighter leading-[0.85]"
-                >
-                  What Store <br />
-                  <span className="italic font-serif font-light text-navy/40">Owners Say</span>.
-                </motion.h2>
-                <motion.p 
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: 0.2 }}
-                  className="text-navy/60 text-xl font-serif italic max-w-md"
-                >
-                  "I don't just build stores; I build business assets. My approach combines technical precision with conversion-focused strategy."
-                </motion.p>
-              </div>
-
-              <div className="flex items-center gap-6">
-                <button 
-                  onClick={prevTestimonial}
-                  className="w-16 h-16 rounded-full border border-navy/10 flex items-center justify-center text-navy hover:bg-navy hover:text-white transition-all duration-500"
-                >
-                  <ChevronLeft size={24} />
-                </button>
-                <button 
-                  onClick={nextTestimonial}
-                  className="w-16 h-16 rounded-full border border-navy/10 flex items-center justify-center text-navy hover:bg-navy hover:text-white transition-all duration-500"
-                >
-                  <ChevronRight size={24} />
-                </button>
-                <div className="flex items-center gap-2 ml-4">
-                  {testimonials.map((_, i) => (
-                    <div 
-                      key={i} 
-                      className={cn(
-                        "h-1.5 transition-all duration-500 rounded-full",
-                        testimonialIndex === i ? "w-8 bg-green" : "w-2 bg-navy/10"
-                      )} 
-                    />
-                  ))}
-                </div>
-              </div>
-            </div>
-
-            <div className="lg:col-span-7 relative">
-              <div className="relative h-[500px] flex items-center">
-                <AnimatePresence mode="wait">
-                  <motion.div
-                    key={testimonialIndex}
-                    initial={{ opacity: 0, x: 50 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    exit={{ opacity: 0, x: -50 }}
-                    transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
-                    className="w-full bg-light p-12 md:p-20 rounded-xl border border-navy/5 relative group shadow-2xl"
-                  >
-                    <Quote className="absolute top-12 right-12 text-green/10" size={80} />
-                    
-                    <div className="space-y-10">
-                      <div className="flex gap-1">
-                        {[...Array(testimonials[testimonialIndex].rating)].map((_, j) => (
-                          <Star key={j} size={20} className="fill-green text-green" />
-                        ))}
-                      </div>
-
-                      <p className="text-navy text-2xl md:text-3xl leading-relaxed font-serif italic">
-                        "{testimonials[testimonialIndex].content}"
-                      </p>
-
-                      <div className="flex items-center gap-6 pt-10 border-t border-navy/5">
-                        <img 
-                          src={testimonials[testimonialIndex].image} 
-                          alt={testimonials[testimonialIndex].name} 
-                          referrerPolicy="no-referrer"
-                          className="w-20 h-20 rounded-3xl object-cover border-4 border-white shadow-xl" 
-                          loading="lazy"
-                        />
-                        <div>
-                          <h4 className="font-bold text-navy text-2xl tracking-tight">{testimonials[testimonialIndex].name}</h4>
-                          <p className="text-navy/40 text-xs font-bold uppercase tracking-[0.3em]">{testimonials[testimonialIndex].role}</p>
-                        </div>
-                      </div>
-                    </div>
-                  </motion.div>
-                </AnimatePresence>
-
-                {/* Decorative Elements */}
-                <div className="absolute -top-10 -right-10 w-40 h-40 bg-green/10 rounded-full blur-3xl -z-10" />
-                <div className="absolute -bottom-10 -left-10 w-40 h-40 bg-navy/5 rounded-full blur-3xl -z-10" />
-              </div>
-            </div>
           </div>
         </div>
       </section>
