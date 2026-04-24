@@ -1,5 +1,5 @@
 import { motion, AnimatePresence } from "framer-motion";
-import { Facebook,  ExternalLink, Star, ShoppingBag, Globe, Trophy, ArrowRight, Info, X, MessageCircle, Mail  } from "lucide-react";
+import { ExternalLink, Star, ShoppingBag, Globe, Trophy, ArrowRight, X, Mail  } from "lucide-react";
 import PageWrapper from "../components/PageWrapper";
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
@@ -185,9 +185,21 @@ export default function Portfolio() {
 
   return (
     <PageWrapper 
-      title="Portfolio" 
-      description="Explore a showcase of high-converting Shopify stores and eCommerce design concepts across fashion, beauty, pets, and gadgets."
+      title="Shopify Portfolio | Custom Store Builds" 
+      description="Explore our showcase of high-converting Shopify stores, dropshipping concepts, and eCommerce custom designs for fashion, beauty, pets, and gadgets."
+      keywords="Shopify Portfolio, E-commerce Case Studies, Dropshipping Examples, Shopify Custom Designs"
       canonical="/portfolio"
+      schema={{
+        "@context": "https://schema.org",
+        "@type": "CollectionPage",
+        "name": "Shopify Portfolio - Sheun Hub",
+        "description": "Explore our showcase of high-converting Shopify stores, dropshipping concepts, and eCommerce custom designs.",
+        "url": "https://sheun.online/portfolio",
+        "about": {
+          "@type": "Thing",
+          "name": "Shopify and E-Commerce Portfolio"
+        }
+      }}
     >
       {/* Top Section Label */}
       <div className="bg-green text-navy py-4 px-6 text-center text-[10px] font-bold uppercase tracking-[0.3em]">
@@ -282,13 +294,7 @@ export default function Portfolio() {
             ))}
           </div>
 
-          <div className="mt-24 flex items-start gap-6 bg-light p-10 rounded-2xl max-w-4xl mx-auto border border-navy/5">
-            <Info className="text-navy/40 shrink-0 mt-1" size={32} />
-            <p className="text-navy/60 text-lg leading-relaxed font-serif italic">
-              <strong className="text-navy font-sans not-italic font-bold uppercase tracking-widest text-xs block mb-2">Disclaimer</strong>
-              All store concepts above are original designs created by Sheun Hub for demonstration purposes only. None are real brands. Your store will be uniquely designed to match your vision and niche.
-            </p>
-          </div>
+
 
           <div className="mt-24 bg-navy-gradient rounded-3xl p-16 md:p-24 text-center space-y-10 relative overflow-hidden">
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,_rgba(103,255,193,0.15)_0%,_transparent_70%)]" />
@@ -302,14 +308,14 @@ export default function Portfolio() {
                   Start a Project
                 </Link>
                 <div className="flex items-center gap-4">
-                  <a href="https://www.linkedin.com/in/sheun-hub-26b876321" target="_blank" rel="noopener noreferrer" className="p-4 bg-white/10 hover:bg-green hover:text-navy text-white rounded-full transition-all border border-white/10 shrink-0">
-                    <Globe size={24} />
+                  <a href="https://www.linkedin.com/in/sheun-hub-26b876321" target="_blank" rel="noopener noreferrer" className="p-4 bg-white/10 hover:bg-green hover:text-navy text-white rounded-full transition-all border border-white/10 shrink-0 flex items-center justify-center overflow-hidden">
+                    <img src="https://images.rawpixel.com/image_png_social_square/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvdjk4Mi1kMS0xMC5wbmc.png" alt="LinkedIn" className="w-6 h-6 object-contain" />
                   </a>
-                  <a href="https://wa.me/2348084315743" target="_blank" rel="noopener noreferrer" className="p-4 bg-white/10 hover:bg-green hover:text-navy text-white rounded-full transition-all border border-white/10 shrink-0">
-                    <MessageCircle size={24} />
+                  <a href="https://wa.me/2348084315743" target="_blank" rel="noopener noreferrer" className="p-4 bg-white/10 hover:bg-green hover:text-navy text-white rounded-full transition-all border border-white/10 shrink-0 flex items-center justify-center overflow-hidden">
+                    <img src="https://cdn-icons-png.flaticon.com/512/3670/3670051.png" alt="WhatsApp" className="w-6 h-6 object-contain" />
                   </a>
-                  <a href="mailto:sheunhost@gmail.com" className="p-4 bg-white/10 hover:bg-green hover:text-navy text-white rounded-full transition-all border border-white/10 shrink-0">
-                    <Mail size={24} />
+                  <a href="mailto:sheunhost@gmail.com" className="p-4 bg-white/10 hover:bg-green hover:text-navy text-white rounded-full transition-all border border-white/10 shrink-0 flex items-center justify-center overflow-hidden">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Gmail_icon_%282020%29.svg/960px-Gmail_icon_%282020%29.svg.png?_=20221017173631" alt="Gmail" className="w-6 h-6 object-contain" />
                   </a>
                 </div>
               </div>

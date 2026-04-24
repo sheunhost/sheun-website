@@ -10,6 +10,8 @@ interface PageWrapperProps {
   description?: string;
   canonical?: string;
   keywords?: string;
+  schema?: Record<string, any>;
+  image?: string;
 }
 
 export default function PageWrapper({ 
@@ -18,7 +20,9 @@ export default function PageWrapper({
   title, 
   description,
   canonical,
-  keywords
+  keywords,
+  schema,
+  image
 }: PageWrapperProps) {
   const location = useLocation();
   const { scrollYProgress } = useScroll();
@@ -26,13 +30,31 @@ export default function PageWrapper({
   const siteTitle = "Sheun | Sheun Hub - Shopify Expert & eCommerce Developer";
   const fullTitle = title ? `${title} | ${siteTitle}` : siteTitle;
   const defaultDesc = "Professional Shopify Expert Portfolio for Sheun Hub. High-converting store builds, custom development, and eCommerce growth by Sheun.";
+  const defaultImage = "https://i.postimg.cc/wxQgVCcf/1000031270-removebg-preview.png";
+  const ogImage = image || defaultImage;
   
   // Use provided canonical or fall back to current path
   const currentPath = canonical || location.pathname;
   const canonicalUrl = `https://sheun.online${currentPath === "/" ? "" : currentPath}`;
 
+  // Default Organization/Person schema
+  const defaultSchema = {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Sheun",
+    "url": "https://sheun.online",
+    "jobTitle": "Shopify Development and Growth Expert",
+    "description": description || defaultDesc,
+    "sameAs": [
+      "https://github.com/sheunhost",
+      "https://twitter.com/sheunhub"
+    ]
+  };
+
+  const finalSchema = schema || defaultSchema;
+
   return (
-    <motion.div
+    <motion.main
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: -20 }}
@@ -44,18 +66,28 @@ export default function PageWrapper({
         <meta name="description" content={description || defaultDesc} />
         {keywords && <meta name="keywords" content={keywords} />}
         <link rel="canonical" href={canonicalUrl} />
-        <link rel="icon" href="/favicon.ico" />
-        <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
         
         {/* Open Graph / Facebook */}
-        <meta property="og:type" content="website" />
+        <meta property="og:type" content={schema?.['@type'] === 'Article' ? 'article' : 'website'} />
         <meta property="og:url" content={canonicalUrl} />
         <meta property="og:title" content={fullTitle} />
         <meta property="og:description" content={description || defaultDesc} />
-        <meta property="og:image" content="https://i.postimg.cc/wxQgVCcf/1000031270-removebg-preview.png" />
+        <meta property="og:image" content={ogImage} />
+
+        {/* Twitter */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:url" content={canonicalUrl} />
+        <meta name="twitter:title" content={fullTitle} />
+        <meta name="twitter:description" content={description || defaultDesc} />
+        <meta name="twitter:image" content={ogImage} />
+        
+        {/* Structured Data */}
+        <script type="application/ld+json">
+          {JSON.stringify(finalSchema)}
+        </script>
       </Helmet>
       {children}
       <motion.div className="fixed top-0 left-0 right-0 h-1 bg-green origin-left z-[100]" style={{ scaleX }} />
-    </motion.div>
+    </motion.main>
   );
 }

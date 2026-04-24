@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Facebook,  CheckCircle2, Award, GraduationCap, Star, MapPin, Globe, ArrowRight, Code2, Rocket, Zap, Layout, MessageSquare, Mail  } from "lucide-react";
+import { CheckCircle2, Award, GraduationCap, Star, MapPin, Globe, ArrowRight, Code2, Rocket, Zap, Layout, MessageSquare, Mail  } from "lucide-react";
 import PageWrapper from "../components/PageWrapper";
 import { Link, useNavigate } from "react-router-dom";
 
@@ -25,9 +25,24 @@ export default function About() {
   const navigate = useNavigate();
   return (
     <PageWrapper 
-      title="About" 
-      description="Learn more about Sheun, a dedicated Shopify Expert and eCommerce Developer committed to building high-performance online stores."
+      title="About Sheun - The Shopify Engineer" 
+      description="Learn more about Sheun, a dedicated Shopify Expert and eCommerce Developer committed to building high-performance online stores and driving sales."
+      keywords="About Sheun, Shopify Expert Profile, UI/UX Designer, E-commerce Specialist, Shopify Engineer, Freelance Shopify Developer"
       canonical="/about"
+      schema={{
+        "@context": "https://schema.org",
+        "@type": "AboutPage",
+        "name": "About Sheun - The Shopify Engineer",
+        "description": "Learn more about Sheun, a dedicated Shopify Expert and eCommerce Developer committed to building high-performance online stores and driving sales.",
+        "url": "https://sheun.online/about",
+        "mainEntity": {
+          "@type": "Person",
+          "name": "Sheun",
+          "jobTitle": "Shopify Engineer & Designer",
+          "knowsAbout": ["Shopify API", "Liquid", "Conversion Rate Optimization (CRO)", "UI/UX Design"],
+          "url": "https://sheun.online/about"
+        }
+      }}
     >
       {/* About Hero - Editorial Style */}
       <section className="pt-48 pb-32 bg-white relative overflow-hidden">
@@ -77,14 +92,14 @@ export default function About() {
 
                 {/* Social Profiles */}
                 <div className="flex gap-4 pt-8 border-t border-navy/5 mt-8 w-fit">
-                  <a href="https://www.linkedin.com/in/sheun-hub-26b876321" target="_blank" rel="noopener noreferrer" className="p-3 bg-navy text-white hover:bg-green hover:text-navy rounded-full transition-all" title="LinkedIn">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
+                  <a href="https://www.linkedin.com/in/sheun-hub-26b876321" target="_blank" rel="noopener noreferrer" className="p-3 bg-navy text-white hover:bg-green hover:text-navy rounded-full transition-all flex items-center justify-center overflow-hidden" title="LinkedIn">
+                    <img src="https://images.rawpixel.com/image_png_social_square/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvdjk4Mi1kMS0xMC5wbmc.png" alt="LinkedIn" className="w-5 h-5 object-contain" />
                   </a>
-                  <a href="https://wa.me/2348084315743" target="_blank" rel="noopener noreferrer" className="p-3 bg-navy text-white hover:bg-green hover:text-navy rounded-full transition-all" title="WhatsApp">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                  <a href="https://wa.me/2348084315743" target="_blank" rel="noopener noreferrer" className="p-3 bg-navy text-white hover:bg-green hover:text-navy rounded-full transition-all flex items-center justify-center overflow-hidden" title="WhatsApp">
+                    <img src="https://cdn-icons-png.flaticon.com/512/3670/3670051.png" alt="WhatsApp" className="w-6 h-6 object-contain" />
                   </a>
-                  <a href="mailto:sheunhost@gmail.com" className="p-3 bg-navy text-white hover:bg-green hover:text-navy rounded-full transition-all" title="Email">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+                  <a href="mailto:sheunhost@gmail.com" className="p-3 bg-navy text-white hover:bg-green hover:text-navy rounded-full transition-all flex items-center justify-center overflow-hidden" title="Email">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Gmail_icon_%282020%29.svg/960px-Gmail_icon_%282020%29.svg.png?_=20221017173631" alt="Gmail" className="w-6 h-6 object-contain" />
                   </a>
                 </div>
               </motion.div>
@@ -279,14 +294,14 @@ export default function About() {
             </div>
             
             <div className="pt-12 flex items-center justify-center gap-4">
-              <a href="https://www.linkedin.com/in/sheun-hub-26b876321" target="_blank" rel="noopener noreferrer" className="p-4 bg-white/10 hover:bg-green hover:text-navy text-white rounded-full transition-all border border-white/10 shrink-0">
-                <Globe size={24} />
+              <a href="https://www.linkedin.com/in/sheun-hub-26b876321" target="_blank" rel="noopener noreferrer" className="p-4 bg-white/10 hover:bg-green hover:text-navy text-white rounded-full transition-all border border-white/10 shrink-0 flex items-center justify-center overflow-hidden">
+                <img src="https://images.rawpixel.com/image_png_social_square/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvdjk4Mi1kMS0xMC5wbmc.png" alt="LinkedIn" className="w-6 h-6 object-contain" />
               </a>
-              <a href="https://wa.me/2348084315743" target="_blank" rel="noopener noreferrer" className="p-4 bg-white/10 hover:bg-green hover:text-navy text-white rounded-full transition-all border border-white/10 shrink-0">
-                <MessageSquare size={24} />
+              <a href="https://wa.me/2348084315743" target="_blank" rel="noopener noreferrer" className="p-4 bg-white/10 hover:bg-green hover:text-navy text-white rounded-full transition-all border border-white/10 shrink-0 flex items-center justify-center overflow-hidden">
+                <img src="https://cdn-icons-png.flaticon.com/512/3670/3670051.png" alt="WhatsApp" className="w-6 h-6 object-contain" />
               </a>
-              <a href="mailto:sheunhost@gmail.com" className="p-4 bg-white/10 hover:bg-green hover:text-navy text-white rounded-full transition-all border border-white/10 shrink-0">
-                <Mail size={24} />
+              <a href="mailto:sheunhost@gmail.com" className="p-4 bg-white/10 hover:bg-green hover:text-navy text-white rounded-full transition-all border border-white/10 shrink-0 flex items-center justify-center overflow-hidden">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Gmail_icon_%282020%29.svg/960px-Gmail_icon_%282020%29.svg.png?_=20221017173631" alt="Gmail" className="w-6 h-6 object-contain" />
               </a>
             </div>
           </motion.div>

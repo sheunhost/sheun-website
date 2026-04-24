@@ -139,9 +139,17 @@ export default function Apply() {
 
   return (
     <PageWrapper 
-      title="Work With Me" 
-      description="Apply to work with Sheun, a Shopify Conversion Specialist. High-intent qualification for serious store owners."
+      title="Apply for a Project" 
+      description="Apply to work with Sheun, a high-performing Shopify Conversion Specialist. High-intent qualification application for serious e-commerce store owners."
+      keywords="Hire Shopify Expert, Shopify Migration Service, E-commerce Project Application, Shopify Agency Setup, Drop Shipping Setup Application"
       canonical="/apply"
+      schema={{
+        "@context": "https://schema.org",
+        "@type": "ContactPage",
+        "name": "Apply for a Project with Sheun Hub",
+        "description": "Apply to work with Sheun, a high-performing Shopify Conversion Specialist.",
+        "url": "https://sheun.online/apply"
+      }}
     >
       {/* Simple, Trust-Building Hero */}
       <section className="pt-40 pb-20 bg-navy-gradient relative overflow-hidden">
@@ -295,7 +303,9 @@ export default function Apply() {
                                   <div className="space-y-4">
                                     <label htmlFor="email" className="text-[10px] font-black uppercase tracking-[0.4em] text-navy/40 ml-4">Email Address</label>
                                     <div className="relative group">
-                                      <Mail className="absolute left-6 top-1/2 -translate-y-1/2 text-navy/10 group-focus-within:text-green transition-colors" size={20} aria-hidden="true" />
+                                      <div className="absolute left-6 top-1/2 -translate-y-1/2 flex items-center justify-center">
+                                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Gmail_icon_%282020%29.svg/960px-Gmail_icon_%282020%29.svg.png?_=20221017173631" alt="Gmail" className="w-5 h-5 object-contain" />
+                                      </div>
                                       <input 
                                         required 
                                         id="email" 

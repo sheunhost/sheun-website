@@ -1,7 +1,8 @@
 import { motion } from "framer-motion";
-import { Clock, Calendar, ArrowLeft, ArrowRight, CheckCircle2, ShieldCheck, TrendingUp, AlertTriangle, MessageCircle, ShoppingBag, Star, Mail, Zap, Layout, Phone, Send, Heart, Target, Layers, Facebook, Linkedin } from "lucide-react";
+import { Clock, Calendar, ArrowLeft, ArrowRight, CheckCircle2, ShieldCheck, TrendingUp, AlertTriangle, ShoppingBag, Star, Mail, Zap, Layout, Phone, Send, Heart, Target, Layers } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useState } from "react";
+import PageWrapper from "../components/PageWrapper";
 
 export default function FashionDropshippingGuide() {
   const [comments, setComments] = useState<{name: string, text: string}[]>([
@@ -41,7 +42,31 @@ export default function FashionDropshippingGuide() {
   };
 
   return (
-    <div className="pt-32 pb-24 bg-white relative">
+    <PageWrapper
+      className="pt-32 pb-24 bg-white relative"
+      title="How to Build a 6-Figure Fashion Dropshipping Store"
+      description="Build a high-converting fashion dropshipping store. Discover premium themes, supplier strategies, and branding tactics that win."
+      keywords="Fashion Dropshipping, High-converting Dropshipping, Build Fashion Store, Dropshipping Store Design"
+      canonical="/blog/fashion-dropshipping-guide"
+      schema={{
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "How to Build a 6-Figure Fashion Dropshipping Store in 2026",
+        "author": {
+          "@type": "Person",
+          "name": "Sheun"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "Sheun Hub",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://i.postimg.cc/wxQgVCcf/1000031270-removebg-preview.png"
+          }
+        },
+        "description": "Build a high-converting fashion dropshipping store. Discover premium themes, supplier strategies, and branding tactics that win."
+      }}
+    >
       {/* Editorial Hero */}
       <section className="bg-navy-gradient pt-16 pb-32 px-6 rounded-b-3xl relative overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,_rgba(0,255,157,0.1)_0%,_transparent_70%)]" />
@@ -159,8 +184,8 @@ export default function FashionDropshippingGuide() {
                 <p className="text-white/70 text-lg leading-relaxed mb-10">
                   Building a fashion brand is about more than just a logo. I specialize in the bridge between high-quality design and high-conversion technical architecture.
                 </p>
-                <button onClick={handleWhatsAppContact} className="bg-green text-navy font-bold px-10 py-5 rounded-full flex items-center gap-3 hover:scale-105 transition-transform shadow-2xl">
-                  <MessageCircle size={24} /> Launch My Boutique Now
+                <button onClick={handleWhatsAppContact} className="bg-green text-navy font-bold px-10 py-5 rounded-full flex items-center gap-3 hover:scale-105 transition-transform shadow-2xl overflow-hidden">
+                  <img src="https://cdn-icons-png.flaticon.com/512/3670/3670051.png" alt="WhatsApp" className="w-6 h-6 object-contain" /> Launch My Boutique Now
                 </button>
               </div>
 
@@ -197,14 +222,14 @@ export default function FashionDropshippingGuide() {
             <div className="w-full md:w-auto text-right">
               <p className="text-[10px] font-bold uppercase tracking-[0.3em] text-navy/40 mb-4">Share Article</p>
               <div className="flex items-center justify-end gap-3 flex-wrap">
-                <button onClick={handleFacebookShare} className="w-10 h-10 flex items-center justify-center bg-light border border-navy/10 text-navy rounded-full hover:bg-navy hover:text-white transition-colors">
-                  <Facebook size={18} />
+                <button onClick={handleFacebookShare} className="w-10 h-10 flex items-center justify-center bg-light border border-navy/10 text-navy rounded-full hover:bg-green hover:text-navy transition-colors overflow-hidden" title="Share on Facebook">
+                  <img src="https://cdn-icons-png.flaticon.com/512/124/124010.png" alt="Facebook" className="w-5 h-5 object-contain" />
                 </button>
-                <button onClick={handleLinkedinShare} className="w-10 h-10 flex items-center justify-center bg-light border border-navy/10 text-navy rounded-full hover:bg-[#0077b5] hover:text-white hover:border-[#0077b5] transition-colors">
-                  <Linkedin size={18} />
+                <button onClick={handleLinkedinShare} className="w-10 h-10 flex items-center justify-center bg-light border border-navy/10 text-navy rounded-full hover:bg-green hover:text-navy transition-colors overflow-hidden" title="Share on LinkedIn">
+                  <img src="https://images.rawpixel.com/image_png_social_square/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvdjk4Mi1kMS0xMC5wbmc.png" alt="LinkedIn" className="w-5 h-5 object-contain" />
                 </button>
-                <button onClick={handleWhatsAppShare} className="w-10 h-10 flex items-center justify-center bg-light border border-navy/10 text-navy rounded-full hover:bg-green hover:text-navy transition-colors">
-                  <Phone size={20} />
+                <button onClick={handleWhatsAppShare} className="w-10 h-10 flex items-center justify-center bg-light border border-navy/10 text-navy rounded-full hover:bg-green hover:text-navy transition-colors overflow-hidden" title="Share on WhatsApp">
+                  <img src="https://cdn-icons-png.flaticon.com/512/3670/3670051.png" alt="WhatsApp" className="w-5 h-5 object-contain" />
                 </button>
               </div>
             </div>
@@ -213,7 +238,7 @@ export default function FashionDropshippingGuide() {
           {/* Comments */}
           <div className="pt-16 mt-16 border-t border-navy/5">
             <div className="flex items-center gap-4 mb-10">
-              <MessageCircle className="text-green" size={28} />
+              <img src="https://cdn-icons-png.flaticon.com/512/3670/3670051.png" alt="WhatsApp" className="w-7 h-7 object-contain" />
               <h3 className="text-3xl font-bold text-navy tracking-tight">Discussion ({comments.length})</h3>
             </div>
 
@@ -290,6 +315,6 @@ export default function FashionDropshippingGuide() {
           </Link>
         </div>
       </section>
-    </div>
+    </PageWrapper>
   );
 }

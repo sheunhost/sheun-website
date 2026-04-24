@@ -1,7 +1,8 @@
 import { motion } from "framer-motion";
-import { Clock, Calendar, ArrowLeft, ArrowRight, CheckCircle2, ShieldCheck, TrendingUp, AlertTriangle, MessageCircle, Search, ListChecks, Smartphone, Send, Zap, BarChart3, Globe, Zap as Sparkles, Target, Zap as Fast } from "lucide-react";
+import { Clock, Calendar, ArrowLeft, ArrowRight, CheckCircle2, ShieldCheck, TrendingUp, AlertTriangle, Search, ListChecks, Smartphone, Send, Zap, BarChart3, Globe, Zap as Sparkles, Target, Zap as Fast } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useState } from "react";
+import PageWrapper from "../components/PageWrapper";
 
 export default function ShopifySEOGuide() {
   const [comments, setComments] = useState<{name: string, text: string}[]>([
@@ -36,7 +37,31 @@ export default function ShopifySEOGuide() {
   };
 
   return (
-    <div className="pt-32 pb-24 bg-light relative min-h-screen">
+    <PageWrapper 
+      className="pt-32 pb-24 bg-light relative min-h-screen"
+      title="Shopify SEO in 2026: The Beginner's Complete Guide"
+      description="A beginner-friendly complete guide to mastering Shopify SEO. Learn how to rank your eCommerce store through on-page strategies, site speed, and technical optimizations."
+      keywords="Shopify SEO Guide, Rank Shopify Store, Shopify On-page SEO, Store Optimization, eCommerce SEO Strategies"
+      canonical="/blog/shopify-seo-guide-2026"
+      schema={{
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "Shopify SEO in 2026: The Beginner's Complete Guide",
+        "author": {
+          "@type": "Person",
+          "name": "Sheun"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "Sheun Hub",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://i.postimg.cc/wxQgVCcf/1000031270-removebg-preview.png"
+          }
+        },
+        "description": "A beginner-friendly complete guide to mastering Shopify SEO on your eCommerce store."
+      }}
+    >
       {/* Progress Bar */}
       <div className="fixed top-20 left-0 right-0 h-1 bg-navy/5 z-[60]">
         <motion.div 
@@ -97,8 +122,12 @@ export default function ShopifySEOGuide() {
               <div className="space-y-4">
                 <p className="text-[10px] font-bold uppercase tracking-[0.3em] text-navy/40">Share the Blueprint</p>
                 <div className="flex gap-4">
-                  <button onClick={handleFacebookShare} className="w-12 h-12 bg-white rounded-2xl flex items-center justify-center text-navy hover:bg-navy hover:text-white transition-all shadow-sm border border-navy/5"><ArrowRight className="-rotate-45" size={20} /></button>
-                  <button onClick={handleWhatsAppShare} className="w-12 h-12 bg-white rounded-2xl flex items-center justify-center text-navy hover:bg-green hover:text-navy transition-all shadow-sm border border-navy/5"><MessageCircle size={20} /></button>
+                  <button onClick={handleFacebookShare} className="w-12 h-12 bg-white rounded-2xl flex items-center justify-center text-navy hover:bg-green hover:text-navy transition-all shadow-sm border border-navy/5 overflow-hidden" title="Share on Facebook">
+                    <img src="https://cdn-icons-png.flaticon.com/512/124/124010.png" alt="Facebook" className="w-5 h-5 object-contain" />
+                  </button>
+                  <button onClick={handleWhatsAppShare} className="w-12 h-12 bg-white rounded-2xl flex items-center justify-center text-navy hover:bg-green hover:text-navy transition-all shadow-sm border border-navy/5 overflow-hidden" title="Share on WhatsApp">
+                    <img src="https://cdn-icons-png.flaticon.com/512/3670/3670051.png" alt="WhatsApp" className="w-5 h-5 object-contain" />
+                  </button>
                 </div>
               </div>
             </div>
@@ -221,7 +250,7 @@ export default function ShopifySEOGuide() {
             {/* Discussion */}
             <div className="pt-24 mt-24 border-t border-navy/5">
               <div className="flex items-center gap-4 mb-12">
-                <MessageCircle className="text-green" size={28} />
+                <img src="https://cdn-icons-png.flaticon.com/512/3670/3670051.png" alt="WhatsApp" className="w-7 h-7 object-contain" />
                 <h3 className="text-3xl font-bold text-navy tracking-tight uppercase italic">What's your growth goal?</h3>
               </div>
 
@@ -288,6 +317,6 @@ export default function ShopifySEOGuide() {
           </div>
         </div>
       </section>
-    </div>
+    </PageWrapper>
   );
 }

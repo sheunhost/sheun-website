@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Facebook, Linkedin, ArrowRight, Star, ShoppingBag, Globe, Trophy, CheckCircle2, Layout, RefreshCw, ShoppingCart, Palette, ExternalLink, Zap, Code2, Rocket, MessageSquare, Send, Mail, MessageCircle, ChevronDown, Quote, TrendingUp, Target, AlertCircle, BarChart3, Search, Lightbulb, Info, AlertTriangle, X, Clock, DollarSign, ListChecks, ChevronLeft, ChevronRight, ShieldCheck } from "lucide-react";
+import { ArrowRight, Star, ShoppingBag, Globe, Trophy, CheckCircle2, Layout, RefreshCw, ShoppingCart, Palette, ExternalLink, Zap, Code2, Rocket, MessageSquare, Send, Mail, ChevronDown, Quote, TrendingUp, Target, AlertCircle, BarChart3, Search, Lightbulb, Info, AlertTriangle, X, Clock, DollarSign, ListChecks, ChevronLeft, ChevronRight, ShieldCheck } from "lucide-react";
 import { Link, useNavigate } from "react-router-dom";
 import { GoogleGenAI } from "@google/genai";
 import PageWrapper from "../components/PageWrapper";
@@ -626,9 +626,28 @@ Return ONLY valid JSON.
 
   return (
     <PageWrapper 
-      title="Home" 
-      description="Professional Shopify Expert & eCommerce Developer. High-converting store builds, theme customization, and strategic eCommerce growth."
+      title="Shopify Developer & Growth Expert" 
+      description="Scale your brand with Sheun, a specialist in Custom Shopify Development and E-commerce Growth. Maximize revenue with highly optimized store builds."
+      keywords="Shopify Expert, Shopify Developer, Custom Shopify Themes, Dropshipping Store Setup, E-commerce Growth, Convertion Rate Optimization"
       canonical="/"
+      schema={{
+        "@context": "https://schema.org",
+        "@type": "ProfilePage",
+        "name": "Shopify Developer & Growth Expert - Sheun Hub",
+        "description": "Scale your brand with Sheun, a specialist in Custom Shopify Development and E-commerce Growth. Maximize revenue with highly optimized store builds.",
+        "url": "https://sheun.online",
+        "mainEntity": {
+          "@type": "Person",
+          "name": "Sheun",
+          "jobTitle": "Shopify Developer & Growth Expert",
+          "url": "https://sheun.online",
+          "sameAs": [
+            "https://www.linkedin.com/in/sheun-hub-26b876321",
+            "https://www.facebook.com/profile.php?id=61581094591044",
+            "https://twitter.com/sheunhub"
+          ]
+        }
+      }}
     >
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center pt-48 pb-20 bg-navy-gradient overflow-hidden">
@@ -778,14 +797,14 @@ Return ONLY valid JSON.
                   <p className="text-white/60 text-lg font-serif italic">Top Rated Upwork Freelancer</p>
                   
                   <div className="flex gap-4 pt-4 border-t border-white/10">
-                    <a href="https://www.linkedin.com/in/sheun-hub-26b876321" target="_blank" rel="noopener noreferrer" className="p-2 bg-white/5 hover:bg-green hover:text-navy rounded-full text-white transition-all" title="LinkedIn">
-                      <Linkedin size={20} />
+                    <a href="https://www.linkedin.com/in/sheun-hub-26b876321" target="_blank" rel="noopener noreferrer" className="p-2 bg-white/5 hover:bg-green hover:text-navy rounded-full text-white transition-all flex items-center justify-center overflow-hidden" title="LinkedIn">
+                      <img src="https://images.rawpixel.com/image_png_social_square/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvdjk4Mi1kMS0xMC5wbmc.png" alt="LinkedIn" className="w-5 h-5 object-contain" />
                     </a>
-                    <a href="https://wa.me/2348084315743" target="_blank" rel="noopener noreferrer" className="p-2 bg-white/5 hover:bg-green hover:text-navy rounded-full text-white transition-all" title="WhatsApp">
-                      <MessageCircle size={20} />
+                    <a href="https://wa.me/2348084315743" target="_blank" rel="noopener noreferrer" className="p-2 bg-white/5 hover:bg-green hover:text-navy rounded-full text-white transition-all flex items-center justify-center overflow-hidden" title="WhatsApp">
+                      <img src="https://cdn-icons-png.flaticon.com/512/3670/3670051.png" alt="WhatsApp" className="w-5 h-5 object-contain" />
                     </a>
-                    <a href="mailto:sheunhost@gmail.com" className="p-2 bg-white/5 hover:bg-green hover:text-navy rounded-full text-white transition-all" title="Email">
-                      <Mail size={20} />
+                    <a href="mailto:sheunhost@gmail.com" className="p-2 bg-white/5 hover:bg-green hover:text-navy rounded-full text-white transition-all flex items-center justify-center overflow-hidden" title="Email">
+                      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Gmail_icon_%282020%29.svg/960px-Gmail_icon_%282020%29.svg.png?_=20221017173631" alt="Gmail" className="w-5 h-5 object-contain" />
                     </a>
                   </div>
                 </div>
@@ -1301,13 +1320,17 @@ Return ONLY valid JSON.
 
               <div className="space-y-8">
                 {[
-                  { icon: Mail, label: "Email", value: "sheunhost@gmail.com" },
-                  { icon: MessageCircle, label: "WhatsApp (NG)", value: "+234 808 431 5743" },
-                  { icon: MessageCircle, label: "WhatsApp (UK)", value: "+44 7476 664292" },
+                  { icon: "gmail", label: "Email", value: "sheunhost@gmail.com" },
+                  { icon: "whatsapp", label: "WhatsApp (NG)", value: "+234 808 431 5743" },
+                  { icon: "whatsapp", label: "WhatsApp (UK)", value: "+44 7476 664292" },
                 ].map((item, i) => (
                   <div key={i} className="flex flex-col sm:flex-row items-center sm:items-start gap-6 group text-center sm:text-left">
-                    <div className="w-14 h-14 bg-light rounded-2xl flex items-center justify-center text-navy group-hover:bg-green group-hover:text-navy transition-all shrink-0">
-                      <item.icon size={24} />
+                    <div className="w-14 h-14 bg-light rounded-2xl flex items-center justify-center text-navy group-hover:bg-green group-hover:text-navy transition-all shrink-0 overflow-hidden">
+                      {item.icon === "whatsapp" ? (
+                        <img src="https://cdn-icons-png.flaticon.com/512/3670/3670051.png" alt="WhatsApp" className="w-6 h-6 object-contain" />
+                      ) : (
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Gmail_icon_%282020%29.svg/960px-Gmail_icon_%282020%29.svg.png?_=20221017173631" alt="Gmail" className="w-6 h-6 object-contain" />
+                      )}
                     </div>
                     <div className="min-w-0 flex-grow">
                       <p className="text-[10px] font-bold text-navy/40 uppercase tracking-widest">{item.label}</p>
@@ -1443,8 +1466,8 @@ Return ONLY valid JSON.
         <div className="container mx-auto px-6">
           <div className="max-w-5xl mx-auto bg-white rounded-2xl p-10 md:p-16 shadow-xl border border-navy/5 flex flex-col md:flex-row items-center gap-12">
             <div className="flex-1 space-y-6 text-center md:text-left">
-              <div className="inline-flex items-center justify-center w-16 h-16 bg-green/10 text-green rounded-2xl mb-2">
-                <Mail size={32} />
+              <div className="inline-flex items-center justify-center w-16 h-16 bg-green/10 text-green rounded-2xl mb-2 overflow-hidden">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Gmail_icon_%282020%29.svg/960px-Gmail_icon_%282020%29.svg.png?_=20221017173631" alt="Gmail" className="w-8 h-8 object-contain" />
               </div>
               <h2 className="text-4xl md:text-5xl font-bold text-navy tracking-tight">
                 Join the <span className="italic font-serif font-light text-navy/40">Newsletter</span>

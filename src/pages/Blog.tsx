@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Facebook,  Search, Clock, Calendar, ArrowRight, User, ShieldCheck  } from "lucide-react";
+import { Search, Clock, Calendar, ArrowRight, User, ShieldCheck  } from "lucide-react";
 import PageWrapper from "../components/PageWrapper";
 import { useState } from "react";
 import { Link } from "react-router-dom";
@@ -76,7 +76,19 @@ export default function Blog() {
   const featuredPost = posts.find(p => p.featured);
 
   return (
-    <PageWrapper>
+    <PageWrapper
+      title="Shopify Blog & E-commerce Strategies"
+      description="Read the Sheun Hub blog for the latest strategies on Shopify SEO, store migrations, custom liquid developments, and dropshipping."
+      keywords="Shopify Blog, Shopify Development Tutorials, Dropshipping Guides, Shopify SEO Tips"
+      canonical="/blog"
+      schema={{
+        "@context": "https://schema.org",
+        "@type": "Blog",
+        "name": "Shopify eCommerce Blog by Sheun",
+        "description": "Read the Sheun Hub blog for the latest strategies on Shopify SEO, store migrations, custom liquid developments, and dropshipping.",
+        "url": "https://sheun.online/blog"
+      }}
+    >
       {/* Blog Hero */}
       <section className="pt-48 pb-16 bg-navy-gradient relative overflow-hidden">
         <div className="absolute inset-0 opacity-10">

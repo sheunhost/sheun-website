@@ -1,6 +1,6 @@
 import PageWrapper from "../components/PageWrapper";
 import { Link } from "react-router-dom";
-import { Facebook,  FileText, Briefcase, CreditCard, Scale, Mail  } from "lucide-react";
+import { FileText, Briefcase, CreditCard, Scale, Mail  } from "lucide-react";
 
 export default function TermsOfService() {
   return (

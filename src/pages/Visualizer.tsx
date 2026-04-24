@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import PageWrapper from "../components/PageWrapper";
 import ImageGen from "../components/ImageGen";
-import { Facebook,  ListChecks, Sparkles, Rocket, Zap, Globe, MessageSquare, ArrowRight  } from "lucide-react";
+import {  ListChecks, Sparkles, Rocket, Zap, Globe  } from "lucide-react";
 import { Link, useNavigate } from "react-router-dom";
 
 
@@ -9,9 +9,23 @@ export default function Visualizer() {
   const navigate = useNavigate();
   return (
     <PageWrapper
-      title="Ai Store Visualizer"
-      description="Use our AI-powered tool to visualize your future Shopify store theme, product layouts, and hero images instantly."
+      title="Ai Shopify Store Visualizer | Preview Themes Instantly"
+      description="Use our AI-powered tool to visualize your future Shopify store theme, product layouts, and hero images instantly using Google Gemini 2.5."
+      keywords="AI Web Visualizer, Shopify Theme Generator, E-commerce Mockup AI, Create Shopify Store Theme, AI Image Generator"
       canonical="/visualizer"
+      schema={{
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "AI Shopify Store Visualizer",
+        "applicationCategory": "DesignApplication",
+        "operatingSystem": "Web",
+        "description": "Visualize your future Shopify store theme, product layouts, and hero images instantly using advanced AI.",
+        "url": "https://sheun.online/visualizer",
+        "author": {
+            "@type": "Person",
+            "name": "Sheun"
+        }
+      }}
     >
       {/* Hero Section */}
       <section className="pt-48 pb-32 bg-navy-gradient relative overflow-hidden">

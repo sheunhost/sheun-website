@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Mail, MessageCircle, Linkedin, Facebook, ShieldCheck } from "lucide-react";
+import { ShieldCheck } from "lucide-react";
 import ConfigChecker from "./ConfigChecker";
 
 export default function Footer() {
@@ -54,10 +54,10 @@ export default function Footer() {
           <div>
             <h4 className="text-sm font-bold uppercase tracking-[0.3em] text-white/20 mb-8">Social & Contact</h4>
             <ul className="space-y-4 font-medium">
-              <li><a href="mailto:sheunhost@gmail.com" className="text-white/60 hover:text-green transition-colors flex items-center gap-3"><Mail size={16}/> Email</a></li>
-              <li><a href="https://wa.me/2348084315743" target="_blank" rel="noopener noreferrer" className="text-white/60 hover:text-green transition-colors flex items-center gap-3"><MessageCircle size={16}/> WhatsApp</a></li>
-              <li><a href="https://www.linkedin.com/in/sheun-hub-26b876321" target="_blank" rel="noopener noreferrer" className="text-white/60 hover:text-green transition-colors flex items-center gap-3"><Linkedin size={16}/> LinkedIn</a></li>
-              <li><a href="https://www.facebook.com/profile.php?id=61581094591044" target="_blank" rel="noopener noreferrer" className="text-white/60 hover:text-green transition-colors flex items-center gap-3"><Facebook size={16}/> Facebook</a></li>
+              <li><a href="mailto:sheunhost@gmail.com" className="text-white/60 hover:text-green transition-colors flex items-center gap-3"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Gmail_icon_%282020%29.svg/960px-Gmail_icon_%282020%29.svg.png?_=20221017173631" alt="Gmail" className="w-4 h-4 object-contain" /> Email</a></li>
+              <li><a href="https://wa.me/2348084315743" target="_blank" rel="noopener noreferrer" className="text-white/60 hover:text-green transition-colors flex items-center gap-3"><img src="https://cdn-icons-png.flaticon.com/512/3670/3670051.png" alt="WhatsApp" className="w-4 h-4 object-contain" /> WhatsApp</a></li>
+              <li><a href="https://www.linkedin.com/in/sheun-hub-26b876321" target="_blank" rel="noopener noreferrer" className="text-white/60 hover:text-green transition-colors flex items-center gap-3"><img src="https://images.rawpixel.com/image_png_social_square/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvdjk4Mi1kMS0xMC5wbmc.png" alt="LinkedIn" className="w-4 h-4 object-contain" /> LinkedIn</a></li>
+              <li><a href="https://www.facebook.com/profile.php?id=61581094591044" target="_blank" rel="noopener noreferrer" className="text-white/60 hover:text-green transition-colors flex items-center gap-3"><img src="https://cdn-icons-png.flaticon.com/512/124/124010.png" alt="Facebook" className="w-4 h-4 object-contain" /> Facebook</a></li>
             </ul>
           </div>
         </div>

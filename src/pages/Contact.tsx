@@ -1,5 +1,5 @@
 import { motion, AnimatePresence } from "framer-motion";
-import { Mail, MessageCircle, Linkedin, Send, CheckCircle2, Gift, Globe, Star, ArrowRight, Zap, ChevronDown, Palette, Layout, Info, Clock, Calendar, CheckCircle } from "lucide-react";
+import { Mail, Send, CheckCircle2, Gift, Globe, Star, ArrowRight, Zap, ChevronDown, Palette, Layout, Info, Clock, Calendar, CheckCircle } from "lucide-react";
 import PageWrapper from "../components/PageWrapper";
 import { useState, FormEvent } from "react";
 import { Link } from "react-router-dom";
@@ -122,9 +122,24 @@ export default function Contact() {
 
   return (
     <PageWrapper 
-      title="Contact" 
-      description="Get in touch with Sheun for your next Shopify project. Free store audits and project quotes available."
+      title="Contact Sheun | Shopify Expert" 
+      description="Get in touch with Sheun for your next Shopify project. Free store audits, custom UX/UI redesigns, and accurate project quotes are available."
+      keywords="Contact Shopify Expert, Free Shopify Audit, E-commerce Consultation, Shopify Freelancer Contact, Hire Shopify Developer"
       canonical="/contact"
+      schema={{
+        "@context": "https://schema.org",
+        "@type": "ContactPage",
+        "name": "Contact Sheun - Shopify Expert",
+        "url": "https://sheun.online/contact",
+        "description": "Get in touch with Sheun for your next Shopify project. Free store audits, custom UX/UI redesigns, and accurate project quotes are available.",
+        "mainEntity": {
+          "@type": "Person",
+          "name": "Sheun",
+          "email": "sheunhost@gmail.com",
+          "telephone": "+2348084315743",
+          "url": "https://sheun.online"
+        }
+      }}
     >
       {/* Contact Hero - Dynamic Editorial Style */}
       <section className="pt-48 pb-32 bg-navy-gradient relative overflow-hidden">
@@ -195,11 +210,11 @@ export default function Contact() {
                   className="sm:col-span-2 group relative p-10 bg-navy text-white rounded-[40px] overflow-hidden shadow-2xl transition-all hover:bg-navy/95"
                 >
                   <div className="absolute top-0 right-0 p-10 opacity-20 group-hover:opacity-40 transition-opacity">
-                    <Mail size={120} />
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Gmail_icon_%282020%29.svg/960px-Gmail_icon_%282020%29.svg.png?_=20221017173631" alt="Gmail" className="w-[120px] h-[120px] object-contain" />
                   </div>
                   <div className="relative z-10 space-y-10">
-                    <div className="w-16 h-16 bg-white/10 rounded-2xl flex items-center justify-center backdrop-blur-md">
-                      <Mail className="text-green" size={32} />
+                    <div className="w-16 h-16 bg-white/10 rounded-2xl flex items-center justify-center backdrop-blur-md overflow-hidden">
+                      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Gmail_icon_%282020%29.svg/960px-Gmail_icon_%282020%29.svg.png?_=20221017173631" alt="Gmail" className="w-8 h-8 object-contain" />
                     </div>
                     <div className="space-y-3">
                       <h4 className="text-4xl font-bold tracking-tighter">Email me directly.</h4>
@@ -219,8 +234,8 @@ export default function Contact() {
                   className="p-8 bg-light rounded-[40px] border border-navy/5 hover:border-green/50 transition-all group"
                 >
                   <div className="space-y-10">
-                    <div className="w-14 h-14 bg-white rounded-2xl flex items-center justify-center shadow-sm group-hover:bg-green transition-colors">
-                      <MessageCircle className="text-navy" size={28} />
+                    <div className="w-14 h-14 bg-white rounded-2xl flex items-center justify-center shadow-sm group-hover:bg-green transition-colors overflow-hidden">
+                      <img src="https://cdn-icons-png.flaticon.com/512/3670/3670051.png" alt="WhatsApp" className="w-8 h-8 object-contain" />
                     </div>
                     <div className="space-y-2">
                       <p className="text-navy font-bold text-xl uppercase tracking-tighter">WhatsApp</p>
@@ -237,8 +252,8 @@ export default function Contact() {
                   className="p-8 bg-light rounded-[40px] border border-navy/5 hover:border-green/50 transition-all group"
                 >
                   <div className="space-y-10">
-                    <div className="w-14 h-14 bg-white rounded-2xl flex items-center justify-center shadow-sm group-hover:bg-green transition-colors">
-                      <Linkedin className="text-navy" size={28} />
+                    <div className="w-14 h-14 bg-white rounded-2xl flex items-center justify-center shadow-sm group-hover:bg-green transition-colors overflow-hidden">
+                      <img src="https://images.rawpixel.com/image_png_social_square/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvdjk4Mi1kMS0xMC5wbmc.png" alt="LinkedIn" className="w-8 h-8 object-contain" />
                     </div>
                     <div className="space-y-2">
                       <p className="text-navy font-bold text-xl uppercase tracking-tighter">LinkedIn</p>

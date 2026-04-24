@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Clock, Calendar, ArrowLeft, ArrowRight, CheckCircle2, ShieldCheck, TrendingUp, AlertTriangle, MessageCircle, Database, RefreshCw, Link as LinkIcon, Search, ListChecks, ArrowDownToLine, Terminal, Smartphone, Send, Facebook, Linkedin } from "lucide-react";
+import { Clock, Calendar, ArrowLeft, ArrowRight, CheckCircle2, ShieldCheck, TrendingUp, AlertTriangle, Database, RefreshCw, Link as LinkIcon, Search, ListChecks, ArrowDownToLine, Terminal, Smartphone, Send } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 
@@ -102,9 +102,15 @@ export default function WooCommerceToShopifyMigration() {
               <div className="space-y-4">
                 <p className="text-[10px] font-bold uppercase tracking-[0.3em] text-navy/40">Spread the Knowledge</p>
                 <div className="flex gap-4">
-                  <button onClick={handleFacebookShare} className="w-12 h-12 bg-white rounded-2xl flex items-center justify-center text-navy hover:bg-navy hover:text-white transition-all shadow-sm border border-navy/5"><ArrowRight className="-rotate-45" size={20} /></button>
-                  <button onClick={handleLinkedinShare} className="w-12 h-12 bg-white rounded-2xl flex items-center justify-center text-navy hover:bg-[#0077b5] hover:text-white hover:border-[#0077b5] transition-all shadow-sm border border-navy/5"><Linkedin size={20} /></button>
-                  <button onClick={handleWhatsAppShare} className="w-12 h-12 bg-white rounded-2xl flex items-center justify-center text-navy hover:bg-green hover:text-navy transition-all shadow-sm border border-navy/5"><MessageCircle size={20} /></button>
+                  <button onClick={handleFacebookShare} className="w-12 h-12 bg-white rounded-2xl flex items-center justify-center text-navy hover:bg-green hover:text-navy transition-all shadow-sm border border-navy/5 overflow-hidden" title="Share on Facebook">
+                    <img src="https://cdn-icons-png.flaticon.com/512/124/124010.png" alt="Facebook" className="w-5 h-5 object-contain" />
+                  </button>
+                  <button onClick={handleLinkedinShare} className="w-12 h-12 bg-white rounded-2xl flex items-center justify-center text-navy hover:bg-green hover:text-navy transition-all shadow-sm border border-navy/5 overflow-hidden" title="Share on LinkedIn">
+                    <img src="https://images.rawpixel.com/image_png_social_square/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvdjk4Mi1kMS0xMC5wbmc.png" alt="LinkedIn" className="w-5 h-5 object-contain" />
+                  </button>
+                  <button onClick={handleWhatsAppShare} className="w-12 h-12 bg-white rounded-2xl flex items-center justify-center text-navy hover:bg-green hover:text-navy transition-all shadow-sm border border-navy/5 overflow-hidden" title="Share on WhatsApp">
+                    <img src="https://cdn-icons-png.flaticon.com/512/3670/3670051.png" alt="WhatsApp" className="w-5 h-5 object-contain" />
+                  </button>
                 </div>
               </div>
             </div>
@@ -227,7 +233,7 @@ export default function WooCommerceToShopifyMigration() {
             {/* Discussion Section */}
             <div className="pt-24 mt-24 border-t border-navy/5">
               <div className="flex items-center gap-4 mb-12">
-                <MessageCircle className="text-green" size={28} />
+                <img src="https://cdn-icons-png.flaticon.com/512/3670/3670051.png" alt="WhatsApp" className="w-7 h-7 object-contain" />
                 <h3 className="text-3xl font-bold text-navy tracking-tight uppercase italic">Community Discussion</h3>
               </div>
 
