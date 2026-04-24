@@ -361,10 +361,15 @@ export default function Apply() {
                                 <span className="text-[10px] font-black uppercase tracking-[0.4em] text-navy/40 ml-4">What service do you need?</span>
                                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4" role="radiogroup">
                                   {[
-                                    "Shopify Store Setup",
+                                    "Shopify Store Build",
                                     "Shopify Redesign",
-                                    "Store Optimization",
-                                    "Other"
+                                    "Store Migration",
+                                    "SEO Optimization",
+                                    "Shopify Speed Optimization",
+                                    "Custom Liquid Dev",
+                                    "Conversion Rate Optimization (CRO) Audit",
+                                    "Bug Fixing",
+                                    "Other (Describe below)"
                                   ].map((type) => (
                                     <label key={type} className="relative cursor-pointer group">
                                       <input 
@@ -384,6 +389,28 @@ export default function Apply() {
                                       </div>
                                     </label>
                                   ))}
+                                </div>
+
+                                <div className="space-y-4">
+                                  <label htmlFor="budget" className="text-[10px] font-bold text-navy/40 uppercase tracking-[0.3em] ml-4">Project Budget</label>
+                                  <div className="relative group">
+                                    <DollarSign className="absolute left-6 top-1/2 -translate-y-1/2 text-navy/10 group-focus-within:text-green transition-colors pointer-events-none" size={20} aria-hidden="true" />
+                                    <select 
+                                      required 
+                                      id="budget" 
+                                      name="budget" 
+                                      value={formData.budget}
+                                      onChange={handleInputChange}
+                                      className="w-full bg-light border-b-2 border-transparent rounded-[24px] py-6 pl-16 pr-8 focus:border-green focus:bg-white outline-none transition-all font-bold text-navy appearance-none cursor-pointer" 
+                                    >
+                                      <option value="" disabled>Select an estimated budget...</option>
+                                      <option value="Less than $1,000">Less than $1,000</option>
+                                      <option value="$1,000 - $3,000">$1,000 - $3,000</option>
+                                      <option value="$3,000 - $5,000">$3,000 - $5,000</option>
+                                      <option value="$5,000+">$5,000+</option>
+                                    </select>
+                                    <ChevronDown className="absolute right-8 top-1/2 -translate-y-1/2 text-navy/40 pointer-events-none" size={20} />
+                                  </div>
                                 </div>
 
                                 <div className="space-y-4">

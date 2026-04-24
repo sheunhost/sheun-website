@@ -74,35 +74,35 @@ const testimonials = [
     name: "Sarah Jenkins",
     role: "Founder, Glow Beauty",
     content: "Sheun completely transformed our Shopify store. Our conversion rate doubled in the first month after the redesign!",
-    image: "https://picsum.photos/seed/sarah/100/100",
+    image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80&w=200",
     rating: 5
   },
   {
     name: "Marcus Chen",
     role: "CEO, TechHaven",
     content: "The migration from WooCommerce to Shopify was flawless. We didn't lose a single order during the transition.",
-    image: "https://picsum.photos/seed/marcus/100/100",
+    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=200",
     rating: 5
   },
   {
     name: "Emma Roberts",
     role: "Owner, Style Boutique",
     content: "Incredible attention to detail and lightning-fast communication. The custom theme perfectly captures our brand vibe.",
-    image: "https://picsum.photos/seed/emma/100/100",
+    image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&q=80&w=200",
     rating: 5
   },
   {
     name: "David Miller",
     role: "Director, Urban Gear",
     content: "The SEO audit alone was worth it. We've seen a 40% increase in organic traffic within just 3 weeks.",
-    image: "https://picsum.photos/seed/david/100/100",
+    image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&q=80&w=200",
     rating: 5
   },
   {
     name: "Lisa Wong",
     role: "Founder, PetPalace",
     content: "Sheun is a Liquid genius. He built custom features that we thought were impossible on Shopify.",
-    image: "https://picsum.photos/seed/lisa/100/100",
+    image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=200",
     rating: 5
   }
 ];
@@ -1030,6 +1030,89 @@ Return ONLY valid JSON.
         )}
       </AnimatePresence>
 
+      {/* Testimonials Slider */}
+      <section className="py-32 bg-light relative overflow-hidden border-t border-navy/5">
+        <div className="absolute top-0 right-0 p-32 opacity-5 pointer-events-none">
+          <Quote size={400} />
+        </div>
+        <div className="container mx-auto px-6 relative z-10">
+          <div className="text-center space-y-6 mb-24">
+            <p className="text-navy/40 text-[10px] font-bold uppercase tracking-[0.3em]">Client Success</p>
+            <h2 className="text-5xl md:text-7xl font-bold text-navy tracking-tight">
+              Trusted by <span className="italic font-serif font-light text-navy/40">Founders</span>.
+            </h2>
+          </div>
+
+          <div className="max-w-4xl mx-auto relative">
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={testimonialIndex}
+                initial={{ opacity: 0, x: 20 }}
+                animate={{ opacity: 1, x: 0 }}
+                exit={{ opacity: 0, x: -20 }}
+                transition={{ duration: 0.5 }}
+                className="bg-white p-8 md:p-16 rounded-3xl shadow-2xl border border-navy/5 flex flex-col md:flex-row items-center gap-12"
+              >
+                <div className="shrink-0 relative">
+                  <div className="w-32 h-32 md:w-48 md:h-48 rounded-full overflow-hidden border-4 border-white shadow-xl relative z-10">
+                    <img 
+                      src={testimonials[testimonialIndex].image} 
+                      alt={testimonials[testimonialIndex].name} 
+                      className="w-full h-full object-cover" 
+                      referrerPolicy="no-referrer"
+                    />
+                  </div>
+                  <div className="absolute -bottom-4 -right-4 w-16 h-16 bg-green text-navy rounded-full flex items-center justify-center shadow-lg z-20">
+                    <Quote size={24} />
+                  </div>
+                </div>
+
+                <div className="space-y-6 flex-grow text-center md:text-left">
+                  <div className="flex items-center justify-center md:justify-start gap-1">
+                    {[...Array(testimonials[testimonialIndex].rating || 5)].map((_, j) => (
+                      <Star key={j} size={20} fill="currentColor" className="text-[#FFC107]" />
+                    ))}
+                  </div>
+                  <p className="text-navy/70 font-serif italic text-xl md:text-3xl leading-relaxed">
+                    "{testimonials[testimonialIndex].content}"
+                  </p>
+                  <div>
+                    <h4 className="text-navy font-bold text-2xl">{testimonials[testimonialIndex].name}</h4>
+                    <p className="text-navy/40 text-sm uppercase tracking-widest mt-1">{testimonials[testimonialIndex].role}</p>
+                  </div>
+                </div>
+              </motion.div>
+            </AnimatePresence>
+
+            <div className="flex items-center justify-center gap-6 mt-12">
+              <button 
+                onClick={prevTestimonial}
+                className="w-14 h-14 rounded-full bg-white border border-navy/10 flex items-center justify-center text-navy hover:bg-green hover:border-green transition-all shadow-lg hover:scale-105"
+              >
+                <ChevronLeft size={24} />
+              </button>
+              
+              <div className="flex gap-2">
+                {testimonials.map((_, idx) => (
+                  <button 
+                    key={idx}
+                    onClick={() => setTestimonialIndex(idx)}
+                    className={`h-2 rounded-full transition-all ${idx === testimonialIndex ? 'w-8 bg-green' : 'w-2 bg-navy/10 hover:bg-navy/30'}`}
+                  />
+                ))}
+              </div>
+
+              <button 
+                onClick={nextTestimonial}
+                className="w-14 h-14 rounded-full bg-white border border-navy/10 flex items-center justify-center text-navy hover:bg-green hover:border-green transition-all shadow-lg hover:scale-105"
+              >
+                <ChevronRight size={24} />
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Portfolio Preview - Bento Grid */}
       <section className="py-32 bg-white">
         <div className="container mx-auto px-6">
@@ -1096,6 +1179,106 @@ Return ONLY valid JSON.
                 </div>
               </motion.div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Why Partner With Me */}
+      <section className="py-32 bg-navy text-white relative overflow-hidden">
+        <div className="container mx-auto px-6">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+            <div className="space-y-10">
+              <h2 className="text-5xl md:text-7xl font-bold tracking-tight">
+                The Sheun Hub <br />
+                <span className="text-green italic font-serif font-light">Advantage</span>.
+              </h2>
+              <p className="text-white/60 text-xl max-w-lg leading-relaxed font-serif italic">
+                I don't just build stores; I build profitable eCommerce systems. Combining deep technical expertise with conversion rate psychology.
+              </p>
+              
+              <div className="space-y-6 pt-4">
+                {[
+                  { title: "Custom Liquid Mastery", desc: "No cookie-cutter templates. Features coded purely for your brand's unique needs." },
+                  { title: "Speed Obsessive", desc: "Ultra-fast load times mathematically proven to increase conversion rates." },
+                  { title: "Direct Communication", desc: "No middle-men or project managers. You work directly with the technical architect." }
+                ].map((item, i) => (
+                  <div key={i} className="flex gap-6 items-start">
+                    <div className="w-12 h-12 rounded-full bg-white/5 border border-white/10 flex items-center justify-center shrink-0 text-green mt-1">
+                      <CheckCircle2 size={24} />
+                    </div>
+                    <div>
+                      <h4 className="text-xl font-bold mb-2">{item.title}</h4>
+                      <p className="text-white/40 leading-relaxed max-w-sm">{item.desc}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+            
+            <div className="relative">
+              <div className="aspect-[4/3] rounded-3xl overflow-hidden pointer-events-none">
+                <img 
+                  src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=1200" 
+                  alt="Shopify Growth Developer" 
+                  className="w-full h-full object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-tr from-navy via-navy/50 to-transparent" />
+              </div>
+              <div className="absolute -bottom-10 -left-10 bg-green text-navy p-10 rounded-2xl shadow-2xl border-4 border-navy border-t-0 animate-bounce-slow">
+                <p className="text-6xl font-bold tracking-tighter mb-2">100%</p>
+                <p className="text-xs uppercase font-bold tracking-widest opacity-80">Job Success Rate</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Why Partner With Me */}
+      <section className="py-32 bg-navy text-white relative overflow-hidden">
+        <div className="container mx-auto px-6">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+            <div className="space-y-10">
+              <h2 className="text-5xl md:text-7xl font-bold tracking-tight">
+                The Sheun Hub <br />
+                <span className="text-green italic font-serif font-light">Advantage</span>.
+              </h2>
+              <p className="text-white/60 text-xl max-w-lg leading-relaxed font-serif italic">
+                I don't just build stores; I build profitable eCommerce systems. Combining deep technical expertise with conversion rate psychology.
+              </p>
+              
+              <div className="space-y-6 pt-4">
+                {[
+                  { title: "Custom Liquid Mastery", desc: "No cookie-cutter templates. Features coded purely for your brand's unique needs." },
+                  { title: "Speed Obsessive", desc: "Ultra-fast load times mathematically proven to increase conversion rates." },
+                  { title: "Direct Communication", desc: "No middle-men or project managers. You work directly with the technical architect." }
+                ].map((item, i) => (
+                  <div key={i} className="flex gap-6 items-start">
+                    <div className="w-12 h-12 rounded-full bg-white/5 border border-white/10 flex items-center justify-center shrink-0 text-green mt-1">
+                      <CheckCircle2 size={24} />
+                    </div>
+                    <div>
+                      <h4 className="text-xl font-bold mb-2">{item.title}</h4>
+                      <p className="text-white/40 leading-relaxed max-w-sm">{item.desc}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+            
+            <div className="relative">
+              <div className="aspect-[4/3] rounded-3xl overflow-hidden pointer-events-none">
+                <img 
+                  src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=1200" 
+                  alt="Shopify Growth Developer" 
+                  className="w-full h-full object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-tr from-navy via-navy/50 to-transparent" />
+              </div>
+              <div className="absolute -bottom-10 -left-10 bg-green text-navy p-10 rounded-2xl shadow-2xl border-4 border-navy border-t-0 animate-bounce-slow">
+                <p className="text-6xl font-bold tracking-tighter mb-2">100%</p>
+                <p className="text-xs uppercase font-bold tracking-widest opacity-80">Job Success Rate</p>
+              </div>
+            </div>
           </div>
         </div>
       </section>

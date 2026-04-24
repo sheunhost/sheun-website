@@ -117,9 +117,9 @@ const services = [
   {
     id: "cro",
     icon: Target,
-    title: "Conversion Optimization",
-    desc: "Data-driven UI/UX improvements to turn more visitors into paying customers.",
-    fullDesc: "Stop leaving money on the table. We analyze user recordings, run A/B tests, and optimize your funnel to increase your conversion rate and average order value.",
+    title: "Conversion Rate Optimization (CRO) Audit",
+    desc: "A deep, data-driven analysis of your store's user behavior, providing a strategic roadmap of UI/UX improvements to increase your sales without increasing traffic.",
+    fullDesc: "Increase your sales without increasing traffic. I perform a deep, data-driven analysis of your store's user behavior and provide a strategic roadmap of UI/UX improvements.",
     includes: ["UX Audit", "A/B Testing", "Heatmap Analysis", "Funnel Optimization"],
     price: "$800",
     timeline: "3 Weeks",
@@ -149,12 +149,29 @@ const services = [
       { title: "Speed Check", desc: "Ensuring the app script doesn't drop your Lighthouse score." },
       { title: "Handover", desc: "Training you on how to use the new dashboard." }
     ]
+  },
+  {
+    id: "speed",
+    icon: Zap,
+    title: "Shopify Speed Optimization",
+    desc: "Lightning-fast page loads to improve Google rankings and customer retention.",
+    fullDesc: "Every second of delay costs you sales. I optimize your theme code, compress assets, and prune heavy apps to get your store to a 90+ score on Core Web Vitals.",
+    includes: ["Core Web Vitals", "Image optimization", "Code minification", "App audit"],
+    price: "$400",
+    timeline: "1 Week",
+    tag: "Performance",
+    roadmap: [
+      { title: "Speed Audit", desc: "Identifying the specific bottlenecks slowing down your store." },
+      { title: "Image & Asset Optimization", desc: "Compressing and lazy-loading heavy visual content." },
+      { title: "Code Cleanup", desc: "Minifying CSS/JS and removing unused theme fragments." },
+      { title: "App Script Pruning", desc: "Deferring heavy app scripts to improve initial load time." },
+      { title: "Performance Reports", desc: "Final testing across mobile and desktop with before/after data." }
+    ]
   }
 ];
 
 const faqs = [
   { q: "How long does a Shopify store build take?", a: "Typically, a complete store build takes between 5 to 10 days depending on the complexity and number of products." },
-  { q: "Do you work with clients outside Nigeria?", a: "Yes, I work with clients globally, with a significant portion of my client base located in the United States and Europe." },
   { q: "What platforms can you migrate from?", a: "I can migrate from WooCommerce, Wix, Squarespace, BigCommerce, and custom-built platforms." },
   { q: "Do you offer ongoing support after launch?", a: "Absolutely. I offer maintenance packages and support to ensure your store continues to run smoothly after launch." },
   { q: "What's included in the free store audit?", a: "The audit includes a review of your store's speed, design/UX, SEO health, and conversion rate optimization tips." },
@@ -499,6 +516,18 @@ export default function Services() {
                 <ShieldCheck size={18} />
                 <span className="text-[10px] font-bold uppercase tracking-widest text-white/60">Trust Guaranteed</span>
               </div>
+            </div>
+
+            <div className="pt-12 flex items-center justify-center gap-4">
+              <a href="https://www.linkedin.com/in/sheun-hub-26b876321" target="_blank" rel="noopener noreferrer" className="p-4 bg-white/10 hover:bg-green hover:text-navy text-white rounded-full transition-all border border-white/10 flex items-center justify-center shrink-0">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
+              </a>
+              <a href="https://wa.me/2348084315743" target="_blank" rel="noopener noreferrer" className="p-4 bg-white/10 hover:bg-green hover:text-navy text-white rounded-full transition-all border border-white/10 flex items-center justify-center shrink-0">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              </a>
+              <a href="mailto:sheunhost@gmail.com" className="p-4 bg-white/10 hover:bg-green hover:text-navy text-white rounded-full transition-all border border-white/10 flex items-center justify-center shrink-0">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+              </a>
             </div>
           </motion.div>
         </div>

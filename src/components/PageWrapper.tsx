@@ -44,6 +44,8 @@ export default function PageWrapper({
         <meta name="description" content={description || defaultDesc} />
         {keywords && <meta name="keywords" content={keywords} />}
         <link rel="canonical" href={canonicalUrl} />
+        <link rel="icon" href="/favicon.ico" />
+        <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
         
         {/* Open Graph / Facebook */}
         <meta property="og:type" content="website" />

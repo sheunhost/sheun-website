@@ -1,5 +1,5 @@
 import { motion, AnimatePresence } from "framer-motion";
-import { Facebook,  ExternalLink, Star, ShoppingBag, Globe, Trophy, ArrowRight, Info, X  } from "lucide-react";
+import { Facebook,  ExternalLink, Star, ShoppingBag, Globe, Trophy, ArrowRight, Info, X, MessageCircle, Mail  } from "lucide-react";
 import PageWrapper from "../components/PageWrapper";
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
@@ -258,7 +258,7 @@ export default function Portfolio() {
       <section className="py-24 bg-white min-h-screen">
         <div className="container mx-auto px-6">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {projects.map((project, i) => (
+            {projects.filter(p => p.image && p.image.trim() !== "").map((project, i) => (
               <div 
                 key={`gallery-${i}`} 
                 className="relative rounded-2xl overflow-hidden cursor-pointer group hover:shadow-2xl transition-all border border-navy/5"
@@ -268,15 +268,13 @@ export default function Portfolio() {
               >
                 <img 
                   src={project.image} 
-                  alt={project.name} 
+                  alt="Sheun Hub Portfolio Design" 
                   referrerPolicy="no-referrer"
-                  className="w-full h-[400px] object-contain bg-light group-hover:scale-105 transition-transform duration-700 p-4"
+                  className="w-full h-[400px] object-cover object-top bg-light group-hover:scale-105 transition-transform duration-700"
                   loading="lazy"
                 />
-                <div className="absolute inset-0 bg-navy/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center p-6 text-center">
-                  <span className="text-green font-bold text-xs uppercase tracking-widest mb-2">{project.category}</span>
-                  <h3 className="text-white text-2xl font-bold mb-4">{project.name}</h3>
-                  <span className="text-white font-bold text-sm bg-white/10 px-6 py-3 rounded-full backdrop-blur-sm border border-white/20">
+                <div className="absolute inset-0 bg-navy/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center p-6 text-center backdrop-blur-sm">
+                  <span className="text-white font-bold text-sm bg-white/20 px-6 py-3 rounded-full backdrop-blur-md border border-white/20 shadow-lg">
                     View Full Screen
                   </span>
                 </div>
@@ -290,6 +288,32 @@ export default function Portfolio() {
               <strong className="text-navy font-sans not-italic font-bold uppercase tracking-widest text-xs block mb-2">Disclaimer</strong>
               All store concepts above are original designs created by Sheun Hub for demonstration purposes only. None are real brands. Your store will be uniquely designed to match your vision and niche.
             </p>
+          </div>
+
+          <div className="mt-24 bg-navy-gradient rounded-3xl p-16 md:p-24 text-center space-y-10 relative overflow-hidden">
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,_rgba(103,255,193,0.15)_0%,_transparent_70%)]" />
+            <div className="relative z-10 max-w-3xl mx-auto space-y-8">
+              <h2 className="text-5xl md:text-7xl font-bold text-white tracking-tighter leading-none">
+                Ready to build <br />
+                <span className="italic font-serif font-light text-white/50">your vision?</span>
+              </h2>
+              <div className="flex flex-col sm:flex-row justify-center items-center gap-6 pt-4">
+                <Link to="/apply#apply-form" className="bg-green text-navy px-12 py-5 rounded-full font-bold text-lg hover:bg-white transition-colors w-full sm:w-auto shadow-xl">
+                  Start a Project
+                </Link>
+                <div className="flex items-center gap-4">
+                  <a href="https://www.linkedin.com/in/sheun-hub-26b876321" target="_blank" rel="noopener noreferrer" className="p-4 bg-white/10 hover:bg-green hover:text-navy text-white rounded-full transition-all border border-white/10 shrink-0">
+                    <Globe size={24} />
+                  </a>
+                  <a href="https://wa.me/2348084315743" target="_blank" rel="noopener noreferrer" className="p-4 bg-white/10 hover:bg-green hover:text-navy text-white rounded-full transition-all border border-white/10 shrink-0">
+                    <MessageCircle size={24} />
+                  </a>
+                  <a href="mailto:sheunhost@gmail.com" className="p-4 bg-white/10 hover:bg-green hover:text-navy text-white rounded-full transition-all border border-white/10 shrink-0">
+                    <Mail size={24} />
+                  </a>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
