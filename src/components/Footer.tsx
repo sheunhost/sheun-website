@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { ShieldCheck } from "lucide-react";
+import { ShieldCheck, Search, HeadphonesIcon, Lock } from "lucide-react";
 import ConfigChecker from "./ConfigChecker";
 
 export default function Footer() {
@@ -62,7 +62,29 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="pt-12 border-t border-white/5 flex flex-col md:flex-row items-center justify-between gap-8">
+        {/* Trust Badges */}
+        <div className="flex flex-wrap justify-between items-center gap-8 mb-12 py-10 border-y border-white/5">
+          <div className="flex items-center gap-4">
+            <div className="w-12 h-12 rounded-full flex items-center justify-center bg-white/5 text-green border border-white/10 group-hover:bg-green group-hover:text-navy transition-all">
+              <Search size={22} />
+            </div>
+            <span className="text-white/80 font-medium tracking-wide">Free Store Audit</span>
+          </div>
+          <div className="flex items-center gap-4">
+            <div className="w-12 h-12 rounded-full flex items-center justify-center bg-white/5 text-green border border-white/10 group-hover:bg-green group-hover:text-navy transition-all">
+              <HeadphonesIcon size={22} />
+            </div>
+            <span className="text-white/80 font-medium tracking-wide">24/7 Support</span>
+          </div>
+          <div className="flex items-center gap-4">
+            <div className="w-12 h-12 rounded-full flex items-center justify-center bg-white/5 text-green border border-white/10 group-hover:bg-green group-hover:text-navy transition-all">
+              <Lock size={22} />
+            </div>
+            <span className="text-white/80 font-medium tracking-wide">100% Secure Checkout</span>
+          </div>
+        </div>
+
+        <div className="pt-6 flex flex-col md:flex-row items-center justify-between gap-8">
           <p className="text-xs text-white/20 font-medium text-center md:text-left">
             © 2026 Sheun Hub. All rights reserved.
           </p>

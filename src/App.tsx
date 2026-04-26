@@ -21,6 +21,7 @@ import BlogPost from "./pages/BlogPost";
 import Chatbot from "./components/Chatbot";
 import ScrollToTop from "./components/ScrollToTop";
 import ScrollToTopOnNavigation from "./components/ScrollToTopOnNavigation";
+import FloatingCalendly from "./components/FloatingCalendly";
 
 export default function App() {
   return (
@@ -47,6 +48,7 @@ export default function App() {
         </main>
         <Footer />
         <Chatbot />
+        <FloatingCalendly />
         <ScrollToTop />
       </div>
     </Router>

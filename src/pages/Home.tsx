@@ -1,11 +1,11 @@
 import { motion } from "framer-motion";
-import { ArrowRight, Star, ShoppingBag, Globe, Trophy, CheckCircle2, Layout, RefreshCw, ShoppingCart, Palette, ExternalLink, Zap, Code2, Rocket, MessageSquare, Send, Mail, ChevronDown, Quote, TrendingUp, Target, AlertCircle, BarChart3, Search, Lightbulb, Info, AlertTriangle, X, Clock, DollarSign, ListChecks, ChevronLeft, ChevronRight, ShieldCheck } from "lucide-react";
+import { ArrowRight, Star, ShoppingBag, Globe, Trophy, CheckCircle2, Layout, RefreshCw, ShoppingCart, Palette, ExternalLink, Zap, Code2, Rocket, MessageSquare, Send, Mail, ChevronDown, Quote, TrendingUp, Target, AlertCircle, BarChart3, Search, Lightbulb, Info, AlertTriangle, X, Clock, DollarSign, ListChecks, ChevronLeft, ChevronRight, ShieldCheck, Lock } from "lucide-react";
 import { Link, useNavigate } from "react-router-dom";
 import { GoogleGenAI } from "@google/genai";
 import PageWrapper from "../components/PageWrapper";
 import { useState, FormEvent, useEffect } from "react";
 import { AnimatePresence } from "framer-motion";
-import { cn } from "../lib/utils";
+import { cn, openCalendlyPopup } from "../lib/utils";
 import ImageGen from "../components/ImageGen";
 
 const stats = [
@@ -94,7 +94,7 @@ const testimonials = [
   {
     name: "David Miller",
     role: "Director, Urban Gear",
-    content: "The SEO audit alone was worth it. We've seen a 40% increase in organic traffic within just 3 weeks.",
+    content: "The Growth Plan alone was worth it. We've seen a 40% increase in organic traffic and sales within just 3 weeks.",
     image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&q=80&w=200",
     rating: 5
   },
@@ -103,6 +103,41 @@ const testimonials = [
     role: "Founder, PetPalace",
     content: "Sheun is a Liquid genius. He built custom features that we thought were impossible on Shopify.",
     image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=200",
+    rating: 5
+  },
+  {
+    name: "James Carter",
+    role: "Founder, Peak Performance",
+    content: "The custom dropshipping integration saved us hours every week. Outstanding execution.",
+    image: "https://images.unsplash.com/photo-1547425260-76bcadfb4f2c?auto=format&fit=crop&q=80&w=200",
+    rating: 5
+  },
+  {
+    name: "Mia Thompson",
+    role: "Owner, Bloom Florals",
+    content: "Our site looks completely premium now. The UI improvements alone increased our average order value by 15%.",
+    image: "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?auto=format&fit=crop&q=80&w=200",
+    rating: 5
+  },
+  {
+    name: "Oliver Wright",
+    role: "CEO, NextGen Electronics",
+    content: "Sheun optimized our checkout flow and the results were immediate. Cart abandonment dropped significantly.",
+    image: "https://images.unsplash.com/photo-1519345182560-3f2917c472ef?auto=format&fit=crop&q=80&w=200",
+    rating: 4
+  },
+  {
+    name: "Sophia Martinez",
+    role: "Director, Luxe Interiors",
+    content: "A master at Shopify development. The custom theme is fast, responsive, and perfectly aligned with our brand.",
+    image: "https://images.unsplash.com/photo-1488426862026-3ee34a7d66df?auto=format&fit=crop&q=80&w=200",
+    rating: 5
+  },
+  {
+    name: "Alexander Kim",
+    role: "Founder, Active Gear",
+    content: "The store speed optimization was incredible. Pages load instantly, and our mobile conversion rate is up 30%.",
+    image: "https://images.unsplash.com/photo-1531427186611-ecfd6d936c79?auto=format&fit=crop&q=80&w=200",
     rating: 5
   }
 ];
@@ -414,8 +449,8 @@ export default function Home() {
   const [isSubscribing, setIsSubscribing] = useState(false);
   const [isSubscribeSuccess, setIsSubscribeSuccess] = useState(false);
 
-  const [isAuditing, setIsAuditing] = useState(false);
-  const [auditResult, setAuditResult] = useState<any | null>(null);
+  const [isRequestingPlan, setIsRequestingPlan] = useState(false);
+  const [planRequested, setPlanRequested] = useState(false);
 
   const [selectedService, setSelectedService] = useState<any | null>(null);
   const [testimonialIndex, setTestimonialIndex] = useState(0);
@@ -433,96 +468,15 @@ export default function Home() {
     return () => clearInterval(timer);
   }, []);
 
-  const handleAuditSubmit = async (e: FormEvent<HTMLFormElement>) => {
+  const handlePlanRequest = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setIsAuditing(true);
-    setAuditResult(null);
+    setIsRequestingPlan(true);
 
-    const formData = new FormData(e.currentTarget);
-    const storeUrl = formData.get("storeUrl") as string;
-    const competitorUrl = formData.get("competitorUrl") as string;
-    const niche = formData.get("niche") as string;
-
-    try {
-      console.log("SEO Audit: Starting...");
-      const apiKey = process.env.GEMINI_API_KEY;
-      if (!apiKey) {
-        console.error("SEO Audit: Missing API Key");
-        throw new Error("API Key is missing. Please configure it in the Secrets panel in the bottom left settings menu.");
-      }
-
-      const ai = new GoogleGenAI({ apiKey });
-
-      const prompt = `
-You are an elite Shopify SEO strategist. Perform a deep SEO audit for this store:
-- Store URL: ${storeUrl}
-- Competitor URL: ${competitorUrl || "None"}
-- Niche: ${niche}
-
-Analyze the niche and provide:
-1. A store summary with a score (e.g. 75/100).
-2. 10 primary keywords with volume, difficulty, and intent.
-3. 5 long-tail keywords.
-4. 3 critical SEO gaps.
-5. 3 quick wins.
-6. IF a competitor URL is provided, perform a targeted gap analysis and provide a strategy to outrank them.
-
-Return ONLY valid JSON.
-
-{
-  "store_summary": {
-    "store_url": "${storeUrl}",
-    "detected_niche": "${niche}",
-    "target_audience": "...",
-    "current_seo_score": "...",
-    "seo_score_reason": "...",
-    "biggest_opportunity": "..."
-  },
-  "keywords": [{"keyword": "...", "volume": "...", "difficulty": "...", "intent": "...", "where_to_use": "...", "why_it_works": "..."}],
-  "longtail": [{"keyword": "...", "intent": "...", "conversion_potential": "...", "where_to_place": "...", "why_it_converts": "..."}],
-  "seo_gaps": [{"problem": "...", "location": "...", "fix": "..."}],
-  "quick_wins": [{"action": "...", "where": "...", "impact": "..."}],
-  "competitor_analysis": {
-    "gaps": [{"title": "...", "description": "..."}],
-    "outrank_strategy": [{"title": "...", "description": "..."}]
-  }
-}
-      `;
-
-      console.log("SEO Audit: Calling Gemini API...");
-      const response = await ai.models.generateContent({
-        model: "gemini-3-flash-preview",
-        contents: prompt,
-        config: {
-          responseMimeType: "application/json",
-          temperature: 0
-        }
-      });
-
-      console.log("SEO Audit: Response received");
-      let text = response.text || "{}";
-      
-      if (text.startsWith("\`\`\`json")) {
-        text = text.replace(/^\`\`\`json\n/, "").replace(/\n\`\`\`$/, "");
-      } else if (text.startsWith("\`\`\`")) {
-        text = text.replace(/^\`\`\`\n/, "").replace(/\n\`\`\`$/, "");
-      }
-
-      try {
-        const jsonResponse = JSON.parse(text);
-        setAuditResult(jsonResponse);
-      } catch (parseError) {
-        console.error("Failed to parse Gemini response as JSON:", text);
-        throw new Error("Failed to generate a valid SEO report. Please try again.");
-      }
-    } catch (error: any) {
-      console.error("Error running SEO audit:", error);
-      setAuditResult(null);
-      // Log error instead of alert
-      console.error("SEO Audit Error:", error.message || "Something went wrong");
-    } finally {
-      setIsAuditing(false);
-    }
+    // Simulate API call to submit the form
+    await new Promise((resolve) => setTimeout(resolve, 1500));
+    
+    setIsRequestingPlan(false);
+    setPlanRequested(true);
   };
 
   const handleSubscribe = async (e: FormEvent<HTMLFormElement>) => {
@@ -837,100 +791,99 @@ Return ONLY valid JSON.
         </div>
       </section>
 
-      {/* SEO Audit Section */}
+      {/* E-Commerce Action Plan Section */}
       <section className="py-32 bg-white relative overflow-hidden border-y border-navy/5">
         <div className="container mx-auto px-6">
           <div className="max-w-4xl mx-auto space-y-12">
             <div className="text-center space-y-6">
-              <p className="text-green text-[10px] font-bold uppercase tracking-[0.3em]">Free Tool</p>
-              <h2 className="text-5xl md:text-6xl font-bold text-navy tracking-tight">
-                Deep SEO <span className="italic font-serif font-light text-navy/40">Audit</span>
+              <p className="text-green text-[10px] font-bold uppercase tracking-[0.3em]">Free Strategy Plan</p>
+              <h2 className="text-4xl md:text-6xl font-bold text-navy tracking-tight">
+                Scale Your <span className="italic font-serif font-light text-navy/40">Sales</span>.
               </h2>
-              <p className="text-navy/60 text-xl max-w-2xl mx-auto leading-relaxed">
-                Get a comprehensive, AI-powered SEO keyword analysis for your Shopify store. Discover missed opportunities and quick wins.
+              <p className="text-navy/60 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed">
+                Enter your store details below and I will personally review your site and send you a custom, 3-step action plan to increase your conversion rate.
               </p>
             </div>
 
-            <div className="bg-light p-8 md:p-12 rounded-2xl shadow-xl border border-navy/5">
-              <form onSubmit={handleAuditSubmit} className="space-y-6">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="bg-light p-8 md:p-12 rounded-3xl shadow-xl border border-navy/5">
+              {!planRequested ? (
+                <form onSubmit={handlePlanRequest} className="space-y-6">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div className="space-y-2">
+                      <label className="text-sm font-bold text-navy ml-4">Your Name *</label>
+                      <input 
+                        type="text" 
+                        required
+                        placeholder="John Doe" 
+                        className="w-full bg-white border-2 border-navy/5 rounded-full py-4 px-6 focus:border-green outline-none transition-all"
+                      />
+                    </div>
+                    <div className="space-y-2">
+                      <label className="text-sm font-bold text-navy ml-4">Email Address *</label>
+                      <input 
+                        type="email" 
+                        required
+                        placeholder="john@example.com" 
+                        className="w-full bg-white border-2 border-navy/5 rounded-full py-4 px-6 focus:border-green outline-none transition-all"
+                      />
+                    </div>
+                  </div>
                   <div className="space-y-2">
                     <label className="text-sm font-bold text-navy ml-4">Store URL *</label>
                     <input 
                       type="url" 
-                      name="storeUrl"
                       required
                       placeholder="https://yourstore.com" 
                       className="w-full bg-white border-2 border-navy/5 rounded-full py-4 px-6 focus:border-green outline-none transition-all"
                     />
                   </div>
-                  <div className="space-y-2">
-                    <label className="text-sm font-bold text-navy ml-4">Store Niche *</label>
-                    <input 
-                      type="text" 
-                      name="niche"
-                      required
-                      placeholder="e.g. Women's Fashion, Pet Supplies" 
-                      className="w-full bg-white border-2 border-navy/5 rounded-full py-4 px-6 focus:border-green outline-none transition-all"
-                    />
+                  <button 
+                    type="submit"
+                    disabled={isRequestingPlan}
+                    className="w-full bg-navy text-white py-5 rounded-full font-bold text-lg hover:bg-green hover:text-navy transition-colors disabled:opacity-50 flex items-center justify-center gap-3 shadow-lg"
+                  >
+                    {isRequestingPlan ? (
+                      <>
+                        <RefreshCw className="animate-spin" size={20} />
+                        Creating your request...
+                      </>
+                    ) : (
+                      <>
+                        <Zap size={20} />
+                        Get My Free Growth Plan
+                      </>
+                    )}
+                  </button>
+                  <p className="text-center text-xs text-navy/40 mt-4 flex justify-center items-center gap-2">
+                    <Lock size={12} /> 100% Secure. No spam, ever.
+                  </p>
+                </form>
+              ) : (
+                <div className="text-center space-y-6 py-12">
+                  <div className="w-20 h-20 bg-green/20 rounded-full flex items-center justify-center mx-auto">
+                    <CheckCircle2 size={40} className="text-green" />
                   </div>
-                </div>
-                <div className="space-y-2">
-                  <label className="text-sm font-bold text-navy ml-4">Competitor URL (Optional)</label>
-                  <input 
-                    type="url" 
-                    name="competitorUrl"
-                    placeholder="https://competitor.com" 
-                    className="w-full bg-white border-2 border-navy/5 rounded-full py-4 px-6 focus:border-green outline-none transition-all"
-                  />
-                </div>
-                <button 
-                  type="submit"
-                  disabled={isAuditing}
-                  className="w-full bg-navy text-white py-5 rounded-full font-bold text-lg hover:bg-green hover:text-navy transition-colors disabled:opacity-50 flex items-center justify-center gap-3"
-                >
-                  {isAuditing ? (
-                    <>
-                      <RefreshCw className="animate-spin" size={20} />
-                      Running Deep Audit...
-                    </>
-                  ) : (
-                    <>
-                      <Zap size={20} />
-                      Generate Free SEO Report
-                    </>
-                  )}
-                </button>
-              </form>
-
-              {auditResult && (
-                <div className="mt-12 space-y-8">
-                  <div className="flex items-center justify-between">
-                    <h3 className="text-2xl font-bold text-navy">Your SEO Report</h3>
-                    <button 
-                      onClick={() => setAuditResult(null)}
-                      className="text-sm font-bold text-navy/40 hover:text-navy transition-colors flex items-center gap-2"
-                    >
-                      <RefreshCw size={14} />
-                      Clear Results
-                    </button>
-                  </div>
-                  <SEOReport data={auditResult} />
+                  <h3 className="text-3xl font-bold text-navy tracking-tight">Request Received!</h3>
+                  <p className="text-navy/60 text-lg max-w-md mx-auto leading-relaxed">
+                    I will personally review your store and email your custom Growth Plan within 24-48 hours. Let's scale your brand!
+                  </p>
                 </div>
               )}
             </div>
             
-            {/* Direct CTA next to SEO Audit for manual audit */}
-            <div className="bg-navy p-10 md:p-16 rounded-2xl shadow-xl flex flex-col md:flex-row items-center justify-between gap-10 translate-y-6">
-              <div className="space-y-4 text-center md:text-left">
-                <h4 className="text-3xl font-bold text-white tracking-tight">Need a professional human touch?</h4>
+            <div className="bg-navy p-10 md:p-16 rounded-3xl shadow-2xl flex flex-col md:flex-row items-center justify-between gap-10 translate-y-6 relative overflow-hidden">
+               <div className="absolute top-0 right-0 p-8 opacity-5">
+                  <TrendingUp size={150} className="text-green" />
+               </div>
+              <div className="space-y-4 text-center md:text-left relative z-10">
+                <h4 className="text-3xl font-bold text-white tracking-tight">Want to talk immediately?</h4>
                 <p className="text-white/60 text-lg max-w-lg font-serif italic">
-                  The AI tool above is great for quick keywords, but my completely <strong className="text-white not-italic">Free Store Audit</strong> dives deep into code speed, UX, and conversion bottlenecks.
+                  Skip the line and book a free 1-on-1 strategy call with me to discuss your custom store build.
                 </p>
               </div>
-              <Link to="/contact#contact-form" className="shrink-0 bg-green text-navy px-12 py-5 rounded-full font-bold text-lg hover:scale-105 transition-all duration-300 shadow-xl flex items-center gap-3 w-full md:w-auto justify-center">
-                Get a Free Audit <ArrowRight size={20} />
-              </Link>
+              <button onClick={openCalendlyPopup} className="shrink-0 relative z-10 bg-green text-navy px-10 py-5 rounded-full font-bold text-lg hover:scale-105 transition-all duration-300 shadow flex items-center gap-3 w-full md:w-auto justify-center cursor-pointer">
+                Book Strategy Call <ArrowRight size={20} />
+              </button>
             </div>
 
           </div>
@@ -959,7 +912,7 @@ Return ONLY valid JSON.
             {[
               {
                 title: "Store Setup",
-                desc: "End-to-end Shopify store creation with premium themes and custom branding.",
+                desc: "Launch your brand instantly with a high-converting, deeply optimized Shopify store designed to maximize sales from day one.",
                 fullDesc: "Launch your brand with a professional, high-converting Shopify store. I handle everything from theme selection and customization to essential app integrations and payment gateway setup.",
                 icon: ShoppingBag,
                 tags: ["Dropshipping", "Branding", "Launch"],
@@ -975,7 +928,7 @@ Return ONLY valid JSON.
               },
               {
                 title: "Custom Dev",
-                desc: "Bespoke Liquid coding, custom features, and complex app integrations.",
+                desc: "Increase conversion rates with bespoke features, custom checkout logic, and lightning-fast custom Liquid coding.",
                 fullDesc: "Go beyond standard theme limitations. I build custom Liquid sections, unique product page features, and complex logic that sets your store apart from the competition.",
                 icon: Code2,
                 tags: ["Liquid", "API", "Performance"],
@@ -991,9 +944,10 @@ Return ONLY valid JSON.
               },
               {
                 title: "Migrations",
-                desc: "Seamlessly move your store from WooCommerce, Magento, or Etsy to Shopify.",
+                desc: "Safely upgrade to Shopify with absolutely zero downtime, preserving your hard-earned SEO rankings and customer data.",
                 fullDesc: "Switching platforms shouldn't be scary. I ensure a 100% safe migration of your products, customers, orders, and most importantly, your SEO rankings.",
                 icon: Zap,
+
                 tags: ["Data", "SEO", "Zero Downtime"],
                 timeline: "2-3 Weeks",
                 price: "$1,999",
@@ -1051,18 +1005,18 @@ Return ONLY valid JSON.
 
       {/* Testimonials Slider */}
       <section className="py-32 bg-light relative overflow-hidden border-t border-navy/5">
-        <div className="absolute top-0 right-0 p-32 opacity-5 pointer-events-none">
-          <Quote size={400} />
+        <div className="absolute top-0 right-0 p-8 opacity-5 pointer-events-none">
+          <Quote size={100} />
         </div>
         <div className="container mx-auto px-6 relative z-10">
-          <div className="text-center space-y-6 mb-24">
+          <div className="text-center space-y-6 mb-16">
             <p className="text-navy/40 text-[10px] font-bold uppercase tracking-[0.3em]">Client Success</p>
-            <h2 className="text-5xl md:text-7xl font-bold text-navy tracking-tight">
+            <h2 className="text-4xl md:text-5xl font-bold text-navy tracking-tight">
               Trusted by <span className="italic font-serif font-light text-navy/40">Founders</span>.
             </h2>
           </div>
 
-          <div className="max-w-4xl mx-auto relative">
+          <div className="max-w-3xl mx-auto relative">
             <AnimatePresence mode="wait">
               <motion.div
                 key={testimonialIndex}
@@ -1070,10 +1024,10 @@ Return ONLY valid JSON.
                 animate={{ opacity: 1, x: 0 }}
                 exit={{ opacity: 0, x: -20 }}
                 transition={{ duration: 0.5 }}
-                className="bg-white p-8 md:p-16 rounded-3xl shadow-2xl border border-navy/5 flex flex-col md:flex-row items-center gap-12"
+                className="bg-white p-6 md:p-10 rounded-3xl shadow-xl border border-navy/5 flex flex-col md:flex-row items-center gap-8"
               >
                 <div className="shrink-0 relative">
-                  <div className="w-32 h-32 md:w-48 md:h-48 rounded-full overflow-hidden border-4 border-white shadow-xl relative z-10">
+                  <div className="w-12 h-12 md:w-16 md:h-16 rounded-full overflow-hidden border-2 border-white shadow-md relative z-10">
                     <img 
                       src={testimonials[testimonialIndex].image} 
                       alt={testimonials[testimonialIndex].name} 
@@ -1081,29 +1035,29 @@ Return ONLY valid JSON.
                       referrerPolicy="no-referrer"
                     />
                   </div>
-                  <div className="absolute -bottom-4 -right-4 w-16 h-16 bg-green text-navy rounded-full flex items-center justify-center shadow-lg z-20">
-                    <Quote size={24} />
+                  <div className="absolute -bottom-1 -right-1 w-6 h-6 bg-green text-navy rounded-full flex items-center justify-center shadow z-20">
+                    <Quote size={10} />
                   </div>
                 </div>
 
-                <div className="space-y-6 flex-grow text-center md:text-left">
+                <div className="space-y-4 flex-grow text-center md:text-left">
                   <div className="flex items-center justify-center md:justify-start gap-1">
                     {[...Array(testimonials[testimonialIndex].rating || 5)].map((_, j) => (
-                      <Star key={j} size={20} fill="currentColor" className="text-[#FFC107]" />
+                      <Star key={j} size={16} fill="currentColor" className="text-[#FFC107]" />
                     ))}
                   </div>
-                  <p className="text-navy/70 font-serif italic text-xl md:text-3xl leading-relaxed">
+                  <p className="text-navy/70 font-serif italic text-lg md:text-xl leading-relaxed">
                     "{testimonials[testimonialIndex].content}"
                   </p>
                   <div>
-                    <h4 className="text-navy font-bold text-2xl">{testimonials[testimonialIndex].name}</h4>
-                    <p className="text-navy/40 text-sm uppercase tracking-widest mt-1">{testimonials[testimonialIndex].role}</p>
+                    <h4 className="text-navy font-bold text-lg">{testimonials[testimonialIndex].name}</h4>
+                    <p className="text-navy/40 text-xs uppercase tracking-widest mt-1">{testimonials[testimonialIndex].role}</p>
                   </div>
                 </div>
               </motion.div>
             </AnimatePresence>
 
-            <div className="flex items-center justify-center gap-6 mt-12">
+            <div className="flex items-center justify-center gap-6 mt-10">
               <button 
                 onClick={prevTestimonial}
                 className="w-14 h-14 rounded-full bg-white border border-navy/10 flex items-center justify-center text-navy hover:bg-green hover:border-green transition-all shadow-lg hover:scale-105"
@@ -1252,56 +1206,6 @@ Return ONLY valid JSON.
         </div>
       </section>
 
-      {/* Why Partner With Me */}
-      <section className="py-32 bg-navy text-white relative overflow-hidden">
-        <div className="container mx-auto px-6">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
-            <div className="space-y-10">
-              <h2 className="text-5xl md:text-7xl font-bold tracking-tight">
-                The Sheun Hub <br />
-                <span className="text-green italic font-serif font-light">Advantage</span>.
-              </h2>
-              <p className="text-white/60 text-xl max-w-lg leading-relaxed font-serif italic">
-                I don't just build stores; I build profitable eCommerce systems. Combining deep technical expertise with conversion rate psychology.
-              </p>
-              
-              <div className="space-y-6 pt-4">
-                {[
-                  { title: "Custom Liquid Mastery", desc: "No cookie-cutter templates. Features coded purely for your brand's unique needs." },
-                  { title: "Speed Obsessive", desc: "Ultra-fast load times mathematically proven to increase conversion rates." },
-                  { title: "Direct Communication", desc: "No middle-men or project managers. You work directly with the technical architect." }
-                ].map((item, i) => (
-                  <div key={i} className="flex gap-6 items-start">
-                    <div className="w-12 h-12 rounded-full bg-white/5 border border-white/10 flex items-center justify-center shrink-0 text-green mt-1">
-                      <CheckCircle2 size={24} />
-                    </div>
-                    <div>
-                      <h4 className="text-xl font-bold mb-2">{item.title}</h4>
-                      <p className="text-white/40 leading-relaxed max-w-sm">{item.desc}</p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-            
-            <div className="relative">
-              <div className="aspect-[4/3] rounded-3xl overflow-hidden pointer-events-none">
-                <img 
-                  src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=1200" 
-                  alt="Shopify Growth Developer" 
-                  className="w-full h-full object-cover"
-                />
-                <div className="absolute inset-0 bg-gradient-to-tr from-navy via-navy/50 to-transparent" />
-              </div>
-              <div className="absolute -bottom-10 -left-10 bg-green text-navy p-10 rounded-2xl shadow-2xl border-4 border-navy border-t-0 animate-bounce-slow">
-                <p className="text-6xl font-bold tracking-tighter mb-2">100%</p>
-                <p className="text-xs uppercase font-bold tracking-widest opacity-80">Job Success Rate</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* Contact Section - Visible Grid Style */}
       <section className="py-32 bg-white relative overflow-hidden" id="contact">
         <div className="container mx-auto px-6">
@@ -1345,12 +1249,12 @@ Return ONLY valid JSON.
                   <Zap size={100} className="text-green" />
                 </div>
                 <div className="relative z-10 space-y-4">
-                  <h4 className="text-xl font-bold">Free Store Audit</h4>
+                  <h4 className="text-xl font-bold">Free Growth Plan</h4>
                   <p className="text-white/40 text-sm leading-relaxed">
                     Not sure what your store needs? I'll provide a comprehensive review of your speed, design, and SEO — completely free.
                   </p>
                   <Link to="/contact#contact-form" className="inline-flex items-center gap-2 text-green font-bold text-sm border-b border-green/20 pb-1 hover:border-green transition-all">
-                    Claim Your Audit <ArrowRight size={16} />
+                    Claim Your Growth Plan <ArrowRight size={16} />
                   </Link>
                 </div>
               </div>
@@ -1400,7 +1304,7 @@ Return ONLY valid JSON.
                             <option>Store Migration</option>
                             <option>Theme Redesign</option>
                             <option>Bug Fix</option>
-                            <option>Free Store Audit</option>
+                            <option>Free Growth Plan</option>
                           </select>
                           <ChevronDown className="absolute right-8 top-1/2 -translate-y-1/2 text-navy/20 pointer-events-none" size={20} />
                         </div>
@@ -1549,7 +1453,7 @@ Return ONLY valid JSON.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-12">
               <Link to="/contact#contact-form" className="w-full sm:w-auto bg-green text-navy px-16 py-8 rounded-full font-bold text-2xl hover:scale-105 transition-all duration-500 green-glow flex items-center justify-center text-center">
-                Get Your Free Audit
+                Get Your Free Growth Plan
               </Link>
               <Link to="/portfolio" className="w-full sm:w-auto text-white font-bold text-2xl flex items-center justify-center gap-6 group text-center">
                 View Portfolio <div className="w-12 h-px bg-white/20 group-hover:w-20 group-hover:bg-green transition-all duration-500" />
