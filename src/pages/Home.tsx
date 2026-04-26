@@ -754,6 +754,9 @@ export default function Home() {
                     <a href="https://www.linkedin.com/in/sheun-hub-26b876321" target="_blank" rel="noopener noreferrer" className="p-2 bg-white/5 hover:bg-green hover:text-navy rounded-full text-white transition-all flex items-center justify-center overflow-hidden" title="LinkedIn">
                       <img src="https://images.rawpixel.com/image_png_social_square/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvdjk4Mi1kMS0xMC5wbmc.png" alt="LinkedIn" className="w-5 h-5 object-contain" />
                     </a>
+                    <a href="https://www.upwork.com/freelancers/~017eb19011cd354946" target="_blank" rel="noopener noreferrer" className="p-2 bg-white/5 hover:bg-green hover:text-navy rounded-full text-white transition-all flex items-center justify-center overflow-hidden" title="Upwork">
+                      <svg viewBox="0 0 24 24" className="w-5 h-5 fill-current"><path d="M17.41,6.58A6.36,6.36,0,0,0,13.15,8.8c-1.39,1.79-2.18,4.28-2.61,6.1l-1.42-3.88H6.55V6.63H4.07v4.39a3.15,3.15,0,0,1-3.15,3.15v2.48a5.63,5.63,0,0,0,5.63-5.63V6.63h2.48v4.61l2,5.55L9.66,22h2.57l1.1-3.48h0a10.82,10.82,0,0,0,4.08,1.48v-2.3a8.68,8.68,0,0,1-3.16-1l1.1-2.92a6.47,6.47,0,0,0,2.06.35,3.87,3.87,0,0,0,4-3.89A3.88,3.88,0,0,0,17.41,6.58Zm0,5.77a1.86,1.86,0,1,1,1.86-1.86A1.86,1.86,0,0,1,17.41,12.35Z"/></svg>
+                    </a>
                     <a href="https://wa.me/2348084315743" target="_blank" rel="noopener noreferrer" className="p-2 bg-white/5 hover:bg-green hover:text-navy rounded-full text-white transition-all flex items-center justify-center overflow-hidden" title="WhatsApp">
                       <img src="https://cdn-icons-png.flaticon.com/512/3670/3670051.png" alt="WhatsApp" className="w-5 h-5 object-contain" />
                     </a>

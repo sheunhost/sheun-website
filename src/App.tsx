@@ -23,34 +23,38 @@ import ScrollToTop from "./components/ScrollToTop";
 import ScrollToTopOnNavigation from "./components/ScrollToTopOnNavigation";
 import FloatingCalendly from "./components/FloatingCalendly";
 
+import SmoothScroll from "./components/SmoothScroll";
+
 export default function App() {
   return (
     <Router>
       <ScrollToTopOnNavigation />
-      <div className="min-h-screen flex flex-col">
-        <Navbar />
-        <main className="flex-grow">
-          <AnimatePresence mode="wait">
-            <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="/about" element={<About />} />
-              <Route path="/services" element={<Services />} />
-              <Route path="/portfolio" element={<Portfolio />} />
-              <Route path="/blog" element={<Blog />} />
-              <Route path="/blog/:id" element={<BlogPost />} />
-              <Route path="/contact" element={<Contact />} />
-              <Route path="/visualizer" element={<Visualizer />} />
-              <Route path="/apply" element={<Apply />} />
-              <Route path="/privacy-policy" element={<PrivacyPolicy />} />
-              <Route path="/terms-of-service" element={<TermsOfService />} />
-            </Routes>
-          </AnimatePresence>
-        </main>
-        <Footer />
-        <Chatbot />
-        <FloatingCalendly />
-        <ScrollToTop />
-      </div>
+      <SmoothScroll>
+        <div className="min-h-screen flex flex-col">
+          <Navbar />
+          <main className="flex-grow">
+            <AnimatePresence mode="wait">
+              <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="/about" element={<About />} />
+                <Route path="/services" element={<Services />} />
+                <Route path="/portfolio" element={<Portfolio />} />
+                <Route path="/blog" element={<Blog />} />
+                <Route path="/blog/:id" element={<BlogPost />} />
+                <Route path="/contact" element={<Contact />} />
+                <Route path="/visualizer" element={<Visualizer />} />
+                <Route path="/apply" element={<Apply />} />
+                <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+                <Route path="/terms-of-service" element={<TermsOfService />} />
+              </Routes>
+            </AnimatePresence>
+          </main>
+          <Footer />
+          <Chatbot />
+          <FloatingCalendly />
+          <ScrollToTop />
+        </div>
+      </SmoothScroll>
     </Router>
   );
 }
