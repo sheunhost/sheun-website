@@ -3,39 +3,28 @@ import { ExternalLink, Star, ShoppingBag, Globe, Trophy, ArrowRight, X, Mail  } 
 import PageWrapper from "../components/PageWrapper";
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import ScrollReveal from "../components/ScrollReveal";
 
 
 const categories = ["All", "👗 Fashion", "💄 Beauty & Skincare", "🐾 Pets", "📱 Gadgets"];
 
-const projects = [
-  {
-    id: "premium-experience",
-    name: "Luxury E-commerce Suite",
-    url: "sheunhub.com",
-    tag: "✅ Real Client Project",
-    category: "Real Project",
-    desc: "A full-scale Shopify Plus development featuring hyper-optimized checkout flows and bespoke UI modules designed for maximum engagement.",
-    services: ["Shopify Plus", "UI/UX Architecture", "Optimization"],
-    image: "https://ui-avatars.com/api/?name=Sheun+Hub&background=10b981&color=fff",
-    featured: true,
-    col: "md:col-span-12",
-    height: "h-[600px]",
-    isRealProject: true,
-  },
-  {
-    id: "rooibru",
-    name: "Rooibru",
-    url: "rooibru.com",
-    tag: "✅ Real Client Project",
-    category: "Real Project",
-    desc: "Full Shopify store built from scratch — custom design, product setup, SEO, and full ownership transferred to client.",
-    services: ["Store Build", "Theme Customization", "SEO"],
-    image: "https://images.unsplash.com/photo-1544148103-0773bf10d330?auto=format&fit=crop&q=80&w=800",
-    featured: true,
-    col: "md:col-span-12",
-    height: "h-[600px]",
-    isRealProject: true,
-  },
+type Project = {
+  id: string;
+  name: string;
+  tag: string;
+  category: string;
+  desc: string;
+  image: string;
+  col: string;
+  height: string;
+  label?: string;
+  isRealProject?: boolean;
+  services?: string[];
+  url?: string;
+  featured?: boolean;
+};
+
+const projects: Project[] = [
   {
     id: "f2",
     name: "Summer Collection",
@@ -55,17 +44,6 @@ const projects = [
     desc: "A bold, gender-neutral fashion concept designed for the modern era. Featuring high-contrast layouts, versatile product displays for both male and female collections, and a seamless shopping experience.",
     image: "https://cdn.dribbble.com/userupload/36920984/file/original-ff98dfbecece4eba4c0ef25160306302.png?resize=752x&vertical=center",
     col: "md:col-span-12",
-    height: "h-[500px]",
-    label: "🎨 Design Concept by Sheun Hub"
-  },
-  {
-    id: "b1",
-    name: "Lumé",
-    tag: "💄 Beauty — Luxury Skincare",
-    category: "💄 Beauty & Skincare",
-    desc: "Premium clean beauty, clinical-meets-natural. White hero with floating product imagery and ingredient callouts. 'Skin Type Quiz' CTA prominently above the fold.",
-    image: "https://picsum.photos/seed/lume/800/800",
-    col: "md:col-span-4",
     height: "h-[500px]",
     label: "🎨 Design Concept by Sheun Hub"
   },
@@ -92,67 +70,12 @@ const projects = [
     label: "🎨 Design Concept by Sheun Hub"
   },
   {
-    id: "p1",
-    name: "Pawlux",
-    tag: "🐾 Pets — Premium Accessories",
-    category: "🐾 Pets",
-    desc: "Clean, modern, premium pet lifestyle. Hero with happy pet lifestyle photography + owner. 'Shop by Pet' tab navigation.",
-    image: "https://picsum.photos/seed/pawlux/1200/800",
-    col: "md:col-span-8",
-    height: "h-[500px]",
-    label: "🎨 Design Concept by Sheun Hub"
-  },
-  {
-    id: "p2",
-    name: "FurrFriend",
-    tag: "🐾 Pets — Dropshipping Store",
-    category: "🐾 Pets",
-    desc: "Friendly, fun, approachable — wide product range. Colorful hero with playful illustration of dog and cat. Flash deals section with countdown timers.",
-    image: "https://picsum.photos/seed/furrfriend/800/800",
-    col: "md:col-span-4",
-    height: "h-[500px]",
-    label: "🎨 Design Concept by Sheun Hub"
-  },
-  {
     id: "p3",
     name: "Pupp's",
     tag: "🐾 Pets — Premium Care",
     category: "🐾 Pets",
     desc: "Expert Pet Care with Love & Trust! Grooming, Health, Nutrition & More, Because Your Furry Friend Deserves the Best!",
     image: "https://cdn.dribbble.com/userupload/37449048/file/original-6a6b4e4e7ebfed9f6502c61669a61580.png?resize=1024x3374&vertical=center",
-    col: "md:col-span-12",
-    height: "h-[500px]",
-    label: "🎨 Design Concept by Sheun Hub"
-  },
-  {
-    id: "g1",
-    name: "TechVault",
-    tag: "📱 Gadgets — General Tech",
-    category: "📱 Gadgets",
-    desc: "Dark, sleek, tech-forward. Dark hero with glowing product spotlight lighting effect. 'Deal of the Day' section with countdown timer.",
-    image: "https://picsum.photos/seed/techvault/800/800",
-    col: "md:col-span-4",
-    height: "h-[500px]",
-    label: "🎨 Design Concept by Sheun Hub"
-  },
-  {
-    id: "g2",
-    name: "CaseCraze",
-    tag: "📱 Gadgets — Phone Accessories",
-    category: "📱 Gadgets",
-    desc: "Clean, fast, product-filter-heavy. Hero with phone mockup builder — 'Choose your phone model' filter.",
-    image: "https://picsum.photos/seed/casecraze/1200/800",
-    col: "md:col-span-8",
-    height: "h-[500px]",
-    label: "🎨 Design Concept by Sheun Hub"
-  },
-  {
-    id: "g3",
-    name: "WearIQ",
-    tag: "📱 Gadgets — Smart Wearables",
-    category: "📱 Gadgets",
-    desc: "Premium, futuristic, health-tech inspired. Full-screen animated hero with smartwatch product highlight. Feature comparison grid.",
-    image: "https://picsum.photos/seed/weariq/1200/800",
     col: "md:col-span-12",
     height: "h-[500px]",
     label: "🎨 Design Concept by Sheun Hub"
@@ -207,7 +130,8 @@ export default function Portfolio() {
       </div>
 
       {/* Portfolio Hero */}
-      <section className="pt-48 pb-32 bg-navy-gradient relative overflow-hidden">
+      <ScrollReveal>
+        <section className="pt-48 pb-32 bg-navy-gradient relative overflow-hidden">
         <div className="absolute inset-0 opacity-10">
           <motion.div 
             animate={{ y: [0, -20, 0] }}
@@ -265,8 +189,10 @@ export default function Portfolio() {
           </div>
         </div>
       </section>
+    </ScrollReveal>
 
-      {/* Portfolio Gallery */}
+    {/* Portfolio Gallery */}
+    <ScrollReveal>
       <section className="py-24 bg-white min-h-screen">
         <div className="container mx-auto px-6">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -323,8 +249,9 @@ export default function Portfolio() {
           </div>
         </div>
       </section>
+    </ScrollReveal>
 
-      {/* Project Modal */}
+    {/* Project Modal */}
       <AnimatePresence>
         {selectedProject && (
           <motion.div

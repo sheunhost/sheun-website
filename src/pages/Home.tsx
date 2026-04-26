@@ -7,6 +7,7 @@ import { useState, FormEvent, useEffect } from "react";
 import { AnimatePresence } from "framer-motion";
 import { cn, openCalendlyPopup } from "../lib/utils";
 import ImageGen from "../components/ImageGen";
+import ScrollReveal from "../components/ScrollReveal";
 
 const stats = [
   { label: "Stores Built", value: "20+" },
@@ -604,8 +605,9 @@ export default function Home() {
       }}
     >
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center pt-48 pb-20 bg-navy-gradient overflow-hidden">
-        {/* Rail Text - Recipe 11 */}
+      <ScrollReveal>
+        <section className="relative min-h-screen flex items-center pt-48 pb-20 bg-navy-gradient overflow-hidden">
+          {/* Rail Text - Recipe 11 */}
         <div className="absolute left-6 top-1/2 -translate-y-1/2 hidden xl:block z-20">
           <div className="flex flex-col items-center gap-8">
             <div className="w-px h-24 bg-green/20" />
@@ -793,9 +795,10 @@ export default function Home() {
           <div className="w-px h-12 bg-gradient-to-b from-green to-transparent" />
         </div>
       </section>
+    </ScrollReveal>
 
-      {/* E-Commerce Action Plan Section */}
-      <section className="py-32 bg-white relative overflow-hidden border-y border-navy/5">
+    <ScrollReveal>
+        <section className="py-32 bg-white relative overflow-hidden border-y border-navy/5">
         <div className="container mx-auto px-6">
           <div className="max-w-4xl mx-auto space-y-12">
             <div className="text-center space-y-6">
@@ -892,8 +895,10 @@ export default function Home() {
           </div>
         </div>
       </section>
+    </ScrollReveal>
 
-      {/* Services Preview - Visible Grid Recipe */}
+    {/* Services Preview - Visible Grid Recipe */}
+    <ScrollReveal>
       <section className="py-32 bg-navy-gradient relative" id="services">
         <div className="container mx-auto px-6">
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-24">
@@ -995,8 +1000,9 @@ export default function Home() {
           </div>
         </div>
       </section>
+    </ScrollReveal>
 
-      {/* Service Detail Modal */}
+    {/* Service Detail Modal */}
       <AnimatePresence>
         {selectedService && (
           <ServiceModal
@@ -1007,7 +1013,8 @@ export default function Home() {
       </AnimatePresence>
 
       {/* Testimonials Slider */}
-      <section className="py-32 bg-light relative overflow-hidden border-t border-navy/5">
+      <ScrollReveal>
+        <section className="py-32 bg-light relative overflow-hidden border-t border-navy/5">
         <div className="absolute top-0 right-0 p-8 opacity-5 pointer-events-none">
           <Quote size={100} />
         </div>
@@ -1088,8 +1095,10 @@ export default function Home() {
           </div>
         </div>
       </section>
+    </ScrollReveal>
 
-      {/* Portfolio Preview - Bento Grid */}
+    {/* Portfolio Preview - Bento Grid */}
+    <ScrollReveal>
       <section className="py-32 bg-white">
         <div className="container mx-auto px-6">
           <div className="flex flex-col md:flex-row md:items-center justify-between gap-8 mb-24">
@@ -1158,8 +1167,10 @@ export default function Home() {
           </div>
         </div>
       </section>
+    </ScrollReveal>
 
-      {/* Why Partner With Me */}
+    {/* Why Partner With Me */}
+    <ScrollReveal>
       <section className="py-32 bg-navy text-white relative overflow-hidden">
         <div className="container mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
@@ -1208,8 +1219,10 @@ export default function Home() {
           </div>
         </div>
       </section>
+    </ScrollReveal>
 
-      {/* Contact Section - Visible Grid Style */}
+    {/* Contact Section - Visible Grid Style */}
+    <ScrollReveal>
       <section className="py-32 bg-white relative overflow-hidden" id="contact">
         <div className="container mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-20 items-start">
@@ -1367,8 +1380,10 @@ export default function Home() {
           </div>
         </div>
       </section>
+    </ScrollReveal>
 
-      {/* Newsletter Section */}
+    {/* Newsletter Section */}
+    <ScrollReveal>
       <section className="py-24 bg-light relative overflow-hidden border-y border-navy/5">
         <div className="container mx-auto px-6">
           <div className="max-w-5xl mx-auto bg-white rounded-2xl p-10 md:p-16 shadow-xl border border-navy/5 flex flex-col md:flex-row items-center gap-12">
@@ -1437,8 +1452,10 @@ export default function Home() {
           </div>
         </div>
       </section>
+    </ScrollReveal>
 
-      {/* CTA Banner - Recipe 2 */}
+    {/* CTA Banner - Recipe 2 */}
+    <ScrollReveal>
       <section className="py-48 bg-navy-gradient relative overflow-hidden">
         <div className="absolute inset-0 bg-green/5 opacity-50" />
         <div className="container mx-auto px-6 relative z-10 text-center">
@@ -1465,6 +1482,7 @@ export default function Home() {
           </motion.div>
         </div>
       </section>
-    </PageWrapper>
+    </ScrollReveal>
+  </PageWrapper>
   );
 }
