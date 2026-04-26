@@ -82,14 +82,28 @@ export default function Navbar() {
 
         {/* Mobile Toggle */}
         <button
-          className="lg:hidden text-navy p-2 hover:bg-navy/5 rounded-xl transition-colors"
+          className={cn(
+            "lg:hidden p-2 rounded-xl transition-all duration-300",
+            isScrolled 
+              ? "text-navy hover:bg-navy/5" 
+              : "text-green hover:bg-white/10"
+          )}
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
         >
-          {isMobileMenuOpen ? <X size={32} /> : (
+          {isMobileMenuOpen ? <X size={32} className={cn(isScrolled ? "text-navy" : "text-green")} /> : (
             <div className="space-y-1.5 p-1">
-              <div className="w-6 h-0.5 bg-navy rounded-full transition-all"></div>
-              <div className="w-8 h-0.5 bg-navy rounded-full transition-all"></div>
-              <div className="w-5 h-0.5 bg-navy rounded-full transition-all"></div>
+              <div className={cn(
+                "w-6 h-0.5 rounded-full transition-all duration-300",
+                isScrolled ? "bg-navy" : "bg-green"
+              )}></div>
+              <div className={cn(
+                "w-8 h-0.5 rounded-full transition-all duration-300",
+                isScrolled ? "bg-navy" : "bg-green"
+              )}></div>
+              <div className={cn(
+                "w-5 h-0.5 rounded-full transition-all duration-300",
+                isScrolled ? "bg-navy" : "bg-green"
+              )}></div>
             </div>
           )}
         </button>
