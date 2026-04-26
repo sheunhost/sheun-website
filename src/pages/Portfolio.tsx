@@ -26,6 +26,17 @@ type Project = {
 
 const projects: Project[] = [
   {
+    id: "b2",
+    name: "LumiereSkin",
+    tag: "💄 Beauty — Luxury Skincare",
+    category: "💄 Beauty & Skincare",
+    desc: "Designed with a clean visual hierarchy and user-focused layout, LumiereSkin presents its skincare collection through soft, elegant sections and immersive visuals. The website highlights key elements like product benefits, natural ingredients, and daily skincare essentials in a structured and easy-to-follow flow. Balanced spacing and minimal distractions create a calm browsing experience, making the interface feel modern, refined, and effortlessly soothing to explore. ✨🧴🌿",
+    image: "https://cdn.dribbble.com/userupload/47314439/file/c6086620d425f60ad8dac40f74cfe1b4.png?resize=752x3909&vertical=center",
+    col: "md:col-span-8",
+    height: "h-[500px]",
+    label: "🎨 Design Concept by Sheun Hub"
+  },
+  {
     id: "f2",
     name: "Summer Collection",
     tag: "👗 Fashion — Streetwear",
@@ -44,17 +55,6 @@ const projects: Project[] = [
     desc: "A bold, gender-neutral fashion concept designed for the modern era. Featuring high-contrast layouts, versatile product displays for both male and female collections, and a seamless shopping experience.",
     image: "https://cdn.dribbble.com/userupload/36920984/file/original-ff98dfbecece4eba4c0ef25160306302.png?resize=752x&vertical=center",
     col: "md:col-span-12",
-    height: "h-[500px]",
-    label: "🎨 Design Concept by Sheun Hub"
-  },
-  {
-    id: "b2",
-    name: "LumiereSkin",
-    tag: "💄 Beauty — Luxury Skincare",
-    category: "💄 Beauty & Skincare",
-    desc: "Designed with a clean visual hierarchy and user-focused layout, LumiereSkin presents its skincare collection through soft, elegant sections and immersive visuals. The website highlights key elements like product benefits, natural ingredients, and daily skincare essentials in a structured and easy-to-follow flow. Balanced spacing and minimal distractions create a calm browsing experience, making the interface feel modern, refined, and effortlessly soothing to explore. ✨🧴🌿",
-    image: "https://cdn.dribbble.com/userupload/47314439/file/c6086620d425f60ad8dac40f74cfe1b4.png?resize=752x3909&vertical=center",
-    col: "md:col-span-8",
     height: "h-[500px]",
     label: "🎨 Design Concept by Sheun Hub"
   },
