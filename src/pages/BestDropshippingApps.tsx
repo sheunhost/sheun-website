@@ -1,13 +1,21 @@
 import { motion } from "framer-motion";
 import { Clock, Calendar, ArrowLeft, ArrowRight, CheckCircle2, ShieldCheck, TrendingUp, AlertTriangle, ShoppingBag, Star, Mail, Zap, Layout, Phone, Send } from "lucide-react";
 import { Link } from "react-router-dom";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import PageWrapper from "../components/PageWrapper";
 
 export default function BestDropshippingApps() {
-  const [comments, setComments] = useState<{name: string, text: string}[]>([
-    { name: "John D.", text: "Zendrop changed my business. Faster shipping than AliExpress!" }
-  ]);
+  const [comments, setComments] = useState<{name: string, text: string}[]>(() => {
+    const saved = localStorage.getItem('comments_BestDropshipping');
+    if (saved) return JSON.parse(saved);
+    return [
+      { name: "John D.", text: "Zendrop changed my business. Faster shipping than AliExpress!" }
+    ];
+  });
+
+  useEffect(() => {
+    localStorage.setItem('comments_BestDropshipping', JSON.stringify(comments));
+  }, [comments]);
   const [newComment, setNewComment] = useState("");
   const [commentName, setCommentName] = useState("");
 

@@ -1,14 +1,22 @@
 import { motion } from "framer-motion";
 import { Clock, Calendar, ArrowLeft, ArrowRight, CheckCircle2, ShieldCheck, TrendingUp, AlertTriangle, Settings, Mail, Target, Phone, User, Send } from "lucide-react";
 import { Link } from "react-router-dom";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import PageWrapper from "../components/PageWrapper";
 
 export default function ShopifySettingsGuide() {
-  const [comments, setComments] = useState<{name: string, text: string}[]>([
-    { name: "Alex R.", text: "This is super helpful. I didn't even realize my checkout was missing phone numbers!" },
-    { name: "Sarah J.", text: "Great tips! The image compression one saved my site speed immensely." }
-  ]);
+  const [comments, setComments] = useState<{name: string, text: string}[]>(() => {
+    const saved = localStorage.getItem('comments_ShopifySettings');
+    if (saved) return JSON.parse(saved);
+    return [
+      { name: "Alex R.", text: "This is super helpful. I didn't even realize my checkout was missing phone numbers!" },
+      { name: "Sarah J.", text: "Great tips! The image compression one saved my site speed immensely." }
+    ];
+  });
+
+  useEffect(() => {
+    localStorage.setItem('comments_ShopifySettings', JSON.stringify(comments));
+  }, [comments]);
   const [newComment, setNewComment] = useState("");
   const [commentName, setCommentName] = useState("");
 

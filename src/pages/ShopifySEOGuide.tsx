@@ -1,13 +1,21 @@
 import { motion } from "framer-motion";
 import { Clock, Calendar, ArrowLeft, ArrowRight, CheckCircle2, ShieldCheck, TrendingUp, AlertTriangle, Search, ListChecks, Smartphone, Send, Zap, BarChart3, Globe, Zap as Sparkles, Target, Zap as Fast } from "lucide-react";
 import { Link } from "react-router-dom";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import PageWrapper from "../components/PageWrapper";
 
 export default function ShopifySEOGuide() {
-  const [comments, setComments] = useState<{name: string, text: string}[]>([
-    { name: "Michael T.", text: "This is the most balanced guide on Shopify SEO I've found. Usually, people just talk about meta tags, but the emphasis on speed and technical sitemap management is key." }
-  ]);
+  const [comments, setComments] = useState<{name: string, text: string}[]>(() => {
+    const saved = localStorage.getItem('comments_ShopifySEO');
+    if (saved) return JSON.parse(saved);
+    return [
+      { name: "Michael T.", text: "This is the most balanced guide on Shopify SEO I've found. Usually, people just talk about meta tags, but the emphasis on speed and technical sitemap management is key." }
+    ];
+  });
+
+  useEffect(() => {
+    localStorage.setItem('comments_ShopifySEO', JSON.stringify(comments));
+  }, [comments]);
   const [newComment, setNewComment] = useState("");
   const [commentName, setCommentName] = useState("");
 

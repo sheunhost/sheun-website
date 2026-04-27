@@ -1,12 +1,20 @@
 import { motion } from "framer-motion";
 import { Clock, Calendar, ArrowLeft, ArrowRight, CheckCircle2, ShieldCheck, TrendingUp, AlertTriangle, Database, RefreshCw, Link as LinkIcon, Search, ListChecks, ArrowDownToLine, Terminal, Smartphone, Send } from "lucide-react";
 import { Link } from "react-router-dom";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 export default function WooCommerceToShopifyMigration() {
-  const [comments, setComments] = useState<{name: string, text: string}[]>([
-    { name: "David K.", text: "This checklist is a lifesaver. I was terrified of losing my rankings during the move." }
-  ]);
+  const [comments, setComments] = useState<{name: string, text: string}[]>(() => {
+    const saved = localStorage.getItem('comments_WooToShopify');
+    if (saved) return JSON.parse(saved);
+    return [
+      { name: "David K.", text: "This checklist is a lifesaver. I was terrified of losing my rankings during the move." }
+    ];
+  });
+
+  useEffect(() => {
+    localStorage.setItem('comments_WooToShopify', JSON.stringify(comments));
+  }, [comments]);
   const [newComment, setNewComment] = useState("");
   const [commentName, setCommentName] = useState("");
 

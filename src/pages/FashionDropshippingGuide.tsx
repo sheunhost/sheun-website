@@ -1,13 +1,21 @@
 import { motion } from "framer-motion";
 import { Clock, Calendar, ArrowLeft, ArrowRight, CheckCircle2, ShieldCheck, TrendingUp, AlertTriangle, ShoppingBag, Star, Mail, Zap, Layout, Phone, Send, Heart, Target, Layers } from "lucide-react";
 import { Link } from "react-router-dom";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import PageWrapper from "../components/PageWrapper";
 
 export default function FashionDropshippingGuide() {
-  const [comments, setComments] = useState<{name: string, text: string}[]>([
-    { name: "Sonia P.", text: "The advice on sub-niches was eye-opening. I was trying to sell everything and getting nowhere!" }
-  ]);
+  const [comments, setComments] = useState<{name: string, text: string}[]>(() => {
+    const saved = localStorage.getItem('comments_FashionDropshipping');
+    if (saved) return JSON.parse(saved);
+    return [
+      { name: "Sonia P.", text: "The advice on sub-niches was eye-opening. I was trying to sell everything and getting nowhere!" }
+    ];
+  });
+
+  useEffect(() => {
+    localStorage.setItem('comments_FashionDropshipping', JSON.stringify(comments));
+  }, [comments]);
   const [newComment, setNewComment] = useState("");
   const [commentName, setCommentName] = useState("");
 

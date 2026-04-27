@@ -1,13 +1,21 @@
 import { motion } from "framer-motion";
 import { Clock, Calendar, ArrowLeft, ArrowRight, CheckCircle2, ShieldCheck, TrendingUp, AlertTriangle, Settings, Mail, Target, Phone, User, Send, Zap, Image as ImageIcon, Code, Package } from "lucide-react";
 import { Link } from "react-router-dom";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import PageWrapper from "../components/PageWrapper";
 
 export default function ShopifySpeedOptimization() {
-  const [comments, setComments] = useState<{name: string, text: string}[]>([
-    { name: "Michael T.", text: "I installed a lazy loading app and my mobile speed improved immediately. Thanks for the tip!" }
-  ]);
+  const [comments, setComments] = useState<{name: string, text: string}[]>(() => {
+    const saved = localStorage.getItem('comments_ShopifySpeed');
+    if (saved) return JSON.parse(saved);
+    return [
+      { name: "Michael T.", text: "I installed a lazy loading app and my mobile speed improved immediately. Thanks for the tip!" }
+    ];
+  });
+
+  useEffect(() => {
+    localStorage.setItem('comments_ShopifySpeed', JSON.stringify(comments));
+  }, [comments]);
   const [newComment, setNewComment] = useState("");
   const [commentName, setCommentName] = useState("");
 
