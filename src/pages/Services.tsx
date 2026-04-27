@@ -637,6 +637,31 @@ export default function Services() {
         </section>
       </ScrollReveal>
 
+      {/* Comprehensive Shopify Services SEO Context */}
+      <ScrollReveal>
+        <section className="py-24 bg-white border-t border-navy/5">
+          <div className="container mx-auto px-6">
+            <div className="max-w-4xl mx-auto prose prose-lg prose-headings:text-navy prose-a:text-green text-navy/70 leading-relaxed">
+              <h2 className="text-3xl md:text-4xl font-bold font-sans not-italic mb-6 tracking-tight">Expert Custom Shopify Development Services</h2>
+              <p className="mb-6 font-serif italic text-xl">
+                In today's competitive digital landscape, a generic store won't cut it. Whether you are an ambitious e-commerce owner looking to scale globally or a local retailer ready to take your physical storefront online, a fast, conversion-optimized Shopify site is paramount. As a dedicated Shopify developer and e-commerce growth expert, I deliver end-to-end custom development tailored to high-growth brands in fashion, beauty, gadgets, and pet supply niches.
+              </p>
+              <h3 className="text-2xl font-bold font-sans not-italic mt-12 mb-4 tracking-tight">Built for Performance & Conversion</h3>
+              <p className="mb-4">
+                My approach to <strong>Shopify Store Setup</strong> and <strong>Custom Liquid Development</strong> ensures that your website is not only visually stunning but technically flawless. A standard theme installation might get you started, but to truly dominate your market, you need a store engineered for performance. I build highly responsive dropshipping layouts, integrate essential third-party apps seamlessly without bloat, and write bespoke Liquid code to accommodate your unique business logic. This level of customization allows you to offer personalized shopping experiences that drive customer loyalty and increase your Average Order Value (AOV).
+              </p>
+              <p className="mb-4">
+                If you are struggling with a clunky platform, my <strong>E-commerce Platform Integration</strong> and migration services guarantee a smooth transition. Transitioning from WooCommerce, Wix, or BigCommerce to Shopify can seem intimidating, but I carefully map your products, customers, and order history while meticulously preserving your SEO rankings via proper 301 redirects. You won't lose your hard-earned domain authority.
+              </p>
+              <h3 className="text-2xl font-bold font-sans not-italic mt-12 mb-4 tracking-tight">Driving Traffic & Growth</h3>
+              <p className="mb-4">
+                Through comprehensive <strong>Shopify SEO Optimization</strong>, I refine your site's architecture, optimize meta tags, and deploy schema markup so that your store ranks for buyer-intent keywords effortlessly. Coupled with rigorous <strong>Conversion Rate Optimization (CRO)</strong> audits and <strong>Shopify Speed Optimization</strong>, we ensure your pages load in under 3 seconds to convert browsers into loyal buyers. Focus on growing your product line, and leave the technical heavy lifting to a trusted Shopify expert.
+              </p>
+            </div>
+          </div>
+        </section>
+      </ScrollReveal>
+
       {/* Free Audit CTA - Recipe 2 */}
       <ScrollReveal>
         <section className="py-48 bg-navy-gradient relative overflow-hidden">

@@ -1,0 +1,24 @@
+# Sheun Hub - Shopify Development & Growth Expert
+
+## About Sheun
+Sheun is a specialized Shopify Engineer and E-commerce Growth Expert based in Nigeria, serving international clients (primarily in the USA) as well as local businesses. Rather than relying on off-the-shelf templates, Sheun specializes in Custom Shopify Development to give emerging and established brands the technical advantage they need to scale.
+
+## Services
+- **Shopify Store Setup:** Complete Shopify store setup from scratch — theme, products, payments, and launch-ready configuration.
+- **Dropshipping Build:** Full dropshipping store (fashion, beauty, pets, gadgets) with supplier integration and conversion-optimized design.
+- **Store Migration:** Seamlessly migrate from WooCommerce, Wix, Squarespace, or BigCommerce to Shopify without losing data or SEO rankings.
+- **Custom Liquid Dev:** Bespoke Shopify stores using premium themes — fully tailored with custom Liquid code and JavaScript.
+- **Bug Fixing:** Fast resolution of layout issues, broken apps, and checkout errors.
+- **SEO Optimization:** Shopify-specific technical SEO, metadata, and site structure optimization.
+- **Conversion Rate Optimization (CRO):** Deep, data-driven analysis of user behavior, heatmap tracking, UI/UX audits, and A/B testing to increase your sales without increasing traffic.
+- **Shopify Speed Optimization:** Fixing Core Web Vitals, optimizing assets, pruning unused app scripts, and minifying.
+
+## Portfolio & Niches
+Sheun Hub builds high-converting stores across Fashion & Apparel, Beauty & Skincare, Pet Supplies, and Gadgets.
+
+## Target Audience
+International e-commerce business owners aiming to scale dropshipping or private-label brands. Local businesses looking to bring their retail online using Shopify.
+
+## Contact
+Email: sheunhost@gmail.com
+Website: https://www.sheun.online

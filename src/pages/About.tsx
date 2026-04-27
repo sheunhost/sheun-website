@@ -277,6 +277,34 @@ export default function About() {
       </section>
     </ScrollReveal>
 
+      {/* Comprehensive E-commerce SEO Content */}
+      <ScrollReveal>
+        <section className="py-24 bg-light border-t border-navy/5">
+          <div className="container mx-auto px-6">
+            <div className="max-w-4xl mx-auto prose prose-lg prose-headings:text-navy prose-a:text-green text-navy/70 leading-relaxed">
+              <h2 className="text-3xl md:text-4xl font-bold font-sans not-italic mb-6 tracking-tight">Meet Sheun: Freelance Shopify Developer & E-commerce Growth Expert</h2>
+              <p className="mb-6 font-serif italic text-xl">
+                I am Sheun, a dedicated freelance Shopify developer operating out of Nigeria but proudly serving a diverse roster of clients globally. Unlike massive design agencies where you are passed between project managers, working with me means direct access to a dedicated e-commerce architect who is fully invested in your brand’s revenue growth.
+              </p>
+              <h3 className="text-2xl font-bold font-sans not-italic mt-12 mb-4 tracking-tight">Scalable E-commerce Solutions</h3>
+              <p className="mb-4">
+                Global e-commerce requires a nuanced understanding of digital buyer behavior. By bridging the gap between superior technical engineering and commercial design strategy, I develop highly scalable custom Shopify stores tailored for dropshipping businesses and global private-label brands. My hands-on experience means I understand exactly what consumers expect when clicking "Add to Cart" versus a local shopper interactively browsing your storefront.
+              </p>
+              <p className="mb-4">
+                For local business owners wanting to transition from brick-and-mortar setups into the robust digital marketplace, I provide comprehensive E-commerce Platform Integration. You no longer need to be held back by complex local digital bottlenecks; my setup services streamline Shopify for your explicit geographic market while leaving the door wide open for future global expansion.
+              </p>
+              <h3 className="text-2xl font-bold font-sans not-italic mt-12 mb-4 tracking-tight">A Deep Dedication to Code Quality & Conversion</h3>
+              <p className="mb-4">
+                Having earned my B.Sc. in Business Management from Obafemi Awolowo University (OAU), my approach to web development is unique. I do not just write Liquid code or design UX layouts; I approach every technical decision from a strict business perspective: <strong>Will this increase the store's Conversion Rate?</strong>
+              </p>
+              <p className="mb-4">
+                My status as a Top Rated Freelancer on Upwork and a Certified Shopify Partner is built on this foundation of uncompromising code quality. Clunky, poorly coded themes severely impact Shopify Speed Optimization, destroying both your user experience and your Google search rankings. By strictly implementing custom, lightweight Liquid markup, I guarantee ultra-fast page load speeds and technically sound Shopify SEO for my clients. Your website is more than an online brochure; it is the revenue engine of your business. Let’s collaborate to build an automated tool that actively scales your brand.
+              </p>
+            </div>
+          </div>
+        </section>
+      </ScrollReveal>
+
       {/* About CTA - Recipe 2 */}
       <ScrollReveal>
         <section className="py-48 bg-navy-gradient relative overflow-hidden">

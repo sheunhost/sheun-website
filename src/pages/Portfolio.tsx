@@ -251,6 +251,34 @@ export default function Portfolio() {
       </section>
     </ScrollReveal>
 
+    {/* Portfolio SEO Content */}
+    <ScrollReveal>
+      <section className="py-24 bg-light border-t border-navy/5">
+        <div className="container mx-auto px-6">
+          <div className="max-w-4xl mx-auto prose prose-lg prose-headings:text-navy prose-a:text-green text-navy/70 leading-relaxed">
+            <h2 className="text-3xl md:text-4xl font-bold font-sans not-italic mb-6 tracking-tight">Showcase of High-Converting Custom Shopify Stores</h2>
+            <p className="mb-6 font-serif italic text-xl">
+              Welcome to my portfolio, a curated gallery of high-performing e-commerce stores designed, developed, and optimized entirely by Sheun Hub. As a seasoned Shopify Partner, my focus isn’t just on making websites that look pretty—I build custom Shopify stores engineered specifically to convert traffic into loyal, paying customers.
+            </p>
+            <h3 className="text-2xl font-bold font-sans not-italic mt-12 mb-4 tracking-tight">Diverse E-commerce Case Studies</h3>
+            <p className="mb-4">
+              Every business has a unique target audience and functional requirement. Browse through my design concepts and real-world client builds across several highly competitive niches. Whether it’s a minimalist layout for a <strong>Luxury Beauty & Skincare</strong> brand, a bold and dynamic interface for an <strong>Apparel Fashion</strong> store, or a highly trustworthy and engaging design for <strong>Pet Care Supplies & Gadgets</strong>, these examples demonstrate versatility and technical mastery.
+            </p>
+            <p className="mb-4">
+              By leveraging custom Liquid coding, I break free from the constraints of standardized templates to create highly immersive buying experiences tailored specifically to your audience. This bespoke approach is exactly what top-tier dropshipping stores and scaling local businesses use to establish brand authority and outpace their competitors online.
+            </p>
+            <h3 className="text-2xl font-bold font-sans not-italic mt-12 mb-4 tracking-tight">Optimized for E-commerce Growth</h3>
+            <p className="mb-4">
+              A visually stunning store is obsolete if it takes too long to load. Each of these custom Shopify store builds is backed by rigorous <strong>Speed Optimization</strong> and <strong>Technical SEO</strong>. Fast loading times mean a lower bounce rate and a higher ranking on Google. I implement clean site architecture, strategic internal linking, and optimized asset delivery so your storefront scales smoothly without breaking under high-traffic events, like Black Friday drops or viral social media marketing bursts.
+            </p>
+            <p className="mb-4">
+              For dropshipping business owners, conversion is everything. That’s why these portfolio pieces feature strategically placed trust badges, seamless checkout workflows, upsell integrations, and compelling product spotlight sections. My UI/UX design philosophy is heavily influenced by deep <strong>Conversion Rate Optimization (CRO)</strong> principles. Every button, every color contrast, and every layout decision is made precisely to guide the customer closer to purchase. Review the portfolio, gather inspiration, and let’s discuss building your brand's vision.
+            </p>
+          </div>
+        </div>
+      </section>
+    </ScrollReveal>
+
     {/* Project Modal */}
       <AnimatePresence>
         {selectedProject && (
