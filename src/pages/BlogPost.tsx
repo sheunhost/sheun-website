@@ -5,6 +5,7 @@ import BestDropshippingApps from "./BestDropshippingApps";
 import FashionDropshippingGuide from "./FashionDropshippingGuide";
 import WooCommerceToShopifyMigration from "./WooCommerceToShopifyMigration";
 import ShopifySEOGuide from "./ShopifySEOGuide";
+import LeveragingShopifyMarkets from "./LeveragingShopifyMarkets";
 import PageWrapper from "../components/PageWrapper";
 import Breadcrumbs from "../components/Breadcrumbs";
 
@@ -54,6 +55,13 @@ export default function BlogPost() {
           description: "Break free from the 'paid ad' cycle. This comprehensive primer introduces you to the world of technical and on-page SEO specifically for the Shopify platform, helping you build a compounding asset that drives organic sales on autopilot.",
           component: <ShopifySEOGuide />, 
           keywords: "Shopify SEO 2026, Shopify SEO Guide, Technical SEO Shopify, Shopify Organic Traffic, eCommerce SEO Strategy, Shopify On-page SEO, Increase Shopify Organic Sales" 
+        };
+      case "7":
+        return { 
+          title: "Leveraging Shopify Markets for International Sales", 
+          description: "Unlock global revenue with Shopify Markets. A comprehensive guide on currency conversion, language localization, and international shipping strategies.",
+          component: <LeveragingShopifyMarkets />, 
+          keywords: "Shopify Markets, International Sales, Currency Conversion, Localized Pricing, Shopify Shipping, Import Duties, eCommerce Expansion, Multi-language Shopify Store" 
         };
       default:
         return { 

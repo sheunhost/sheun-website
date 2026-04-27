@@ -62,6 +62,15 @@ const posts = [
     readTime: "25 min read",
     image: "https://picsum.photos/seed/blog6/800/600",
   },
+  {
+    id: 7,
+    title: "Leveraging Shopify Markets for International Sales",
+    category: "eCommerce Growth",
+    excerpt: "Unlock global revenue with Shopify Markets. A comprehensive guide on currency conversion, language localization, and international shipping strategies.",
+    date: "May 1, 2026",
+    readTime: "10 min read",
+    image: "https://picsum.photos/seed/blog7/800/600",
+  },
 ];
 
 export default function Blog() {
