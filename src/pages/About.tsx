@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { CheckCircle2, Award, GraduationCap, Star, MapPin, Globe, ArrowRight, Code2, Rocket, Zap, Layout, MessageSquare, Mail  } from "lucide-react";
 import PageWrapper from "../components/PageWrapper";
 import { Link, useNavigate } from "react-router-dom";
+import ScrollReveal from "../components/ScrollReveal";
 
 
 const timeline = [
@@ -45,7 +46,8 @@ export default function About() {
       }}
     >
       {/* About Hero - Editorial Style */}
-      <section className="pt-48 pb-32 bg-white relative overflow-hidden">
+      <ScrollReveal>
+        <section className="pt-48 pb-32 bg-white relative overflow-hidden">
         {/* Background Elements */}
         <div className="absolute top-0 right-0 w-1/2 h-full bg-light -skew-x-12 translate-x-1/2" />
         
@@ -146,9 +148,11 @@ export default function About() {
           </div>
         </div>
       </section>
+    </ScrollReveal>
 
       {/* 2 Sub-banners Section */}
-      <section className="py-24 bg-white relative overflow-hidden border-t border-navy/5">
+      <ScrollReveal>
+        <section className="py-24 bg-white relative overflow-hidden border-t border-navy/5">
         <div className="container mx-auto px-6">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
             <motion.div 
@@ -172,9 +176,11 @@ export default function About() {
           </div>
         </div>
       </section>
+    </ScrollReveal>
 
       {/* Skills & Credentials - Bento Grid */}
-      <section className="py-32 bg-navy">
+      <ScrollReveal>
+        <section className="py-32 bg-navy">
         <div className="container mx-auto px-6">
           <div className="grid grid-cols-1 md:grid-cols-12 gap-8">
             {/* Skills Card */}
@@ -238,9 +244,11 @@ export default function About() {
           </div>
         </div>
       </section>
+    </ScrollReveal>
 
       {/* How I Work - Visible Grid */}
-      <section className="py-32 bg-white">
+      <ScrollReveal>
+        <section className="py-32 bg-white">
         <div className="container mx-auto px-6">
           <div className="text-center max-w-3xl mx-auto mb-24 space-y-4">
             <p className="text-navy/40 text-[10px] font-bold uppercase tracking-[0.3em]">Process</p>
@@ -267,9 +275,11 @@ export default function About() {
           </div>
         </div>
       </section>
+    </ScrollReveal>
 
       {/* About CTA - Recipe 2 */}
-      <section className="py-48 bg-navy-gradient relative overflow-hidden">
+      <ScrollReveal>
+        <section className="py-48 bg-navy-gradient relative overflow-hidden">
         <div className="absolute inset-0 bg-green/5 opacity-50" />
         <div className="container mx-auto px-6 relative z-10 text-center">
           <motion.div
@@ -313,6 +323,7 @@ export default function About() {
           </motion.div>
         </div>
       </section>
+    </ScrollReveal>
     </PageWrapper>
   );
 }

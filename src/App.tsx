@@ -22,12 +22,14 @@ import Chatbot from "./components/Chatbot";
 import ScrollToTop from "./components/ScrollToTop";
 import ScrollToTopOnNavigation from "./components/ScrollToTopOnNavigation";
 import FloatingCalendly from "./components/FloatingCalendly";
+import GoogleAnalytics from "./components/GoogleAnalytics";
 
 import SmoothScroll from "./components/SmoothScroll";
 
 export default function App() {
   return (
     <Router>
+      <GoogleAnalytics />
       <ScrollToTopOnNavigation />
       <SmoothScroll>
         <div className="min-h-screen flex flex-col">

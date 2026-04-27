@@ -3,6 +3,7 @@ import { Mail, Send, CheckCircle2, Gift, Globe, Star, ArrowRight, Zap, ChevronDo
 import PageWrapper from "../components/PageWrapper";
 import { useState, FormEvent } from "react";
 import { Link } from "react-router-dom";
+import ScrollReveal from "../components/ScrollReveal";
 
 export default function Contact() {
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -142,7 +143,8 @@ export default function Contact() {
       }}
     >
       {/* Contact Hero - Dynamic Editorial Style */}
-      <section className="pt-48 pb-32 bg-navy-gradient relative overflow-hidden">
+      <ScrollReveal>
+        <section className="pt-48 pb-32 bg-navy-gradient relative overflow-hidden">
         <div className="absolute inset-0">
           <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-green/10 rounded-full blur-[120px] -translate-y-1/2 translate-x-1/3 opacity-30" />
           <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-white/5 rounded-full blur-[100px] translate-y-1/3 -translate-x-1/2 opacity-20" />
@@ -193,9 +195,11 @@ export default function Contact() {
           </div>
         </div>
       </section>
+    </ScrollReveal>
 
       {/* Main Content: Bento Info + Master Form */}
-      <section className="py-32 bg-white relative" id="contact-form">
+      <ScrollReveal>
+        <section className="py-32 bg-white relative" id="contact-form">
         <div className="container mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
             
@@ -531,9 +535,11 @@ export default function Contact() {
           </div>
         </div>
       </section>
+    </ScrollReveal>
 
       {/* Direct Audit CTA - High Impact */}
-      <section className="py-24 bg-light overflow-hidden">
+      <ScrollReveal>
+        <section className="py-24 bg-light overflow-hidden">
         <div className="container mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-px bg-white/50 border border-navy/5 rounded-[60px] overflow-hidden shadow-sm">
             
@@ -658,6 +664,7 @@ export default function Contact() {
           </div>
         </div>
       </section>
+    </ScrollReveal>
     </PageWrapper>
   );
 }

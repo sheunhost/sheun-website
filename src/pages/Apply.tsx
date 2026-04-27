@@ -4,6 +4,8 @@ import PageWrapper from "../components/PageWrapper";
 import { useState, FormEvent, useEffect } from "react";
 import { Link } from "react-router-dom";
 
+import ScrollReveal from "../components/ScrollReveal";
+
 const qualifications = [
   "Want real revenue growth",
   "Value strategy, not shortcuts",
@@ -152,7 +154,8 @@ export default function Apply() {
       }}
     >
       {/* Simple, Trust-Building Hero */}
-      <section className="pt-40 pb-20 bg-navy-gradient relative overflow-hidden">
+      <ScrollReveal>
+        <section className="pt-40 pb-20 bg-navy-gradient relative overflow-hidden">
         <div className="absolute inset-0 z-0">
           <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_50%_0%,_rgba(103,255,193,0.15)_0%,_transparent_70%)]" />
         </div>
@@ -195,9 +198,11 @@ export default function Apply() {
           </motion.div>
         </div>
       </section>
+    </ScrollReveal>
 
       {/* Trust Bar */}
-      <section className="bg-white border-b border-navy/5 py-12">
+      <ScrollReveal>
+        <section className="bg-white border-b border-navy/5 py-12">
         <div className="container mx-auto px-6">
           <div className="flex flex-wrap items-center justify-center gap-x-16 gap-y-8 opacity-40 grayscale hover:grayscale-0 transition-all duration-500">
             <span className="font-black text-2xl tracking-tighter">SHOPIFY PARTNER</span>
@@ -206,9 +211,11 @@ export default function Apply() {
           </div>
         </div>
       </section>
+    </ScrollReveal>
 
       {/* Qualification Form - Moved Higher */}
-      <section className="py-32 bg-light relative" id="apply-form">
+      <ScrollReveal>
+        <section className="py-32 bg-light relative" id="apply-form">
         <div className="absolute inset-0 opacity-5 pointer-events-none">
           <div className="absolute top-0 right-0 w-1/2 h-full bg-navy" />
         </div>
@@ -503,9 +510,11 @@ export default function Apply() {
               </div>
             </div>
       </section>
+    </ScrollReveal>
 
       {/* Social Proof Accent */}
-      <section className="py-24 bg-white border-y border-navy/5 overflow-hidden">
+      <ScrollReveal>
+        <section className="py-24 bg-white border-y border-navy/5 overflow-hidden">
         <div className="container mx-auto px-6">
           <div className="flex flex-wrap items-center justify-center gap-16 opacity-30 grayscale hover:grayscale-0 transition-all duration-700">
             {['Forbes', 'Spotify', 'Shopify', 'Nike', 'Apple'].map((item) => (
@@ -514,9 +523,11 @@ export default function Apply() {
           </div>
         </div>
       </section>
+    </ScrollReveal>
 
       {/* Info Boxes - Recipe 11 */}
-      <section className="py-32 bg-light">
+      <ScrollReveal>
+        <section className="py-32 bg-light">
         <div className="container mx-auto px-6">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
             {[
@@ -541,6 +552,7 @@ export default function Apply() {
           </div>
         </div>
       </section>
+    </ScrollReveal>
     </PageWrapper>
   );
 }
