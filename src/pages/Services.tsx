@@ -676,6 +676,75 @@ export default function Services() {
         </section>
       </ScrollReveal>
 
+      {/* Main Consultation CTA */}
+      <ScrollReveal>
+        <section className="py-32 bg-light">
+          <div className="container mx-auto px-6">
+            <div className="bg-navy rounded-[60px] p-12 md:p-24 relative overflow-hidden">
+              <div className="absolute inset-0 opacity-20">
+                <div className="absolute top-0 right-0 w-full h-full bg-green/20 blur-[120px] rounded-full translate-x-1/2 -translate-y-1/2" />
+              </div>
+              
+              <div className="relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center text-center lg:text-left">
+                <div className="space-y-10">
+                  <div className="inline-flex items-center gap-3 bg-white/5 border border-white/10 px-6 py-3 rounded-full text-green">
+                    <ShieldCheck size={20} />
+                    <span className="text-[10px] font-bold uppercase tracking-[0.3em]">Direct Expert Access</span>
+                  </div>
+                  <h2 className="text-5xl md:text-7xl font-bold text-white tracking-tighter leading-[0.95]">
+                    Need a <span className="text-green italic font-serif font-light">Custom Quote</span> or Tech Consultation?
+                  </h2>
+                  <p className="text-white/60 text-xl md:text-2xl leading-relaxed font-serif italic max-w-xl">
+                    Skip the generic plans. Let's discuss your specific store requirements and build a technical roadmap that actually works for your business.
+                  </p>
+                </div>
+
+                <div className="flex flex-col gap-8">
+                  <div className="bg-white/5 backdrop-blur-md rounded-3xl p-10 border border-white/10 space-y-10">
+                    <div className="space-y-4">
+                      <h3 className="text-2xl font-bold text-white tracking-tight">Schedule Your Call</h3>
+                      <p className="text-white/40 font-medium">15-minute intro to discuss scope, timelines, and pricing.</p>
+                    </div>
+                    
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                      <Link 
+                        to="/apply#apply-form" 
+                        className="bg-green text-navy px-8 py-5 rounded-full font-bold text-lg hover:scale-105 transition-all duration-300 shadow-xl shadow-green/20 text-center flex items-center justify-center gap-2"
+                      >
+                        Book Call <ArrowRight size={20} />
+                      </Link>
+                      <Link 
+                        to="/contact" 
+                        className="bg-white/10 text-white px-8 py-5 rounded-full font-bold text-lg hover:bg-white/20 transition-all text-center border border-white/10"
+                      >
+                        Send Message
+                      </Link>
+                    </div>
+
+                    <div className="pt-8 border-t border-white/5 flex items-center justify-center lg:justify-start gap-10">
+                      <div className="flex -space-x-3">
+                        {[1, 2, 3, 4].map(i => (
+                          <div key={i} className="w-10 h-10 rounded-full border-2 border-navy overflow-hidden">
+                            <img 
+                              src={`https://i.pravatar.cc/150?u=${i + 10}`} 
+                              alt="Client" 
+                              className="w-full h-full object-cover grayscale" 
+                              referrerPolicy="no-referrer"
+                            />
+                          </div>
+                        ))}
+                      </div>
+                      <p className="text-[10px] uppercase tracking-widest text-white/30 font-bold">120+ Brands Scaled</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </ScrollReveal>
+
+
       {/* Comprehensive Shopify Services SEO Context */}
       <ScrollReveal>
         <section className="py-24 bg-white border-t border-navy/5">

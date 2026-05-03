@@ -334,9 +334,9 @@ export default function ServiceDetail() {
                           <div className="relative">
                             <select name="budget" defaultValue="" className={`w-full bg-light/30 rounded-2xl py-5 px-6 border-2 focus:border-green hover:border-navy/10 text-navy font-semibold appearance-none outline-none transition-all cursor-pointer ${errors.budget ? 'border-red-500' : 'border-light'}`}>
                               <option value="" disabled>Select an estimated budget...</option>
-                              <option value="Less than $1,000">Less than $1,000</option>
-                              <option value="$1,000 - $3,000">$1,000 - $3,000</option>
-                              <option value="$3,000 - $5,000">$3,000 - $5,000</option>
+                              <option value="Less than $500">Less than $500</option>
+                              <option value="$500 - $2,000">$500 - $2,000</option>
+                              <option value="$2,000 - $5,000">$2,000 - $5,000</option>
                               <option value="$5,000+">$5,000+</option>
                             </select>
                             <ChevronDown className="absolute right-6 top-1/2 -translate-y-1/2 text-navy/40 pointer-events-none" size={20} />

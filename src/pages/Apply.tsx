@@ -421,9 +421,9 @@ export default function Apply() {
                                       className="w-full bg-light border-b-2 border-transparent rounded-[24px] py-6 pl-16 pr-8 focus:border-green focus:bg-white outline-none transition-all font-bold text-navy appearance-none cursor-pointer" 
                                     >
                                       <option value="" disabled>Select an estimated budget...</option>
-                                      <option value="Less than $1,000">Less than $1,000</option>
-                                      <option value="$1,000 - $3,000">$1,000 - $3,000</option>
-                                      <option value="$3,000 - $5,000">$3,000 - $5,000</option>
+                                      <option value="Less than $500">Less than $500</option>
+                                      <option value="$500 - $2,000">$500 - $2,000</option>
+                                      <option value="$2,000 - $5,000">$2,000 - $5,000</option>
                                       <option value="$5,000+">$5,000+</option>
                                     </select>
                                     <ChevronDown className="absolute right-8 top-1/2 -translate-y-1/2 text-navy/40 pointer-events-none" size={20} />
