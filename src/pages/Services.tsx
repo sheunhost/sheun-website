@@ -307,7 +307,6 @@ const ServiceModal = ({ service, onClose }: { service: any; onClose: () => void 
 
 export default function Services() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
-  const [selectedService, setSelectedService] = useState<any | null>(null);
   const [testimonialIndex, setTestimonialIndex] = useState(0);
   const navigate = useNavigate();
 
@@ -342,14 +341,6 @@ export default function Services() {
          "url": "https://sheun.online/services"
       }}
     >
-      <AnimatePresence>
-        {selectedService && (
-          <ServiceModal
-            service={selectedService}
-            onClose={() => setSelectedService(null)}
-          />
-        )}
-      </AnimatePresence>
       {/* Services Hero - Editorial Style */}
       <ScrollReveal>
         <section className="pt-48 pb-32 bg-navy-gradient relative overflow-hidden">
@@ -431,12 +422,12 @@ export default function Services() {
                 </div>
                 <div className="pt-10 border-t border-navy/5 flex flex-col items-center justify-center gap-6 mt-auto w-full">
                   <span className="text-navy font-bold text-3xl tracking-tighter">{service.price}</span>
-                  <button 
-                    onClick={() => setSelectedService(service)}
+                  <Link 
+                    to={`/services/${service.id}`}
                     className="bg-navy text-white px-8 py-4 rounded-full font-bold text-sm tracking-widest uppercase flex items-center gap-3 hover:bg-green hover:text-navy transition-all duration-300 shadow-xl hover:shadow-2xl hover:-translate-y-1"
                   >
                     Learn More <ArrowRight size={16} />
-                  </button>
+                  </Link>
                 </div>
               </motion.div>
             ))}

@@ -35,7 +35,7 @@ export default function PageWrapper({
   
   // Use provided canonical or fall back to current path
   const currentPath = canonical || location.pathname;
-  const canonicalUrl = `https://sheun.online${currentPath === "/" ? "" : currentPath}`;
+  const canonicalUrl = `https://www.sheun.online${currentPath === "/" ? "" : currentPath}`;
 
   // Default Organization/Person schema
   const defaultSchema = {
