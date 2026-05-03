@@ -406,6 +406,37 @@ export default function ServiceDetail() {
           </section>
         </ScrollReveal>
 
+        {/* Related Services */}
+        <section className="py-24 bg-light">
+          <div className="container mx-auto px-6">
+            <div className="max-w-4xl mx-auto">
+              <h2 className="text-3xl md:text-4xl font-bold font-sans text-navy tracking-tight mb-12 text-center">Other Services You Might Need</h2>
+              <div className="grid md:grid-cols-3 gap-6">
+                {Object.entries(servicesData)
+                  .filter(([key]) => key !== id)
+                  .slice(0, 3)
+                  .map(([key, relatedService]) => (
+                    <Link 
+                      key={key} 
+                      to={`/services/${key}`}
+                      onClick={() => window.scrollTo(0, 0)}
+                      className="bg-white p-8 rounded-3xl border border-navy/5 hover:border-green/50 hover:shadow-xl transition-all duration-300 group flex flex-col h-full"
+                    >
+                      <div className="w-12 h-12 bg-navy/5 rounded-2xl flex items-center justify-center text-navy group-hover:bg-green group-hover:text-white transition-colors mb-6">
+                        {getIcon(relatedService.icon)}
+                      </div>
+                      <h3 className="font-bold text-navy text-xl mb-3 leading-tight">{relatedService.title}</h3>
+                      <p className="text-navy/60 text-sm leading-relaxed mb-6 flex-grow">{relatedService.description}</p>
+                      <div className="flex items-center gap-2 text-green font-bold text-sm uppercase tracking-wider group-hover:text-navy transition-colors mt-auto">
+                        View Service <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                      </div>
+                    </Link>
+                  ))}
+              </div>
+            </div>
+          </div>
+        </section>
+
       </div>
     </PageWrapper>
   );
