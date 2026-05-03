@@ -4,7 +4,7 @@ import PageWrapper from "../components/PageWrapper";
 import { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import ScrollReveal from "../components/ScrollReveal";
-
+import { servicesData } from "../data/servicesData";
 
 const services = [
   {
@@ -118,7 +118,7 @@ const services = [
   {
     id: "cro",
     icon: Target,
-    title: "Conversion Rate Optimization (CRO) Audit",
+    title: "Conversion Rate Optimization (CRO)",
     desc: "A deep, data-driven analysis of your store's user behavior, providing a strategic roadmap of UI/UX improvements to increase your sales without increasing traffic.",
     fullDesc: "Increase your sales without increasing traffic. I perform a deep, data-driven analysis of your store's user behavior and provide a strategic roadmap of UI/UX improvements.",
     includes: ["UX Audit", "A/B Testing", "Heatmap Analysis", "Funnel Optimization"],
@@ -154,7 +154,7 @@ const services = [
   {
     id: "speed",
     icon: Zap,
-    title: "Shopify Speed Optimization",
+    title: "Speed Optimization",
     desc: "Lightning-fast page loads to improve Google rankings and customer retention.",
     fullDesc: "Every second of delay costs you sales. I optimize your theme code, compress assets, and prune heavy apps to get your store to a 90+ score on Core Web Vitals.",
     includes: ["Core Web Vitals", "Image optimization", "Code minification", "App audit"],
@@ -387,50 +387,98 @@ export default function Services() {
       </section>
     </ScrollReveal>
 
-      {/* Services Grid - Visible Grid Recipe */}
+      {/* Services List */}
       <ScrollReveal>
         <section className="py-32 bg-white">
-        <div className="container mx-auto px-6">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 border-t border-l border-navy/5 rounded-3xl overflow-hidden">
-            {services.map((service, i) => (
-              <motion.div
-                key={service.id}
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
-                className="p-16 border-r border-b border-navy/5 group hover:bg-light transition-all relative overflow-hidden text-center flex flex-col h-full items-center"
-              >
-                <div className="absolute top-0 right-0 p-12 opacity-0 group-hover:opacity-100 transition-opacity">
-                  <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-green bg-green/10 px-4 py-2 rounded-full">
-                    {service.tag}
-                  </span>
-                </div>
-                <div className="space-y-10 relative z-10 flex-grow w-full flex flex-col items-center">
-                  <div className="w-20 h-20 bg-navy/5 rounded-3xl flex items-center justify-center text-navy group-hover:bg-green group-hover:text-navy transition-all duration-500">
-                    <service.icon size={40} />
+        <div className="container mx-auto px-6 max-w-5xl">
+          <div className="space-y-16">
+            {services.map((service, i) => {
+              const data = servicesData[service.id as keyof typeof servicesData];
+              if (!data) return null;
+
+              return (
+                <motion.div
+                  key={service.id}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: "-100px" }}
+                  className="bg-light p-8 md:p-12 lg:p-16 rounded-[40px] border border-navy/5 relative overflow-hidden group hover:border-green/50 transition-colors duration-500 shadow-sm hover:shadow-2xl"
+                >
+                  <div className="absolute top-0 right-0 p-8 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                    <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-green bg-green/10 px-6 py-2 rounded-full hidden md:inline-block">
+                      {service.tag}
+                    </span>
                   </div>
-                  <div className="space-y-6 text-center">
-                    <h3 className="text-4xl font-bold text-navy tracking-tight">{service.title}</h3>
-                    <p className="text-navy/40 text-lg leading-relaxed font-serif italic">{service.desc}</p>
+
+                  <div className="flex flex-col gap-12">
+                    {/* Header */}
+                    <div className="flex flex-col md:flex-row items-start md:items-center gap-6">
+                      <div className="w-20 h-20 bg-navy/5 rounded-3xl flex items-center justify-center text-navy group-hover:bg-green group-hover:text-white transition-all duration-500 shrink-0">
+                        <service.icon size={40} />
+                      </div>
+                      <div>
+                        <h3 className="text-3xl md:text-4xl font-bold text-navy tracking-tight mb-2">{service.title}</h3>
+                        <p className="text-navy/50 font-serif italic text-lg md:text-xl">{data.heading || service.desc}</p>
+                      </div>
+                    </div>
+
+                    {/* Content Grid */}
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start">
+                      <div className="space-y-8">
+                        {/* Problem */}
+                        <div className="space-y-3">
+                          <h4 className="text-[10px] font-bold uppercase tracking-[0.2em] text-navy/40 flex items-center gap-2">
+                            <span className="w-1.5 h-1.5 bg-red-400 rounded-full" /> The Problem
+                          </h4>
+                          <p className="text-navy/70 leading-relaxed font-medium">
+                            {data.problem}
+                          </p>
+                        </div>
+
+                        {/* Scope */}
+                        <div className="space-y-3">
+                          <h4 className="text-[10px] font-bold uppercase tracking-[0.2em] text-navy/40 flex items-center gap-2">
+                            <span className="w-1.5 h-1.5 bg-green rounded-full" /> My Solution (Scope)
+                          </h4>
+                          <p className="text-navy/70 leading-relaxed font-medium">
+                            {data.scope}
+                          </p>
+                        </div>
+                      </div>
+
+                      {/* Deliverables & Actions */}
+                      <div className="bg-white p-8 rounded-3xl space-y-8 border border-navy/5 h-full flex flex-col">
+                        <div className="space-y-4 flex-grow">
+                          <h4 className="text-[10px] font-bold uppercase tracking-[0.2em] text-navy/40">Key Deliverables</h4>
+                          <ul className="space-y-3">
+                            {data.deliverables.map((item, j) => (
+                              <li key={j} className="flex items-start gap-3 text-navy/80 font-semibold text-sm">
+                                <CheckCircle2 className="w-4 h-4 text-green shrink-0 mt-0.5" />
+                                <span>{item}</span>
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                        
+                        <div className="pt-8 border-t border-navy/5 flex flex-col sm:flex-row items-center justify-between gap-6">
+                          <div className="text-center sm:text-left">
+                            <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-navy/40 mb-1">Starting At</p>
+                            <span className="text-navy font-bold text-2xl tracking-tighter">{service.price}</span>
+                          </div>
+                          <Link 
+                            to={`/services/${service.id}`}
+                            onClick={() => window.scrollTo(0, 0)}
+                            className="w-full sm:w-auto bg-navy text-white px-8 py-4 rounded-full font-bold text-sm tracking-widest uppercase flex items-center justify-center gap-3 hover:bg-green hover:text-navy transition-all duration-300 shadow-xl hover:shadow-green/20"
+                          >
+                            Learn More <ArrowRight size={16} />
+                          </Link>
+                        </div>
+                      </div>
+                    </div>
                   </div>
-                  <ul className="space-y-4 pb-10 flex flex-col items-center w-full">
-                    {service.includes.map((item, j) => (
-                      <li key={j} className="flex items-center gap-4 text-sm text-navy/60 font-bold uppercase tracking-[0.2em] text-center">
-                        <div className="w-1.5 h-1.5 bg-green rounded-full" /> {item}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-                <div className="pt-10 border-t border-navy/5 flex flex-col items-center justify-center gap-6 mt-auto w-full">
-                  <span className="text-navy font-bold text-3xl tracking-tighter">{service.price}</span>
-                  <Link 
-                    to={`/services/${service.id}`}
-                    className="bg-navy text-white px-8 py-4 rounded-full font-bold text-sm tracking-widest uppercase flex items-center gap-3 hover:bg-green hover:text-navy transition-all duration-300 shadow-xl hover:shadow-2xl hover:-translate-y-1"
-                  >
-                    Learn More <ArrowRight size={16} />
-                  </Link>
-                </div>
-              </motion.div>
-            ))}
+                </motion.div>
+              );
+            })}
           </div>
         </div>
       </section>
