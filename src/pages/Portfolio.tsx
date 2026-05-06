@@ -24,15 +24,6 @@ type Project = {
 
 const projects: Project[] = [
   {
-    id: "g2",
-    name: "TechHub",
-    tag: "📱 Gadgets — Premium Electronics",
-    category: "📱 Gadgets",
-    desc: "A sleek, high-conversion Shopify storefront designed for cutting-edge gadget brands. Featuring immersive hero sections, detailed tech specifications, and a performance-first mobile layout built to convert tech-savvy shoppers at scale. ⚡🔭📱",
-    image: "https://ik.imagekit.io/pedgmrihq/image.png?updatedAt=1778028050705",
-    label: "🎨 Design Concept by Sheun Hub"
-  },
-  {
     id: "g3",
     name: "TechPro",
     tag: "📱 Gadgets — Technical Excellence",
@@ -171,7 +162,7 @@ export default function Portfolio() {
                 transition={{ delay: 0.1 }}
                 className="text-white/60 text-2xl max-w-3xl font-serif italic"
               >
-                Browse 8 original Shopify store concepts across fashion, beauty, pets & gadgets. See a style you love? Let's build it.
+                Browse 7 original Shopify store concepts across fashion, beauty, pets & gadgets. See a style you love? Let's build it.
               </motion.p>
             </div>
 
@@ -183,7 +174,7 @@ export default function Portfolio() {
             >
               <div className="flex items-center gap-4 text-white font-bold">
                 <span className="text-2xl">🛍️</span>
-                <span className="text-xs uppercase tracking-[0.2em]">8 Concepts</span>
+                <span className="text-xs uppercase tracking-[0.2em]">7 Concepts</span>
               </div>
               <div className="w-px h-8 bg-white/10 hidden sm:block" />
               <div className="flex items-center gap-4 text-white font-bold">
