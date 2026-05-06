@@ -101,6 +101,17 @@ const projects: Project[] = [
     col: "md:col-span-8",
     height: "h-[500px]",
     label: "🎨 Design Concept by Sheun Hub"
+  },
+  {
+    id: "g3",
+    name: "TechPro",
+    tag: "📱 Gadgets — Technical Excellence",
+    category: "📱 Gadgets",
+    desc: "A high-performance Shopify store design for complex tech products. This concept emphasizes clarity, detailed attribute filtering, and a powerful hero section that immediately establishes brand trust for expensive electronics. ⚡🔭🔋",
+    image: "https://awesomescreenshot.s3.amazonaws.com/image/7348477/60279162-9e28b532b37bbfb2d53e5046bd3223e2.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAJSCJQ2NM3XLFPVKA%2F20260506%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20260506T094733Z&X-Amz-Expires=28800&X-Amz-SignedHeaders=host&X-Amz-Signature=2f37cdda238dec844dfe7c17dbe820c953367191bec3885f66783a5f1a75ea7b",
+    col: "md:col-span-8",
+    height: "h-[500px]",
+    label: "🎨 Design Concept by Sheun Hub"
   }
 ];
 
@@ -178,7 +189,7 @@ export default function Portfolio() {
                 transition={{ delay: 0.1 }}
                 className="text-white/60 text-2xl max-w-3xl font-serif italic"
               >
-                Browse 7 original Shopify store concepts across fashion, beauty, pets & gadgets. See a style you love? Let's build it.
+                Browse 8 original Shopify store concepts across fashion, beauty, pets & gadgets. See a style you love? Let's build it.
               </motion.p>
             </div>
 
@@ -190,7 +201,7 @@ export default function Portfolio() {
             >
               <div className="flex items-center gap-4 text-white font-bold">
                 <span className="text-2xl">🛍️</span>
-                <span className="text-xs uppercase tracking-[0.2em]">7 Concepts</span>
+                <span className="text-xs uppercase tracking-[0.2em]">8 Concepts</span>
               </div>
               <div className="w-px h-8 bg-white/10 hidden sm:block" />
               <div className="flex items-center gap-4 text-white font-bold">
