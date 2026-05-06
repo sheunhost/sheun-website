@@ -101,17 +101,6 @@ const projects: Project[] = [
     col: "md:col-span-8",
     height: "h-[500px]",
     label: "🎨 Design Concept by Sheun Hub"
-  },
-  {
-    id: "g3",
-    name: "TechSpace",
-    tag: "📱 Gadgets — Ultimate Tech Experience",
-    category: "📱 Gadgets",
-    desc: "A powerhouse Shopify theme concept designed for high-end electronics and gadget retailers. Emphasis on feature-rich product pages, integrated customer reviews, and a high-performance grid layout that showcases product innovation. Perfect for scaling brands looking for an elite digital presence. 🔋🎮⚡",
-    image: "https://ik.imagekit.io/pedgmrihq/image.png?updatedAt=1778030704885",
-    col: "md:col-span-8",
-    height: "h-[500px]",
-    label: "🎨 Design Concept by Sheun Hub"
   }
 ];
 
@@ -189,7 +178,7 @@ export default function Portfolio() {
                 transition={{ delay: 0.1 }}
                 className="text-white/60 text-2xl max-w-3xl font-serif italic"
               >
-                Browse 8 original Shopify store concepts across fashion, beauty, pets & gadgets. See a style you love? Let's build it.
+                Browse 7 original Shopify store concepts across fashion, beauty, pets & gadgets. See a style you love? Let's build it.
               </motion.p>
             </div>
 
@@ -201,7 +190,7 @@ export default function Portfolio() {
             >
               <div className="flex items-center gap-4 text-white font-bold">
                 <span className="text-2xl">🛍️</span>
-                <span className="text-xs uppercase tracking-[0.2em]">8 Concepts</span>
+                <span className="text-xs uppercase tracking-[0.2em]">7 Concepts</span>
               </div>
               <div className="w-px h-8 bg-white/10 hidden sm:block" />
               <div className="flex items-center gap-4 text-white font-bold">
