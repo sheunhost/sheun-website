@@ -15,8 +15,6 @@ type Project = {
   category: string;
   desc: string;
   image: string;
-  col: string;
-  height: string;
   label?: string;
   isRealProject?: boolean;
   services?: string[];
@@ -32,8 +30,6 @@ const projects: Project[] = [
     category: "📱 Gadgets",
     desc: "A futuristic and highly optimized Shopify store design for tech brands. This concept focuses on massive clear visuals, dynamic specification badges, and a streamlined frictionless checkout process designed for high-conversion electronic sales. 🚀🔋💻",
     image: "https://ik.imagekit.io/pedgmrihq/image.png?updatedAt=1778026886292",
-    col: "md:col-span-8",
-    height: "h-[600px]",
     label: "🎨 Design Concept by Sheun Hub"
   },
   {
@@ -43,8 +39,6 @@ const projects: Project[] = [
     category: "📱 Gadgets",
     desc: "A sleek, high-conversion Shopify storefront designed for cutting-edge gadget brands. Featuring immersive hero sections, detailed tech specifications, and a performance-first mobile layout built to convert tech-savvy shoppers at scale. ⚡🔭📱",
     image: "https://ik.imagekit.io/pedgmrihq/image.png?updatedAt=1778028050705",
-    col: "md:col-span-4",
-    height: "h-[600px]",
     label: "🎨 Design Concept by Sheun Hub"
   },
   {
@@ -54,8 +48,6 @@ const projects: Project[] = [
     category: "📱 Gadgets",
     desc: "A high-performance Shopify store design for complex tech products. This concept emphasizes clarity, detailed attribute filtering, and a powerful hero section that immediately establishes brand trust for expensive electronics. ⚡🔭🔋",
     image: "https://awesomescreenshot.s3.amazonaws.com/image/7348477/60279162-9e28b532b37bbfb2d53e5046bd3223e2.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAJSCJQ2NM3XLFPVKA%2F20260506%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20260506T094733Z&X-Amz-Expires=28800&X-Amz-SignedHeaders=host&X-Amz-Signature=2f37cdda238dec844dfe7c17dbe820c953367191bec3885f66783a5f1a75ea7b",
-    col: "md:col-span-6",
-    height: "h-[500px]",
     label: "🎨 Design Concept by Sheun Hub"
   },
   {
@@ -65,8 +57,6 @@ const projects: Project[] = [
     category: "📱 Gadgets",
     desc: "An advanced Shopify store design for high-end technology brands. This concept focuses on hyper-realistic visuals, detailed feature breakouts, and a frictionless technical spec comparison tool designed to convert discerning tech enthusiasts. 🚀⚡💻",
     image: "https://awesomescreenshot.s3.amazonaws.com/image/7348477/60280896-2b2ebbb090c6b445bde71c6041411a81.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAJSCJQ2NM3XLFPVKA%2F20260506%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20260506T105347Z&X-Amz-Expires=28800&X-Amz-SignedHeaders=host&X-Amz-Signature=40ea06c47b9568b226924680cf9a0bb83e88d15e1eb009bed9eb9a2dbde8bff3",
-    col: "md:col-span-6",
-    height: "h-[500px]",
     label: "🎨 Design Concept by Sheun Hub"
   },
   {
@@ -76,8 +66,6 @@ const projects: Project[] = [
     category: "💄 Beauty & Skincare",
     desc: "Designed with a clean visual hierarchy and user-focused layout, LumiereSkin presents its skincare collection through soft, elegant sections and immersive visuals. The website highlights key elements like product benefits, natural ingredients, and daily skincare essentials in a structured and easy-to-follow flow. Balanced spacing and minimal distractions create a calm browsing experience, making the interface feel modern, refined, and effortlessly soothing to explore. ✨🧴🌿",
     image: "https://cdn.dribbble.com/userupload/47314439/file/c6086620d425f60ad8dac40f74cfe1b4.png?resize=752x3909&vertical=center",
-    col: "md:col-span-8",
-    height: "h-[500px]",
     label: "🎨 Design Concept by Sheun Hub"
   },
   {
@@ -87,8 +75,6 @@ const projects: Project[] = [
     category: "👗 Fashion",
     desc: "Hi There,\n\nThis is a Website concept for a Trendy Fashion E-commerce Website.\n\nHope you guys will like it.\n\nLet me know your thought's on that. Your feedback and appreciation is always welcome 🙂\n\nI'm available for new projects",
     image: "https://cdn.dribbble.com/userupload/37390836/file/original-13c3c213f022ab00791a6abaa9447322.png?resize=850x638&vertical=center",
-    col: "md:col-span-4",
-    height: "h-[500px]",
     label: "🎨 Design Concept by Sheun Hub"
   },
   {
@@ -98,8 +84,6 @@ const projects: Project[] = [
     category: "👗 Fashion",
     desc: "A bold, gender-neutral fashion concept designed for the modern era. Featuring high-contrast layouts, versatile product displays for both male and female collections, and a seamless shopping experience.",
     image: "https://cdn.dribbble.com/userupload/36920984/file/original-ff98dfbecece4eba4c0ef25160306302.png?resize=752x&vertical=center",
-    col: "md:col-span-6",
-    height: "h-[500px]",
     label: "🎨 Design Concept by Sheun Hub"
   },
   {
@@ -109,8 +93,6 @@ const projects: Project[] = [
     category: "💄 Beauty & Skincare",
     desc: "A clean and modern skincare website design concept focused on elegance and simplicity. The layout highlights product collections, beauty treatments, and customer-focused experiences with a minimal yet luxurious aesthetic. Designed to enhance user experience while keeping the brand’s natural and glowing identity at the core.",
     image: "https://cdn.dribbble.com/userupload/44540941/file/e348fef4b20fc2fa3b6d93da41e73932.jpg?resize=1024x768&vertical=center",
-    col: "md:col-span-6",
-    height: "h-[500px]",
     label: "🎨 Design Concept by Sheun Hub"
   },
   {
@@ -120,8 +102,6 @@ const projects: Project[] = [
     category: "🐾 Pets",
     desc: "Expert Pet Care with Love & Trust! Grooming, Health, Nutrition & More, Because Your Furry Friend Deserves the Best!",
     image: "https://cdn.dribbble.com/userupload/37449048/file/original-6a6b4e4e7ebfed9f6502c61669a61580.png?resize=1024x3374&vertical=center",
-    col: "md:col-span-12",
-    height: "h-[500px]",
     label: "🎨 Design Concept by Sheun Hub"
   }
 ];
@@ -239,11 +219,11 @@ export default function Portfolio() {
     <ScrollReveal>
       <section className="py-24 bg-white min-h-screen">
         <div className="container mx-auto px-6">
-          <div className="grid grid-cols-1 md:grid-cols-12 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {projects.filter(p => p.image && p.image.trim() !== "").map((project, i) => (
               <div 
                 key={`gallery-${i}`} 
-                className={`relative rounded-2xl overflow-hidden cursor-pointer group hover:shadow-2xl transition-all border border-navy/5 ${project.col || 'md:col-span-4'}`}
+                className="relative rounded-2xl overflow-hidden cursor-pointer group hover:shadow-2xl transition-all border border-navy/5"
                 onClick={() => {
                   setFullScreenIndex(i);
                 }}
@@ -252,16 +232,12 @@ export default function Portfolio() {
                   src={project.image} 
                   alt="Sheun Hub Portfolio Design" 
                   referrerPolicy="no-referrer"
-                  className={`w-full ${project.height || 'h-[400px]'} object-cover object-top bg-light group-hover:scale-105 transition-transform duration-700`}
+                  className="w-full h-[400px] object-cover object-top bg-light group-hover:scale-105 transition-transform duration-700"
                   loading="lazy"
                 />
                 <div className="absolute inset-0 bg-navy/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center p-6 text-center backdrop-blur-sm">
-                  <div className="space-y-2 opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 delay-100">
-                    <h3 className="text-white text-2xl font-bold">{project.name}</h3>
-                    <p className="text-white/60 text-sm font-medium">{project.tag.split('—')[0]}</p>
-                  </div>
-                  <span className="mt-8 text-white font-bold text-xs bg-white/20 px-6 py-3 rounded-full backdrop-blur-md border border-white/20 shadow-lg opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 delay-200">
-                    View Case Study
+                  <span className="text-white font-bold text-sm bg-white/20 px-6 py-3 rounded-full backdrop-blur-md border border-white/20 shadow-lg">
+                    View Full Screen
                   </span>
                 </div>
               </div>
