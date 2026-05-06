@@ -49,7 +49,7 @@ export default function Visualizer() {
               <motion.h1 
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
-                className="text-6xl md:text-[118px] font-bold text-white tracking-tighter leading-[0.8] mb-12"
+                className="text-5xl md:text-[118px] font-bold text-white tracking-tighter leading-[0.8] mb-12"
               >
                 Shopify Visualizer <br />
                 <span className="italic font-serif font-light text-white/40">by Sheun Hub</span>.
@@ -87,7 +87,7 @@ export default function Visualizer() {
               { title: "Instant Visualization", desc: "See your ideas come to life before spending a dime on development.", icon: Zap },
               { title: "Free to Use", desc: "Part of my commitment to helping startup brands succeed on Shopify.", icon: Globe },
             ].map((feature, i) => (
-              <div key={i} className="p-16 border-r border-b border-navy/5 group hover:bg-light transition-all">
+              <div key={i} className="p-8 md:p-16 border-r border-b border-navy/5 group hover:bg-light transition-all">
                 <div className="w-16 h-16 bg-navy/5 rounded-2xl flex items-center justify-center text-navy group-hover:bg-green group-hover:text-navy transition-all duration-500 mb-8">
                   <feature.icon size={28} />
                 </div>
@@ -106,7 +106,7 @@ export default function Visualizer() {
             <div className="space-y-12">
               <div className="space-y-6">
                 <p className="text-navy/40 text-[10px] font-bold uppercase tracking-[0.4em]">The Process</p>
-                <h2 className="text-6xl md:text-8xl font-bold text-navy tracking-tighter leading-[0.85]">
+                <h2 className="text-5xl md:text-8xl font-bold text-navy tracking-tighter leading-[0.85]">
                   How to <br />
                   <span className="italic font-serif font-light text-navy/40">Use It</span>.
                 </h2>
@@ -168,7 +168,7 @@ export default function Visualizer() {
             transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
             className="max-w-5xl mx-auto space-y-16"
           >
-            <h2 className="text-7xl md:text-[140px] font-bold text-white leading-[0.8] tracking-[-0.06em] uppercase">
+            <h2 className="text-5xl md:text-[140px] font-bold text-white leading-[0.8] tracking-[-0.06em] uppercase">
               Ready to <br /><span className="text-green italic font-serif font-light lowercase">Launch?</span>
             </h2>
             <p className="text-white/60 text-2xl md:text-3xl max-w-3xl mx-auto leading-relaxed font-serif italic">

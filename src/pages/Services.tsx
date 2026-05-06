@@ -1,5 +1,5 @@
 import { motion, AnimatePresence } from "framer-motion";
-import { Layout, RefreshCw, ShoppingCart, Palette, Bug, Search, Rocket, Gift, ChevronDown, CheckCircle2, ArrowRight, Code2, Zap, MessageSquare, Star, X, Clock, DollarSign, ListChecks, ShieldCheck, Target, Quote, ChevronLeft, ChevronRight  } from "lucide-react";
+import { Layout, RefreshCw, ShoppingCart, Palette, Bug, Search, Rocket, Gift, ChevronDown, CheckCircle2, ArrowRight, Code2, Zap, MessageSquare, Star, X, Clock, DollarSign, ListChecks, ShieldCheck, Target, Quote, ChevronLeft, ChevronRight, Grid, List } from "lucide-react";
 import PageWrapper from "../components/PageWrapper";
 import { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
@@ -77,6 +77,24 @@ const services = [
       { title: "Development Phase", desc: "Writing clean, efficient Liquid and JavaScript code." },
       { title: "Integration & Testing", desc: "Ensuring custom features work seamlessly with your apps." },
       { title: "Deployment", desc: "Pushing changes to your live store with zero downtime." }
+    ]
+  },
+  {
+    id: "plus",
+    icon: Target,
+    title: "Shopify Plus Upgrades",
+    desc: "Enterprise Shopify Plus configuration, checkout extensibility, custom B2B portals, and enterprise migrations.",
+    fullDesc: "Enterprise brands hitting the limitations of standard Shopify need robust customizations to handle massive scale. A standard theme cannot support multi-million dollar volume, custom B2B pricing grids, complex checkout modifications, or seamless API integrations with enterprise ERPs.",
+    includes: ["Checkout Extensibility", "B2B Features", "Shopify Scripts", "App Integration"],
+    price: "Custom Quote",
+    timeline: "3-6 Weeks",
+    tag: "Plus",
+    roadmap: [
+      { title: "Enterprise Scoping", desc: "Mapping out complex flows like B2B wholesale pricing." },
+      { title: "Checkout Extensibility", desc: "Building custom checkout UI extensions and functions." },
+      { title: "Integration", desc: "Connecting enterprise ERPs and bespoke internal operational apps." },
+      { title: "Load Testing", desc: "Ensuring zero performance drops under massive flash sale pressure." },
+      { title: "Deployment", desc: "Safe, zero-downtime launch for your enterprise brand." }
     ]
   },
   {
@@ -236,66 +254,66 @@ const ServiceModal = ({ service, onClose }: { service: any; onClose: () => void 
         </button>
 
         <div className="grid grid-cols-1 lg:grid-cols-12">
-          <div className="lg:col-span-5 bg-navy-gradient p-12 md:p-16 text-white space-y-12">
-            <div className="w-20 h-20 bg-green rounded-3xl flex items-center justify-center text-navy shadow-2xl">
-              <service.icon size={40} />
+          <div className="lg:col-span-5 bg-navy-gradient p-8 md:p-16 text-white space-y-10 md:space-y-12">
+            <div className="w-16 h-16 md:w-20 md:h-20 bg-green rounded-3xl flex items-center justify-center text-navy shadow-2xl shrink-0">
+              <service.icon size={32} className="md:w-[40px] md:h-[40px]" />
             </div>
-            <div className="space-y-6">
-              <h3 className="text-4xl md:text-5xl font-bold leading-tight tracking-tighter text-balance break-words">{service.title}</h3>
-              <p className="text-white/60 text-lg md:text-xl leading-relaxed font-serif italic text-balance break-words">{service.fullDesc}</p>
+            <div className="space-y-4 md:space-y-6">
+              <h3 className="text-3xl md:text-5xl font-bold leading-tight tracking-tighter text-balance break-words">{service.title}</h3>
+              <p className="text-white/60 text-base md:text-xl leading-relaxed font-serif italic text-balance break-words">{service.fullDesc}</p>
             </div>
             <div className="space-y-6 pt-10 border-t border-white/10">
-              <div className="flex items-center gap-6">
-                <div className="w-12 h-12 rounded-2xl bg-white/5 flex items-center justify-center text-green">
-                  <Clock size={24} />
+              <div className="flex items-center gap-4 md:gap-6">
+                <div className="w-10 h-10 md:w-12 md:h-12 rounded-2xl bg-white/5 flex items-center justify-center text-green shrink-0">
+                  <Clock size={20} className="md:w-[24px] md:h-[24px]" />
                 </div>
                 <div>
                   <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-white/40">Timeline</p>
-                  <p className="text-xl font-bold">{service.timeline}</p>
+                  <p className="text-lg md:text-xl font-bold">{service.timeline}</p>
                 </div>
               </div>
-              <div className="flex items-center gap-6">
-                <div className="w-12 h-12 rounded-2xl bg-white/5 flex items-center justify-center text-green">
-                  <DollarSign size={24} />
+              <div className="flex items-center gap-4 md:gap-6">
+                <div className="w-10 h-10 md:w-12 md:h-12 rounded-2xl bg-white/5 flex items-center justify-center text-green shrink-0">
+                  <DollarSign size={20} className="md:w-[24px] md:h-[24px]" />
                 </div>
                 <div>
                   <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-white/40">Starting From</p>
-                  <p className="text-xl font-bold">{service.price}</p>
+                  <p className="text-lg md:text-xl font-bold">{service.price}</p>
                 </div>
               </div>
             </div>
           </div>
 
-          <div className="lg:col-span-7 p-12 md:p-16 space-y-12 bg-white">
-            <div className="space-y-8">
-              <div className="flex items-center gap-4">
-                <ListChecks className="text-green" size={32} />
-                <h4 className="text-3xl font-bold text-navy tracking-tight">Service Roadmap</h4>
+          <div className="lg:col-span-7 p-8 md:p-16 space-y-10 md:space-y-12 bg-white">
+            <div className="space-y-6 md:space-y-8">
+              <div className="flex items-center gap-3 md:gap-4">
+                <ListChecks className="text-green w-6 h-6 md:w-8 md:h-8" />
+                <h4 className="text-2xl md:text-3xl font-bold text-navy tracking-tight">Service Roadmap</h4>
               </div>
-              <div className="space-y-8 relative before:absolute before:left-5 before:top-2 before:bottom-2 before:w-px before:bg-navy/5">
+              <div className="space-y-6 md:space-y-8 relative before:absolute before:left-5 before:top-2 before:bottom-2 before:w-px before:bg-navy/5">
                 {service.roadmap.map((step: any, i: number) => (
-                  <div key={i} className="relative pl-16 group">
-                    <div className="absolute left-0 top-1 w-10 h-10 bg-light rounded-2xl border border-navy/5 flex items-center justify-center text-sm font-bold text-navy group-hover:bg-green group-hover:border-green transition-all duration-500">
+                  <div key={i} className="relative pl-12 md:pl-16 group">
+                    <div className="absolute left-0 top-1 w-8 h-8 md:w-10 md:h-10 bg-light rounded-2xl border border-navy/5 flex items-center justify-center text-xs md:text-sm font-bold text-navy group-hover:bg-green group-hover:border-green transition-all duration-500">
                       {i + 1}
                     </div>
-                    <div className="space-y-2">
-                      <p className="text-xl font-bold text-navy">{step.title}</p>
-                      <p className="text-navy/60 leading-relaxed">{step.desc}</p>
+                    <div className="space-y-1 md:space-y-2">
+                      <p className="text-lg md:text-xl font-bold text-navy">{step.title}</p>
+                      <p className="text-navy/60 text-sm md:text-base leading-relaxed">{step.desc}</p>
                     </div>
                   </div>
                 ))}
               </div>
             </div>
 
-            <div className="pt-10 border-t border-navy/5">
+            <div className="pt-8 md:pt-10 border-t border-navy/5">
               <button
                 onClick={() => {
                   onClose();
                   navigate("/apply#apply-form");
                 }}
-                className="w-full bg-navy text-white py-6 rounded-full font-bold text-xl hover:bg-green hover:text-navy transition-all duration-500 flex items-center justify-center gap-4 shadow-2xl"
+                className="w-full bg-navy text-white py-5 md:py-6 rounded-full font-bold text-lg md:text-xl hover:bg-green hover:text-navy transition-all duration-500 flex items-center justify-center gap-3 md:gap-4 shadow-2xl"
               >
-                Get Started <ArrowRight size={24} />
+                Get Started <ArrowRight size={20} className="md:w-[24px] md:h-[24px]" />
               </button>
             </div>
           </div>
@@ -306,6 +324,7 @@ const ServiceModal = ({ service, onClose }: { service: any; onClose: () => void 
 };
 
 export default function Services() {
+  const [viewMode, setViewMode] = useState<'grid' | 'list'>('grid');
   const [openFaq, setOpenFaq] = useState<number | null>(null);
   const [testimonialIndex, setTestimonialIndex] = useState(0);
   const navigate = useNavigate();
@@ -327,7 +346,7 @@ export default function Services() {
     <PageWrapper 
       title="Shopify Development Services | Sheun Hub" 
       description="Professional Shopify services: store setups, data migrations, theme customizations, SEO enhancements, and conversion rate optimization (CRO)."
-      keywords="Shopify Services, Store Setup, Shopify Migration, Theme Customization, E-commerce SEO, Convertion Rate Optimization"
+      keywords="Shopify Services, Store Setup, Shopify Migration, Theme Customization, E-commerce SEO, Convertion Rate Optimization, shopify dropshipping expert, hire shopify seo expert, shopify experts, shopify freelancer, hire someone to build shopify store, shopify migration, shopify migration agency, shopify migration experts, build shopify store for me, shopify web designer, shopify developers, shopify website designer, shopify agency, hire shopify expert, shopify consultant, freelance shopify developer, shopify website designers, magento to shopify migration, shopify designers, shopify website design company, shopify developers for hire, shopify marketing experts, shopify website experts, shopify seo expert, shopify expert agency, shopify agency partners, shopify migration services, hire someone to set up shopify store, woocommerce to shopify migration, shopify coding expert, web designer for shopify, shopify freelance developer, shopify designer freelance, migrate woocommerce to shopify, shopify developer agency, shopify plus experts, shopify design experts, shopify expert help, certified shopify expert, shopify expert website builder, shopify developer hire, shopify store expert, freelance shopify website designer, hire someone to build my shopify store, shopify web agency, find shopify experts, shopify to bigcommerce migration, migrate from shopify to bigcommerce, wordpress to shopify migration, bigcommerce to shopify migration, shopify consultation, shopify seo specialist, shopify professionals, shopify expert hire, hire expert shopify, shopify development service, best shopify website designers, best shopify agency, shopify experts seo, shopify expert developer, shopify ecommerce experts, hire a shopify seo expert"
       canonical="/services"
       schema={{
          "@context": "https://schema.org",
@@ -387,10 +406,30 @@ export default function Services() {
       </section>
     </ScrollReveal>
 
-      {/* Services List */}
+      {/* Services List/Grid */}
       <ScrollReveal>
         <section className="py-32 bg-white">
-        <div className="container mx-auto px-6 max-w-5xl">
+        <div className={`container mx-auto px-6 ${viewMode === 'list' ? 'max-w-5xl' : 'max-w-7xl'}`}>
+          <div className="flex justify-end mb-12">
+            <div className="bg-light border border-navy/5 p-1 rounded-full flex items-center drop-shadow-sm">
+              <button 
+                onClick={() => setViewMode('grid')}
+                className={`w-12 h-12 rounded-full transition-all flex items-center justify-center ${viewMode === 'grid' ? 'bg-white shadow-md text-navy' : 'text-navy/40 hover:text-navy hover:bg-white/50'}`}
+                aria-label="Grid View"
+              >
+                <Grid size={20} />
+              </button>
+              <button 
+                onClick={() => setViewMode('list')}
+                className={`w-12 h-12 rounded-full transition-all flex items-center justify-center ${viewMode === 'list' ? 'bg-white shadow-md text-navy' : 'text-navy/40 hover:text-navy hover:bg-white/50'}`}
+                aria-label="List View"
+              >
+                <List size={20} />
+              </button>
+            </div>
+          </div>
+
+          {viewMode === 'list' ? (
           <div className="space-y-16">
             {services.map((service, i) => {
               const data = servicesData[service.id as keyof typeof servicesData];
@@ -402,7 +441,7 @@ export default function Services() {
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, margin: "-100px" }}
-                  className="bg-light p-8 md:p-12 lg:p-16 rounded-[40px] border border-navy/5 relative overflow-hidden group hover:border-green/50 transition-colors duration-500 shadow-sm hover:shadow-2xl"
+                  className="bg-light p-6 md:p-12 lg:p-16 rounded-[32px] md:rounded-[40px] border border-navy/5 relative overflow-hidden group hover:border-green/50 transition-colors duration-500 shadow-sm hover:shadow-2xl"
                 >
                   <div className="absolute top-0 right-0 p-8 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
                     <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-green bg-green/10 px-6 py-2 rounded-full hidden md:inline-block">
@@ -480,6 +519,53 @@ export default function Services() {
               );
             })}
           </div>
+          ) : (
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {services.map((service) => {
+                const data = servicesData[service.id as keyof typeof servicesData];
+                if (!data) return null;
+
+                return (
+                  <motion.div
+                    key={service.id}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, margin: "-100px" }}
+                    className="bg-light p-8 md:p-10 rounded-3xl border border-navy/5 relative overflow-hidden group hover:border-green/50 transition-colors duration-500 shadow-sm hover:shadow-2xl flex flex-col h-full"
+                  >
+                    <div className="absolute top-0 right-0 p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                      <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-green bg-green/10 px-4 py-1.5 rounded-full">
+                        {service.tag}
+                      </span>
+                    </div>
+
+                     <div className="w-16 h-16 bg-white rounded-2xl border border-navy/5 flex items-center justify-center text-navy group-hover:bg-green group-hover:text-white transition-all duration-500 mb-8 shrink-0">
+                      <service.icon size={32} />
+                    </div>
+                    
+                    <div className="space-y-4 mb-8 flex-grow">
+                      <h3 className="text-2xl font-bold text-navy tracking-tight leading-tight">{service.title}</h3>
+                      <p className="text-navy/60 font-medium leading-relaxed line-clamp-3">{service.desc}</p>
+                    </div>
+
+                    <div className="pt-8 border-t border-navy/5 flex items-center justify-between mt-auto">
+                      <div className="space-y-1">
+                        <p className="text-[10px] uppercase tracking-widest text-navy/40 font-bold">Starting at</p>
+                        <p className="font-bold text-navy">{service.price}</p>
+                      </div>
+                      <Link 
+                        to={`/services/${service.id}`}
+                        onClick={() => window.scrollTo(0, 0)}
+                        className="w-12 h-12 bg-white rounded-full flex items-center justify-center text-navy shadow-sm group-hover:bg-navy group-hover:text-white transition-all"
+                      >
+                        <ArrowRight size={20} className="group-hover:-rotate-45 transition-transform" />
+                      </Link>
+                    </div>
+                  </motion.div>
+                );
+              })}
+            </div>
+          )}
         </div>
       </section>
     </ScrollReveal>
@@ -501,8 +587,8 @@ export default function Services() {
               ].map((tier, i) => (
                 <div
                   key={i}
-                  className={`p-16 rounded-3xl border-2 transition-all duration-500 flex flex-col ${
-                    tier.popular ? "bg-navy-gradient text-white border-green scale-105 shadow-[0_40px_100px_-20px_rgba(0,0,0,0.3)] z-10" : "bg-white text-navy border-transparent"
+                  className={`p-8 md:p-16 rounded-3xl border-2 transition-all duration-500 flex flex-col ${
+                    tier.popular ? "bg-navy-gradient text-white border-green scale-100 lg:scale-105 shadow-[0_40px_100px_-20px_rgba(0,0,0,0.3)] z-10" : "bg-white text-navy border-transparent"
                   }`}
                 >
                   {tier.popular && <span className="bg-green text-navy text-[10px] font-bold uppercase tracking-[0.2em] px-6 py-2 rounded-full mb-10 inline-block self-start">Most Popular</span>}

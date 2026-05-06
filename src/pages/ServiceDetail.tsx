@@ -364,13 +364,13 @@ export default function ServiceDetail() {
                           className="w-full relative group h-20 overflow-hidden rounded-full transition-all focus:scale-[0.98] shadow-xl hover:shadow-green/20"
                         >
                           <div className="absolute inset-0 bg-navy group-hover:bg-green transition-all duration-500" />
-                          <div className="relative z-10 h-full flex items-center justify-center gap-4 text-white group-hover:text-navy transition-colors">
+                          <div className="relative z-10 h-full flex items-center justify-center gap-4 text-white group-hover:text-navy transition-colors px-4">
                             {isSubmitting ? (
                               <div className="w-8 h-8 border-4 border-white/20 border-t-white rounded-full animate-spin" />
                             ) : (
                               <>
-                                <span className="text-lg font-bold tracking-tight">Request {service.title} Proposal</span>
-                                <Send size={24} className="group-hover:translate-x-2 group-hover:-translate-y-2 transition-transform" />
+                                <span className="text-base md:text-lg font-bold tracking-tight text-center">Request {service.title} Proposal</span>
+                                <Send size={20} className="group-hover:translate-x-2 group-hover:-translate-y-2 transition-transform shrink-0" />
                               </>
                             )}
                           </div>
@@ -387,18 +387,18 @@ export default function ServiceDetail() {
                   <h3 className="text-xl md:text-2xl font-bold font-sans text-white tracking-tight mb-2">Prefer direct contact?</h3>
                   <p className="text-white/60 font-serif italic text-sm md:text-base">Reach out directly via email or social.</p>
                 </div>
-                <div className="flex flex-wrap items-center justify-center gap-4">
-                  <a href="mailto:sheunhost@gmail.com" className="flex items-center gap-2 bg-white/5 hover:bg-green text-white hover:text-navy px-5 py-2.5 rounded-full transition-colors border border-white/10 hover:border-green">
-                    <Mail size={18} />
-                    <span className="font-bold text-sm">Email</span>
+                <div className="flex flex-wrap items-center justify-center md:justify-end gap-3 md:gap-4 w-full md:w-auto">
+                  <a href="mailto:sheunhost@gmail.com" className="flex items-center gap-2 bg-white/5 hover:bg-green text-white hover:text-navy px-4 md:px-5 py-2.5 rounded-full transition-colors border border-white/10 hover:border-green">
+                    <Mail size={16} />
+                    <span className="font-bold text-xs md:text-sm">Email</span>
                   </a>
-                  <a href="https://wa.me/2348084315743" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 bg-white/5 hover:bg-green text-white hover:text-navy px-5 py-2.5 rounded-full transition-colors border border-white/10 hover:border-green">
-                    <Phone size={18} />
-                    <span className="font-bold text-sm">WhatsApp</span>
+                  <a href="https://wa.me/2348084315743" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 bg-white/5 hover:bg-green text-white hover:text-navy px-4 md:px-5 py-2.5 rounded-full transition-colors border border-white/10 hover:border-green">
+                    <Phone size={16} />
+                    <span className="font-bold text-xs md:text-sm">WhatsApp</span>
                   </a>
-                  <a href="https://www.linkedin.com/in/sheun-hub-26b876321" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 bg-white/5 hover:bg-green text-white hover:text-navy px-5 py-2.5 rounded-full transition-colors border border-white/10 hover:border-green">
-                    <Linkedin size={18} />
-                    <span className="font-bold text-sm">LinkedIn</span>
+                  <a href="https://www.linkedin.com/in/sheun-hub-26b876321" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 bg-white/5 hover:bg-green text-white hover:text-navy px-4 md:px-5 py-2.5 rounded-full transition-colors border border-white/10 hover:border-green">
+                    <Linkedin size={16} />
+                    <span className="font-bold text-xs md:text-sm">LinkedIn</span>
                   </a>
                 </div>
               </div>

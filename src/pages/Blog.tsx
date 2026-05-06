@@ -88,7 +88,7 @@ export default function Blog() {
     <PageWrapper
       title="Shopify Blog & E-commerce Strategies"
       description="Read the Sheun Hub blog for the latest strategies on Shopify SEO, store migrations, custom liquid developments, and dropshipping."
-      keywords="Shopify Blog, Shopify Development Tutorials, Dropshipping Guides, Shopify SEO Tips"
+      keywords="Shopify Blog, Shopify Development Tutorials, Dropshipping Guides, Shopify SEO Tips, migrate from wordpress to shopify, migrate from wix to shopify, magento to shopify migration, woocommerce to shopify migration, bigcommerce to shopify migration, transfer volusion to shopify, shopify seo expert, shopify ecommerce consultant, shopify marketing experts, hire shopify seo expert"
       canonical="/blog"
       schema={{
         "@context": "https://schema.org",
@@ -228,29 +228,29 @@ export default function Blog() {
                   loading="lazy"
                 />
               </div>
-              <div className="p-16 md:p-24 space-y-10">
-                <span className="bg-green text-navy text-[10px] font-bold uppercase tracking-[0.3em] px-8 py-3 rounded-full shadow-lg">
+              <div className="p-8 md:p-16 lg:p-24 space-y-8 md:space-y-10">
+                <span className="bg-green text-navy text-[10px] font-bold uppercase tracking-[0.3em] px-6 md:px-8 py-2 md:py-3 rounded-full shadow-lg">
                   Featured Article
                 </span>
-                <h2 className="text-3xl md:text-5xl font-bold text-navy tracking-tighter leading-[0.9] group-hover:text-green transition-colors duration-500 line-clamp-2">
+                <h2 className="text-2xl md:text-5xl font-bold text-navy tracking-tighter leading-[0.95] group-hover:text-green transition-colors duration-500 line-clamp-3 md:line-clamp-2">
                   {featuredPost.title}
                 </h2>
-                <p className="text-navy/60 text-xl leading-relaxed font-serif italic line-clamp-3">
+                <p className="text-navy/60 text-lg md:text-xl leading-relaxed font-serif italic line-clamp-3">
                   {featuredPost.excerpt}
                 </p>
                 
-                <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-8 pt-10 border-t border-navy/5">
+                <div className="flex flex-col sm:flex-row items-center justify-between gap-8 pt-8 md:pt-10 border-t border-navy/5">
                   <div className="flex items-center gap-4">
-                    <div className="w-14 h-14 rounded-2xl overflow-hidden shadow-xl">
+                    <div className="w-12 h-12 md:w-14 md:h-14 rounded-2xl overflow-hidden shadow-xl shrink-0">
                       <img src="https://ui-avatars.com/api/?name=Sheun+Hub&background=10b981&color=fff" alt="Sheun" loading="lazy" />
                     </div>
                     <div>
-                      <p className="text-lg font-bold text-navy">Sheun</p>
-                      <p className="text-sm text-navy/40 font-serif italic">{featuredPost.date} · {featuredPost.readTime}</p>
+                      <p className="text-base md:text-lg font-bold text-navy">Sheun</p>
+                      <p className="text-xs md:text-sm text-navy/40 font-serif italic">{featuredPost.date} · {featuredPost.readTime}</p>
                     </div>
                   </div>
-                  <Link to="/blog/1" className="w-full sm:w-auto bg-navy text-white px-10 py-5 rounded-full font-bold text-lg flex items-center justify-center gap-4 group-hover:bg-green group-hover:text-navy transition-all duration-500 shadow-xl">
-                    Read Article <ArrowRight size={20} />
+                  <Link to="/blog/1" className="w-full sm:w-auto bg-navy text-white px-8 md:px-10 py-4 md:py-5 rounded-full font-bold text-base md:text-lg flex items-center justify-center gap-3 md:gap-4 group-hover:bg-green group-hover:text-navy transition-all duration-500 shadow-xl">
+                    Read Article <ArrowRight size={18} />
                   </Link>
                 </div>
               </div>

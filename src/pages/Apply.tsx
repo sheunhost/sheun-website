@@ -143,7 +143,7 @@ export default function Apply() {
     <PageWrapper 
       title="Apply for a Project" 
       description="Apply to work with Sheun, a high-performing Shopify Conversion Specialist. High-intent qualification application for serious e-commerce store owners."
-      keywords="Hire Shopify Expert, Shopify Migration Service, E-commerce Project Application, Shopify Agency Setup, Drop Shipping Setup Application"
+      keywords="Hire Shopify Expert, Shopify Migration Service, E-commerce Project Application, Shopify Agency Setup, Drop Shipping Setup Application, hire shopify expert, hire expert shopify, find shopify experts, hire shopify freelancer, shopify expert agency"
       canonical="/apply"
       schema={{
         "@context": "https://schema.org",
@@ -516,9 +516,9 @@ export default function Apply() {
       <ScrollReveal>
         <section className="py-24 bg-white border-y border-navy/5 overflow-hidden">
         <div className="container mx-auto px-6">
-          <div className="flex flex-wrap items-center justify-center gap-16 opacity-30 grayscale hover:grayscale-0 transition-all duration-700">
-            {['Forbes', 'Spotify', 'Shopify', 'Nike', 'Apple'].map((item) => (
-              <span key={item} className="text-4xl font-black font-serif tracking-tighter text-navy">{item}</span>
+          <div className="flex flex-wrap items-center justify-center gap-x-12 gap-y-6 opacity-30 grayscale hover:grayscale-0 transition-all duration-700">
+            {['Forbes', 'Spotify', 'Shopify', 'Nike'].map((item) => (
+              <span key={item} className="text-3xl md:text-4xl font-black font-serif tracking-tighter text-navy">{item}</span>
             ))}
           </div>
         </div>
@@ -538,14 +538,14 @@ export default function Apply() {
               <motion.div 
                 key={i}
                 whileHover={{ y: -10 }}
-                className="p-16 bg-white rounded-3xl space-y-8 border border-navy/5 shadow-xl group transition-all"
+                className="p-8 md:p-16 bg-white rounded-3xl space-y-6 md:space-y-8 border border-navy/5 shadow-xl group transition-all"
               >
-                <div className="w-20 h-20 bg-light rounded-3xl flex items-center justify-center text-navy group-hover:bg-green group-hover:text-navy transition-all duration-500 shadow-sm border border-navy/5">
-                  <box.icon size={40} />
+                <div className="w-16 h-16 md:w-20 md:h-20 bg-light rounded-3xl flex items-center justify-center text-navy group-hover:bg-green group-hover:text-navy transition-all duration-500 shadow-sm border border-navy/5">
+                  <box.icon size={32} className="md:w-[40px] md:h-[40px]" />
                 </div>
-                <div className="space-y-4">
-                  <h4 className="text-2xl font-bold text-navy uppercase tracking-widest">{box.title}</h4>
-                  <p className="text-navy/40 text-lg leading-relaxed font-serif italic">{box.desc}</p>
+                <div className="space-y-3 md:space-y-4 text-center md:text-left">
+                  <h4 className="text-xl md:text-2xl font-bold text-navy uppercase tracking-widest">{box.title}</h4>
+                  <p className="text-navy/40 text-base md:text-lg leading-relaxed font-serif italic">{box.desc}</p>
                 </div>
               </motion.div>
             ))}

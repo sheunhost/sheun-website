@@ -110,7 +110,7 @@ export default function Portfolio() {
     <PageWrapper 
       title="Shopify Portfolio | Custom Store Builds" 
       description="Explore our showcase of high-converting Shopify stores, dropshipping concepts, and eCommerce custom designs for fashion, beauty, pets, and gadgets."
-      keywords="Shopify Portfolio, E-commerce Case Studies, Dropshipping Examples, Shopify Custom Designs"
+      keywords="Shopify Portfolio, E-commerce Case Studies, Dropshipping Examples, Shopify Custom Designs, hire someone to build shopify store, build shopify store for me, shopify web designer, shopify developers, shopify website designer, shopify agency, shopify designers, shopify website design company, shopify developers for hire, shopify website experts, hire someone to set up shopify store, web designer for shopify, freelance shopify designer, shopify store expert, freelance shopify website designer, hire someone to build my shopify store, shopify web agency, best shopify website designers, shopify setup experts, shopify store setup experts, expert shopify designers, freelance shopify web designers, shopify web design experts"
       canonical="/portfolio"
       schema={{
         "@context": "https://schema.org",
@@ -144,7 +144,7 @@ export default function Portfolio() {
           <div className="max-w-5xl space-y-16">
             <div className="space-y-8">
               <motion.h1 
-                className="text-6xl md:text-[118px] font-bold text-white tracking-tighter leading-[0.8]"
+                className="text-5xl md:text-[118px] font-bold text-white tracking-tighter leading-[0.8]"
               >
                 <motion.span initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} transition={{ delay: 0.1 }} className="block">Shopify Portfolio</motion.span>
                 <motion.span initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} transition={{ delay: 0.2 }} className="italic font-serif font-light text-white/40 block">Design Gallery</motion.span>
@@ -222,7 +222,7 @@ export default function Portfolio() {
 
 
 
-          <div className="mt-24 bg-navy-gradient rounded-3xl p-16 md:p-24 text-center space-y-10 relative overflow-hidden">
+          <div className="mt-24 bg-navy-gradient rounded-3xl p-8 md:p-24 text-center space-y-10 relative overflow-hidden">
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,_rgba(103,255,193,0.15)_0%,_transparent_70%)]" />
             <div className="relative z-10 max-w-3xl mx-auto space-y-8">
               <h2 className="text-5xl md:text-7xl font-bold text-white tracking-tighter leading-none">

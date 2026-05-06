@@ -28,7 +28,7 @@ export default function About() {
     <PageWrapper 
       title="About Sheun - The Shopify Engineer" 
       description="Learn more about Sheun, a dedicated Shopify Expert and eCommerce Developer committed to building high-performance online stores and driving sales."
-      keywords="About Sheun, Shopify Expert Profile, UI/UX Designer, E-commerce Specialist, Shopify Engineer, Freelance Shopify Developer"
+      keywords="About Sheun, Shopify Expert Profile, UI/UX Designer, E-commerce Specialist, Shopify Engineer, Freelance Shopify Developer, dedicated shopify developers, ecommerce shopify expert, expert shopify designers, expert shopify plus, freelance shopify web designers, hire expert shopify developer, hire shopify freelancer, shopify growth experts, shopify it specialist, shopify plus consultant, shopify plus design experts, shopify seo expert freelance, shopify store design freelance, shopify freelance web designer"
       canonical="/about"
       schema={{
         "@context": "https://schema.org",
@@ -184,12 +184,12 @@ export default function About() {
         <div className="container mx-auto px-6">
           <div className="grid grid-cols-1 md:grid-cols-12 gap-8">
             {/* Skills Card */}
-            <div className="md:col-span-8 bg-white/5 border border-white/10 rounded-2xl p-12 space-y-12">
+            <div className="md:col-span-8 bg-white/5 border border-white/10 rounded-2xl p-8 md:p-12 space-y-8 md:space-y-12">
               <div className="space-y-2">
                 <p className="text-green text-[10px] font-bold uppercase tracking-[0.3em]">Technical</p>
-                <h3 className="text-4xl font-bold text-white">Core Skills</h3>
+                <h3 className="text-3xl md:text-4xl font-bold text-white">Core Skills</h3>
               </div>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-12">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 md:gap-12">
                 {skills.map((skill, i) => (
                   <div key={i} className="space-y-6">
                     <div className="flex items-center gap-4">
@@ -211,11 +211,11 @@ export default function About() {
             </div>
 
             {/* Credentials Card */}
-            <div className="md:col-span-4 bg-green p-12 rounded-2xl space-y-8 flex flex-col justify-between">
+            <div className="md:col-span-4 bg-green p-8 md:p-12 rounded-2xl space-y-6 md:space-y-8 flex flex-col justify-between">
               <div className="space-y-4">
-                <Star size={48} className="text-navy" />
-                <h3 className="text-4xl font-bold text-navy leading-none">Top Rated <br />Freelancer</h3>
-                <p className="text-navy/60 font-medium">Top-rated performance on Upwork with 100% client satisfaction.</p>
+                <Star size={40} className="text-navy md:w-[48px] md:h-[48px]" />
+                <h3 className="text-3xl md:text-4xl font-bold text-navy leading-tight tracking-tighter">Top Rated <br />Freelancer</h3>
+                <p className="text-navy/60 font-medium text-sm md:text-base">Elite performance on Upwork with 100% client satisfaction.</p>
               </div>
               <div className="flex -space-x-4">
                 {[1, 2, 3, 4, 5].map(i => (
@@ -232,10 +232,10 @@ export default function About() {
             </div>
 
             {/* Tags Card */}
-            <div className="md:col-span-12 bg-white/5 border border-white/10 rounded-2xl p-12">
-              <div className="flex flex-wrap gap-4">
+            <div className="md:col-span-12 bg-white/5 border border-white/10 rounded-2xl p-8 md:p-12">
+              <div className="flex flex-wrap gap-3 md:gap-4">
                 {tags.map((tag, i) => (
-                  <span key={i} className="px-6 py-3 bg-white/5 rounded-full text-xs font-bold text-white/40 border border-white/10 hover:border-green hover:text-green transition-all cursor-default">
+                   <span key={i} className="px-5 py-2.5 md:px-6 md:py-3 bg-white/5 rounded-full text-[10px] md:text-xs font-bold text-white/40 border border-white/10 hover:border-green hover:text-green transition-all cursor-default text-center">
                     {tag}
                   </span>
                 ))}

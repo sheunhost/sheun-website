@@ -583,7 +583,7 @@ export default function Home() {
     <PageWrapper 
       title="Shopify Developer & Growth Expert" 
       description="Scale your brand with Sheun, a specialist in Custom Shopify Development and E-commerce Growth. Maximize revenue with highly optimized store builds."
-      keywords="Shopify Expert, Shopify Developer, Custom Shopify Themes, Dropshipping Store Setup, E-commerce Growth, Convertion Rate Optimization"
+      keywords="Shopify Expert, Shopify Developer, Custom Shopify Themes, Dropshipping Store Setup, E-commerce Growth, Convertion Rate Optimization, freelance shopify expert, shopify ecommerce consultant, freelance shopify designer, migrate website to shopify, migrate from bigcommerce to shopify, shopify partner agencies, migrate from wordpress to shopify, migrate wordpress to shopify, shopify store consultant, web designers for shopify, shopify seo consultant, shopify setup experts, migrate wix to shopify, migrate from squarespace to shopify, shopify store setup experts, migrate products from magento to shopify, magento to shopify migration service, store migration shopify, hire shopify web developer, expert shopify developers, move from wix to shopify, migration woocommerce shopify, migrate from wix to shopify, transfer wix to shopify, shopify marketing consultant, transfer wix site to shopify, shopify certified partners, shopify expert web designer, shopify to shopify migration, shopify data migration, move woocommerce to shopify, migrate wordpress site to shopify, migrate to shopify plus, migrate from godaddy to shopify, transfer godaddy to shopify, transfer bigcommerce to shopify, transfer website from wix to shopify, transfer shopify store to another shopify store, certified shopify developer, transfer wordpress to shopify, transfer wordpress site to shopify, transfer to shopify, migrate big cartel to shopify, shopify certified expert, hire shopify seo, move website from wix to shopify, transfer products from one shopify store to another, shopify site migration, shopify woocommerce migration, transfer website from squarespace to shopify, shopify web design experts, shopify store migration, shopify com experts, move from wordpress to shopify, transfer website from wordpress to shopify, transfer from wordpress to shopify, magento migration shopify, move squarespace to shopify, migrate lightspeed to shopify, expert seo shopify, transfer wix store to shopify, import wordpress to shopify, migrate from volusion to shopify, transfer shopify store to wordpress, top shopify experts, webflow to shopify migration, hire a shopify app developer, best shopify consultant, best shopify seo experts agency"
       canonical="/"
       schema={{
         "@context": "https://schema.org",
@@ -637,7 +637,7 @@ export default function Home() {
                 <span className="text-green text-[10px] font-bold uppercase tracking-[0.2em]">Available for new projects</span>
               </div>
 
-              <h1 className="text-6xl md:text-[100px] font-bold text-white leading-[0.8] tracking-[-0.05em] text-balance">
+              <h1 className="text-5xl md:text-[100px] font-bold text-white leading-[0.8] tracking-[-0.05em] text-balance">
                 <span className="block mb-4">
                   <motion.span
                     key="headline-1"
@@ -904,7 +904,7 @@ export default function Home() {
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-24">
             <div className="space-y-6">
               <p className="text-green text-[10px] font-bold uppercase tracking-[0.4em]">Expertise</p>
-              <h2 className="text-6xl md:text-8xl font-bold text-white tracking-tighter leading-[0.85]">
+              <h2 className="text-5xl md:text-8xl font-bold text-white tracking-tighter leading-[0.85]">
                 Crafting <span className="italic font-serif font-light text-white/40">Digital</span><br />
                 Commerce.
               </h2>
@@ -1102,7 +1102,7 @@ export default function Home() {
       <section className="py-32 bg-white">
         <div className="container mx-auto px-6">
           <div className="flex flex-col md:flex-row md:items-center justify-between gap-8 mb-24">
-            <h2 className="text-6xl md:text-8xl font-bold text-navy tracking-tighter leading-[0.85]">
+            <h2 className="text-5xl md:text-8xl font-bold text-navy tracking-tighter leading-[0.85]">
               Selected <span className="italic font-serif font-light text-navy/40">Works</span>.
             </h2>
             <Link to="/portfolio" className="group flex items-center gap-4 text-navy font-bold text-lg">
@@ -1407,22 +1407,22 @@ export default function Home() {
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, scale: 0.95 }}
                     onSubmit={handleSubscribe} 
-                    className="relative flex items-center"
+                    className="relative flex flex-col sm:flex-row items-center gap-4 sm:gap-0"
                   >
                     <input 
                       type="email" 
                       name="email"
                       required
                       placeholder="Enter your email address" 
-                      className="w-full bg-light border-2 border-navy/5 rounded-full py-6 pl-8 pr-40 focus:border-green outline-none transition-all font-medium text-navy placeholder:text-navy/20"
+                      className="w-full bg-light border-2 border-navy/5 rounded-full py-6 pl-8 pr-8 sm:pr-40 focus:border-green outline-none transition-all font-medium text-navy placeholder:text-navy/20"
                     />
                     <button 
                       type="submit"
                       disabled={isSubscribing}
-                      className="absolute right-3 bg-navy text-white px-8 py-4 rounded-full font-bold hover:bg-green hover:text-navy transition-colors disabled:opacity-50"
+                      className="w-full sm:w-auto sm:absolute sm:right-3 bg-navy text-white px-8 py-4 sm:py-4 rounded-full font-bold hover:bg-green hover:text-navy transition-colors disabled:opacity-50 min-h-[60px]"
                     >
                       {isSubscribing ? (
-                        <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin" />
+                        <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin mx-auto" />
                       ) : (
                         "Subscribe"
                       )}
@@ -1465,7 +1465,7 @@ export default function Home() {
             transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
             className="max-w-5xl mx-auto space-y-16"
           >
-            <h2 className="text-7xl md:text-[160px] font-bold text-white leading-[0.8] tracking-[-0.06em] uppercase">
+            <h2 className="text-5xl md:text-[160px] font-bold text-white leading-[0.8] tracking-[-0.06em] uppercase">
               Ready to <span className="text-green italic font-serif font-light lowercase">Grow?</span>
             </h2>
             <p className="text-white/60 text-2xl md:text-3xl max-w-3xl mx-auto leading-relaxed font-serif italic">

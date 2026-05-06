@@ -23,7 +23,7 @@ export const servicesData = {
       { q: "Can I manage the store myself after launch?", a: "Yes. Shopify is user-friendly, and I will show you how to manage inventory, fulfill orders, and update products." },
       { q: "Are domain setup and email included?", a: "Yes, I will properly connect your custom domain to Shopify and can advise on setting up professional business email." }
     ],
-    keywords: "Shopify Store Setup, Launch Shopify, Hire Shopify Expert, New Shopify Store, E-commerce Setup"
+    keywords: "Shopify Store Setup, Launch Shopify, Hire Shopify Expert, New Shopify Store, E-commerce Setup, hire someone to build shopify store, build shopify store for me, shopify web designer, shopify developers, shopify website designer, shopify agency, hire someone to set up shopify store, web designer for shopify, shopify website designers, shopify designers, shopify website design company, shopify developers for hire, hire someone to build my shopify store, best shopify website designers, shopify store design freelance, shopify web design experts, best shopify agency, shopify setup experts, shopify store setup experts, expert shopify designers, freelance shopify web designers, shopify website experts, hire shopify web developer, shopify ecommerce experts, expert shopify developers"
   },
   "dropshipping": {
     title: "Dropshipping Build",
@@ -47,7 +47,7 @@ export const servicesData = {
       { q: "Can we integrate AliExpress reviews?", a: "Absolutely. I integrate apps like Loox or AliReviews to import real photo reviews for social proof." },
       { q: "Do you help with Facebook or TikTok ads?", a: "I focus strictly on the website development and conversion optimization, giving you the best possible foundation for your ads to succeed." }
     ],
-    keywords: "Shopify Dropshipping Store, Custom Dropshipping Build, Zendrop Setup, eCommerce Dropshipping Expert"
+    keywords: "Shopify Dropshipping Store, Custom Dropshipping Build, Zendrop Setup, eCommerce Dropshipping Expert, shopify dropshipping expert, freelance shopify developer, shopify store expert, freelance shopify website designer"
   },
   "migration": {
     title: "Store Migration",
@@ -71,7 +71,7 @@ export const servicesData = {
       { q: "How long does a migration take?", a: "Usually 2 to 3 weeks, heavily depending on the size of your catalog and custom design requirements." },
       { q: "Can my old apps be transferred?", a: "Apps cannot be directly transferred. I will find and configure the best Shopify equivalents for your existing apps." }
     ],
-    keywords: "Shopify Migration, WooCommerce to Shopify, eCommerce Platform Transfer, Wix to Shopify, Safe Store Migration"
+    keywords: "shopify migration, shopify migration agency, shopify migration experts, magento to shopify migration, shopify migration services, woocommerce to shopify migration, migrate woocommerce to shopify, migrate from shopify to bigcommerce, migrate from bigcommerce to shopify, wordpress to shopify migration, bigcommerce to shopify migration, migrate website to shopify, migrate from wordpress to shopify, migrate wordpress to shopify, migrate wix to shopify, migrate from squarespace to shopify, migrate products from magento to shopify, magento to shopify migration service, store migration shopify, move from wix to shopify, migration woocommerce shopify, migrate from wix to shopify, transfer wix to shopify, transfer wix site to shopify, shopify to shopify migration, shopify data migration, move woocommerce to shopify, migrate wordpress site to shopify, migrate from godaddy to shopify, transfer godaddy to shopify, transfer bigcommerce to shopify, transfer website from wix to shopify, transfer shopify store to another shopify store, transfer wordpress to shopify, transfer wordpress site to shopify, transfer to shopify, migrate big cartel to shopify, move website from wix to shopify, transfer products from one shopify store to another, shopify site migration, shopify woocommerce migration, transfer website from squarespace to shopify, shopify store migration, move from wordpress to shopify, transfer website from wordpress to shopify, transfer from wordpress to shopify, magento migration shopify, move squarespace to shopify, migrate lightspeed to shopify, transfer wix store to shopify, import wordpress to shopify, migrate from volusion to shopify, transfer shopify store to wordpress, webflow to shopify migration, cost to migrate magento to shopify, import wordpress blog to shopify, magento migration to shopify, magento to shopify data migration, magento to shopify product migration, migrate blog from wordpress to shopify, migrate blog posts from wordpress to shopify, migrate from etsy to shopify, migrate magento 1 to shopify, migrate magento shopify, migrate orders from magento to shopify, migrate orders from woocommerce to shopify, migrate shopify site, migrate shopify store, migrate to shopify 2.0, migrate weebly to shopify, migrate wix website to shopify, migrate wordpress blog to shopify, migrating to shopify from another platform, migration for shopify, move from bigcommerce to shopify, shopify product migration, shopify website migration, transfer products from wix to shopify, transfer shopify to bigcommerce, transfer site from wix to shopify, transfer volusion to shopify, transfer website from godaddy to shopify, weebly to shopify migration, wordpress to shopify blog migration, wordpress to shopify migration services"
   },
   "custom": {
     title: "Custom Liquid Dev",
@@ -95,7 +95,31 @@ export const servicesData = {
       { q: "How do you price custom development?", a: "Pricing is based on the complexity and scope of the specific feature. Contact me for an accurate quote." },
       { q: "Do you modify checkout pages?", a: "Checkout modifications are strictly limited by Shopify unless you are on Shopify Plus. I can customize what is permitted." }
     ],
-    keywords: "Custom Shopify Liquid, Hire Liquid Developer, Custom Shopify Theme, Shopify Coding, Freelance Liquid Expert"
+    keywords: "Custom Shopify Liquid, Hire Liquid Developer, Custom Shopify Theme, Shopify Coding, Freelance Liquid Expert, shopify coding expert, shopify freelance developer, freelance shopify designer, shopify designer freelance, dedicated shopify developers, shopify expert web designer, freelance shopify web designer, shopify developer hire"
+  },
+  "plus": {
+    title: "Shopify Plus Upgrades",
+    heading: "Enterprise Shopify Plus Customization",
+    description: "Advanced Shopify Plus configuration, checkout extensibility, custom B2B portals, and enterprise migrations.",
+    icon: "Target",
+    problem: "Enterprise brands hitting the limitations of standard Shopify need robust customizations to handle massive scale. A standard theme cannot support multi-million dollar volume, custom B2B pricing grids, complex checkout modifications, or seamless API integrations with enterprise ERPs.",
+    scope: "I deliver high-level technical solutions for Shopify Plus merchants. This involves customizing checkout using Checkout Extensibility, configuring robust B2B functions, building private custom apps for internal workflows, migrating enterprise data (Magento/Salesforce), and optimizing architecture for maximum performance during flash sales.",
+    deliverables: [
+      "Checkout Extensibility Customization",
+      "Shopify B2B Implementation",
+      "Enterprise Data Migration to Plus",
+      "Custom API & ERP Integrations",
+      "Advanced Scripting (Shopify Scripts)",
+      "High-Volume Load Optimization"
+    ],
+    faqs: [
+      { q: "Are you experienced with Checkout Extensibility?", a: "Yes, I build custom checkout UI extensions and functions to replace deprecated checkout.liquid customizations." },
+      { q: "Can you migrate a large store to Shopify Plus?", a: "Absolutely. I handle massive data migrations from Magento, BigCommerce Enterprise, or Salesforce Commerce Cloud safely." },
+      { q: "Do you build custom Shopify Apps?", a: "I build private apps tailored for internal workflow automation using the Shopify Admin API and webhooks." },
+      { q: "What's the difference between standard and Plus development?", a: "Plus development involves greater scale, customized checkouts, multiple expansion stores, B2B logic, and enterprise-grade SLA compliance." },
+      { q: "Can you help with Shopify Scripts?", a: "Yes, though Shopify is transitioning to Shopify Functions, I can maintain existing scripts or build new Functions for complex discounting logic." }
+    ],
+    keywords: "shopify plus experts, migrate to shopify plus, expert shopify plus, magento to shopify plus migration, migration shopify plus, shopify plus consultant, shopify plus design experts, hire expert shopify, top shopify experts, certified shopify expert, shopify expert hire, shopify professionals"
   },
   "bug": {
     title: "Bug Fixing",
@@ -119,7 +143,7 @@ export const servicesData = {
       { q: "Can you fix apps made by third parties?", a: "I can fix conflicts between the app and your theme. If the app's internal server code is broken, we will need to contact the app developer." },
       { q: "How is pricing determined for bugs?", a: "I provide a fixed quote after a preliminary review of the issue, so there are no surprise hourly fees." }
     ],
-    keywords: "Shopify Bug Fix, Fix Shopify Error, Broken Shopify Theme, Shopify Tech Support, Emergency Shopify Help"
+    keywords: "Shopify Bug Fix, Fix Shopify Error, Broken Shopify Theme, Shopify Tech Support, Emergency Shopify Help, shopify it specialist, shopify developers, shopify coding expert"
   },
   "seo": {
     title: "SEO Optimization",
@@ -143,7 +167,7 @@ export const servicesData = {
       { q: "What is Schema Markup?", a: "Schema is code that helps Google understand your products (price, reviews, availability) so they can show 'Rich Snippets' in search results." },
       { q: "Does page speed affect SEO?", a: "Yes, massively. Google penalizes slow sites. My SEO service includes basic speed optimizations for better Core Web Vitals." }
     ],
-    keywords: "Shopify SEO Expert, Shopify Search Engine Optimization, Technical SEO Shopify, Shopify Organic Traffic, Boost Shopify Sales"
+    keywords: "hire shopify seo expert, shopify seo expert, shopify seo specialist, shopify seo expert freelance, hire a shopify seo expert, shopify ecommerce seo expert, expert seo shopify, hire shopify seo, shopify seo consultant, best shopify seo experts agency, shopify experts seo, shopify organic traffic"
   },
   "cro": {
     title: "Conversion Rate Optimization (CRO)",
@@ -167,7 +191,7 @@ export const servicesData = {
       { q: "What kind of changes will you make?", a: "Changes may include repositioning 'Add to Cart' buttons, simplifying navigation, adding trust badges, reformatting descriptions, and improving mobile layouts." },
       { q: "Will this guarantee more sales?", a: "CRO maximizes the value of your existing traffic. If your product and offer are solid, CRO will almost always yield a measurable uplift in sales." }
     ],
-    keywords: "Shopify CRO Expert, Conversion Rate Optimization Shopify, Improve Shopify Sales, Shopify UX Audit, Reduce Cart Abandonment"
+    keywords: "Shopify CRO Expert, shopify marketing experts, shopify marketing consultant, shopify ecommerce consultant, shopify growth experts, shopify expert help, best shopify consultant"
   },
   "apps": {
     title: "App Configuration",
@@ -191,7 +215,7 @@ export const servicesData = {
       { q: "Can you migrate my data between apps?", a: "Yes, such as moving reviews from Loox to Judge.me, or subscribers from Mailchimp to Klaviyo." },
       { q: "What happens if an app breaks my store?", a: "I always take a theme backup before installing complex apps. If something breaks, I can instantly revert and troubleshoot safely." }
     ],
-    keywords: "Shopify App Setup, Klaviyo Integration, Recharge Subscriptions Setup, Shopify App Configuration"
+    keywords: "Shopify App Setup, hire a shopify app developer, shopify experts, shopify consultant, freelance shopify expert, shopify web agency, shopify expert developer"
   },
   "speed": {
     title: "Speed Optimization",
@@ -215,6 +239,6 @@ export const servicesData = {
       { q: "Why is my mobile score so much lower than desktop?", a: "Google simulates a mid-tier mobile device on a slow 3G/4G network. It's much harder to score high on mobile, which is why manual code optimization is critical." },
       { q: "Will speed increase my sales?", a: "Yes. By drastically reducing bounce rates, more customers reach your product pages, directly increasing your opportunity to convert." }
     ],
-    keywords: "Shopify Speed Optimization, Improve Shopify Speed, Core Web Vitals Shopify, Increase Page Speed, Make Shopify Faster"
+    keywords: "Shopify Speed Optimization, Improve Shopify Speed, Core Web Vitals Shopify, Increase Page Speed, Make Shopify Faster, shopify coding expert, hire shopify expert, find shopify experts, shopify expert agency"
   }
 };
