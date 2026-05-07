@@ -556,7 +556,7 @@ export default function Apply() {
                   "1ThuB0wztdzyvKJHt0D6Rm8FW3rL7TZzr",
                   "1JtCeQP9N65PQgameUu8OL3TOuIhXo8Oc"
                 ].map((videoId, idx) => (
-                  <div key={idx} className="relative shrink-0 w-[85vw] md:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.5rem)] max-w-3xl rounded-2xl overflow-hidden aspect-video border border-navy/5 shadow-2xl bg-black transition-all duration-500 hover:-translate-y-2 snap-center">
+                  <div key={idx} className="relative shrink-0 w-[75vw] sm:w-[60vw] md:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.5rem)] max-w-3xl rounded-2xl overflow-hidden aspect-[16/10] md:aspect-video border border-navy/5 shadow-2xl bg-black transition-all duration-500 hover:-translate-y-2 snap-center">
                     <iframe 
                       src={`https://drive.google.com/file/d/${videoId}/preview`} 
                       allow="autoplay; fullscreen"
