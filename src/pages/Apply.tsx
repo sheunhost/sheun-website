@@ -550,16 +550,16 @@ export default function Apply() {
             <div className="relative">
               <div ref={scrollRef} className="flex overflow-x-auto gap-6 md:gap-8 pb-12 snap-x snap-mandatory scroll-smooth [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
                 {[
-                  "1U0XEql-0qlGr4e8q6Pavo5iQqiC3b10b",
-                  "1SK0gxGyWWPfbj2y4rtQAtYmQBGo1sI0P",
-                  "1h7wmcRhitTJB-I_x2R1oPmsg1hO2Jygu",
-                  "1ThuB0wztdzyvKJHt0D6Rm8FW3rL7TZzr",
-                  "1JtCeQP9N65PQgameUu8OL3TOuIhXo8Oc"
+                  "1190279942",
+                  "1190279951",
+                  "1190279899",
+                  "1190279909",
+                  "1190279925"
                 ].map((videoId, idx) => (
-                  <div key={idx} className="relative shrink-0 w-[75vw] sm:w-[60vw] md:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.5rem)] max-w-3xl rounded-2xl overflow-hidden aspect-[16/10] md:aspect-video border border-navy/5 shadow-2xl bg-black transition-all duration-500 hover:-translate-y-2 snap-center">
+                  <div key={idx} className="relative shrink-0 w-[85vw] sm:w-[320px] md:w-[350px] lg:w-[400px] rounded-2xl overflow-hidden aspect-[16/9] border border-navy/5 shadow-xl bg-black transition-all duration-500 hover:-translate-y-2 snap-center">
                     <iframe 
-                      src={`https://drive.google.com/file/d/${videoId}/preview`} 
-                      allow="autoplay; fullscreen"
+                      src={`https://player.vimeo.com/video/${videoId}`} 
+                      allow="autoplay; fullscreen; picture-in-picture"
                       allowFullScreen
                       className="w-full h-full border-0 absolute top-0 left-0"
                       title={`Project walkthrough video ${idx + 1}`}
