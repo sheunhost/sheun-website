@@ -30,7 +30,7 @@ const projects: Project[] = [
     category: "📱 Gadgets",
     desc: "A premium Shopify store concept for high-performance electronics. This design balances sleek aesthetics with deep technical detail, featuring advanced product grids and an immersive technical specification layout that builds immediate authority for luxury gadget brands. ⚡🔋🔭",
     image: "https://awesomescreenshot.s3.amazonaws.com/image/7348477/60283715-61ac405c4f837b682c8ebc169a426cfe.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAJSCJQ2NM3XLFPVKA%2F20260506%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20260506T124603Z&X-Amz-Expires=28800&X-Amz-SignedHeaders=host&X-Amz-Signature=2958858e00e9efba2f4e4bcfc01b7294f3f0835ee38943519d491953df0b2c30",
-    label: "🎨 Design Concept by Sheun Hub"
+    label: "🎨 Past Project design by Sheun Hub"
   },
   {
     id: "g6",
@@ -39,7 +39,7 @@ const projects: Project[] = [
     category: "📱 Gadgets",
     desc: "A powerhouse Shopify store designed for top-tier electronics and high-performance tech retailers. This concept features ultra-sharp product grids, dynamic filtering, and a minimalist design language that highlights product engineering and premium build quality. 🔋⚡🎮",
     image: "https://awesomescreenshot.s3.amazonaws.com/image/7348477/60283769-a1552f51f25baaf11a18fc6c02a109d6.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAJSCJQ2NM3XLFPVKA%2F20260506%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20260506T124454Z&X-Amz-Expires=28800&X-Amz-SignedHeaders=host&X-Amz-Signature=5a0852a50f47b19b6359502bfe67baa8cd2c9692ec0b000f69cc1e783c160b94",
-    label: "🎨 Design Concept by Sheun Hub"
+    label: "🎨 Past Project design by Sheun Hub"
   },
   {
     id: "g3",
@@ -48,7 +48,7 @@ const projects: Project[] = [
     category: "📱 Gadgets",
     desc: "A high-performance Shopify store design for complex tech products. This concept emphasizes clarity, detailed attribute filtering, and a powerful hero section that immediately establishes brand trust for expensive electronics. ⚡🔭🔋",
     image: "https://awesomescreenshot.s3.amazonaws.com/image/7348477/60279162-9e28b532b37bbfb2d53e5046bd3223e2.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAJSCJQ2NM3XLFPVKA%2F20260506%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20260506T094733Z&X-Amz-Expires=28800&X-Amz-SignedHeaders=host&X-Amz-Signature=2f37cdda238dec844dfe7c17dbe820c953367191bec3885f66783a5f1a75ea7b",
-    label: "🎨 Design Concept by Sheun Hub"
+    label: "🎨 Past Project design by Sheun Hub"
   },
   {
     id: "g5",
@@ -57,7 +57,7 @@ const projects: Project[] = [
     category: "📱 Gadgets",
     desc: "A sophisticated e-commerce powerhouse tailored for high-end electronics and cutting-edge tech gadgets. This design features a conversion-focused grid layout, immersive product showcases, and a seamless mobile interface optimized for digital enthusiasts. 🎮⚡🔌",
     image: "https://awesomescreenshot.s3.amazonaws.com/image/7348477/60282730-cc02c0380adcab9760a4d02bd5a6d8e0.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAJSCJQ2NM3XLFPVKA%2F20260506%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20260506T120801Z&X-Amz-Expires=28800&X-Amz-SignedHeaders=host&X-Amz-Signature=06b40c67ab99e52951d464272d8fda6ffd3025f76e28aed700aad72038912ef3",
-    label: "🎨 Design Concept by Sheun Hub"
+    label: "🎨 Past Project design by Sheun Hub"
   },
   {
     id: "g4",
@@ -66,7 +66,7 @@ const projects: Project[] = [
     category: "📱 Gadgets",
     desc: "An advanced Shopify store design for high-end technology brands. This concept focuses on hyper-realistic visuals, detailed feature breakouts, and a frictionless technical spec comparison tool designed to convert discerning tech enthusiasts. 🚀⚡💻",
     image: "https://awesomescreenshot.s3.amazonaws.com/image/7348477/60280896-2b2ebbb090c6b445bde71c6041411a81.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAJSCJQ2NM3XLFPVKA%2F20260506%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20260506T105347Z&X-Amz-Expires=28800&X-Amz-SignedHeaders=host&X-Amz-Signature=40ea06c47b9568b226924680cf9a0bb83e88d15e1eb009bed9eb9a2dbde8bff3",
-    label: "🎨 Design Concept by Sheun Hub"
+    label: "🎨 Past Project design by Sheun Hub"
   },
   {
     id: "b2",
@@ -75,7 +75,7 @@ const projects: Project[] = [
     category: "💄 Beauty & Skincare",
     desc: "Designed with a clean visual hierarchy and user-focused layout, LumiereSkin presents its skincare collection through soft, elegant sections and immersive visuals. The website highlights key elements like product benefits, natural ingredients, and daily skincare essentials in a structured and easy-to-follow flow. Balanced spacing and minimal distractions create a calm browsing experience, making the interface feel modern, refined, and effortlessly soothing to explore. ✨🧴🌿",
     image: "https://cdn.dribbble.com/userupload/47314439/file/c6086620d425f60ad8dac40f74cfe1b4.png?resize=752x3909&vertical=center",
-    label: "🎨 Design Concept by Sheun Hub"
+    label: "🎨 Past Project design by Sheun Hub"
   },
   {
     id: "f2",
@@ -84,7 +84,7 @@ const projects: Project[] = [
     category: "👗 Fashion",
     desc: "Hi There,\n\nThis is a Website concept for a Trendy Fashion E-commerce Website.\n\nHope you guys will like it.\n\nLet me know your thought's on that. Your feedback and appreciation is always welcome 🙂\n\nI'm available for new projects",
     image: "https://cdn.dribbble.com/userupload/37390836/file/original-13c3c213f022ab00791a6abaa9447322.png?resize=850x638&vertical=center",
-    label: "🎨 Design Concept by Sheun Hub"
+    label: "🎨 Past Project design by Sheun Hub"
   },
   {
     id: "f3",
@@ -93,7 +93,7 @@ const projects: Project[] = [
     category: "👗 Fashion",
     desc: "A bold, gender-neutral fashion concept designed for the modern era. Featuring high-contrast layouts, versatile product displays for both male and female collections, and a seamless shopping experience.",
     image: "https://cdn.dribbble.com/userupload/36920984/file/original-ff98dfbecece4eba4c0ef25160306302.png?resize=752x&vertical=center",
-    label: "🎨 Design Concept by Sheun Hub"
+    label: "🎨 Past Project design by Sheun Hub"
   },
   {
     id: "b3",
@@ -102,7 +102,7 @@ const projects: Project[] = [
     category: "💄 Beauty & Skincare",
     desc: "A clean and modern skincare website design concept focused on elegance and simplicity. The layout highlights product collections, beauty treatments, and customer-focused experiences with a minimal yet luxurious aesthetic. Designed to enhance user experience while keeping the brand’s natural and glowing identity at the core.",
     image: "https://cdn.dribbble.com/userupload/44540941/file/e348fef4b20fc2fa3b6d93da41e73932.jpg?resize=1024x768&vertical=center",
-    label: "🎨 Design Concept by Sheun Hub"
+    label: "🎨 Past Project design by Sheun Hub"
   },
   {
     id: "p3",
@@ -111,7 +111,7 @@ const projects: Project[] = [
     category: "🐾 Pets",
     desc: "Expert Pet Care with Love & Trust! Grooming, Health, Nutrition & More, Because Your Furry Friend Deserves the Best!",
     image: "https://cdn.dribbble.com/userupload/37449048/file/original-6a6b4e4e7ebfed9f6502c61669a61580.png?resize=1024x3374&vertical=center",
-    label: "🎨 Design Concept by Sheun Hub"
+    label: "🎨 Past Project design by Sheun Hub"
   }
 ];
 
@@ -159,7 +159,7 @@ export default function Portfolio() {
     >
       {/* Top Section Label */}
       <div className="bg-green text-navy py-4 px-6 text-center text-[10px] font-bold uppercase tracking-[0.3em]">
-        <p>Original store concepts designed by Sheun Hub — Browse the styles below and let's build your vision.</p>
+        <p>View my past client projects and designs — Let's build your vision.</p>
       </div>
 
       {/* Portfolio Hero */}
@@ -180,7 +180,7 @@ export default function Portfolio() {
                 className="text-5xl md:text-[118px] font-bold text-white tracking-tighter leading-[0.8]"
               >
                 <motion.span initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} transition={{ delay: 0.1 }} className="block">Shopify Portfolio</motion.span>
-                <motion.span initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} transition={{ delay: 0.2 }} className="italic font-serif font-light text-white/40 block">Design Gallery</motion.span>
+                <motion.span initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} transition={{ delay: 0.2 }} className="italic font-serif font-light text-white/40 block">Past Client Projects</motion.span>
                 <motion.span initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} transition={{ delay: 0.3 }} className="text-green block text-3xl md:text-5xl mt-8">by Sheun Hub</motion.span>
               </motion.h1>
               <motion.p
@@ -189,7 +189,7 @@ export default function Portfolio() {
                 transition={{ delay: 0.1 }}
                 className="text-white/60 text-2xl max-w-3xl font-serif italic"
               >
-                Browse 10 original Shopify store concepts across fashion, beauty, pets & gadgets. See a style you love? Let's build it.
+                Browse 10+ past client projects and designs across fashion, beauty, pets & gadgets. See a style you love? Let's build it.
               </motion.p>
             </div>
 
@@ -201,7 +201,7 @@ export default function Portfolio() {
             >
               <div className="flex items-center gap-4 text-white font-bold">
                 <span className="text-2xl">🛍️</span>
-                <span className="text-xs uppercase tracking-[0.2em]">10 Concepts</span>
+                <span className="text-xs uppercase tracking-[0.2em]">10+ Projects</span>
               </div>
               <div className="w-px h-8 bg-white/10 hidden sm:block" />
               <div className="flex items-center gap-4 text-white font-bold">

@@ -512,6 +512,37 @@ export default function Apply() {
       </section>
     </ScrollReveal>
 
+      {/* Video Previews */}
+      <ScrollReveal>
+        <section className="bg-white border-b border-navy/5 py-24">
+          <div className="container mx-auto px-6">
+            <div className="text-center mb-16 space-y-4">
+              <h2 className="text-4xl md:text-5xl font-bold text-navy tracking-tighter">Happy Clients.</h2>
+              <p className="text-navy/40 font-serif italic text-xl max-w-2xl mx-auto">
+                Watch a few walkthroughs from our happy clients and store optimizations.
+              </p>
+            </div>
+            <div className="flex overflow-x-auto gap-6 md:gap-8 pb-12 snap-x snap-mandatory [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+              {[
+                "1xcK0RapfU0DZAMeqfqeGj8JFNyAiTaUg",
+                "1Fo6zl7frj6QZGj-KEglCvOYL7QCFJcPx",
+                "1QhSgMZaVc9-WmFhDqAsU9-jsFgrOxQOc"
+              ].map((videoId, idx) => (
+                <div key={idx} className="relative shrink-0 w-[85vw] md:w-[60vw] lg:w-[45vw] max-w-3xl rounded-2xl overflow-hidden aspect-video border border-navy/5 shadow-2xl bg-black transition-all duration-500 hover:-translate-y-2 snap-center">
+                  <iframe 
+                    src={`https://drive.google.com/file/d/${videoId}/preview`} 
+                    allow="autoplay; fullscreen"
+                    allowFullScreen
+                    className="w-full h-full border-0 absolute top-0 left-0"
+                    title={`Project walkthrough video ${idx + 1}`}
+                  ></iframe>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      </ScrollReveal>
+
       {/* Social Proof Accent */}
       <ScrollReveal>
         <section className="py-24 bg-white border-y border-navy/5 overflow-hidden">
