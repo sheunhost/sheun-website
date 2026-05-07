@@ -1,7 +1,7 @@
 import { motion, AnimatePresence } from "framer-motion";
-import { CheckCircle2, Zap, Target, DollarSign, ArrowRight, MessageSquare, Clock, ShieldCheck, Lock, Mail, Phone, Globe, Star, Sparkles, User, Briefcase, TrendingUp, ChevronDown, HelpCircle, HardDrive } from "lucide-react";
+import { CheckCircle2, Zap, Target, DollarSign, ArrowRight, MessageSquare, Clock, ShieldCheck, Lock, Mail, Phone, Globe, Star, Sparkles, User, Briefcase, TrendingUp, ChevronDown, HelpCircle, HardDrive, ChevronLeft, ChevronRight } from "lucide-react";
 import PageWrapper from "../components/PageWrapper";
-import { useState, FormEvent, useEffect } from "react";
+import { useState, FormEvent, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 
 import ScrollReveal from "../components/ScrollReveal";
@@ -24,6 +24,15 @@ const expertise = [
 ];
 
 export default function Apply() {
+  const scrollRef = useRef<HTMLDivElement>(null);
+
+  const scrollVideos = (direction: 'left' | 'right') => {
+    if (scrollRef.current) {
+      const scrollAmount = window.innerWidth < 768 ? window.innerWidth * 0.85 : window.innerWidth * 0.35;
+      scrollRef.current.scrollBy({ left: direction === 'left' ? -scrollAmount : scrollAmount, behavior: 'smooth' });
+    }
+  };
+
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
   const [activeFormSection, setActiveFormSection] = useState(1);
@@ -516,28 +525,48 @@ export default function Apply() {
       <ScrollReveal>
         <section className="bg-white border-b border-navy/5 py-24">
           <div className="container mx-auto px-6">
-            <div className="text-center mb-16 space-y-4">
+            <div className="relative text-center mb-16 space-y-4">
               <h2 className="text-4xl md:text-5xl font-bold text-navy tracking-tighter">Happy Clients.</h2>
               <p className="text-navy/40 font-serif italic text-xl max-w-2xl mx-auto">
                 Watch a few walkthroughs from our happy clients and store optimizations.
               </p>
+              <div className="absolute top-1/2 -translate-y-1/2 right-0 hidden md:flex items-center gap-4">
+                <button type="button" onClick={() => scrollVideos('left')} className="p-4 bg-navy text-white rounded-full hover:bg-green hover:text-navy transition-all duration-300 shadow-xl" aria-label="Previous videos">
+                  <ChevronLeft size={24} />
+                </button>
+                <button type="button" onClick={() => scrollVideos('right')} className="p-4 bg-navy text-white rounded-full hover:bg-green hover:text-navy transition-all duration-300 shadow-xl" aria-label="Next videos">
+                  <ChevronRight size={24} />
+                </button>
+              </div>
             </div>
-            <div className="flex overflow-x-auto gap-6 md:gap-8 pb-12 snap-x snap-mandatory [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
-              {[
-                "1xcK0RapfU0DZAMeqfqeGj8JFNyAiTaUg",
-                "1Fo6zl7frj6QZGj-KEglCvOYL7QCFJcPx",
-                "1QhSgMZaVc9-WmFhDqAsU9-jsFgrOxQOc"
-              ].map((videoId, idx) => (
-                <div key={idx} className="relative shrink-0 w-[85vw] md:w-[60vw] lg:w-[45vw] max-w-3xl rounded-2xl overflow-hidden aspect-video border border-navy/5 shadow-2xl bg-black transition-all duration-500 hover:-translate-y-2 snap-center">
-                  <iframe 
-                    src={`https://drive.google.com/file/d/${videoId}/preview`} 
-                    allow="autoplay; fullscreen"
-                    allowFullScreen
-                    className="w-full h-full border-0 absolute top-0 left-0"
-                    title={`Project walkthrough video ${idx + 1}`}
-                  ></iframe>
-                </div>
-              ))}
+            <div className="md:hidden flex justify-center gap-4 mb-8">
+              <button type="button" onClick={() => scrollVideos('left')} className="p-4 bg-navy text-white rounded-full hover:bg-green hover:text-navy transition-all duration-300 shadow-xl" aria-label="Previous videos">
+                <ChevronLeft size={24} />
+              </button>
+              <button type="button" onClick={() => scrollVideos('right')} className="p-4 bg-navy text-white rounded-full hover:bg-green hover:text-navy transition-all duration-300 shadow-xl" aria-label="Next videos">
+                <ChevronRight size={24} />
+              </button>
+            </div>
+            <div className="relative">
+              <div ref={scrollRef} className="flex overflow-x-auto gap-6 md:gap-8 pb-12 snap-x snap-mandatory scroll-smooth [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+                {[
+                  "1U0XEql-0qlGr4e8q6Pavo5iQqiC3b10b",
+                  "1SK0gxGyWWPfbj2y4rtQAtYmQBGo1sI0P",
+                  "1h7wmcRhitTJB-I_x2R1oPmsg1hO2Jygu",
+                  "1ThuB0wztdzyvKJHt0D6Rm8FW3rL7TZzr",
+                  "1JtCeQP9N65PQgameUu8OL3TOuIhXo8Oc"
+                ].map((videoId, idx) => (
+                  <div key={idx} className="relative shrink-0 w-[85vw] md:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.5rem)] max-w-3xl rounded-2xl overflow-hidden aspect-video border border-navy/5 shadow-2xl bg-black transition-all duration-500 hover:-translate-y-2 snap-center">
+                    <iframe 
+                      src={`https://drive.google.com/file/d/${videoId}/preview`} 
+                      allow="autoplay; fullscreen"
+                      allowFullScreen
+                      className="w-full h-full border-0 absolute top-0 left-0"
+                      title={`Project walkthrough video ${idx + 1}`}
+                    ></iframe>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </section>
