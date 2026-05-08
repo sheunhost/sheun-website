@@ -36,10 +36,10 @@ export default function Contact() {
         newErrors.message = "Please provide a bit more detail (min 20 characters).";
       }
 
-      // Budget validation
-      const budget = formData.get("budget") as string;
-      if (!budget) {
-        newErrors.budget = "Please select an estimated budget.";
+      // Subject validation
+      const subject = formData.get("subject") as string;
+      if (!subject || subject.trim().length < 2) {
+        newErrors.subject = "Please enter a subject.";
       }
     } else {
       // Audit form validation
@@ -357,96 +357,17 @@ export default function Contact() {
                             />
                           </div>
 
-                          {/* Service Select */}
+                          {/* Subject Field */}
                           <div className="space-y-3">
-                            <div className="flex items-center gap-2">
-                              <label className="text-xs font-bold text-navy/40 uppercase tracking-widest pl-2 block">Service Needed</label>
-                              <div className="relative">
-                                <button 
-                                  type="button"
-                                  onMouseEnter={() => setActiveTooltip('service')}
-                                  onMouseLeave={() => setActiveTooltip(null)}
-                                  className="text-navy/20 hover:text-green transition-colors"
-                                >
-                                  <Info size={14} />
-                                </button>
-                                <AnimatePresence>
-                                  {activeTooltip === 'service' && (
-                                    <motion.div
-                                      initial={{ opacity: 0, y: 10, scale: 0.95 }}
-                                      animate={{ opacity: 1, y: 0, scale: 1 }}
-                                      exit={{ opacity: 0, y: 10, scale: 0.95 }}
-                                      className="absolute z-50 bottom-full left-1/2 -translate-x-1/2 mb-4 w-64 p-4 bg-navy text-white text-[10px] leading-relaxed rounded-2xl shadow-2xl pointer-events-none"
-                                    >
-                                      <div className="space-y-2">
-                                        <p className="font-bold text-green mb-1">Choosing a Service:</p>
-                                        <p>• <span className="text-green">Store Build:</span> New end-to-end setups.</p>
-                                        <p>• <span className="text-green">Redesign:</span> Improving existing themes.</p>
-                                        <p>• <span className="text-green">Migration:</span> Moving from Wix/Woo to Shopify.</p>
-                                      </div>
-                                      <div className="absolute top-full left-1/2 -translate-x-1/2 border-[6px] border-transparent border-t-navy" />
-                                    </motion.div>
-                                  )}
-                                </AnimatePresence>
-                              </div>
-                            </div>
-                            <div className="relative">
-                              <select name="project_type" className="w-full bg-light/30 rounded-2xl py-5 px-6 border-2 border-light focus:border-green hover:border-navy/10 text-navy font-semibold appearance-none outline-none transition-all focus:bg-white focus:shadow-lg focus:-translate-y-1 cursor-pointer">
-                                <option>Shopify Store Build</option>
-                                <option>Shopify Redesign</option>
-                                <option>Store Migration</option>
-                                <option>SEO Optimization</option>
-                                <option>Shopify Speed Optimization</option>
-                                <option>Custom Liquid Dev</option>
-                                <option>Conversion Rate Optimization (CRO) Audit</option>
-                                <option>Bug Fixing</option>
-                                <option>Other (Describe below)</option>
-                              </select>
-                              <ChevronDown className="absolute right-6 top-1/2 -translate-y-1/2 text-navy/40 pointer-events-none" size={20} />
-                            </div>
+                            <label className="text-xs font-bold text-navy/40 uppercase tracking-widest pl-2 block">Subject</label>
+                            <input
+                              type="text"
+                              name="subject"
+                              placeholder="e.g. Website Redesign"
+                              className={`w-full bg-light/30 rounded-2xl py-5 px-6 border-2 focus:border-green hover:border-navy/10 text-navy font-semibold placeholder:text-navy/20 outline-none transition-all focus:bg-white focus:shadow-lg focus:-translate-y-1 ${errors.subject ? 'border-red-500' : 'border-light'}`}
+                            />
+                            {errors.subject && <p className="text-red-500 text-[10px] font-bold pl-2">{errors.subject}</p>}
                           </div>
-                        </div>
-
-                        {/* Budget Select */}
-                        <div className="space-y-3">
-                          <div className="flex items-center gap-2">
-                            <label className="text-xs font-bold text-navy/40 uppercase tracking-widest pl-2 block">Project Budget</label>
-                            <div className="relative">
-                                <button 
-                                  type="button"
-                                  onMouseEnter={() => setActiveTooltip('budget')}
-                                  onMouseLeave={() => setActiveTooltip(null)}
-                                  className="text-navy/20 hover:text-green transition-colors"
-                                >
-                                  <Info size={14} />
-                                </button>
-                                <AnimatePresence>
-                                  {activeTooltip === 'budget' && (
-                                    <motion.div
-                                      initial={{ opacity: 0, y: 10, scale: 0.95 }}
-                                      animate={{ opacity: 1, y: 0, scale: 1 }}
-                                      exit={{ opacity: 0, y: 10, scale: 0.95 }}
-                                      className="absolute z-50 bottom-full left-1/2 -translate-x-1/2 mb-4 w-64 p-4 bg-navy text-white text-[10px] leading-relaxed rounded-2xl shadow-2xl pointer-events-none"
-                                    >
-                                      <p className="font-bold text-green mb-2 italic underline underline-offset-4 tracking-[0.05em]">Why we ask:</p>
-                                      <p className="mb-3 font-medium opacity-80 leading-relaxed font-serif">Providing an estimate helps me tailor the solution and roadmap to reflect your business goals and current scale.</p>
-                                      <div className="absolute top-full left-1/2 -translate-x-1/2 border-[6px] border-transparent border-t-navy" />
-                                    </motion.div>
-                                  )}
-                                </AnimatePresence>
-                              </div>
-                          </div>
-                          <div className="relative">
-                            <select name="budget" defaultValue="" className={`w-full bg-light/30 rounded-2xl py-5 px-6 border-2 focus:border-green hover:border-navy/10 text-navy font-semibold appearance-none outline-none transition-all focus:bg-white focus:shadow-lg focus:-translate-y-1 cursor-pointer ${errors.budget ? 'border-red-500' : 'border-light'}`}>
-                              <option value="" disabled>Select an estimated budget...</option>
-                              <option value="Less than $500">Less than $500</option>
-                              <option value="$500 - $2,000">$500 - $2,000</option>
-                              <option value="$2,000 - $5,000">$2,000 - $5,000</option>
-                              <option value="$5,000+">$5,000+</option>
-                            </select>
-                            <ChevronDown className="absolute right-6 top-1/2 -translate-y-1/2 text-navy/40 pointer-events-none" size={20} />
-                          </div>
-                          {errors.budget && <p className="text-red-500 text-[10px] font-bold pl-2">{errors.budget}</p>}
                         </div>
 
                         {/* Message Field */}

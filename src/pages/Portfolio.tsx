@@ -24,39 +24,39 @@ type Project = {
 
 const projects: Project[] = [
   {
-    id: "new_5",
-    name: "Custom Shopify Store 4",
-    tag: "🏆 Featured Design",
-    category: "👗 Fashion",
-    desc: "A custom high-converting Shopify store design focused on modern aesthetics and streamlined user experience.",
-    image: "https://ais-dev-6myxtpxxjzddlafwdoxe7u-30629454067.europe-west3.run.app/s/3fbf8747.png",
-    label: "🎨 Past Project design by Sheun Hub"
-  },
-  {
-    id: "new_4",
-    name: "Custom Shopify Store 3",
-    tag: "🏆 Featured Design",
-    category: "👗 Fashion",
-    desc: "A custom high-converting Shopify store design focused on modern aesthetics and streamlined user experience.",
-    image: "https://ais-dev-6myxtpxxjzddlafwdoxe7u-30629454067.europe-west3.run.app/s/85f2e087.png",
-    label: "🎨 Past Project design by Sheun Hub"
-  },
-  {
-    id: "new_3",
-    name: "Custom Shopify Store 2",
-    tag: "🏆 Featured Design",
-    category: "👗 Fashion",
-    desc: "A custom high-converting Shopify store design focused on modern aesthetics and streamlined user experience.",
-    image: "https://ais-dev-6myxtpxxjzddlafwdoxe7u-30629454067.europe-west3.run.app/s/67c4d0b6.png",
-    label: "🎨 Past Project design by Sheun Hub"
-  },
-  {
-    id: "new_2",
+    id: "new_custom_3",
     name: "Custom Shopify Store",
     tag: "🏆 Featured Design",
     category: "👗 Fashion",
     desc: "A custom high-converting Shopify store design focused on modern aesthetics and streamlined user experience.",
-    image: "https://ais-dev-6myxtpxxjzddlafwdoxe7u-30629454067.europe-west3.run.app/s/d67483f6.png",
+    image: "https://plain-weur-prod-public.komododecks.com/202605/08/mORKcj6Dvv23Z1UjwufJ/image.png",
+    label: "🎨 Past Project design by Sheun Hub"
+  },
+  {
+    id: "new_custom_2",
+    name: "Custom Shopify Store",
+    tag: "🏆 Featured Design",
+    category: "👗 Fashion",
+    desc: "A custom high-converting Shopify store design focused on modern aesthetics and streamlined user experience.",
+    image: "https://plain-weur-prod-public.komododecks.com/202605/08/chrM0xrj9IVak4lT2pwY/image.png",
+    label: "🎨 Past Project design by Sheun Hub"
+  },
+  {
+    id: "new_custom_1",
+    name: "Custom Shopify Store",
+    tag: "🏆 Featured Design",
+    category: "👗 Fashion",
+    desc: "A custom high-converting Shopify store design focused on modern aesthetics and streamlined user experience.",
+    image: "https://plain-weur-prod-public.komododecks.com/202605/08/ZGtAaDfh0M9sZiKPK2CX/image.png",
+    label: "🎨 Past Project design by Sheun Hub"
+  },
+  {
+    id: "hairburst_1",
+    name: "Hairburst USA",
+    tag: "💄 Beauty — Hair Care",
+    category: "💄 Beauty & Skincare",
+    desc: "A custom high-converting Shopify store design focused on modern aesthetics and streamlined user experience for hair vitamins.",
+    image: "https://i.ibb.co/yBKMgy3Q/Hair-Growth-Vitamins-Cosmetics-Hairburst-USA-05-08-2026-03-16-AM.png",
     label: "🎨 Past Project design by Sheun Hub"
   },
   {
