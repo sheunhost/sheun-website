@@ -24,48 +24,39 @@ type Project = {
 
 const projects: Project[] = [
   {
-    id: "g7",
-    name: "TechElite",
-    tag: "📱 Gadgets — Elite Technology Hub",
-    category: "📱 Gadgets",
-    desc: "A premium Shopify store concept for high-performance electronics. This design balances sleek aesthetics with deep technical detail, featuring advanced product grids and an immersive technical specification layout that builds immediate authority for luxury gadget brands. ⚡🔋🔭",
-    image: "https://awesomescreenshot.s3.amazonaws.com/image/7348477/60283715-61ac405c4f837b682c8ebc169a426cfe.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAJSCJQ2NM3XLFPVKA%2F20260506%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20260506T124603Z&X-Amz-Expires=28800&X-Amz-SignedHeaders=host&X-Amz-Signature=2958858e00e9efba2f4e4bcfc01b7294f3f0835ee38943519d491953df0b2c30",
+    id: "new_5",
+    name: "Custom Shopify Store 4",
+    tag: "🏆 Featured Design",
+    category: "👗 Fashion",
+    desc: "A custom high-converting Shopify store design focused on modern aesthetics and streamlined user experience.",
+    image: "https://ais-dev-6myxtpxxjzddlafwdoxe7u-30629454067.europe-west3.run.app/s/3fbf8747.png",
     label: "🎨 Past Project design by Sheun Hub"
   },
   {
-    id: "g6",
-    name: "EliteGadgets",
-    tag: "📱 Gadgets — Elite Tech Experience",
-    category: "📱 Gadgets",
-    desc: "A powerhouse Shopify store designed for top-tier electronics and high-performance tech retailers. This concept features ultra-sharp product grids, dynamic filtering, and a minimalist design language that highlights product engineering and premium build quality. 🔋⚡🎮",
-    image: "https://awesomescreenshot.s3.amazonaws.com/image/7348477/60283769-a1552f51f25baaf11a18fc6c02a109d6.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAJSCJQ2NM3XLFPVKA%2F20260506%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20260506T124454Z&X-Amz-Expires=28800&X-Amz-SignedHeaders=host&X-Amz-Signature=5a0852a50f47b19b6359502bfe67baa8cd2c9692ec0b000f69cc1e783c160b94",
+    id: "new_4",
+    name: "Custom Shopify Store 3",
+    tag: "🏆 Featured Design",
+    category: "👗 Fashion",
+    desc: "A custom high-converting Shopify store design focused on modern aesthetics and streamlined user experience.",
+    image: "https://ais-dev-6myxtpxxjzddlafwdoxe7u-30629454067.europe-west3.run.app/s/85f2e087.png",
     label: "🎨 Past Project design by Sheun Hub"
   },
   {
-    id: "g3",
-    name: "TechPro",
-    tag: "📱 Gadgets — Technical Excellence",
-    category: "📱 Gadgets",
-    desc: "A high-performance Shopify store design for complex tech products. This concept emphasizes clarity, detailed attribute filtering, and a powerful hero section that immediately establishes brand trust for expensive electronics. ⚡🔭🔋",
-    image: "https://awesomescreenshot.s3.amazonaws.com/image/7348477/60279162-9e28b532b37bbfb2d53e5046bd3223e2.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAJSCJQ2NM3XLFPVKA%2F20260506%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20260506T094733Z&X-Amz-Expires=28800&X-Amz-SignedHeaders=host&X-Amz-Signature=2f37cdda238dec844dfe7c17dbe820c953367191bec3885f66783a5f1a75ea7b",
+    id: "new_3",
+    name: "Custom Shopify Store 2",
+    tag: "🏆 Featured Design",
+    category: "👗 Fashion",
+    desc: "A custom high-converting Shopify store design focused on modern aesthetics and streamlined user experience.",
+    image: "https://ais-dev-6myxtpxxjzddlafwdoxe7u-30629454067.europe-west3.run.app/s/67c4d0b6.png",
     label: "🎨 Past Project design by Sheun Hub"
   },
   {
-    id: "g5",
-    name: "TechSpace",
-    tag: "📱 Gadgets — Premium Tech Space",
-    category: "📱 Gadgets",
-    desc: "A sophisticated e-commerce powerhouse tailored for high-end electronics and cutting-edge tech gadgets. This design features a conversion-focused grid layout, immersive product showcases, and a seamless mobile interface optimized for digital enthusiasts. 🎮⚡🔌",
-    image: "https://awesomescreenshot.s3.amazonaws.com/image/7348477/60282730-cc02c0380adcab9760a4d02bd5a6d8e0.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAJSCJQ2NM3XLFPVKA%2F20260506%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20260506T120801Z&X-Amz-Expires=28800&X-Amz-SignedHeaders=host&X-Amz-Signature=06b40c67ab99e52951d464272d8fda6ffd3025f76e28aed700aad72038912ef3",
-    label: "🎨 Past Project design by Sheun Hub"
-  },
-  {
-    id: "g4",
-    name: "EliteTech",
-    tag: "📱 Gadgets — Elite E-commerce",
-    category: "📱 Gadgets",
-    desc: "An advanced Shopify store design for high-end technology brands. This concept focuses on hyper-realistic visuals, detailed feature breakouts, and a frictionless technical spec comparison tool designed to convert discerning tech enthusiasts. 🚀⚡💻",
-    image: "https://awesomescreenshot.s3.amazonaws.com/image/7348477/60280896-2b2ebbb090c6b445bde71c6041411a81.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAJSCJQ2NM3XLFPVKA%2F20260506%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20260506T105347Z&X-Amz-Expires=28800&X-Amz-SignedHeaders=host&X-Amz-Signature=40ea06c47b9568b226924680cf9a0bb83e88d15e1eb009bed9eb9a2dbde8bff3",
+    id: "new_2",
+    name: "Custom Shopify Store",
+    tag: "🏆 Featured Design",
+    category: "👗 Fashion",
+    desc: "A custom high-converting Shopify store design focused on modern aesthetics and streamlined user experience.",
+    image: "https://ais-dev-6myxtpxxjzddlafwdoxe7u-30629454067.europe-west3.run.app/s/d67483f6.png",
     label: "🎨 Past Project design by Sheun Hub"
   },
   {
