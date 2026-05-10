@@ -176,20 +176,49 @@ export default function Apply() {
             transition={{ duration: 0.8 }}
             className="space-y-8"
           >
-            <div className="inline-flex items-center gap-2 bg-green/10 px-4 py-2 rounded-full border border-green/20">
+            <div className="inline-flex items-center gap-2 bg-green/10 px-4 py-2 rounded-full border border-green/20 mb-6">
               <Sparkles size={14} className="text-green" />
-              <span className="text-[10px] font-bold text-green uppercase tracking-widest">Available for new projects</span>
+              <span className="text-[10px] font-bold text-green uppercase tracking-widest">Top-Rated Shopify Developer & Conversion Expert</span>
             </div>
             
-            <h1 className="text-6xl md:text-8xl font-bold text-white tracking-tighter leading-none">
-              Start Your <span className="text-green italic font-serif">Growth Journey</span>.
+            <h1 className="text-5xl md:text-7xl font-bold text-white tracking-tighter leading-[1.1] mb-6">
+              Stop Losing Sales to a <span className="text-green italic font-serif">Slow, Poorly Designed</span> Shopify Store.
             </h1>
             
-            <p className="text-white/60 text-xl md:text-2xl font-serif italic max-w-2xl mx-auto">
-              I help brands build high-converting Shopify engines. Submit your details below to see if we're a fit for a partnership.
+            <p className="text-white/70 text-xl md:text-2xl font-serif italic max-w-3xl mx-auto mb-10">
+              I build custom, lightning-fast Shopify stores that turn your Google & Facebook Ad traffic into loyal customers. Apply below to get a store that actually converts.
             </p>
 
-            <div className="flex flex-wrap items-center justify-center gap-8 pt-8">
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.2, duration: 0.8 }}
+              className="flex justify-center pb-2"
+            >
+              <button 
+                onClick={() => document.getElementById('apply-form')?.scrollIntoView({ behavior: 'smooth' })}
+                className="group bg-green text-navy font-bold text-lg px-8 py-4 rounded-full hover:bg-white transition-all duration-300 flex items-center justify-center gap-3 shadow-[0_0_40px_rgba(202,255,0,0.3)] hover:shadow-[0_0_60px_rgba(202,255,0,0.5)] cursor-pointer"
+              >
+                Apply For Your Store Build <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
+              </button>
+            </motion.div>
+
+            <div className="flex flex-wrap items-center justify-center gap-6 pt-4 mb-4">
+              <div className="flex items-center gap-2 text-white/60 text-sm font-bold uppercase tracking-widest bg-white/5 py-2 px-4 rounded-full border border-white/5">
+                <CheckCircle2 size={16} className="text-green" />
+                <span>100% Custom Designs</span>
+              </div>
+              <div className="flex items-center gap-2 text-white/60 text-sm font-bold uppercase tracking-widest bg-white/5 py-2 px-4 rounded-full border border-white/5">
+                <CheckCircle2 size={16} className="text-green" />
+                <span>Speed Optimized</span>
+              </div>
+              <div className="flex items-center gap-2 text-white/60 text-sm font-bold uppercase tracking-widest bg-white/5 py-2 px-4 rounded-full border border-white/5">
+                <CheckCircle2 size={16} className="text-green" />
+                <span>CRO Focused</span>
+              </div>
+            </div>
+
+            <div className="flex flex-wrap items-center justify-center gap-8 mt-12 pt-8 border-t border-white/10">
               <div className="flex -space-x-4">
                 {[1, 2, 3].map(i => (
                   <div key={i} className="w-12 h-12 rounded-full border-2 border-navy bg-white/10 overflow-hidden ring-2 ring-white/5">
@@ -215,12 +244,45 @@ export default function Apply() {
         <div className="container mx-auto px-6">
           <div className="flex flex-wrap items-center justify-center gap-x-16 gap-y-8 opacity-40 grayscale hover:grayscale-0 transition-all duration-500">
             <span className="font-black text-2xl tracking-tighter">SHOPIFY PARTNER</span>
-            <span className="font-black text-2xl tracking-tighter">UPWORK TOP RATED</span>
+            <span className="font-black text-2xl tracking-tighter">CONVERSION EXPERT</span>
             <span className="font-black text-2xl tracking-tighter">5+ YEARS EXPERTISE</span>
           </div>
         </div>
       </section>
     </ScrollReveal>
+
+      {/* Why Choose Section for Ad Traffic Context */}
+      <ScrollReveal>
+        <section className="py-24 bg-white">
+          <div className="container mx-auto px-6 max-w-5xl">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              <div className="bg-light p-8 rounded-2xl border border-navy/5 hover:-translate-y-2 transition-all duration-300">
+                <div className="w-12 h-12 bg-navy text-green rounded-xl flex items-center justify-center mb-6">
+                  <Zap size={24} />
+                </div>
+                <h3 className="text-xl font-bold text-navy tracking-tight mb-3">Lightning Fast</h3>
+                <p className="text-navy/60 leading-relaxed font-serif text-sm">Most themes drag down conversion with bloated code. I build lightweight, ultra-fast experiences that pass Google Core Web Vitals with flying colors.</p>
+              </div>
+              
+              <div className="bg-light p-8 rounded-2xl border border-navy/5 hover:-translate-y-2 transition-all duration-300">
+                <div className="w-12 h-12 bg-navy text-green rounded-xl flex items-center justify-center mb-6">
+                  <Target size={24} />
+                </div>
+                <h3 className="text-xl font-bold text-navy tracking-tight mb-3">CRO Engineering</h3>
+                <p className="text-navy/60 leading-relaxed font-serif text-sm">Traffic isn't cheap. Every design decision I make is focused on removing friction to maximize your Add-To-Cart and Checkout completion rates.</p>
+              </div>
+
+              <div className="bg-light p-8 rounded-2xl border border-navy/5 hover:-translate-y-2 transition-all duration-300">
+                <div className="w-12 h-12 bg-navy text-green rounded-xl flex items-center justify-center mb-6">
+                  <DollarSign size={24} />
+                </div>
+                <h3 className="text-xl font-bold text-navy tracking-tight mb-3">Revenue Focused</h3>
+                <p className="text-navy/60 leading-relaxed font-serif text-sm">I don't just 'make things look pretty'. I organize product architecture, up-sells, and cross-sells to actively increase your Average Order Value (AOV).</p>
+              </div>
+            </div>
+          </div>
+        </section>
+      </ScrollReveal>
 
       {/* Qualification Form - Moved Higher */}
       <ScrollReveal>
