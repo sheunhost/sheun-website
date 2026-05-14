@@ -61,8 +61,9 @@ export default function Contact() {
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>, type: 'contact' | 'audit' = 'contact') => {
     e.preventDefault();
+    const form = e.currentTarget;
     
-    const formData = new FormData(e.currentTarget);
+    const formData = new FormData(form);
 
     if (!validateForm(formData, type)) return;
     
@@ -107,7 +108,7 @@ export default function Contact() {
         if (type === 'contact') setIsSuccess(true);
         else setIsAuditSuccess(true);
         
-        e.currentTarget.reset();
+        form.reset();
       } else {
         console.error("Error submitting form", data);
         alert("Something went wrong. Please try again.");

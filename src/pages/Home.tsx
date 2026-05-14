@@ -455,19 +455,23 @@ export default function Home() {
 
   const [selectedService, setSelectedService] = useState<any | null>(null);
   const [testimonialIndex, setTestimonialIndex] = useState(0);
+  const [isTestimonialExpanded, setIsTestimonialExpanded] = useState(false);
 
   const nextTestimonial = () => {
+    setIsTestimonialExpanded(false);
     setTestimonialIndex((prev) => (prev + 1) % testimonials.length);
   };
 
   const prevTestimonial = () => {
+    setIsTestimonialExpanded(false);
     setTestimonialIndex((prev) => (prev - 1 + testimonials.length) % testimonials.length);
   };
 
   useEffect(() => {
+    if (isTestimonialExpanded) return;
     const timer = setInterval(nextTestimonial, 8000);
     return () => clearInterval(timer);
-  }, []);
+  }, [isTestimonialExpanded]);
 
   const handlePlanRequest = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -1056,9 +1060,21 @@ export default function Home() {
                       <Star key={j} size={16} fill="currentColor" className="text-[#FFC107]" />
                     ))}
                   </div>
-                  <p className="text-navy/70 font-serif italic text-lg md:text-xl leading-relaxed">
-                    "{testimonials[testimonialIndex].content}"
-                  </p>
+                  <div className="flex flex-col items-center md:items-start gap-2">
+                    <p className="text-navy/70 font-serif italic text-lg md:text-xl leading-relaxed transition-all duration-300">
+                      "{isTestimonialExpanded || testimonials[testimonialIndex].content.length <= 150 
+                        ? testimonials[testimonialIndex].content 
+                        : `${testimonials[testimonialIndex].content.slice(0, 150)}...`}"
+                    </p>
+                    {testimonials[testimonialIndex].content.length > 150 && (
+                      <button 
+                        onClick={() => setIsTestimonialExpanded(!isTestimonialExpanded)}
+                        className="text-navy font-bold text-sm tracking-wide hover:text-green transition-colors mt-2 underline decoration-green decoration-2 underline-offset-4"
+                      >
+                        {isTestimonialExpanded ? 'Read Less' : 'Read More'}
+                      </button>
+                    )}
+                  </div>
                   <div>
                     <h4 className="text-navy font-bold text-lg">{testimonials[testimonialIndex].name}</h4>
                     <p className="text-navy/40 text-xs uppercase tracking-widest mt-1">{testimonials[testimonialIndex].role}</p>

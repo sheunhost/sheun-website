@@ -48,7 +48,8 @@ export default function ServiceDetail() {
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    const formData = new FormData(e.currentTarget);
+    const form = e.currentTarget;
+    const formData = new FormData(form);
     
     if (!validateForm(formData)) return;
     
@@ -78,7 +79,7 @@ export default function ServiceDetail() {
         }).catch(err => console.error("Mailchimp Sync Error:", err));
 
         setIsSuccess(true);
-        e.currentTarget.reset();
+        form.reset();
       } else {
         console.error("Error submitting form", data);
         alert("Something went wrong. Please try again.");
