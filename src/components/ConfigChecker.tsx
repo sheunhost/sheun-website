@@ -14,7 +14,9 @@ export default function ConfigChecker() {
           console.log("Mailchimp is configured correctly.");
         }
       })
-      .catch(err => console.error("Config check failed:", err));
+      .catch(err => {
+        // Ignore fetch errors to avoid cluttering the console if server goes down or endpoint is missing
+      });
   }, []);
 
   if (!status) return null;

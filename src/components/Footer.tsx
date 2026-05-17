@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { ShieldCheck, Search, HeadphonesIcon, Lock } from "lucide-react";
+import { ShieldCheck, Search, HeadphonesIcon, Lock, Zap, Award } from "lucide-react";
 import ConfigChecker from "./ConfigChecker";
 
 export default function Footer() {
@@ -64,24 +64,33 @@ export default function Footer() {
         </div>
 
         {/* Trust Badges */}
-        <div className="flex flex-wrap justify-between items-center gap-8 mb-12 py-10 border-y border-white/5">
-          <div className="flex items-center gap-4">
-            <div className="w-12 h-12 rounded-full flex items-center justify-center bg-white/5 text-green border border-white/10 group-hover:bg-green group-hover:text-navy transition-all">
-              <Search size={22} />
+        <div className="flex flex-wrap justify-center md:justify-around items-center gap-8 mb-12 py-10 border-y border-white/5 bg-white/[0.02] rounded-3xl mt-8">
+          <div className="flex items-center gap-5 group">
+            <div className="w-14 h-14 rounded-2xl flex items-center justify-center bg-white/5 text-green border border-white/10 group-hover:bg-green group-hover:text-navy group-hover:-translate-y-1 transition-all duration-300 shadow-lg">
+              <Lock size={24} />
             </div>
-            <span className="text-white/80 font-medium tracking-wide">Free Store Audit</span>
+            <div className="flex flex-col">
+              <span className="text-white font-bold tracking-wide">256-Bit SSL</span>
+              <span className="text-white/50 text-sm font-medium">100% Secure Checkout</span>
+            </div>
           </div>
-          <div className="flex items-center gap-4">
-            <div className="w-12 h-12 rounded-full flex items-center justify-center bg-white/5 text-green border border-white/10 group-hover:bg-green group-hover:text-navy transition-all">
-              <HeadphonesIcon size={22} />
+          <div className="flex items-center gap-5 group">
+            <div className="w-14 h-14 rounded-2xl flex items-center justify-center bg-white/5 text-green border border-white/10 group-hover:bg-green group-hover:text-navy group-hover:-translate-y-1 transition-all duration-300 shadow-lg">
+              <Zap size={24} />
             </div>
-            <span className="text-white/80 font-medium tracking-wide">24/7 Support</span>
+            <div className="flex flex-col">
+              <span className="text-white font-bold tracking-wide">Fast Delivery</span>
+              <span className="text-white/50 text-sm font-medium">On-Time Project Turnaround</span>
+            </div>
           </div>
-          <div className="flex items-center gap-4">
-            <div className="w-12 h-12 rounded-full flex items-center justify-center bg-white/5 text-green border border-white/10 group-hover:bg-green group-hover:text-navy transition-all">
-              <Lock size={22} />
+          <div className="flex items-center gap-5 group">
+            <div className="w-14 h-14 rounded-2xl flex items-center justify-center bg-white/5 text-green border border-white/10 group-hover:bg-green group-hover:text-navy group-hover:-translate-y-1 transition-all duration-300 shadow-lg">
+              <Award size={24} />
             </div>
-            <span className="text-white/80 font-medium tracking-wide">100% Secure Checkout</span>
+            <div className="flex flex-col">
+              <span className="text-white font-bold tracking-wide">Satisfaction Guarantee</span>
+              <span className="text-white/50 text-sm font-medium">5-Star Rated Service</span>
+            </div>
           </div>
         </div>
 

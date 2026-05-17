@@ -742,7 +742,7 @@ export default function Home() {
                 className="absolute inset-0 bg-white/5 backdrop-blur-3xl border border-white/10 rounded-3xl shadow-2xl overflow-hidden group"
               >
                 <img 
-                  src="https://mapplinks.com/wp-content/uploads/2020/06/screen1.png" 
+                  src="https://drive.google.com/uc?export=view&id=1gaAE9RhgF4QCC76xqO85s-h0qJpOM-_9" 
                   alt="Sheun - Shopify Development and Growth Expert" 
                   referrerPolicy="no-referrer"
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-[2s]" 
