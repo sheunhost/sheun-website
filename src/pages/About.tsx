@@ -122,15 +122,8 @@ export default function About() {
                 initial={{ opacity: 0, scale: 0.95, rotate: 5 }}
                 animate={{ opacity: 1, scale: 1, rotate: 0 }}
                 transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
-                className="relative z-10 aspect-[4/5] rounded-xl overflow-hidden border-[24px] border-white shadow-[0_40px_100px_-20px_rgba(0,0,0,0.2)]"
+                className="relative z-10 aspect-[4/5] rounded-xl overflow-hidden border-[24px] border-white shadow-[0_40px_100px_-20px_rgba(0,0,0,0.2)] bg-navy/5"
               >
-                <img 
-                  src="https://ik.imagekit.io/pedgmrihq/image.png" 
-                  alt="Sheun - Shopify Development and Growth Expert" 
-                  referrerPolicy="no-referrer"
-                  className="w-full h-full object-cover" 
-                  loading="lazy" 
-                />
                 <div className="absolute inset-0 bg-gradient-to-t from-navy/20 to-transparent" />
               </motion.div>
 
