@@ -124,6 +124,13 @@ export default function About() {
                 transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
                 className="relative z-10 aspect-[4/5] rounded-xl overflow-hidden border-[24px] border-white shadow-[0_40px_100px_-20px_rgba(0,0,0,0.2)] bg-navy/5"
               >
+                <img 
+                  src="https://plain-enam-prod-public.komododecks.com/202605/19/vZvg4Ag3WuFmylr2Sh6R/image.jpg" 
+                  alt="Sheun - Shopify Development and Growth Expert" 
+                  referrerPolicy="no-referrer"
+                  className="w-full h-full object-cover object-top" 
+                  loading="lazy" 
+                />
                 <div className="absolute inset-0 bg-gradient-to-t from-navy/20 to-transparent" />
               </motion.div>
 
