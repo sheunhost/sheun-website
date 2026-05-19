@@ -401,6 +401,10 @@ export default function ServiceDetail() {
                     <Linkedin size={16} />
                     <span className="font-bold text-xs md:text-sm">LinkedIn</span>
                   </a>
+                  <a href="https://www.fiverr.com/sheun_h" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 bg-white/5 hover:bg-green text-white hover:text-navy px-4 md:px-5 py-2.5 rounded-full transition-colors border border-white/10 hover:border-green">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR9zeK0uAVJfpeE1Zx1b3vDoihQGglG3BW2IjvgFTmksQ&s" alt="Fiverr" className="w-4 h-4 object-contain" />
+                    <span className="font-bold text-xs md:text-sm">Fiverr</span>
+                  </a>
                 </div>
               </div>
             </div>

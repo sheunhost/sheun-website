@@ -267,6 +267,24 @@ export default function Contact() {
                   </div>
                 </motion.a>
 
+                {/* Secondary Contact: Fiverr */}
+                <motion.a
+                  href="https://www.fiverr.com/sheun_h"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="p-8 bg-light rounded-[40px] border border-navy/5 hover:border-green/50 transition-all group"
+                >
+                  <div className="space-y-10">
+                    <div className="w-14 h-14 bg-white rounded-2xl flex items-center justify-center shadow-sm group-hover:bg-green transition-colors overflow-hidden">
+                      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR9zeK0uAVJfpeE1Zx1b3vDoihQGglG3BW2IjvgFTmksQ&s" alt="Fiverr" className="w-8 h-8 object-contain" />
+                    </div>
+                    <div className="space-y-2">
+                      <p className="text-navy font-bold text-xl uppercase tracking-tighter">Fiverr</p>
+                      <p className="text-navy/40 text-sm font-medium tracking-tight">Hire me on Fiverr.</p>
+                    </div>
+                  </div>
+                </motion.a>
+
                 {/* Branding Card */}
                 <div className="sm:col-span-2 p-10 bg-green rounded-[40px] flex items-center justify-between shadow-xl">
                   <div className="space-y-2">

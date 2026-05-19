@@ -915,6 +915,9 @@ export default function Services() {
                 <a href="mailto:sheunhost@gmail.com" className="p-4 bg-white/10 hover:bg-green hover:text-navy text-white rounded-full transition-all border border-white/10 flex items-center justify-center shrink-0">
                   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
                 </a>
+                <a href="https://www.fiverr.com/sheun_h" target="_blank" rel="noopener noreferrer" className="p-4 bg-white/10 hover:bg-green hover:text-navy text-white rounded-full transition-all border border-white/10 shrink-0 flex items-center justify-center overflow-hidden" title="Fiverr">
+                  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR9zeK0uAVJfpeE1Zx1b3vDoihQGglG3BW2IjvgFTmksQ&s" alt="Fiverr" className="w-6 h-6 object-contain" />
+                </a>
               </div>
             </motion.div>
           </div>
