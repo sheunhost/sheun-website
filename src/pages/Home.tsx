@@ -446,16 +446,21 @@ export default function Home() {
   const navigate = useNavigate();
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
-  
+  const [emailErrorContact, setEmailErrorContact] = useState("");
+
   const [isSubscribing, setIsSubscribing] = useState(false);
   const [isSubscribeSuccess, setIsSubscribeSuccess] = useState(false);
+  const [emailErrorSubscribe, setEmailErrorSubscribe] = useState("");
 
   const [isRequestingPlan, setIsRequestingPlan] = useState(false);
   const [planRequested, setPlanRequested] = useState(false);
+  const [emailErrorPlan, setEmailErrorPlan] = useState("");
 
   const [selectedService, setSelectedService] = useState<any | null>(null);
   const [testimonialIndex, setTestimonialIndex] = useState(0);
   const [isTestimonialExpanded, setIsTestimonialExpanded] = useState(false);
+
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
   const nextTestimonial = () => {
     setIsTestimonialExpanded(false);
@@ -475,21 +480,52 @@ export default function Home() {
 
   const handlePlanRequest = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    const form = e.currentTarget;
+    const formData = new FormData(form);
+    const email = formData.get("email") as string;
+    
+    if (!email || !emailRegex.test(email)) {
+      setEmailErrorPlan("Please enter a valid email address.");
+      return;
+    }
+    setEmailErrorPlan("");
     setIsRequestingPlan(true);
 
-    // Simulate API call to submit the form
-    await new Promise((resolve) => setTimeout(resolve, 1500));
-    
-    setIsRequestingPlan(false);
-    setPlanRequested(true);
+    formData.append("access_key", "c0573f7d-6191-4374-bc31-ee70ee9fa226");
+    formData.append("subject", "New Audit/Plan Request");
+
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: formData
+      });
+      const data = await response.json();
+      if (data.success) {
+        setPlanRequested(true);
+        form.reset();
+      } else {
+        alert("Something went wrong. Please try again.");
+      }
+    } catch (error) {
+       alert("Something went wrong. Please try again.");
+    } finally {
+      setIsRequestingPlan(false);
+    }
   };
 
   const handleSubscribe = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setIsSubscribing(true);
     const form = e.currentTarget;
-
     const formData = new FormData(form);
+    const email = formData.get("email") as string;
+
+    if (!email || !emailRegex.test(email)) {
+      setEmailErrorSubscribe("Please enter a valid email address.");
+      return;
+    }
+    setEmailErrorSubscribe("");
+    setIsSubscribing(true);
+
     formData.append("access_key", "c0573f7d-6191-4374-bc31-ee70ee9fa226");
     formData.append("subject", "New Newsletter Subscriber");
 
@@ -504,7 +540,6 @@ export default function Home() {
 
       if (data.success) {
         // 2. Submit to Mailchimp (Background)
-        const email = formData.get("email") as string;
         fetch("/api/mailchimp/subscribe", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
@@ -540,10 +575,17 @@ export default function Home() {
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setIsSubmitting(true);
     const form = e.currentTarget;
-
     const formData = new FormData(form);
+    const email = formData.get("email") as string;
+
+    if (!email || !emailRegex.test(email)) {
+      setEmailErrorContact("Please enter a valid email address.");
+      return;
+    }
+    setEmailErrorContact("");
+    setIsSubmitting(true);
+
     formData.append("access_key", "c0573f7d-6191-4374-bc31-ee70ee9fa226");
 
     try {
@@ -557,7 +599,6 @@ export default function Home() {
 
       if (data.success) {
         // 2. Submit to Mailchimp (Background)
-        const email = formData.get("email") as string;
         const name = (formData.get("name") as string) || "";
         fetch("/api/mailchimp/subscribe", {
           method: "POST",
@@ -836,16 +877,19 @@ export default function Home() {
                       <label className="text-sm font-bold text-navy ml-4">Email Address *</label>
                       <input 
                         type="email" 
+                        name="email"
                         required
                         placeholder="john@example.com" 
-                        className="w-full bg-white border-2 border-navy/5 rounded-full py-4 px-6 focus:border-green outline-none transition-all"
+                        className={`w-full bg-white border-2 ${emailErrorPlan ? 'border-red-500' : 'border-navy/5'} rounded-full py-4 px-6 focus:border-green outline-none transition-all`}
                       />
+                      {emailErrorPlan && <p className="text-red-500 text-xs ml-4">{emailErrorPlan}</p>}
                     </div>
                   </div>
                   <div className="space-y-2">
                     <label className="text-sm font-bold text-navy ml-4">Store URL *</label>
                     <input 
                       type="url" 
+                      name="store_url"
                       required
                       placeholder="https://yourstore.com" 
                       className="w-full bg-white border-2 border-navy/5 rounded-full py-4 px-6 focus:border-green outline-none transition-all"
@@ -877,9 +921,9 @@ export default function Home() {
                   <div className="w-20 h-20 bg-green/20 rounded-full flex items-center justify-center mx-auto">
                     <CheckCircle2 size={40} className="text-green" />
                   </div>
-                  <h3 className="text-3xl font-bold text-navy tracking-tight">Request Received!</h3>
+                  <h3 className="text-3xl font-bold text-navy tracking-tight">Congratulations! Request Received!</h3>
                   <p className="text-navy/60 text-lg max-w-md mx-auto leading-relaxed">
-                    I will personally review your store and email your custom Growth Plan within 24-48 hours. Let's scale your brand!
+                    Your form was submitted. You will receive a message with further steps from <span className="font-bold">sheunhost@gmail.com</span> shortly. I will review your store and email your custom Growth Plan within 24-48 hours. Let's scale your brand!
                   </p>
                 </div>
               )}
@@ -1326,8 +1370,9 @@ export default function Home() {
                             type="email"
                             name="email"
                             placeholder="john@example.com"
-                            className="w-full bg-white border-b-2 border-navy/5 rounded-3xl py-5 px-8 focus:border-green outline-none transition-all font-medium text-navy placeholder:text-navy/20"
+                            className={`w-full bg-white border-b-2 ${emailErrorContact ? 'border-red-500' : 'border-navy/5'} rounded-3xl py-5 px-8 focus:border-green outline-none transition-all font-medium text-navy placeholder:text-navy/20`}
                           />
+                          {emailErrorContact && <p className="text-red-500 text-xs ml-4">{emailErrorContact}</p>}
                         </div>
                       </div>
 
@@ -1381,9 +1426,9 @@ export default function Home() {
                         <CheckCircle2 size={48} />
                       </div>
                       <div className="space-y-4">
-                        <h3 className="text-4xl font-bold text-navy uppercase tracking-tight">Message Received.</h3>
-                        <p className="text-navy/40 text-lg max-w-xs mx-auto leading-relaxed font-serif italic">
-                          I'll review your inquiry and get back to you personally within 24 hours.
+                        <h3 className="text-3xl lg:text-4xl font-bold text-navy uppercase tracking-tight">Congratulations! Message Received.</h3>
+                        <p className="text-navy/60 text-lg max-w-sm mx-auto leading-relaxed">
+                          Your message has been submitted. A response will be sent to you through <span className="font-bold">sheunhost@gmail.com</span> shortly.  I'll review your inquiry and get back to you personally within 24 hours.
                         </p>
                       </div>
                       <button
@@ -1434,8 +1479,9 @@ export default function Home() {
                       name="email"
                       required
                       placeholder="Enter your email address" 
-                      className="w-full bg-light border-2 border-navy/5 rounded-full py-6 pl-8 pr-8 sm:pr-40 focus:border-green outline-none transition-all font-medium text-navy placeholder:text-navy/20"
+                      className={`w-full bg-light border-2 ${emailErrorSubscribe ? 'border-red-500' : 'border-navy/5'} rounded-full py-6 pl-8 pr-8 sm:pr-40 focus:border-green outline-none transition-all font-medium text-navy placeholder:text-navy/20`}
                     />
+                    {emailErrorSubscribe && <p className="absolute -bottom-6 left-8 text-red-500 text-xs">{emailErrorSubscribe}</p>}
                     <button 
                       type="submit"
                       disabled={isSubscribing}
@@ -1459,8 +1505,8 @@ export default function Home() {
                       <CheckCircle2 size={32} />
                     </div>
                     <div className="space-y-1">
-                      <p className="text-navy font-bold text-xl uppercase tracking-tighter">You're in!</p>
-                      <p className="text-navy/60 font-serif italic">Check your inbox for a confirmation soon.</p>
+                      <p className="text-navy font-bold text-xl uppercase tracking-tighter">Congratulations! You're in!</p>
+                      <p className="text-navy/60 font-serif italic">Your subscription is successful. A confirmation message from <span className="font-bold">sheunhost@gmail.com</span> will hit your inbox shortly.</p>
                     </div>
                   </motion.div>
                 )}

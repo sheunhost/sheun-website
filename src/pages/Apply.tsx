@@ -84,6 +84,14 @@ export default function Apply() {
       return;
     }
 
+    if (activeFormSection === 1) {
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailRegex.test(formData.email)) {
+        alert("Please enter a valid email address format.");
+        return;
+      }
+    }
+
     setActiveFormSection(2);
     window.scrollTo({ top: document.getElementById('apply-form')?.offsetTop ? document.getElementById('apply-form')!.offsetTop - 100 : 0, behavior: 'smooth' });
   };
@@ -129,6 +137,11 @@ export default function Apply() {
 
         setIsSuccess(true);
         form.reset();
+        
+        // Google Ads Conversion Tracking
+        if (typeof (window as any).gtag !== 'undefined') {
+          (window as any).gtag('event', 'conversion', {'send_to': 'AW-18133653660/tyjNCN6l37IcEJyx5sZD'});
+        }
         
         // Redirect to WhatsApp after 3 seconds
         setTimeout(() => {
@@ -560,9 +573,9 @@ export default function Apply() {
                           <div className="absolute inset-0 bg-green/10 animate-pulse" />
                         </div>
                         <div className="space-y-6">
-                          <h3 className="text-6xl font-bold text-navy tracking-tighter">Application Received.</h3>
-                          <p className="text-navy/40 text-xl max-w-lg mx-auto leading-relaxed font-serif italic">
-                            I will personally review your project within 24 hours. Keep an eye on your WhatsApp or email for a follow-up.
+                          <h3 className="text-4xl md:text-5xl lg:text-6xl font-bold text-navy tracking-tighter">Congratulations! Application Received.</h3>
+                          <p className="text-navy/60 text-xl max-w-lg mx-auto leading-relaxed">
+                            Your form has been successfully submitted. You will receive a copy of your submission from <span className="font-bold">sheunhost@gmail.com</span> shortly. I will personally review your project within 24 hours. Keep an eye on your WhatsApp or email for a follow-up.
                           </p>
                         </div>
                         <div className="w-full max-w-md mx-auto h-2 bg-light rounded-full overflow-hidden">

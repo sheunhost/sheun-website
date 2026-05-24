@@ -108,6 +108,11 @@ export default function Contact() {
         if (type === 'contact') setIsSuccess(true);
         else setIsAuditSuccess(true);
         
+        // Google Ads Conversion Tracking
+        if (typeof (window as any).gtag !== 'undefined') {
+          (window as any).gtag('event', 'conversion', {'send_to': 'AW-18133653660/tyjNCN6l37IcEJyx5sZD'});
+        }
+
         form.reset();
       } else {
         console.error("Error submitting form", data);
@@ -433,9 +438,9 @@ export default function Contact() {
                             <CheckCircle2 size={64} className="animate-bounce" />
                           </div>
                           <div className="space-y-6">
-                            <h3 className="text-6xl font-bold text-navy tracking-tighter">Perfectly received.</h3>
-                            <p className="text-navy/50 text-xl max-w-sm mx-auto leading-relaxed font-serif italic">
-                              I'm already reviewing your details. Let's make this project a success.
+                            <h3 className="text-4xl md:text-5xl lg:text-6xl font-bold text-navy tracking-tighter">Congratulations! Perfectly received.</h3>
+                            <p className="text-navy/60 text-xl max-w-lg mx-auto leading-relaxed">
+                              Your message was successfully submitted. A confirmation message from <span className="font-bold">sheunhost@gmail.com</span> will be sent to you shortly. I'm already reviewing your details. Let's make this project a success.
                             </p>
                           </div>
                         </div>
@@ -571,9 +576,9 @@ export default function Contact() {
                         <Star size={64} className="fill-green" />
                       </div>
                       <div className="space-y-6">
-                        <h3 className="text-5xl font-bold tracking-tight">Audit Claimed!</h3>
-                        <p className="text-white/40 text-lg font-serif italic leading-relaxed">
-                          I'll have your video ready and sent to your inbox within 24-48 hours. Here's what's next:
+                        <h3 className="text-4xl md:text-5xl font-bold tracking-tight">Congratulations! Audit Claimed!</h3>
+                        <p className="text-white/60 text-lg leading-relaxed">
+                          Your request was successfully submitted. A confirmation from <span className="font-bold">sheunhost@gmail.com</span> will be sent to you shortly. I'll have your video ready and sent to your inbox within 24-48 hours. Here's what's next:
                         </p>
                         <div className="flex flex-col gap-3 text-left max-w-xs mx-auto text-white/60 text-xs">
                           <div className="flex items-center gap-3">

@@ -269,9 +269,9 @@ export default function ServiceDetail() {
                       <div className="w-24 h-24 bg-green/10 rounded-full flex items-center justify-center mx-auto mb-8">
                         <CheckCircle2 className="w-12 h-12 text-green" />
                       </div>
-                      <h3 className="text-4xl md:text-5xl font-bold text-navy tracking-tight">Request Received</h3>
+                      <h3 className="text-3xl md:text-5xl font-bold text-navy tracking-tight">Congratulations! Request Received</h3>
                       <p className="text-xl text-navy/60 font-serif italic max-w-lg mx-auto">
-                        Thank you. I'll review your {service.title} requirements and get back to you within 24 hours with next steps.
+                        Your {service.title} request has been submitted. A confirmation message from <span className="font-sans font-bold">sheunhost@gmail.com</span> will be sent to you shortly. I will review your requirements and get back to you within 24 hours.
                       </p>
                       <button 
                         onClick={() => setIsSuccess(false)}
