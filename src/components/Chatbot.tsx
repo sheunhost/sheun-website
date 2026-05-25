@@ -1,7 +1,6 @@
 import { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { MessageSquare, X, Send, Bot, User, Loader2 } from "lucide-react";
-import { GoogleGenAI } from "@google/genai";
+import { MessageSquare, X, Send, User, Loader2 } from "lucide-react";
 import { cn } from "../lib/utils";
 
 interface Message {
@@ -12,7 +11,7 @@ interface Message {
 export default function Chatbot() {
   const [isOpen, setIsOpen] = useState(false);
   const [messages, setMessages] = useState<Message[]>([
-    { role: "model", text: "Hey 👋 are you working on a Shopify store right now?" }
+    { role: "model", text: "Hey! 👋 I'm the Sheun Hub AI assistant. Are you working on a Shopify store right now?" }
   ]);
   const [input, setInput] = useState("");
   const [isLoading, setIsLoading] = useState(false);
@@ -33,14 +32,6 @@ export default function Chatbot() {
     setIsLoading(true);
 
     try {
-      const apiKey = process.env.GEMINI_API_KEY;
-      if (!apiKey) {
-        throw new Error("API Key is missing in the environment. Please check the Secrets panel.");
-      }
-
-      const ai = new GoogleGenAI({ apiKey });
-      
-      // Filter out the initial welcome message from history as models usually expect User first
       const chatHistory = messages
         .filter((_, i) => i > 0)
         .map(m => ({
@@ -48,36 +39,36 @@ export default function Chatbot() {
           parts: [{ text: m.text }]
         }));
 
-      const chat = ai.chats.create({
-        model: "gemini-3-flash-preview",
-        config: {
-          systemInstruction: "You are Sheun’s AI assistant at Sheun Hub. Your goal is to have natural, human-like conversations, understand the visitor’s needs, and gently qualify them before passing them to Sheun. PERSONALITY: Be short, calm, and conversational. NEVER sound salesy, robotic, or aggressive. Do NOT pitch services unless the user shows interest. Ask ONE question at a time. Let the user speak more than you. AVOID buzzwords like 'revenue engine', 'high-performance', 'conversion architecture', etc. Keep responses under 2–3 short sentences. CONVERSATION FLOW: 1. Understand intent by asking what they need help with. 2. Qualify gently with questions like 'Is it a new store or an existing one?', 'What are you trying to improve right now?', or 'Are you already on Shopify or planning to move?'. 3. If they show real interest in a project or issue, say 'Got it 👍 that’s something Sheun can help with.' then ask if they want a quick audit or to be connected with him. HANDOFF: Only suggest 'Get Free Audit' or speaking directly with Sheun after interest is established. TONE: Friendly, simple, slightly professional, no pressure.",
-        },
-        history: chatHistory,
+      const response = await fetch("/api/gemini/chat", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ history: chatHistory, message: input }),
       });
 
-      const result = await chat.sendMessage({ message: input });
-      const modelText = result.text || "I'm sorry, I couldn't process that.";
+      const data = await response.json();
       
-      setMessages(prev => [...prev, { role: "model", text: modelText }]);
+      if (!response.ok) {
+        throw new Error(data.error || "Failed to fetch response");
+      }
+
+      setMessages(prev => [...prev, { role: "model", text: data.text }]);
     } catch (error) {
       console.error("Chat error:", error);
-      const errorMessage = error instanceof Error ? error.message : "Unknown error";
-      setMessages(prev => [...prev, { role: "model", text: `Sorry, I'm having trouble connecting (Error: ${errorMessage}). Please ensure your Gemini API Key is configured in the Secrets panel.` }]);
+      setMessages(prev => [...prev, { role: "model", text: `Sorry, I'm having trouble connecting right now. Please try again later!` }]);
     } finally {
       setIsLoading(false);
     }
   };
 
   return (
-    <div className="fixed bottom-6 right-6 z-[100]">
+    <div className="fixed bottom-6 right-24 z-[100]">
       <AnimatePresence>
         {isOpen && (
           <motion.div
             initial={{ opacity: 0, scale: 0.9, y: 20 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.9, y: 20 }}
-            className="absolute bottom-24 right-0 w-[350px] md:w-[450px] h-[600px] bg-white/95 backdrop-blur-2xl rounded-2xl shadow-[0_40px_100px_-20px_rgba(0,0,0,0.3)] border border-navy/5 flex flex-col overflow-hidden"
+            className="absolute bottom-20 right-0 w-[350px] md:w-[450px] h-[600px] bg-white/95 backdrop-blur-2xl rounded-2xl shadow-[0_40px_100px_-20px_rgba(0,0,0,0.3)] border border-navy/5 flex flex-col overflow-hidden"
           >
             {/* Header */}
             <div className="bg-navy-gradient p-8 flex items-center justify-between text-white relative overflow-hidden">
@@ -85,15 +76,15 @@ export default function Chatbot() {
               <div className="flex items-center gap-4 relative z-10">
                 <div className="w-14 h-14 bg-white rounded-2xl flex items-center justify-center text-navy shadow-xl rotate-3 overflow-hidden">
                   <img 
-                    src="https://thumbs.dreamstime.com/b/ai-assistant-icon-chat-bot-icon-design-virtual-smart-assistant-bot-icon-chatbot-symbol-concept-artificial-intelligence-ai-361205854.jpg?w=768"
-                    alt="AI Assistant"
+                    src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=200"
+                    alt="Sheun"
                     referrerPolicy="no-referrer"
                     className="w-full h-full object-cover"
                   />
                 </div>
                 <div>
-                  <p className="font-bold text-lg tracking-tight">Sheun Hub AI</p>
-                  <p className="text-[10px] text-green font-bold uppercase tracking-[0.3em]">Expert Assistant</p>
+                  <p className="font-bold text-lg tracking-tight">Assistant</p>
+                  <p className="text-[10px] text-green font-bold uppercase tracking-[0.3em]">Sheun Hub</p>
                 </div>
               </div>
               <button onClick={() => setIsOpen(false)} className="hover:bg-white/10 p-3 rounded-2xl transition-all relative z-10">
@@ -117,8 +108,8 @@ export default function Chatbot() {
                   )}>
                     {m.role === "user" ? <User size={20} /> : (
                       <img 
-                        src="https://thumbs.dreamstime.com/b/ai-assistant-icon-chat-bot-icon-design-virtual-smart-assistant-bot-icon-chatbot-symbol-concept-artificial-intelligence-ai-361205854.jpg?w=768"
-                        alt="AI Assistant"
+                        src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=200"
+                        alt="Sheun"
                         referrerPolicy="no-referrer"
                         className="w-full h-full object-cover"
                       />
@@ -138,13 +129,13 @@ export default function Chatbot() {
                 <div className="flex items-end gap-3 mr-auto">
                   <div className="w-10 h-10 rounded-xl bg-white flex items-center justify-center shrink-0 shadow-lg overflow-hidden">
                     <img 
-                      src="https://thumbs.dreamstime.com/b/ai-assistant-icon-chat-bot-icon-design-virtual-smart-assistant-bot-icon-chatbot-symbol-concept-artificial-intelligence-ai-361205854.jpg?w=768"
-                      alt="AI Assistant"
+                      src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=200"
+                      alt="Sheun"
                       referrerPolicy="no-referrer"
                       className="w-full h-full object-cover"
                     />
                   </div>
-                  <div className="bg-white p-5 rounded-[24px] rounded-bl-none border border-navy/5 shadow-sm">
+                  <div className="bg-white p-5 rounded-[24px] rounded-bl-none border border-navy/5 shadow-sm mt-4">
                     <Loader2 size={20} className="animate-spin text-green" />
                   </div>
                 </div>
@@ -181,7 +172,7 @@ export default function Chatbot() {
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.9 }}
         onClick={() => setIsOpen(!isOpen)}
-        className="w-14 h-14 bg-green text-navy rounded-full flex items-center justify-center shadow-2xl green-glow"
+        className="w-14 h-14 bg-navy text-white rounded-full flex items-center justify-center shadow-2xl relative"
       >
         {isOpen ? <X size={28} /> : <MessageSquare size={28} />}
       </motion.button>

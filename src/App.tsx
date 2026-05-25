@@ -20,6 +20,7 @@ import PrivacyPolicy from "./pages/PrivacyPolicy";
 import TermsOfService from "./pages/TermsOfService";
 import BlogPost from "./pages/BlogPost";
 import Chatbot from "./components/Chatbot";
+import CallingAgent from "./components/CallingAgent";
 import ScrollToTop from "./components/ScrollToTop";
 import ScrollToTopOnNavigation from "./components/ScrollToTopOnNavigation";
 import FloatingCalendly from "./components/FloatingCalendly";
@@ -55,6 +56,7 @@ export default function App() {
           </main>
           <Footer />
           <Chatbot />
+          <CallingAgent />
           <FloatingCalendly />
           <ScrollToTop />
         </div>

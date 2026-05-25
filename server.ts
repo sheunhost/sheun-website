@@ -4,6 +4,8 @@ import path from "path";
 import axios from "axios";
 import cors from "cors";
 import dotenv from "dotenv";
+import { GoogleGenAI, Type, Modality } from "@google/genai";
+import { WebSocketServer } from "ws";
 
 dotenv.config();
 
@@ -26,7 +28,89 @@ async function startServer() {
     });
   });
 
+  app.post("/api/gemini/chat", async (req, res) => {
+    try {
+      const apiKey = process.env.GEMINI_API_KEY;
+      if (!apiKey) {
+        return res.status(500).json({ error: "Gemini API key is not configured" });
+      }
+
+      const ai = new GoogleGenAI({
+        apiKey,
+        httpOptions: {
+          headers: { "User-Agent": "aistudio-build" }
+        }
+      });
+
+      const { history, message } = req.body;
+
+      const sendLeadEmailFn = {
+        name: "sendLeadEmail",
+        description: "Sends the collected lead info (name, email, requirements) to Sheun's email once you have gathered it all.",
+        parameters: {
+          type: Type.OBJECT,
+          properties: {
+            name: { type: Type.STRING, description: "Lead's full name" },
+            email: { type: Type.STRING, description: "Lead's email address" },
+            requirements: { type: Type.STRING, description: "Summary of what the lead wants/needs" },
+          },
+          required: ["name", "email", "requirements"]
+        }
+      };
+
+      const systemInstruction = `You are a friendly female AI assistant at Sheun Hub. You are chatting directly with visitors on the Sheun Hub website. 
+YOUR GOAL: Understand the visitor's needs, answer their questions about services (store builds, migrations, speed optimization), and qualify them as a lead. 
+PERSONALITY: Short, calm, conversational, feminine voice, professional yet approachable. Do NOT pitch services aggressively. Ask ONE question at a time. Let the user speak more than you.
+CONVERSATION FLOW:
+1. Find out what they need help with. 
+2. Ask about their current store or goals.
+3. If they are interested, ask for their name and email address so you can pass their details to Sheun.
+4. Once you have their name AND email address AND requirements, YOU MUST call the sendLeadEmail function to trigger the email transfer to Sheun's inbox. Do not tell them you are calling a function, just say you have their details and Sheun will be in touch.
+HANDOFF TO SHEUN: If the user asks to speak with Sheun directly, you MUST provide his contact details immediately. Tell the user they can reach him via the contact page at https://sheunhub.com/contact or by email at sheunhost@gmail.com.`;
+
+      const chat = ai.chats.create({
+        model: "gemini-3.1-flash-preview",
+        config: {
+          systemInstruction,
+          tools: [{ functionDeclarations: [sendLeadEmailFn] }]
+        },
+        history: history || []
+      });
+
+      const response = await chat.sendMessage({ message });
+
+      const functionCalls = response.functionCalls;
+      if (functionCalls && functionCalls.length > 0) {
+        const call = functionCalls[0];
+        if (call.name === "sendLeadEmail") {
+          const args = call.args as any;
+          await axios.post("https://api.web3forms.com/submit", {
+            access_key: "c0573f7d-6191-4374-bc31-ee70ee9fa226",
+            subject: "New Lead from AI Chatbot",
+            name: args.name,
+            email: args.email,
+            message: `Lead Details:\n\nRequirements: ${args.requirements}`
+          }, {
+             headers: { 
+               "Content-Type": "application/json",
+               "Accept": "application/json",
+               "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
+             }
+          });
+          
+          return res.json({ text: "Perfect! I've received your details and sent them straight to my inbox! I will personally follow up with you shortly via email. Feel free to let me know if you have any more questions in the meantime! 😊" });
+        }
+      }
+
+      res.json({ text: response.text });
+    } catch (e: any) {
+      console.error("Gemini AI API Error:", e);
+      res.status(500).json({ error: e.message || "Failed to process chat" });
+    }
+  });
+
   // Mailchimp API Endpoints
+  // ... (unchanged mailchimp endpoints)
   app.post("/api/mailchimp/subscribe", async (req, res) => {
     const { email, firstName, lastName } = req.body;
     console.log(`[Mailchimp] Subscription request for: ${email}`);
@@ -103,9 +187,142 @@ async function startServer() {
     });
   }
 
-  app.listen(PORT, "0.0.0.0", () => {
+  const server = app.listen(PORT, "0.0.0.0", () => {
     console.log(`Server running on http://localhost:${PORT}`);
   });
+
+  // Live WebSocket Server
+  const wss = new WebSocketServer({ server, path: "/live" });
+
+  wss.on("connection", async (clientWs) => {
+    console.log("WebSocket client connected to /live");
+    let session: any = null;
+    try {
+      const apiKey = process.env.GEMINI_API_KEY;
+      if (!apiKey) throw new Error("Gemini API key is not configured");
+
+      const ai = new GoogleGenAI({
+        apiKey,
+        httpOptions: {
+          headers: { "User-Agent": "aistudio-build" }
+        }
+      });
+      
+      const sendLeadEmailFn = {
+        name: "sendLeadEmail",
+        description: "Sends the collected lead info (name, email, requirements) to Sheun's email once you have gathered it all.",
+        parameters: {
+          type: Type.OBJECT,
+          properties: {
+            name: { type: Type.STRING, description: "Lead's full name" },
+            email: { type: Type.STRING, description: "Lead's email address" },
+            requirements: { type: Type.STRING, description: "Summary of what the lead wants/needs" },
+          },
+          required: ["name", "email", "requirements"]
+        }
+      };
+
+      const systemInstruction = `You are a friendly female AI assistant at Sheun Hub. You are talking directly with a visitor on the Sheun Hub website. 
+YOUR GOAL: Understand the visitor's needs, answer their questions about services (store builds, migrations, speed optimization), and qualify them as a lead. 
+PERSONALITY: Short, calm, conversational, feminine voice, professional yet approachable. Do NOT pitch services aggressively. Ask ONE question at a time. Let the user speak more than you.
+CONVERSATION FLOW:
+1. Find out what they need help with. 
+2. Ask about their current store or goals.
+3. If they are interested, ask for their name and email address so you can pass their details to Sheun.
+4. Once you have their name AND email address AND requirements, YOU MUST call the sendLeadEmail function to trigger the email transfer to Sheun's inbox. Do not tell them you are calling a function, just say you have their details and Sheun will be in touch shortly.
+HANDOFF TO SHEUN: If the user asks to speak with Sheun directly, you MUST provide his contact details immediately. Tell the user they can reach him via the contact page at https://sheunhub.com/contact or by email at sheunhost@gmail.com.`;
+
+      session = await ai.live.connect({
+        model: "gemini-3.1-flash-live-preview",
+        callbacks: {
+          onmessage: async (message: any) => {
+            const audio = message.serverContent?.modelTurn?.parts[0]?.inlineData?.data;
+            if (audio) {
+              if (clientWs.readyState === 1) clientWs.send(JSON.stringify({ audio }));
+            }
+            if (message.serverContent?.interrupted) {
+              if (clientWs.readyState === 1) clientWs.send(JSON.stringify({ interrupted: true }));
+            }
+
+            // Handle function calls
+            if (message.toolCall) {
+              const functionCalls = message.toolCall.functionCalls;
+              if (functionCalls && functionCalls.length > 0) {
+                const call = functionCalls[0];
+                if (call.name === "sendLeadEmail") {
+                   const args = call.args as any;
+                   try {
+                     await axios.post("https://api.web3forms.com/submit", {
+                       access_key: "c0573f7d-6191-4374-bc31-ee70ee9fa226",
+                       subject: "New Lead from AI Calling Agent",
+                       name: args.name || "Unknown",
+                       email: args.email || "Unknown",
+                       message: `Lead Details:\n\nRequirements: ${args.requirements}`
+                     }, {
+                        headers: { 
+                          "Content-Type": "application/json",
+                          "Accept": "application/json",
+                          "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
+                        }
+                     });
+                   } catch (e) {
+                     console.error("Web3form error:", e);
+                   }
+
+                   // Send tool response
+                   session.sendToolResponse({
+                      functionResponses: [{
+                        id: call.id,
+                        name: "sendLeadEmail",
+                        response: { success: true }
+                      }]
+                   });
+                }
+              }
+            }
+          },
+          onclose: () => {
+             console.log("Live session closed by server");
+          }
+        },
+        config: {
+          responseModalities: [Modality.AUDIO],
+          speechConfig: {
+            voiceConfig: { prebuiltVoiceConfig: { voiceName: "Kore" } }, // Example female voice
+          },
+          systemInstruction,
+          tools: [{ functionDeclarations: [sendLeadEmailFn] }]
+        },
+      });
+
+      clientWs.on("message", (data) => {
+        try {
+          const payload = JSON.parse(data.toString());
+          if (payload.audio && session) {
+            session.sendRealtimeInput({
+              audio: { data: payload.audio, mimeType: "audio/pcm;rate=16000" },
+            });
+          }
+        } catch (e) {
+          console.error("Error parsing websocket message:", e);
+        }
+      });
+      
+      clientWs.on("close", () => {
+         console.log("Client disconnected");
+         if (session) {
+           session.close();
+           session = null;
+         }
+      });
+
+    } catch (e: any) {
+      console.error("Live API Setup Error:", e);
+      if (clientWs.readyState === 1) clientWs.send(JSON.stringify({ error: e.message }));
+    }
+  });
+
 }
 
 startServer();
+
