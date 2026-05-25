@@ -161,6 +161,7 @@ export default function CallingAgent() {
       
       ws.onopen = () => {
         setIsConnected(true);
+        drawWaveform();
         source.connect(processor);
         processor.connect(audioCtx.destination);
         
@@ -172,7 +173,7 @@ export default function CallingAgent() {
         };
       };
       
-      ws.onmessage = (event) => {
+      ws.onmessage = async (event) => {
         const msg = JSON.parse(event.data);
         if (msg.audio && audioCtxRef.current) {
           playAudioChunk(audioCtxRef.current, msg.audio);
@@ -182,6 +183,26 @@ export default function CallingAgent() {
         }
         if (msg.interrupted && audioCtxRef.current) {
           nextStartTime.current = audioCtxRef.current.currentTime;
+        }
+        if (msg.clientEvent === "sendLeadEmail") {
+           try {
+              await fetch("https://api.web3forms.com/submit", {
+                method: "POST",
+                headers: {
+                  "Content-Type": "application/json",
+                  "Accept": "application/json"
+                },
+                body: JSON.stringify({
+                  access_key: "c0573f7d-6191-4374-bc31-ee70ee9fa226",
+                  subject: "New Lead from AI Calling Agent",
+                  name: msg.args.name || "Unknown",
+                  email: msg.args.email || "Unknown",
+                  message: `Lead Details:\n\nRequirements: ${msg.args.requirements}`
+                })
+              });
+           } catch (err) {
+              console.error("Web3form client fetch error:", err);
+           }
         }
         if (msg.error) {
           console.error("Live API Error:", msg.error);

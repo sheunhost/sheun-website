@@ -50,6 +50,27 @@ export default function Chatbot() {
       if (!response.ok) {
         throw new Error(data.error || "Failed to fetch response");
       }
+      
+      if (data.clientEvent === "sendLeadEmail") {
+        try {
+          await fetch("https://api.web3forms.com/submit", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+              "Accept": "application/json"
+            },
+            body: JSON.stringify({
+              access_key: "c0573f7d-6191-4374-bc31-ee70ee9fa226",
+              subject: "New Lead from AI Chatbot",
+              name: data.args.name || "Unknown",
+              email: data.args.email || "Unknown",
+              message: `Lead Details:\n\nRequirements: ${data.args.requirements}`
+            })
+          });
+        } catch (err) {
+          console.error("Web3form client fetch error:", err);
+        }
+      }
 
       setMessages(prev => [...prev, { role: "model", text: data.text }]);
     } catch (error) {

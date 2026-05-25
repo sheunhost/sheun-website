@@ -65,11 +65,11 @@ CONVERSATION FLOW:
 1. Find out what they need help with. 
 2. Ask about their current store or goals.
 3. If they are interested, ask for their name and email address so you can pass their details to Sheun.
-4. Once you have their name AND email address AND requirements, YOU MUST call the sendLeadEmail function to trigger the email transfer to Sheun's inbox. Do not tell them you are calling a function, just say you have their details and Sheun will be in touch.
+4. Once you have their name AND email address AND requirements, YOU MUST call the sendLeadEmail function to trigger the email transfer to Sheun's inbox. When you call this function, you MUST reply with EXACTLY this wording: "Perfect! I've received your details and sent them straight to sheun inbox! He will personally follow up with you shortly via email. Feel free to let me know if you have any more questions in the meantime! 😊" No other variations.
 HANDOFF TO SHEUN: If the user asks to speak with Sheun directly, you MUST provide his contact details immediately. Tell the user they can reach him via the contact page at https://sheunhub.com/contact or by email at sheunhost@gmail.com.`;
 
       const chat = ai.chats.create({
-        model: "gemini-3.1-flash-preview",
+        model: "gemini-3.5-flash",
         config: {
           systemInstruction,
           tools: [{ functionDeclarations: [sendLeadEmailFn] }]
@@ -84,26 +84,12 @@ HANDOFF TO SHEUN: If the user asks to speak with Sheun directly, you MUST provid
         const call = functionCalls[0];
         if (call.name === "sendLeadEmail") {
           const args = call.args as any;
-          const response = await fetch("https://api.web3forms.com/submit", {
-            method: "POST",
-            headers: {
-              "Content-Type": "application/json",
-              "Accept": "application/json"
-            },
-            body: JSON.stringify({
-              access_key: "c0573f7d-6191-4374-bc31-ee70ee9fa226",
-              subject: "New Lead from AI Chatbot",
-              name: args.name,
-              email: args.email,
-              message: `Lead Details:\n\nRequirements: ${args.requirements}`
-            })
+          // Defer fetch to frontend to avoid Cloudflare bot blocking
+          return res.json({ 
+            text: "Perfect! I've received your details and sent them straight to sheun inbox! He will personally follow up with you shortly via email. Feel free to let me know if you have any more questions in the meantime! 😊",
+            clientEvent: "sendLeadEmail",
+            args
           });
-          
-          if (!response.ok) {
-            console.error("Web3form error:", await response.text());
-          }
-          
-          return res.json({ text: "Perfect! I've received your details and sent them straight to my inbox! I will personally follow up with you shortly via email. Feel free to let me know if you have any more questions in the meantime! 😊" });
         }
       }
 
@@ -234,7 +220,7 @@ CONVERSATION FLOW:
 1. Find out what they need help with. 
 2. Ask about their current store or goals.
 3. If they are interested, ask for their name and email address so you can pass their details to Sheun.
-4. Once you have their name AND email address AND requirements, YOU MUST call the sendLeadEmail function to trigger the email transfer to Sheun's inbox. Do not tell them you are calling a function, just say you have their details and Sheun will be in touch shortly.
+4. Once you have their name AND email address AND requirements, YOU MUST call the sendLeadEmail function to trigger the email transfer to Sheun's inbox. When you call this function, you MUST reply with EXACTLY this wording: "Perfect! I've received your details and sent them straight to sheun inbox! He will personally follow up with you shortly via email. Feel free to let me know if you have any more questions in the meantime! 😊" No other variations.
 HANDOFF TO SHEUN: If the user asks to speak with Sheun directly, you MUST provide his contact details immediately. Tell the user they can reach him via the contact page at https://sheunhub.com/contact or by email at sheunhost@gmail.com.`;
 
       session = await ai.live.connect({
@@ -263,27 +249,10 @@ HANDOFF TO SHEUN: If the user asks to speak with Sheun directly, you MUST provid
                 const call = functionCalls[0];
                 if (call.name === "sendLeadEmail") {
                    const args = call.args as any;
-                   try {
-                     const response = await fetch("https://api.web3forms.com/submit", {
-                       method: "POST",
-                       headers: {
-                         "Content-Type": "application/json",
-                         "Accept": "application/json"
-                       },
-                       body: JSON.stringify({
-                         access_key: "c0573f7d-6191-4374-bc31-ee70ee9fa226",
-                         subject: "New Lead from AI Calling Agent",
-                         name: args.name || "Unknown",
-                         email: args.email || "Unknown",
-                         message: `Lead Details:\n\nRequirements: ${args.requirements}`
-                       })
-                     });
-                     
-                     if (!response.ok) {
-                       console.error("Web3form error:", await response.text());
-                     }
-                   } catch (e) {
-                     console.error("Web3form fetch error:", e);
+                   
+                   // Defer to client via WebSocket
+                   if (clientWs.readyState === 1) {
+                     clientWs.send(JSON.stringify({ clientEvent: "sendLeadEmail", args }));
                    }
 
                    // Send tool response
