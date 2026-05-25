@@ -3,24 +3,84 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Phone, PhoneOff, Mic, MicOff, Loader2, X, Activity } from "lucide-react";
 import { cn } from "../lib/utils";
 
-export default function Chatbot() {
+export default function CallingAgent() {
   const [isOpen, setIsOpen] = useState(false);
   const [isCalling, setIsCalling] = useState(false);
   const [isConnected, setIsConnected] = useState(false);
   const [isMuted, setIsMuted] = useState(false);
   const [callError, setCallError] = useState<string | null>(null);
+  const [callDuration, setCallDuration] = useState(0);
+  const [transcript, setTranscript] = useState("");
   
   const wsRef = useRef<WebSocket | null>(null);
   const audioCtxRef = useRef<AudioContext | null>(null);
   const streamRef = useRef<MediaStream | null>(null);
   const nextStartTime = useRef(0);
   const processorRef = useRef<ScriptProcessorNode | null>(null);
+  const analyserRef = useRef<AnalyserNode | null>(null);
+  const canvasRef = useRef<HTMLCanvasElement>(null);
+  const animationRef = useRef<number | null>(null);
+  const timerRef = useRef<NodeJS.Timeout | null>(null);
 
   useEffect(() => {
     return () => {
       endCall();
     };
   }, []);
+
+  useEffect(() => {
+    if (isConnected) {
+       timerRef.current = setInterval(() => {
+          setCallDuration(prev => prev + 1);
+       }, 1000);
+    } else {
+       setCallDuration(0);
+       if (timerRef.current) clearInterval(timerRef.current);
+    }
+    return () => {
+       if (timerRef.current) clearInterval(timerRef.current);
+    };
+  }, [isConnected]);
+
+  const formatTime = (seconds: number) => {
+    const m = Math.floor(seconds / 60);
+    const s = seconds % 60;
+    return `${m}:${s < 10 ? '0' : ''}${s}`;
+  };
+
+  const drawWaveform = () => {
+    if (!canvasRef.current || !analyserRef.current) return;
+    const canvas = canvasRef.current;
+    const ctx = canvas.getContext('2d');
+    if (!ctx) return;
+    
+    const analyser = analyserRef.current;
+    const bufferLength = analyser.frequencyBinCount;
+    const dataArray = new Uint8Array(bufferLength);
+    analyser.getByteTimeDomainData(dataArray);
+
+    ctx.fillStyle = 'transparent';
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    
+    ctx.lineWidth = 3;
+    ctx.strokeStyle = '#00FF9D';
+    ctx.beginPath();
+    
+    const sliceWidth = canvas.width * 1.0 / bufferLength;
+    let x = 0;
+    
+    for (let i = 0; i < bufferLength; i++) {
+        const v = dataArray[i] / 128.0;
+        const y = v * canvas.height / 2;
+        if (i === 0) ctx.moveTo(x, y);
+        else ctx.lineTo(x, y);
+        x += sliceWidth;
+    }
+    ctx.lineTo(canvas.width, canvas.height / 2);
+    ctx.stroke();
+    
+    animationRef.current = requestAnimationFrame(drawWaveform);
+  };
 
   const pcmToBase64 = (pcmData: Float32Array) => {
     // Convert Float32Array to Int16Array
@@ -58,7 +118,11 @@ export default function Chatbot() {
     
     const source = audioCtx.createBufferSource();
     source.buffer = audioBuffer;
-    source.connect(audioCtx.destination);
+    if (analyserRef.current) {
+        source.connect(analyserRef.current);
+    } else {
+        source.connect(audioCtx.destination);
+    }
     
     const currentTime = audioCtx.currentTime;
     if (nextStartTime.current < currentTime) {
@@ -75,6 +139,12 @@ export default function Chatbot() {
       const audioCtx = new AudioContext({ sampleRate: 16000 });
       audioCtxRef.current = audioCtx;
       nextStartTime.current = 0;
+      setTranscript("");
+      
+      const analyser = audioCtx.createAnalyser();
+      analyser.fftSize = 256;
+      analyser.connect(audioCtx.destination);
+      analyserRef.current = analyser;
 
       const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
       streamRef.current = stream;
@@ -106,6 +176,9 @@ export default function Chatbot() {
         const msg = JSON.parse(event.data);
         if (msg.audio && audioCtxRef.current) {
           playAudioChunk(audioCtxRef.current, msg.audio);
+        }
+        if (msg.text) {
+          setTranscript(prev => prev + msg.text);
         }
         if (msg.interrupted && audioCtxRef.current) {
           nextStartTime.current = audioCtxRef.current.currentTime;
@@ -139,9 +212,17 @@ export default function Chatbot() {
       streamRef.current.getTracks().forEach(t => t.stop());
       streamRef.current = null;
     }
+    if (animationRef.current) {
+        cancelAnimationFrame(animationRef.current);
+        animationRef.current = null;
+    }
     if (processorRef.current) {
       processorRef.current.disconnect();
       processorRef.current = null;
+    }
+    if (analyserRef.current) {
+      analyserRef.current.disconnect();
+      analyserRef.current = null;
     }
     if (audioCtxRef.current && audioCtxRef.current.state !== "closed") {
       audioCtxRef.current.close().catch(console.error);
@@ -207,7 +288,7 @@ export default function Chatbot() {
                     {!isConnected ? (
                       <><Loader2 size={16} className="animate-spin" /> Connecting...</>
                     ) : (
-                      <><Activity size={16} className="text-green animate-pulse" /> Call in Progress</>
+                      <><Activity size={16} className="text-green animate-pulse" /> {formatTime(callDuration)}</>
                     )}
                   </div>
                 ) : (
@@ -223,8 +304,22 @@ export default function Chatbot() {
               </div>
             </div>
 
+            {/* Transcript and Audio wave */}
+            {isCalling && isConnected && (
+              <div className="flex-grow flex flex-col bg-light/30 border-t border-navy/5">
+                <div className="flex-grow p-6 overflow-y-auto max-h-[140px] scroll-smooth flex flex-col justify-end">
+                  <p className="text-sm font-medium leading-relaxed text-navy text-center mb-1">
+                    {transcript || "Listening..."}
+                  </p>
+                </div>
+                <div className="h-20 w-full bg-navy relative border-t-4 border-green">
+                   <canvas ref={canvasRef} className="w-full h-full object-cover" width={320} height={80} />
+                </div>
+              </div>
+            )}
+
             {/* Controls */}
-            <div className="p-8 bg-white flex justify-center gap-6">
+            <div className="p-8 bg-white flex justify-center gap-6 shadow-[0_-10px_30px_rgba(0,0,0,0.05)] z-10 relative">
               {!isCalling ? (
                 <button
                   onClick={startCall}

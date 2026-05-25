@@ -84,19 +84,24 @@ HANDOFF TO SHEUN: If the user asks to speak with Sheun directly, you MUST provid
         const call = functionCalls[0];
         if (call.name === "sendLeadEmail") {
           const args = call.args as any;
-          await axios.post("https://api.web3forms.com/submit", {
-            access_key: "c0573f7d-6191-4374-bc31-ee70ee9fa226",
-            subject: "New Lead from AI Chatbot",
-            name: args.name,
-            email: args.email,
-            message: `Lead Details:\n\nRequirements: ${args.requirements}`
-          }, {
-             headers: { 
-               "Content-Type": "application/json",
-               "Accept": "application/json",
-               "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
-             }
+          const response = await fetch("https://api.web3forms.com/submit", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+              "Accept": "application/json"
+            },
+            body: JSON.stringify({
+              access_key: "c0573f7d-6191-4374-bc31-ee70ee9fa226",
+              subject: "New Lead from AI Chatbot",
+              name: args.name,
+              email: args.email,
+              message: `Lead Details:\n\nRequirements: ${args.requirements}`
+            })
           });
+          
+          if (!response.ok) {
+            console.error("Web3form error:", await response.text());
+          }
           
           return res.json({ text: "Perfect! I've received your details and sent them straight to my inbox! I will personally follow up with you shortly via email. Feel free to let me know if you have any more questions in the meantime! 😊" });
         }
@@ -236,9 +241,16 @@ HANDOFF TO SHEUN: If the user asks to speak with Sheun directly, you MUST provid
         model: "gemini-3.1-flash-live-preview",
         callbacks: {
           onmessage: async (message: any) => {
-            const audio = message.serverContent?.modelTurn?.parts[0]?.inlineData?.data;
-            if (audio) {
-              if (clientWs.readyState === 1) clientWs.send(JSON.stringify({ audio }));
+            const parts = message.serverContent?.modelTurn?.parts;
+            if (parts) {
+              for (const part of parts) {
+                if (part.inlineData?.data) {
+                  if (clientWs.readyState === 1) clientWs.send(JSON.stringify({ audio: part.inlineData.data }));
+                }
+                if (part.text) {
+                  if (clientWs.readyState === 1) clientWs.send(JSON.stringify({ text: part.text }));
+                }
+              }
             }
             if (message.serverContent?.interrupted) {
               if (clientWs.readyState === 1) clientWs.send(JSON.stringify({ interrupted: true }));
@@ -252,21 +264,26 @@ HANDOFF TO SHEUN: If the user asks to speak with Sheun directly, you MUST provid
                 if (call.name === "sendLeadEmail") {
                    const args = call.args as any;
                    try {
-                     await axios.post("https://api.web3forms.com/submit", {
-                       access_key: "c0573f7d-6191-4374-bc31-ee70ee9fa226",
-                       subject: "New Lead from AI Calling Agent",
-                       name: args.name || "Unknown",
-                       email: args.email || "Unknown",
-                       message: `Lead Details:\n\nRequirements: ${args.requirements}`
-                     }, {
-                        headers: { 
-                          "Content-Type": "application/json",
-                          "Accept": "application/json",
-                          "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
-                        }
+                     const response = await fetch("https://api.web3forms.com/submit", {
+                       method: "POST",
+                       headers: {
+                         "Content-Type": "application/json",
+                         "Accept": "application/json"
+                       },
+                       body: JSON.stringify({
+                         access_key: "c0573f7d-6191-4374-bc31-ee70ee9fa226",
+                         subject: "New Lead from AI Calling Agent",
+                         name: args.name || "Unknown",
+                         email: args.email || "Unknown",
+                         message: `Lead Details:\n\nRequirements: ${args.requirements}`
+                       })
                      });
+                     
+                     if (!response.ok) {
+                       console.error("Web3form error:", await response.text());
+                     }
                    } catch (e) {
-                     console.error("Web3form error:", e);
+                     console.error("Web3form fetch error:", e);
                    }
 
                    // Send tool response
@@ -286,7 +303,7 @@ HANDOFF TO SHEUN: If the user asks to speak with Sheun directly, you MUST provid
           }
         },
         config: {
-          responseModalities: [Modality.AUDIO],
+          responseModalities: [Modality.AUDIO, Modality.TEXT],
           speechConfig: {
             voiceConfig: { prebuiltVoiceConfig: { voiceName: "Kore" } }, // Example female voice
           },
