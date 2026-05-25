@@ -272,7 +272,7 @@ HANDOFF TO SHEUN: If the user asks to speak with Sheun directly, you MUST provid
           }
         },
         config: {
-          responseModalities: [Modality.AUDIO, Modality.TEXT],
+          responseModalities: [Modality.AUDIO],
           speechConfig: {
             voiceConfig: { prebuiltVoiceConfig: { voiceName: "Kore" } }, // Example female voice
           },

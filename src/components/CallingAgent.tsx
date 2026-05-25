@@ -177,6 +177,7 @@ export default function CallingAgent() {
         const msg = JSON.parse(event.data);
         if (msg.audio && audioCtxRef.current) {
           playAudioChunk(audioCtxRef.current, msg.audio);
+          setTranscript(prev => (!prev || prev === "Listening...") ? "Assistant is speaking..." : prev);
         }
         if (msg.text) {
           setTranscript(prev => prev + msg.text);
