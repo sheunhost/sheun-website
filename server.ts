@@ -17,7 +17,7 @@ async function startServer() {
   app.use(express.json());
 
   // Health check and Config verify (Censored)
-  app.get("/api/mailchimp/status", (req, res) => {
+  app.get("/api/newsletter/status", (req, res) => {
     res.json({
       configured: !!process.env.MAILCHIMP_API_KEY && !!process.env.MAILCHIMP_LIST_ID,
       apiKeyPresent: !!process.env.MAILCHIMP_API_KEY,
@@ -102,7 +102,7 @@ HANDOFF TO SHEUN: If the user asks to speak with Sheun directly, you MUST provid
 
   // Mailchimp API Endpoints
   // ... (unchanged mailchimp endpoints)
-  app.post("/api/mailchimp/subscribe", async (req, res) => {
+  app.post("/api/newsletter/subscribe", async (req, res) => {
     const { email, firstName, lastName } = req.body;
     console.log(`[Mailchimp] Subscription request for: ${email}`);
 

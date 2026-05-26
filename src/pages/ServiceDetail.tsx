@@ -68,7 +68,7 @@ export default function ServiceDetail() {
       if (data.success) {
         const email = formData.get("email") as string;
         const name = (formData.get("name") as string) || "";
-        fetch("/api/mailchimp/subscribe", {
+        fetch("/api/newsletter/subscribe", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({

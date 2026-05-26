@@ -540,7 +540,7 @@ export default function Home() {
 
       if (data.success) {
         // 2. Submit to Mailchimp (Background)
-        fetch("/api/mailchimp/subscribe", {
+        fetch("/api/newsletter/subscribe", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ email })
@@ -600,7 +600,7 @@ export default function Home() {
       if (data.success) {
         // 2. Submit to Mailchimp (Background)
         const name = (formData.get("name") as string) || "";
-        fetch("/api/mailchimp/subscribe", {
+        fetch("/api/newsletter/subscribe", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({
@@ -626,8 +626,8 @@ export default function Home() {
 
   return (
     <PageWrapper 
-      title="Shopify Developer & Growth Expert" 
-      description="Scale your brand with Sheun, a specialist in Custom Shopify Development and E-commerce Growth. Maximize revenue with highly optimized store builds."
+      title="Shopify Expert Developer | US & UK | Sheun Hub" 
+      description="Hire a top-rated Shopify Developer for store builds, redesigns, speed optimization, and CRO. Start growing your e-commerce business today. Apply now!"
       keywords="Shopify Expert, Shopify Developer, Custom Shopify Themes, Dropshipping Store Setup, E-commerce Growth, Convertion Rate Optimization, freelance shopify expert, shopify ecommerce consultant, freelance shopify designer, migrate website to shopify, migrate from bigcommerce to shopify, shopify partner agencies, migrate from wordpress to shopify, migrate wordpress to shopify, shopify store consultant, web designers for shopify, shopify seo consultant, shopify setup experts, migrate wix to shopify, migrate from squarespace to shopify, shopify store setup experts, migrate products from magento to shopify, magento to shopify migration service, store migration shopify, hire shopify web developer, expert shopify developers, move from wix to shopify, migration woocommerce shopify, migrate from wix to shopify, transfer wix to shopify, shopify marketing consultant, transfer wix site to shopify, shopify certified partners, shopify expert web designer, shopify to shopify migration, shopify data migration, move woocommerce to shopify, migrate wordpress site to shopify, migrate to shopify plus, migrate from godaddy to shopify, transfer godaddy to shopify, transfer bigcommerce to shopify, transfer website from wix to shopify, transfer shopify store to another shopify store, certified shopify developer, transfer wordpress to shopify, transfer wordpress site to shopify, transfer to shopify, migrate big cartel to shopify, shopify certified expert, hire shopify seo, move website from wix to shopify, transfer products from one shopify store to another, shopify site migration, shopify woocommerce migration, transfer website from squarespace to shopify, shopify web design experts, shopify store migration, shopify com experts, move from wordpress to shopify, transfer website from wordpress to shopify, transfer from wordpress to shopify, magento migration shopify, move squarespace to shopify, migrate lightspeed to shopify, expert seo shopify, transfer wix store to shopify, import wordpress to shopify, migrate from volusion to shopify, transfer shopify store to wordpress, top shopify experts, webflow to shopify migration, hire a shopify app developer, best shopify consultant, best shopify seo experts agency"
       canonical="/"
       schema={{

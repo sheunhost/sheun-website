@@ -132,8 +132,8 @@ export default function Portfolio() {
 
   return (
     <PageWrapper 
-      title="Shopify Portfolio | Custom Store Builds" 
-      description="Explore our showcase of high-converting Shopify stores, dropshipping concepts, and eCommerce custom designs for fashion, beauty, pets, and gadgets."
+      title="Shopify Developer Portfolio & Case Studies" 
+      description="Explore our successful Shopify store builds, redesigns, and custom app integrations. See how we help brands scale online. View our latest work today!"
       keywords="Shopify Portfolio, E-commerce Case Studies, Dropshipping Examples, Shopify Custom Designs, hire someone to build shopify store, build shopify store for me, shopify web designer, shopify developers, shopify website designer, shopify agency, shopify designers, shopify website design company, shopify developers for hire, shopify website experts, hire someone to set up shopify store, web designer for shopify, freelance shopify designer, shopify store expert, freelance shopify website designer, hire someone to build my shopify store, shopify web agency, best shopify website designers, shopify setup experts, shopify store setup experts, expert shopify designers, freelance shopify web designers, shopify web design experts"
       canonical="/portfolio"
       schema={{

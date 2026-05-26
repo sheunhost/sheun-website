@@ -4,7 +4,7 @@ export default function ConfigChecker() {
   const [status, setStatus] = useState<any>(null);
 
   useEffect(() => {
-    fetch("/api/mailchimp/status")
+    fetch("/api/newsletter/status")
       .then(res => res.json())
       .then(data => {
         setStatus(data);

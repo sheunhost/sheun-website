@@ -85,9 +85,9 @@ export default function Blog() {
   const featuredPost = posts.find(p => p.featured);
 
   return (
-    <PageWrapper
-      title="Shopify Blog & E-commerce Strategies"
-      description="Read the Sheun Hub blog for the latest strategies on Shopify SEO, store migrations, custom liquid developments, and dropshipping."
+    <PageWrapper 
+      title="Shopify E-commerce Blog | Sheun Hub"
+      description="Read our latest guides and strategies for growing your Shopify store. Learn about SEO, speed optimization, conversions, and more. Read the blog now!"
       keywords="Shopify Blog, Shopify Development Tutorials, Dropshipping Guides, Shopify SEO Tips, migrate from wordpress to shopify, migrate from wix to shopify, magento to shopify migration, woocommerce to shopify migration, bigcommerce to shopify migration, transfer volusion to shopify, shopify seo expert, shopify ecommerce consultant, shopify marketing experts, hire shopify seo expert"
       canonical="/blog"
       schema={{

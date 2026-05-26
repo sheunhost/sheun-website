@@ -4,6 +4,7 @@
  */
 
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { HelmetProvider } from "react-helmet-async";
 import { motion, AnimatePresence } from "framer-motion";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
@@ -30,37 +31,39 @@ import SmoothScroll from "./components/SmoothScroll";
 
 export default function App() {
   return (
-    <Router>
-      <GoogleAnalytics />
-      <ScrollToTopOnNavigation />
-      <SmoothScroll>
-        <div className="min-h-screen flex flex-col">
-          <Navbar />
-          <main className="flex-grow">
-            <AnimatePresence mode="wait">
-              <Routes>
-                <Route path="/" element={<Home />} />
-                <Route path="/about" element={<About />} />
-                <Route path="/services" element={<Services />} />
-                <Route path="/services/:id" element={<ServiceDetail />} />
-                <Route path="/portfolio" element={<Portfolio />} />
-                <Route path="/blog" element={<Blog />} />
-                <Route path="/blog/:id" element={<BlogPost />} />
-                <Route path="/contact" element={<Contact />} />
-                <Route path="/visualizer" element={<Visualizer />} />
-                <Route path="/apply" element={<Apply />} />
-                <Route path="/privacy-policy" element={<PrivacyPolicy />} />
-                <Route path="/terms-of-service" element={<TermsOfService />} />
-              </Routes>
-            </AnimatePresence>
-          </main>
-          <Footer />
-          <Chatbot />
-          <CallingAgent />
-          <FloatingCalendly />
-          <ScrollToTop />
-        </div>
-      </SmoothScroll>
-    </Router>
+    <HelmetProvider>
+      <Router>
+        <GoogleAnalytics />
+        <ScrollToTopOnNavigation />
+        <SmoothScroll>
+          <div className="min-h-screen flex flex-col">
+            <Navbar />
+            <main className="flex-grow">
+              <AnimatePresence mode="wait">
+                <Routes>
+                  <Route path="/" element={<Home />} />
+                  <Route path="/about" element={<About />} />
+                  <Route path="/services" element={<Services />} />
+                  <Route path="/services/:id" element={<ServiceDetail />} />
+                  <Route path="/portfolio" element={<Portfolio />} />
+                  <Route path="/blog" element={<Blog />} />
+                  <Route path="/blog/:id" element={<BlogPost />} />
+                  <Route path="/contact" element={<Contact />} />
+                  <Route path="/visualizer" element={<Visualizer />} />
+                  <Route path="/apply" element={<Apply />} />
+                  <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+                  <Route path="/terms-of-service" element={<TermsOfService />} />
+                </Routes>
+              </AnimatePresence>
+            </main>
+            <Footer />
+            <Chatbot />
+            <CallingAgent />
+            <FloatingCalendly />
+            <ScrollToTop />
+          </div>
+        </SmoothScroll>
+      </Router>
+    </HelmetProvider>
   );
 }

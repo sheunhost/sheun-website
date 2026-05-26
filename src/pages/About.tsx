@@ -26,8 +26,8 @@ export default function About() {
   const navigate = useNavigate();
   return (
     <PageWrapper 
-      title="About Sheun - The Shopify Engineer" 
-      description="Learn more about Sheun, a dedicated Shopify Expert and eCommerce Developer committed to building high-performance online stores and driving sales."
+      title="About Sheun | Expert Shopify Developer" 
+      description="Meet Sheun, a specialized freelance Shopify developer helping entrepreneurs in the US, UK, CA, and AU scale their stores. Let's discuss your next project!"
       keywords="About Sheun, Shopify Expert Profile, UI/UX Designer, E-commerce Specialist, Shopify Engineer, Freelance Shopify Developer, dedicated shopify developers, ecommerce shopify expert, expert shopify designers, expert shopify plus, freelance shopify web designers, hire expert shopify developer, hire shopify freelancer, shopify growth experts, shopify it specialist, shopify plus consultant, shopify plus design experts, shopify seo expert freelance, shopify store design freelance, shopify freelance web designer"
       canonical="/about"
       schema={{

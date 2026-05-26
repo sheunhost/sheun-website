@@ -125,7 +125,7 @@ export default function Apply() {
 
       if (data.success) {
         // 2. Submit to Mailchimp (Background)
-        fetch("/api/mailchimp/subscribe", {
+        fetch("/api/newsletter/subscribe", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({
@@ -163,8 +163,8 @@ export default function Apply() {
 
   return (
     <PageWrapper 
-      title="Apply for a Project" 
-      description="Apply to work with Sheun, a high-performing Shopify Conversion Specialist. High-intent qualification application for serious e-commerce store owners."
+      title="Hire a Shopify Developer | Apply Now" 
+      description="Ready to build or scale your Shopify store? Apply to work with an expert Shopify developer to transform your e-commerce vision into reality. Get in touch!"
       keywords="Hire Shopify Expert, Shopify Migration Service, E-commerce Project Application, Shopify Agency Setup, Drop Shipping Setup Application, hire shopify expert, hire expert shopify, find shopify experts, hire shopify freelancer, shopify expert agency"
       canonical="/apply"
       schema={{

@@ -87,7 +87,7 @@ export default function Contact() {
         // 2. Submit to Mailchimp (Background)
         const email = formData.get("email") as string;
         const name = (formData.get("name") as string) || "";
-        fetch("/api/mailchimp/subscribe", {
+        fetch("/api/newsletter/subscribe", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({
@@ -129,8 +129,8 @@ export default function Contact() {
 
   return (
     <PageWrapper 
-      title="Contact Sheun | Shopify Expert" 
-      description="Get in touch with Sheun for your next Shopify project. Free store audits, custom UX/UI redesigns, and accurate project quotes are available."
+      title="Contact Sheun | Shopify Developer" 
+      description="Have a question about Shopify development or e-commerce growth? Reach out to Sheun today for expert advice and technical solutions. Contact me now!"
       keywords="Contact Shopify Expert, Free Shopify Audit, E-commerce Consultation, Shopify Freelancer Contact, Hire Shopify Developer"
       canonical="/contact"
       schema={{
