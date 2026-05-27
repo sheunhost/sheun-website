@@ -2,7 +2,6 @@ import { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { MessageSquare, X, Send, User, Loader2 } from "lucide-react";
 import { cn } from "../lib/utils";
-import { initAuth, googleSignIn, getAccessToken } from "../lib/auth";
 
 interface Message {
   role: "user" | "model";
@@ -16,56 +15,37 @@ export default function Chatbot() {
   ]);
   const [input, setInput] = useState("");
   const [isLoading, setIsLoading] = useState(false);
-  const [needsAuth, setNeedsAuth] = useState(false);
-  const [pendingLeadData, setPendingLeadData] = useState<any>(null);
-  const [isLoggingIn, setIsLoggingIn] = useState(false);
   const scrollRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    initAuth(
-      () => setNeedsAuth(false),
-      () => setNeedsAuth(true)
-    );
-  }, []);
 
   useEffect(() => {
     if (scrollRef.current) {
       scrollRef.current.scrollTop = scrollRef.current.scrollHeight;
     }
-  }, [messages, needsAuth]);
+  }, [messages]);
 
-  const sendGmail = async (data: any, token: string) => {
-    const rawEmail = `To: sheunhost@gmail.com\r\nSubject: New Lead from AI Chatbot\r\n\r\nLead Details:\n\nName: ${data.name}\nEmail: ${data.email}\nRequirements: ${data.requirements}`;
-    const encodedEmail = btoa(unescape(encodeURIComponent(rawEmail))).replace(/\+/g, '-').replace(/\//g, '_').replace(/=+$/, '');
-    
-    await fetch('https://gmail.googleapis.com/gmail/v1/users/me/messages/send', {
-      method: 'POST',
-      headers: {
-        Authorization: `Bearer ${token}`,
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        raw: encodedEmail,
-      }),
-    });
-  };
-
-  const handleLogin = async () => {
-    setIsLoggingIn(true);
+  const sendWeb3Form = async (data: any) => {
     try {
-      const result = await googleSignIn();
-      if (result && pendingLeadData) {
-        setNeedsAuth(false);
-        const confirmed = window.confirm(`Are you sure you want to send this message to Sheun from your Gmail account?\n\nName: ${pendingLeadData.name}\nRequirements: ${pendingLeadData.requirements}`);
-        if (confirmed) {
-           await sendGmail(pendingLeadData, result.accessToken);
-           setPendingLeadData(null);
-        }
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify({
+          access_key: "c0573f7d-6191-4374-bc31-ee70ee9fa226",
+          subject: "New Lead from AI Chatbot",
+          name: data.name,
+          email: data.email,
+          message: data.requirements,
+        }),
+      });
+      if (response.ok) {
+        console.log("Lead submitted via Web3Forms successfully");
+      } else {
+        console.error("Failed to submit lead via Web3Forms");
       }
     } catch (err) {
-      console.error('Login failed:', err);
-    } finally {
-      setIsLoggingIn(false);
+      console.error("Web3Forms submission error:", err);
     }
   };
 
@@ -98,22 +78,7 @@ export default function Chatbot() {
       }
       
       if (data.clientEvent === "sendLeadEmail") {
-        setPendingLeadData(data.args);
-        
-        try {
-          const token = await getAccessToken();
-          if (token) {
-            const confirmed = window.confirm(`Are you sure you want to send this message to Sheun from your Gmail account?\n\nName: ${data.args.name}\nRequirements: ${data.args.requirements}`);
-            if (confirmed) {
-               await sendGmail(data.args, token);
-               setPendingLeadData(null);
-            }
-          } else {
-            setNeedsAuth(true);
-          }
-        } catch (err) {
-          console.error("Gmail fetch error:", err);
-        }
+        await sendWeb3Form(data.args);
       }
 
       setMessages(prev => [...prev, { role: "model", text: data.text }]);
@@ -159,24 +124,6 @@ export default function Chatbot() {
 
             {/* Messages */}
             <div ref={scrollRef} className="flex-grow overflow-y-auto p-8 space-y-6 bg-light/30">
-              {needsAuth && pendingLeadData && (
-                <div className="bg-green/10 border border-green p-4 rounded-xl text-center mb-4">
-                  <p className="text-sm text-navy mb-3">Sign in to send your message to Sheun.</p>
-                  <button 
-                    onClick={handleLogin}
-                    disabled={isLoggingIn}
-                    className="gsi-material-button bg-white text-gray-700 px-4 py-2 rounded shadow flex items-center justify-center gap-2 w-full hover:bg-gray-50 transition-colors border border-gray-300 disabled:opacity-50"
-                  >
-                    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" className="w-5 h-5">
-                      <path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"></path>
-                      <path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"></path>
-                      <path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"></path>
-                      <path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"></path>
-                    </svg>
-                    <span className="font-medium text-sm">Sign in with Google</span>
-                  </button>
-                </div>
-              )}
               {messages.map((m, i) => (
                 <div
                   key={i}
