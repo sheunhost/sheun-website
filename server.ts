@@ -223,6 +223,33 @@ CONVERSATION FLOW:
 4. Once you have their name AND email address AND requirements, YOU MUST call the sendLeadEmail function to trigger the email transfer to Sheun's inbox. When you call this function, you MUST reply with EXACTLY this wording: "Perfect! I've received your details and sent them straight to sheun inbox! He will personally follow up with you shortly via email. Feel free to let me know if you have any more questions in the meantime! 😊" No other variations.
 HANDOFF TO SHEUN: If the user asks to speak with Sheun directly, you MUST provide his contact details immediately. Tell the user they can reach him via the contact page at https://sheunhub.com/contact or by email at sheunhost@gmail.com.`;
 
+      const messageQueue: any[] = [];
+      
+      clientWs.on("message", (data) => {
+        try {
+          const payload = JSON.parse(data.toString());
+          if (session) {
+            if (payload.audio) {
+              session.sendRealtimeInput({
+                audio: { data: payload.audio, mimeType: "audio/pcm;rate=16000" },
+              });
+            }
+          } else {
+            messageQueue.push(payload);
+          }
+        } catch (e) {
+          console.error("Error parsing websocket message:", e);
+        }
+      });
+      
+      clientWs.on("close", () => {
+         console.log("Client disconnected");
+         if (session) {
+           session.close();
+           session = null;
+         }
+      });
+
       session = await ai.live.connect({
         model: "gemini-3.1-flash-live-preview",
         callbacks: {
@@ -281,26 +308,17 @@ HANDOFF TO SHEUN: If the user asks to speak with Sheun directly, you MUST provid
         },
       });
 
-      clientWs.on("message", (data) => {
-        try {
-          const payload = JSON.parse(data.toString());
-          if (payload.audio && session) {
+      // Prompt the agent to greet the user
+      session.sendRealtimeInput([{ text: "Hi! Please introduce yourself briefly and ask how you can help me." }]);
+      
+      // Process queued messages
+      for (const payload of messageQueue) {
+         if (payload.audio) {
             session.sendRealtimeInput({
               audio: { data: payload.audio, mimeType: "audio/pcm;rate=16000" },
             });
-          }
-        } catch (e) {
-          console.error("Error parsing websocket message:", e);
-        }
-      });
-      
-      clientWs.on("close", () => {
-         console.log("Client disconnected");
-         if (session) {
-           session.close();
-           session = null;
          }
-      });
+      }
 
     } catch (e: any) {
       console.error("Live API Setup Error:", e);

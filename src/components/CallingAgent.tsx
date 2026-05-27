@@ -250,11 +250,19 @@ export default function CallingAgent() {
         }
         if (msg.error) {
           console.error("Live API Error:", msg.error);
+          setCallError(msg.error);
           endCall();
         }
       };
       
       ws.onclose = () => {
+        console.log("WebSocket connection closed.");
+        endCall();
+      };
+
+      ws.onerror = (err) => {
+        console.error("WebSocket error:", err);
+        setCallError("Connection error. Could not connect to the live agent server.");
         endCall();
       };
       
