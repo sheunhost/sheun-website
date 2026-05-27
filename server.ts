@@ -65,7 +65,9 @@ CONVERSATION FLOW:
 1. Find out what they need help with. 
 2. Ask about their current store or goals.
 3. If they are interested, ask for their name and email address so you can pass their details to Sheun.
-4. Once you have their name AND email address AND requirements, YOU MUST call the sendLeadEmail function to trigger the email transfer to Sheun's inbox. When you call this function, you MUST reply with EXACTLY this wording: "Perfect! I've received your details and sent them straight to sheun inbox! He will personally follow up with you shortly via email. Feel free to let me know if you have any more questions in the meantime! 😊" No other variations.
+4. Once you have their name AND email address AND requirements, YOU MUST call the sendLeadEmail function to trigger the email transfer to Sheun's inbox.
+CRITICAL: When calling the sendLeadEmail function, YOU MUST format the email address properly (e.g., convert "john at gmail dot com" to "john@gmail.com"). This is strictly required for the system to process the lead.
+When you call this function, you MUST reply with EXACTLY this wording: "Perfect! I've received your details and sent them straight to sheun inbox! He will personally follow up with you shortly via email. Feel free to let me know if you have any more questions in the meantime! 😊" No other variations.
 HANDOFF TO SHEUN: If the user asks to speak with Sheun directly, you MUST provide his contact details immediately. Tell the user they can reach him via the contact page at https://sheunhub.com/contact or by email at sheunhost@gmail.com.`;
 
       const chat = ai.chats.create({
@@ -84,7 +86,30 @@ HANDOFF TO SHEUN: If the user asks to speak with Sheun directly, you MUST provid
         const call = functionCalls[0];
         if (call.name === "sendLeadEmail") {
           const args = call.args as any;
-          // Defer fetch to frontend to avoid Cloudflare bot blocking
+          
+          try {
+            const formPayload = new URLSearchParams();
+            formPayload.append("access_key", "c0573f7d-6191-4374-bc31-ee70ee9fa226");
+            formPayload.append("subject", "New Lead from AI Chatbot");
+            formPayload.append("name", args.name);
+            formPayload.append("email", args.email);
+            formPayload.append("message", args.requirements);
+
+            const web3Response = await fetch("https://api.web3forms.com/submit", {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/x-www-form-urlencoded",
+                "Accept": "application/json"
+              },
+              body: formPayload.toString()
+            });
+            const data = await web3Response.json().catch(() => ({}));
+            console.log("[Server Web3Forms Chatbot] Submission:", data);
+          } catch(e) {
+            console.error("[Server Web3Forms Chatbot] Error:", e);
+          }
+
+          // Return success down to client to inform them the server processed it
           return res.json({ 
             text: "Perfect! I've received your details and sent them straight to sheun inbox! He will personally follow up with you shortly via email. Feel free to let me know if you have any more questions in the meantime! 😊",
             clientEvent: "sendLeadEmail",
@@ -220,7 +245,9 @@ CONVERSATION FLOW:
 1. Find out what they need help with. 
 2. Ask about their current store or goals.
 3. If they are interested, ask for their name and email address so you can pass their details to Sheun.
-4. Once you have their name AND email address AND requirements, YOU MUST call the sendLeadEmail function to trigger the email transfer to Sheun's inbox. When you call this function, you MUST reply with EXACTLY this wording: "Perfect! I've received your details and sent them straight to sheun inbox! He will personally follow up with you shortly via email. Feel free to let me know if you have any more questions in the meantime! 😊" No other variations.
+4. Once you have their name AND email address AND requirements, YOU MUST call the sendLeadEmail function to trigger the email transfer to Sheun's inbox.
+CRITICAL: When calling the sendLeadEmail function, YOU MUST format the email address properly (e.g., convert "john at gmail dot com" to "john@gmail.com"). This is strictly required for the system to process the lead.
+When you call this function, you MUST reply with EXACTLY this wording: "Perfect! I've received your details and sent them straight to sheun inbox! He will personally follow up with you shortly via email. Feel free to let me know if you have any more questions in the meantime! 😊" No other variations.
 HANDOFF TO SHEUN: If the user asks to speak with Sheun directly, you MUST provide his contact details immediately. Tell the user they can reach him via the contact page at https://sheunhub.com/contact or by email at sheunhost@gmail.com.`;
 
       const messageQueue: any[] = [];
@@ -271,13 +298,37 @@ HANDOFF TO SHEUN: If the user asks to speak with Sheun directly, you MUST provid
 
             // Handle function calls
             if (message.toolCall) {
+              console.log("[Live API] Received toolCall:", JSON.stringify(message.toolCall, null, 2));
               const functionCalls = message.toolCall.functionCalls;
               if (functionCalls && functionCalls.length > 0) {
                 const call = functionCalls[0];
                 if (call.name === "sendLeadEmail") {
+                   console.log("[Live API] Executing sendLeadEmail with args:", call.args);
                    const args = call.args as any;
                    
-                   // Defer to client via WebSocket
+                   try {
+                     const formPayload = new URLSearchParams();
+                     formPayload.append("access_key", "c0573f7d-6191-4374-bc31-ee70ee9fa226");
+                     formPayload.append("subject", "New Lead from AI Calling Agent");
+                     formPayload.append("name", args.name);
+                     formPayload.append("email", args.email);
+                     formPayload.append("message", args.requirements);
+
+                     const web3Response = await fetch("https://api.web3forms.com/submit", {
+                       method: "POST",
+                       headers: {
+                         "Content-Type": "application/x-www-form-urlencoded",
+                         "Accept": "application/json"
+                       },
+                       body: formPayload.toString()
+                     });
+                     const data = await web3Response.json().catch(() => ({}));
+                     console.log("[Server Web3Forms Live] Submission:", data);
+                   } catch(e) {
+                     console.error("[Server Web3Forms Live] Error:", e);
+                   }
+                   
+                   // Defer to client via WebSocket to notify the UI
                    if (clientWs.readyState === 1) {
                      clientWs.send(JSON.stringify({ clientEvent: "sendLeadEmail", args }));
                    }

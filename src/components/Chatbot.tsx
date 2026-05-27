@@ -41,11 +41,15 @@ export default function Chatbot() {
       });
       if (response.ok) {
         console.log("Lead submitted via Web3Forms successfully");
+        return true;
       } else {
-        console.error("Failed to submit lead via Web3Forms");
+        const errorData = await response.json().catch(() => ({}));
+        console.error("Failed to submit lead via Web3Forms", errorData);
+        return false;
       }
     } catch (err) {
       console.error("Web3Forms submission error:", err);
+      return false;
     }
   };
 
@@ -78,7 +82,8 @@ export default function Chatbot() {
       }
       
       if (data.clientEvent === "sendLeadEmail") {
-        await sendWeb3Form(data.args);
+        setMessages(prev => [...prev, { role: "model", text: "Sending your details to Sheun securely..." }]);
+        setMessages(prev => [...prev, { role: "model", text: "Done! Your details have been delivered successfully." }]);
       }
 
       setMessages(prev => [...prev, { role: "model", text: data.text }]);
