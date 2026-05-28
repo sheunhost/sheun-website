@@ -87,9 +87,12 @@ export default function Chatbot() {
       }
 
       setMessages(prev => [...prev, { role: "model", text: data.text }]);
-    } catch (error) {
+    } catch (error: any) {
       console.error("Chat error:", error);
-      setMessages(prev => [...prev, { role: "model", text: `Sorry, I'm having trouble connecting right now. Please try again later!` }]);
+      const errorMessage = error.message && error.message.includes("API key") 
+        ? "The Gemini API Key is missing. Please make sure to provide it in the published app settings." 
+        : "Sorry, I'm having trouble connecting right now. Please try again later!";
+      setMessages(prev => [...prev, { role: "model", text: errorMessage }]);
     } finally {
       setIsLoading(false);
     }

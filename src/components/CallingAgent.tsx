@@ -243,7 +243,10 @@ export default function CallingAgent() {
       if (e.name === "NotAllowedError" || e.name === "PermissionDeniedError") {
         setCallError("Microphone permission denied. Please allow microphone access to call.");
       } else {
-        setCallError("Could not start call. " + (e.message || ""));
+        const errorMessage = e.message && e.message.includes("API key") 
+          ? "The Gemini API Key is missing. Please make sure to provide it in the published app settings." 
+          : "Could not start call. " + (e.message || "");
+        setCallError(errorMessage);
       }
       endCall();
     }
