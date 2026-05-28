@@ -23,6 +23,36 @@ export default function Chatbot() {
     }
   }, [messages]);
 
+  const sendWeb3Form = async (data: any) => {
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify({
+          access_key: "c0573f7d-6191-4374-bc31-ee70ee9fa226",
+          subject: "New Lead from AI Chatbot",
+          name: data.name,
+          email: data.email,
+          message: data.requirements,
+        }),
+      });
+      if (response.ok) {
+        console.log("Lead submitted via Web3Forms successfully");
+        return true;
+      } else {
+        const errorData = await response.json().catch(() => ({}));
+        console.error("Failed to submit lead via Web3Forms", errorData);
+        return false;
+      }
+    } catch (err) {
+      console.error("Web3Forms submission error:", err);
+      return false;
+    }
+  };
+
   const handleSend = async () => {
     if (!input.trim() || isLoading) return;
 
@@ -34,7 +64,10 @@ export default function Chatbot() {
     try {
       const chatHistory = messages
         .filter((_, i) => i > 0)
-        .map(m => ({ role: m.role, parts: [{ text: m.text }] }));
+        .map(m => ({
+          role: m.role,
+          parts: [{ text: m.text }]
+        }));
 
       const response = await fetch("/api/gemini/chat", {
         method: "POST",
@@ -43,8 +76,11 @@ export default function Chatbot() {
       });
 
       const data = await response.json();
-      if (!response.ok) throw new Error(data.error || "Failed to fetch response");
-
+      
+      if (!response.ok) {
+        throw new Error(data.error || "Failed to fetch response");
+      }
+      
       if (data.clientEvent === "sendLeadEmail") {
         setMessages(prev => [...prev, { role: "model", text: "Sending your details to Sheun securely..." }]);
         setMessages(prev => [...prev, { role: "model", text: "Done! Your details have been delivered successfully." }]);
@@ -52,10 +88,11 @@ export default function Chatbot() {
 
       setMessages(prev => [...prev, { role: "model", text: data.text }]);
     } catch (error: any) {
-      const msg = error.message?.includes("API key")
-        ? "The Gemini API Key is missing. Please make sure to provide it in the published app settings."
+      console.error("Chat error:", error);
+      const errorMessage = error.message && error.message.includes("API key") 
+        ? "The Gemini API Key is missing. Please make sure to provide it in the published app settings." 
         : "Sorry, I'm having trouble connecting right now. Please try again later!";
-      setMessages(prev => [...prev, { role: "model", text: msg }]);
+      setMessages(prev => [...prev, { role: "model", text: errorMessage }]);
     } finally {
       setIsLoading(false);
     }
@@ -76,7 +113,7 @@ export default function Chatbot() {
               <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,_rgba(0,255,157,0.1)_0%,_transparent_70%)]" />
               <div className="flex items-center gap-4 relative z-10">
                 <div className="w-14 h-14 bg-white rounded-2xl flex items-center justify-center text-navy shadow-xl rotate-3 overflow-hidden">
-                  <img
+                  <img 
                     src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=200"
                     alt="Sheun"
                     referrerPolicy="no-referrer"
@@ -96,10 +133,19 @@ export default function Chatbot() {
             {/* Messages */}
             <div ref={scrollRef} className="flex-grow overflow-y-auto p-8 space-y-6 bg-light/30">
               {messages.map((m, i) => (
-                <div key={i} className={cn("flex items-end gap-3 max-w-[85%]", m.role === "user" ? "ml-auto flex-row-reverse" : "mr-auto")}>
-                  <div className={cn("w-10 h-10 rounded-xl flex items-center justify-center shrink-0 shadow-lg overflow-hidden", m.role === "user" ? "bg-navy text-white" : "bg-white")}>
+                <div
+                  key={i}
+                  className={cn(
+                    "flex items-end gap-3 max-w-[85%]",
+                    m.role === "user" ? "ml-auto flex-row-reverse" : "mr-auto"
+                  )}
+                >
+                  <div className={cn(
+                    "w-10 h-10 rounded-xl flex items-center justify-center shrink-0 shadow-lg overflow-hidden",
+                    m.role === "user" ? "bg-navy text-white" : "bg-white"
+                  )}>
                     {m.role === "user" ? <User size={20} /> : (
-                      <img
+                      <img 
                         src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=200"
                         alt="Sheun"
                         referrerPolicy="no-referrer"
@@ -107,7 +153,12 @@ export default function Chatbot() {
                       />
                     )}
                   </div>
-                  <div className={cn("p-5 rounded-[24px] text-sm leading-relaxed shadow-sm", m.role === "user" ? "bg-navy text-white rounded-br-none" : "bg-white text-navy border border-navy/5 rounded-bl-none")}>
+                  <div className={cn(
+                    "p-5 rounded-[24px] text-sm leading-relaxed shadow-sm",
+                    m.role === "user" 
+                      ? "bg-navy text-white rounded-br-none" 
+                      : "bg-white text-navy border border-navy/5 rounded-bl-none"
+                  )}>
                     {m.text}
                   </div>
                 </div>
@@ -115,7 +166,7 @@ export default function Chatbot() {
               {isLoading && (
                 <div className="flex items-end gap-3 mr-auto">
                   <div className="w-10 h-10 rounded-xl bg-white flex items-center justify-center shrink-0 shadow-lg overflow-hidden">
-                    <img
+                    <img 
                       src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=200"
                       alt="Sheun"
                       referrerPolicy="no-referrer"
@@ -131,7 +182,10 @@ export default function Chatbot() {
 
             {/* Input */}
             <div className="p-8 bg-white border-t border-navy/5">
-              <form onSubmit={(e) => { e.preventDefault(); handleSend(); }} className="flex items-center gap-4">
+              <form
+                onSubmit={(e) => { e.preventDefault(); handleSend(); }}
+                className="flex items-center gap-4"
+              >
                 <input
                   type="text"
                   value={input}
