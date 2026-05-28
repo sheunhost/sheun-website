@@ -55,7 +55,6 @@ export default function App() {
               </AnimatePresence>
             </main>
             <Footer />
-            <Chatbot />
             <FloatingCalendly />
             <ScrollToTop />
           </div>
