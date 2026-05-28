@@ -75,10 +75,17 @@ export default function Chatbot() {
         body: JSON.stringify({ history: chatHistory, message: input }),
       });
 
-      const data = await response.json();
+      const textMessage = await response.text();
+      let data;
+      try {
+        data = JSON.parse(textMessage);
+      } catch (e) {
+        console.error("Non-JSON Response from Server:", textMessage);
+        throw new Error("Invalid response from server. If deployed on Vercel, ensure the API route /api/gemini/chat is fully supported.");
+      }
       
       if (!response.ok) {
-        throw new Error(data.error || "Failed to fetch response");
+        throw new Error(data?.error || data?.details || `Server Error ${response.status}: ${textMessage}` || "Failed to fetch response");
       }
       
       if (data.clientEvent === "sendLeadEmail") {
@@ -89,9 +96,14 @@ export default function Chatbot() {
       setMessages(prev => [...prev, { role: "model", text: data.text }]);
     } catch (error: any) {
       console.error("Chat error:", error);
-      const errorMessage = error.message && error.message.includes("API key") 
-        ? "The Gemini API Key is missing. Please make sure to provide it in the published app settings." 
-        : "Sorry, I'm having trouble connecting right now. Please try again later!";
+      let errorMessage = "Sorry, I'm having trouble connecting right now. Please try again later!";
+      if (error.message) {
+        if (error.message.includes("API key") || error.message.includes("GEMINI_API_KEY")) {
+           errorMessage = "The Gemini API Key is missing. Please make sure to provide it in your Vercel Environment Variables.";
+        } else {
+           errorMessage = `Connection Error: ${error.message.substring(0, 150)}`;
+        }
+      }
       setMessages(prev => [...prev, { role: "model", text: errorMessage }]);
     } finally {
       setIsLoading(false);
