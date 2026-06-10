@@ -68,7 +68,7 @@ export default function ServiceDetail() {
       if (data.success) {
         const email = formData.get("email") as string;
         const name = (formData.get("name") as string) || "";
-        fetch("/api/newsletter/subscribe", {
+        fetch("/api/connect/subscribe", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({
@@ -254,7 +254,7 @@ export default function ServiceDetail() {
             <div className="container mx-auto px-6 relative z-10 text-center">
               <h2 className="text-5xl md:text-7xl font-bold font-sans text-white tracking-tight mb-8">Ready to start your project?</h2>
               <p className="text-2xl text-white/70 font-serif italic max-w-2xl mx-auto mb-16">
-                Let's discuss how my {service.title} expertise can scale your revenue.
+                Let's discuss how our {service.title} expertise can scale your revenue.
               </p>
               
               <div className="bg-white rounded-[40px] p-8 md:p-12 lg:p-16 shadow-[0_0_80px_rgba(16,185,129,0.1)] relative max-w-4xl mx-auto text-left">
@@ -271,7 +271,7 @@ export default function ServiceDetail() {
                       </div>
                       <h3 className="text-3xl md:text-5xl font-bold text-navy tracking-tight">Congratulations! Request Received</h3>
                       <p className="text-xl text-navy/60 font-serif italic max-w-lg mx-auto">
-                        Your {service.title} request has been submitted. A confirmation message from <span className="font-sans font-bold">sheunhost@gmail.com</span> will be sent to you shortly. I will review your requirements and get back to you within 24 hours.
+                        Your {service.title} request has been submitted. A confirmation message from <span className="font-sans font-bold">sheunhost@gmail.com</span> will be sent to you shortlyWe will review your requirements and get back to you within 24 hours.
                       </p>
                       <button 
                         onClick={() => setIsSuccess(false)}
@@ -393,7 +393,7 @@ export default function ServiceDetail() {
                     <Mail size={16} />
                     <span className="font-bold text-xs md:text-sm">Email</span>
                   </a>
-                  <a href="https://wa.me/2348084315743" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 bg-white/5 hover:bg-green text-white hover:text-navy px-4 md:px-5 py-2.5 rounded-full transition-colors border border-white/10 hover:border-green">
+                  <a href="https://wa.us/2348084315743" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 bg-white/5 hover:bg-green text-white hover:text-navy px-4 md:px-5 py-2.5 rounded-full transition-colors border border-white/10 hover:border-green">
                     <Phone size={16} />
                     <span className="font-bold text-xs md:text-sm">WhatsApp</span>
                   </a>

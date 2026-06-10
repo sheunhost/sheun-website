@@ -44,6 +44,7 @@ export default function Footer() {
             <h4 className="text-sm font-bold uppercase tracking-[0.3em] text-white/20 mb-8">Resources</h4>
             <ul className="space-y-4 font-medium">
               <li><Link to="/about" className="text-white/60 hover:text-green transition-colors">About</Link></li>
+              <li><Link to="/team" className="text-white/60 hover:text-green transition-colors">Team</Link></li>
               <li><Link to="/portfolio" className="text-white/60 hover:text-green transition-colors">Portfolio</Link></li>
               <li><Link to="/blog" className="text-white/60 hover:text-green transition-colors">Blog</Link></li>
               <li><Link to="/apply#apply-form" className="text-white/60 hover:text-green transition-colors">Apply</Link></li>

@@ -15,11 +15,12 @@ import ServiceDetail from "./pages/ServiceDetail";
 import Portfolio from "./pages/Portfolio";
 import Blog from "./pages/Blog";
 import Contact from "./pages/Contact";
-import Visualizer from "./pages/Visualizer";
+import Calculator from "./pages/Calculator";
 import Apply from "./pages/Apply";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import TermsOfService from "./pages/TermsOfService";
 import BlogPost from "./pages/BlogPost";
+import Team from "./pages/Team";
 import ScrollToTop from "./components/ScrollToTop";
 import ScrollToTopOnNavigation from "./components/ScrollToTopOnNavigation";
 import FloatingCalendly from "./components/FloatingCalendly";
@@ -41,13 +42,14 @@ export default function App() {
                 <Routes>
                   <Route path="/" element={<Home />} />
                   <Route path="/about" element={<About />} />
+                  <Route path="/team" element={<Team />} />
                   <Route path="/services" element={<Services />} />
                   <Route path="/services/:id" element={<ServiceDetail />} />
                   <Route path="/portfolio" element={<Portfolio />} />
                   <Route path="/blog" element={<Blog />} />
                   <Route path="/blog/:id" element={<BlogPost />} />
                   <Route path="/contact" element={<Contact />} />
-                  <Route path="/visualizer" element={<Visualizer />} />
+                  <Route path="/calculator" element={<Calculator />} />
                   <Route path="/apply" element={<Apply />} />
                   <Route path="/privacy-policy" element={<PrivacyPolicy />} />
                   <Route path="/terms-of-service" element={<TermsOfService />} />

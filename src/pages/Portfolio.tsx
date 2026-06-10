@@ -73,7 +73,7 @@ const projects: Project[] = [
     name: "Summer Collection",
     tag: "👗 Fashion — Streetwear",
     category: "👗 Fashion",
-    desc: "Hi There,\n\nThis is a Website concept for a Trendy Fashion E-commerce Website.\n\nHope you guys will like it.\n\nLet me know your thought's on that. Your feedback and appreciation is always welcome 🙂\n\nI'm available for new projects",
+    desc: "Hi There,\n\nThis is a Website concept for a Trendy Fashion E-commerce Website.\n\nHope you guys will like it.\n\nLet us know your thought's on that. Your feedback and appreciation is always welcome 🙂\n\nI'm available for new projects",
     image: "https://cdn.dribbble.com/userupload/37390836/file/original-13c3c213f022ab00791a6abaa9447322.png?resize=850x638&vertical=center",
     label: "🎨 Past Project design by Sheun Hub"
   },
@@ -134,7 +134,7 @@ export default function Portfolio() {
     <PageWrapper 
       title="Shopify Developer Portfolio & Case Studies" 
       description="Explore our successful Shopify store builds, redesigns, and custom app integrations. See how we help brands scale online. View our latest work today!"
-      keywords="Shopify Portfolio, E-commerce Case Studies, Dropshipping Examples, Shopify Custom Designs, hire someone to build shopify store, build shopify store for me, shopify web designer, shopify developers, shopify website designer, shopify agency, shopify designers, shopify website design company, shopify developers for hire, shopify website experts, hire someone to set up shopify store, web designer for shopify, freelance shopify designer, shopify store expert, freelance shopify website designer, hire someone to build my shopify store, shopify web agency, best shopify website designers, shopify setup experts, shopify store setup experts, expert shopify designers, freelance shopify web designers, shopify web design experts"
+      keywords="Shopify Portfolio, E-commerce Case Studies, Dropshipping Examples, Shopify Custom Designs, hire someone to build shopify store, build shopify store for us, shopify web designer, shopify developers, shopify website designer, shopify agency, shopify designers, shopify website design company, shopify developers for hire, shopify website experts, hire someone to set up shopify store, web designer for shopify, freelance shopify designer, shopify store expert, freelance shopify website designer, hire someone to build our shopify store, shopify web agency, best shopify website designers, shopify setup experts, shopify store setup experts, expert shopify designers, freelance shopify web designers, shopify web design experts"
       canonical="/portfolio"
       schema={{
         "@context": "https://schema.org",
@@ -150,7 +150,7 @@ export default function Portfolio() {
     >
       {/* Top Section Label */}
       <div className="bg-green text-navy py-4 px-6 text-center text-[10px] font-bold uppercase tracking-[0.3em]">
-        <p>View my past client projects and designs — Let's build your vision.</p>
+        <p>View our past client projects and designs — Let's build your vision.</p>
       </div>
 
       {/* Portfolio Hero */}
@@ -261,7 +261,7 @@ export default function Portfolio() {
                   <a href="https://www.linkedin.com/in/sheun-hub-26b876321" target="_blank" rel="noopener noreferrer" className="p-4 bg-white/10 hover:bg-green hover:text-navy text-white rounded-full transition-all border border-white/10 shrink-0 flex items-center justify-center overflow-hidden">
                     <img src="https://images.rawpixel.com/image_png_social_square/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvdjk4Mi1kMS0xMC5wbmc.png" alt="LinkedIn" className="w-6 h-6 object-contain" />
                   </a>
-                  <a href="https://wa.me/2348084315743" target="_blank" rel="noopener noreferrer" className="p-4 bg-white/10 hover:bg-green hover:text-navy text-white rounded-full transition-all border border-white/10 shrink-0 flex items-center justify-center overflow-hidden">
+                  <a href="https://wa.us/2348084315743" target="_blank" rel="noopener noreferrer" className="p-4 bg-white/10 hover:bg-green hover:text-navy text-white rounded-full transition-all border border-white/10 shrink-0 flex items-center justify-center overflow-hidden">
                     <img src="https://cdn-icons-png.flaticon.com/512/3670/3670051.png" alt="WhatsApp" className="w-6 h-6 object-contain" />
                   </a>
                   <a href="mailto:sheunhost@gmail.com" className="p-4 bg-white/10 hover:bg-green hover:text-navy text-white rounded-full transition-all border border-white/10 shrink-0 flex items-center justify-center overflow-hidden">
@@ -285,21 +285,21 @@ export default function Portfolio() {
           <div className="max-w-4xl mx-auto prose prose-lg prose-headings:text-navy prose-a:text-green text-navy/70 leading-relaxed">
             <h2 className="text-3xl md:text-4xl font-bold font-sans not-italic mb-6 tracking-tight">Showcase of High-Converting Custom Shopify Stores</h2>
             <p className="mb-6 font-serif italic text-xl">
-              Welcome to my portfolio, a curated gallery of high-performing e-commerce stores designed, developed, and optimized entirely by Sheun Hub. As a seasoned Shopify Partner, my focus isn’t just on making websites that look pretty—I build custom Shopify stores engineered specifically to convert traffic into loyal, paying customers.
+              Welcome to our portfolio, a curated gallery of high-performing e-commerce stores designed, developed, and optimized entirely by Sheun Hub. As a seasoned Shopify Partner, our focus isn’t just on making websites that look pretty—we build custom Shopify stores engineered specifically to convert traffic into loyal, paying customers.
             </p>
             <h3 className="text-2xl font-bold font-sans not-italic mt-12 mb-4 tracking-tight">Diverse E-commerce Case Studies</h3>
             <p className="mb-4">
-              Every business has a unique target audience and functional requirement. Browse through my design concepts and real-world client builds across several highly competitive niches. Whether it’s a minimalist layout for a <strong>Luxury Beauty & Skincare</strong> brand, a bold and dynamic interface for an <strong>Apparel Fashion</strong> store, or a highly trustworthy and engaging design for <strong>Pet Care Supplies & Gadgets</strong>, these examples demonstrate versatility and technical mastery.
+              Every business has a unique target audience and functional requirement. Browse through our design concepts and real-world client builds across several highly competitive niches. Whether it’s a minimalist layout for a <strong>Luxury Beauty & Skincare</strong> brand, a bold and dynamic interface for an <strong>Apparel Fashion</strong> store, or a highly trustworthy and engaging design for <strong>Pet Care Supplies & Gadgets</strong>, these examples demonstrate versatility and technical mastery.
             </p>
             <p className="mb-4">
-              By leveraging custom Liquid coding, I break free from the constraints of standardized templates to create highly immersive buying experiences tailored specifically to your audience. This bespoke approach is exactly what top-tier dropshipping stores and scaling local businesses use to establish brand authority and outpace their competitors online.
+              By leveraging custom Liquid coding, we break free from the constraints of standardized templates to create highly immersive buying experiences tailored specifically to your audience. This bespoke approach is exactly what top-tier dropshipping stores and scaling local businesses use to establish brand authority and outpace their competitors online.
             </p>
             <h3 className="text-2xl font-bold font-sans not-italic mt-12 mb-4 tracking-tight">Optimized for E-commerce Growth</h3>
             <p className="mb-4">
-              A visually stunning store is obsolete if it takes too long to load. Each of these custom Shopify store builds is backed by rigorous <strong>Speed Optimization</strong> and <strong>Technical SEO</strong>. Fast loading times mean a lower bounce rate and a higher ranking on Google. I implement clean site architecture, strategic internal linking, and optimized asset delivery so your storefront scales smoothly without breaking under high-traffic events, like Black Friday drops or viral social media marketing bursts.
+              A visually stunning store is obsolete if it takes too long to load. Each of these custom Shopify store builds is backed by rigorous <strong>Speed Optimization</strong> and <strong>Technical SEO</strong>. Fast loading times mean a lower bounce rate and a higher ranking on GoogleWe implement clean site architecture, strategic internal linking, and optimized asset delivery so your storefront scales smoothly without breaking under high-traffic events, like Black Friday drops or viral social media marketing bursts.
             </p>
             <p className="mb-4">
-              For dropshipping business owners, conversion is everything. That’s why these portfolio pieces feature strategically placed trust badges, seamless checkout workflows, upsell integrations, and compelling product spotlight sections. My UI/UX design philosophy is heavily influenced by deep <strong>Conversion Rate Optimization (CRO)</strong> principles. Every button, every color contrast, and every layout decision is made precisely to guide the customer closer to purchase. Review the portfolio, gather inspiration, and let’s discuss building your brand's vision.
+              For dropshipping business owners, conversion is everything. That’s why these portfolio pieces feature strategically placed trust badges, seamless checkout workflows, upsell integrations, and compelling product spotlight sections. Our UI/UX design philosophy is heavily influenced by deep <strong>Conversion Rate Optimization (CRO)</strong> principles. Every button, every color contrast, and every layout decision is made precisely to guide the customer closer to purchase. Review the portfolio, gather inspiration, and let’s discuss building your brand's vision.
             </p>
           </div>
         </div>
@@ -450,7 +450,7 @@ export default function Portfolio() {
 
             {/* Image Container */}
             <div className="flex-grow overflow-y-auto p-4 md:p-10 custom-scrollbar relative">
-              <div className="max-w-6xl mx-auto bg-white rounded-3xl overflow-hidden shadow-2xl my-auto min-h-full flex flex-col">
+              <div className="max-w-6xl mx-auto bg-white rounded-3xl overflow-hidden shadow-2xl our-auto min-h-full flex flex-col">
                 <img 
                   src={projects[fullScreenIndex].image} 
                   alt="Full Design" 

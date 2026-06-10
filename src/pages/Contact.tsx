@@ -87,7 +87,7 @@ export default function Contact() {
         // 2. Submit to Mailchimp (Background)
         const email = formData.get("email") as string;
         const name = (formData.get("name") as string) || "";
-        fetch("/api/newsletter/subscribe", {
+        fetch("/api/connect/subscribe", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({
@@ -130,7 +130,7 @@ export default function Contact() {
   return (
     <PageWrapper 
       title="Contact Sheun | Shopify Developer" 
-      description="Have a question about Shopify development or e-commerce growth? Reach out to Sheun today for expert advice and technical solutions. Contact me now!"
+      description="Have a question about Shopify development or e-commerce growth? Reach out to Sheun today for expert advice and technical solutions. Contact us now!"
       keywords="Contact Shopify Expert, Free Shopify Audit, E-commerce Consultation, Shopify Freelancer Contact, Hire Shopify Developer"
       canonical="/contact"
       schema={{
@@ -184,7 +184,7 @@ export default function Contact() {
               className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-end"
             >
               <p className="text-white/50 text-2xl md:text-3xl leading-snug max-w-xl font-serif italic">
-                From technical audits to custom Shopify builds, I'm here to help your brand cross the next revenue threshold.
+                From technical audits to custom Shopify builds, we'm here to help your brand cross the next revenue threshold.
               </p>
               <div className="flex flex-wrap gap-8 lg:justify-end">
                 <div className="space-y-2">
@@ -227,7 +227,7 @@ export default function Contact() {
                       <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Gmail_icon_%282020%29.svg/960px-Gmail_icon_%282020%29.svg.png?_=20221017173631" alt="Gmail" className="w-8 h-8 object-contain" />
                     </div>
                     <div className="space-y-3">
-                      <h4 className="text-4xl font-bold tracking-tighter">Email me directly.</h4>
+                      <h4 className="text-4xl font-bold tracking-tighter">Email us directly.</h4>
                       <p className="text-white/50 text-lg font-serif italic">For deep project discussions and formal quotes.</p>
                       <div className="pt-6 flex items-center gap-4 text-green font-bold text-xl">
                         sheunhost@gmail.com <ArrowRight className="group-hover:translate-x-2 transition-transform" />
@@ -238,7 +238,7 @@ export default function Contact() {
 
                 {/* Secondary Contact: WhatsApp */}
                 <motion.a
-                  href="https://wa.me/2348084315743"
+                  href="https://wa.us/2348084315743"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="p-8 bg-light rounded-[40px] border border-navy/5 hover:border-green/50 transition-all group"
@@ -285,7 +285,7 @@ export default function Contact() {
                     </div>
                     <div className="space-y-2">
                       <p className="text-navy font-bold text-xl uppercase tracking-tighter">Fiverr</p>
-                      <p className="text-navy/40 text-sm font-medium tracking-tight">Hire me on Fiverr.</p>
+                      <p className="text-navy/40 text-sm font-medium tracking-tight">Hire us on Fiverr.</p>
                     </div>
                   </div>
                 </motion.a>
@@ -340,7 +340,7 @@ export default function Contact() {
                       >
                         <div className="space-y-6 text-center lg:text-left">
                           <h3 className="text-4xl md:text-5xl font-bold text-navy tracking-tighter leading-none">Start a project.</h3>
-                          <p className="text-navy/50 text-xl font-serif italic leading-relaxed">Tell me about your vision, and let's see how we can make it a reality.</p>
+                          <p className="text-navy/50 text-xl font-serif italic leading-relaxed">Tell us about your vision, and let's see how we can make it a reality.</p>
                         </div>
 
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10">
@@ -440,7 +440,7 @@ export default function Contact() {
                           <div className="space-y-6">
                             <h3 className="text-4xl md:text-5xl lg:text-6xl font-bold text-navy tracking-tighter">Congratulations! Perfectly received.</h3>
                             <p className="text-navy/60 text-xl max-w-lg mx-auto leading-relaxed">
-                              Your message was successfully submitted. A confirmation message from <span className="font-bold">sheunhost@gmail.com</span> will be sent to you shortly. I'm already reviewing your details. Let's make this project a success.
+                              Your message was successfully submitted. A confirmation message from <span className="font-bold">sheunhost@gmail.com</span> will be sent to you shortlyWe'm already reviewing your details. Let's make this project a success.
                             </p>
                           </div>
                         </div>
@@ -499,7 +499,7 @@ export default function Contact() {
                   <span className="italic font-serif font-light text-navy/30">video audit.</span>
                 </h2>
                 <p className="text-navy/50 text-2xl font-serif italic leading-snug">
-                  Not sure what's broken? Send me your link and I'll record a personalized 5-minute audit of your conversion leaks.
+                  Not sure what's broken? Send us your link and we'll record a personalized 5-minute audit of your conversion leaks.
                 </p>
               </div>
               <div className="flex flex-wrap gap-8">
@@ -560,7 +560,7 @@ export default function Contact() {
                         {isAuditSubmitting ? (
                           <div className="w-8 h-8 border-4 border-navy/20 border-t-navy rounded-full animate-spin" />
                         ) : (
-                          <>Claim My Free Audit <Gift size={24} /></>
+                          <>Claim Our Free Audit <Gift size={24} /></>
                         )}
                       </button>
                       <p className="text-white/20 text-xs text-center font-serif italic">Limited to 5 stores per week. No commitment required.</p>
@@ -578,7 +578,7 @@ export default function Contact() {
                       <div className="space-y-6">
                         <h3 className="text-4xl md:text-5xl font-bold tracking-tight">Congratulations! Audit Claimed!</h3>
                         <p className="text-white/60 text-lg leading-relaxed">
-                          Your request was successfully submitted. A confirmation from <span className="font-bold">sheunhost@gmail.com</span> will be sent to you shortly. I'll have your video ready and sent to your inbox within 24-48 hours. Here's what's next:
+                          Your request was successfully submitted. A confirmation from <span className="font-bold">sheunhost@gmail.com</span> will be sent to you shortlyWe'll have your video ready and sent to your inbox within 24-48 hours. Here's what's next:
                         </p>
                         <div className="flex flex-col gap-3 text-left max-w-xs mx-auto text-white/60 text-xs">
                           <div className="flex items-center gap-3">

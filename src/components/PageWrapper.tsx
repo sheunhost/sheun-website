@@ -29,8 +29,8 @@ export default function PageWrapper({
   const scaleX = useSpring(scrollYProgress, { stiffness: 100, damping: 30, restDelta: 0.001 });
   
   // If title is explicitly provided, use it. Otherwise, fallback to the default global title.
-  const fullTitle = title ? title : "Shopify Development & Growth by Sheun | Sheun Hub";
-  const defaultDesc = "Professional Shopify Expert Portfolio for Sheun Hub. High-converting store builds, custom development, and eCommerce growth by Sheun.";
+  const fullTitle = title ? title : "Shopify Development & Growth by Sheun Hub | Sheun Hub";
+  const defaultDesc = "Professional Shopify Expert Portfolio for Sheun Hub. High-converting store builds, custom development, and eCommerce growth by Sheun Hub.";
   const defaultImage = "https://i.postimg.cc/wxQgVCcf/1000031270-removebg-preview.png";
   const ogImage = image || defaultImage;
   

@@ -14,7 +14,7 @@ async function startServer() {
   app.use(express.json());
 
   // Health check and Config verify (Censored)
-  app.get("/api/newsletter/status", (req, res) => {
+  app.get("/api/connect/status", (req, res) => {
     res.json({
       configured: !!process.env.MAILCHIMP_API_KEY && !!process.env.MAILCHIMP_LIST_ID,
       apiKeyPresent: !!process.env.MAILCHIMP_API_KEY,
@@ -27,7 +27,7 @@ async function startServer() {
 
   // Mailchimp API Endpoints
   // ... (unchanged mailchimp endpoints)
-  app.post("/api/newsletter/subscribe", async (req, res) => {
+  app.post("/api/connect/subscribe", async (req, res) => {
     const { email, firstName, lastName } = req.body;
     console.log(`[Mailchimp] Subscription request for: ${email}`);
 

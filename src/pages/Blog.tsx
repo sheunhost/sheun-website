@@ -93,7 +93,7 @@ export default function Blog() {
       schema={{
         "@context": "https://schema.org",
         "@type": "Blog",
-        "name": "Shopify eCommerce Blog by Sheun",
+        "name": "Shopify eCommerce Blog by Sheun Hub",
         "description": "Read the Sheun Hub blog for the latest strategies on Shopify SEO, store migrations, custom liquid developments, and dropshipping.",
         "url": "https://sheun.online/blog"
       }}

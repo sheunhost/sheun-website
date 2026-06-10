@@ -125,7 +125,7 @@ export default function Apply() {
 
       if (data.success) {
         // 2. Submit to Mailchimp (Background)
-        fetch("/api/newsletter/subscribe", {
+        fetch("/api/connect/subscribe", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({

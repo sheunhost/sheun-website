@@ -12,7 +12,7 @@ const services = [
     icon: Layout,
     title: "Shopify Store Setup",
     desc: "Complete Shopify store setup from scratch — theme, products, payments, and launch-ready configuration.",
-    fullDesc: "Launch your brand with a professional, high-converting Shopify store. I handle everything from theme selection and customization to essential app integrations and payment gateway setup.",
+    fullDesc: "Launch your brand with a professional, high-converting Shopify store. We handle everything from theme selection and customization to essential app integrations and payment gateway setup.",
     includes: ["Theme setup", "Product upload", "Payment gateway", "Domain setup"],
     price: "Custom Quote",
     timeline: "1-2 Weeks",
@@ -30,7 +30,7 @@ const services = [
     icon: ShoppingCart,
     title: "Dropshipping Build",
     desc: "Full dropshipping store for fashion, beauty, pets, or gadgets — supplier integration and conversion-optimized design.",
-    fullDesc: "Start your dropshipping journey with a store built for sales. I integrate reliable suppliers, optimize your product pages for high conversion, and set up automated fulfillment systems.",
+    fullDesc: "Start your dropshipping journey with a store built for salesWe integrate reliable suppliers, optimize your product pages for high conversion, and set up automated fulfillment systems.",
     includes: ["Niche research", "Supplier setup", "Theme customization", "Upsell setup"],
     price: "From $700",
     timeline: "2 Weeks",
@@ -48,7 +48,7 @@ const services = [
     icon: RefreshCw,
     title: "Store Migration",
     desc: "Seamlessly migrate your store from any platform to Shopify without losing data, SEO rankings, or sales momentum.",
-    fullDesc: "Switching platforms shouldn't be scary. I ensure a 100% safe migration of your products, customers, orders, and most importantly, your SEO rankings.",
+    fullDesc: "Switching platforms shouldn't be scaryWe ensure a 100% safe migration of your products, customers, orders, and most importantly, your SEO rankings.",
     includes: ["Product/order migration", "URL redirects", "SEO preservation", "Testing"],
     price: "$500",
     timeline: "2-3 Weeks",
@@ -66,7 +66,7 @@ const services = [
     icon: Palette,
     title: "Custom Liquid Dev",
     desc: "Bespoke Shopify store using premium themes — fully tailored to your brand identity with custom Liquid code.",
-    fullDesc: "Go beyond standard theme limitations. I build custom Liquid sections, unique product page features, and complex logic that sets your store apart from the competition.",
+    fullDesc: "Go beyond standard theme limitationsWe build custom Liquid sections, unique product page features, and complex logic that sets your store apart from the competition.",
     includes: ["Color/font branding", "Custom sections", "Mobile optimization", "Speed tuning"],
     price: "Custom Quote",
     timeline: "2-4 Weeks",
@@ -102,7 +102,7 @@ const services = [
     icon: Bug,
     title: "Bug Fixing",
     desc: "Fast resolution of any Shopify errors, broken layouts, app conflicts, or checkout issues.",
-    fullDesc: "Don't let technical glitches kill your sales. I provide rapid response support to fix layout issues, broken apps, and checkout errors that affect your bottom line.",
+    fullDesc: "Don't let technical glitches kill your salesWe provide rapid response support to fix layout issues, broken apps, and checkout errors that affect your bottom line.",
     includes: ["Bug diagnosis", "Fix + Test", "Ongoing support options"],
     price: "Custom Quote",
     timeline: "24-48 Hours",
@@ -120,7 +120,7 @@ const services = [
     icon: Search,
     title: "SEO Optimization",
     desc: "Shopify-specific SEO setup to improve your Google rankings and drive organic traffic.",
-    fullDesc: "Traffic is useless if it's not the right kind. I optimize your Shopify store's technical SEO, metadata, and site structure to help you rank for the keywords that actually convert.",
+    fullDesc: "Traffic is useless if it's not the right kindWe optimize your Shopify store's technical SEO, metadata, and site structure to help you rank for the keywords that actually convert.",
     includes: ["Meta tags", "URL structure", "Image alt text", "Schema markup"],
     price: "Custom Quote",
     timeline: "1-2 Weeks",
@@ -138,7 +138,7 @@ const services = [
     icon: Target,
     title: "Conversion Rate Optimization (CRO)",
     desc: "A deep, data-driven analysis of your store's user behavior, providing a strategic roadmap of UI/UX improvements to increase your sales without increasing traffic.",
-    fullDesc: "Increase your sales without increasing traffic. I perform a deep, data-driven analysis of your store's user behavior and provide a strategic roadmap of UI/UX improvements.",
+    fullDesc: "Increase your sales without increasing trafficWe perform a deep, data-driven analysis of your store's user behavior and provide a strategic roadmap of UI/UX improvements.",
     includes: ["UX Audit", "A/B Testing", "Heatmap Analysis", "Funnel Optimization"],
     price: "$800",
     timeline: "3 Weeks",
@@ -174,7 +174,7 @@ const services = [
     icon: Zap,
     title: "Speed Optimization",
     desc: "Lightning-fast page loads to improve Google rankings and customer retention.",
-    fullDesc: "Every second of delay costs you sales. I optimize your theme code, compress assets, and prune heavy apps to get your store to a 90+ score on Core Web Vitals.",
+    fullDesc: "Every second of delay costs you salesWe optimize your theme code, compress assets, and prune heavy apps to get your store to a 90+ score on Core Web Vitals.",
     includes: ["Core Web Vitals", "Image optimization", "Code minification", "App audit"],
     price: "$400",
     timeline: "1 Week",
@@ -191,8 +191,8 @@ const services = [
 
 const faqs = [
   { q: "How long does a Shopify store build take?", a: "Typically, a complete store build takes between 5 to 10 days depending on the complexity and number of products." },
-  { q: "What platforms can you migrate from?", a: "I can migrate from WooCommerce, Wix, Squarespace, BigCommerce, and custom-built platforms." },
-  { q: "Do you offer ongoing support after launch?", a: "Absolutely. I offer maintenance packages and support to ensure your store continues to run smoothly after launch." },
+  { q: "What platforms can you migrate from?", a: "We can migrate from WooCommerce, Wix, Squarespace, BigCommerce, and custom-built platforms." },
+  { q: "Do you offer ongoing support after launch?", a: "AbsolutelyWe offer maintenance packages and support to ensure your store continues to run smoothly after launch." },
   { q: "What's included in the free store audit?", a: "The audit includes a review of your store's speed, design/UX, SEO health, and conversion rate optimization tips." },
 ];
 
@@ -350,7 +350,7 @@ export default function Services() {
     <PageWrapper 
       title="Shopify Development Services | Sheun Hub" 
       description="Professional Shopify services: store builds, redesigns, dropshipping setup, migrations, and CRO. Ready to scale your e-commerce sales? View our services!"
-      keywords="Shopify Services, Store Setup, Shopify Migration, Theme Customization, E-commerce SEO, Convertion Rate Optimization, shopify dropshipping expert, hire shopify seo expert, shopify experts, shopify freelancer, hire someone to build shopify store, shopify migration, shopify migration agency, shopify migration experts, build shopify store for me, shopify web designer, shopify developers, shopify website designer, shopify agency, hire shopify expert, shopify consultant, freelance shopify developer, shopify website designers, magento to shopify migration, shopify designers, shopify website design company, shopify developers for hire, shopify marketing experts, shopify website experts, shopify seo expert, shopify expert agency, shopify agency partners, shopify migration services, hire someone to set up shopify store, woocommerce to shopify migration, shopify coding expert, web designer for shopify, shopify freelance developer, shopify designer freelance, migrate woocommerce to shopify, shopify developer agency, shopify plus experts, shopify design experts, shopify expert help, certified shopify expert, shopify expert website builder, shopify developer hire, shopify store expert, freelance shopify website designer, hire someone to build my shopify store, shopify web agency, find shopify experts, shopify to bigcommerce migration, migrate from shopify to bigcommerce, wordpress to shopify migration, bigcommerce to shopify migration, shopify consultation, shopify seo specialist, shopify professionals, shopify expert hire, hire expert shopify, shopify development service, best shopify website designers, best shopify agency, shopify experts seo, shopify expert developer, shopify ecommerce experts, hire a shopify seo expert"
+      keywords="Shopify Services, Store Setup, Shopify Migration, Theme Customization, E-commerce SEO, Convertion Rate Optimization, shopify dropshipping expert, hire shopify seo expert, shopify experts, shopify freelancer, hire someone to build shopify store, shopify migration, shopify migration agency, shopify migration experts, build shopify store for us, shopify web designer, shopify developers, shopify website designer, shopify agency, hire shopify expert, shopify consultant, freelance shopify developer, shopify website designers, magento to shopify migration, shopify designers, shopify website design company, shopify developers for hire, shopify marketing experts, shopify website experts, shopify seo expert, shopify expert agency, shopify agency partners, shopify migration services, hire someone to set up shopify store, woocommerce to shopify migration, shopify coding expert, web designer for shopify, shopify freelance developer, shopify designer freelance, migrate woocommerce to shopify, shopify developer agency, shopify plus experts, shopify design experts, shopify expert help, certified shopify expert, shopify expert website builder, shopify developer hire, shopify store expert, freelance shopify website designer, hire someone to build our shopify store, shopify web agency, find shopify experts, shopify to bigcommerce migration, migrate from shopify to bigcommerce, wordpress to shopify migration, bigcommerce to shopify migration, shopify consultation, shopify seo specialist, shopify professionals, shopify expert hire, hire expert shopify, shopify development service, best shopify website designers, best shopify agency, shopify experts seo, shopify expert developer, shopify ecommerce experts, hire a shopify seo expert"
       canonical="/services"
       schema={{
          "@context": "https://schema.org",
@@ -398,7 +398,7 @@ export default function Services() {
               className="flex flex-col md:flex-row items-start md:items-center gap-12"
             >
               <p className="text-white/60 text-2xl leading-relaxed max-w-2xl font-serif italic">
-                Whether you're starting from scratch or scaling an existing store — I provide the technical expertise to make it happen.
+                Whether you're starting from scratch or scaling an existing store — we provide the technical expertise to make it happen.
               </p>
               <div className="inline-flex items-center gap-4 bg-green/10 border border-green/20 px-10 py-5 rounded-full">
                 <Gift className="text-green" size={24} />
@@ -481,7 +481,7 @@ export default function Services() {
                         {/* Scope */}
                         <div className="space-y-3">
                           <h4 className="text-[10px] font-bold uppercase tracking-[0.2em] text-navy/40 flex items-center gap-2">
-                            <span className="w-1.5 h-1.5 bg-green rounded-full" /> My Solution (Scope)
+                            <span className="w-1.5 h-1.5 bg-green rounded-full" /> Our Solution (Scope)
                           </h4>
                           <p className="text-navy/70 leading-relaxed font-medium">
                             {data.scope}
@@ -729,12 +729,12 @@ export default function Services() {
                   <h2 className="text-5xl font-bold text-navy tracking-tight">Common <br />Questions.</h2>
                 </div>
                 <p className="text-navy/40 text-lg leading-relaxed">
-                  Everything you need to know about working with me on your Shopify project.
+                  Everything you need to know about working with us on your Shopify project.
                 </p>
                 <div className="bg-light p-8 rounded-xl border border-navy/5 space-y-4">
                   <MessageSquare className="text-green" size={32} />
                   <h4 className="text-xl font-bold text-navy">Still have questions?</h4>
-                  <p className="text-navy/40 text-sm">I'm here to help. Let's chat about your specific needs.</p>
+                  <p className="text-navy/40 text-sm">We'm here to help. Let's chat about your specific needs.</p>
                   <button 
                     onClick={() => navigate("/apply#apply-form")} 
                     className="inline-block text-navy font-bold text-sm border-b-2 border-green pb-1 text-left"
@@ -854,18 +854,18 @@ export default function Services() {
             <div className="max-w-4xl mx-auto prose prose-lg prose-headings:text-navy prose-a:text-green text-navy/70 leading-relaxed">
               <h2 className="text-3xl md:text-4xl font-bold font-sans not-italic mb-6 tracking-tight">Expert Custom Shopify Development Services</h2>
               <p className="mb-6 font-serif italic text-xl">
-                In today's competitive digital landscape, a generic store won't cut it. Whether you are an ambitious e-commerce owner looking to scale globally or a local retailer ready to take your physical storefront online, a fast, conversion-optimized Shopify site is paramount. As a dedicated Shopify developer and e-commerce growth expert, I deliver end-to-end custom development tailored to high-growth brands in fashion, beauty, gadgets, and pet supply niches.
+                In today's competitive digital landscape, a generic store won't cut it. Whether you are an ambitious e-commerce owner looking to scale globally or a local retailer ready to take your physical storefront online, a fast, conversion-optimized Shopify site is paramount. As a dedicated Shopify developer and e-commerce growth expert, we deliver end-to-end custom development tailored to high-growth brands in fashion, beauty, gadgets, and pet supply niches.
               </p>
               <h3 className="text-2xl font-bold font-sans not-italic mt-12 mb-4 tracking-tight">Built for Performance & Conversion</h3>
               <p className="mb-4">
-                My approach to <strong>Shopify Store Setup</strong> and <strong>Custom Liquid Development</strong> ensures that your website is not only visually stunning but technically flawless. A standard theme installation might get you started, but to truly dominate your market, you need a store engineered for performance. I build highly responsive dropshipping layouts, integrate essential third-party apps seamlessly without bloat, and write bespoke Liquid code to accommodate your unique business logic. This level of customization allows you to offer personalized shopping experiences that drive customer loyalty and increase your Average Order Value (AOV).
+                Our approach to <strong>Shopify Store Setup</strong> and <strong>Custom Liquid Development</strong> ensures that your website is not only visually stunning but technically flawless. A standard theme installation might get you started, but to truly dominate your market, you need a store engineered for performanceWe build highly responsive dropshipping layouts, integrate essential third-party apps seamlessly without bloat, and write bespoke Liquid code to accommodate your unique business logic. This level of customization allows you to offer personalized shopping experiences that drive customer loyalty and increase your Average Order Value (AOV).
               </p>
               <p className="mb-4">
-                If you are struggling with a clunky platform, my <strong>E-commerce Platform Integration</strong> and migration services guarantee a smooth transition. Transitioning from WooCommerce, Wix, or BigCommerce to Shopify can seem intimidating, but I carefully map your products, customers, and order history while meticulously preserving your SEO rankings via proper 301 redirects. You won't lose your hard-earned domain authority.
+                If you are struggling with a clunky platform, our <strong>E-commerce Platform Integration</strong> and migration services guarantee a smooth transition. Transitioning from WooCommerce, Wix, or BigCommerce to Shopify can seem intimidating, but we carefully map your products, customers, and order history while meticulously preserving your SEO rankings via proper 301 redirects. You won't lose your hard-earned domain authority.
               </p>
               <h3 className="text-2xl font-bold font-sans not-italic mt-12 mb-4 tracking-tight">Driving Traffic & Growth</h3>
               <p className="mb-4">
-                Through comprehensive <strong>Shopify SEO Optimization</strong>, I refine your site's architecture, optimize meta tags, and deploy schema markup so that your store ranks for buyer-intent keywords effortlessly. Coupled with rigorous <strong>Conversion Rate Optimization (CRO)</strong> audits and <strong>Shopify Speed Optimization</strong>, we ensure your pages load in under 3 seconds to convert browsers into loyal buyers. Focus on growing your product line, and leave the technical heavy lifting to a trusted Shopify expert.
+                Through comprehensive <strong>Shopify SEO Optimization</strong>, we refine your site's architecture, optimize meta tags, and deploy schema markup so that your store ranks for buyer-intent keywords effortlessly. Coupled with rigorous <strong>Conversion Rate Optimization (CRO)</strong> audits and <strong>Shopify Speed Optimization</strong>, we ensure your pages load in under 3 seconds to convert browsers into loyal buyers. Focus on growing your product line, and leave the technical heavy lifting to a trusted Shopify expert.
               </p>
             </div>
           </div>
@@ -890,7 +890,7 @@ export default function Services() {
                 Free Store <span className="text-green italic font-serif font-light lowercase">Audit.</span>
               </h2>
               <p className="text-white/60 text-2xl md:text-3xl max-w-3xl mx-auto leading-relaxed font-serif italic">
-                Not sure where to start? I'll review your store and send you a growth tips report — completely free.
+                Not sure where to startWe'll review your store and send you a growth tips report — completely free.
               </p>
               <div className="flex flex-col sm:flex-row items-center justify-center gap-12">
                 <button 
@@ -909,7 +909,7 @@ export default function Services() {
                 <a href="https://www.linkedin.com/in/sheun-hub-26b876321" target="_blank" rel="noopener noreferrer" className="p-4 bg-white/10 hover:bg-green hover:text-navy text-white rounded-full transition-all border border-white/10 flex items-center justify-center shrink-0 overflow-hidden">
                   <img src="https://images.rawpixel.com/image_png_social_square/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvdjk4Mi1kMS0xMC5wbmc.png" alt="LinkedIn" className="w-6 h-6 object-contain" />
                 </a>
-                <a href="https://wa.me/2348084315743" target="_blank" rel="noopener noreferrer" className="p-4 bg-white/10 hover:bg-green hover:text-navy text-white rounded-full transition-all border border-white/10 flex items-center justify-center shrink-0 overflow-hidden">
+                <a href="https://wa.us/2348084315743" target="_blank" rel="noopener noreferrer" className="p-4 bg-white/10 hover:bg-green hover:text-navy text-white rounded-full transition-all border border-white/10 flex items-center justify-center shrink-0 overflow-hidden">
                   <img src="https://cdn-icons-png.flaticon.com/512/3670/3670051.png" alt="WhatsApp" className="w-6 h-6 object-contain" />
                 </a>
                 <a href="mailto:sheunhost@gmail.com" className="p-4 bg-white/10 hover:bg-green hover:text-navy text-white rounded-full transition-all border border-white/10 flex items-center justify-center shrink-0">

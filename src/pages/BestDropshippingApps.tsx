@@ -220,7 +220,7 @@ export default function BestDropshippingApps() {
                 <img src="https://ui-avatars.com/api/?name=Sheun+Hub&background=10b981&color=fff" alt="Sheun" className="w-20 h-20 rounded-full shadow-lg object-cover relative z-10 border-2 border-white" referrerPolicy="no-referrer" />
               </div>
               <div>
-                <p className="font-bold text-navy text-xl group-hover:text-green transition-colors leading-tight">By Sheun</p>
+                <p className="font-bold text-navy text-xl group-hover:text-green transition-colors leading-tight">By Sheun Hub</p>
                 <p className="text-sm text-navy/50 uppercase tracking-widest font-bold mb-1">Shopify Expert & Developer</p>
                 <span className="text-navy font-bold text-sm flex items-center gap-2 group-hover:translate-x-1 transition-transform">View Portfolio & Contact <ArrowRight size={14} /></span>
               </div>

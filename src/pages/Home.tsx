@@ -74,7 +74,7 @@ const testimonials = [
   {
     name: "Sarah Jenkins",
     role: "Founder, Glow Beauty",
-    content: "Sheun completely transformed our Shopify store. Our conversion rate doubled in the first month after the redesign!",
+    content: "Sheun Hub completely transformed our Shopify store. Our conversion rate doubled in the first month after the redesign!",
     image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80&w=200",
     rating: 5
   },
@@ -102,7 +102,7 @@ const testimonials = [
   {
     name: "Lisa Wong",
     role: "Founder, PetPalace",
-    content: "Sheun is a Liquid genius. He built custom features that we thought were impossible on Shopify.",
+    content: "The Sheun Hub team are Liquid experts. They built custom features that we thought were impossible on Shopify.",
     image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=200",
     rating: 5
   },
@@ -123,7 +123,7 @@ const testimonials = [
   {
     name: "Oliver Wright",
     role: "CEO, NextGen Electronics",
-    content: "Sheun optimized our checkout flow and the results were immediate. Cart abandonment dropped significantly.",
+    content: "Sheun Hub optimized our checkout flow and the results were immediate. Cart abandonment dropped significantly.",
     image: "https://images.unsplash.com/photo-1519345182560-3f2917c472ef?auto=format&fit=crop&q=80&w=200",
     rating: 4
   },
@@ -540,7 +540,7 @@ export default function Home() {
 
       if (data.success) {
         // 2. Submit to Mailchimp (Background)
-        fetch("/api/newsletter/subscribe", {
+        fetch("/api/connect/subscribe", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ email })
@@ -600,7 +600,7 @@ export default function Home() {
       if (data.success) {
         // 2. Submit to Mailchimp (Background)
         const name = (formData.get("name") as string) || "";
-        fetch("/api/newsletter/subscribe", {
+        fetch("/api/connect/subscribe", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({
@@ -634,11 +634,11 @@ export default function Home() {
         "@context": "https://schema.org",
         "@type": "ProfilePage",
         "name": "Shopify Developer & Growth Expert - Sheun Hub",
-        "description": "Scale your brand with Sheun, a specialist in Custom Shopify Development and E-commerce Growth. Maximize revenue with highly optimized store builds.",
+        "description": "Scale your brand with our team of specialists in Custom Shopify Development and E-commerce Growth. Maximize revenue with highly optimized store builds.",
         "url": "https://sheun.online",
         "mainEntity": {
           "@type": "Person",
-          "name": "Sheun",
+          "name": "Sheun Hub",
           "jobTitle": "Shopify Developer & Growth Expert",
           "url": "https://sheun.online",
           "sameAs": [
@@ -709,7 +709,7 @@ export default function Home() {
                   animate={{ opacity: 0.4, x: 0 }}
                   transition={{ delay: 0.4 }}
                 >
-                  by Sheun.
+                  by Sheun Hub.
                 </motion.span>
               </h1>
 
@@ -733,7 +733,7 @@ export default function Home() {
               </div>
 
                 <p className="text-white/60 text-xl md:text-2xl max-w-xl leading-relaxed font-light font-serif italic">
-                  Scale your brand with Sheun, a specialist in Custom Shopify Development and E-commerce Growth. From custom theme builds to technical store optimization, Sheun Hub helps businesses maximize revenue on the Shopify platform.
+                  Scale your brand with our team of specialists in Custom Shopify Development and E-commerce Growth. From custom theme builds to technical store optimization, Sheun Hub helps businesses maximize revenue on the Shopify platform.
                 </p>
             </motion.div>
 
@@ -785,7 +785,7 @@ export default function Home() {
               >
                 <img 
                   src="https://mapplinks.com/wp-content/uploads/2020/06/screen1.png" 
-                  alt="Sheun - Shopify Development and Growth Expert" 
+                  alt="Sheun Hub - Shopify Development and Growth Expert" 
                   referrerPolicy="no-referrer"
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-[2s]" 
                   loading="lazy" 
@@ -796,7 +796,7 @@ export default function Home() {
                     {[...Array(5)].map((_, i) => <Star key={i} size={12} className="fill-green text-green" />)}
                   </div>
                   <h3 className="text-white font-bold text-4xl tracking-tighter leading-none">Top Rated <br />Shopify Expert.</h3>
-                  <p className="text-white/60 text-lg font-serif italic">Top Rated Upwork Freelancer</p>
+                  <p className="text-white/60 text-lg font-serif italic">Top Rated Upwork Agency</p>
                   
                   <div className="flex gap-4 pt-4 border-t border-white/10">
                     <a href="https://www.linkedin.com/in/sheun-hub-26b876321" target="_blank" rel="noopener noreferrer" className="p-2 bg-white/5 hover:bg-green hover:text-navy rounded-full text-white transition-all flex items-center justify-center overflow-hidden" title="LinkedIn">
@@ -805,7 +805,7 @@ export default function Home() {
                     <a href="https://www.upwork.com/freelancers/~017eb19011cd354946" target="_blank" rel="noopener noreferrer" className="p-2 bg-white/5 hover:bg-green hover:text-navy rounded-full text-white transition-all flex items-center justify-center overflow-hidden" title="Upwork">
                       <img src="https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/upwork-icon.png" alt="Upwork" className="w-5 h-5 object-contain" />
                     </a>
-                    <a href="https://wa.me/2348084315743" target="_blank" rel="noopener noreferrer" className="p-2 bg-white/5 hover:bg-green hover:text-navy rounded-full text-white transition-all flex items-center justify-center overflow-hidden" title="WhatsApp">
+                    <a href="https://wa.us/2348084315743" target="_blank" rel="noopener noreferrer" className="p-2 bg-white/5 hover:bg-green hover:text-navy rounded-full text-white transition-all flex items-center justify-center overflow-hidden" title="WhatsApp">
                       <img src="https://cdn-icons-png.flaticon.com/512/3670/3670051.png" alt="WhatsApp" className="w-5 h-5 object-contain" />
                     </a>
                     <a href="mailto:sheunhost@gmail.com" className="p-2 bg-white/5 hover:bg-green hover:text-navy rounded-full text-white transition-all flex items-center justify-center overflow-hidden" title="Email">
@@ -856,7 +856,7 @@ export default function Home() {
                 Scale Your <span className="italic font-serif font-light text-navy/40">Sales</span>.
               </h2>
               <p className="text-navy/60 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed">
-                Enter your store details below and I will personally review your site and send you a custom, 3-step action plan to increase your conversion rate.
+                Enter your store details below and we will personally review your site and send you a custom, 3-step action plan to increase your conversion rate.
               </p>
             </div>
 
@@ -908,7 +908,7 @@ export default function Home() {
                     ) : (
                       <>
                         <Zap size={20} />
-                        Get My Free Growth Plan
+                        Get Our Free Growth Plan
                       </>
                     )}
                   </button>
@@ -923,7 +923,7 @@ export default function Home() {
                   </div>
                   <h3 className="text-3xl font-bold text-navy tracking-tight">Congratulations! Request Received!</h3>
                   <p className="text-navy/60 text-lg max-w-md mx-auto leading-relaxed">
-                    Your form was submitted. You will receive a message with further steps from <span className="font-bold">sheunhost@gmail.com</span> shortly. I will review your store and email your custom Growth Plan within 24-48 hours. Let's scale your brand!
+                    Your form was submitted. You will receive a message with further steps from <span className="font-bold">sheunhost@gmail.com</span> shortly. We will review your store and email your custom Growth Plan within 24-48 hours. Let's scale your brand!
                   </p>
                 </div>
               )}
@@ -936,7 +936,7 @@ export default function Home() {
               <div className="space-y-4 text-center md:text-left relative z-10">
                 <h4 className="text-3xl font-bold text-white tracking-tight">Want to talk immediately?</h4>
                 <p className="text-white/60 text-lg max-w-lg font-serif italic">
-                  Skip the line and book a free 1-on-1 strategy call with me to discuss your custom store build.
+                  Skip the line and book a free 1-on-1 strategy call with us to discuss your custom store build.
                 </p>
               </div>
               <button onClick={openCalendlyPopup} className="shrink-0 relative z-10 bg-green text-navy px-10 py-5 rounded-full font-bold text-lg hover:scale-105 transition-all duration-300 shadow flex items-center gap-3 w-full md:w-auto justify-center cursor-pointer">
@@ -973,7 +973,7 @@ export default function Home() {
               {
                 title: "Store Setup",
                 desc: "Launch your brand instantly with a high-converting, deeply optimized Shopify store designed to maximize sales from day one.",
-                fullDesc: "Launch your brand with a professional, high-converting Shopify store. I handle everything from theme selection and customization to essential app integrations and payment gateway setup.",
+                fullDesc: "Launch your brand with a professional, high-converting Shopify store. We handle everything from theme selection and customization to essential app integrations and payment gateway setup.",
                 icon: ShoppingBag,
                 tags: ["Dropshipping", "Branding", "Launch"],
                 timeline: "1-2 Weeks",
@@ -989,7 +989,7 @@ export default function Home() {
               {
                 title: "Custom Dev",
                 desc: "Increase conversion rates with bespoke features, custom checkout logic, and lightning-fast custom Liquid coding.",
-                fullDesc: "Go beyond standard theme limitations. I build custom Liquid sections, unique product page features, and complex logic that sets your store apart from the competition.",
+                fullDesc: "Go beyond standard theme limitationsWe build custom Liquid sections, unique product page features, and complex logic that sets your store apart from the competition.",
                 icon: Code2,
                 tags: ["Liquid", "API", "Performance"],
                 timeline: "2-4 Weeks",
@@ -1005,7 +1005,7 @@ export default function Home() {
               {
                 title: "Migrations",
                 desc: "Safely upgrade to Shopify with absolutely zero downtime, preserving your hard-earned SEO rankings and customer data.",
-                fullDesc: "Switching platforms shouldn't be scary. I ensure a 100% safe migration of your products, customers, orders, and most importantly, your SEO rankings.",
+                fullDesc: "Switching platforms shouldn't be scaryWe ensure a 100% safe migration of your products, customers, orders, and most importantly, your SEO rankings.",
                 icon: Zap,
 
                 tags: ["Data", "SEO", "Zero Downtime"],
@@ -1189,7 +1189,7 @@ export default function Home() {
               {
                 title: "PET",
                 category: "Pet Supplies",
-                image: "https://m.media-amazon.com/images/I/81Ei5upG6ZL._AC_UF1000,1000_QL80_.jpg",
+                image: "https://m.media-amazon.com/images/we/81Ei5upG6ZL._AC_UF1000,1000_QL80_.jpg",
                 col: "md:col-span-4",
                 height: "h-[700px]"
               },
@@ -1233,7 +1233,7 @@ export default function Home() {
       </section>
     </ScrollReveal>
 
-    {/* Why Partner With Me */}
+    {/* Why Partner With Us */}
     <ScrollReveal>
       <section className="py-32 bg-navy text-white relative overflow-hidden">
         <div className="container mx-auto px-6">
@@ -1244,7 +1244,7 @@ export default function Home() {
                 <span className="text-green italic font-serif font-light">Advantage</span>.
               </h2>
               <p className="text-white/60 text-xl max-w-lg leading-relaxed font-serif italic">
-                I don't just build stores; I build profitable eCommerce systems. Combining deep technical expertise with conversion rate psychology.
+                We don't just build stores; we build profitable eCommerce systems. Combining deep technical expertise with conversion rate psychology.
               </p>
               
               <div className="space-y-6 pt-4">
@@ -1298,7 +1298,7 @@ export default function Home() {
                   <span className="italic font-serif font-light text-navy/40">Your Project</span>.
                 </h2>
                 <p className="text-navy/60 text-xl leading-relaxed max-w-md">
-                  Ready to transform your eCommerce presence? Fill out the form and I'll get back to you within 24 hours.
+                  Ready to transform your eCommerce presence? Fill out the form and we'll get back to you within 24 hours.
                 </p>
               </div>
 
@@ -1331,7 +1331,7 @@ export default function Home() {
                 <div className="relative z-10 space-y-4">
                   <h4 className="text-xl font-bold">Free Growth Plan</h4>
                   <p className="text-white/40 text-sm leading-relaxed">
-                    Not sure what your store needs? I'll provide a comprehensive review of your speed, design, and SEO — completely free.
+                    Not sure what your store needsWe'll provide a comprehensive review of your speed, design, and SEO — completely free.
                   </p>
                   <Link to="/contact#contact-form" className="inline-flex items-center gap-2 text-green font-bold text-sm border-b border-green/20 pb-1 hover:border-green transition-all">
                     Claim Your Growth Plan <ArrowRight size={16} />
@@ -1397,7 +1397,7 @@ export default function Home() {
                           required
                           name="message"
                           rows={5}
-                          placeholder="Tell me about your project goals..."
+                          placeholder="Tell us about your project goals..."
                           className="w-full bg-white border-b-2 border-navy/5 rounded-2xl py-6 px-8 focus:border-green outline-none transition-all resize-none font-medium text-navy placeholder:text-navy/20"
                         />
                       </div>
@@ -1428,7 +1428,7 @@ export default function Home() {
                       <div className="space-y-4">
                         <h3 className="text-3xl lg:text-4xl font-bold text-navy uppercase tracking-tight">Congratulations! Message Received.</h3>
                         <p className="text-navy/60 text-lg max-w-sm mx-auto leading-relaxed">
-                          Your message has been submitted. A response will be sent to you through <span className="font-bold">sheunhost@gmail.com</span> shortly.  I'll review your inquiry and get back to you personally within 24 hours.
+                          Your message has been submitted. A response will be sent to you through <span className="font-bold">sheunhost@gmail.com</span> shortly. We'll review your inquiry and get back to you personally within 24 hours.
                         </p>
                       </div>
                       <button
@@ -1512,7 +1512,7 @@ export default function Home() {
                 )}
               </AnimatePresence>
               <p className="text-[10px] font-bold text-navy/40 uppercase tracking-widest mt-4 text-center md:text-left">
-                100% Privacy. I respect your data.
+                100% Privacy. We respect your data.
               </p>
             </div>
           </div>
