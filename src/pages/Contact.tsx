@@ -11,6 +11,7 @@ export default function Contact() {
   const [isAuditSuccess, setIsAuditSuccess] = useState(false);
   const [isAuditSubmitting, setIsAuditSubmitting] = useState(false);
   const [errors, setErrors] = useState<Record<string, string>>({});
+  const [submissionError, setSubmissionError] = useState<string | null>(null);
   const [activeTooltip, setActiveTooltip] = useState<string | null>(null);
 
   const validateForm = (formData: FormData, type: 'contact' | 'audit' = 'contact') => {
@@ -73,6 +74,7 @@ export default function Contact() {
       setIsAuditSubmitting(true);
     }
     formData.append("access_key", "c0573f7d-6191-4374-bc31-ee70ee9fa226");
+    setSubmissionError(null);
 
     try {
       // 1. Submit to Web3Forms for email notification
@@ -116,11 +118,11 @@ export default function Contact() {
         form.reset();
       } else {
         console.error("Error submitting form", data);
-        alert("Something went wrong. Please try again.");
+        setSubmissionError("Something went wrong with the submission. Please try again.");
       }
     } catch (error) {
       console.error("Error submitting form", error);
-      alert("Something went wrong. Please try again.");
+      setSubmissionError("Failed to reach the server. Please check your connection and try again.");
     } finally {
       if (type === 'contact') setIsSubmitting(false);
       else setIsAuditSubmitting(false);
@@ -129,9 +131,9 @@ export default function Contact() {
 
   return (
     <PageWrapper 
-      title="Contact Sheun | Shopify Developer" 
-      description="Have a question about Shopify development or e-commerce growth? Reach out to Sheun today for expert advice and technical solutions. Contact us now!"
-      keywords="Contact Shopify Expert, Free Shopify Audit, E-commerce Consultation, Shopify Freelancer Contact, Hire Shopify Developer"
+      title="Contact Sheun | Certified Shopify Partner & SEO Specialist" 
+      description="Get a premium Shopify store build, custom theme, technical SEO audit, or a WooCommerce-to-Shopify migration project started. Remote partner consulting for the UK, US, Canada, Australia, France, and Germany."
+      keywords="Contact Shopify Expert, Hire Shopify Developer UK, Shopify SEO consultation USA, Shopify migration expert Canada, Free Shopify Audit Australia, Shopify freelancer France, Shopify Partner Germany"
       canonical="/contact"
       schema={{
         "@context": "https://schema.org",
@@ -236,30 +238,12 @@ export default function Contact() {
                   </div>
                 </motion.a>
 
-                {/* Secondary Contact: WhatsApp */}
-                <motion.a
-                  href="https://wa.us/2348084315743"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="p-8 bg-light rounded-[40px] border border-navy/5 hover:border-green/50 transition-all group"
-                >
-                  <div className="space-y-10">
-                    <div className="w-14 h-14 bg-white rounded-2xl flex items-center justify-center shadow-sm group-hover:bg-green transition-colors overflow-hidden">
-                      <img src="https://cdn-icons-png.flaticon.com/512/3670/3670051.png" alt="WhatsApp" className="w-8 h-8 object-contain" />
-                    </div>
-                    <div className="space-y-2">
-                      <p className="text-navy font-bold text-xl uppercase tracking-tighter">WhatsApp</p>
-                      <p className="text-navy/40 text-sm font-medium tracking-tight">Instant chat for quick questions.</p>
-                    </div>
-                  </div>
-                </motion.a>
-
                 {/* Secondary Contact: LinkedIn */}
                 <motion.a
                   href="https://www.linkedin.com/in/sheun-hub-26b876321"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-8 bg-light rounded-[40px] border border-navy/5 hover:border-green/50 transition-all group"
+                  className="sm:col-span-2 p-8 bg-light rounded-[40px] border border-navy/5 hover:border-green/50 transition-all group"
                 >
                   <div className="space-y-10">
                     <div className="w-14 h-14 bg-white rounded-2xl flex items-center justify-center shadow-sm group-hover:bg-green transition-colors overflow-hidden">
@@ -268,24 +252,6 @@ export default function Contact() {
                     <div className="space-y-2">
                       <p className="text-navy font-bold text-xl uppercase tracking-tighter">LinkedIn</p>
                       <p className="text-navy/40 text-sm font-medium tracking-tight">Professional network & insights.</p>
-                    </div>
-                  </div>
-                </motion.a>
-
-                {/* Secondary Contact: Fiverr */}
-                <motion.a
-                  href="https://www.fiverr.com/sheun_h"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="p-8 bg-light rounded-[40px] border border-navy/5 hover:border-green/50 transition-all group"
-                >
-                  <div className="space-y-10">
-                    <div className="w-14 h-14 bg-white rounded-2xl flex items-center justify-center shadow-sm group-hover:bg-green transition-colors overflow-hidden">
-                      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR9zeK0uAVJfpeE1Zx1b3vDoihQGglG3BW2IjvgFTmksQ&s" alt="Fiverr" className="w-8 h-8 object-contain" />
-                    </div>
-                    <div className="space-y-2">
-                      <p className="text-navy font-bold text-xl uppercase tracking-tighter">Fiverr</p>
-                      <p className="text-navy/40 text-sm font-medium tracking-tight">Hire us on Fiverr.</p>
                     </div>
                   </div>
                 </motion.a>
@@ -372,7 +338,7 @@ export default function Contact() {
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10">
                           {/* Phone Field */}
                           <div className="space-y-3">
-                            <label className="text-xs font-bold text-navy/40 uppercase tracking-widest pl-2 block">Phone / WhatsApp</label>
+                            <label className="text-xs font-bold text-navy/40 uppercase tracking-widest pl-2 block">Phone Number</label>
                             <input
                               type="text"
                               name="phone"
@@ -407,7 +373,16 @@ export default function Contact() {
                         </div>
 
                         {/* Submit Button */}
-                        <div className="pt-4">
+                        <div className="pt-4 space-y-6">
+                          {submissionError && (
+                            <motion.div 
+                              initial={{ opacity: 0, height: 0 }}
+                              animate={{ opacity: 1, height: 'auto' }}
+                              className="bg-red-500/10 border border-red-500/20 text-red-500 p-4 rounded-2xl text-sm font-bold flex items-center gap-3"
+                            >
+                              <Info size={18} /> {submissionError}
+                            </motion.div>
+                          )}
                           <button
                             disabled={isSubmitting}
                             className="w-full relative group h-20 md:h-24 overflow-hidden rounded-full transition-all focus:scale-[0.98] shadow-xl hover:shadow-green/20"
@@ -552,6 +527,15 @@ export default function Contact() {
                           {errors.email_audit && <p className="text-red-500 text-[10px] font-bold pl-4">{errors.email_audit}</p>}
                         </div>
                       </div>
+                      {submissionError && (
+                        <motion.div 
+                          initial={{ opacity: 0, height: 0 }}
+                          animate={{ opacity: 1, height: 'auto' }}
+                          className="bg-red-500/10 border border-red-500/20 text-red-500 p-4 rounded-2xl text-sm font-bold flex items-center gap-3"
+                        >
+                          <Info size={18} /> {submissionError}
+                        </motion.div>
+                      )}
                       <button 
                         type="submit" 
                         disabled={isAuditSubmitting}
@@ -610,6 +594,52 @@ export default function Contact() {
         </div>
       </section>
     </ScrollReveal>
+      {/* FAQ Section */}
+      <ScrollReveal>
+        <section className="py-32 bg-white">
+          <div className="container mx-auto px-6">
+            <div className="max-w-4xl mx-auto space-y-20">
+              <div className="text-center space-y-6">
+                <h2 className="text-5xl md:text-7xl font-bold text-navy tracking-tighter">Common Questions.</h2>
+                <p className="text-navy/60 text-xl font-serif italic leading-relaxed">
+                  Everything you need to know before we start your project.
+                </p>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-12">
+                {[
+                  {
+                    q: "How do I get started?",
+                    a: "The first step is to fill out the contact form or store audit request. I'll review your details and send you a custom project proposal within 24 hours."
+                  },
+                  {
+                    q: "How long does a build take?",
+                    a: "A standard custom build typically takes 2 to 4 weeks. Smaller migrations or speed optimizations are often completed in 7 to 10 days."
+                  },
+                  {
+                    q: "What are your rates?",
+                    a: "Projects are quoted as fixed-price based on scope. My goal is to provide a transparent investment with a clear ROI, not unpredictable hourly bills."
+                  },
+                  {
+                    q: "Are you a certified Shopify Partner?",
+                    a: "Yes, I am a registered Shopify Partner with full access to the platform's specialized tools and collaborator channels."
+                  },
+                  {
+                    q: "Do you work with startups?",
+                    a: "Absolutely. I work with both established brands and high-potential startups. If your business plan is solid, I'm happy to help you scale."
+                  }
+                ].map((faq, i) => (
+                  <div key={i} className="space-y-4">
+                    <h3 className="text-xl font-bold text-navy tracking-tight">{faq.q}</h3>
+                    <p className="text-navy/60 leading-relaxed">{faq.a}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+      </ScrollReveal>
+
     </PageWrapper>
   );
 }

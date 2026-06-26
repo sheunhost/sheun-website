@@ -22,12 +22,8 @@ export default function ShopifySEOGuide() {
   const url = encodeURIComponent(window.location.href);
   const title = encodeURIComponent("Shopify SEO in 2026: The Beginner's Complete Guide");
 
-  const handleWhatsAppShare = () => {
-    window.open(`https://wa.me/?text=${title} - ${url}`, "_blank");
-  };
-
-  const handleFacebookShare = () => {
-    window.open(`https://www.facebook.com/sharer/sharer.php?u=${url}`, "_blank");
+  const handleLinkedinShare = () => {
+    window.open(`https://www.linkedin.com/sharing/share-offsite/?url=${url}`, "_blank");
   };
 
   const handleAddComment = (e: React.FormEvent) => {
@@ -47,9 +43,9 @@ export default function ShopifySEOGuide() {
   return (
     <PageWrapper 
       className="pt-32 pb-24 bg-light relative min-h-screen"
-      title="Shopify SEO in 2026: The Beginner's Complete Guide"
-      description="A beginner-friendly complete guide to mastering Shopify SEO. Learn how to rank your eCommerce store through on-page strategies, site speed, and technical optimizations."
-      keywords="Shopify SEO Guide, Rank Shopify Store, Shopify On-page SEO, Store Optimization, eCommerce SEO Strategies"
+      title="Shopify SEO in 2026: Complete Expert Optimization Guide"
+      description="Step-by-step technical and on-page Shopify SEO checklist. Learn to optimize collections, override metadata, configure rich schemas, and drive organic traffic in the UK, US, Canada, Australia, France, and Germany."
+      keywords="Shopify SEO Guide, Shopify SEO expert UK, Shopify SEO specialist USA, technical Shopify SEO Canada, rank Shopify store Australia, Shopify SEO consultant France, Shopify optimization Germany"
       canonical="/blog/shopify-seo-guide-2026"
       schema={{
         "@context": "https://schema.org",
@@ -130,11 +126,8 @@ export default function ShopifySEOGuide() {
               <div className="space-y-4">
                 <p className="text-[10px] font-bold uppercase tracking-[0.3em] text-navy/40">Share the Blueprint</p>
                 <div className="flex gap-4">
-                  <button onClick={handleFacebookShare} className="w-12 h-12 bg-white rounded-2xl flex items-center justify-center text-navy hover:bg-green hover:text-navy transition-all shadow-sm border border-navy/5 overflow-hidden" title="Share on Facebook">
-                    <img src="https://cdn-icons-png.flaticon.com/512/124/124010.png" alt="Facebook" className="w-5 h-5 object-contain" />
-                  </button>
-                  <button onClick={handleWhatsAppShare} className="w-12 h-12 bg-white rounded-2xl flex items-center justify-center text-navy hover:bg-green hover:text-navy transition-all shadow-sm border border-navy/5 overflow-hidden" title="Share on WhatsApp">
-                    <img src="https://cdn-icons-png.flaticon.com/512/3670/3670051.png" alt="WhatsApp" className="w-5 h-5 object-contain" />
+                  <button onClick={handleLinkedinShare} className="w-12 h-12 bg-white rounded-2xl flex items-center justify-center text-navy hover:bg-green hover:text-navy transition-all shadow-sm border border-navy/5 overflow-hidden" title="Share on LinkedIn">
+                    <img src="https://images.rawpixel.com/image_png_social_square/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvdjk4Mi1kMS0xMC5wbmc.png" alt="LinkedIn" className="w-5 h-5 object-contain" />
                   </button>
                 </div>
               </div>
@@ -246,9 +239,9 @@ export default function ShopifySEOGuide() {
               <div className="relative z-10 space-y-8 flex-grow">
                 <h3 className="text-4xl font-bold tracking-tight leading-none uppercase italic">Scale Your <br />Organic Traffic.</h3>
                 <p className="text-lg font-serif italic max-w-md">I help ambitious Shopify brands outrank the giants using data-driven technical SEO strategies.</p>
-                <button onClick={handleWhatsAppContact} className="bg-navy text-white px-10 py-5 rounded-full font-bold flex items-center gap-3 hover:scale-105 transition-all shadow-2xl">
+                <Link to="/apply" className="bg-navy text-white px-10 py-5 rounded-full font-bold flex items-center gap-3 hover:scale-105 transition-all shadow-2xl">
                   Work with Me <ArrowRight size={20} />
-                </button>
+                </Link>
               </div>
               <div className="w-48 h-48 bg-navy/5 rounded-full flex items-center justify-center shrink-0 border border-navy/10 relative z-10">
                 <Globe size={64} className="text-navy group-hover:rotate-12 transition-transform duration-500" />

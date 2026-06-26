@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { Clock, Calendar, ArrowLeft, ArrowRight, CheckCircle2, ShieldCheck, TrendingUp, AlertTriangle, Database, RefreshCw, Link as LinkIcon, Search, ListChecks, ArrowDownToLine, Terminal, Smartphone, Send } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
+import PageWrapper from "../components/PageWrapper";
 
 export default function WooCommerceToShopifyMigration() {
   const [comments, setComments] = useState<{name: string, text: string}[]>(() => {
@@ -20,15 +21,6 @@ export default function WooCommerceToShopifyMigration() {
 
   const url = encodeURIComponent(window.location.href);
   const title = encodeURIComponent("How to Migrate from WooCommerce to Shopify Without Losing SEO");
-
-  const handleWhatsAppShare = () => {
-    window.open(`https://wa.me/?text=${title} - ${url}`, "_blank");
-  };
-
-  
-  const handleFacebookShare = () => {
-    window.open(`https://www.facebook.com/sharer/sharer.php?u=${url}`, "_blank");
-  };
 
   const handleLinkedinShare = () => {
     window.open(`https://www.linkedin.com/sharing/share-offsite/?url=${url}`, "_blank");
@@ -49,9 +41,15 @@ export default function WooCommerceToShopifyMigration() {
   };
 
   return (
-    <div className="pt-32 pb-24 bg-light relative min-h-screen">
-      {/* Dynamic Progress Header */}
-      <div className="fixed top-20 left-0 right-0 h-1 bg-navy/5 z-[60]">
+    <PageWrapper
+      title="WooCommerce to Shopify Migration SEO: 2026 Checklist & Expert Services"
+      description="Migrate WooCommerce to Shopify without losing Google search rankings. Complete step-by-step SEO checklist, URL 301 mapping, and expert migration services for brands in the UK, US, Canada, Australia, France, and Germany."
+      keywords="migrate WooCommerce to Shopify, WooCommerce to Shopify migration, Shopify migration expert, WooCommerce to Shopify SEO checklist, ecommerce migration services UK, WooCommerce to Shopify migration agency Canada, Shopify partner migration Australia, Shopify partner France, Shopify developer Germany"
+      canonical="/blog/woocommerce-to-shopify-migration"
+    >
+      <div className="pt-32 pb-24 bg-light relative min-h-screen">
+        {/* Dynamic Progress Header */}
+        <div className="fixed top-20 left-0 right-0 h-1 bg-navy/5 z-[60]">
         <motion.div 
           className="h-full bg-green origin-left"
           initial={{ scaleX: 0 }}
@@ -110,14 +108,8 @@ export default function WooCommerceToShopifyMigration() {
               <div className="space-y-4">
                 <p className="text-[10px] font-bold uppercase tracking-[0.3em] text-navy/40">Spread the Knowledge</p>
                 <div className="flex gap-4">
-                  <button onClick={handleFacebookShare} className="w-12 h-12 bg-white rounded-2xl flex items-center justify-center text-navy hover:bg-green hover:text-navy transition-all shadow-sm border border-navy/5 overflow-hidden" title="Share on Facebook">
-                    <img src="https://cdn-icons-png.flaticon.com/512/124/124010.png" alt="Facebook" className="w-5 h-5 object-contain" />
-                  </button>
                   <button onClick={handleLinkedinShare} className="w-12 h-12 bg-white rounded-2xl flex items-center justify-center text-navy hover:bg-green hover:text-navy transition-all shadow-sm border border-navy/5 overflow-hidden" title="Share on LinkedIn">
                     <img src="https://images.rawpixel.com/image_png_social_square/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvdjk4Mi1kMS0xMC5wbmc.png" alt="LinkedIn" className="w-5 h-5 object-contain" />
-                  </button>
-                  <button onClick={handleWhatsAppShare} className="w-12 h-12 bg-white rounded-2xl flex items-center justify-center text-navy hover:bg-green hover:text-navy transition-all shadow-sm border border-navy/5 overflow-hidden" title="Share on WhatsApp">
-                    <img src="https://cdn-icons-png.flaticon.com/512/3670/3670051.png" alt="WhatsApp" className="w-5 h-5 object-contain" />
                   </button>
                 </div>
               </div>
@@ -229,9 +221,9 @@ export default function WooCommerceToShopifyMigration() {
               <div className="relative z-10 space-y-8 flex-grow">
                 <h3 className="text-4xl font-bold tracking-tight leading-none uppercase italic">Migration <br />Emergency?</h3>
                 <p className="text-lg font-serif italic max-w-md">I personally manage the technical SEO mapping for 7 and 8-figure brands moving to Shopify.</p>
-                <button onClick={handleWhatsAppContact} className="bg-navy text-white px-10 py-5 rounded-full font-bold flex items-center gap-3 hover:scale-105 transition-all shadow-2xl">
+                <Link to="/apply" className="bg-navy text-white px-10 py-5 rounded-full font-bold flex items-center gap-3 hover:scale-105 transition-all shadow-2xl">
                   Get a Free Strategy Call <ArrowRight size={20} />
-                </button>
+                </Link>
               </div>
               <div className="w-48 h-48 bg-navy/5 rounded-full flex items-center justify-center shrink-0 border border-navy/10 relative z-10">
                 <RefreshCw size={64} className="animate-spin-slow" />
@@ -311,5 +303,6 @@ export default function WooCommerceToShopifyMigration() {
         </div>
       </section>
     </div>
+    </PageWrapper>
   );
 }

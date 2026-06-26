@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Clock, Calendar, ArrowLeft, ArrowRight, CheckCircle2, ShieldCheck, TrendingUp, AlertTriangle, ShoppingBag, Star, Mail, Zap, Layout, Phone, Send } from "lucide-react";
+import { Clock, Calendar, ArrowLeft, ArrowRight, CheckCircle2, ShieldCheck, TrendingUp, AlertTriangle, ShoppingBag, Star, Mail, Zap, Layout, Phone, Send, MessageSquare } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import PageWrapper from "../components/PageWrapper";
@@ -22,15 +22,6 @@ export default function BestDropshippingApps() {
   const url = encodeURIComponent(window.location.href);
   const title = encodeURIComponent("The Best Shopify Apps for Dropshipping Stores in 2026");
 
-  const handleWhatsAppShare = () => {
-    window.open(`https://wa.me/?text=${title} - ${url}`, "_blank");
-  };
-
-  
-  const handleFacebookShare = () => {
-    window.open(`https://www.facebook.com/sharer/sharer.php?u=${url}`, "_blank");
-  };
-
   const handleLinkedinShare = () => {
     window.open(`https://www.linkedin.com/sharing/share-offsite/?url=${url}`, "_blank");
   };
@@ -44,17 +35,12 @@ export default function BestDropshippingApps() {
     }
   };
 
-  const handleWhatsAppContact = () => {
-    const text = encodeURIComponent("Hi Sheun, I need help setting up the best apps for my dropshipping store!");
-    window.open(`https://wa.me/2348084315743?text=${text}`, "_blank");
-  };
-
   return (
     <PageWrapper
       className="pt-32 pb-24 bg-white relative"
-      title="Top 7 Shopify Apps for Dropshipping (2026 Edition)"
-      description="Discover the top 7 Shopify apps for dropshipping in 2026. From sourcing products to boosting conversions, these tools are essential."
-      keywords="Shopify Dropshipping Apps, Best Dropshipping Apps, Shopify Ecommerce Apps, Dropshipping Automation"
+      title="Best Shopify Dropshipping Apps for High Conversions (UK, US, CA, AU, FR, DE)"
+      description="The definitive checklist of Shopify dropshipping apps for 2026. Discover sourcing, inventory synchronization, custom fulfillment, and speed-optimized layouts for international merchants."
+      keywords="Shopify Dropshipping Apps, best sourcing tools, dropshipping builder UK, Shopify store setup USA, e-commerce automation Canada, Shopify integration Australia, dropshipping France, Shopify partner Germany"
       canonical="/blog/best-dropshipping-apps-2026"
       schema={{
         "@context": "https://schema.org",
@@ -175,9 +161,9 @@ export default function BestDropshippingApps() {
               <p className="text-white/70 text-lg leading-relaxed mb-10">
                 Apps are only half the battle. If your theme code is a mess, high-end apps will just slow you down. I help my clients build a lean, lightning-fast foundation first, then integrate these high-conversion tools to maximize every visitor.
               </p>
-              <button onClick={handleWhatsAppContact} className="bg-green text-navy font-bold px-10 py-5 rounded-full flex items-center gap-3 hover:scale-105 transition-transform shadow-2xl">
-                <img src="https://cdn-icons-png.flaticon.com/512/3670/3670051.png" alt="WhatsApp" className="w-6 h-6 object-contain" /> Build My Dropshipping Stack
-              </button>
+                <Link to="/apply#apply-form" className="bg-green text-navy font-bold px-10 py-5 rounded-full flex items-center gap-3 hover:scale-105 transition-transform shadow-2xl w-fit">
+                  Build My Dropshipping Stack <ArrowRight size={20} />
+                </Link>
             </div>
 
             <h2 className="text-4xl font-bold text-navy mt-16 mb-8 font-sans tracking-tight border-b pb-4 border-navy/5">
@@ -229,14 +215,8 @@ export default function BestDropshippingApps() {
             <div className="w-full md:w-auto text-right">
               <p className="text-[10px] font-bold uppercase tracking-[0.3em] text-navy/40 mb-4">Share Article</p>
               <div className="flex items-center justify-end gap-3 flex-wrap">
-                <button onClick={handleFacebookShare} className="w-10 h-10 flex items-center justify-center bg-light border border-navy/10 text-navy rounded-full hover:bg-green hover:text-navy transition-colors overflow-hidden" title="Share on Facebook">
-                  <img src="https://cdn-icons-png.flaticon.com/512/124/124010.png" alt="Facebook" className="w-5 h-5 object-contain" />
-                </button>
                 <button onClick={handleLinkedinShare} className="w-10 h-10 flex items-center justify-center bg-light border border-navy/10 text-navy rounded-full hover:bg-green hover:text-navy transition-colors overflow-hidden" title="Share on LinkedIn">
-                  <img src="https://images.rawpixel.com/image_png_social_square/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvdjk4Mi1kMS0xMC5wbmc.png" alt="LinkedIn" className="w-5 h-5 object-contain" />
-                </button>
-                <button onClick={handleWhatsAppShare} className="w-10 h-10 flex items-center justify-center bg-light border border-navy/10 text-navy rounded-full hover:bg-green hover:text-navy transition-colors overflow-hidden" title="Share on WhatsApp">
-                  <img src="https://cdn-icons-png.flaticon.com/512/3670/3670051.png" alt="WhatsApp" className="w-5 h-5 object-contain" />
+                  <img src="https://images.rawpixel.com/image_png_social_square/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRl_X2NvbnRlbnQvbHIvdjk4Mi1kMS0xMC5wbmc.png" alt="LinkedIn" className="w-5 h-5 object-contain" />
                 </button>
               </div>
             </div>
@@ -244,7 +224,7 @@ export default function BestDropshippingApps() {
 
           <div className="pt-16 mt-16 border-t border-navy/5">
             <div className="flex items-center gap-4 mb-10">
-              <img src="https://cdn-icons-png.flaticon.com/512/3670/3670051.png" alt="WhatsApp" className="w-7 h-7 object-contain" />
+              <MessageSquare className="w-7 h-7 text-green" />
               <h3 className="text-3xl font-bold text-navy tracking-tight">Discussion ({comments.length})</h3>
             </div>
 

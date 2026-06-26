@@ -30,7 +30,7 @@ const projects: Project[] = [
     category: "👗 Fashion",
     desc: "A custom high-converting Shopify store design focused on modern aesthetics and streamlined user experience.",
     image: "https://plain-weur-prod-public.komododecks.com/202605/08/mORKcj6Dvv23Z1UjwufJ/image.png",
-    label: "🎨 Past Project design by Sheun Hub"
+    label: "🎨 Past Project design by Sheun"
   },
   {
     id: "new_custom_2",
@@ -39,7 +39,7 @@ const projects: Project[] = [
     category: "👗 Fashion",
     desc: "A custom high-converting Shopify store design focused on modern aesthetics and streamlined user experience.",
     image: "https://plain-weur-prod-public.komododecks.com/202605/08/chrM0xrj9IVak4lT2pwY/image.png",
-    label: "🎨 Past Project design by Sheun Hub"
+    label: "🎨 Past Project design by Sheun"
   },
   {
     id: "new_custom_1",
@@ -48,7 +48,7 @@ const projects: Project[] = [
     category: "👗 Fashion",
     desc: "A custom high-converting Shopify store design focused on modern aesthetics and streamlined user experience.",
     image: "https://plain-weur-prod-public.komododecks.com/202605/08/ZGtAaDfh0M9sZiKPK2CX/image.png",
-    label: "🎨 Past Project design by Sheun Hub"
+    label: "🎨 Past Project design by Sheun"
   },
   {
     id: "hairburst_1",
@@ -57,7 +57,7 @@ const projects: Project[] = [
     category: "💄 Beauty & Skincare",
     desc: "A custom high-converting Shopify store design focused on modern aesthetics and streamlined user experience for hair vitamins.",
     image: "https://i.ibb.co/yBKMgy3Q/Hair-Growth-Vitamins-Cosmetics-Hairburst-USA-05-08-2026-03-16-AM.png",
-    label: "🎨 Past Project design by Sheun Hub"
+    label: "🎨 Past Project design by Sheun"
   },
   {
     id: "b2",
@@ -66,16 +66,16 @@ const projects: Project[] = [
     category: "💄 Beauty & Skincare",
     desc: "Designed with a clean visual hierarchy and user-focused layout, LumiereSkin presents its skincare collection through soft, elegant sections and immersive visuals. The website highlights key elements like product benefits, natural ingredients, and daily skincare essentials in a structured and easy-to-follow flow. Balanced spacing and minimal distractions create a calm browsing experience, making the interface feel modern, refined, and effortlessly soothing to explore. ✨🧴🌿",
     image: "https://cdn.dribbble.com/userupload/47314439/file/c6086620d425f60ad8dac40f74cfe1b4.png?resize=752x3909&vertical=center",
-    label: "🎨 Past Project design by Sheun Hub"
+    label: "🎨 Past Project design by Sheun"
   },
   {
     id: "f2",
     name: "Summer Collection",
     tag: "👗 Fashion — Streetwear",
     category: "👗 Fashion",
-    desc: "Hi There,\n\nThis is a Website concept for a Trendy Fashion E-commerce Website.\n\nHope you guys will like it.\n\nLet us know your thought's on that. Your feedback and appreciation is always welcome 🙂\n\nI'm available for new projects",
+    desc: "Hi There,\n\nThis is a Website concept for a Trendy Fashion E-commerce Website.\n\nHope you guys will like it.\n\nLet me know your thoughts on that. Your feedback and appreciation is always welcome 🙂\n\nI'm available for new projects",
     image: "https://cdn.dribbble.com/userupload/37390836/file/original-13c3c213f022ab00791a6abaa9447322.png?resize=850x638&vertical=center",
-    label: "🎨 Past Project design by Sheun Hub"
+    label: "🎨 Past Project design by Sheun"
   },
   {
     id: "f3",
@@ -84,7 +84,7 @@ const projects: Project[] = [
     category: "👗 Fashion",
     desc: "A bold, gender-neutral fashion concept designed for the modern era. Featuring high-contrast layouts, versatile product displays for both male and female collections, and a seamless shopping experience.",
     image: "https://cdn.dribbble.com/userupload/36920984/file/original-ff98dfbecece4eba4c0ef25160306302.png?resize=752x&vertical=center",
-    label: "🎨 Past Project design by Sheun Hub"
+    label: "🎨 Past Project design by Sheun"
   },
   {
     id: "b3",
@@ -93,7 +93,7 @@ const projects: Project[] = [
     category: "💄 Beauty & Skincare",
     desc: "A clean and modern skincare website design concept focused on elegance and simplicity. The layout highlights product collections, beauty treatments, and customer-focused experiences with a minimal yet luxurious aesthetic. Designed to enhance user experience while keeping the brand’s natural and glowing identity at the core.",
     image: "https://cdn.dribbble.com/userupload/44540941/file/e348fef4b20fc2fa3b6d93da41e73932.jpg?resize=1024x768&vertical=center",
-    label: "🎨 Past Project design by Sheun Hub"
+    label: "🎨 Past Project design by Sheun"
   },
   {
     id: "p3",
@@ -102,7 +102,7 @@ const projects: Project[] = [
     category: "🐾 Pets",
     desc: "Expert Pet Care with Love & Trust! Grooming, Health, Nutrition & More, Because Your Furry Friend Deserves the Best!",
     image: "https://cdn.dribbble.com/userupload/37449048/file/original-6a6b4e4e7ebfed9f6502c61669a61580.png?resize=1024x3374&vertical=center",
-    label: "🎨 Past Project design by Sheun Hub"
+    label: "🎨 Past Project design by Sheun"
   }
 ];
 
@@ -132,15 +132,15 @@ export default function Portfolio() {
 
   return (
     <PageWrapper 
-      title="Shopify Developer Portfolio & Case Studies" 
-      description="Explore our successful Shopify store builds, redesigns, and custom app integrations. See how we help brands scale online. View our latest work today!"
-      keywords="Shopify Portfolio, E-commerce Case Studies, Dropshipping Examples, Shopify Custom Designs, hire someone to build shopify store, build shopify store for us, shopify web designer, shopify developers, shopify website designer, shopify agency, shopify designers, shopify website design company, shopify developers for hire, shopify website experts, hire someone to set up shopify store, web designer for shopify, freelance shopify designer, shopify store expert, freelance shopify website designer, hire someone to build our shopify store, shopify web agency, best shopify website designers, shopify setup experts, shopify store setup experts, expert shopify designers, freelance shopify web designers, shopify web design experts"
+      title="Shopify Developer Portfolio & Case Studies (UK, US, CA, AU, FR, DE)" 
+      description="Explore premium custom Shopify builds, WooCommerce migrations, speed enhancements, and SEO case studies. Proven Shopify partner results for merchants in the UK, US, Canada, Australia, France, and Germany."
+      keywords="Shopify Portfolio, E-commerce Case Studies, WooCommerce to Shopify migration portfolio, Shopify SEO case studies UK, Shopify Developer portfolio Canada, Shopify expert Australia, Shopify custom Liquid France, Shopify designer Germany, custom Liquid development examples"
       canonical="/portfolio"
       schema={{
         "@context": "https://schema.org",
         "@type": "CollectionPage",
-        "name": "Shopify Portfolio - Sheun Hub",
-        "description": "Explore our showcase of high-converting Shopify stores, dropshipping concepts, and eCommerce custom designs.",
+        "name": "Shopify Portfolio - Sheun",
+        "description": "Explore my showcase of high-converting Shopify stores, dropshipping concepts, and eCommerce custom designs.",
         "url": "https://sheun.online/portfolio",
         "about": {
           "@type": "Thing",
@@ -150,7 +150,7 @@ export default function Portfolio() {
     >
       {/* Top Section Label */}
       <div className="bg-green text-navy py-4 px-6 text-center text-[10px] font-bold uppercase tracking-[0.3em]">
-        <p>View our past client projects and designs — Let's build your vision.</p>
+        <p>View my past client projects and designs — Let's build your vision.</p>
       </div>
 
       {/* Portfolio Hero */}
@@ -172,7 +172,7 @@ export default function Portfolio() {
               >
                 <motion.span initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} transition={{ delay: 0.1 }} className="block">Shopify Portfolio</motion.span>
                 <motion.span initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} transition={{ delay: 0.2 }} className="italic font-serif font-light text-white/40 block">Past Client Projects</motion.span>
-                <motion.span initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} transition={{ delay: 0.3 }} className="text-green block text-3xl md:text-5xl mt-8">by Sheun Hub</motion.span>
+                <motion.span initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} transition={{ delay: 0.3 }} className="text-green block text-3xl md:text-5xl mt-8">by Sheun</motion.span>
               </motion.h1>
               <motion.p
                 initial={{ opacity: 0, y: 20 }}
@@ -261,14 +261,8 @@ export default function Portfolio() {
                   <a href="https://www.linkedin.com/in/sheun-hub-26b876321" target="_blank" rel="noopener noreferrer" className="p-4 bg-white/10 hover:bg-green hover:text-navy text-white rounded-full transition-all border border-white/10 shrink-0 flex items-center justify-center overflow-hidden">
                     <img src="https://images.rawpixel.com/image_png_social_square/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvdjk4Mi1kMS0xMC5wbmc.png" alt="LinkedIn" className="w-6 h-6 object-contain" />
                   </a>
-                  <a href="https://wa.us/2348084315743" target="_blank" rel="noopener noreferrer" className="p-4 bg-white/10 hover:bg-green hover:text-navy text-white rounded-full transition-all border border-white/10 shrink-0 flex items-center justify-center overflow-hidden">
-                    <img src="https://cdn-icons-png.flaticon.com/512/3670/3670051.png" alt="WhatsApp" className="w-6 h-6 object-contain" />
-                  </a>
                   <a href="mailto:sheunhost@gmail.com" className="p-4 bg-white/10 hover:bg-green hover:text-navy text-white rounded-full transition-all border border-white/10 shrink-0 flex items-center justify-center overflow-hidden">
                     <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Gmail_icon_%282020%29.svg/960px-Gmail_icon_%282020%29.svg.png?_=20221017173631" alt="Gmail" className="w-6 h-6 object-contain" />
-                  </a>
-                  <a href="https://www.fiverr.com/sheun_h" target="_blank" rel="noopener noreferrer" className="p-4 bg-white/10 hover:bg-green hover:text-navy text-white rounded-full transition-all border border-white/10 shrink-0 flex items-center justify-center overflow-hidden" title="Fiverr">
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR9zeK0uAVJfpeE1Zx1b3vDoihQGglG3BW2IjvgFTmksQ&s" alt="Fiverr" className="w-6 h-6 object-contain" />
                   </a>
                 </div>
               </div>

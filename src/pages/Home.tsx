@@ -6,7 +6,6 @@ import PageWrapper from "../components/PageWrapper";
 import { useState, FormEvent, useEffect } from "react";
 import { AnimatePresence } from "framer-motion";
 import { cn, openCalendlyPopup } from "../lib/utils";
-import ImageGen from "../components/ImageGen";
 import ScrollReveal from "../components/ScrollReveal";
 
 const stats = [
@@ -23,7 +22,7 @@ const services = [
     desc: "Complete Shopify store setup from scratch — theme, products, and configuration.",
   },
   {
-    title: "Store Migration",
+    title: "Shopify Migration Service",
     icon: RefreshCw,
     desc: "Seamlessly migrate your store from any platform to Shopify without losing data.",
   },
@@ -102,7 +101,7 @@ const testimonials = [
   {
     name: "Lisa Wong",
     role: "Founder, PetPalace",
-    content: "The Sheun Hub team are Liquid experts. They built custom features that we thought were impossible on Shopify.",
+    content: "Sheun is a Liquid expert. He built custom features that we thought were impossible on Shopify.",
     image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=200",
     rating: 5
   },
@@ -123,7 +122,7 @@ const testimonials = [
   {
     name: "Oliver Wright",
     role: "CEO, NextGen Electronics",
-    content: "Sheun Hub optimized our checkout flow and the results were immediate. Cart abandonment dropped significantly.",
+    content: "Sheun optimized my checkout flow and the results were immediate. Cart abandonment dropped significantly.",
     image: "https://images.unsplash.com/photo-1519345182560-3f2917c472ef?auto=format&fit=crop&q=80&w=200",
     rating: 4
   },
@@ -504,10 +503,10 @@ export default function Home() {
         setPlanRequested(true);
         form.reset();
       } else {
-        alert("Something went wrong. Please try again.");
+        setEmailErrorPlan("Something went wrong. Please try again.");
       }
     } catch (error) {
-       alert("Something went wrong. Please try again.");
+       setEmailErrorPlan("Connection error. Please try again.");
     } finally {
       setIsRequestingPlan(false);
     }
@@ -554,8 +553,6 @@ export default function Home() {
         })
         .catch(err => {
           console.error("Mailchimp Sync Error:", err);
-          // If you want to see the error, we could alert it, but let's just log it for now
-          // and maybe add a toast if we had one.
         });
 
         setIsSubscribeSuccess(true);
@@ -563,11 +560,11 @@ export default function Home() {
         setTimeout(() => setIsSubscribeSuccess(false), 5000);
       } else {
         console.error("Error submitting form", data);
-        alert("Something went wrong. Please try again.");
+        setEmailErrorSubscribe("Something went wrong. Please try again.");
       }
     } catch (error) {
       console.error("Error submitting form", error);
-      alert("Something went wrong. Please try again.");
+      setEmailErrorSubscribe("Connection error. Please try again.");
     } finally {
       setIsSubscribing(false);
     }
@@ -614,11 +611,11 @@ export default function Home() {
         form.reset();
       } else {
         console.error("Error submitting form", data);
-        alert("Something went wrong. Please try again.");
+        setEmailErrorContact("Something went wrong. Please try again.");
       }
     } catch (error) {
       console.error("Error submitting form", error);
-      alert("Something went wrong. Please try again.");
+      setEmailErrorContact("Connection error. Please try again.");
     } finally {
       setIsSubmitting(false);
     }
@@ -626,26 +623,24 @@ export default function Home() {
 
   return (
     <PageWrapper 
-      title="Shopify Expert Developer | US & UK | Sheun Hub" 
-      description="Hire a top-rated Shopify Developer for store builds, redesigns, speed optimization, and CRO. Start growing your e-commerce business today. Apply now!"
-      keywords="Shopify Expert, Shopify Developer, Custom Shopify Themes, Dropshipping Store Setup, E-commerce Growth, Convertion Rate Optimization, freelance shopify expert, shopify ecommerce consultant, freelance shopify designer, migrate website to shopify, migrate from bigcommerce to shopify, shopify partner agencies, migrate from wordpress to shopify, migrate wordpress to shopify, shopify store consultant, web designers for shopify, shopify seo consultant, shopify setup experts, migrate wix to shopify, migrate from squarespace to shopify, shopify store setup experts, migrate products from magento to shopify, magento to shopify migration service, store migration shopify, hire shopify web developer, expert shopify developers, move from wix to shopify, migration woocommerce shopify, migrate from wix to shopify, transfer wix to shopify, shopify marketing consultant, transfer wix site to shopify, shopify certified partners, shopify expert web designer, shopify to shopify migration, shopify data migration, move woocommerce to shopify, migrate wordpress site to shopify, migrate to shopify plus, migrate from godaddy to shopify, transfer godaddy to shopify, transfer bigcommerce to shopify, transfer website from wix to shopify, transfer shopify store to another shopify store, certified shopify developer, transfer wordpress to shopify, transfer wordpress site to shopify, transfer to shopify, migrate big cartel to shopify, shopify certified expert, hire shopify seo, move website from wix to shopify, transfer products from one shopify store to another, shopify site migration, shopify woocommerce migration, transfer website from squarespace to shopify, shopify web design experts, shopify store migration, shopify com experts, move from wordpress to shopify, transfer website from wordpress to shopify, transfer from wordpress to shopify, magento migration shopify, move squarespace to shopify, migrate lightspeed to shopify, expert seo shopify, transfer wix store to shopify, import wordpress to shopify, migrate from volusion to shopify, transfer shopify store to wordpress, top shopify experts, webflow to shopify migration, hire a shopify app developer, best shopify consultant, best shopify seo experts agency"
+      title="Best Shopify Developer, Consultant & SEO Expert (UK, US, CA, AU, FR, DE) | Sheun" 
+      description="Need a certified Shopify Developer & SEO Consultant? Sheun provides custom store builds, technical SEO audits, WooCommerce migrations, and speed optimizations for brands in the UK, US, Canada, Australia, France, and Germany."
+      keywords="best shopify developer, affordable shopify developer, shopify expert reviews, shopify expert UK, freelance shopify developer, shopify developer Australia, shopify expert Canada, shopify expert USA, shopify developer France, shopify expert Germany, WooCommerce to Shopify migration, Shopify SEO Sprint, Technical Shopify SEO Audit, Custom Shopify Themes, E-commerce CRO, speed optimization"
       canonical="/"
       schema={{
         "@context": "https://schema.org",
         "@type": "ProfilePage",
-        "name": "Shopify Developer & Growth Expert - Sheun Hub",
-        "description": "Scale your brand with our team of specialists in Custom Shopify Development and E-commerce Growth. Maximize revenue with highly optimized store builds.",
+        "name": "Shopify Developer, SEO Specialist & Growth Expert - Sheun",
+        "description": "Scale your brand with a certified Shopify Partner specializing in WooCommerce migrations, technical SEO audits, custom theme development, and performance optimization across the UK, US, Canada, Australia, France, and Germany.",
         "url": "https://sheun.online",
         "mainEntity": {
           "@type": "Person",
-          "name": "Sheun Hub",
-          "jobTitle": "Shopify Developer & Growth Expert",
+          "name": "Sheun",
+          "jobTitle": "Shopify Developer & SEO Specialist",
           "url": "https://sheun.online",
           "sameAs": [
             "https://www.linkedin.com/in/sheun-hub-26b876321",
-            "https://www.facebook.com/profile.php?id=61581094591044",
-            "https://twitter.com/sheunhub",
-            "https://www.fiverr.com/sheun_h"
+            "https://twitter.com/sheunhub"
           ]
         }
       }}
@@ -709,7 +704,7 @@ export default function Home() {
                   animate={{ opacity: 0.4, x: 0 }}
                   transition={{ delay: 0.4 }}
                 >
-                  by Sheun Hub.
+                  by Sheun.
                 </motion.span>
               </h1>
 
@@ -733,7 +728,7 @@ export default function Home() {
               </div>
 
                 <p className="text-white/60 text-xl md:text-2xl max-w-xl leading-relaxed font-light font-serif italic">
-                  Scale your brand with our team of specialists in Custom Shopify Development and E-commerce Growth. From custom theme builds to technical store optimization, Sheun Hub helps businesses maximize revenue on the Shopify platform.
+                  Scale your brand with a specialist in Custom Shopify Development and E-commerce Growth. From custom theme builds to technical store optimization, Sheun helps businesses maximize revenue on the Shopify platform.
                 </p>
             </motion.div>
 
@@ -743,12 +738,18 @@ export default function Home() {
               transition={{ delay: 0.2, duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
               className="flex flex-col sm:flex-row items-center gap-8"
             >
-              <button 
-                onClick={() => navigate("/apply#apply-form")} 
+              <Link 
+                to="/apply" 
                 className="w-full sm:w-auto bg-green text-navy px-12 py-6 rounded-full font-bold text-lg hover:scale-105 transition-all duration-500 green-glow flex items-center justify-center gap-3 text-center"
               >
                 Get Started <ArrowRight size={20} />
-              </button>
+              </Link>
+              <Link 
+                to="/services" 
+                className="text-white font-bold hover:text-green transition-colors flex items-center gap-2"
+              >
+                Explore Services <ChevronDown size={16} />
+              </Link>
               <Link to="/portfolio" className="w-full sm:w-auto text-white/80 hover:text-white px-8 py-4 rounded-full font-bold text-lg transition-all flex items-center justify-center gap-4 group text-center">
                 View Portfolio <div className="w-8 h-px bg-white/20 group-hover:w-16 group-hover:bg-green transition-all duration-500" />
               </Link>
@@ -785,7 +786,7 @@ export default function Home() {
               >
                 <img 
                   src="https://mapplinks.com/wp-content/uploads/2020/06/screen1.png" 
-                  alt="Sheun Hub - Shopify Development and Growth Expert" 
+                  alt="Sheun - Shopify Development and Growth Expert" 
                   referrerPolicy="no-referrer"
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-[2s]" 
                   loading="lazy" 
@@ -796,7 +797,7 @@ export default function Home() {
                     {[...Array(5)].map((_, i) => <Star key={i} size={12} className="fill-green text-green" />)}
                   </div>
                   <h3 className="text-white font-bold text-4xl tracking-tighter leading-none">Top Rated <br />Shopify Expert.</h3>
-                  <p className="text-white/60 text-lg font-serif italic">Top Rated Upwork Agency</p>
+                  <p className="text-white/60 text-lg font-serif italic">Top Rated Shopify Specialist</p>
                   
                   <div className="flex gap-4 pt-4 border-t border-white/10">
                     <a href="https://www.linkedin.com/in/sheun-hub-26b876321" target="_blank" rel="noopener noreferrer" className="p-2 bg-white/5 hover:bg-green hover:text-navy rounded-full text-white transition-all flex items-center justify-center overflow-hidden" title="LinkedIn">
@@ -805,14 +806,8 @@ export default function Home() {
                     <a href="https://www.upwork.com/freelancers/~017eb19011cd354946" target="_blank" rel="noopener noreferrer" className="p-2 bg-white/5 hover:bg-green hover:text-navy rounded-full text-white transition-all flex items-center justify-center overflow-hidden" title="Upwork">
                       <img src="https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/upwork-icon.png" alt="Upwork" className="w-5 h-5 object-contain" />
                     </a>
-                    <a href="https://wa.us/2348084315743" target="_blank" rel="noopener noreferrer" className="p-2 bg-white/5 hover:bg-green hover:text-navy rounded-full text-white transition-all flex items-center justify-center overflow-hidden" title="WhatsApp">
-                      <img src="https://cdn-icons-png.flaticon.com/512/3670/3670051.png" alt="WhatsApp" className="w-5 h-5 object-contain" />
-                    </a>
                     <a href="mailto:sheunhost@gmail.com" className="p-2 bg-white/5 hover:bg-green hover:text-navy rounded-full text-white transition-all flex items-center justify-center overflow-hidden" title="Email">
                       <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Gmail_icon_%282020%29.svg/960px-Gmail_icon_%282020%29.svg.png?_=20221017173631" alt="Gmail" className="w-5 h-5 object-contain" />
-                    </a>
-                    <a href="https://www.fiverr.com/sheun_h" target="_blank" rel="noopener noreferrer" className="p-2 bg-white/5 hover:bg-green hover:text-navy rounded-full text-white transition-all flex items-center justify-center overflow-hidden" title="Fiverr">
-                      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR9zeK0uAVJfpeE1Zx1b3vDoihQGglG3BW2IjvgFTmksQ&s" alt="Fiverr" className="w-5 h-5 object-contain" />
                     </a>
                   </div>
                 </div>
@@ -846,6 +841,187 @@ export default function Home() {
       </section>
     </ScrollReveal>
 
+    {/* Credibility Bar */}
+    <section className="py-12 bg-white border-b border-navy/5">
+      <div className="container mx-auto px-6">
+        <div className="flex flex-wrap items-center justify-center gap-8 md:gap-16 opacity-50 grayscale hover:grayscale-0 transition-all duration-500">
+          <div className="flex items-center gap-3">
+            <ShieldCheck className="text-navy" size={24} />
+            <span className="text-sm font-bold uppercase tracking-widest text-navy">Shopify Partner</span>
+          </div>
+          <div className="flex items-center gap-3">
+            <Trophy className="text-navy" size={24} />
+            <span className="text-sm font-bold uppercase tracking-widest text-navy">Upwork Top Rated</span>
+          </div>
+          <div className="flex items-center gap-3">
+            <Star className="text-navy" size={24} fill="currentColor" />
+            <span className="text-sm font-bold uppercase tracking-widest text-navy">5.0 Star Expert</span>
+          </div>
+          <div className="flex items-center gap-3">
+            <CheckCircle2 className="text-navy" size={24} />
+            <span className="text-sm font-bold uppercase tracking-widest text-navy">100% Satisfaction</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    {/* Pain Points Section */}
+    <ScrollReveal>
+      <section className="py-32 bg-light">
+        <div className="container mx-auto px-6">
+          <div className="max-w-4xl mx-auto text-center mb-20 space-y-4">
+            <h2 className="text-5xl md:text-7xl font-bold text-navy tracking-tighter">
+              Is your Shopify store <br />
+              <span className="italic font-serif font-light text-navy/30">working for you?</span>
+            </h2>
+            <p className="text-navy/60 text-xl font-serif italic max-w-2xl mx-auto leading-relaxed">
+              Most Shopify stores fail not because the product is bad, but because the technical foundation is weak.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {[
+              { 
+                title: "Your store is slow.", 
+                desc: "Every second of load time reduces conversions by 7%. If your store takes more than 3 seconds to load, you're literally throwing money away." 
+              },
+              { 
+                title: "Low conversion rate.", 
+                desc: "Traffic is expensive. If you're getting visitors but no sales, your UI/UX is creating friction that stops customers from clicking 'Buy'." 
+              },
+              { 
+                title: "Broken layouts.", 
+                desc: "A distorted image or a broken checkout button on mobile kills trust instantly. Customers don't buy from stores that look broken." 
+              },
+              { 
+                title: "No technical partner.", 
+                desc: "Spending hours trying to fix Liquid code or app conflicts yourself is a waste of your time. You should be focusing on growth." 
+              }
+            ].map((point, i) => (
+              <div key={i} className="p-10 bg-white rounded-[40px] border border-navy/5 shadow-sm space-y-4">
+                <h3 className="text-2xl font-bold text-navy tracking-tight">{point.title}</h3>
+                <p className="text-navy/60 leading-relaxed">{point.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+    </ScrollReveal>
+
+    {/* Credibility & Comparison Section */}
+    <ScrollReveal>
+      <section className="py-32 bg-white relative overflow-hidden">
+        <div className="container mx-auto px-6">
+          <div className="text-center max-w-3xl mx-auto mb-20 space-y-4">
+            <p className="text-green text-[10px] font-bold uppercase tracking-[0.3em]">The Comparison</p>
+            <h2 className="text-5xl md:text-6xl font-bold text-navy tracking-tighter">
+              Why brands choose <br />
+              <span className="italic font-serif font-light text-navy/30">Sheun over Agencies.</span>
+            </h2>
+            <p className="text-navy/60 text-lg md:text-xl font-serif italic leading-relaxed">
+              Finding the "best Shopify developer" shouldn't mean paying agency overheads or gambling on cheap, unreliable freelancers.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch">
+            {/* Cheap Freelancer */}
+            <div className="p-10 rounded-[40px] border border-navy/5 bg-light/50 space-y-8 flex flex-col opacity-60 grayscale hover:grayscale-0 transition-all">
+              <div className="space-y-2">
+                <h3 className="text-2xl font-bold text-navy/40">Generic Freelancer</h3>
+                <p className="text-navy/30 text-sm font-bold uppercase tracking-widest">Low Cost, High Risk</p>
+              </div>
+              <ul className="space-y-4 flex-grow">
+                <li className="flex items-start gap-3 text-navy/40 text-sm">
+                  <X size={18} className="text-red-400 shrink-0 mt-0.5" />
+                  Language & communication barriers
+                </li>
+                <li className="flex items-start gap-3 text-navy/40 text-sm">
+                  <X size={18} className="text-red-400 shrink-0 mt-0.5" />
+                  Cookie-cutter, generic themes
+                </li>
+                <li className="flex items-start gap-3 text-navy/40 text-sm">
+                  <X size={18} className="text-red-400 shrink-0 mt-0.5" />
+                  Unreliable timelines & ghosting
+                </li>
+                <li className="flex items-start gap-3 text-navy/40 text-sm">
+                  <X size={18} className="text-red-400 shrink-0 mt-0.5" />
+                  No understanding of e-commerce strategy
+                </li>
+              </ul>
+              <div className="pt-6 border-t border-navy/5">
+                <p className="text-navy/40 font-bold text-sm">Hidden Cost: <span className="text-red-400">Broken Stores</span></p>
+              </div>
+            </div>
+
+            {/* Sheun (The Expert) */}
+            <div className="p-10 rounded-[40px] bg-navy text-white space-y-8 flex flex-col relative shadow-2xl scale-105 z-10">
+              <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-green text-navy text-[10px] font-bold uppercase tracking-[0.2em] px-6 py-2 rounded-full shadow-lg">
+                Most Reliable Choice
+              </div>
+              <div className="space-y-2">
+                <h3 className="text-3xl font-bold text-white">Sheun Hub</h3>
+                <p className="text-green text-sm font-bold uppercase tracking-widest">The Affordable Shopify Expert</p>
+              </div>
+              <ul className="space-y-4 flex-grow">
+                <li className="flex items-start gap-3 text-white/80 text-sm">
+                  <CheckCircle2 size={18} className="text-green shrink-0 mt-0.5" />
+                  Direct partnership with a certified specialist
+                </li>
+                <li className="flex items-start gap-3 text-white/80 text-sm">
+                  <CheckCircle2 size={18} className="text-green shrink-0 mt-0.5" />
+                  Bespoke Liquid coding & technical SEO
+                </li>
+                <li className="flex items-start gap-3 text-white/80 text-sm">
+                  <CheckCircle2 size={18} className="text-green shrink-0 mt-0.5" />
+                  Strategic focus on ROI & conversions
+                </li>
+                <li className="flex items-start gap-3 text-white/80 text-sm">
+                  <CheckCircle2 size={18} className="text-green shrink-0 mt-0.5" />
+                  Transparent, predictable project costs
+                </li>
+                <li className="flex items-start gap-3 text-white/80 text-sm">
+                  <CheckCircle2 size={18} className="text-green shrink-0 mt-0.5" />
+                  Fast, direct, and proactive communication
+                </li>
+              </ul>
+              <div className="pt-6 border-t border-white/10">
+                <p className="text-white font-bold text-sm">Result: <span className="text-green">Profitable Growth</span></p>
+              </div>
+            </div>
+
+            {/* Big Agency */}
+            <div className="p-10 rounded-[40px] border border-navy/5 bg-light/50 space-y-8 flex flex-col opacity-60 grayscale hover:grayscale-0 transition-all">
+              <div className="space-y-2">
+                <h3 className="text-2xl font-bold text-navy/40">Big Digital Agency</h3>
+                <p className="text-navy/30 text-sm font-bold uppercase tracking-widest">High Cost, Low Attention</p>
+              </div>
+              <ul className="space-y-4 flex-grow">
+                <li className="flex items-start gap-3 text-navy/40 text-sm">
+                  <X size={18} className="text-red-400 shrink-0 mt-0.5" />
+                  $5k+ minimum project retainers
+                </li>
+                <li className="flex items-start gap-3 text-navy/40 text-sm">
+                  <X size={18} className="text-red-400 shrink-0 mt-0.5" />
+                  Work outsourced to junior interns
+                </li>
+                <li className="flex items-start gap-3 text-navy/40 text-sm">
+                  <X size={18} className="text-red-400 shrink-0 mt-0.5" />
+                  Layers of bureaucracy & slow responses
+                </li>
+                <li className="flex items-start gap-3 text-navy/40 text-sm">
+                  <X size={18} className="text-red-400 shrink-0 mt-0.5" />
+                  You're just another ticket in their queue
+                </li>
+              </ul>
+              <div className="pt-6 border-t border-navy/5">
+                <p className="text-navy/40 font-bold text-sm">Hidden Cost: <span className="text-red-400">Inefficiency</span></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </ScrollReveal>
+
     <ScrollReveal>
         <section className="py-32 bg-white relative overflow-hidden border-y border-navy/5">
         <div className="container mx-auto px-6">
@@ -856,7 +1032,7 @@ export default function Home() {
                 Scale Your <span className="italic font-serif font-light text-navy/40">Sales</span>.
               </h2>
               <p className="text-navy/60 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed">
-                Enter your store details below and we will personally review your site and send you a custom, 3-step action plan to increase your conversion rate.
+                Enter your store details below and I will personally review your site and send you a custom, 3-step action plan to increase your conversion rate.
               </p>
             </div>
 
@@ -888,10 +1064,10 @@ export default function Home() {
                   <div className="space-y-2">
                     <label className="text-sm font-bold text-navy ml-4">Store URL *</label>
                     <input 
-                      type="url" 
+                      type="text" 
                       name="store_url"
                       required
-                      placeholder="https://yourstore.com" 
+                      placeholder="yourstore.com" 
                       className="w-full bg-white border-2 border-navy/5 rounded-full py-4 px-6 focus:border-green outline-none transition-all"
                     />
                   </div>
@@ -908,7 +1084,7 @@ export default function Home() {
                     ) : (
                       <>
                         <Zap size={20} />
-                        Get Our Free Growth Plan
+                        Get My Free Growth Plan
                       </>
                     )}
                   </button>
@@ -1233,6 +1409,28 @@ export default function Home() {
       </section>
     </ScrollReveal>
 
+    {/* Call to Action Section */}
+    <ScrollReveal>
+      <section className="py-32 bg-navy relative overflow-hidden">
+        <div className="container mx-auto px-6">
+          <div className="max-w-4xl mx-auto text-center space-y-12">
+            <h2 className="text-5xl md:text-7xl font-bold text-white tracking-tighter">
+              Ready to scale <br />
+              <span className="text-green italic font-serif font-light">Your Shopify store?</span>
+            </h2>
+            <p className="text-white/60 text-xl font-serif italic max-w-2xl mx-auto leading-relaxed">
+              Join the high-performing brands that have transformed their e-commerce presence with bespoke development and strategic growth.
+            </p>
+            <div className="pt-8">
+              <Link to="/apply" className="inline-flex items-center gap-3 bg-green text-navy font-bold px-12 py-6 rounded-full hover:scale-105 transition-transform text-lg shadow-2xl">
+                Apply for Growth Plan <ArrowRight size={24} />
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+    </ScrollReveal>
+
     {/* Why Partner With Us */}
     <ScrollReveal>
       <section className="py-32 bg-navy text-white relative overflow-hidden">
@@ -1305,8 +1503,6 @@ export default function Home() {
               <div className="space-y-8">
                 {[
                   { icon: "gmail", label: "Email", value: "sheunhost@gmail.com" },
-                  { icon: "whatsapp", label: "WhatsApp (NG)", value: "+234 808 431 5743" },
-                  { icon: "whatsapp", label: "WhatsApp (UK)", value: "+44 7476 664292" },
                 ].map((item, i) => (
                   <div key={i} className="flex flex-col sm:flex-row items-center sm:items-start gap-6 group text-center sm:text-left">
                     <div className="w-14 h-14 bg-light rounded-2xl flex items-center justify-center text-navy group-hover:bg-green group-hover:text-navy transition-all shrink-0 overflow-hidden">
@@ -1382,7 +1578,7 @@ export default function Home() {
                           <select name="project_type" className="w-full bg-white border-b-2 border-navy/5 rounded-3xl py-5 px-8 focus:border-green outline-none transition-all appearance-none font-medium text-navy">
                             <option>New Store Build</option>
                             <option>Dropshipping Store</option>
-                            <option>Store Migration</option>
+                            <option>Shopify Migration Service</option>
                             <option>Theme Redesign</option>
                             <option>Bug Fix</option>
                             <option>Free Growth Plan</option>

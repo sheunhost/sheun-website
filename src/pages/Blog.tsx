@@ -71,6 +71,15 @@ const posts = [
     readTime: "10 min read",
     image: "https://picsum.photos/seed/blog7/800/600",
   },
+  {
+    id: 8,
+    title: "Shopify Store Not Converting? The 5 Common Killers (and the Fixes)",
+    category: "eCommerce Growth",
+    excerpt: "Is your Shopify store getting traffic but no sales? Discover the 5 most common conversion killers—from weak hero copy to slow mobile performance—and how to fix them today.",
+    date: "May 15, 2026",
+    readTime: "12 min read",
+    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80",
+  },
 ];
 
 export default function Blog() {
@@ -86,9 +95,9 @@ export default function Blog() {
 
   return (
     <PageWrapper 
-      title="Shopify E-commerce Blog | Sheun Hub"
-      description="Read our latest guides and strategies for growing your Shopify store. Learn about SEO, speed optimization, conversions, and more. Read the blog now!"
-      keywords="Shopify Blog, Shopify Development Tutorials, Dropshipping Guides, Shopify SEO Tips, migrate from wordpress to shopify, migrate from wix to shopify, magento to shopify migration, woocommerce to shopify migration, bigcommerce to shopify migration, transfer volusion to shopify, shopify seo expert, shopify ecommerce consultant, shopify marketing experts, hire shopify seo expert"
+      title="Shopify Development, Migration & SEO Blog | Sheun Hub"
+      description="Step-by-step guides, e-commerce migration checklists, speed optimization strategies, and professional Shopify SEO tips. Trusted by brands in the UK, US, CA, AU, FR, and DE."
+      keywords="Shopify Blog, Shopify SEO tutorial, WooCommerce to Shopify migration checklist, Shopify Speed Optimization guide UK, Shopify Expert blog USA, Shopify Partner France, Shopify developer Germany"
       canonical="/blog"
       schema={{
         "@context": "https://schema.org",

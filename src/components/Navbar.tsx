@@ -6,14 +6,12 @@ import { cn } from "../lib/utils";
 
 const navLinks = [
   { name: "Home", href: "/" },
-  { name: "About", href: "/about" },
-  { name: "Team", href: "/team" },
   { name: "Services", href: "/services" },
   { name: "Portfolio", href: "/portfolio" },
+  { name: "SEO Sprint", href: "/shopify-seo-sprint" },
   { name: "Blog", href: "/blog" },
   { name: "Calculator", href: "/calculator" },
-  { name: "Apply", href: "/apply#apply-form" },
-  { name: "Contact", href: "/contact" },
+  { name: "About", href: "/about" },
 ];
 
 export default function Navbar() {
@@ -34,7 +32,7 @@ export default function Navbar() {
       className={cn(
         "fixed top-0 left-0 right-0 z-50 transition-all duration-500",
         isScrolled 
-          ? "bg-white/80 backdrop-blur-xl shadow-[0_8px_32px_rgba(0,0,0,0.05)] py-4" 
+          ? "bg-white/95 backdrop-blur-xl shadow-[0_8px_32px_rgba(0,0,0,0.1)] py-4" 
           : "bg-transparent py-8"
       )}
     >
@@ -63,7 +61,7 @@ export default function Navbar() {
                   "text-xs font-bold uppercase tracking-[0.2em] transition-all relative group",
                   location.pathname === link.href 
                     ? "text-green" 
-                    : isScrolled ? "text-navy/60 hover:text-navy" : "text-white/40 hover:text-white"
+                    : isScrolled ? "text-navy font-bold hover:text-green" : "text-white hover:text-green"
                 )}
               >
                 {link.name}
@@ -78,6 +76,18 @@ export default function Navbar() {
                 />
               </Link>
             ))}
+            
+            <Link 
+              to="/apply" 
+              className={cn(
+                "px-6 py-3 rounded-full font-bold text-xs uppercase tracking-widest transition-all",
+                isScrolled 
+                  ? "bg-navy text-white hover:bg-green hover:text-navy" 
+                  : "bg-green text-navy hover:bg-white"
+              )}
+            >
+              Apply Now
+            </Link>
           </div>
         </div>
 

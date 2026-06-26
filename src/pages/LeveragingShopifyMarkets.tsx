@@ -3,10 +3,17 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { Calendar, User, Clock, CheckCircle2, ArrowRight } from "lucide-react";
 import ScrollReveal from "../components/ScrollReveal";
+import PageWrapper from "../components/PageWrapper";
 
 export default function LeveragingShopifyMarkets() {
   return (
-    <article className="bg-white">
+    <PageWrapper
+      title="How to Leverage Shopify Markets for International Sales (UK, US, CA, AU, FR, DE)"
+      description="Scale your store globally with Shopify Markets. Configure custom pricing, duties calculation, localized SEO, and multi-currency checkouts for the UK, US, Canada, Australia, France, and Germany."
+      keywords="Shopify Markets guide, international Shopify setup, Shopify multi-currency, Shopify expert UK, Shopify partner France, Shopify developer Germany"
+      canonical="/blog/leveraging-shopify-markets"
+    >
+      <article className="bg-white">
       {/* Editorial Hero */}
       <section className="pt-48 pb-32 bg-navy-gradient relative overflow-hidden">
         <div className="absolute inset-0 opacity-10">
@@ -153,5 +160,6 @@ export default function LeveragingShopifyMarkets() {
         </ScrollReveal>
       </section>
     </article>
+    </PageWrapper>
   );
 }

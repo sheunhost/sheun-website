@@ -36,6 +36,9 @@ export default function Footer() {
               <li><Link to="/services" className="text-white/60 hover:text-green transition-colors">Custom Dev</Link></li>
               <li><Link to="/services" className="text-white/60 hover:text-green transition-colors">Migrations</Link></li>
               <li><Link to="/services" className="text-white/60 hover:text-green transition-colors">SEO & Speed</Link></li>
+              <li><Link to="/shopify-seo-sprint" className="text-green font-bold hover:text-white transition-colors">48-Hr SEO Sprint ($250)</Link></li>
+              <li><Link to="/shopify-store-audit" className="text-green font-bold hover:text-white transition-colors">Shopify Store Audit ($197)</Link></li>
+              <li><Link to="/shopify-not-converting" className="text-white/40 hover:text-green transition-colors">Fix Low Sales (Tips)</Link></li>
             </ul>
           </div>
 
@@ -44,7 +47,6 @@ export default function Footer() {
             <h4 className="text-sm font-bold uppercase tracking-[0.3em] text-white/20 mb-8">Resources</h4>
             <ul className="space-y-4 font-medium">
               <li><Link to="/about" className="text-white/60 hover:text-green transition-colors">About</Link></li>
-              <li><Link to="/team" className="text-white/60 hover:text-green transition-colors">Team</Link></li>
               <li><Link to="/portfolio" className="text-white/60 hover:text-green transition-colors">Portfolio</Link></li>
               <li><Link to="/blog" className="text-white/60 hover:text-green transition-colors">Blog</Link></li>
               <li><Link to="/apply#apply-form" className="text-white/60 hover:text-green transition-colors">Apply</Link></li>
@@ -56,11 +58,8 @@ export default function Footer() {
             <h4 className="text-sm font-bold uppercase tracking-[0.3em] text-white/20 mb-8">Social & Contact</h4>
             <ul className="space-y-4 font-medium">
               <li><a href="mailto:sheunhost@gmail.com" className="text-white/60 hover:text-green transition-colors flex items-center gap-3"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Gmail_icon_%282020%29.svg/960px-Gmail_icon_%282020%29.svg.png?_=20221017173631" alt="Gmail" className="w-4 h-4 object-contain" /> Email</a></li>
-              <li><a href="https://wa.me/2348084315743" target="_blank" rel="noopener noreferrer" className="text-white/60 hover:text-green transition-colors flex items-center gap-3"><img src="https://cdn-icons-png.flaticon.com/512/3670/3670051.png" alt="WhatsApp" className="w-4 h-4 object-contain" /> WhatsApp</a></li>
               <li><a href="https://www.linkedin.com/in/sheun-hub-26b876321" target="_blank" rel="noopener noreferrer" className="text-white/60 hover:text-green transition-colors flex items-center gap-3"><img src="https://images.rawpixel.com/image_png_social_square/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvdjk4Mi1kMS0xMC5wbmc.png" alt="LinkedIn" className="w-4 h-4 object-contain" /> LinkedIn</a></li>
               <li><a href="https://www.upwork.com/freelancers/~017eb19011cd354946" target="_blank" rel="noopener noreferrer" className="text-white/60 hover:text-green transition-colors flex items-center gap-3"><img src="https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/upwork-icon.png" alt="Upwork" className="w-4 h-4 object-contain" /> Upwork</a></li>
-              <li><a href="https://www.fiverr.com/sheun_h" target="_blank" rel="noopener noreferrer" className="text-white/60 hover:text-green transition-colors flex items-center gap-3"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR9zeK0uAVJfpeE1Zx1b3vDoihQGglG3BW2IjvgFTmksQ&s" alt="Fiverr" className="w-4 h-4 object-contain" /> Fiverr</a></li>
-              <li><a href="https://www.facebook.com/profile.php?id=61581094591044" target="_blank" rel="noopener noreferrer" className="text-white/60 hover:text-green transition-colors flex items-center gap-3"><img src="https://cdn-icons-png.flaticon.com/512/124/124010.png" alt="Facebook" className="w-4 h-4 object-contain" /> Facebook</a></li>
             </ul>
           </div>
         </div>
@@ -98,7 +97,7 @@ export default function Footer() {
 
         <div className="pt-6 flex flex-col md:flex-row items-center justify-between gap-8">
           <p className="text-xs text-white/20 font-medium text-center md:text-left">
-            © 2026 Sheun Hub. All rights reserved.
+            © 2026 Sheun. All rights reserved.
           </p>
           <div className="flex flex-col md:flex-row items-center gap-6">
             <span className="bg-white/5 text-green text-[10px] font-bold uppercase tracking-widest px-4 py-2 rounded-full border border-white/5 flex items-center gap-2">

@@ -8,8 +8,8 @@ import ScrollReveal from "../components/ScrollReveal";
 const timeline = [
   { year: "2023", title: "Graduated, OAU", desc: "B.Sc. Business Management from Obafemi Awolowo University." },
   { year: "2023", title: "Certified Shopify Partner", desc: "Officially recognized as a Shopify Partner." },
-  { year: "2024", title: "Launched Sheun Hub", desc: "Started on Upwork, received first 5-star review." },
-  { year: "2024", title: "Top Rated Agency", desc: "Achieved Top Rated status on Upwork with consistent quality." },
+  { year: "2024", title: "Started Freelancing", desc: "Started on Upwork, received first 5-star review." },
+  { year: "2024", title: "Top Rated Specialist", desc: "Achieved Top Rated status on Upwork with consistent quality." },
   { year: "Present", title: "Global Impact", desc: "Building stores for clients worldwide, primarily in the USA." },
 ];
 
@@ -26,21 +26,21 @@ export default function About() {
   const navigate = useNavigate();
   return (
     <PageWrapper 
-      title="About Sheun Hub | Expert Shopify Developer" 
-      description="Meet Sheun Hub, a specialized team of Shopify developers helping entrepreneurs in the US, UK, CA, and AU scale their stores. Let's discuss your next project!"
-      keywords="About Sheun Hub, Shopify Expert Profile, UI/UX Designer, E-commerce Specialist, Shopify Engineer, Shopify Developers, dedicated shopify developers, ecommerce shopify expert, expert shopify designers, expert shopify plus, freelance shopify web designers, hire expert shopify developer, hire shopify freelancer, shopify growth experts, shopify it specialist, shopify plus consultant, shopify plus design experts, shopify seo expert freelance, shopify store design freelance, Shopify web design agency"
+      title="About Sheun | Certified Shopify Partner & Developer (UK, US, CA, AU, FR, DE)" 
+      description="Meet Sheun, a certified Shopify Partner, developer, and SEO expert. Helping merchants across the UK, US, Canada, Australia, France, and Germany build high-performance Shopify stores, migrations, and SEO sprints."
+      keywords="shopify developer UK, freelance shopify developer, shopify developer Australia, shopify expert Canada, United States Shopify Expert, shopify expert France, shopify developer Germany, About Sheun, Shopify Partner, custom liquid themes, WooCommerce to Shopify migration"
       canonical="/about"
       schema={{
         "@context": "https://schema.org",
         "@type": "AboutPage",
-        "name": "About Sheun Hub - The Shopify Engineer",
-        "description": "Learn more about Sheun, a dedicated Shopify Expert and eCommerce Developer committed to building high-performance online stores and driving sales.",
+        "name": "About Sheun - Certified Shopify Partner & SEO Consultant",
+        "description": "Learn more about Sheun, a certified Shopify Partner and remote e-commerce developer helping brands in the UK, US, Canada, Australia, France, and Germany scale with speed, migrations, and SEO sprints.",
         "url": "https://sheun.online/about",
         "mainEntity": {
           "@type": "Person",
           "name": "Sheun",
-          "jobTitle": "Shopify Engineer & Designer",
-          "knowsAbout": ["Shopify API", "Liquid", "Conversion Rate Optimization (CRO)", "UI/UX Design"],
+          "jobTitle": "Certified Shopify Partner",
+          "knowsAbout": ["Shopify API", "Liquid Programming", "WooCommerce Migrations", "Shopify SEO Sprints", "Conversion Rate Optimization (CRO)", "UI/UX Design"],
           "url": "https://sheun.online/about"
         }
       }}
@@ -60,14 +60,14 @@ export default function About() {
                   animate={{ opacity: 1, x: 0 }}
                   className="text-green text-xs font-bold uppercase tracking-[0.5em]"
                 >
-                  The Team Behind Sheun Hub
+                  The Specialist Behind Sheun.online
                 </motion.p>
                 <motion.h1 
                   className="text-6xl md:text-[101px] font-bold text-navy tracking-tighter leading-[0.8]"
                 >
                   <motion.span initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.1 }} className="block">Shopify Expert</motion.span>
-                  <motion.span initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.2 }} className="italic font-serif font-light text-navy/40 block">Sheun Hub</motion.span>
-                  <motion.span initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.3 }} className="text-green block text-4xl mt-4">Growth Partner</motion.span>
+                  <motion.span initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.2 }} className="italic font-serif font-light text-navy/40 block">Sheun</motion.span>
+                  <motion.span initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.3 }} className="text-green block text-4xl mt-4">Freelance Developer</motion.span>
                 </motion.h1>
               </div>
 
@@ -78,14 +78,14 @@ export default function About() {
                 className="space-y-10 text-navy/60 text-2xl leading-relaxed max-w-2xl font-serif italic"
               >
                 <p>
-                  Meet Sheun Hub, the technical architects behind Sheun Hub and a dedicated Shopify Growth Expert. While many agencies rely on off-the-shelf templates, Sheun Hub specializes in Custom Shopify Development to give emerging brands the technical advantage they need to scale.
+                  I am Sheun, a certified Shopify Partner and the technical architect behind Sheun.online. With a <strong>Business Management degree</strong> and a obsession for clean Liquid code, I bridge the gap between technical engineering and commercial strategy.
                 </p>
                 <p>
-                  Working with Sheun Hub means partnering with a specialist focused strictly on tangible E-commerce Scaling. Beyond writing clean Liquid code, Sheun Hub provides comprehensive Store Optimization—merging rapid site speed with strategic conversion rate improvements to turn casual browsers into loyal customers.
+                  I operate as a solo specialist, which means you get 5-star, direct access to the person actually writing your code. I don't hide behind project managers; I personally ensure every pixel and every script is optimized for revenue.
                 </p>
                 <div className="flex flex-wrap gap-6">
                   <div className="flex items-center gap-4 bg-light px-8 py-4 rounded-full border border-navy/5 shadow-sm text-sm font-bold text-navy uppercase tracking-widest">
-                    <MapPin size={20} className="text-green" /> Based in Nigeria
+                    <MapPin size={20} className="text-green" /> Remote Specialist
                   </div>
                   <div className="flex items-center gap-4 bg-light px-8 py-4 rounded-full border border-navy/5 shadow-sm text-sm font-bold text-navy uppercase tracking-widest">
                     <Globe size={20} className="text-green" /> Working Globally
@@ -100,7 +100,7 @@ export default function About() {
                   <a href="https://www.upwork.com/freelancers/~017eb19011cd354946" target="_blank" rel="noopener noreferrer" className="p-3 bg-navy text-white hover:bg-green hover:text-navy rounded-full transition-all flex items-center justify-center overflow-hidden" title="Upwork">
                     <img src="https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/upwork-icon.png" alt="Upwork" className="w-5 h-5 object-contain" />
                   </a>
-                  <a href="https://wa.us/2348084315743" target="_blank" rel="noopener noreferrer" className="p-3 bg-navy text-white hover:bg-green hover:text-navy rounded-full transition-all flex items-center justify-center overflow-hidden" title="WhatsApp">
+                  <a href="https://wa.me/2348084315743" target="_blank" rel="noopener noreferrer" className="p-3 bg-navy text-white hover:bg-green hover:text-navy rounded-full transition-all flex items-center justify-center overflow-hidden" title="WhatsApp">
                     <img src="https://cdn-icons-png.flaticon.com/512/3670/3670051.png" alt="WhatsApp" className="w-6 h-6 object-contain" />
                   </a>
                   <a href="mailto:sheunhost@gmail.com" className="p-3 bg-navy text-white hover:bg-green hover:text-navy rounded-full transition-all flex items-center justify-center overflow-hidden" title="Email">
@@ -129,7 +129,7 @@ export default function About() {
               >
                 <img 
                   src="https://plain-enam-prod-public.komododecks.com/202605/19/vZvg4Ag3WuFmylr2Sh6R/image.jpg" 
-                  alt="Sheun - Shopify Development and Growth Expert" 
+                  alt="Sheun - Shopify Expert UK and Global Developer" 
                   referrerPolicy="no-referrer"
                   className="w-full h-full object-cover object-top" 
                   loading="lazy" 
@@ -152,34 +152,63 @@ export default function About() {
         </div>
       </section>
     </ScrollReveal>
+      {/* Hidden for SEO */}
+      <div className="sr-only">
+        <h2>Who I Work With</h2>
+        <p>I provide high-end Shopify development for ambitious brands across four primary markets: United Kingdom (Shopify Expert UK), United States (E-commerce Scaling), Canada (Shopify Expert Canada), and Australia (Shopify Developer Australia).</p>
+      </div>
 
-      {/* 2 Sub-banners Section */}
+      {/* Global Credibility Section */}
       <ScrollReveal>
-        <section className="py-24 bg-white relative overflow-hidden border-t border-navy/5">
-        <div className="container mx-auto px-6">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-            <motion.div 
-              initial={{ opacity: 0, x: -30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              className="bg-light p-12 rounded-3xl space-y-8 flex flex-col justify-between"
-            >
-              <h3 className="text-4xl font-bold text-navy tracking-tight">Technical Mastery.</h3>
-              <p className="text-navy/40 text-lg font-serif italic">Pushing the boundaries of what's possible with Shopify Liquid and specialized API integrations.</p>
-              <div className="w-12 h-1 bg-green" />
-            </motion.div>
-            <motion.div 
-              initial={{ opacity: 0, x: 30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              className="bg-navy text-white p-12 rounded-3xl space-y-8 flex flex-col justify-between"
-            >
-              <h3 className="text-4xl font-bold tracking-tight">Strategic Scaling.</h3>
-              <p className="text-white/40 text-lg font-serif italic">Every technical decision is rooted in a deep understanding of multi-region eCommerce growth.</p>
-              <div className="w-12 h-1 bg-green" />
-            </motion.div>
+        <section className="py-24 bg-light">
+          <div className="container mx-auto px-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center max-w-6xl mx-auto">
+              <div>
+                <h2 className="text-4xl font-bold text-navy mb-8">Global Credibility</h2>
+                <p className="text-lg text-navy/60 mb-6 leading-relaxed">
+                  I have successfully executed <strong>10+ high-impact Shopify projects</strong> for clients worldwide. My experience spans diverse niches, ensuring I understand the specific conversion requirements of your industry.
+                </p>
+                <ul className="space-y-4">
+                  {[
+                    "Fashion & Apparel (Conversion-led UX)",
+                    "Beauty & Skincare (Trust-driven design)",
+                    "Pet Supplies (Subscription & bundling)",
+                    "Gadgets & Tech (Spec-heavy optimization)"
+                  ].map((niche, i) => (
+                    <li key={i} className="flex items-center gap-3 text-navy font-medium">
+                      <CheckCircle2 size={20} className="text-green" />
+                      {niche}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <div className="grid grid-cols-2 gap-4">
+                <div className="aspect-square rounded-3xl overflow-hidden bg-navy/5 border border-navy/10 shadow-sm">
+                  <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=400&q=80" alt="Fashion Niche" className="w-full h-full object-cover" />
+                </div>
+                <div className="aspect-square rounded-3xl overflow-hidden bg-navy/5 border border-navy/10 shadow-sm mt-8">
+                  <img src="https://images.unsplash.com/photo-1596462502278-27bf87a931be?w=400&q=80" alt="Beauty Niche" className="w-full h-full object-cover" />
+                </div>
+                <div className="aspect-square rounded-3xl overflow-hidden bg-navy/5 border border-navy/10 shadow-sm">
+                  <img src="https://images.unsplash.com/photo-1516733725897-1aa73b87c8e8?w=400&q=80" alt="Pet Niche" className="w-full h-full object-cover" />
+                </div>
+                <div className="aspect-square rounded-3xl overflow-hidden bg-navy/5 border border-navy/10 shadow-sm mt-8">
+                  <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=400&q=80" alt="Tech Niche" className="w-full h-full object-cover" />
+                </div>
+              </div>
+            </div>
           </div>
+        </section>
+      </ScrollReveal>
+
+      {/* Timezone Friendly Message */}
+      <section className="py-12 bg-white text-center">
+        <div className="container mx-auto px-6">
+          <p className="text-sm text-navy/40 font-medium tracking-wide">
+            🌍 Timezone-friendly communication for clients in the <strong>UK, Canada, and Australia</strong>. I work while you work.
+          </p>
         </div>
       </section>
-    </ScrollReveal>
 
       {/* Skills & Credentials - Bento Grid */}
       <ScrollReveal>
@@ -217,8 +246,8 @@ export default function About() {
             <div className="md:col-span-4 bg-green p-8 md:p-12 rounded-2xl space-y-6 md:space-y-8 flex flex-col justify-between">
               <div className="space-y-4">
                 <Star size={40} className="text-navy md:w-[48px] md:h-[48px]" />
-                <h3 className="text-3xl md:text-4xl font-bold text-navy leading-tight tracking-tighter">Top Rated <br />Freelancer</h3>
-                <p className="text-navy/60 font-medium text-sm md:text-base">Elite performance on Upwork with 100% client satisfaction.</p>
+                <h3 className="text-3xl md:text-4xl font-bold text-navy leading-tight tracking-tighter">5-Star <br />Specialist</h3>
+                <p className="text-navy/60 font-medium text-sm md:text-base">Consistent Top Rated performance with 100% client satisfaction.</p>
               </div>
               <div className="flex -space-x-4">
                 {[1, 2, 3, 4, 5].map(i => (
@@ -249,21 +278,21 @@ export default function About() {
       </section>
     </ScrollReveal>
 
-      {/* How We Work - Visible Grid */}
+      {/* How I Work - Visible Grid */}
       <ScrollReveal>
         <section className="py-32 bg-white">
         <div className="container mx-auto px-6">
           <div className="text-center max-w-3xl mx-auto mb-24 space-y-4">
             <p className="text-navy/40 text-[10px] font-bold uppercase tracking-[0.3em]">Process</p>
-            <h2 className="text-5xl md:text-7xl font-bold text-navy tracking-tight">How we <span className="italic font-serif font-light text-navy/40">Work</span>.</h2>
+            <h2 className="text-5xl md:text-7xl font-bold text-navy tracking-tight">How I <span className="italic font-serif font-light text-navy/40">Work</span>.</h2>
           </div>
           
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 border-t border-l border-navy/5">
             {[
-              { title: "Client-First", desc: "Your success is our metricWe don't close a project until you're happy.", icon: MessageSquare },
-              { title: "Fast Delivery", desc: "We respect deadlines and communicate every step of the way.", icon: Zap },
-              { title: "Detail-Oriented", desc: "Every pixel, every setting, every SEO tag — nothing is overlooked.", icon: Layout },
-              { title: "Long-Term Partner", desc: "We build relationships, not just stores. Most of our clients come back.", icon: Star },
+              { title: "Direct Contact", desc: "You work directly with me. No project managers, no communication delays.", icon: MessageSquare },
+              { title: "Surgical Precision", desc: "I focus on high-impact fixes that actually move your revenue needle.", icon: Zap },
+              { title: "Business Strategy", desc: "My Business Management degree informs every technical decision I make.", icon: Layout },
+              { title: "Global Specialist", desc: "I understand the specific requirements of UK, US, CA, and AU markets.", icon: Star },
             ].map((card, i) => (
               <div key={i} className="p-12 border-r border-b border-navy/5 space-y-8 group hover:bg-light transition-colors">
                 <div className="w-12 h-12 bg-navy/5 rounded-xl flex items-center justify-center text-navy group-hover:bg-green transition-colors">
@@ -280,34 +309,6 @@ export default function About() {
       </section>
     </ScrollReveal>
 
-      {/* Comprehensive E-commerce SEO Content */}
-      <ScrollReveal>
-        <section className="py-24 bg-light border-t border-navy/5">
-          <div className="container mx-auto px-6">
-            <div className="max-w-4xl mx-auto prose prose-lg prose-headings:text-navy prose-a:text-green text-navy/70 leading-relaxed">
-              <h2 className="text-3xl md:text-4xl font-bold font-sans not-italic mb-6 tracking-tight">Meet Sheun Hub: Shopify Developers & E-commerce Growth Expert</h2>
-              <p className="mb-6 font-serif italic text-xl">
-                We are Sheun Hub, a dedicated team of Shopify developers operating out of Nigeria but proudly serving a diverse roster of clients globally. Unlike massive design agencies where you are passed between project managers, working with us means direct access to dedicated e-commerce architects who are fully invested in your brand’s revenue growth.
-              </p>
-              <h3 className="text-2xl font-bold font-sans not-italic mt-12 mb-4 tracking-tight">Scalable E-commerce Solutions</h3>
-              <p className="mb-4">
-                Global e-commerce requires a nuanced understanding of digital buyer behavior. By bridging the gap between superior technical engineering and commercial design strategy, we develop highly scalable custom Shopify stores tailored for dropshipping businesses and global private-label brands. Our hands-on experience means we understand exactly what consumers expect when clicking "Add to Cart" versus a local shopper interactively browsing your storefront.
-              </p>
-              <p className="mb-4">
-                For local business owners wanting to transition from brick-and-mortar setups into the robust digital marketplace, we provide comprehensive E-commerce Platform Integration. You no longer need to be held back by complex local digital bottlenecks; our setup services streamline Shopify for your explicit geographic market while leaving the door wide open for future global expansion.
-              </p>
-              <h3 className="text-2xl font-bold font-sans not-italic mt-12 mb-4 tracking-tight">A Deep Dedication to Code Quality & Conversion</h3>
-              <p className="mb-4">
-                Having earned our B.Sc. in Business Management from Obafemi Awolowo University (OAU), our approach to web development is uniqueWe do not just write Liquid code or design UX layouts; we approach every technical decision from a strict business perspective: <strong>Will this increase the store's Conversion Rate?</strong>
-              </p>
-              <p className="mb-4">
-                Our status as a Top Rated Agency on Upwork and a Certified Shopify Partner is built on this foundation of uncompromising code quality. Clunky, poorly coded themes severely impact Shopify Speed Optimization, destroying both your user experience and your Google search rankings. By strictly implementing custom, lightweight Liquid markup, we guarantee ultra-fast page load speeds and technically sound Shopify SEO for our clients. Your website is more than an online brochure; it is the revenue engine of your business. Let’s collaborate to build an automated tool that actively scales your brand.
-              </p>
-            </div>
-          </div>
-        </section>
-      </ScrollReveal>
-
       {/* About CTA - Recipe 2 */}
       <ScrollReveal>
         <section className="py-48 bg-navy-gradient relative overflow-hidden">
@@ -320,38 +321,32 @@ export default function About() {
             className="max-w-5xl mx-auto space-y-16"
           >
             <h2 className="text-7xl md:text-[140px] font-bold text-white leading-[0.8] tracking-[-0.06em] uppercase">
-              Let's <span className="text-green italic font-serif font-light lowercase">Build.</span>
+              Ready to <span className="text-green italic font-serif font-light lowercase">Apply?</span>
             </h2>
             <p className="text-white/60 text-2xl md:text-3xl max-w-3xl mx-auto leading-relaxed font-serif italic">
-              Ready to work with someone who genuinely cares about your store's success?
+              I am currently accepting new projects for brands based in the UK, US, Canada, and Australia.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-12">
-              <button 
-                onClick={() => navigate("/apply#apply-form")} 
+              <Link 
+                to="/apply" 
                 className="w-full sm:w-auto bg-green text-navy px-16 py-8 rounded-full font-bold text-2xl hover:scale-105 transition-all duration-500 shadow-2xl green-glow flex items-center justify-center text-center"
               >
-                Get Started
-              </button>
+                Apply to Work with Sheun
+              </Link>
               <Link to="/portfolio" className="w-full sm:w-auto text-white font-bold text-2xl flex items-center justify-center gap-6 group text-center">
-                View Our Work <div className="w-12 h-px bg-white/20 group-hover:w-20 group-hover:bg-green transition-all duration-500" />
+                View Recent Work <div className="w-12 h-px bg-white/20 group-hover:w-20 group-hover:bg-green transition-all duration-500" />
               </Link>
             </div>
             
             <div className="pt-12 flex items-center justify-center gap-4">
-              <a href="https://www.linkedin.com/in/sheun-hub-26b876321" target="_blank" rel="noopener noreferrer" className="p-4 bg-white/10 hover:bg-green hover:text-navy text-white rounded-full transition-all border border-white/10 shrink-0 flex items-center justify-center overflow-hidden">
+              <a href="https://www.linkedin.com/in/sheun-hub-26b876321" target="_blank" rel="noopener noreferrer" className="p-4 bg-white/10 hover:bg-green hover:text-navy text-white rounded-full transition-all border border-white/10 shrink-0 flex items-center justify-center overflow-hidden" title="LinkedIn">
                 <img src="https://images.rawpixel.com/image_png_social_square/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvdjk4Mi1kMS0xMC5wbmc.png" alt="LinkedIn" className="w-6 h-6 object-contain" />
               </a>
-              <a href="https://www.upwork.com/freelancers/~017eb19011cd354946" target="_blank" rel="noopener noreferrer" className="p-4 bg-white/10 hover:bg-green hover:text-navy text-white rounded-full transition-all border border-white/10 shrink-0 flex items-center justify-center overflow-hidden">
+              <a href="https://www.upwork.com/freelancers/~017eb19011cd354946" target="_blank" rel="noopener noreferrer" className="p-4 bg-white/10 hover:bg-green hover:text-navy text-white rounded-full transition-all border border-white/10 shrink-0 flex items-center justify-center overflow-hidden" title="Upwork">
                 <img src="https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/upwork-icon.png" alt="Upwork" className="w-6 h-6 object-contain" />
               </a>
-              <a href="https://wa.us/2348084315743" target="_blank" rel="noopener noreferrer" className="p-4 bg-white/10 hover:bg-green hover:text-navy text-white rounded-full transition-all border border-white/10 shrink-0 flex items-center justify-center overflow-hidden">
-                <img src="https://cdn-icons-png.flaticon.com/512/3670/3670051.png" alt="WhatsApp" className="w-6 h-6 object-contain" />
-              </a>
-              <a href="mailto:sheunhost@gmail.com" className="p-4 bg-white/10 hover:bg-green hover:text-navy text-white rounded-full transition-all border border-white/10 shrink-0 flex items-center justify-center overflow-hidden">
+              <a href="mailto:sheunhost@gmail.com" className="p-4 bg-white/10 hover:bg-green hover:text-navy text-white rounded-full transition-all border border-white/10 shrink-0 flex items-center justify-center overflow-hidden" title="Email">
                 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Gmail_icon_%282020%29.svg/960px-Gmail_icon_%282020%29.svg.png?_=20221017173631" alt="Gmail" className="w-6 h-6 object-contain" />
-              </a>
-              <a href="https://www.fiverr.com/sheun_h" target="_blank" rel="noopener noreferrer" className="p-4 bg-white/10 hover:bg-green hover:text-navy text-white rounded-full transition-all border border-white/10 shrink-0 flex items-center justify-center overflow-hidden" title="Fiverr">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR9zeK0uAVJfpeE1Zx1b3vDoihQGglG3BW2IjvgFTmksQ&s" alt="Fiverr" className="w-6 h-6 object-contain" />
               </a>
             </div>
           </motion.div>

@@ -1,5 +1,5 @@
 import { motion, AnimatePresence } from "framer-motion";
-import { CheckCircle2, Zap, Target, DollarSign, ArrowRight, MessageSquare, Clock, ShieldCheck, Lock, Mail, Phone, Globe, Star, Sparkles, User, Briefcase, TrendingUp, ChevronDown, HelpCircle, HardDrive, ChevronLeft, ChevronRight } from "lucide-react";
+import { CheckCircle2, Zap, Target, DollarSign, ArrowRight, MessageSquare, Clock, ShieldCheck, Lock, Mail, Phone, Globe, Star, Sparkles, User, Briefcase, TrendingUp, ChevronDown, HelpCircle, HardDrive, ChevronLeft, ChevronRight, Info } from "lucide-react";
 import PageWrapper from "../components/PageWrapper";
 import { useState, FormEvent, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
@@ -19,7 +19,7 @@ const expertise = [
   "Conversion rate optimization",
   "Shopify speed improvement",
   "Product page enhancement",
-  "Facebook, TikTok & Instagram ads",
+  "Technical Shopify SEO",
   "Fixing poor-performing Shopify stores"
 ];
 
@@ -36,6 +36,7 @@ export default function Apply() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
   const [activeFormSection, setActiveFormSection] = useState(1);
+  const [error, setError] = useState<string | null>(null);
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -80,18 +81,19 @@ export default function Apply() {
     const missingField = fieldsToValidate.find(field => !formData[field as keyof typeof formData]);
 
     if (missingField) {
-      alert(`Please fill in the required field: ${missingField.replace('_', ' ')}`);
+      setError(`Please fill in the required field: ${missingField.replace('_', ' ')}`);
       return;
     }
 
     if (activeFormSection === 1) {
       const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
       if (!emailRegex.test(formData.email)) {
-        alert("Please enter a valid email address format.");
+        setError("Please enter a valid email address format.");
         return;
       }
     }
 
+    setError(null);
     setActiveFormSection(2);
     window.scrollTo({ top: document.getElementById('apply-form')?.offsetTop ? document.getElementById('apply-form')!.offsetTop - 100 : 0, behavior: 'smooth' });
   };
@@ -151,11 +153,11 @@ export default function Apply() {
         }, 3000);
       } else {
         console.error("Error submitting form", data);
-        alert("Something went wrong. Please try again.");
+        setError("Something went wrong with the submission. Please check your connection and try again.");
       }
     } catch (error) {
       console.error("Error submitting form", error);
-      alert("Something went wrong. Please try again.");
+      setError("Failed to reach the server. Please try again in a moment.");
     } finally {
       setIsSubmitting(false);
     }
@@ -163,14 +165,14 @@ export default function Apply() {
 
   return (
     <PageWrapper 
-      title="Hire a Shopify Developer | Apply Now" 
-      description="Ready to build or scale your Shopify store? Apply to work with an expert Shopify developer to transform your e-commerce vision into reality. Get in touch!"
-      keywords="Hire Shopify Expert, Shopify Migration Service, E-commerce Project Application, Shopify Agency Setup, Drop Shipping Setup Application, hire shopify expert, hire expert shopify, find shopify experts, hire shopify freelancer, shopify expert agency"
+      title="Hire a Shopify Developer & SEO Specialist | Apply to Work with Sheun" 
+      description="Ready to build or scale your storefront? Apply for custom Shopify themes, WooCommerce migrations, SEO sprints, or speed optimization projects. Custom, transparent quotes for brands in the UK, US, CA, AU, FR, and DE."
+      keywords="Hire Shopify Expert UK, Hire Shopify Developer USA, Shopify Migration Service Canada, Shopify SEO Sprint Australia, Shopify Developer France, Shopify Partner Germany"
       canonical="/apply"
       schema={{
         "@context": "https://schema.org",
         "@type": "ContactPage",
-        "name": "Apply for a Project with Sheun Hub",
+        "name": "Apply for a Project with Sheun",
         "description": "Apply to work with Sheun, a high-performing Shopify Conversion Specialist.",
         "url": "https://sheun.online/apply"
       }}
@@ -306,6 +308,52 @@ export default function Apply() {
         
         <div className="container mx-auto px-6 relative z-10">
           <div className="max-w-4xl mx-auto">
+            {/* Qualification Section */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-20">
+              <div className="p-10 bg-green/5 rounded-[40px] border border-green/20 space-y-6 relative overflow-hidden group hover:bg-green/10 transition-colors">
+                <div className="absolute top-0 right-0 p-8 opacity-10 rotate-12 group-hover:rotate-0 transition-transform">
+                  <CheckCircle2 size={80} className="text-green" />
+                </div>
+                <div className="relative z-10 space-y-4">
+                  <h3 className="text-2xl font-bold text-navy tracking-tight">The Right Fit</h3>
+                  <ul className="space-y-3">
+                    {[
+                      "You value quality over the lowest price.",
+                      "You have an established brand or solid plan.",
+                      "You see e-commerce as an investment.",
+                      "You want a direct partner, not an agency."
+                    ].map((item, i) => (
+                      <li key={i} className="flex items-center gap-3 text-navy/70 text-sm font-medium">
+                        <CheckCircle2 className="text-green shrink-0" size={16} />
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+              <div className="p-10 bg-navy/5 rounded-[40px] border border-navy/10 space-y-6 relative overflow-hidden group hover:bg-navy/10 transition-colors">
+                <div className="absolute top-0 right-0 p-8 opacity-10 rotate-12 group-hover:rotate-0 transition-transform text-red-500">
+                  <Info size={80} />
+                </div>
+                <div className="relative z-10 space-y-4">
+                  <h3 className="text-2xl font-bold text-navy tracking-tight">Not a Fit</h3>
+                  <ul className="space-y-3">
+                    {[
+                      "You're looking for the 'cheapest' fix.",
+                      "You're not ready to invest in growth.",
+                      "You expect complex builds in 24 hours.",
+                      "You want a 'get rich quick' scheme."
+                    ].map((item, i) => (
+                      <li key={i} className="flex items-center gap-3 text-navy/40 text-sm font-medium">
+                        <div className="w-1.5 h-1.5 rounded-full bg-navy/20 shrink-0" />
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            </div>
+
             <motion.div 
               animate={{ y: [0, 15, 0] }} 
               transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
@@ -374,6 +422,15 @@ export default function Apply() {
                               </div>
 
                               <div className="space-y-10">
+                                {error && (
+                                  <motion.div 
+                                    initial={{ opacity: 0, height: 0 }}
+                                    animate={{ opacity: 1, height: 'auto' }}
+                                    className="bg-red-500/10 border border-red-500/20 text-red-500 p-4 rounded-2xl text-sm font-bold flex items-center gap-3"
+                                  >
+                                    <Info size={18} /> {error}
+                                  </motion.div>
+                                )}
                                 <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
                                   <div className="space-y-4">
                                     <label htmlFor="name" className="text-[10px] font-black uppercase tracking-[0.4em] text-navy/40 ml-4">Full Name</label>
@@ -417,7 +474,7 @@ export default function Apply() {
                                       <Globe className="absolute left-6 top-1/2 -translate-y-1/2 text-navy/10 group-focus-within:text-green transition-colors" size={20} aria-hidden="true" />
                                       <input 
                                         id="store_url" 
-                                        type="url" 
+                                        type="text" 
                                         name="store_url" 
                                         value={formData.store_url}
                                         onChange={handleInputChange}
@@ -464,7 +521,7 @@ export default function Apply() {
                                   {[
                                     "Shopify Store Build",
                                     "Shopify Redesign",
-                                    "Store Migration",
+                                    "Shopify Migration Service",
                                     "SEO Optimization",
                                     "Shopify Speed Optimization",
                                     "Custom Liquid Dev",
@@ -603,7 +660,7 @@ export default function Apply() {
             <div className="relative text-center mb-16 space-y-4">
               <h2 className="text-4xl md:text-5xl font-bold text-navy tracking-tighter">Happy Clients.</h2>
               <p className="text-navy/40 font-serif italic text-xl max-w-2xl mx-auto">
-                Watch a few walkthroughs from our happy clients and store optimizations.
+                Watch a few walkthroughs from my happy clients and store optimizations.
               </p>
               <div className="absolute top-1/2 -translate-y-1/2 right-0 hidden md:flex items-center gap-4">
                 <button type="button" onClick={() => scrollVideos('left')} className="p-4 bg-navy text-white rounded-full hover:bg-green hover:text-navy transition-all duration-300 shadow-xl" aria-label="Previous videos">

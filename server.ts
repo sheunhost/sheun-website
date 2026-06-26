@@ -81,6 +81,14 @@ async function startServer() {
          return res.status(200).json({ success: true, message: "Already subscribed" });
       }
 
+      if (errorData?.title === "Forgotten Email Not Subscribed") {
+        console.log(`[Mailchimp] ${email} was permanently deleted and cannot be re-imported.`);
+        return res.status(400).json({ 
+          error: "This email was previously deleted and cannot be re-added automatically. Please contact us directly to be manually re-subscribed.",
+          details: errorData.detail
+        });
+      }
+
       res.status(error.response?.status || 500).json({
         error: "Failed to subscribe to Mailchimp",
         details: errorData?.detail || errorData?.title || error.message,

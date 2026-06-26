@@ -6,6 +6,7 @@ import FashionDropshippingGuide from "./FashionDropshippingGuide";
 import WooCommerceToShopifyMigration from "./WooCommerceToShopifyMigration";
 import ShopifySEOGuide from "./ShopifySEOGuide";
 import LeveragingShopifyMarkets from "./LeveragingShopifyMarkets";
+import ConversionKillers from "./ConversionKillers";
 import PageWrapper from "../components/PageWrapper";
 import Breadcrumbs from "../components/Breadcrumbs";
 
@@ -16,52 +17,59 @@ export default function BlogPost() {
     switch (postId) {
       case "1":
         return { 
-          title: "10 Shopify Settings Most Store Owners Miss", 
-          description: "Discover the 10 hidden settings in your Shopify admin that can make or break your store's conversion rate. Learn how to increase Shopify sales by optimizing your checkout and settings.",
+          title: "Shopify Backend Settings Optimization Guide (UK, US, CA, AU, FR, DE)", 
+          description: "Hidden Shopify settings to boost conversion rates, optimize checkout checkout pipelines, and streamline global delivery. Expert setup audit tips for international merchants.",
           component: <ShopifySettingsGuide />, 
-          keywords: "Shopify Settings, Shopify SEO, Increase Shopify Sales, Shopify Checkout Optimization, Shopify Expert, eCommerce Growth, Store Setup, Convert More Customers, Abandoned Cart Recovery" 
+          keywords: "Shopify Settings Guide, Shopify Backend Settings, Shopify checkout audit, Shopify international markets setup, Shopify expert UK, Shopify developer Canada, Shopify consultant Germany" 
         };
       case "2":
         return { 
-          title: "How to Speed Up Your Shopify Store in 2026", 
-          description: "A comprehensive guide to optimizing your Shopify store's performance for better user experience, higher conversion rates, and improved technical SEO.",
+          title: "Shopify Speed Optimization & Core Web Vitals Specialist (UK, US, CA, AU, FR, DE)", 
+          description: "Optimize your Shopify storefront speed and mobile Core Web Vitals. Reduce script bloat, lazy-load assets, and boost mobile conversions. Speed audit services in the UK, US, Canada, Australia, France, and Germany.",
           component: <ShopifySpeedOptimization />, 
-          keywords: "Shopify Speed Optimization, Faster Shopify Theme, Shopify Performance, Core Web Vitals, Increase Site Speed, eCommerce Conversion Rate" 
+          keywords: "Shopify Speed Optimization UK, Core Web Vitals Shopify USA, improve Shopify pagespeed Canada, Shopify developer speed Australia, Shopify speed optimization France, Shopify speed expert Germany" 
         };
       case "3":
         return { 
-          title: "The Best Shopify Apps for Dropshipping Stores in 2026", 
-          description: "My handpicked list of essential apps to automate your dropshipping business and increase AOV. Discover how to build a high-growth tech stack.",
+          title: "Best Shopify Dropshipping Apps for High Conversions (UK, US, CA, AU, FR, DE)", 
+          description: "The definitive checklist of Shopify dropshipping apps for 2026. Discover sourcing, inventory synchronization, custom fulfillment, and speed-optimized layouts for international merchants.",
           component: <BestDropshippingApps />, 
-          keywords: "Shopify Dropshipping Apps, Best Dropshipping Apps, DSers, Zendrop, ReConvert, Loox Reviews, Dropshipping Success 2026" 
+          keywords: "Shopify Dropshipping Apps, best sourcing tools, dropshipping builder UK, Shopify store setup USA, e-commerce automation Canada, Shopify integration Australia, dropshipping France, Shopify partner Germany" 
         };
       case "4":
         return { 
-          title: "How to Build a Profitable Fashion Dropshipping Store on Shopify", 
-          description: "Learn the secrets to success in the high-growth fashion dropshipping niche. From niche selection and sourcing to TikTok marketing and SEO.",
+          title: "High-Converting Fashion Dropshipping Shopify Store Design & Strategy", 
+          description: "Learn to build a high-converting fashion dropshipping Shopify store. Supplier strategies, custom Liquid theme branding, and conversion tactics for merchants in the UK, US, CA, AU, FR, and DE.",
           component: <FashionDropshippingGuide />, 
-          keywords: "Fashion Dropshipping Shopify, Start Fashion Brand Dropshipping, Clothing Dropshipping Suppliers, Shopify Fashion Theme SEO, Profitable Shopify Fashion Store" 
+          keywords: "Fashion Dropshipping Shopify, Shopify dropshipping builder UK, custom clothing store USA, fashion e-commerce expert Canada, fashion Shopify developer Australia, Shopify developer France, Shopify dropshipping Germany" 
         };
       case "5":
         return { 
-          title: "How to Migrate from WooCommerce to Shopify Without Losing SEO", 
-          description: "A technical walkthrough of migrating your WooCommerce store to Shopify while preserving your hard-earned Google rankings and organic traffic.",
+          title: "WooCommerce to Shopify Migration SEO: 2026 Checklist & Expert Services", 
+          description: "Migrate WooCommerce to Shopify without losing Google search rankings. Complete step-by-step SEO checklist, URL 301 mapping, and expert migration services for brands in the UK, US, Canada, Australia, France, and Germany.",
           component: <WooCommerceToShopifyMigration />, 
-          keywords: "WooCommerce to Shopify Migration, WordPress to Shopify SEO, Store Migration Guide, Matrixify, Preserve SEO rankings migration" 
+          keywords: "migrate WooCommerce to Shopify, WooCommerce to Shopify migration, Shopify migration expert, WooCommerce to Shopify SEO checklist, ecommerce migration services UK, WooCommerce to Shopify migration agency Canada, Shopify partner migration Australia, Shopify partner France, Shopify developer Germany" 
         };
       case "6":
         return { 
-          title: "Shopify SEO in 2026: The Beginner's Complete Guide", 
-          description: "Break free from the 'paid ad' cycle. This comprehensive primer introduces you to the world of technical and on-page SEO specifically for the Shopify platform, helping you build a compounding asset that drives organic sales on autopilot.",
+          title: "Shopify SEO in 2026: Complete Expert Optimization Guide", 
+          description: "Step-by-step technical and on-page Shopify SEO checklist. Learn to optimize collections, override metadata, configure rich schemas, and drive organic traffic in the UK, US, Canada, Australia, France, and Germany.",
           component: <ShopifySEOGuide />, 
-          keywords: "Shopify SEO 2026, Shopify SEO Guide, Technical SEO Shopify, Shopify Organic Traffic, eCommerce SEO Strategy, Shopify On-page SEO, Increase Shopify Organic Sales" 
+          keywords: "Shopify SEO Guide, Shopify SEO expert UK, Shopify SEO specialist USA, technical Shopify SEO Canada, rank Shopify store Australia, Shopify SEO consultant France, Shopify optimization Germany" 
         };
       case "7":
         return { 
-          title: "Leveraging Shopify Markets for International Sales", 
-          description: "Unlock global revenue with Shopify Markets. A comprehensive guide on currency conversion, language localization, and international shipping strategies.",
+          title: "How to Leverage Shopify Markets for International Sales (UK, US, CA, AU, FR, DE)", 
+          description: "Scale your store globally with Shopify Markets. Configure custom pricing, duties calculation, localized SEO, and multi-currency checkouts for the UK, US, Canada, Australia, France, and Germany.",
           component: <LeveragingShopifyMarkets />, 
-          keywords: "Shopify Markets, International Sales, Currency Conversion, Localized Pricing, Shopify Shipping, Import Duties, eCommerce Expansion, Multi-language Shopify Store" 
+          keywords: "Shopify Markets guide, international Shopify setup, Shopify multi-currency, Shopify expert UK, Shopify partner France, Shopify developer Germany" 
+        };
+      case "8":
+        return { 
+          title: "Shopify Store Not Converting? CRO Optimization Guide (UK, US, CA, AU, FR, DE)", 
+          description: "Is your Shopify storefront getting traffic but no sales? Fix low Shopify conversion rates, checkout drop-offs, and design errors. Professional CRO audit services in the UK, US, Canada, Australia, France, and Germany.",
+          component: <ConversionKillers />, 
+          keywords: "Shopify store not converting UK, Shopify conversion optimization USA, e-commerce CRO audit Canada, fix checkout drop-off Australia, Shopify checkout audit France, Shopify CRO expert Germany" 
         };
       default:
         return { 

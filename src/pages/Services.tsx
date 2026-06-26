@@ -12,7 +12,7 @@ const services = [
     icon: Layout,
     title: "Shopify Store Setup",
     desc: "Complete Shopify store setup from scratch — theme, products, payments, and launch-ready configuration.",
-    fullDesc: "Launch your brand with a professional, high-converting Shopify store. We handle everything from theme selection and customization to essential app integrations and payment gateway setup.",
+    fullDesc: "Launch your brand with a professional, high-converting Shopify store. I handle everything from theme selection and customization to essential app integrations and payment gateway setup.",
     includes: ["Theme setup", "Product upload", "Payment gateway", "Domain setup"],
     price: "Custom Quote",
     timeline: "1-2 Weeks",
@@ -30,7 +30,7 @@ const services = [
     icon: ShoppingCart,
     title: "Dropshipping Build",
     desc: "Full dropshipping store for fashion, beauty, pets, or gadgets — supplier integration and conversion-optimized design.",
-    fullDesc: "Start your dropshipping journey with a store built for salesWe integrate reliable suppliers, optimize your product pages for high conversion, and set up automated fulfillment systems.",
+    fullDesc: "Start your dropshipping journey with a store built for salesI integrate reliable suppliers, optimize your product pages for high conversion, and set up automated fulfillment systems.",
     includes: ["Niche research", "Supplier setup", "Theme customization", "Upsell setup"],
     price: "From $700",
     timeline: "2 Weeks",
@@ -46,19 +46,19 @@ const services = [
   {
     id: "migration",
     icon: RefreshCw,
-    title: "Store Migration",
-    desc: "Seamlessly migrate your store from any platform to Shopify without losing data, SEO rankings, or sales momentum.",
-    fullDesc: "Switching platforms shouldn't be scaryWe ensure a 100% safe migration of your products, customers, orders, and most importantly, your SEO rankings.",
-    includes: ["Product/order migration", "URL redirects", "SEO preservation", "Testing"],
-    price: "$500",
-    timeline: "2-3 Weeks",
+    title: "Shopify Migration Service",
+    desc: "Migrate from WooCommerce, WP, Squarespace, or Etsy to Shopify without losing data or SEO rankings.",
+    fullDesc: "Move your store to Shopify without the stress. I handle the zero-data-loss transfer of products, customers, and orders, while strictly preserving your Google SEO rankings and search visibility.",
+    includes: ["Product/order migration", "URL redirects", "SEO preservation", "Zero downtime"],
+    price: "From $500",
+    timeline: "1-2 Weeks",
     tag: "Scale",
     roadmap: [
-      { title: "Data Mapping", desc: "Planning how data from your old platform fits into Shopify." },
-      { title: "Migration Setup", desc: "Configuring secure data transfer protocols." },
-      { title: "Transfer & Validation", desc: "Moving data and verifying every single record." },
-      { title: "SEO Preservation", desc: "Setting up 301 redirects to keep your Google rankings." },
-      { title: "Final Cutover", desc: "Switching your domain and launching on Shopify." }
+      { title: "Data Audit & Mapping", desc: "Planning how data from your old platform (WooCommerce, Etsy, etc.) fits into Shopify." },
+      { title: "Secure Migration", desc: "Transferring your entire product catalog, customer database, and order history." },
+      { title: "SEO Preservation", desc: "Implementing 301 redirects so you don't lose your Google search rankings." },
+      { title: "Matching Design", desc: "Ensuring your Shopify store looks as good as or better than your previous site." },
+      { title: "Final Cutover", desc: "Switching your domain with zero downtime and launching on Shopify." }
     ]
   },
   {
@@ -66,7 +66,7 @@ const services = [
     icon: Palette,
     title: "Custom Liquid Dev",
     desc: "Bespoke Shopify store using premium themes — fully tailored to your brand identity with custom Liquid code.",
-    fullDesc: "Go beyond standard theme limitationsWe build custom Liquid sections, unique product page features, and complex logic that sets your store apart from the competition.",
+    fullDesc: "Go beyond standard theme limitationsI build custom Liquid sections, unique product page features, and complex logic that sets your store apart from the competition.",
     includes: ["Color/font branding", "Custom sections", "Mobile optimization", "Speed tuning"],
     price: "Custom Quote",
     timeline: "2-4 Weeks",
@@ -102,7 +102,7 @@ const services = [
     icon: Bug,
     title: "Bug Fixing",
     desc: "Fast resolution of any Shopify errors, broken layouts, app conflicts, or checkout issues.",
-    fullDesc: "Don't let technical glitches kill your salesWe provide rapid response support to fix layout issues, broken apps, and checkout errors that affect your bottom line.",
+    fullDesc: "Don't let technical glitches kill your salesI provide rapid response support to fix layout issues, broken apps, and checkout errors that affect your bottom line.",
     includes: ["Bug diagnosis", "Fix + Test", "Ongoing support options"],
     price: "Custom Quote",
     timeline: "24-48 Hours",
@@ -120,7 +120,7 @@ const services = [
     icon: Search,
     title: "SEO Optimization",
     desc: "Shopify-specific SEO setup to improve your Google rankings and drive organic traffic.",
-    fullDesc: "Traffic is useless if it's not the right kindWe optimize your Shopify store's technical SEO, metadata, and site structure to help you rank for the keywords that actually convert.",
+    fullDesc: "Traffic is useless if it's not the right kindI optimize your Shopify store's technical SEO, metadata, and site structure to help you rank for the keywords that actually convert.",
     includes: ["Meta tags", "URL structure", "Image alt text", "Schema markup"],
     price: "Custom Quote",
     timeline: "1-2 Weeks",
@@ -138,7 +138,7 @@ const services = [
     icon: Target,
     title: "Conversion Rate Optimization (CRO)",
     desc: "A deep, data-driven analysis of your store's user behavior, providing a strategic roadmap of UI/UX improvements to increase your sales without increasing traffic.",
-    fullDesc: "Increase your sales without increasing trafficWe perform a deep, data-driven analysis of your store's user behavior and provide a strategic roadmap of UI/UX improvements.",
+    fullDesc: "Increase your sales without increasing trafficI perform a deep, data-driven analysis of your store's user behavior and provide a strategic roadmap of UI/UX improvements.",
     includes: ["UX Audit", "A/B Testing", "Heatmap Analysis", "Funnel Optimization"],
     price: "$800",
     timeline: "3 Weeks",
@@ -156,7 +156,7 @@ const services = [
     icon: Layout,
     title: "App Configuration",
     desc: "Seamless integration of marketing, loyalty, and logistics apps without slowing your store.",
-    fullDesc: "Installing apps is easy, but configuring them correctly without destroying your store speed is hard. We handle complex setups for Klaviyo, Recharge, Yotpo, and more.",
+    fullDesc: "Installing apps is easy, but configuring them correctly without destroying your store speed is hard. I handle complex setups for Klaviyo, Recharge, Yotpo, and more.",
     includes: ["App installation", "Theme integration", "Speed testing", "Workflow setup"],
     price: "$300",
     timeline: "3-5 Days",
@@ -174,7 +174,7 @@ const services = [
     icon: Zap,
     title: "Speed Optimization",
     desc: "Lightning-fast page loads to improve Google rankings and customer retention.",
-    fullDesc: "Every second of delay costs you salesWe optimize your theme code, compress assets, and prune heavy apps to get your store to a 90+ score on Core Web Vitals.",
+    fullDesc: "Every second of delay costs you salesI optimize your theme code, compress assets, and prune heavy apps to get your store to a 90+ score on Core Web Vitals.",
     includes: ["Core Web Vitals", "Image optimization", "Code minification", "App audit"],
     price: "$400",
     timeline: "1 Week",
@@ -191,8 +191,8 @@ const services = [
 
 const faqs = [
   { q: "How long does a Shopify store build take?", a: "Typically, a complete store build takes between 5 to 10 days depending on the complexity and number of products." },
-  { q: "What platforms can you migrate from?", a: "We can migrate from WooCommerce, Wix, Squarespace, BigCommerce, and custom-built platforms." },
-  { q: "Do you offer ongoing support after launch?", a: "AbsolutelyWe offer maintenance packages and support to ensure your store continues to run smoothly after launch." },
+  { q: "What platforms can you migrate from?", a: "I can migrate your store from WooCommerce, WordPress, Squarespace, Etsy, Wix, BigCommerce, and custom-built platforms with zero data loss." },
+  { q: "Do you offer ongoing support after launch?", a: "AbsolutelyI offer maintenance packages and support to ensure your store continues to run smoothly after launch." },
   { q: "What's included in the free store audit?", a: "The audit includes a review of your store's speed, design/UX, SEO health, and conversion rate optimization tips." },
 ];
 
@@ -348,8 +348,8 @@ export default function Services() {
 
   return (
     <PageWrapper 
-      title="Shopify Development Services | Sheun Hub" 
-      description="Professional Shopify services: store builds, redesigns, dropshipping setup, migrations, and CRO. Ready to scale your e-commerce sales? View our services!"
+      title="Shopify Development, Migration & SEO Services (UK, US, CA, AU, FR, DE)" 
+      description="Professional Shopify services: custom theme builds, WooCommerce migrations, technical SEO audits, and 48-hour SEO sprints. Scaling sales for merchants in the UK, US, Canada, Australia, France, and Germany."
       keywords="Shopify Services, Store Setup, Shopify Migration, Theme Customization, E-commerce SEO, Convertion Rate Optimization, shopify dropshipping expert, hire shopify seo expert, shopify experts, shopify freelancer, hire someone to build shopify store, shopify migration, shopify migration agency, shopify migration experts, build shopify store for us, shopify web designer, shopify developers, shopify website designer, shopify agency, hire shopify expert, shopify consultant, freelance shopify developer, shopify website designers, magento to shopify migration, shopify designers, shopify website design company, shopify developers for hire, shopify marketing experts, shopify website experts, shopify seo expert, shopify expert agency, shopify agency partners, shopify migration services, hire someone to set up shopify store, woocommerce to shopify migration, shopify coding expert, web designer for shopify, shopify freelance developer, shopify designer freelance, migrate woocommerce to shopify, shopify developer agency, shopify plus experts, shopify design experts, shopify expert help, certified shopify expert, shopify expert website builder, shopify developer hire, shopify store expert, freelance shopify website designer, hire someone to build our shopify store, shopify web agency, find shopify experts, shopify to bigcommerce migration, migrate from shopify to bigcommerce, wordpress to shopify migration, bigcommerce to shopify migration, shopify consultation, shopify seo specialist, shopify professionals, shopify expert hire, hire expert shopify, shopify development service, best shopify website designers, best shopify agency, shopify experts seo, shopify expert developer, shopify ecommerce experts, hire a shopify seo expert"
       canonical="/services"
       schema={{
@@ -387,19 +387,19 @@ export default function Services() {
               >
                 <motion.span initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} transition={{ delay: 0.1 }} className="block">Shopify Services</motion.span>
                 <motion.span initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} transition={{ delay: 0.2 }} className="italic font-serif font-light text-white/40 block">Expert Solutions</motion.span>
-                <motion.span initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} transition={{ delay: 0.3 }} className="text-green block text-3xl md:text-5xl mt-8">by Sheun Hub</motion.span>
+                <motion.span initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} transition={{ delay: 0.3 }} className="text-green block text-3xl md:text-5xl mt-8">by Sheun</motion.span>
               </motion.h1>
             </div>
 
-            <motion.div 
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.2 }}
-              className="flex flex-col md:flex-row items-start md:items-center gap-12"
-            >
-              <p className="text-white/60 text-2xl leading-relaxed max-w-2xl font-serif italic">
-                Whether you're starting from scratch or scaling an existing store — we provide the technical expertise to make it happen.
-              </p>
+              <motion.div 
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 0.2 }}
+                className="flex flex-col md:flex-row items-start md:items-center gap-12"
+              >
+                <p className="text-white/60 text-2xl leading-relaxed max-w-2xl font-serif italic">
+                  Whether you're starting from scratch or scaling an existing store — I provide the technical expertise to make it happen.
+                </p>
               <div className="inline-flex items-center gap-4 bg-green/10 border border-green/20 px-10 py-5 rounded-full">
                 <Gift className="text-green" size={24} />
                 <span className="text-green font-bold text-lg">Free Store Audit Included</span>
@@ -481,7 +481,7 @@ export default function Services() {
                         {/* Scope */}
                         <div className="space-y-3">
                           <h4 className="text-[10px] font-bold uppercase tracking-[0.2em] text-navy/40 flex items-center gap-2">
-                            <span className="w-1.5 h-1.5 bg-green rounded-full" /> Our Solution (Scope)
+                            <span className="w-1.5 h-1.5 bg-green rounded-full" /> My Solution (Scope)
                           </h4>
                           <p className="text-navy/70 leading-relaxed font-medium">
                             {data.scope}
@@ -729,12 +729,12 @@ export default function Services() {
                   <h2 className="text-5xl font-bold text-navy tracking-tight">Common <br />Questions.</h2>
                 </div>
                 <p className="text-navy/40 text-lg leading-relaxed">
-                  Everything you need to know about working with us on your Shopify project.
+                  Everything you need to know about working with me on your Shopify project.
                 </p>
                 <div className="bg-light p-8 rounded-xl border border-navy/5 space-y-4">
                   <MessageSquare className="text-green" size={32} />
                   <h4 className="text-xl font-bold text-navy">Still have questions?</h4>
-                  <p className="text-navy/40 text-sm">We'm here to help. Let's chat about your specific needs.</p>
+                  <p className="text-navy/40 text-sm">I'm here to help. Let's chat about your specific needs.</p>
                   <button 
                     onClick={() => navigate("/apply#apply-form")} 
                     className="inline-block text-navy font-bold text-sm border-b-2 border-green pb-1 text-left"
@@ -909,14 +909,8 @@ export default function Services() {
                 <a href="https://www.linkedin.com/in/sheun-hub-26b876321" target="_blank" rel="noopener noreferrer" className="p-4 bg-white/10 hover:bg-green hover:text-navy text-white rounded-full transition-all border border-white/10 flex items-center justify-center shrink-0 overflow-hidden">
                   <img src="https://images.rawpixel.com/image_png_social_square/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvdjk4Mi1kMS0xMC5wbmc.png" alt="LinkedIn" className="w-6 h-6 object-contain" />
                 </a>
-                <a href="https://wa.us/2348084315743" target="_blank" rel="noopener noreferrer" className="p-4 bg-white/10 hover:bg-green hover:text-navy text-white rounded-full transition-all border border-white/10 flex items-center justify-center shrink-0 overflow-hidden">
-                  <img src="https://cdn-icons-png.flaticon.com/512/3670/3670051.png" alt="WhatsApp" className="w-6 h-6 object-contain" />
-                </a>
                 <a href="mailto:sheunhost@gmail.com" className="p-4 bg-white/10 hover:bg-green hover:text-navy text-white rounded-full transition-all border border-white/10 flex items-center justify-center shrink-0">
                   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
-                </a>
-                <a href="https://www.fiverr.com/sheun_h" target="_blank" rel="noopener noreferrer" className="p-4 bg-white/10 hover:bg-green hover:text-navy text-white rounded-full transition-all border border-white/10 shrink-0 flex items-center justify-center overflow-hidden" title="Fiverr">
-                  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR9zeK0uAVJfpeE1Zx1b3vDoihQGglG3BW2IjvgFTmksQ&s" alt="Fiverr" className="w-6 h-6 object-contain" />
                 </a>
               </div>
             </motion.div>

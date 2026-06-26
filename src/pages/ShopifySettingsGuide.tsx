@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Clock, Calendar, ArrowLeft, ArrowRight, CheckCircle2, ShieldCheck, TrendingUp, AlertTriangle, Settings, Mail, Target, Phone, User, Send } from "lucide-react";
+import { Clock, Calendar, ArrowLeft, ArrowRight, CheckCircle2, ShieldCheck, TrendingUp, AlertTriangle, Settings, Mail, Target, Phone, User, Send, MessageSquare } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import PageWrapper from "../components/PageWrapper";
@@ -23,15 +23,6 @@ export default function ShopifySettingsGuide() {
   const url = encodeURIComponent(window.location.href);
   const title = encodeURIComponent("10 Shopify Settings Most Store Owners Miss");
 
-  const handleWhatsAppShare = () => {
-    window.open(`https://wa.me/?text=${title} - ${url}`, "_blank");
-  };
-
-  
-  const handleFacebookShare = () => {
-    window.open(`https://www.facebook.com/sharer/sharer.php?u=${url}`, "_blank");
-  };
-
   const handleLinkedinShare = () => {
     window.open(`https://www.linkedin.com/sharing/share-offsite/?url=${url}`, "_blank");
   };
@@ -53,9 +44,9 @@ export default function ShopifySettingsGuide() {
   return (
     <PageWrapper
       className="pt-32 pb-24 bg-white relative"
-      title="The Ultimate Guide to Shopify Backend Settings in 2026"
-      description="Hidden Shopify settings to increase sales and streamline operations. Master the Shopify backend to scale your eCommerce business."
-      keywords="Shopify Settings Guide, Shopify Backend Settings, eCommerce Optimization, Store Management, Shopify Operations"
+      title="Shopify Backend Settings Optimization Guide (UK, US, CA, AU, FR, DE)"
+      description="Hidden Shopify settings to boost conversion rates, optimize checkout checkout pipelines, and streamline global delivery. Expert setup audit tips for international merchants."
+      keywords="Shopify Settings Guide, Shopify Backend Settings, Shopify checkout audit, Shopify international markets setup, Shopify expert UK, Shopify developer Canada, Shopify consultant Germany"
       canonical="/blog/shopify-settings-guide"
       schema={{
         "@context": "https://schema.org",
@@ -168,9 +159,9 @@ export default function ShopifySettingsGuide() {
                   <h3 className="text-2xl font-bold m-0 text-white">Need a Second Pair of Eyes?</h3>
                 </div>
                 <p className="text-white/70 mb-6">If these basic settings are misconfigured, imagine what technical SEO or conversion blockers might exist on your product pages.</p>
-                <button onClick={handleWhatsAppContact} className="bg-green text-navy font-bold px-6 py-3 rounded-full flex items-center gap-2 hover:scale-105 transition-transform shadow-xl">
-                  <img src="https://cdn-icons-png.flaticon.com/512/3670/3670051.png" alt="WhatsApp" className="w-5 h-5 object-contain" /> Get a Free Store Audit
-                </button>
+                <Link to="/apply#apply-form" className="bg-green text-navy font-bold px-6 py-3 rounded-full flex items-center gap-2 hover:scale-105 transition-transform shadow-xl w-fit">
+                  Get a Free Store Audit <ArrowRight size={20} />
+                </Link>
               </div>
 
               <h2 className="flex items-center gap-4 text-3xl font-bold text-navy mt-12 mb-6 font-sans tracking-tight">
@@ -274,14 +265,8 @@ export default function ShopifySettingsGuide() {
               <div className="w-full md:w-auto">
                 <p className="text-[10px] font-bold uppercase tracking-[0.3em] text-navy/40 mb-4 md:text-right">Share Article</p>
                 <div className="flex items-center gap-3 flex-wrap">
-                  <button onClick={handleFacebookShare} className="w-12 h-12 flex items-center justify-center bg-light border border-navy/10 text-navy rounded-full hover:bg-green hover:text-navy transition-colors shadow-sm focus:outline-none focus:ring-4 focus:ring-green/20 overflow-hidden" title="Share on Facebook">
-                    <img src="https://cdn-icons-png.flaticon.com/512/124/124010.png" alt="Facebook" className="w-6 h-6 object-contain" />
-                  </button>
                   <button onClick={handleLinkedinShare} className="w-12 h-12 flex items-center justify-center bg-light border border-navy/10 text-navy rounded-full hover:bg-green hover:text-navy transition-colors shadow-sm focus:outline-none focus:ring-4 focus:ring-green/20 overflow-hidden" title="Share on LinkedIn">
                     <img src="https://images.rawpixel.com/image_png_social_square/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvdjk4Mi1kMS0xMC5wbmc.png" alt="LinkedIn" className="w-6 h-6 object-contain" />
-                  </button>
-                  <button onClick={handleWhatsAppShare} className="w-12 h-12 flex items-center justify-center bg-light border border-navy/10 text-navy rounded-full hover:bg-green hover:text-navy transition-colors shadow-sm focus:outline-none focus:ring-4 focus:ring-green/20 overflow-hidden" title="Share on WhatsApp">
-                    <img src="https://cdn-icons-png.flaticon.com/512/3670/3670051.png" alt="WhatsApp" className="w-6 h-6 object-contain" />
                   </button>
                 </div>
               </div>
@@ -290,7 +275,7 @@ export default function ShopifySettingsGuide() {
             {/* Comments Section */}
             <div className="pt-16 mt-16 border-t border-navy/5">
               <div className="flex items-center gap-4 mb-10">
-                <img src="https://cdn-icons-png.flaticon.com/512/3670/3670051.png" alt="WhatsApp" className="w-7 h-7 object-contain" />
+                <MessageSquare className="w-7 h-7 text-green" />
                 <h3 className="text-3xl font-bold text-navy tracking-tight">Discussion ({comments.length})</h3>
               </div>
 

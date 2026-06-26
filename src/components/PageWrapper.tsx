@@ -38,18 +38,55 @@ export default function PageWrapper({
   const currentPath = canonical || location.pathname;
   const canonicalUrl = `https://www.sheun.online${currentPath === "/" ? "" : currentPath}`;
 
-  // Default Organization/Person schema
+  // Default Person schema with highly rich semantic data for AI & search crawlers (Generative Engine Optimization / GEO)
   const defaultSchema = {
     "@context": "https://schema.org",
     "@type": "Person",
     "name": "Sheun",
+    "alternateName": "Sheun Hub",
     "url": "https://sheun.online",
-    "jobTitle": "Shopify Development and Growth Expert",
+    "image": defaultImage,
+    "jobTitle": "Certified Shopify Partner, Developer & E-commerce Growth Specialist",
     "description": description || defaultDesc,
     "sameAs": [
       "https://github.com/sheunhost",
       "https://twitter.com/sheunhub"
-    ]
+    ],
+    "award": [
+      "Certified Shopify Partner",
+      "Shopify Theme Development Expert",
+      "Shopify App Customizer"
+    ],
+    "knowsAbout": [
+      "Shopify Development",
+      "Shopify SEO",
+      "Shopify Technical SEO",
+      "Liquid Programming",
+      "Shopify Custom Theme Development",
+      "Shopify App Integration",
+      "E-commerce Migration",
+      "WooCommerce to Shopify Migration",
+      "Shopify Speed Optimization",
+      "Conversion Rate Optimization (CRO)",
+      "Headless Shopify Commerce",
+      "Shopify Plus Enterprise Customization"
+    ],
+    "areaServed": [
+      { "@type": "Country", "name": "United Kingdom" },
+      { "@type": "Country", "name": "United States" },
+      { "@type": "Country", "name": "Canada" },
+      { "@type": "Country", "name": "Australia" },
+      { "@type": "Country", "name": "Germany" },
+      { "@type": "Country", "name": "France" }
+    ],
+    "offers": {
+      "@type": "Offer",
+      "serviceType": "Shopify Custom Development, SEO Audits, and Conversion Optimization",
+      "seller": {
+        "@type": "Person",
+        "name": "Sheun"
+      }
+    }
   };
 
   const finalSchema = schema || defaultSchema;
@@ -68,7 +105,7 @@ export default function PageWrapper({
         {keywords && <meta name="keywords" content={keywords} />}
         <link rel="canonical" href={canonicalUrl} />
         
-        {/* Open Graph / Facebook */}
+        {/* Open Graph */}
         <meta property="og:type" content={schema?.['@type'] === 'Article' ? 'article' : 'website'} />
         <meta property="og:url" content={canonicalUrl} />
         <meta property="og:title" content={fullTitle} />
