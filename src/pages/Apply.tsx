@@ -736,7 +736,7 @@ export default function Apply() {
                   <box.icon size={32} className="md:w-[40px] md:h-[40px]" />
                 </div>
                 <div className="space-y-3 md:space-y-4 text-center md:text-left">
-                  <h4 className="text-xl md:text-2xl font-bold text-navy uppercase tracking-widest">{box.title}</h4>
+                  <h3 className="text-xl md:text-2xl font-bold text-navy uppercase tracking-widest">{box.title}</h3>
                   <p className="text-navy/40 text-base md:text-lg leading-relaxed font-serif italic">{box.desc}</p>
                 </div>
               </motion.div>

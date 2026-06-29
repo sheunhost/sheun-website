@@ -229,7 +229,7 @@ export default function Contact() {
                       <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Gmail_icon_%282020%29.svg/960px-Gmail_icon_%282020%29.svg.png?_=20221017173631" alt="Gmail" className="w-8 h-8 object-contain" />
                     </div>
                     <div className="space-y-3">
-                      <h4 className="text-4xl font-bold tracking-tighter">Email us directly.</h4>
+                      <h3 className="text-4xl font-bold tracking-tighter">Email us directly.</h3>
                       <p className="text-white/50 text-lg font-serif italic">For deep project discussions and formal quotes.</p>
                       <div className="pt-6 flex items-center gap-4 text-green font-bold text-xl">
                         sheunhost@gmail.com <ArrowRight className="group-hover:translate-x-2 transition-transform" />
@@ -259,7 +259,7 @@ export default function Contact() {
                 {/* Branding Card */}
                 <div className="sm:col-span-2 p-10 bg-green rounded-[40px] flex items-center justify-between shadow-xl">
                   <div className="space-y-2">
-                    <h5 className="text-navy font-bold text-2xl tracking-tighter leading-none">Sheun Hub®</h5>
+                    <div className="text-navy font-bold text-2xl tracking-tighter leading-none">Sheun Hub®</div>
                     <p className="text-navy/60 text-xs font-bold uppercase tracking-widest">Shopify Development</p>
                   </div>
                   <div className="w-20 h-20 rounded-full border-4 border-navy/10 flex items-center justify-center">
@@ -270,7 +270,7 @@ export default function Contact() {
 
               {/* Trust Badge / FAQ Micro */}
               <div className="p-12 space-y-8 bg-light rounded-[40px] border border-navy/5 border-dashed">
-                <h4 className="text-2xl font-bold text-navy tracking-tight">What to expect?</h4>
+                <h3 className="text-2xl font-bold text-navy tracking-tight">What to expect?</h3>
                 <div className="space-y-6">
                   {[
                     "Response within 24 business hours",

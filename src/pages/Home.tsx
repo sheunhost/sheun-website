@@ -7,6 +7,8 @@ import { useState, FormEvent, useEffect } from "react";
 import { AnimatePresence } from "framer-motion";
 import { cn, openCalendlyPopup } from "../lib/utils";
 import ScrollReveal from "../components/ScrollReveal";
+import { ImpactMetrics } from "../components/ImpactMetrics";
+import { TiltCard } from "../components/TiltCard";
 
 const stats = [
   { label: "Stores Built", value: "20+" },
@@ -719,10 +721,13 @@ export default function Home() {
                     initial={{ opacity: 0, scale: 0.9 }}
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{ delay: 0.6 + i * 0.1 }}
-                    className="bg-white/5 border border-white/10 p-6 rounded-2xl"
                   >
-                    <h4 className="text-green text-sm font-bold uppercase tracking-widest mb-1">{item.title}</h4>
-                    <p className="text-white/40 text-xs italic font-serif">{item.desc}</p>
+                    <TiltCard depth={20}>
+                      <div className="bg-white/5 border border-white/10 p-6 rounded-2xl h-full backdrop-blur-sm shadow-xl">
+                        <div className="text-green text-sm font-bold uppercase tracking-widest mb-1">{item.title}</div>
+                        <p className="text-white/40 text-xs italic font-serif">{item.desc}</p>
+                      </div>
+                    </TiltCard>
                   </motion.div>
                 ))}
               </div>
@@ -842,40 +847,58 @@ export default function Home() {
     </ScrollReveal>
 
     {/* Credibility Bar */}
-    <section className="py-12 bg-white border-b border-navy/5">
-      <div className="container mx-auto px-6">
-        <div className="flex flex-wrap items-center justify-center gap-8 md:gap-16 opacity-50 grayscale hover:grayscale-0 transition-all duration-500">
-          <div className="flex items-center gap-3">
-            <ShieldCheck className="text-navy" size={24} />
-            <span className="text-sm font-bold uppercase tracking-widest text-navy">Shopify Partner</span>
-          </div>
-          <div className="flex items-center gap-3">
-            <Trophy className="text-navy" size={24} />
-            <span className="text-sm font-bold uppercase tracking-widest text-navy">Upwork Top Rated</span>
-          </div>
-          <div className="flex items-center gap-3">
-            <Star className="text-navy" size={24} fill="currentColor" />
-            <span className="text-sm font-bold uppercase tracking-widest text-navy">5.0 Star Expert</span>
-          </div>
-          <div className="flex items-center gap-3">
-            <CheckCircle2 className="text-navy" size={24} />
-            <span className="text-sm font-bold uppercase tracking-widest text-navy">100% Satisfaction</span>
-          </div>
+    <section className="py-12 bg-[#F8FAFC] border-b border-[#E2E8F0] relative overflow-hidden">
+      {/* Background Dots */}
+      <div className="absolute inset-0 bg-[radial-gradient(#E2E8F0_1px,transparent_1px)] bg-[size:24px_24px] opacity-40 pointer-events-none"></div>
+      
+      <div className="container mx-auto px-6 max-w-7xl relative z-10">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
+          {[
+            { label: "Shopify Partner", sub: "Verified & Certified", icon: ShieldCheck, color: "#10b981" },
+            { label: "Upwork Top Rated", sub: "100% Success Rate", icon: Trophy, color: "#2563EB" },
+            { label: "5.0 Star Expert", sub: "Loved By Merchants", icon: Star, color: "#F59E0B" },
+            { label: "100% Satisfaction", sub: "Money-Back Guarantee", icon: CheckCircle2, color: "#09090b" }
+          ].map((badge, idx) => (
+            <motion.div
+              key={idx}
+              whileHover={{ scale: 1.02, y: -2 }}
+              className="flex items-center gap-4 p-5 rounded-2xl bg-white border border-[#E2E8F0] shadow-[0_2px_8px_rgba(0,0,0,0.02)] hover:shadow-[0_12px_24px_-10px_rgba(0,0,0,0.05)] transition-all"
+            >
+              <div 
+                className="w-12 h-12 rounded-xl flex items-center justify-center shrink-0"
+                style={{ backgroundColor: `${badge.color}10`, color: badge.color }}
+              >
+                <badge.icon size={22} className={badge.icon === Star ? "fill-current" : ""} />
+              </div>
+              <div>
+                <div className="font-bold text-[#0F172A] text-sm leading-tight font-sans">{badge.label}</div>
+                <p className="text-[11px] text-[#71717a] font-medium mt-0.5">{badge.sub}</p>
+              </div>
+            </motion.div>
+          ))}
         </div>
       </div>
     </section>
 
     {/* Pain Points Section */}
     <ScrollReveal>
-      <section className="py-32 bg-light">
-        <div className="container mx-auto px-6">
-          <div className="max-w-4xl mx-auto text-center mb-20 space-y-4">
+      <section className="py-32 bg-[#FFFFFF] relative overflow-hidden border-b border-[#E2E8F0]">
+        {/* Glow Effects */}
+        <div className="absolute top-1/4 left-1/3 w-[500px] h-[500px] bg-[#10b981]/5 rounded-full blur-[120px] pointer-events-none -z-10"></div>
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,#E2E8F020_1px,transparent_1px),linear-gradient(to_bottom,#E2E8F020_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_50%,#000_70%,transparent_100%)] -z-10"></div>
+
+        <div className="container mx-auto px-6 max-w-7xl">
+          <div className="max-w-4xl mx-auto text-center mb-24 space-y-4">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#F4F4F5] border border-[#E2E8F0] text-xs font-semibold uppercase tracking-wider text-[#0F172A] mb-2">
+              <AlertTriangle size={14} className="text-[#F59E0B]" />
+              The Reality of E-Commerce
+            </div>
             <h2 className="text-5xl md:text-7xl font-bold text-navy tracking-tighter">
               Is your Shopify store <br />
-              <span className="italic font-serif font-light text-navy/30">working for you?</span>
+              <span className="text-[#10b981] underline decoration-[#10b981]/20 underline-offset-8 italic font-serif font-light">working for you?</span>
             </h2>
-            <p className="text-navy/60 text-xl font-serif italic max-w-2xl mx-auto leading-relaxed">
-              Most Shopify stores fail not because the product is bad, but because the technical foundation is weak.
+            <p className="text-[#71717a] text-lg sm:text-xl font-serif italic max-w-2xl mx-auto leading-relaxed">
+              Most Shopify stores fail not because the product is bad, but because the technical and user-experience foundation is weak.
             </p>
           </div>
 
@@ -883,140 +906,60 @@ export default function Home() {
             {[
               { 
                 title: "Your store is slow.", 
-                desc: "Every second of load time reduces conversions by 7%. If your store takes more than 3 seconds to load, you're literally throwing money away." 
+                desc: "Every second of load time reduces conversions by 7%. If your store takes more than 3 seconds to load, you are literally throwing money away and hurting search rankings.",
+                icon: Zap,
+                color: "#10b981",
+                stat: "7% Loss",
+                statLabel: "per second delay"
               },
               { 
                 title: "Low conversion rate.", 
-                desc: "Traffic is expensive. If you're getting visitors but no sales, your UI/UX is creating friction that stops customers from clicking 'Buy'." 
+                desc: "Traffic is expensive. If you are getting visitors but no checkout conversions, your UI/UX is creating friction that stops prospective buyers from clicking 'Buy Now'.",
+                icon: Target,
+                color: "#2563EB",
+                stat: "1.5% average",
+                statLabel: "standard Shopify CRO"
               },
               { 
                 title: "Broken layouts.", 
-                desc: "A distorted image or a broken checkout button on mobile kills trust instantly. Customers don't buy from stores that look broken." 
+                desc: "A distorted image or a broken checkout button on mobile devices kills buyer trust instantly. Modern consumers do not buy from stores that look unprofessional.",
+                icon: AlertCircle,
+                color: "#EF4444",
+                stat: "85% customers",
+                statLabel: "abandon on broken design"
               },
               { 
                 title: "No technical partner.", 
-                desc: "Spending hours trying to fix Liquid code or app conflicts yourself is a waste of your time. You should be focusing on growth." 
+                desc: "Spending countless hours trying to fix complex Liquid code, app conflicts, or checkout errors yourself is a waste of your time. You should focus entirely on scaling.",
+                icon: Code2,
+                color: "#09090b",
+                stat: "100% focused",
+                statLabel: "on business growth"
               }
             ].map((point, i) => (
-              <div key={i} className="p-10 bg-white rounded-[40px] border border-navy/5 shadow-sm space-y-4">
-                <h3 className="text-2xl font-bold text-navy tracking-tight">{point.title}</h3>
-                <p className="text-navy/60 leading-relaxed">{point.desc}</p>
-              </div>
+              <motion.div 
+                key={i} 
+                whileHover={{ y: -4 }}
+                className="p-8 sm:p-10 bg-white rounded-3xl border border-[#E2E8F0] shadow-[0_2px_12px_rgba(0,0,0,0.01)] hover:shadow-[0_20px_40px_-15px_rgba(9,9,11,0.08)] transition-all space-y-6 relative overflow-hidden"
+              >
+                <div className="flex items-start justify-between gap-4">
+                  <div 
+                    className="w-14 h-14 rounded-2xl flex items-center justify-center shrink-0"
+                    style={{ backgroundColor: `${point.color}10`, color: point.color }}
+                  >
+                    <point.icon size={26} />
+                  </div>
+                  <div className="text-right">
+                    <div className="text-sm font-bold text-[#0F172A] font-mono">{point.stat}</div>
+                    <div className="text-[10px] text-[#71717a] font-medium uppercase tracking-wider mt-0.5">{point.statLabel}</div>
+                  </div>
+                </div>
+                <div className="space-y-3">
+                  <h3 className="text-2xl font-bold text-[#0F172A] tracking-tight">{point.title}</h3>
+                  <p className="text-[#71717a] text-sm leading-relaxed">{point.desc}</p>
+                </div>
+              </motion.div>
             ))}
-          </div>
-        </div>
-      </section>
-    </ScrollReveal>
-
-    {/* Credibility & Comparison Section */}
-    <ScrollReveal>
-      <section className="py-32 bg-white relative overflow-hidden">
-        <div className="container mx-auto px-6">
-          <div className="text-center max-w-3xl mx-auto mb-20 space-y-4">
-            <p className="text-green text-[10px] font-bold uppercase tracking-[0.3em]">The Comparison</p>
-            <h2 className="text-5xl md:text-6xl font-bold text-navy tracking-tighter">
-              Why brands choose <br />
-              <span className="italic font-serif font-light text-navy/30">Sheun over Agencies.</span>
-            </h2>
-            <p className="text-navy/60 text-lg md:text-xl font-serif italic leading-relaxed">
-              Finding the "best Shopify developer" shouldn't mean paying agency overheads or gambling on cheap, unreliable freelancers.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch">
-            {/* Cheap Freelancer */}
-            <div className="p-10 rounded-[40px] border border-navy/5 bg-light/50 space-y-8 flex flex-col opacity-60 grayscale hover:grayscale-0 transition-all">
-              <div className="space-y-2">
-                <h3 className="text-2xl font-bold text-navy/40">Generic Freelancer</h3>
-                <p className="text-navy/30 text-sm font-bold uppercase tracking-widest">Low Cost, High Risk</p>
-              </div>
-              <ul className="space-y-4 flex-grow">
-                <li className="flex items-start gap-3 text-navy/40 text-sm">
-                  <X size={18} className="text-red-400 shrink-0 mt-0.5" />
-                  Language & communication barriers
-                </li>
-                <li className="flex items-start gap-3 text-navy/40 text-sm">
-                  <X size={18} className="text-red-400 shrink-0 mt-0.5" />
-                  Cookie-cutter, generic themes
-                </li>
-                <li className="flex items-start gap-3 text-navy/40 text-sm">
-                  <X size={18} className="text-red-400 shrink-0 mt-0.5" />
-                  Unreliable timelines & ghosting
-                </li>
-                <li className="flex items-start gap-3 text-navy/40 text-sm">
-                  <X size={18} className="text-red-400 shrink-0 mt-0.5" />
-                  No understanding of e-commerce strategy
-                </li>
-              </ul>
-              <div className="pt-6 border-t border-navy/5">
-                <p className="text-navy/40 font-bold text-sm">Hidden Cost: <span className="text-red-400">Broken Stores</span></p>
-              </div>
-            </div>
-
-            {/* Sheun (The Expert) */}
-            <div className="p-10 rounded-[40px] bg-navy text-white space-y-8 flex flex-col relative shadow-2xl scale-105 z-10">
-              <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-green text-navy text-[10px] font-bold uppercase tracking-[0.2em] px-6 py-2 rounded-full shadow-lg">
-                Most Reliable Choice
-              </div>
-              <div className="space-y-2">
-                <h3 className="text-3xl font-bold text-white">Sheun Hub</h3>
-                <p className="text-green text-sm font-bold uppercase tracking-widest">The Affordable Shopify Expert</p>
-              </div>
-              <ul className="space-y-4 flex-grow">
-                <li className="flex items-start gap-3 text-white/80 text-sm">
-                  <CheckCircle2 size={18} className="text-green shrink-0 mt-0.5" />
-                  Direct partnership with a certified specialist
-                </li>
-                <li className="flex items-start gap-3 text-white/80 text-sm">
-                  <CheckCircle2 size={18} className="text-green shrink-0 mt-0.5" />
-                  Bespoke Liquid coding & technical SEO
-                </li>
-                <li className="flex items-start gap-3 text-white/80 text-sm">
-                  <CheckCircle2 size={18} className="text-green shrink-0 mt-0.5" />
-                  Strategic focus on ROI & conversions
-                </li>
-                <li className="flex items-start gap-3 text-white/80 text-sm">
-                  <CheckCircle2 size={18} className="text-green shrink-0 mt-0.5" />
-                  Transparent, predictable project costs
-                </li>
-                <li className="flex items-start gap-3 text-white/80 text-sm">
-                  <CheckCircle2 size={18} className="text-green shrink-0 mt-0.5" />
-                  Fast, direct, and proactive communication
-                </li>
-              </ul>
-              <div className="pt-6 border-t border-white/10">
-                <p className="text-white font-bold text-sm">Result: <span className="text-green">Profitable Growth</span></p>
-              </div>
-            </div>
-
-            {/* Big Agency */}
-            <div className="p-10 rounded-[40px] border border-navy/5 bg-light/50 space-y-8 flex flex-col opacity-60 grayscale hover:grayscale-0 transition-all">
-              <div className="space-y-2">
-                <h3 className="text-2xl font-bold text-navy/40">Big Digital Agency</h3>
-                <p className="text-navy/30 text-sm font-bold uppercase tracking-widest">High Cost, Low Attention</p>
-              </div>
-              <ul className="space-y-4 flex-grow">
-                <li className="flex items-start gap-3 text-navy/40 text-sm">
-                  <X size={18} className="text-red-400 shrink-0 mt-0.5" />
-                  $5k+ minimum project retainers
-                </li>
-                <li className="flex items-start gap-3 text-navy/40 text-sm">
-                  <X size={18} className="text-red-400 shrink-0 mt-0.5" />
-                  Work outsourced to junior interns
-                </li>
-                <li className="flex items-start gap-3 text-navy/40 text-sm">
-                  <X size={18} className="text-red-400 shrink-0 mt-0.5" />
-                  Layers of bureaucracy & slow responses
-                </li>
-                <li className="flex items-start gap-3 text-navy/40 text-sm">
-                  <X size={18} className="text-red-400 shrink-0 mt-0.5" />
-                  You're just another ticket in their queue
-                </li>
-              </ul>
-              <div className="pt-6 border-t border-navy/5">
-                <p className="text-navy/40 font-bold text-sm">Hidden Cost: <span className="text-red-400">Inefficiency</span></p>
-              </div>
-            </div>
           </div>
         </div>
       </section>
@@ -1110,7 +1053,7 @@ export default function Home() {
                   <TrendingUp size={150} className="text-green" />
                </div>
               <div className="space-y-4 text-center md:text-left relative z-10">
-                <h4 className="text-3xl font-bold text-white tracking-tight">Want to talk immediately?</h4>
+                <h3 className="text-3xl font-bold text-white tracking-tight">Want to talk immediately?</h3>
                 <p className="text-white/60 text-lg max-w-lg font-serif italic">
                   Skip the line and book a free 1-on-1 strategy call with us to discuss your custom store build.
                 </p>
@@ -1120,6 +1063,135 @@ export default function Home() {
               </button>
             </div>
 
+          </div>
+        </div>
+      </section>
+    </ScrollReveal>
+
+    <ImpactMetrics />
+
+    {/* Credibility & Comparison Section */}
+    <ScrollReveal>
+      <section className="py-32 bg-white relative overflow-hidden border-b border-[#E2E8F0]">
+        {/* Subtle decorative grid lines */}
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,#E2E8F015_1px,transparent_1px),linear-gradient(to_bottom,#E2E8F015_1px,transparent_1px)] bg-[size:4rem_4rem] pointer-events-none -z-10"></div>
+        <div className="absolute top-1/2 left-1/2 w-[600px] h-[600px] bg-green/5 rounded-full blur-[140px] pointer-events-none -translate-x-1/2 -translate-y-1/2 -z-10"></div>
+
+        <div className="container mx-auto px-6 max-w-7xl">
+          <div className="text-center max-w-3xl mx-auto mb-24 space-y-4">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#F4F4F5] border border-[#E2E8F0] text-xs font-semibold uppercase tracking-wider text-[#0F172A] mb-2">
+              The Comparison
+            </div>
+            <h2 className="text-5xl md:text-7xl font-bold text-navy tracking-tighter">
+              Why brands choose <br />
+              <span className="text-[#10b981] underline decoration-[#10b981]/20 underline-offset-8 italic font-serif font-light">Sheun over Agencies.</span>
+            </h2>
+            <p className="text-[#71717a] text-lg sm:text-xl font-serif italic leading-relaxed">
+              Finding the "best Shopify developer" shouldn't mean paying agency overheads or gambling on cheap, unreliable freelancers.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch">
+            {/* Cheap Freelancer */}
+            <div className="p-8 sm:p-10 rounded-3xl border border-[#E2E8F0] bg-[#F8FAFC]/60 space-y-8 flex flex-col opacity-60 grayscale hover:grayscale-0 hover:opacity-100 hover:border-red-200 transition-all duration-300">
+              <div className="space-y-2">
+                <span className="text-xs font-bold uppercase tracking-widest text-[#71717a]">Option 01</span>
+                <h3 className="text-2xl font-bold text-[#0F172A] tracking-tight">Generic Freelancer</h3>
+                <p className="text-red-500 text-xs font-bold uppercase tracking-widest">Low Cost, High Risk</p>
+              </div>
+              <ul className="space-y-4 flex-grow border-t border-[#E2E8F0] pt-6">
+                <li className="flex items-start gap-3 text-[#71717a] text-sm leading-relaxed">
+                  <X size={18} className="text-red-500 shrink-0 mt-0.5" />
+                  Language & communication barriers
+                </li>
+                <li className="flex items-start gap-3 text-[#71717a] text-sm leading-relaxed">
+                  <X size={18} className="text-red-500 shrink-0 mt-0.5" />
+                  Cookie-cutter, generic template stores
+                </li>
+                <li className="flex items-start gap-3 text-[#71717a] text-sm leading-relaxed">
+                  <X size={18} className="text-red-500 shrink-0 mt-0.5" />
+                  Unreliable timelines, delays & ghosting
+                </li>
+                <li className="flex items-start gap-3 text-[#71717a] text-sm leading-relaxed">
+                  <X size={18} className="text-red-500 shrink-0 mt-0.5" />
+                  No understanding of commercial conversion strategy
+                </li>
+              </ul>
+              <div className="pt-6 border-t border-[#E2E8F0]">
+                <p className="text-[#71717a] font-bold text-xs uppercase tracking-wider">Hidden Cost: <span className="text-red-500 font-mono">Broken Stores</span></p>
+              </div>
+            </div>
+
+            {/* Sheun (The Expert) */}
+            <div className="p-8 sm:p-10 rounded-3xl bg-[#09090b] text-white space-y-8 flex flex-col relative shadow-[0_20px_50px_rgba(0,0,0,0.15)] scale-105 z-10 border border-green/30">
+              {/* Badge */}
+              <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-[#10b981] text-[#09090b] text-[10px] font-bold uppercase tracking-[0.25em] px-6 py-2 rounded-full shadow-lg">
+                Most Reliable Choice
+              </div>
+              {/* Internal dotted background decoration */}
+              <div className="absolute inset-0 bg-[radial-gradient(rgba(16,185,129,0.15)_1px,transparent_1px)] bg-[size:16px_16px] rounded-3xl pointer-events-none"></div>
+
+              <div className="space-y-2 relative z-10">
+                <span className="text-xs font-bold uppercase tracking-widest text-green">Partner Option</span>
+                <h3 className="text-3xl font-bold text-white tracking-tight">Sheun Hub</h3>
+                <p className="text-[#10b981] text-xs font-bold uppercase tracking-widest">Professional Shopify Partner</p>
+              </div>
+              <ul className="space-y-4 flex-grow border-t border-white/10 pt-6 relative z-10">
+                <li className="flex items-start gap-3 text-white/90 text-sm leading-relaxed">
+                  <CheckCircle2 size={18} className="text-[#10b981] shrink-0 mt-0.5" />
+                  Direct partnership with a certified remote specialist
+                </li>
+                <li className="flex items-start gap-3 text-white/90 text-sm leading-relaxed">
+                  <CheckCircle2 size={18} className="text-[#10b981] shrink-0 mt-0.5" />
+                  Bespoke Liquid coding, zero theme-bloat & technical SEO
+                </li>
+                <li className="flex items-start gap-3 text-white/90 text-sm leading-relaxed">
+                  <CheckCircle2 size={18} className="text-[#10b981] shrink-0 mt-0.5" />
+                  Strategic focus on conversion metrics & commercial growth
+                </li>
+                <li className="flex items-start gap-3 text-white/90 text-sm leading-relaxed">
+                  <CheckCircle2 size={18} className="text-[#10b981] shrink-0 mt-0.5" />
+                  Transparent project cost structures without agency bloat
+                </li>
+                <li className="flex items-start gap-3 text-white/90 text-sm leading-relaxed">
+                  <CheckCircle2 size={18} className="text-[#10b981] shrink-0 mt-0.5" />
+                  Highly proactive, clear, and direct communications
+                </li>
+              </ul>
+              <div className="pt-6 border-t border-white/10 relative z-10">
+                <p className="text-white/80 font-bold text-xs uppercase tracking-wider">Result: <span className="text-[#10b981] font-mono">Profitable Scaled Store</span></p>
+              </div>
+            </div>
+
+            {/* Big Agency */}
+            <div className="p-8 sm:p-10 rounded-3xl border border-[#E2E8F0] bg-[#F8FAFC]/60 space-y-8 flex flex-col opacity-60 grayscale hover:grayscale-0 hover:opacity-100 hover:border-red-200 transition-all duration-300">
+              <div className="space-y-2">
+                <span className="text-xs font-bold uppercase tracking-widest text-[#71717a]">Option 02</span>
+                <h3 className="text-2xl font-bold text-[#0F172A] tracking-tight">Big Digital Agency</h3>
+                <p className="text-red-500 text-xs font-bold uppercase tracking-widest">High Cost, Low Attention</p>
+              </div>
+              <ul className="space-y-4 flex-grow border-t border-[#E2E8F0] pt-6">
+                <li className="flex items-start gap-3 text-[#71717a] text-sm leading-relaxed">
+                  <X size={18} className="text-red-500 shrink-0 mt-0.5" />
+                  $5k+ minimum project setup & monthly retainers
+                </li>
+                <li className="flex items-start gap-3 text-[#71717a] text-sm leading-relaxed">
+                  <X size={18} className="text-red-500 shrink-0 mt-0.5" />
+                  Your project is outsourced to junior developers/interns
+                </li>
+                <li className="flex items-start gap-3 text-[#71717a] text-sm leading-relaxed">
+                  <X size={18} className="text-red-500 shrink-0 mt-0.5" />
+                  Overwhelming bureaucracy & slow ticket-system responses
+                </li>
+                <li className="flex items-start gap-3 text-[#71717a] text-sm leading-relaxed">
+                  <X size={18} className="text-red-500 shrink-0 mt-0.5" />
+                  You're treated as just another ticket in their queue
+                </li>
+              </ul>
+              <div className="pt-6 border-t border-[#E2E8F0]">
+                <p className="text-[#71717a] font-bold text-xs uppercase tracking-wider">Hidden Cost: <span className="text-red-500 font-mono">Inefficiency</span></p>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -1300,7 +1372,7 @@ export default function Home() {
                     )}
                   </div>
                   <div>
-                    <h4 className="text-navy font-bold text-lg">{testimonials[testimonialIndex].name}</h4>
+                    <h3 className="text-navy font-bold text-lg">{testimonials[testimonialIndex].name}</h3>
                     <p className="text-navy/40 text-xs uppercase tracking-widest mt-1">{testimonials[testimonialIndex].role}</p>
                   </div>
                 </div>
@@ -1383,25 +1455,29 @@ export default function Home() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-50px" }}
                 transition={{ delay: i * 0.15, duration: 0.6 }}
-                className={cn("relative group overflow-hidden rounded-3xl cursor-pointer p-8 flex flex-col justify-end", item.col, item.height)}
+                className={cn(item.col)}
               >
-                <img 
-                  src={item.image} 
-                  alt={item.title} 
-                  referrerPolicy="no-referrer"
-                  className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-[2s]" 
-                  loading="lazy" 
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-navy via-navy/20 to-transparent opacity-80 group-hover:opacity-90 transition-opacity" />
-                <div className="relative z-10 flex items-end justify-between w-full">
-                  <div className="space-y-4">
-                    <p className="text-green text-[10px] font-bold uppercase tracking-[0.4em]">{item.category}</p>
-                    <h3 className="text-[clamp(1.5rem,3vw,2.25rem)] font-bold text-white tracking-tight line-clamp-1">{item.title}</h3>
+                <TiltCard depth={15} className="h-full">
+                  <div className={cn("relative group overflow-hidden rounded-3xl cursor-pointer p-8 flex flex-col justify-end w-full", item.height)}>
+                    <img 
+                      src={item.image} 
+                      alt={item.title} 
+                      referrerPolicy="no-referrer"
+                      className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-[2s]" 
+                      loading="lazy" 
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-navy via-navy/20 to-transparent opacity-80 group-hover:opacity-90 transition-opacity" />
+                    <div className="relative z-10 flex items-end justify-between w-full">
+                      <div className="space-y-4">
+                        <p className="text-green text-[10px] font-bold uppercase tracking-[0.4em]">{item.category}</p>
+                        <h3 className="text-[clamp(1.5rem,3vw,2.25rem)] font-bold text-white tracking-tight line-clamp-1">{item.title}</h3>
+                      </div>
+                      <div className="w-16 h-16 rounded-full bg-white/10 backdrop-blur-xl border border-white/20 flex items-center justify-center text-white opacity-0 group-hover:opacity-100 transition-all translate-y-4 group-hover:translate-y-0 shrink-0">
+                        <ArrowRight size={24} className="-rotate-45" />
+                      </div>
+                    </div>
                   </div>
-                  <div className="w-16 h-16 rounded-full bg-white/10 backdrop-blur-xl border border-white/20 flex items-center justify-center text-white opacity-0 group-hover:opacity-100 transition-all translate-y-4 group-hover:translate-y-0 shrink-0">
-                    <ArrowRight size={24} className="-rotate-45" />
-                  </div>
-                </div>
+                </TiltCard>
               </motion.div>
             ))}
           </div>
@@ -1456,7 +1532,7 @@ export default function Home() {
                       <CheckCircle2 size={24} />
                     </div>
                     <div>
-                      <h4 className="text-xl font-bold mb-2">{item.title}</h4>
+                      <h3 className="text-xl font-bold mb-2">{item.title}</h3>
                       <p className="text-white/40 leading-relaxed max-w-sm">{item.desc}</p>
                     </div>
                   </div>
@@ -1525,7 +1601,7 @@ export default function Home() {
                   <Zap size={100} className="text-green" />
                 </div>
                 <div className="relative z-10 space-y-4">
-                  <h4 className="text-xl font-bold">Free Growth Plan</h4>
+                  <h3 className="text-xl font-bold">Free Growth Plan</h3>
                   <p className="text-white/40 text-sm leading-relaxed">
                     Not sure what your store needsWe'll provide a comprehensive review of your speed, design, and SEO — completely free.
                   </p>

@@ -197,7 +197,7 @@ export default function ShopifyAudit() {
                     <FileText size={24} className="text-green" />
                   </div>
                   <div>
-                    <h4 className="text-xl font-bold mb-2">The Audit Document</h4>
+                    <h3 className="text-xl font-bold mb-2">The Audit Document</h3>
                     <p className="text-white/40">A Google Doc detailing every finding, categorised by 'Critical', 'Recommended', and 'Optional' with screenshots.</p>
                   </div>
                 </div>
@@ -207,7 +207,7 @@ export default function ShopifyAudit() {
                     <Video size={24} className="text-green" />
                   </div>
                   <div>
-                    <h4 className="text-xl font-bold mb-2">The Loom Walkthrough</h4>
+                    <h3 className="text-xl font-bold mb-2">The Loom Walkthrough</h3>
                     <p className="text-white/40">A 15-20 minute video where I personally navigate your store, explaining the 'why' behind the fixes.</p>
                   </div>
                 </div>

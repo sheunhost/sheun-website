@@ -148,121 +148,130 @@ export default function Portfolio() {
         }
       }}
     >
-      {/* Top Section Label */}
-      <div className="bg-green text-navy py-4 px-6 text-center text-[10px] font-bold uppercase tracking-[0.3em]">
-        <p>View my past client projects and designs — Let's build your vision.</p>
-      </div>
-
-      {/* Portfolio Hero */}
+      {/* Portfolio Hero - Premium High-Impact Grid */}
       <ScrollReveal>
-        <section className="pt-48 pb-32 bg-navy-gradient relative overflow-hidden">
-        <div className="absolute inset-0 opacity-10">
-          <motion.div 
-            animate={{ y: [0, -20, 0] }}
-            transition={{ duration: 10, repeat: Infinity, ease: "linear" }}
-            className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:40px_40px]" 
-          />
-        </div>
-        
-        <div className="container mx-auto px-6 relative z-10">
-          <div className="max-w-5xl space-y-16">
-            <div className="space-y-8">
-              <motion.h1 
-                className="text-5xl md:text-[118px] font-bold text-white tracking-tighter leading-[0.8]"
-              >
-                <motion.span initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} transition={{ delay: 0.1 }} className="block">Shopify Portfolio</motion.span>
-                <motion.span initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} transition={{ delay: 0.2 }} className="italic font-serif font-light text-white/40 block">Past Client Projects</motion.span>
-                <motion.span initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} transition={{ delay: 0.3 }} className="text-green block text-3xl md:text-5xl mt-8">by Sheun</motion.span>
-              </motion.h1>
-              <motion.p
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.1 }}
-                className="text-white/60 text-2xl max-w-3xl font-serif italic"
-              >
-                Browse 10+ past client projects and designs across fashion, beauty, pets & gadgets. See a style you love? Let's build it.
-              </motion.p>
-            </div>
+        <section className="relative pt-32 pb-24 md:pt-40 md:pb-32 bg-[#FFFFFF] overflow-hidden border-b border-[#E2E8F0]">
+          {/* Subtle Background Gradients & Glows */}
+          <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-[#10b981]/5 rounded-full blur-[140px] pointer-events-none -z-10 animate-pulse"></div>
+          <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-[#2563EB]/5 rounded-full blur-[140px] pointer-events-none -z-10"></div>
+          <div className="absolute inset-0 bg-[linear-gradient(to_right,#E2E8F015_1px,transparent_1px),linear-gradient(to_bottom,#E2E8F015_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_50%,#000_70%,transparent_100%)] -z-10"></div>
 
-            <motion.div 
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.2 }}
-              className="flex flex-wrap items-center gap-12 bg-white/5 backdrop-blur-xl border border-white/10 p-8 rounded-xl w-fit"
-            >
-              <div className="flex items-center gap-4 text-white font-bold">
-                <span className="text-2xl">🛍️</span>
-                <span className="text-xs uppercase tracking-[0.2em]">10+ Projects</span>
+          <div className="container mx-auto px-6 max-w-7xl relative z-10">
+            <div className="max-w-4xl space-y-8">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#F4F4F5] border border-[#E2E8F0] text-xs font-semibold uppercase tracking-wider text-[#0F172A]">
+                <span className="flex h-2 w-2 rounded-full bg-[#10b981] animate-ping"></span>
+                Certified Shopify Partner & Proof of Work
               </div>
-              <div className="w-px h-8 bg-white/10 hidden sm:block" />
-              <div className="flex items-center gap-4 text-white font-bold">
-                <span className="text-2xl">👗</span>
-                <span className="text-xs uppercase tracking-[0.2em]">4 Niches</span>
+
+              <h1 className="text-5xl sm:text-7xl lg:text-8xl font-bold text-[#0F172A] tracking-tight leading-[1.05] font-sans">
+                Proven E-Commerce <span className="text-[#10b981] underline decoration-[#10b981]/20 underline-offset-8">Designs</span> & Builds.
+              </h1>
+
+              <p className="text-[#475569] text-lg sm:text-xl leading-relaxed max-w-2xl font-sans">
+                Explore custom Shopify theme designs, WooCommerce migration layouts, custom page template solutions, and high-performance product displays crafted by Sheun.
+              </p>
+
+              {/* Stats Row */}
+              <div className="flex flex-wrap items-center gap-6 sm:gap-8 bg-[#F8FAFC] border border-[#E2E8F0] p-6 rounded-3xl w-fit shadow-sm">
+                <div className="flex items-center gap-3 text-[#0F172A] font-bold">
+                  <span className="text-xl">🛍️</span>
+                  <span className="text-xs uppercase tracking-wider">10+ Projects</span>
+                </div>
+                <div className="w-px h-8 bg-[#E2E8F0] hidden sm:block" />
+                <div className="flex items-center gap-3 text-[#0F172A] font-bold">
+                  <span className="text-xl">👗</span>
+                  <span className="text-xs uppercase tracking-wider">4 Niches</span>
+                </div>
+                <div className="w-px h-8 bg-[#E2E8F0] hidden sm:block" />
+                <div className="flex items-center gap-3 text-[#0F172A] font-bold">
+                  <span className="text-xl">⭐</span>
+                  <span className="text-xs uppercase tracking-wider">5-Star Rated</span>
+                </div>
               </div>
-              <div className="w-px h-8 bg-white/10 hidden sm:block" />
-              <div className="flex items-center gap-4 text-white font-bold">
-                <span className="text-2xl">⭐</span>
-                <span className="text-xs uppercase tracking-[0.2em]">5-Star Builder</span>
-              </div>
-              <div className="w-px h-8 bg-white/10 hidden sm:block" />
-              <div className="flex items-center gap-4 text-white font-bold">
-                <span className="text-2xl">🏅</span>
-                <span className="text-xs uppercase tracking-[0.2em]">Shopify Partner</span>
-              </div>
-            </motion.div>
+            </div>
           </div>
-        </div>
-      </section>
-    </ScrollReveal>
+        </section>
+      </ScrollReveal>
 
     {/* Portfolio Gallery */}
     <ScrollReveal>
-      <section className="py-24 bg-white min-h-screen">
-        <div className="container mx-auto px-6">
+      <section className="py-24 bg-[#F8FAFC] min-h-screen border-b border-[#E2E8F0]">
+        <div className="container mx-auto px-6 max-w-7xl">
+          
+          {/* Category Filters */}
+          <div className="flex flex-wrap justify-center gap-2 mb-16">
+            {categories.map((cat, i) => (
+              <button
+                key={i}
+                onClick={() => setActiveCategory(cat)}
+                className={`px-5 py-2.5 rounded-full text-xs font-bold transition-all border shadow-sm ${
+                  activeCategory === cat
+                    ? "bg-[#10b981] text-[#0F172A] border-[#10b981]"
+                    : "bg-white text-[#71717a] border-[#E2E8F0] hover:bg-[#F4F4F5] hover:text-[#0F172A]"
+                }`}
+              >
+                {cat}
+              </button>
+            ))}
+          </div>
+
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {projects.filter(p => p.image && p.image.trim() !== "").map((project, i) => (
+            {filteredProjects.filter(p => p.image && p.image.trim() !== "").map((project, i) => (
               <div 
                 key={`gallery-${i}`} 
-                className="relative rounded-2xl overflow-hidden cursor-pointer group hover:shadow-2xl transition-all border border-navy/5"
+                className="relative rounded-3xl overflow-hidden cursor-pointer group hover:shadow-2xl transition-all border border-[#E2E8F0] bg-white p-4"
                 onClick={() => {
-                  setFullScreenIndex(i);
+                  setFullScreenIndex(projects.findIndex(p => p.id === project.id));
                 }}
               >
-                <img 
-                  src={project.image} 
-                  alt="Sheun Hub Portfolio Design" 
-                  referrerPolicy="no-referrer"
-                  className="w-full h-[400px] object-cover object-top bg-light group-hover:scale-105 transition-transform duration-700"
-                  loading="lazy"
-                />
-                <div className="absolute inset-0 bg-navy/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center p-6 text-center backdrop-blur-sm">
-                  <span className="text-white font-bold text-sm bg-white/20 px-6 py-3 rounded-full backdrop-blur-md border border-white/20 shadow-lg">
-                    View Full Screen
-                  </span>
+                <div className="relative aspect-[4/5] rounded-2xl overflow-hidden bg-[#F4F4F5] border border-[#E2E8F0]">
+                  <img 
+                    src={project.image} 
+                    alt="Sheun Hub Portfolio Design" 
+                    referrerPolicy="no-referrer"
+                    className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700"
+                    loading="lazy"
+                  />
+                  <div className="absolute inset-0 bg-[#0F172A]/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center p-6 text-center backdrop-blur-xs">
+                    <span className="text-white font-bold text-xs bg-white/20 px-6 py-3 rounded-full backdrop-blur-md border border-white/20 shadow-lg">
+                      View Full Screen
+                    </span>
+                  </div>
+                </div>
+
+                {/* Info block under card */}
+                <div className="pt-5 pb-2 px-1 space-y-2">
+                  <div className="flex items-center justify-between">
+                    <span className="text-[10px] font-bold uppercase tracking-widest text-[#10b981]">
+                      {project.tag}
+                    </span>
+                    <span className="text-xs font-bold text-[#71717a]">
+                      {project.category.replace(/[^\w\s&]/g, "").trim()}
+                    </span>
+                  </div>
+                  <h3 className="text-xl font-bold text-[#0F172A] group-hover:text-[#10b981] transition-colors">{project.name}</h3>
                 </div>
               </div>
             ))}
           </div>
 
-
-
-          <div className="mt-24 bg-navy-gradient rounded-3xl p-8 md:p-24 text-center space-y-10 relative overflow-hidden">
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,_rgba(103,255,193,0.15)_0%,_transparent_70%)]" />
+          <div className="mt-32 bg-[#09090b] text-white rounded-[40px] p-8 md:p-16 text-center space-y-10 relative overflow-hidden border border-white/10">
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,_rgba(16,185,129,0.15)_0%,_transparent_70%)]" />
             <div className="relative z-10 max-w-3xl mx-auto space-y-8">
-              <h2 className="text-5xl md:text-7xl font-bold text-white tracking-tighter leading-none">
+              <h2 className="text-5xl md:text-7xl font-bold text-white tracking-tight leading-none">
                 Ready to build <br />
-                <span className="italic font-serif font-light text-white/50">your vision?</span>
+                <span className="text-[#10b981] underline decoration-[#10b981]/20 underline-offset-8 italic font-serif font-light">your vision?</span>
               </h2>
               <div className="flex flex-col sm:flex-row justify-center items-center gap-6 pt-4">
-                <Link to="/apply#apply-form" className="bg-green text-navy px-12 py-5 rounded-full font-bold text-lg hover:bg-white transition-colors w-full sm:w-auto shadow-xl">
+                <Link to="/apply#apply-form" className="w-full sm:w-auto bg-[#10b981] text-[#09090b] px-12 py-5 rounded-2xl font-bold text-lg hover:bg-[#059669] transition-all duration-300 shadow-lg">
                   Start a Project
                 </Link>
                 <div className="flex items-center gap-4">
-                  <a href="https://www.linkedin.com/in/sheun-hub-26b876321" target="_blank" rel="noopener noreferrer" className="p-4 bg-white/10 hover:bg-green hover:text-navy text-white rounded-full transition-all border border-white/10 shrink-0 flex items-center justify-center overflow-hidden">
-                    <img src="https://images.rawpixel.com/image_png_social_square/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvdjk4Mi1kMS0xMC5wbmc.png" alt="LinkedIn" className="w-6 h-6 object-contain" />
+                  <a href="https://www.linkedin.com/in/sheun-hub-26b876321" target="_blank" rel="noopener noreferrer" className="p-4 bg-white/5 hover:bg-[#10b981] hover:text-[#09090b] text-white rounded-2xl transition-all border border-white/10 shrink-0 flex items-center justify-center overflow-hidden">
+                    <img src="https://images.rawpixel.com/image_png_social_square/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvdjk4Mi1kMS0xMC5wbmc.png" alt="LinkedIn" className="w-5 h-5 object-contain" />
                   </a>
-                  <a href="mailto:sheunhost@gmail.com" className="p-4 bg-white/10 hover:bg-green hover:text-navy text-white rounded-full transition-all border border-white/10 shrink-0 flex items-center justify-center overflow-hidden">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Gmail_icon_%282020%29.svg/960px-Gmail_icon_%282020%29.svg.png?_=20221017173631" alt="Gmail" className="w-6 h-6 object-contain" />
+                  <a href="mailto:sheunhost@gmail.com" className="p-4 bg-white/5 hover:bg-[#10b981] hover:text-[#09090b] text-white rounded-2xl transition-all border border-white/10 shrink-0 flex items-center justify-center overflow-hidden">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Gmail_icon_%282020%29.svg/960px-Gmail_icon_%282020%29.svg.png?_=20221017173631" alt="Gmail" className="w-5 h-5 object-contain" />
                   </a>
                 </div>
               </div>
@@ -308,25 +317,25 @@ export default function Portfolio() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             onClick={() => setSelectedProject(null)}
-            className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-navy/80 backdrop-blur-sm"
+            className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-[#09090b]/80 backdrop-blur-sm"
           >
             <motion.div
-              initial={{ scale: 0.9, opacity: 0, y: 20 }}
+              initial={{ scale: 0.95, opacity: 0, y: 15 }}
               animate={{ scale: 1, opacity: 1, y: 0 }}
-              exit={{ scale: 0.9, opacity: 0, y: 20 }}
+              exit={{ scale: 0.95, opacity: 0, y: 15 }}
               onClick={(e) => e.stopPropagation()}
-              className="bg-white rounded-2xl p-8 md:p-12 max-w-2xl w-full shadow-2xl relative overflow-hidden max-h-[90vh] overflow-y-auto"
+              className="bg-white rounded-[32px] p-6 md:p-10 max-w-2xl w-full border border-[#E2E8F0] shadow-2xl relative overflow-hidden max-h-[90vh] overflow-y-auto"
             >
               <button
                 onClick={() => setSelectedProject(null)}
-                className="absolute top-6 right-6 w-10 h-10 bg-light rounded-full flex items-center justify-center text-navy hover:bg-navy hover:text-white transition-colors z-20"
+                className="absolute top-6 right-6 w-10 h-10 bg-[#F4F4F5] hover:bg-[#E2E8F0] rounded-full flex items-center justify-center text-[#0F172A] transition-colors z-20"
               >
-                <X size={20} />
+                <X size={18} />
               </button>
               
-              <div className="space-y-8 relative z-10">
+              <div className="space-y-6 relative z-10">
                 <div 
-                  className="aspect-video rounded-2xl overflow-hidden relative cursor-zoom-in group/img"
+                  className="aspect-video rounded-2xl overflow-hidden relative cursor-zoom-in group/img border border-[#E2E8F0]"
                   onClick={() => {
                     const idx = projects.findIndex(p => p.id === selectedProject.id);
                     setFullScreenIndex(idx !== -1 ? idx : null);
@@ -336,12 +345,12 @@ export default function Portfolio() {
                     src={selectedProject.image} 
                     alt={selectedProject.name} 
                     referrerPolicy="no-referrer"
-                    className="w-full h-full object-cover group-hover/img:scale-105 transition-transform duration-700" 
+                    className="w-full h-full object-cover group-hover/img:scale-103 transition-transform duration-500" 
                     loading="lazy"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-navy/50 to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#09090b]/40 to-transparent" />
                   <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover/img:opacity-100 transition-opacity">
-                    <div className="bg-white/20 backdrop-blur-md px-6 py-3 rounded-full text-white font-bold text-sm border border-white/20">
+                    <div className="bg-white/20 backdrop-blur-md px-5 py-2.5 rounded-full text-white font-bold text-xs border border-white/20">
                       Click to view full design
                     </div>
                   </div>
@@ -349,43 +358,43 @@ export default function Portfolio() {
                 
                 <div className="space-y-4">
                   <div className="flex items-center gap-3 flex-wrap">
-                    <span className={`text-[10px] font-bold uppercase tracking-widest px-4 py-2 rounded-full w-fit ${selectedProject.isRealProject ? 'bg-yellow-400 text-navy' : 'bg-navy text-white'}`}>
+                    <span className="text-[10px] font-bold uppercase tracking-widest px-3 py-1.5 rounded-full w-fit bg-[#10b981]/10 text-[#049669]">
                       {selectedProject.tag}
                     </span>
-                    <span className="text-navy/40 text-[10px] font-bold uppercase tracking-widest">
-                      {selectedProject.category}
+                    <span className="text-[#71717a] text-[10px] font-bold uppercase tracking-widest">
+                      {selectedProject.category.replace(/[^\w\s&]/g, "").trim()}
                     </span>
                   </div>
                   
-                  <h3 className="text-4xl font-bold text-navy">{selectedProject.name}</h3>
+                  <h3 className="text-3xl font-bold text-[#0F172A] tracking-tight">{selectedProject.name}</h3>
                   
                   {selectedProject.services && (
-                    <p className="text-green font-bold uppercase tracking-widest text-xs">
+                    <p className="text-[#10b981] font-bold uppercase tracking-wider text-xs">
                       {selectedProject.services.join(" · ")}
                     </p>
                   )}
                   
-                  <p className="text-navy/70 leading-relaxed text-lg">
+                  <p className="text-[#475569] leading-relaxed text-base">
                     {selectedProject.desc}
                   </p>
                 </div>
                 
-                <div className="pt-4 flex flex-col sm:flex-row gap-4">
+                <div className="pt-4 flex flex-col sm:flex-row gap-3">
                   {selectedProject.isRealProject ? (
                     <a
                       href={`https://${selectedProject.url}`}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center justify-center flex-grow gap-3 bg-yellow-400 text-navy px-8 py-4 rounded-full font-bold text-lg hover:scale-105 transition-transform"
+                      className="inline-flex items-center justify-center flex-grow gap-2 bg-[#10b981] text-[#09090b] px-6 py-3.5 rounded-2xl font-bold text-sm hover:bg-[#059669] transition-colors"
                     >
-                      Visit Live Store <ExternalLink size={20} />
+                      Visit Live Store <ExternalLink size={16} />
                     </a>
                   ) : (
                     <Link 
                       to={`/contact?concept=${encodeURIComponent(selectedProject.name)}#contact-form`} 
-                      className="inline-flex items-center justify-center flex-grow gap-3 bg-navy text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-green hover:text-navy transition-colors"
+                      className="inline-flex items-center justify-center flex-grow gap-2 bg-[#09090b] text-white px-6 py-3.5 rounded-2xl font-bold text-sm hover:bg-[#10b981] hover:text-[#09090b] transition-colors"
                     >
-                      Get Custom Project Roadmap <ArrowRight size={20} />
+                      Get Custom Project Roadmap <ArrowRight size={16} />
                     </Link>
                   )}
                   
@@ -394,9 +403,9 @@ export default function Portfolio() {
                       const idx = projects.findIndex(p => p.id === selectedProject.id);
                       setFullScreenIndex(idx !== -1 ? idx : null);
                     }}
-                    className="inline-flex items-center justify-center flex-grow gap-3 bg-light text-navy px-8 py-4 rounded-full font-bold text-lg hover:bg-navy hover:text-white transition-all"
+                    className="inline-flex items-center justify-center flex-grow gap-2 bg-[#F4F4F5] text-[#0F172A] px-6 py-3.5 rounded-2xl font-bold text-sm hover:bg-[#E2E8F0] transition-colors"
                   >
-                    View Full Design <Globe size={20} />
+                    View Full Design <Globe size={16} />
                   </button>
                 </div>
               </div>
@@ -406,20 +415,20 @@ export default function Portfolio() {
       </AnimatePresence>
 
       <AnimatePresence>
-        {fullScreenIndex !== null && (
+        {fullScreenIndex !== null && projects[fullScreenIndex] && (
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-[100] bg-navy/95 backdrop-blur-xl flex flex-col"
+            className="fixed inset-0 z-[100] bg-[#09090b]/95 backdrop-blur-xl flex flex-col"
           >
             {/* Close Button Only */}
             <div className="absolute top-6 right-6 md:top-10 md:right-10 z-50">
               <button
                 onClick={() => setFullScreenIndex(null)}
-                className="w-16 h-16 bg-white/10 rounded-full flex items-center justify-center text-white hover:bg-green hover:text-navy transition-all shadow-2xl backdrop-blur-md"
+                className="w-12 h-12 md:w-16 md:h-16 bg-white/10 rounded-full flex items-center justify-center text-white hover:bg-[#10b981] hover:text-[#09090b] transition-all shadow-2xl backdrop-blur-md"
               >
-                <X size={32} />
+                <X size={24} />
               </button>
             </div>
 
@@ -427,24 +436,24 @@ export default function Portfolio() {
             <div className="absolute inset-y-0 left-0 flex items-center px-4 md:px-10 z-40 pointer-events-none">
               <button
                 onClick={handlePrev}
-                className="w-16 h-16 md:w-20 md:h-20 bg-white/10 rounded-full flex items-center justify-center text-white hover:bg-green hover:text-navy transition-all shadow-2xl backdrop-blur-md pointer-events-auto group"
+                className="w-12 h-12 md:w-16 md:h-16 bg-white/10 rounded-full flex items-center justify-center text-white hover:bg-[#10b981] hover:text-[#09090b] transition-all shadow-2xl backdrop-blur-md pointer-events-auto group"
               >
-                <ArrowRight size={40} className="rotate-180 group-active:scale-90 transition-transform" />
+                <ArrowRight size={24} className="rotate-180 group-active:scale-90 transition-transform" />
               </button>
             </div>
 
             <div className="absolute inset-y-0 right-0 flex items-center px-4 md:px-10 z-40 pointer-events-none">
               <button
                 onClick={handleNext}
-                className="w-16 h-16 md:w-20 md:h-20 bg-white/10 rounded-full flex items-center justify-center text-white hover:bg-green hover:text-navy transition-all shadow-2xl backdrop-blur-md pointer-events-auto group"
+                className="w-12 h-12 md:w-16 md:h-16 bg-white/10 rounded-full flex items-center justify-center text-white hover:bg-[#10b981] hover:text-[#09090b] transition-all shadow-2xl backdrop-blur-md pointer-events-auto group"
               >
-                <ArrowRight size={40} className="group-active:scale-90 transition-transform" />
+                <ArrowRight size={24} className="group-active:scale-90 transition-transform" />
               </button>
             </div>
 
             {/* Image Container */}
             <div className="flex-grow overflow-y-auto p-4 md:p-10 custom-scrollbar relative">
-              <div className="max-w-6xl mx-auto bg-white rounded-3xl overflow-hidden shadow-2xl our-auto min-h-full flex flex-col">
+              <div className="max-w-4xl mx-auto bg-white rounded-3xl overflow-hidden shadow-2xl min-h-full flex flex-col">
                 <img 
                   src={projects[fullScreenIndex].image} 
                   alt="Full Design" 

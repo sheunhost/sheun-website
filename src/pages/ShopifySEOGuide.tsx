@@ -154,14 +154,14 @@ export default function ShopifySEOGuide() {
                   <div className="w-10 h-10 bg-green/10 rounded-xl flex items-center justify-center text-green">
                     <Sparkles size={20} />
                   </div>
-                  <h4 className="font-bold text-navy">Sitemap Optimization</h4>
+                  <h3 className="font-bold text-navy text-xl">Sitemap Optimization</h3>
                   <p className="text-sm text-navy/50">Shopify auto-generates your <code>sitemap.xml</code>. Your job is to ensure you aren't indexing junk pages like "Tag" pages or search result pages that dilute your authority.</p>
                 </div>
                 <div className="bg-white p-8 rounded-3xl border border-navy/5 shadow-xl space-y-4">
                   <div className="w-10 h-10 bg-green/10 rounded-xl flex items-center justify-center text-green">
                     <Fast size={20} />
                   </div>
-                  <h4 className="font-bold text-navy">Core Web Vitals</h4>
+                  <h3 className="font-bold text-navy text-xl">Core Web Vitals</h3>
                   <p className="text-sm text-navy/50">Speed is a ranking factor. In 2026, Google prioritizes 'Interaction to Next Paint' (INP). If your theme is bloated with unused apps, you're losing rankings.</p>
                 </div>
               </div>
@@ -190,9 +190,9 @@ export default function ShopifySEOGuide() {
               </ul>
 
               <div className="bg-light p-10 rounded-2xl my-12 space-y-6">
-                <h4 className="text-navy font-bold text-xs uppercase tracking-widest flex items-center gap-2">
+                <div className="text-navy font-bold text-xs uppercase tracking-widest flex items-center gap-2">
                   <Search size={18} /> Deep Dive: Semantic SEO
-                </h4>
+                </div>
                 <p className="text-navy/60 text-sm leading-relaxed italic">
                   "Google no longer just looks for exact keyword matches. It looks for 'Topics'. If you sell coffee, your page should also mention 'Organic Beans', 'Brewing Temperature', 'Roast Level', and 'Single Origin'. This is built-in authority."
                 </p>
@@ -206,7 +206,7 @@ export default function ShopifySEOGuide() {
                 On Shopify, your collection pages are often your hardest hitters for broad category keywords. Most merchants leave them as simple grids. You should treat them as mini-landing pages.
               </p>
               <div className="p-8 bg-navy text-white rounded-xl border-l-4 border-green space-y-4">
-                <h4 className="font-bold text-green">The "Footer Content" Hack</h4>
+                <div className="font-bold text-green text-lg">The "Footer Content" Hack</div>
                 <p className="text-sm opacity-70">Add 500 words of educational content below the product grid on your collections. Use metafields or theme customization to place this content without pushing the products down or hurting the user experience.</p>
               </div>
 
@@ -268,7 +268,7 @@ export default function ShopifySEOGuide() {
               </div>
 
               <form onSubmit={handleAddComment} className="bg-white p-10 rounded-3xl shadow-[0_50px_100px_-20px_rgba(0,0,0,0.1)] border border-navy/5 space-y-8">
-                <h4 className="text-2xl font-bold text-navy italic uppercase tracking-tight">Ask a technical SEO question</h4>
+                <h3 className="text-2xl font-bold text-navy italic uppercase tracking-tight">Ask a technical SEO question</h3>
                 <div className="space-y-6">
                   <div className="space-y-2">
                     <label className="text-[10px] font-bold text-navy/30 uppercase tracking-[0.3em] ml-6">Your Name</label>
@@ -302,7 +302,7 @@ export default function ShopifySEOGuide() {
               </div>
               <div className="space-y-2">
                 <span className="text-[10px] font-bold text-green uppercase tracking-widest">Store Migration</span>
-                <h4 className="text-xl font-bold text-navy group-hover:text-white transition-colors leading-tight">WooCommerce to Shopify: Zero Loss SEO</h4>
+                <h3 className="text-xl font-bold text-navy group-hover:text-white transition-colors leading-tight">WooCommerce to Shopify: Zero Loss SEO</h3>
               </div>
             </Link>
 
@@ -312,7 +312,7 @@ export default function ShopifySEOGuide() {
               </div>
               <div className="space-y-2">
                 <span className="text-[10px] font-bold text-green uppercase tracking-widest">Admin Secrets</span>
-                <h4 className="text-xl font-bold text-navy group-hover:text-white transition-colors leading-tight">10 Settings Store Owners Miss</h4>
+                <h3 className="text-xl font-bold text-navy group-hover:text-white transition-colors leading-tight">10 Settings Store Owners Miss</h3>
               </div>
             </Link>
           </div>
