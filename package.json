@@ -12,6 +12,10 @@
   },
   "dependencies": {
     "@google/genai": "^1.49.0",
+    "@react-three/drei": "^10.7.7",
+    "@react-three/fiber": "^9.6.1",
+    "@splinetool/react-spline": "^4.1.0",
+    "@splinetool/runtime": "^1.12.98",
     "axios": "^1.15.2",
     "clsx": "^2.1.1",
     "cors": "^2.8.6",
@@ -29,6 +33,7 @@
     "react-router-dom": "^7.14.0",
     "recharts": "^3.9.0",
     "tailwind-merge": "^3.5.0",
+    "three": "^0.185.0",
     "ws": "^8.21.0"
   },
   "devDependencies": {

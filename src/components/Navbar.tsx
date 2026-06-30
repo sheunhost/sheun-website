@@ -46,7 +46,7 @@ export default function Navbar() {
               loading="lazy"
               className={cn(
                 "rounded-full object-cover shadow-lg border-2 border-green/20 transition-all duration-500",
-                isScrolled ? "h-20 w-20" : "h-32 w-32"
+                isScrolled ? "h-16 w-16 md:h-20 md:w-20" : "h-20 w-20 md:h-32 md:w-32"
               )} 
             />
           </Link>

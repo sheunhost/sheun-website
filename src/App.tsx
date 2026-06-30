@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, Navigate, useLocation } from "react-router-dom";
 import { HelmetProvider } from "react-helmet-async";
 import { motion, AnimatePresence } from "framer-motion";
 import Navbar from "./components/Navbar";
@@ -37,6 +37,42 @@ import GoogleAnalytics from "./components/GoogleAnalytics";
 
 import SmoothScroll from "./components/SmoothScroll";
 
+function AnimatedRoutes() {
+  const location = useLocation();
+  
+  return (
+    <AnimatePresence mode="wait">
+      <Routes location={location} key={location.pathname}>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/services" element={<Services />} />
+        <Route path="/services/:id" element={<ServiceDetail />} />
+        <Route path="/shopify-migration" element={<Navigate to="/services/migration" replace />} />
+        <Route path="/portfolio" element={<Portfolio />} />
+        <Route path="/blog" element={<Blog />} />
+        <Route path="/blog/:id" element={<BlogPost />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/shopify-seo-sprint" element={<ShopifySeoSprint />} />
+        <Route path="/seo-sprint" element={<ShopifySeoSprint />} />
+        <Route path="/shopify-store-audit" element={<ShopifyAudit />} />
+        <Route path="/audit" element={<ShopifyAudit />} />
+        <Route path="/shopify-not-converting" element={<ConversionKillers />} />
+        <Route path="/shopify-seo-guide" element={<ShopifySEOGuide />} />
+        <Route path="/shopify-settings-guide" element={<ShopifySettingsGuide />} />
+        <Route path="/shopify-speed-optimization" element={<ShopifySpeedOptimization />} />
+        <Route path="/woocommerce-to-shopify-migration" element={<WooCommerceToShopifyMigration />} />
+        <Route path="/best-dropshipping-apps" element={<BestDropshippingApps />} />
+        <Route path="/fashion-dropshipping-guide" element={<FashionDropshippingGuide />} />
+        <Route path="/leveraging-shopify-markets" element={<LeveragingShopifyMarkets />} />
+        <Route path="/calculator" element={<Calculator />} />
+        <Route path="/apply" element={<Apply />} />
+        <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+        <Route path="/terms-of-service" element={<TermsOfService />} />
+      </Routes>
+    </AnimatePresence>
+  );
+}
+
 export default function App() {
   return (
     <HelmetProvider>
@@ -47,35 +83,7 @@ export default function App() {
           <div className="min-h-screen flex flex-col">
             <Navbar />
             <main className="flex-grow">
-              <AnimatePresence mode="wait">
-                <Routes>
-                  <Route path="/" element={<Home />} />
-                  <Route path="/about" element={<About />} />
-                  <Route path="/services" element={<Services />} />
-                  <Route path="/services/:id" element={<ServiceDetail />} />
-                  <Route path="/shopify-migration" element={<Navigate to="/services/migration" replace />} />
-                  <Route path="/portfolio" element={<Portfolio />} />
-                  <Route path="/blog" element={<Blog />} />
-                  <Route path="/blog/:id" element={<BlogPost />} />
-                  <Route path="/contact" element={<Contact />} />
-                  <Route path="/shopify-seo-sprint" element={<ShopifySeoSprint />} />
-                  <Route path="/seo-sprint" element={<ShopifySeoSprint />} />
-                  <Route path="/shopify-store-audit" element={<ShopifyAudit />} />
-                  <Route path="/audit" element={<ShopifyAudit />} />
-                  <Route path="/shopify-not-converting" element={<ConversionKillers />} />
-                  <Route path="/shopify-seo-guide" element={<ShopifySEOGuide />} />
-                  <Route path="/shopify-settings-guide" element={<ShopifySettingsGuide />} />
-                  <Route path="/shopify-speed-optimization" element={<ShopifySpeedOptimization />} />
-                  <Route path="/woocommerce-to-shopify-migration" element={<WooCommerceToShopifyMigration />} />
-                  <Route path="/best-dropshipping-apps" element={<BestDropshippingApps />} />
-                  <Route path="/fashion-dropshipping-guide" element={<FashionDropshippingGuide />} />
-                  <Route path="/leveraging-shopify-markets" element={<LeveragingShopifyMarkets />} />
-                  <Route path="/calculator" element={<Calculator />} />
-                  <Route path="/apply" element={<Apply />} />
-                  <Route path="/privacy-policy" element={<PrivacyPolicy />} />
-                  <Route path="/terms-of-service" element={<TermsOfService />} />
-                </Routes>
-              </AnimatePresence>
+              <AnimatedRoutes />
             </main>
             <Footer />
             <FloatingCalendly />

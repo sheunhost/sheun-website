@@ -10,6 +10,9 @@ import ScrollReveal from "../components/ScrollReveal";
 import { ImpactMetrics } from "../components/ImpactMetrics";
 import { TiltCard } from "../components/TiltCard";
 
+import { Marquee } from "../components/Marquee";
+import { WordRotator } from "../components/WordRotator";
+
 const stats = [
   { label: "Stores Built", value: "20+" },
   { label: "Star Rating", value: "5.0" },
@@ -697,7 +700,7 @@ export default function Home() {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.2 }}
                   >
-                    &amp; <span className="text-green">Growth</span>
+                    &amp; <span className="text-green"><WordRotator words={["Growth", "Scaling", "Speed", "SEO"]} /></span>
                   </motion.span>
                 </span>
                 <motion.span 
@@ -745,7 +748,7 @@ export default function Home() {
             >
               <Link 
                 to="/apply" 
-                className="w-full sm:w-auto bg-green text-navy px-12 py-6 rounded-full font-bold text-lg hover:scale-105 transition-all duration-500 green-glow flex items-center justify-center gap-3 text-center"
+                className="w-full sm:w-auto bg-green text-navy px-8 md:px-12 py-4 md:py-6 rounded-full font-bold text-lg hover:scale-105 transition-all duration-500 green-glow flex items-center justify-center gap-3 text-center"
               >
                 Get Started <ArrowRight size={20} />
               </Link>
@@ -845,6 +848,17 @@ export default function Home() {
         </div>
       </section>
     </ScrollReveal>
+
+    <div className="py-8 bg-[#0F172A] border-b border-white/5 overflow-hidden">
+      <Marquee speed={40}>
+        {['SHOPIFY EXPERT', 'CUSTOM LIQUID', 'HEADLESS COMMERCE', 'CRO SPECIALIST', 'SPEED OPTIMIZATION', 'TECHNICAL SEO', 'REACT & VITE', 'TAILWIND CSS'].map((text, i) => (
+          <div key={i} className="flex items-center gap-16">
+            <span className="text-white/40 font-bold text-sm tracking-[0.4em] uppercase">{text}</span>
+            <span className="text-green/40 text-xl font-bold">•</span>
+          </div>
+        ))}
+      </Marquee>
+    </div>
 
     {/* Credibility Bar */}
     <section className="py-12 bg-[#F8FAFC] border-b border-[#E2E8F0] relative overflow-hidden">
@@ -1123,7 +1137,7 @@ export default function Home() {
             </div>
 
             {/* Sheun (The Expert) */}
-            <div className="p-8 sm:p-10 rounded-3xl bg-[#09090b] text-white space-y-8 flex flex-col relative shadow-[0_20px_50px_rgba(0,0,0,0.15)] scale-105 z-10 border border-green/30">
+            <div className="p-8 sm:p-10 rounded-3xl bg-[#09090b] text-white space-y-8 flex flex-col relative shadow-[0_20px_50px_rgba(0,0,0,0.15)] lg:scale-105 z-10 border border-green/30">
               {/* Badge */}
               <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-[#10b981] text-[#09090b] text-[10px] font-bold uppercase tracking-[0.25em] px-6 py-2 rounded-full shadow-lg">
                 Most Reliable Choice
@@ -1498,7 +1512,7 @@ export default function Home() {
               Join the high-performing brands that have transformed their e-commerce presence with bespoke development and strategic growth.
             </p>
             <div className="pt-8">
-              <Link to="/apply" className="inline-flex items-center gap-3 bg-green text-navy font-bold px-12 py-6 rounded-full hover:scale-105 transition-transform text-lg shadow-2xl">
+              <Link to="/apply" className="inline-flex items-center gap-3 bg-green text-navy font-bold px-8 md:px-12 py-4 md:py-6 rounded-full hover:scale-105 transition-transform text-lg shadow-2xl">
                 Apply for Growth Plan <ArrowRight size={24} />
               </Link>
             </div>
@@ -1810,7 +1824,7 @@ export default function Home() {
               Let's build a store that doesn't just look good, but converts visitors into loyal customers.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-12">
-              <Link to="/contact#contact-form" className="w-full sm:w-auto bg-green text-navy px-16 py-8 rounded-full font-bold text-2xl hover:scale-105 transition-all duration-500 green-glow flex items-center justify-center text-center">
+              <Link to="/contact#contact-form" className="w-full sm:w-auto bg-green text-navy px-8 md:px-16 py-4 md:py-8 rounded-full font-bold text-xl md:text-2xl hover:scale-105 transition-all duration-500 green-glow flex items-center justify-center text-center">
                 Get Your Free Growth Plan
               </Link>
               <Link to="/portfolio" className="w-full sm:w-auto text-white font-bold text-2xl flex items-center justify-center gap-6 group text-center">
