@@ -1,4 +1,5 @@
-import puppeteer from 'puppeteer';
+import puppeteer from 'puppeteer-core';
+import chromium from '@sparticuz/chromium';
 import fs from 'fs';
 import path from 'path';
 import express from 'express';
@@ -51,10 +52,26 @@ async function prerender() {
     const port = server.address().port;
     console.log(`Test server running on port ${port}`);
 
-    const browser = await puppeteer.launch({
-      headless: "new",
-      args: ['--no-sandbox', '--disable-setuid-sandbox', '--disable-dev-shm-usage']
-    });
+    // Standard local launch if not in CI/Vercel, but for Vercel build use chromium
+    const isLocal = !process.env.VERCEL && !process.env.CI;
+    
+    let browser;
+    try {
+      browser = await puppeteer.launch({
+        args: isLocal ? ['--no-sandbox', '--disable-setuid-sandbox'] : chromium.args,
+        defaultViewport: chromium.defaultViewport,
+        executablePath: isLocal ? '/usr/bin/google-chrome' : await chromium.executablePath(),
+        headless: isLocal ? 'new' : chromium.headless,
+      });
+    } catch (e) {
+      console.log('Standard launch failed, trying chromium-specific launch...');
+      browser = await puppeteer.launch({
+        args: chromium.args,
+        defaultViewport: chromium.defaultViewport,
+        executablePath: await chromium.executablePath(),
+        headless: chromium.headless,
+      });
+    }
 
     for (const route of routes) {
       const page = await browser.newPage();
