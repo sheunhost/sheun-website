@@ -56,9 +56,9 @@ export default function LeveragingShopifyMarkets() {
             className="flex items-center justify-center gap-8 pt-8 border-t border-white/10"
           >
              <div className="flex items-center gap-3">
-               <img src="https://ui-avatars.com/api/?name=Sheun+Hub&background=10b981&color=fff" alt="Sheun" className="w-12 h-12 rounded-full" />
+               <img src="https://ui-avatars.com/api/?name=Sheun Hub+Hub&background=10b981&color=fff" alt="Sheun Hub" className="w-12 h-12 rounded-full" />
                <div className="text-left">
-                  <p className="text-white font-bold text-sm">Sheun</p>
+                  <p className="text-white font-bold text-sm">Sheun Hub</p>
                   <p className="text-white/40 text-xs font-serif italic">Shopify Dev Expert</p>
                </div>
              </div>

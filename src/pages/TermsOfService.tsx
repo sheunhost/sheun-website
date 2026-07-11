@@ -4,7 +4,10 @@ import { FileText, Briefcase, CreditCard, Scale, Mail  } from "lucide-react";
 
 export default function TermsOfService() {
   return (
-    <PageWrapper>
+    <PageWrapper
+      title="Terms of Service | Sheun Hub"
+      description="Read the Terms of Service for Sheun Hub. These terms outline the agreement, payment schedules, and project policies for our Shopify development, migration, and SEO services."
+    >
       <section className="pt-48 pb-32 bg-navy relative overflow-hidden">
         <div className="container mx-auto px-6 relative z-10">
           <div className="max-w-4xl space-y-8">

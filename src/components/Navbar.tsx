@@ -3,6 +3,7 @@ import { Link, useLocation } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, ChevronRight } from "lucide-react";
 import { cn } from "../lib/utils";
+import { ThemeToggle } from "./ThemeToggle";
 
 const navLinks = [
   { name: "Home", href: "/" },
@@ -41,7 +42,7 @@ export default function Navbar() {
           <Link to="/" className="flex items-center group">
             <img 
               src="https://i.postimg.cc/wxQgVCcf/1000031270-removebg-preview.png" 
-              alt="Sheun - Shopify Development and Growth Expert" 
+              alt="Sheun Hub - Shopify Development and Growth Expert" 
               referrerPolicy="no-referrer"
               loading="lazy"
               className={cn(
@@ -88,36 +89,40 @@ export default function Navbar() {
             >
               Apply Now
             </Link>
+            <ThemeToggle />
           </div>
         </div>
 
-        {/* Mobile Toggle */}
-        <button
-          className={cn(
-            "lg:hidden p-2 rounded-xl transition-all duration-300",
-            isScrolled 
-              ? "text-navy hover:bg-navy/5" 
-              : "text-green hover:bg-white/10"
-          )}
-          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-        >
-          {isMobileMenuOpen ? <X size={32} className={cn(isScrolled ? "text-navy" : "text-green")} /> : (
-            <div className="space-y-1.5 p-1">
-              <div className={cn(
-                "w-6 h-0.5 rounded-full transition-all duration-300",
-                isScrolled ? "bg-navy" : "bg-green"
-              )}></div>
-              <div className={cn(
-                "w-8 h-0.5 rounded-full transition-all duration-300",
-                isScrolled ? "bg-navy" : "bg-green"
-              )}></div>
-              <div className={cn(
-                "w-5 h-0.5 rounded-full transition-all duration-300",
-                isScrolled ? "bg-navy" : "bg-green"
-              )}></div>
-            </div>
-          )}
-        </button>
+        {/* Mobile Toggle & Theme */}
+        <div className="flex items-center gap-4 lg:hidden">
+          <ThemeToggle />
+          <button
+            className={cn(
+              "p-2 rounded-xl transition-all duration-300",
+              isScrolled 
+                ? "text-navy hover:bg-navy/5" 
+                : "text-green hover:bg-white/10"
+            )}
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          >
+            {isMobileMenuOpen ? <X size={32} className={cn(isScrolled ? "text-navy" : "text-green")} /> : (
+              <div className="space-y-1.5 p-1">
+                <div className={cn(
+                  "w-6 h-0.5 rounded-full transition-all duration-300",
+                  isScrolled ? "bg-navy" : "bg-green"
+                )}></div>
+                <div className={cn(
+                  "w-8 h-0.5 rounded-full transition-all duration-300",
+                  isScrolled ? "bg-navy" : "bg-green"
+                )}></div>
+                <div className={cn(
+                  "w-5 h-0.5 rounded-full transition-all duration-300",
+                  isScrolled ? "bg-navy" : "bg-green"
+                )}></div>
+              </div>
+            )}
+          </button>
+        </div>
       </div>
 
       {/* Mobile Menu */}

@@ -37,7 +37,7 @@ export default function ShopifySettingsGuide() {
   };
 
   const handleWhatsAppContact = () => {
-    const text = encodeURIComponent("Hi Sheun, I read your article about Shopify settings and I'd like an audit for my store.");
+    const text = encodeURIComponent("Hi Sheun Hub, I read your article about Shopify settings and I'd like an audit for my store.");
     window.open(`https://wa.me/2348084315743?text=${text}`, "_blank");
   };
 
@@ -54,7 +54,7 @@ export default function ShopifySettingsGuide() {
         "headline": "The Ultimate Guide to Shopify Backend Settings in 2026",
         "author": {
           "@type": "Person",
-          "name": "Sheun"
+          "name": "Sheun Hub"
         },
         "publisher": {
           "@type": "Organization",
@@ -253,7 +253,7 @@ export default function ShopifySettingsGuide() {
               <Link to="/portfolio" className="flex items-center gap-6 group hover:bg-light p-4 rounded-3xl transition-all -ml-4 pr-8 border border-transparent hover:border-navy/5">
                 <div className="relative">
                   <div className="absolute inset-0 bg-green/20 rounded-full blur-xl group-hover:bg-green/40 transition-colors" />
-                  <img src="https://ui-avatars.com/api/?name=Sheun+Hub&background=10b981&color=fff" alt="Sheun" className="w-20 h-20 rounded-full shadow-lg object-cover relative z-10 border-2 border-white" referrerPolicy="no-referrer" />
+                  <img src="https://ui-avatars.com/api/?name=Sheun Hub+Hub&background=10b981&color=fff" alt="Sheun Hub" className="w-20 h-20 rounded-full shadow-lg object-cover relative z-10 border-2 border-white" referrerPolicy="no-referrer" />
                 </div>
                 <div>
                   <p className="font-bold text-navy text-xl group-hover:text-green transition-colors leading-tight">By Sheun Hub</p>

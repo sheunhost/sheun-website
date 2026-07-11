@@ -1041,7 +1041,7 @@ export default function ShopifySeoSprint() {
                       <input
                         type="text"
                         required
-                        placeholder="Sheun Owner"
+                        placeholder="Sheun Hub Owner"
                         value={storeName}
                         onChange={(e) => setStoreName(e.target.value)}
                         className="w-full px-4 py-3 rounded-xl bg-[#F8FAFC] border border-[#E2E8F0] text-sm focus:outline-none focus:border-[#16A34A]"

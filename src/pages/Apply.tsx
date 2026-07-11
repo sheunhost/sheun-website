@@ -148,7 +148,7 @@ export default function Apply() {
         // Redirect to WhatsApp after 3 seconds
         setTimeout(() => {
           const whatsappNumber = "2348084315743";
-          const message = encodeURIComponent("Hello Sheun, I just submitted the qualification form on your website. I'd like to discuss my project further.");
+          const message = encodeURIComponent("Hello Sheun Hub, I just submitted the qualification form on your website. I'd like to discuss my project further.");
           window.open(`https://wa.me/${whatsappNumber}?text=${message}`, "_blank");
         }, 3000);
       } else {
@@ -165,15 +165,15 @@ export default function Apply() {
 
   return (
     <PageWrapper 
-      title="Hire a Shopify Developer & SEO Specialist | Apply to Work with Sheun" 
+      title="Hire a Shopify Developer & SEO Specialist | Apply to Work with Sheun Hub" 
       description="Ready to build or scale your storefront? Apply for custom Shopify themes, WooCommerce migrations, SEO sprints, or speed optimization projects. Custom, transparent quotes for brands in the UK, US, CA, AU, FR, and DE."
       keywords="Hire Shopify Expert UK, Hire Shopify Developer USA, Shopify Migration Service Canada, Shopify SEO Sprint Australia, Shopify Developer France, Shopify Partner Germany"
       canonical="/apply"
       schema={{
         "@context": "https://schema.org",
         "@type": "ContactPage",
-        "name": "Apply for a Project with Sheun",
-        "description": "Apply to work with Sheun, a high-performing Shopify Conversion Specialist.",
+        "name": "Apply for a Project with Sheun Hub",
+        "description": "Apply to work with Sheun Hub, a high-performing Shopify Conversion Specialist.",
         "url": "https://sheun.online/apply"
       }}
     >

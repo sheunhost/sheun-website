@@ -36,7 +36,7 @@ export default function WooCommerceToShopifyMigration() {
   };
 
   const handleWhatsAppContact = () => {
-    const text = encodeURIComponent("Hi Sheun, I need professional help with my WooCommerce to Shopify migration SEO to preserve my rankings!");
+    const text = encodeURIComponent("Hi Sheun Hub, I need professional help with my WooCommerce to Shopify migration SEO to preserve my rankings!");
     window.open(`https://wa.me/2348084315743?text=${text}`, "_blank");
   };
 
@@ -96,10 +96,10 @@ export default function WooCommerceToShopifyMigration() {
                 <Link to="/portfolio" className="flex items-center gap-4 pt-4 border-t border-white/10 group">
                   <div className="relative">
                     <div className="absolute inset-0 bg-green/20 rounded-full blur-lg group-hover:bg-green/40 transition-colors" />
-                    <img src="https://ui-avatars.com/api/?name=Sheun+Hub&background=10b981&color=fff" className="w-12 h-12 rounded-full border-2 border-green relative z-10" alt="Sheun" referrerPolicy="no-referrer" />
+                    <img src="https://ui-avatars.com/api/?name=Sheun Hub+Hub&background=10b981&color=fff" className="w-12 h-12 rounded-full border-2 border-green relative z-10" alt="Sheun Hub" referrerPolicy="no-referrer" />
                   </div>
                   <div>
-                    <p className="font-bold group-hover:text-green transition-colors">Sheun</p>
+                    <p className="font-bold group-hover:text-green transition-colors">Sheun Hub</p>
                     <p className="text-[10px] uppercase tracking-widest text-white/40 font-bold">Migration Architect</p>
                   </div>
                 </Link>

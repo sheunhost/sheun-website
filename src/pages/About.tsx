@@ -26,19 +26,19 @@ export default function About() {
   const navigate = useNavigate();
   return (
     <PageWrapper 
-      title="About Sheun | Certified Shopify Partner & Developer (UK, US, CA, AU, FR, DE)" 
-      description="Meet Sheun, a certified Shopify Partner, developer, and SEO expert. Helping merchants across the UK, US, Canada, Australia, France, and Germany build high-performance Shopify stores, migrations, and SEO sprints."
-      keywords="shopify developer UK, freelance shopify developer, shopify developer Australia, shopify expert Canada, United States Shopify Expert, shopify expert France, shopify developer Germany, About Sheun, Shopify Partner, custom liquid themes, WooCommerce to Shopify migration"
+      title="About Sheun Hub | Certified Shopify Partner & Developer (UK, US, CA, AU, FR, DE)" 
+      description="Meet Sheun Hub, a certified Shopify Partner, developer, and SEO expert. Helping merchants across the UK, US, Canada, Australia, France, and Germany build high-performance Shopify stores, migrations, and SEO sprints."
+      keywords="shopify developer UK, freelance shopify developer, shopify developer Australia, shopify expert Canada, United States Shopify Expert, shopify expert France, shopify developer Germany, About Sheun Hub, Shopify Partner, custom liquid themes, WooCommerce to Shopify migration"
       canonical="/about"
       schema={{
         "@context": "https://schema.org",
         "@type": "AboutPage",
-        "name": "About Sheun - Certified Shopify Partner & SEO Consultant",
-        "description": "Learn more about Sheun, a certified Shopify Partner and remote e-commerce developer helping brands in the UK, US, Canada, Australia, France, and Germany scale with speed, migrations, and SEO sprints.",
+        "name": "About Sheun Hub - Certified Shopify Partner & SEO Consultant",
+        "description": "Learn more about Sheun Hub, a certified Shopify Partner and remote e-commerce developer helping brands in the UK, US, Canada, Australia, France, and Germany scale with speed, migrations, and SEO sprints.",
         "url": "https://sheun.online/about",
         "mainEntity": {
           "@type": "Person",
-          "name": "Sheun",
+          "name": "Sheun Hub",
           "jobTitle": "Certified Shopify Partner",
           "knowsAbout": ["Shopify API", "Liquid Programming", "WooCommerce Migrations", "Shopify SEO Sprints", "Conversion Rate Optimization (CRO)", "UI/UX Design"],
           "url": "https://sheun.online/about"
@@ -60,16 +60,16 @@ export default function About() {
               <div className="lg:col-span-7 space-y-8">
                 <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#F4F4F5] border border-[#E2E8F0] text-xs font-semibold uppercase tracking-wider text-[#0F172A]">
                   <span className="flex h-2 w-2 rounded-full bg-[#10b981] animate-ping"></span>
-                  The Specialist Behind Sheun.online
+                  The Specialist Behind Sheun Hub.online
                 </div>
 
                 <h1 className="text-4xl sm:text-6xl lg:text-7xl font-bold text-[#0F172A] tracking-tight leading-[1.08] font-sans">
-                  Certified Shopify <span className="text-[#10b981] underline decoration-[#10b981]/20 underline-offset-8">Expert & Developer</span> Sheun.
+                  Certified Shopify <span className="text-[#10b981] underline decoration-[#10b981]/20 underline-offset-8">Expert & Developer</span> Sheun Hub.
                 </h1>
 
                 <div className="space-y-6 text-[#475569] text-base sm:text-lg leading-relaxed font-sans max-w-2xl">
                   <p>
-                    I am Sheun, a certified Shopify Partner and the technical architect behind sheun.online. With a <strong className="text-[#0F172A]">B.Sc. in Business Management</strong> and an absolute obsession for clean Liquid code, I bridge the gap between technical engineering and commercial strategy.
+                    I am Sheun Hub, a certified Shopify Partner and the technical architect behind sheun.online. With a <strong className="text-[#0F172A]">B.Sc. in Business Management</strong> and an absolute obsession for clean Liquid code, I bridge the gap between technical engineering and commercial strategy.
                   </p>
                   <p>
                     I operate as a solo specialist, which means you get direct, responsive access to the person actually writing your code. I don't hide behind project managers or outsource your work to juniors; I personally guarantee every line of code is optimized for revenue and lightning-fast speeds.
@@ -128,7 +128,7 @@ export default function About() {
                   >
                     <img 
                       src="https://plain-enam-prod-public.komododecks.com/202605/19/vZvg4Ag3WuFmylr2Sh6R/image.jpg" 
-                      alt="Sheun - Certified Shopify Partner" 
+                      alt="Sheun Hub - Certified Shopify Partner" 
                       referrerPolicy="no-referrer"
                       className="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-700" 
                       loading="lazy" 
@@ -406,7 +406,7 @@ export default function About() {
                   to="/apply" 
                   className="w-full sm:w-auto px-8 py-5 rounded-2xl bg-[#10b981] text-[#09090b] font-bold text-lg hover:bg-[#059669] shadow-lg hover:shadow-xl transition-all flex items-center justify-center gap-2"
                 >
-                  Apply to Work with Sheun
+                  Apply to Work with Sheun Hub
                   <ArrowRight size={20} />
                 </Link>
                 <Link 

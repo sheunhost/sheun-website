@@ -200,7 +200,7 @@ const testimonials = [
   {
     name: "Sarah Jenkins",
     role: "Founder, Glow Beauty",
-    content: "Sheun completely transformed our Shopify store. Our conversion rate doubled in the first month after the redesign!",
+    content: "Sheun Hub completely transformed our Shopify store. Our conversion rate doubled in the first month after the redesign!",
     image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80&w=200",
     rating: 5
   },
@@ -358,7 +358,7 @@ export default function Services() {
          "name": "Shopify Development Services",
          "provider": {
             "@type": "Person",
-            "name": "Sheun"
+            "name": "Sheun Hub"
          },
          "description": "Expert Shopify store setup, data migration, theme customization, and holistic E-commerce growth.",
          "url": "https://sheun.online/services"

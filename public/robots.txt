@@ -1,17 +1,7 @@
-# Welcome to Sheun Hub's robots.txt
-# High-performance search indexing and AI model crawlers allowed
-
 User-agent: *
 Allow: /
 
-# Explicit permission and guide for generative AI / LLM crawlers
 User-agent: GPTBot
-Allow: /
-
-User-agent: ChatGPT-User
-Allow: /
-
-User-agent: ClaudeBot
 Allow: /
 
 User-agent: Google-Extended
@@ -20,9 +10,7 @@ Allow: /
 User-agent: PerplexityBot
 Allow: /
 
-User-agent: Applebot
+User-agent: ClaudeBot
 Allow: /
 
-# AI-friendly structured document mapping for direct indexing of services
 Sitemap: https://www.sheun.online/sitemap.xml
-LLM: https://www.sheun.online/llms.txt

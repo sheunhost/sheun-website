@@ -17,7 +17,7 @@ export default function Footer() {
             <Link to="/" className="inline-block">
               <img 
                 src="https://i.postimg.cc/wxQgVCcf/1000031270-removebg-preview.png" 
-                alt="Sheun - Shopify Development and Growth Expert" 
+                alt="Sheun Hub - Shopify Development and Growth Expert" 
                 referrerPolicy="no-referrer"
                 loading="lazy"
                 className="h-20 w-auto object-contain drop-shadow-xl" 
@@ -97,7 +97,7 @@ export default function Footer() {
 
         <div className="pt-6 flex flex-col md:flex-row items-center justify-between gap-8">
           <p className="text-xs text-white/20 font-medium text-center md:text-left">
-            © 2026 Sheun. All rights reserved.
+            © 2026 Sheun Hub. All rights reserved.
           </p>
           <div className="flex flex-col md:flex-row items-center gap-6">
             <span className="bg-white/5 text-green text-[10px] font-bold uppercase tracking-widest px-4 py-2 rounded-full border border-white/5 flex items-center gap-2">

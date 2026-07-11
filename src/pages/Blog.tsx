@@ -251,10 +251,10 @@ export default function Blog() {
                 <div className="flex flex-col sm:flex-row items-center justify-between gap-8 pt-8 md:pt-10 border-t border-navy/5">
                   <div className="flex items-center gap-4">
                     <div className="w-12 h-12 md:w-14 md:h-14 rounded-2xl overflow-hidden shadow-xl shrink-0">
-                      <img src="https://ui-avatars.com/api/?name=Sheun+Hub&background=10b981&color=fff" alt="Sheun" loading="lazy" />
+                      <img src="https://ui-avatars.com/api/?name=Sheun Hub+Hub&background=10b981&color=fff" alt="Sheun Hub" loading="lazy" />
                     </div>
                     <div>
-                      <p className="text-base md:text-lg font-bold text-navy">Sheun</p>
+                      <p className="text-base md:text-lg font-bold text-navy">Sheun Hub</p>
                       <p className="text-xs md:text-sm text-navy/40 font-serif italic">{featuredPost.date} · {featuredPost.readTime}</p>
                     </div>
                   </div>

@@ -36,7 +36,7 @@ export default function ShopifySEOGuide() {
   };
 
   const handleWhatsAppContact = () => {
-    const text = encodeURIComponent("Hi Sheun, I read your Shopify SEO guide and I'm interested in working with you to grow my organic traffic!");
+    const text = encodeURIComponent("Hi Sheun Hub, I read your Shopify SEO guide and I'm interested in working with you to grow my organic traffic!");
     window.open(`https://wa.me/2348084315743?text=${text}`, "_blank");
   };
 
@@ -46,14 +46,14 @@ export default function ShopifySEOGuide() {
       title="Shopify SEO in 2026: Complete Expert Optimization Guide"
       description="Step-by-step technical and on-page Shopify SEO checklist. Learn to optimize collections, override metadata, configure rich schemas, and drive organic traffic in the UK, US, Canada, Australia, France, and Germany."
       keywords="Shopify SEO Guide, Shopify SEO expert UK, Shopify SEO specialist USA, technical Shopify SEO Canada, rank Shopify store Australia, Shopify SEO consultant France, Shopify optimization Germany"
-      canonical="/blog/shopify-seo-guide-2026"
+      canonical="/shopify-seo-guide"
       schema={{
         "@context": "https://schema.org",
         "@type": "Article",
         "headline": "Shopify SEO in 2026: The Beginner's Complete Guide",
         "author": {
           "@type": "Person",
-          "name": "Sheun"
+          "name": "Sheun Hub"
         },
         "publisher": {
           "@type": "Organization",
@@ -114,10 +114,10 @@ export default function ShopifySEOGuide() {
                 <Link to="/about" className="flex items-center gap-4 pt-4 border-t border-white/10 group">
                   <div className="relative">
                     <div className="absolute inset-0 bg-green/20 rounded-full blur-lg group-hover:bg-green/40 transition-colors" />
-                    <img src="https://ui-avatars.com/api/?name=Sheun+Hub&background=10b981&color=fff" className="w-12 h-12 rounded-full border-2 border-green relative z-10" alt="Sheun" referrerPolicy="no-referrer" />
+                    <img src="https://ui-avatars.com/api/?name=Sheun Hub+Hub&background=10b981&color=fff" className="w-12 h-12 rounded-full border-2 border-green relative z-10" alt="Sheun Hub" referrerPolicy="no-referrer" />
                   </div>
                   <div>
-                    <p className="font-bold group-hover:text-green transition-colors">Sheun</p>
+                    <p className="font-bold group-hover:text-green transition-colors">Sheun Hub</p>
                     <p className="text-[10px] uppercase tracking-widest text-white/40 font-bold">Shopify Performance Expert</p>
                   </div>
                 </Link>

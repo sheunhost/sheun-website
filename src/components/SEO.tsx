@@ -1,29 +1,28 @@
-import { Helmet } from "react-helmet-async";
+import { useSEO } from "../hooks/useSEO";
 
 interface SEOProps {
   title: string;
   description: string;
-  keywords?: string;
-  canonical?: string;
+  canonical: string;
+  schema?: Record<string, any>;
+  breadcrumbs?: { name: string; item: string }[];
 }
 
-export function SEO({ title, description, keywords, canonical }: SEOProps) {
-  const currentUrl = typeof window !== "undefined" ? window.location.href : "";
-  const canonicalUrl = canonical || currentUrl;
+export default function SEO({ title, description, canonical, schema, breadcrumbs }: SEOProps) {
+  const fullUrl = `https://sheun.online${canonical === '/' ? '' : canonical}`;
+  
+  const breadcrumbSchema = breadcrumbs ? {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": breadcrumbs.map((bc, idx) => ({
+      "@type": "ListItem",
+      "position": idx + 1,
+      "name": bc.name,
+      "item": `https://sheun.online${bc.item}`
+    }))
+  } : null;
 
-  return (
-    <Helmet>
-      <title>{title}</title>
-      <meta name="description" content={description} />
-      {keywords && <meta name="keywords" content={keywords} />}
-      <link rel="canonical" href={canonicalUrl} />
-      <meta property="og:title" content={title} />
-      <meta property="og:description" content={description} />
-      <meta property="og:url" content={canonicalUrl} />
-      <meta property="og:type" content="website" />
-      <meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:title" content={title} />
-      <meta name="twitter:description" content={description} />
-    </Helmet>
-  );
+  useSEO(title, description, fullUrl, schema, breadcrumbSchema, undefined, undefined);
+
+  return null;
 }

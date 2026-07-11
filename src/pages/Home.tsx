@@ -3,6 +3,7 @@ import { ArrowRight, Star, ShoppingBag, Globe, Trophy, CheckCircle2, Layout, Ref
 import { Link, useNavigate } from "react-router-dom";
 import { GoogleGenAI } from "@google/genai";
 import PageWrapper from "../components/PageWrapper";
+import SEO from "../components/SEO";
 import { useState, FormEvent, useEffect } from "react";
 import { AnimatePresence } from "framer-motion";
 import { cn, openCalendlyPopup } from "../lib/utils";
@@ -106,7 +107,7 @@ const testimonials = [
   {
     name: "Lisa Wong",
     role: "Founder, PetPalace",
-    content: "Sheun is a Liquid expert. He built custom features that we thought were impossible on Shopify.",
+    content: "Sheun Hub is a Liquid expert. He built custom features that we thought were impossible on Shopify.",
     image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=200",
     rating: 5
   },
@@ -127,7 +128,7 @@ const testimonials = [
   {
     name: "Oliver Wright",
     role: "CEO, NextGen Electronics",
-    content: "Sheun optimized my checkout flow and the results were immediate. Cart abandonment dropped significantly.",
+    content: "Sheun Hub optimized my checkout flow and the results were immediate. Cart abandonment dropped significantly.",
     image: "https://images.unsplash.com/photo-1519345182560-3f2917c472ef?auto=format&fit=crop&q=80&w=200",
     rating: 4
   },
@@ -176,20 +177,20 @@ const SEOReport = ({ data }: { data: any }) => {
           </div>
         </div>
         <div className="bg-green p-8 rounded-2xl flex flex-col items-center justify-center text-center space-y-2 shadow-xl shadow-green/20">
-           <p className="text-navy/60 text-[10px] font-bold uppercase tracking-widest">SEO Score</p>
-           <p className="text-7xl font-black text-navy tracking-tighter">{data.store_summary.current_seo_score}</p>
-           <Trophy className="text-navy/20" size={40} />
+           <p className="text-navy dark:text-white/60 text-[10px] font-bold uppercase tracking-widest">SEO Score</p>
+           <p className="text-7xl font-black text-navy dark:text-white tracking-tighter">{data.store_summary.current_seo_score}</p>
+           <Trophy className="text-navy dark:text-white/20" size={40} />
         </div>
       </div>
 
       {/* Biggest Opportunity */}
       <div className="bg-navy/5 border-2 border-green/20 p-8 rounded-2xl flex items-start gap-6 group hover:bg-green/5 transition-colors">
-        <div className="w-12 h-12 bg-green rounded-2xl flex items-center justify-center text-navy shrink-0 shadow-lg shadow-green/20">
+        <div className="w-12 h-12 bg-green rounded-2xl flex items-center justify-center text-navy dark:text-white shrink-0 shadow-lg shadow-green/20">
           <Zap size={24} />
         </div>
         <div className="space-y-1">
-          <p className="text-[10px] font-bold text-navy/40 uppercase tracking-widest">Biggest Opportunity</p>
-          <p className="text-xl font-bold text-navy">{data.store_summary.biggest_opportunity}</p>
+          <p className="text-[10px] font-bold text-navy dark:text-white/40 uppercase tracking-widest">Biggest Opportunity</p>
+          <p className="text-xl font-bold text-navy dark:text-white">{data.store_summary.biggest_opportunity}</p>
         </div>
       </div>
 
@@ -197,13 +198,13 @@ const SEOReport = ({ data }: { data: any }) => {
       <div className="space-y-6">
         <div className="flex items-center gap-3">
           <Search className="text-green" size={24} />
-          <h4 className="text-2xl font-bold text-navy">Primary Keywords</h4>
+          <h4 className="text-2xl font-bold text-navy dark:text-white">Primary Keywords</h4>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           {data.keywords.map((kw: any, i: number) => (
             <div key={i} className="bg-white border border-navy/5 p-6 rounded-3xl hover:shadow-lg transition-shadow group">
               <div className="flex justify-between items-start mb-4">
-                <p className="text-lg font-bold text-navy group-hover:text-green transition-colors">{kw.keyword}</p>
+                <p className="text-lg font-bold text-navy dark:text-white group-hover:text-green transition-colors">{kw.keyword}</p>
                 <span className={`text-[8px] font-bold uppercase px-2 py-1 rounded-full ${
                   kw.difficulty === 'Easy' ? 'bg-green/10 text-green' : 
                   kw.difficulty === 'Medium' ? 'bg-yellow-500/10 text-yellow-600' : 'bg-red-500/10 text-red-600'
@@ -213,17 +214,17 @@ const SEOReport = ({ data }: { data: any }) => {
               </div>
               <div className="grid grid-cols-2 gap-4 text-[10px]">
                 <div>
-                  <p className="text-navy/40 uppercase font-bold">Volume</p>
+                  <p className="text-navy dark:text-white/40 uppercase font-bold">Volume</p>
                   <p className="font-bold">{kw.volume}</p>
                 </div>
                 <div>
-                  <p className="text-navy/40 uppercase font-bold">Intent</p>
+                  <p className="text-navy dark:text-white/40 uppercase font-bold">Intent</p>
                   <p className="font-bold">{kw.intent}</p>
                 </div>
               </div>
               <div className="mt-4 pt-4 border-t border-navy/5">
-                <p className="text-[10px] text-navy/40 uppercase font-bold mb-1">Where to use</p>
-                <p className="text-xs text-navy/70 leading-relaxed">{kw.where_to_use}</p>
+                <p className="text-[10px] text-navy dark:text-white/40 uppercase font-bold mb-1">Where to use</p>
+                <p className="text-xs text-navy dark:text-white/70 leading-relaxed">{kw.where_to_use}</p>
               </div>
             </div>
           ))}
@@ -234,7 +235,7 @@ const SEOReport = ({ data }: { data: any }) => {
       <div className="space-y-6">
         <div className="flex items-center gap-3">
           <TrendingUp className="text-green" size={24} />
-          <h4 className="text-2xl font-bold text-navy">Long-tail Opportunities</h4>
+          <h4 className="text-2xl font-bold text-navy dark:text-white">Long-tail Opportunities</h4>
         </div>
         <div className="bg-navy p-8 rounded-2xl space-y-6 shadow-2xl">
           {data.longtail.map((lt: any, i: number) => (
@@ -262,15 +263,15 @@ const SEOReport = ({ data }: { data: any }) => {
         <div className="space-y-6">
           <div className="flex items-center gap-3">
             <AlertCircle className="text-red-500" size={24} />
-            <h4 className="text-2xl font-bold text-navy">Critical Gaps</h4>
+            <h4 className="text-2xl font-bold text-navy dark:text-white">Critical Gaps</h4>
           </div>
           <div className="space-y-4">
             {data.seo_gaps.map((gap: any, i: number) => (
               <div key={i} className="bg-red-50 border border-red-100 p-6 rounded-3xl space-y-3">
                 <p className="font-bold text-red-900">{gap.problem}</p>
                 <p className="text-xs text-red-700/80 italic">Location: {gap.location}</p>
-                <div className="bg-white p-4 rounded-2xl text-xs text-navy/70 border border-red-200">
-                  <p className="font-bold text-navy mb-1">Fix:</p>
+                <div className="bg-white p-4 rounded-2xl text-xs text-navy dark:text-white/70 border border-red-200">
+                  <p className="font-bold text-navy dark:text-white mb-1">Fix:</p>
                   {gap.fix}
                 </div>
               </div>
@@ -280,13 +281,13 @@ const SEOReport = ({ data }: { data: any }) => {
         <div className="space-y-6">
           <div className="flex items-center gap-3">
             <Rocket className="text-green" size={24} />
-            <h4 className="text-2xl font-bold text-navy">Quick Wins</h4>
+            <h4 className="text-2xl font-bold text-navy dark:text-white">Quick Wins</h4>
           </div>
           <div className="space-y-4">
             {data.quick_wins.map((win: any, i: number) => (
               <div key={i} className="bg-green/5 border border-green/10 p-6 rounded-3xl space-y-3">
-                <p className="font-bold text-navy">{win.action}</p>
-                <p className="text-xs text-navy/60 italic">Where: {win.where}</p>
+                <p className="font-bold text-navy dark:text-white">{win.action}</p>
+                <p className="text-xs text-navy dark:text-white/60 italic">Where: {win.where}</p>
                 <div className="flex items-center gap-2 text-green font-bold text-[10px] uppercase tracking-widest bg-green/10 w-fit px-3 py-1 rounded-full">
                   <Zap size={14} />
                   Impact: {win.impact}
@@ -301,8 +302,8 @@ const SEOReport = ({ data }: { data: any }) => {
       {data.competitor_analysis && (
         <div className="space-y-6 pt-12 border-t border-navy/5">
           <div className="flex items-center gap-3">
-            <Target className="text-navy" size={24} />
-            <h4 className="text-2xl font-bold text-navy">Competitor Gap Analysis</h4>
+            <Target className="text-navy dark:text-white" size={24} />
+            <h4 className="text-2xl font-bold text-navy dark:text-white">Competitor Gap Analysis</h4>
           </div>
           <div className="bg-navy p-8 md:p-12 rounded-2xl text-white relative overflow-hidden">
             <div className="absolute top-0 right-0 p-12 opacity-5">
@@ -369,14 +370,14 @@ const ServiceModal = ({ service, onClose }: { service: any; onClose: () => void 
       >
         <button
           onClick={onClose}
-          className="absolute top-6 right-6 w-12 h-12 bg-light rounded-full flex items-center justify-center text-navy hover:bg-green hover:text-navy transition-all z-10"
+          className="absolute top-6 right-6 w-12 h-12 bg-light rounded-full flex items-center justify-center text-navy dark:text-white hover:bg-green hover:text-navy dark:text-white transition-all z-10"
         >
           <X size={24} />
         </button>
 
         <div className="grid grid-cols-1 lg:grid-cols-12">
           <div className="lg:col-span-5 bg-navy p-8 md:p-12 text-white space-y-8">
-            <div className="w-16 h-16 bg-green rounded-2xl flex items-center justify-center text-navy">
+            <div className="w-16 h-16 bg-green rounded-2xl flex items-center justify-center text-navy dark:text-white">
               <service.icon size={32} />
             </div>
             <div className="space-y-4">
@@ -405,17 +406,17 @@ const ServiceModal = ({ service, onClose }: { service: any; onClose: () => void 
             <div className="space-y-6">
               <div className="flex items-center gap-3">
                 <ListChecks className="text-green" size={24} />
-                <h4 className="text-2xl font-bold text-navy">Service Roadmap</h4>
+                <h4 className="text-2xl font-bold text-navy dark:text-white">Service Roadmap</h4>
               </div>
               <div className="space-y-6 relative before:absolute before:left-4 before:top-2 before:bottom-2 before:w-px before:bg-navy/5">
                 {service.roadmap.map((step: any, i: number) => (
                   <div key={i} className="relative pl-12 group">
-                    <div className="absolute left-0 top-1 w-8 h-8 bg-light rounded-full border-2 border-navy/5 flex items-center justify-center text-xs font-bold text-navy group-hover:bg-green group-hover:border-green transition-all">
+                    <div className="absolute left-0 top-1 w-8 h-8 bg-light rounded-full border-2 border-navy/5 flex items-center justify-center text-xs font-bold text-navy dark:text-white group-hover:bg-green group-hover:border-green transition-all">
                       {i + 1}
                     </div>
                     <div className="space-y-1">
-                      <p className="font-bold text-navy">{step.title}</p>
-                      <p className="text-sm text-navy/60 leading-relaxed">{step.desc}</p>
+                      <p className="font-bold text-navy dark:text-white">{step.title}</p>
+                      <p className="text-sm text-navy dark:text-white/60 leading-relaxed">{step.desc}</p>
                     </div>
                   </div>
                 ))}
@@ -434,7 +435,7 @@ const ServiceModal = ({ service, onClose }: { service: any; onClose: () => void 
                     contact.scrollIntoView({ behavior: 'smooth' });
                   }
                 }}
-                className="w-full bg-navy text-white py-5 rounded-full font-bold text-lg hover:bg-green hover:text-navy transition-all flex items-center justify-center gap-3 shadow-xl"
+                className="w-full bg-navy text-white py-5 rounded-full font-bold text-lg hover:bg-green hover:text-navy dark:text-white transition-all flex items-center justify-center gap-3 shadow-xl"
               >
                 Get Started with {service.title} <ArrowRight size={20} />
               </a>
@@ -628,19 +629,19 @@ export default function Home() {
 
   return (
     <PageWrapper 
-      title="Best Shopify Developer, Consultant & SEO Expert (UK, US, CA, AU, FR, DE) | Sheun" 
-      description="Need a certified Shopify Developer & SEO Consultant? Sheun provides custom store builds, technical SEO audits, WooCommerce migrations, and speed optimizations for brands in the UK, US, Canada, Australia, France, and Germany."
+      title="Best Shopify Developer, Consultant & SEO Expert (UK, US, CA, AU, FR, DE) | Sheun Hub" 
+      description="Need a certified Shopify Developer & SEO Consultant? Sheun Hub provides custom store builds, technical SEO audits, WooCommerce migrations, and speed optimizations for brands in the UK, US, Canada, Australia, France, and Germany."
       keywords="best shopify developer, affordable shopify developer, shopify expert reviews, shopify expert UK, freelance shopify developer, shopify developer Australia, shopify expert Canada, shopify expert USA, shopify developer France, shopify expert Germany, WooCommerce to Shopify migration, Shopify SEO Sprint, Technical Shopify SEO Audit, Custom Shopify Themes, E-commerce CRO, speed optimization"
       canonical="/"
       schema={{
         "@context": "https://schema.org",
         "@type": "ProfilePage",
-        "name": "Shopify Developer, SEO Specialist & Growth Expert - Sheun",
+        "name": "Shopify Developer, SEO Specialist & Growth Expert - Sheun Hub",
         "description": "Scale your brand with a certified Shopify Partner specializing in WooCommerce migrations, technical SEO audits, custom theme development, and performance optimization across the UK, US, Canada, Australia, France, and Germany.",
         "url": "https://sheun.online",
         "mainEntity": {
           "@type": "Person",
-          "name": "Sheun",
+          "name": "Sheun Hub",
           "jobTitle": "Shopify Developer & SEO Specialist",
           "url": "https://sheun.online",
           "sameAs": [
@@ -709,7 +710,7 @@ export default function Home() {
                   animate={{ opacity: 0.4, x: 0 }}
                   transition={{ delay: 0.4 }}
                 >
-                  by Sheun.
+                  by Sheun Hub.
                 </motion.span>
               </h1>
 
@@ -736,7 +737,7 @@ export default function Home() {
               </div>
 
                 <p className="text-white/60 text-xl md:text-2xl max-w-xl leading-relaxed font-light font-serif italic">
-                  Scale your brand with a specialist in Custom Shopify Development and E-commerce Growth. From custom theme builds to technical store optimization, Sheun helps businesses maximize revenue on the Shopify platform.
+                  Scale your brand with a specialist in Custom Shopify Development and E-commerce Growth. From custom theme builds to technical store optimization, Sheun Hub helps businesses maximize revenue on the Shopify platform.
                 </p>
             </motion.div>
 
@@ -748,7 +749,7 @@ export default function Home() {
             >
               <Link 
                 to="/apply" 
-                className="w-full sm:w-auto bg-green text-navy px-8 md:px-12 py-4 md:py-6 rounded-full font-bold text-lg hover:scale-105 transition-all duration-500 green-glow flex items-center justify-center gap-3 text-center"
+                className="w-full sm:w-auto bg-green text-navy dark:text-white px-8 md:px-12 py-4 md:py-6 rounded-full font-bold text-lg hover:scale-105 transition-all duration-500 green-glow flex items-center justify-center gap-3 text-center"
               >
                 Get Started <ArrowRight size={20} />
               </Link>
@@ -794,7 +795,7 @@ export default function Home() {
               >
                 <img 
                   src="https://mapplinks.com/wp-content/uploads/2020/06/screen1.png" 
-                  alt="Sheun - Shopify Development and Growth Expert" 
+                  alt="Sheun Hub - Shopify Development and Growth Expert" 
                   referrerPolicy="no-referrer"
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-[2s]" 
                   loading="lazy" 
@@ -808,13 +809,13 @@ export default function Home() {
                   <p className="text-white/60 text-lg font-serif italic">Top Rated Shopify Specialist</p>
                   
                   <div className="flex gap-4 pt-4 border-t border-white/10">
-                    <a href="https://www.linkedin.com/in/sheun-hub-26b876321" target="_blank" rel="noopener noreferrer" className="p-2 bg-white/5 hover:bg-green hover:text-navy rounded-full text-white transition-all flex items-center justify-center overflow-hidden" title="LinkedIn">
+                    <a href="https://www.linkedin.com/in/sheun-hub-26b876321" target="_blank" rel="noopener noreferrer" className="p-2 bg-white/5 hover:bg-green hover:text-navy dark:text-white rounded-full text-white transition-all flex items-center justify-center overflow-hidden" title="LinkedIn">
                       <img src="https://images.rawpixel.com/image_png_social_square/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvdjk4Mi1kMS0xMC5wbmc.png" alt="LinkedIn" className="w-5 h-5 object-contain" />
                     </a>
-                    <a href="https://www.upwork.com/freelancers/~017eb19011cd354946" target="_blank" rel="noopener noreferrer" className="p-2 bg-white/5 hover:bg-green hover:text-navy rounded-full text-white transition-all flex items-center justify-center overflow-hidden" title="Upwork">
+                    <a href="https://www.upwork.com/freelancers/~017eb19011cd354946" target="_blank" rel="noopener noreferrer" className="p-2 bg-white/5 hover:bg-green hover:text-navy dark:text-white rounded-full text-white transition-all flex items-center justify-center overflow-hidden" title="Upwork">
                       <img src="https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/upwork-icon.png" alt="Upwork" className="w-5 h-5 object-contain" />
                     </a>
-                    <a href="mailto:sheunhost@gmail.com" className="p-2 bg-white/5 hover:bg-green hover:text-navy rounded-full text-white transition-all flex items-center justify-center overflow-hidden" title="Email">
+                    <a href="mailto:sheunhost@gmail.com" className="p-2 bg-white/5 hover:bg-green hover:text-navy dark:text-white rounded-full text-white transition-all flex items-center justify-center overflow-hidden" title="Email">
                       <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Gmail_icon_%282020%29.svg/960px-Gmail_icon_%282020%29.svg.png?_=20221017173631" alt="Gmail" className="w-5 h-5 object-contain" />
                     </a>
                   </div>
@@ -861,7 +862,7 @@ export default function Home() {
     </div>
 
     {/* Credibility Bar */}
-    <section className="py-12 bg-[#F8FAFC] border-b border-[#E2E8F0] relative overflow-hidden">
+    <section className="py-12 bg-[#F8FAFC] dark:bg-navy border-b border-[#E2E8F0] relative overflow-hidden">
       {/* Background Dots */}
       <div className="absolute inset-0 bg-[radial-gradient(#E2E8F0_1px,transparent_1px)] bg-[size:24px_24px] opacity-40 pointer-events-none"></div>
       
@@ -896,7 +897,7 @@ export default function Home() {
 
     {/* Pain Points Section */}
     <ScrollReveal>
-      <section className="py-32 bg-[#FFFFFF] relative overflow-hidden border-b border-[#E2E8F0]">
+      <section className="py-32 bg-[#FFFFFF] dark:bg-navy relative overflow-hidden border-b border-[#E2E8F0]">
         {/* Glow Effects */}
         <div className="absolute top-1/4 left-1/3 w-[500px] h-[500px] bg-[#10b981]/5 rounded-full blur-[120px] pointer-events-none -z-10"></div>
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#E2E8F020_1px,transparent_1px),linear-gradient(to_bottom,#E2E8F020_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_50%,#000_70%,transparent_100%)] -z-10"></div>
@@ -907,7 +908,7 @@ export default function Home() {
               <AlertTriangle size={14} className="text-[#F59E0B]" />
               The Reality of E-Commerce
             </div>
-            <h2 className="text-5xl md:text-7xl font-bold text-navy tracking-tighter">
+            <h2 className="text-5xl md:text-7xl font-bold text-navy dark:text-white tracking-tighter">
               Is your Shopify store <br />
               <span className="text-[#10b981] underline decoration-[#10b981]/20 underline-offset-8 italic font-serif font-light">working for you?</span>
             </h2>
@@ -980,15 +981,15 @@ export default function Home() {
     </ScrollReveal>
 
     <ScrollReveal>
-        <section className="py-32 bg-white relative overflow-hidden border-y border-navy/5">
+        <section className="py-32 bg-white dark:bg-navy relative overflow-hidden border-y border-navy/5">
         <div className="container mx-auto px-6">
           <div className="max-w-4xl mx-auto space-y-12">
             <div className="text-center space-y-6">
               <p className="text-green text-[10px] font-bold uppercase tracking-[0.3em]">Free Strategy Plan</p>
-              <h2 className="text-4xl md:text-6xl font-bold text-navy tracking-tight">
-                Scale Your <span className="italic font-serif font-light text-navy/40">Sales</span>.
+              <h2 className="text-4xl md:text-6xl font-bold text-navy dark:text-white tracking-tight">
+                Scale Your <span className="italic font-serif font-light text-navy dark:text-white/40">Sales</span>.
               </h2>
-              <p className="text-navy/60 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed">
+              <p className="text-navy dark:text-white/60 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed">
                 Enter your store details below and I will personally review your site and send you a custom, 3-step action plan to increase your conversion rate.
               </p>
             </div>
@@ -998,7 +999,7 @@ export default function Home() {
                 <form onSubmit={handlePlanRequest} className="space-y-6">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div className="space-y-2">
-                      <label className="text-sm font-bold text-navy ml-4">Your Name *</label>
+                      <label className="text-sm font-bold text-navy dark:text-white ml-4">Your Name *</label>
                       <input 
                         type="text" 
                         required
@@ -1007,7 +1008,7 @@ export default function Home() {
                       />
                     </div>
                     <div className="space-y-2">
-                      <label className="text-sm font-bold text-navy ml-4">Email Address *</label>
+                      <label className="text-sm font-bold text-navy dark:text-white ml-4">Email Address *</label>
                       <input 
                         type="email" 
                         name="email"
@@ -1019,7 +1020,7 @@ export default function Home() {
                     </div>
                   </div>
                   <div className="space-y-2">
-                    <label className="text-sm font-bold text-navy ml-4">Store URL *</label>
+                    <label className="text-sm font-bold text-navy dark:text-white ml-4">Store URL *</label>
                     <input 
                       type="text" 
                       name="store_url"
@@ -1031,7 +1032,7 @@ export default function Home() {
                   <button 
                     type="submit"
                     disabled={isRequestingPlan}
-                    className="w-full bg-navy text-white py-5 rounded-full font-bold text-lg hover:bg-green hover:text-navy transition-colors disabled:opacity-50 flex items-center justify-center gap-3 shadow-lg"
+                    className="w-full bg-navy text-white py-5 rounded-full font-bold text-lg hover:bg-green hover:text-navy dark:text-white transition-colors disabled:opacity-50 flex items-center justify-center gap-3 shadow-lg"
                   >
                     {isRequestingPlan ? (
                       <>
@@ -1045,7 +1046,7 @@ export default function Home() {
                       </>
                     )}
                   </button>
-                  <p className="text-center text-xs text-navy/40 mt-4 flex justify-center items-center gap-2">
+                  <p className="text-center text-xs text-navy dark:text-white/40 mt-4 flex justify-center items-center gap-2">
                     <Lock size={12} /> 100% Secure. No spam, ever.
                   </p>
                 </form>
@@ -1054,8 +1055,8 @@ export default function Home() {
                   <div className="w-20 h-20 bg-green/20 rounded-full flex items-center justify-center mx-auto">
                     <CheckCircle2 size={40} className="text-green" />
                   </div>
-                  <h3 className="text-3xl font-bold text-navy tracking-tight">Congratulations! Request Received!</h3>
-                  <p className="text-navy/60 text-lg max-w-md mx-auto leading-relaxed">
+                  <h3 className="text-3xl font-bold text-navy dark:text-white tracking-tight">Congratulations! Request Received!</h3>
+                  <p className="text-navy dark:text-white/60 text-lg max-w-md mx-auto leading-relaxed">
                     Your form was submitted. You will receive a message with further steps from <span className="font-bold">sheunhost@gmail.com</span> shortly. We will review your store and email your custom Growth Plan within 24-48 hours. Let's scale your brand!
                   </p>
                 </div>
@@ -1072,7 +1073,7 @@ export default function Home() {
                   Skip the line and book a free 1-on-1 strategy call with us to discuss your custom store build.
                 </p>
               </div>
-              <button onClick={openCalendlyPopup} className="shrink-0 relative z-10 bg-green text-navy px-10 py-5 rounded-full font-bold text-lg hover:scale-105 transition-all duration-300 shadow flex items-center gap-3 w-full md:w-auto justify-center cursor-pointer">
+              <button onClick={openCalendlyPopup} className="shrink-0 relative z-10 bg-green text-navy dark:text-white px-10 py-5 rounded-full font-bold text-lg hover:scale-105 transition-all duration-300 shadow flex items-center gap-3 w-full md:w-auto justify-center cursor-pointer">
                 Book Strategy Call <ArrowRight size={20} />
               </button>
             </div>
@@ -1086,7 +1087,7 @@ export default function Home() {
 
     {/* Credibility & Comparison Section */}
     <ScrollReveal>
-      <section className="py-32 bg-white relative overflow-hidden border-b border-[#E2E8F0]">
+      <section className="py-32 bg-white dark:bg-navy relative overflow-hidden border-b border-[#E2E8F0]">
         {/* Subtle decorative grid lines */}
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#E2E8F015_1px,transparent_1px),linear-gradient(to_bottom,#E2E8F015_1px,transparent_1px)] bg-[size:4rem_4rem] pointer-events-none -z-10"></div>
         <div className="absolute top-1/2 left-1/2 w-[600px] h-[600px] bg-green/5 rounded-full blur-[140px] pointer-events-none -translate-x-1/2 -translate-y-1/2 -z-10"></div>
@@ -1096,9 +1097,9 @@ export default function Home() {
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#F4F4F5] border border-[#E2E8F0] text-xs font-semibold uppercase tracking-wider text-[#0F172A] mb-2">
               The Comparison
             </div>
-            <h2 className="text-5xl md:text-7xl font-bold text-navy tracking-tighter">
+            <h2 className="text-5xl md:text-7xl font-bold text-navy dark:text-white tracking-tighter">
               Why brands choose <br />
-              <span className="text-[#10b981] underline decoration-[#10b981]/20 underline-offset-8 italic font-serif font-light">Sheun over Agencies.</span>
+              <span className="text-[#10b981] underline decoration-[#10b981]/20 underline-offset-8 italic font-serif font-light">Sheun Hub over Agencies.</span>
             </h2>
             <p className="text-[#71717a] text-lg sm:text-xl font-serif italic leading-relaxed">
               Finding the "best Shopify developer" shouldn't mean paying agency overheads or gambling on cheap, unreliable freelancers.
@@ -1107,7 +1108,7 @@ export default function Home() {
 
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch">
             {/* Cheap Freelancer */}
-            <div className="p-8 sm:p-10 rounded-3xl border border-[#E2E8F0] bg-[#F8FAFC]/60 space-y-8 flex flex-col opacity-60 grayscale hover:grayscale-0 hover:opacity-100 hover:border-red-200 transition-all duration-300">
+            <div className="p-8 sm:p-10 rounded-3xl border border-[#E2E8F0] bg-[#F8FAFC] dark:bg-navy/60 space-y-8 flex flex-col opacity-60 grayscale hover:grayscale-0 hover:opacity-100 hover:border-red-200 transition-all duration-300">
               <div className="space-y-2">
                 <span className="text-xs font-bold uppercase tracking-widest text-[#71717a]">Option 01</span>
                 <h3 className="text-2xl font-bold text-[#0F172A] tracking-tight">Generic Freelancer</h3>
@@ -1136,7 +1137,7 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Sheun (The Expert) */}
+            {/* Sheun Hub (The Expert) */}
             <div className="p-8 sm:p-10 rounded-3xl bg-[#09090b] text-white space-y-8 flex flex-col relative shadow-[0_20px_50px_rgba(0,0,0,0.15)] lg:scale-105 z-10 border border-green/30">
               {/* Badge */}
               <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-[#10b981] text-[#09090b] text-[10px] font-bold uppercase tracking-[0.25em] px-6 py-2 rounded-full shadow-lg">
@@ -1178,7 +1179,7 @@ export default function Home() {
             </div>
 
             {/* Big Agency */}
-            <div className="p-8 sm:p-10 rounded-3xl border border-[#E2E8F0] bg-[#F8FAFC]/60 space-y-8 flex flex-col opacity-60 grayscale hover:grayscale-0 hover:opacity-100 hover:border-red-200 transition-all duration-300">
+            <div className="p-8 sm:p-10 rounded-3xl border border-[#E2E8F0] bg-[#F8FAFC] dark:bg-navy/60 space-y-8 flex flex-col opacity-60 grayscale hover:grayscale-0 hover:opacity-100 hover:border-red-200 transition-all duration-300">
               <div className="space-y-2">
                 <span className="text-xs font-bold uppercase tracking-widest text-[#71717a]">Option 02</span>
                 <h3 className="text-2xl font-bold text-[#0F172A] tracking-tight">Big Digital Agency</h3>
@@ -1224,7 +1225,7 @@ export default function Home() {
               </h2>
             </div>
             <Link to="/services" className="group flex items-center gap-4 text-white font-bold text-lg">
-              View All Services <div className="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center group-hover:bg-green group-hover:text-navy transition-all">
+              View All Services <div className="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center group-hover:bg-green group-hover:text-navy dark:text-white transition-all">
                 <ArrowRight size={20} />
               </div>
             </Link>
@@ -1334,9 +1335,9 @@ export default function Home() {
         </div>
         <div className="container mx-auto px-6 relative z-10">
           <div className="text-center space-y-6 mb-16">
-            <p className="text-navy/40 text-[10px] font-bold uppercase tracking-[0.3em]">Client Success</p>
-            <h2 className="text-4xl md:text-5xl font-bold text-navy tracking-tight">
-              Trusted by <span className="italic font-serif font-light text-navy/40">Founders</span>.
+            <p className="text-navy dark:text-white/40 text-[10px] font-bold uppercase tracking-[0.3em]">Client Success</p>
+            <h2 className="text-4xl md:text-5xl font-bold text-navy dark:text-white tracking-tight">
+              Trusted by <span className="italic font-serif font-light text-navy dark:text-white/40">Founders</span>.
             </h2>
           </div>
 
@@ -1359,7 +1360,7 @@ export default function Home() {
                       referrerPolicy="no-referrer"
                     />
                   </div>
-                  <div className="absolute -bottom-1 -right-1 w-6 h-6 bg-green text-navy rounded-full flex items-center justify-center shadow z-20">
+                  <div className="absolute -bottom-1 -right-1 w-6 h-6 bg-green text-navy dark:text-white rounded-full flex items-center justify-center shadow z-20">
                     <Quote size={10} />
                   </div>
                 </div>
@@ -1371,7 +1372,7 @@ export default function Home() {
                     ))}
                   </div>
                   <div className="flex flex-col items-center md:items-start gap-2">
-                    <p className="text-navy/70 font-serif italic text-lg md:text-xl leading-relaxed transition-all duration-300">
+                    <p className="text-navy dark:text-white/70 font-serif italic text-lg md:text-xl leading-relaxed transition-all duration-300">
                       "{isTestimonialExpanded || testimonials[testimonialIndex].content.length <= 150 
                         ? testimonials[testimonialIndex].content 
                         : `${testimonials[testimonialIndex].content.slice(0, 150)}...`}"
@@ -1379,15 +1380,15 @@ export default function Home() {
                     {testimonials[testimonialIndex].content.length > 150 && (
                       <button 
                         onClick={() => setIsTestimonialExpanded(!isTestimonialExpanded)}
-                        className="text-navy font-bold text-sm tracking-wide hover:text-green transition-colors mt-2 underline decoration-green decoration-2 underline-offset-4"
+                        className="text-navy dark:text-white font-bold text-sm tracking-wide hover:text-green transition-colors mt-2 underline decoration-green decoration-2 underline-offset-4"
                       >
                         {isTestimonialExpanded ? 'Read Less' : 'Read More'}
                       </button>
                     )}
                   </div>
                   <div>
-                    <h3 className="text-navy font-bold text-lg">{testimonials[testimonialIndex].name}</h3>
-                    <p className="text-navy/40 text-xs uppercase tracking-widest mt-1">{testimonials[testimonialIndex].role}</p>
+                    <h3 className="text-navy dark:text-white font-bold text-lg">{testimonials[testimonialIndex].name}</h3>
+                    <p className="text-navy dark:text-white/40 text-xs uppercase tracking-widest mt-1">{testimonials[testimonialIndex].role}</p>
                   </div>
                 </div>
               </motion.div>
@@ -1396,7 +1397,7 @@ export default function Home() {
             <div className="flex items-center justify-center gap-6 mt-10">
               <button 
                 onClick={prevTestimonial}
-                className="w-14 h-14 rounded-full bg-white border border-navy/10 flex items-center justify-center text-navy hover:bg-green hover:border-green transition-all shadow-lg hover:scale-105"
+                className="w-14 h-14 rounded-full bg-white border border-navy/10 flex items-center justify-center text-navy dark:text-white hover:bg-green hover:border-green transition-all shadow-lg hover:scale-105"
               >
                 <ChevronLeft size={24} />
               </button>
@@ -1413,7 +1414,7 @@ export default function Home() {
 
               <button 
                 onClick={nextTestimonial}
-                className="w-14 h-14 rounded-full bg-white border border-navy/10 flex items-center justify-center text-navy hover:bg-green hover:border-green transition-all shadow-lg hover:scale-105"
+                className="w-14 h-14 rounded-full bg-white border border-navy/10 flex items-center justify-center text-navy dark:text-white hover:bg-green hover:border-green transition-all shadow-lg hover:scale-105"
               >
                 <ChevronRight size={24} />
               </button>
@@ -1425,13 +1426,13 @@ export default function Home() {
 
     {/* Portfolio Preview - Bento Grid */}
     <ScrollReveal>
-      <section className="py-32 bg-white">
+      <section className="py-32 bg-white dark:bg-navy">
         <div className="container mx-auto px-6">
           <div className="flex flex-col md:flex-row md:items-center justify-between gap-8 mb-24">
-            <h2 className="text-5xl md:text-8xl font-bold text-navy tracking-tighter leading-[0.85]">
-              Selected <span className="italic font-serif font-light text-navy/40">Works</span>.
+            <h2 className="text-5xl md:text-8xl font-bold text-navy dark:text-white tracking-tighter leading-[0.85]">
+              Selected <span className="italic font-serif font-light text-navy dark:text-white/40">Works</span>.
             </h2>
-            <Link to="/portfolio" className="group flex items-center gap-4 text-navy font-bold text-lg">
+            <Link to="/portfolio" className="group flex items-center gap-4 text-navy dark:text-white font-bold text-lg">
               View All Projects
               <div className="w-12 h-12 rounded-full border border-navy/10 flex items-center justify-center group-hover:bg-navy group-hover:text-white transition-all">
                 <ArrowRight size={20} />
@@ -1512,7 +1513,7 @@ export default function Home() {
               Join the high-performing brands that have transformed their e-commerce presence with bespoke development and strategic growth.
             </p>
             <div className="pt-8">
-              <Link to="/apply" className="inline-flex items-center gap-3 bg-green text-navy font-bold px-8 md:px-12 py-4 md:py-6 rounded-full hover:scale-105 transition-transform text-lg shadow-2xl">
+              <Link to="/apply" className="inline-flex items-center gap-3 bg-green text-navy dark:text-white font-bold px-8 md:px-12 py-4 md:py-6 rounded-full hover:scale-105 transition-transform text-lg shadow-2xl">
                 Apply for Growth Plan <ArrowRight size={24} />
               </Link>
             </div>
@@ -1563,7 +1564,7 @@ export default function Home() {
                 />
                 <div className="absolute inset-0 bg-gradient-to-tr from-navy via-navy/50 to-transparent" />
               </div>
-              <div className="absolute -bottom-10 -left-10 bg-green text-navy p-10 rounded-2xl shadow-2xl border-4 border-navy border-t-0 animate-bounce-slow">
+              <div className="absolute -bottom-10 -left-10 bg-green text-navy dark:text-white p-10 rounded-2xl shadow-2xl border-4 border-navy border-t-0 animate-bounce-slow">
                 <p className="text-6xl font-bold tracking-tighter mb-2">100%</p>
                 <p className="text-xs uppercase font-bold tracking-widest opacity-80">Job Success Rate</p>
               </div>
@@ -1575,17 +1576,17 @@ export default function Home() {
 
     {/* Contact Section - Visible Grid Style */}
     <ScrollReveal>
-      <section className="py-32 bg-white relative overflow-hidden" id="contact">
+      <section className="py-32 bg-white dark:bg-navy relative overflow-hidden" id="contact">
         <div className="container mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-20 items-start">
             <div className="lg:col-span-5 space-y-12">
               <div className="space-y-6">
-                <p className="text-navy/40 text-[10px] font-bold uppercase tracking-[0.3em]">Contact</p>
-                <h2 className="text-5xl md:text-7xl font-bold text-navy tracking-tight leading-none">
+                <p className="text-navy dark:text-white/40 text-[10px] font-bold uppercase tracking-[0.3em]">Contact</p>
+                <h2 className="text-5xl md:text-7xl font-bold text-navy dark:text-white tracking-tight leading-none">
                   Let's Start <br />
-                  <span className="italic font-serif font-light text-navy/40">Your Project</span>.
+                  <span className="italic font-serif font-light text-navy dark:text-white/40">Your Project</span>.
                 </h2>
-                <p className="text-navy/60 text-xl leading-relaxed max-w-md">
+                <p className="text-navy dark:text-white/60 text-xl leading-relaxed max-w-md">
                   Ready to transform your eCommerce presence? Fill out the form and we'll get back to you within 24 hours.
                 </p>
               </div>
@@ -1595,7 +1596,7 @@ export default function Home() {
                   { icon: "gmail", label: "Email", value: "sheunhost@gmail.com" },
                 ].map((item, i) => (
                   <div key={i} className="flex flex-col sm:flex-row items-center sm:items-start gap-6 group text-center sm:text-left">
-                    <div className="w-14 h-14 bg-light rounded-2xl flex items-center justify-center text-navy group-hover:bg-green group-hover:text-navy transition-all shrink-0 overflow-hidden">
+                    <div className="w-14 h-14 bg-light rounded-2xl flex items-center justify-center text-navy dark:text-white group-hover:bg-green group-hover:text-navy dark:text-white transition-all shrink-0 overflow-hidden">
                       {item.icon === "whatsapp" ? (
                         <img src="https://cdn-icons-png.flaticon.com/512/3670/3670051.png" alt="WhatsApp" className="w-6 h-6 object-contain" />
                       ) : (
@@ -1603,8 +1604,8 @@ export default function Home() {
                       )}
                     </div>
                     <div className="min-w-0 flex-grow">
-                      <p className="text-[10px] font-bold text-navy/40 uppercase tracking-widest">{item.label}</p>
-                      <p className="text-lg font-bold text-navy break-all break-words">{item.value}</p>
+                      <p className="text-[10px] font-bold text-navy dark:text-white/40 uppercase tracking-widest">{item.label}</p>
+                      <p className="text-lg font-bold text-navy dark:text-white break-all break-words">{item.value}</p>
                     </div>
                   </div>
                 ))}
@@ -1640,32 +1641,32 @@ export default function Home() {
                     >
                       <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
                         <div className="space-y-3">
-                          <label className="text-[10px] font-bold text-navy/40 uppercase tracking-widest ml-4">Full Name</label>
+                          <label className="text-[10px] font-bold text-navy dark:text-white/40 uppercase tracking-widest ml-4">Full Name</label>
                           <input
                             required
                             type="text"
                             name="name"
                             placeholder="John Doe"
-                            className="w-full bg-white border-b-2 border-navy/5 rounded-3xl py-5 px-8 focus:border-green outline-none transition-all font-medium text-navy placeholder:text-navy/20"
+                            className="w-full bg-white border-b-2 border-navy/5 rounded-3xl py-5 px-8 focus:border-green outline-none transition-all font-medium text-navy dark:text-white placeholder:text-navy dark:text-white/20"
                           />
                         </div>
                         <div className="space-y-3">
-                          <label className="text-[10px] font-bold text-navy/40 uppercase tracking-widest ml-4">Email Address</label>
+                          <label className="text-[10px] font-bold text-navy dark:text-white/40 uppercase tracking-widest ml-4">Email Address</label>
                           <input
                             required
                             type="email"
                             name="email"
                             placeholder="john@example.com"
-                            className={`w-full bg-white border-b-2 ${emailErrorContact ? 'border-red-500' : 'border-navy/5'} rounded-3xl py-5 px-8 focus:border-green outline-none transition-all font-medium text-navy placeholder:text-navy/20`}
+                            className={`w-full bg-white border-b-2 ${emailErrorContact ? 'border-red-500' : 'border-navy/5'} rounded-3xl py-5 px-8 focus:border-green outline-none transition-all font-medium text-navy dark:text-white placeholder:text-navy dark:text-white/20`}
                           />
                           {emailErrorContact && <p className="text-red-500 text-xs ml-4">{emailErrorContact}</p>}
                         </div>
                       </div>
 
                       <div className="space-y-3">
-                        <label className="text-[10px] font-bold text-navy/40 uppercase tracking-widest ml-4">Project Type</label>
+                        <label className="text-[10px] font-bold text-navy dark:text-white/40 uppercase tracking-widest ml-4">Project Type</label>
                         <div className="relative">
-                          <select name="project_type" className="w-full bg-white border-b-2 border-navy/5 rounded-3xl py-5 px-8 focus:border-green outline-none transition-all appearance-none font-medium text-navy">
+                          <select name="project_type" className="w-full bg-white border-b-2 border-navy/5 rounded-3xl py-5 px-8 focus:border-green outline-none transition-all appearance-none font-medium text-navy dark:text-white">
                             <option>New Store Build</option>
                             <option>Dropshipping Store</option>
                             <option>Shopify Migration Service</option>
@@ -1673,18 +1674,18 @@ export default function Home() {
                             <option>Bug Fix</option>
                             <option>Free Growth Plan</option>
                           </select>
-                          <ChevronDown className="absolute right-8 top-1/2 -translate-y-1/2 text-navy/20 pointer-events-none" size={20} />
+                          <ChevronDown className="absolute right-8 top-1/2 -translate-y-1/2 text-navy dark:text-white/20 pointer-events-none" size={20} />
                         </div>
                       </div>
 
                       <div className="space-y-3">
-                        <label className="text-[10px] font-bold text-navy/40 uppercase tracking-widest ml-4">Message</label>
+                        <label className="text-[10px] font-bold text-navy dark:text-white/40 uppercase tracking-widest ml-4">Message</label>
                         <textarea
                           required
                           name="message"
                           rows={5}
                           placeholder="Tell us about your project goals..."
-                          className="w-full bg-white border-b-2 border-navy/5 rounded-2xl py-6 px-8 focus:border-green outline-none transition-all resize-none font-medium text-navy placeholder:text-navy/20"
+                          className="w-full bg-white border-b-2 border-navy/5 rounded-2xl py-6 px-8 focus:border-green outline-none transition-all resize-none font-medium text-navy dark:text-white placeholder:text-navy dark:text-white/20"
                         />
                       </div>
 
@@ -1708,18 +1709,18 @@ export default function Home() {
                       animate={{ opacity: 1, scale: 1, y: 0 }}
                       className="text-center py-12 space-y-8"
                     >
-                      <div className="w-24 h-24 bg-green text-navy rounded-2xl flex items-center justify-center mx-auto shadow-xl rotate-3">
+                      <div className="w-24 h-24 bg-green text-navy dark:text-white rounded-2xl flex items-center justify-center mx-auto shadow-xl rotate-3">
                         <CheckCircle2 size={48} />
                       </div>
                       <div className="space-y-4">
-                        <h3 className="text-3xl lg:text-4xl font-bold text-navy uppercase tracking-tight">Congratulations! Message Received.</h3>
-                        <p className="text-navy/60 text-lg max-w-sm mx-auto leading-relaxed">
+                        <h3 className="text-3xl lg:text-4xl font-bold text-navy dark:text-white uppercase tracking-tight">Congratulations! Message Received.</h3>
+                        <p className="text-navy dark:text-white/60 text-lg max-w-sm mx-auto leading-relaxed">
                           Your message has been submitted. A response will be sent to you through <span className="font-bold">sheunhost@gmail.com</span> shortly. We'll review your inquiry and get back to you personally within 24 hours.
                         </p>
                       </div>
                       <button
                         onClick={() => setIsSuccess(false)}
-                        className="text-navy font-bold border-b-2 border-green pb-1 hover:text-green transition-colors"
+                        className="text-navy dark:text-white font-bold border-b-2 border-green pb-1 hover:text-green transition-colors"
                       >
                         Send another message
                       </button>
@@ -1742,10 +1743,10 @@ export default function Home() {
               <div className="inline-flex items-center justify-center w-16 h-16 bg-green/10 text-green rounded-2xl mb-2 overflow-hidden">
                 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Gmail_icon_%282020%29.svg/960px-Gmail_icon_%282020%29.svg.png?_=20221017173631" alt="Gmail" className="w-8 h-8 object-contain" />
               </div>
-              <h2 className="text-4xl md:text-5xl font-bold text-navy tracking-tight">
-                Join the <span className="italic font-serif font-light text-navy/40">Newsletter</span>
+              <h2 className="text-4xl md:text-5xl font-bold text-navy dark:text-white tracking-tight">
+                Join the <span className="italic font-serif font-light text-navy dark:text-white/40">Newsletter</span>
               </h2>
-              <p className="text-navy/60 text-lg">
+              <p className="text-navy dark:text-white/60 text-lg">
                 Get weekly tips on Shopify growth, conversion rate optimization, and eCommerce strategies.
               </p>
             </div>
@@ -1765,13 +1766,13 @@ export default function Home() {
                       name="email"
                       required
                       placeholder="Enter your email address" 
-                      className={`w-full bg-light border-2 ${emailErrorSubscribe ? 'border-red-500' : 'border-navy/5'} rounded-full py-6 pl-8 pr-8 sm:pr-40 focus:border-green outline-none transition-all font-medium text-navy placeholder:text-navy/20`}
+                      className={`w-full bg-light border-2 ${emailErrorSubscribe ? 'border-red-500' : 'border-navy/5'} rounded-full py-6 pl-8 pr-8 sm:pr-40 focus:border-green outline-none transition-all font-medium text-navy dark:text-white placeholder:text-navy dark:text-white/20`}
                     />
                     {emailErrorSubscribe && <p className="absolute -bottom-6 left-8 text-red-500 text-xs">{emailErrorSubscribe}</p>}
                     <button 
                       type="submit"
                       disabled={isSubscribing}
-                      className="w-full sm:w-auto sm:absolute sm:right-3 bg-navy text-white px-8 py-4 sm:py-4 rounded-full font-bold hover:bg-green hover:text-navy transition-colors disabled:opacity-50 min-h-[60px]"
+                      className="w-full sm:w-auto sm:absolute sm:right-3 bg-navy text-white px-8 py-4 sm:py-4 rounded-full font-bold hover:bg-green hover:text-navy dark:text-white transition-colors disabled:opacity-50 min-h-[60px]"
                     >
                       {isSubscribing ? (
                         <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin mx-auto" />
@@ -1787,17 +1788,17 @@ export default function Home() {
                     animate={{ opacity: 1, scale: 1, y: 0 }}
                     className="bg-green/10 border border-green/20 rounded-2xl p-8 text-center space-y-4"
                   >
-                    <div className="w-16 h-16 bg-green text-navy rounded-full flex items-center justify-center mx-auto shadow-lg">
+                    <div className="w-16 h-16 bg-green text-navy dark:text-white rounded-full flex items-center justify-center mx-auto shadow-lg">
                       <CheckCircle2 size={32} />
                     </div>
                     <div className="space-y-1">
-                      <p className="text-navy font-bold text-xl uppercase tracking-tighter">Congratulations! You're in!</p>
-                      <p className="text-navy/60 font-serif italic">Your subscription is successful. A confirmation message from <span className="font-bold">sheunhost@gmail.com</span> will hit your inbox shortly.</p>
+                      <p className="text-navy dark:text-white font-bold text-xl uppercase tracking-tighter">Congratulations! You're in!</p>
+                      <p className="text-navy dark:text-white/60 font-serif italic">Your subscription is successful. A confirmation message from <span className="font-bold">sheunhost@gmail.com</span> will hit your inbox shortly.</p>
                     </div>
                   </motion.div>
                 )}
               </AnimatePresence>
-              <p className="text-[10px] font-bold text-navy/40 uppercase tracking-widest mt-4 text-center md:text-left">
+              <p className="text-[10px] font-bold text-navy dark:text-white/40 uppercase tracking-widest mt-4 text-center md:text-left">
                 100% Privacy. We respect your data.
               </p>
             </div>
@@ -1824,7 +1825,7 @@ export default function Home() {
               Let's build a store that doesn't just look good, but converts visitors into loyal customers.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-12">
-              <Link to="/contact#contact-form" className="w-full sm:w-auto bg-green text-navy px-8 md:px-16 py-4 md:py-8 rounded-full font-bold text-xl md:text-2xl hover:scale-105 transition-all duration-500 green-glow flex items-center justify-center text-center">
+              <Link to="/contact#contact-form" className="w-full sm:w-auto bg-green text-navy dark:text-white px-8 md:px-16 py-4 md:py-8 rounded-full font-bold text-xl md:text-2xl hover:scale-105 transition-all duration-500 green-glow flex items-center justify-center text-center">
                 Get Your Free Growth Plan
               </Link>
               <Link to="/portfolio" className="w-full sm:w-auto text-white font-bold text-2xl flex items-center justify-center gap-6 group text-center">

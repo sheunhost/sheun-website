@@ -1,6 +1,6 @@
 import { motion, useScroll, useSpring } from "framer-motion";
 import { ReactNode } from "react";
-import { Helmet } from "react-helmet-async";
+import { useSEO } from "../hooks/useSEO";
 import { useLocation } from "react-router-dom";
 
 interface PageWrapperProps {
@@ -42,7 +42,7 @@ export default function PageWrapper({
   const defaultSchema = {
     "@context": "https://schema.org",
     "@type": "Person",
-    "name": "Sheun",
+    "name": "Sheun Hub",
     "alternateName": "Sheun Hub",
     "url": "https://sheun.online",
     "image": defaultImage,
@@ -84,12 +84,35 @@ export default function PageWrapper({
       "serviceType": "Shopify Custom Development, SEO Audits, and Conversion Optimization",
       "seller": {
         "@type": "Person",
-        "name": "Sheun"
+        "name": "Sheun Hub"
       }
     }
   };
 
   const finalSchema = schema || defaultSchema;
+
+
+  const breadcrumbSchema = currentPath !== '/' ? {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://www.sheun.online"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": fullTitle.split('|')[0].trim(),
+        "item": canonicalUrl
+      }
+    ]
+  } : null;
+
+
+  useSEO(fullTitle, description || defaultDesc, canonicalUrl, finalSchema, breadcrumbSchema, keywords, ogImage);
 
   return (
     <motion.main
@@ -99,31 +122,7 @@ export default function PageWrapper({
       transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
       className={className}
     >
-      <Helmet>
-        <title>{fullTitle}</title>
-        <meta name="description" content={description || defaultDesc} />
-        {keywords && <meta name="keywords" content={keywords} />}
-        <link rel="canonical" href={canonicalUrl} />
-        
-        {/* Open Graph */}
-        <meta property="og:type" content={schema?.['@type'] === 'Article' ? 'article' : 'website'} />
-        <meta property="og:url" content={canonicalUrl} />
-        <meta property="og:title" content={fullTitle} />
-        <meta property="og:description" content={description || defaultDesc} />
-        <meta property="og:image" content={ogImage} />
-
-        {/* Twitter */}
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:url" content={canonicalUrl} />
-        <meta name="twitter:title" content={fullTitle} />
-        <meta name="twitter:description" content={description || defaultDesc} />
-        <meta name="twitter:image" content={ogImage} />
-        
-        {/* Structured Data */}
-        <script type="application/ld+json">
-          {JSON.stringify(finalSchema)}
-        </script>
-      </Helmet>
+      
       {children}
       <motion.div className="fixed top-0 left-0 right-0 h-1 bg-green origin-left z-[100]" style={{ scaleX }} />
     </motion.main>

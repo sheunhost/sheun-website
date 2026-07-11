@@ -4,7 +4,10 @@ import { Shield, Lock, Eye  } from "lucide-react";
 
 export default function PrivacyPolicy() {
   return (
-    <PageWrapper>
+    <PageWrapper
+      title="Privacy Policy | Sheun Hub"
+      description="Read the Privacy Policy for Sheun Hub to understand how we collect, use, and protect your personal information and data during our Shopify development and SEO services."
+    >
       <section className="pt-48 pb-32 bg-navy relative overflow-hidden">
         <div className="container mx-auto px-6 relative z-10">
           <div className="max-w-4xl space-y-8">

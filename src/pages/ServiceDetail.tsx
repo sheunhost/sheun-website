@@ -108,7 +108,7 @@ export default function ServiceDetail() {
 
   return (
     <PageWrapper 
-      title={`${service.title} | Sheun - Shopify Expert`}
+      title={`${service.title} | Sheun Hub - Shopify Expert`}
       description={service.description}
       keywords={service.keywords}
       canonical={`/services/${id}`}

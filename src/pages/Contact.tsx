@@ -131,19 +131,19 @@ export default function Contact() {
 
   return (
     <PageWrapper 
-      title="Contact Sheun | Certified Shopify Partner & SEO Specialist" 
+      title="Contact Sheun Hub | Certified Shopify Partner & SEO Specialist" 
       description="Get a premium Shopify store build, custom theme, technical SEO audit, or a WooCommerce-to-Shopify migration project started. Remote partner consulting for the UK, US, Canada, Australia, France, and Germany."
       keywords="Contact Shopify Expert, Hire Shopify Developer UK, Shopify SEO consultation USA, Shopify migration expert Canada, Free Shopify Audit Australia, Shopify freelancer France, Shopify Partner Germany"
       canonical="/contact"
       schema={{
         "@context": "https://schema.org",
         "@type": "ContactPage",
-        "name": "Contact Sheun - Shopify Expert",
+        "name": "Contact Sheun Hub - Shopify Expert",
         "url": "https://sheun.online/contact",
-        "description": "Get in touch with Sheun for your next Shopify project. Free store audits, custom UX/UI redesigns, and accurate project quotes are available.",
+        "description": "Get in touch with Sheun Hub for your next Shopify project. Free store audits, custom UX/UI redesigns, and accurate project quotes are available.",
         "mainEntity": {
           "@type": "Person",
-          "name": "Sheun",
+          "name": "Sheun Hub",
           "email": "sheunhost@gmail.com",
           "telephone": "+2348084315743",
           "url": "https://sheun.online"

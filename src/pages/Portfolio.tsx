@@ -30,7 +30,7 @@ const projects: Project[] = [
     category: "👗 Fashion",
     desc: "A custom high-converting Shopify store design focused on modern aesthetics and streamlined user experience.",
     image: "https://plain-weur-prod-public.komododecks.com/202605/08/mORKcj6Dvv23Z1UjwufJ/image.png",
-    label: "🎨 Past Project design by Sheun"
+    label: "🎨 Past Project design by Sheun Hub"
   },
   {
     id: "new_custom_2",
@@ -39,7 +39,7 @@ const projects: Project[] = [
     category: "👗 Fashion",
     desc: "A custom high-converting Shopify store design focused on modern aesthetics and streamlined user experience.",
     image: "https://plain-weur-prod-public.komododecks.com/202605/08/chrM0xrj9IVak4lT2pwY/image.png",
-    label: "🎨 Past Project design by Sheun"
+    label: "🎨 Past Project design by Sheun Hub"
   },
   {
     id: "new_custom_1",
@@ -48,7 +48,7 @@ const projects: Project[] = [
     category: "👗 Fashion",
     desc: "A custom high-converting Shopify store design focused on modern aesthetics and streamlined user experience.",
     image: "https://plain-weur-prod-public.komododecks.com/202605/08/ZGtAaDfh0M9sZiKPK2CX/image.png",
-    label: "🎨 Past Project design by Sheun"
+    label: "🎨 Past Project design by Sheun Hub"
   },
   {
     id: "hairburst_1",
@@ -57,7 +57,7 @@ const projects: Project[] = [
     category: "💄 Beauty & Skincare",
     desc: "A custom high-converting Shopify store design focused on modern aesthetics and streamlined user experience for hair vitamins.",
     image: "https://i.ibb.co/yBKMgy3Q/Hair-Growth-Vitamins-Cosmetics-Hairburst-USA-05-08-2026-03-16-AM.png",
-    label: "🎨 Past Project design by Sheun"
+    label: "🎨 Past Project design by Sheun Hub"
   },
   {
     id: "b2",
@@ -66,7 +66,7 @@ const projects: Project[] = [
     category: "💄 Beauty & Skincare",
     desc: "Designed with a clean visual hierarchy and user-focused layout, LumiereSkin presents its skincare collection through soft, elegant sections and immersive visuals. The website highlights key elements like product benefits, natural ingredients, and daily skincare essentials in a structured and easy-to-follow flow. Balanced spacing and minimal distractions create a calm browsing experience, making the interface feel modern, refined, and effortlessly soothing to explore. ✨🧴🌿",
     image: "https://cdn.dribbble.com/userupload/47314439/file/c6086620d425f60ad8dac40f74cfe1b4.png?resize=752x3909&vertical=center",
-    label: "🎨 Past Project design by Sheun"
+    label: "🎨 Past Project design by Sheun Hub"
   },
   {
     id: "f2",
@@ -75,7 +75,7 @@ const projects: Project[] = [
     category: "👗 Fashion",
     desc: "Hi There,\n\nThis is a Website concept for a Trendy Fashion E-commerce Website.\n\nHope you guys will like it.\n\nLet me know your thoughts on that. Your feedback and appreciation is always welcome 🙂\n\nI'm available for new projects",
     image: "https://cdn.dribbble.com/userupload/37390836/file/original-13c3c213f022ab00791a6abaa9447322.png?resize=850x638&vertical=center",
-    label: "🎨 Past Project design by Sheun"
+    label: "🎨 Past Project design by Sheun Hub"
   },
   {
     id: "f3",
@@ -84,7 +84,7 @@ const projects: Project[] = [
     category: "👗 Fashion",
     desc: "A bold, gender-neutral fashion concept designed for the modern era. Featuring high-contrast layouts, versatile product displays for both male and female collections, and a seamless shopping experience.",
     image: "https://cdn.dribbble.com/userupload/36920984/file/original-ff98dfbecece4eba4c0ef25160306302.png?resize=752x&vertical=center",
-    label: "🎨 Past Project design by Sheun"
+    label: "🎨 Past Project design by Sheun Hub"
   },
   {
     id: "b3",
@@ -93,7 +93,7 @@ const projects: Project[] = [
     category: "💄 Beauty & Skincare",
     desc: "A clean and modern skincare website design concept focused on elegance and simplicity. The layout highlights product collections, beauty treatments, and customer-focused experiences with a minimal yet luxurious aesthetic. Designed to enhance user experience while keeping the brand’s natural and glowing identity at the core.",
     image: "https://cdn.dribbble.com/userupload/44540941/file/e348fef4b20fc2fa3b6d93da41e73932.jpg?resize=1024x768&vertical=center",
-    label: "🎨 Past Project design by Sheun"
+    label: "🎨 Past Project design by Sheun Hub"
   },
   {
     id: "p3",
@@ -102,7 +102,7 @@ const projects: Project[] = [
     category: "🐾 Pets",
     desc: "Expert Pet Care with Love & Trust! Grooming, Health, Nutrition & More, Because Your Furry Friend Deserves the Best!",
     image: "https://cdn.dribbble.com/userupload/37449048/file/original-6a6b4e4e7ebfed9f6502c61669a61580.png?resize=1024x3374&vertical=center",
-    label: "🎨 Past Project design by Sheun"
+    label: "🎨 Past Project design by Sheun Hub"
   }
 ];
 
@@ -139,7 +139,7 @@ export default function Portfolio() {
       schema={{
         "@context": "https://schema.org",
         "@type": "CollectionPage",
-        "name": "Shopify Portfolio - Sheun",
+        "name": "Shopify Portfolio - Sheun Hub",
         "description": "Explore my showcase of high-converting Shopify stores, dropshipping concepts, and eCommerce custom designs.",
         "url": "https://sheun.online/portfolio",
         "about": {
@@ -168,7 +168,7 @@ export default function Portfolio() {
               </h1>
 
               <p className="text-[#475569] text-lg sm:text-xl leading-relaxed max-w-2xl font-sans">
-                Explore custom Shopify theme designs, WooCommerce migration layouts, custom page template solutions, and high-performance product displays crafted by Sheun.
+                Explore custom Shopify theme designs, WooCommerce migration layouts, custom page template solutions, and high-performance product displays crafted by Sheun Hub.
               </p>
 
               {/* Stats Row */}

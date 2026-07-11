@@ -205,7 +205,7 @@ export default function ConversionKillers() {
                     </div>
                     <div className="flex items-center justify-center lg:justify-start gap-2">
                       <Search size={16} />
-                      <span>Manually written by Sheun</span>
+                      <span>Manually written by Sheun Hub</span>
                     </div>
                   </div>
                 </div>
