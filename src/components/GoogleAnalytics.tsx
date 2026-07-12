@@ -15,15 +15,20 @@ export default function GoogleAnalytics() {
   const location = useLocation();
 
   useEffect(() => {
-    if (!GA_MEASUREMENT_ID) return;
+    if (!GA_MEASUREMENT_ID || typeof window === "undefined") return;
 
-    // Load Script
+    // Check if script already exists to prevent double injection
+    const scriptId = "google-tag-manager";
+    if (document.getElementById(scriptId)) return;
+
     const script1 = document.createElement("script");
+    script1.id = scriptId;
     script1.async = true;
     script1.src = `https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`;
     document.head.appendChild(script1);
 
     const script2 = document.createElement("script");
+    script2.id = "google-tag-manager-config";
     script2.innerHTML = `
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
@@ -33,11 +38,6 @@ export default function GoogleAnalytics() {
       });
     `;
     document.head.appendChild(script2);
-
-    return () => {
-      document.head.removeChild(script1);
-      document.head.removeChild(script2);
-    };
   }, []);
 
   useEffect(() => {

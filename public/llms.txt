@@ -1,8 +1,10 @@
 # Sheun Hub - Shopify Development & E-commerce Growth
 
+> Professional Shopify development and e-commerce growth services for global brands.
+
 Sheun Hub is a certified Shopify Partner, developer, and SEO expert helping e-commerce brands in the UK, US, Canada, Australia, France, and Germany scale their businesses.
 
-## Core Services:
+## Core Services
 - Custom Shopify Theme Development & Headless Commerce
 - WooCommerce to Shopify Migrations
 - Technical Shopify SEO & Store Speed Optimization
@@ -10,16 +12,17 @@ Sheun Hub is a certified Shopify Partner, developer, and SEO expert helping e-co
 - Store Setup, Dropshipping Solutions, and Ongoing Support
 
 ## Key Pages
-- Home: https://sheun.online/
-- About: https://sheun.online/about
-- Services: https://sheun.online/services
-- Portfolio: https://sheun.online/portfolio
-- Blog & Insights: https://sheun.online/blog
-- ROI Calculator: https://sheun.online/calculator
-- Contact/Apply: https://sheun.online/apply
+- [Home](https://sheun.online/)
+- [About](https://sheun.online/about)
+- [Services](https://sheun.online/services)
+- [Portfolio](https://sheun.online/portfolio)
+- [Blog & Insights](https://sheun.online/blog)
+- [ROI Calculator](https://sheun.online/calculator)
+- [Contact/Apply](https://sheun.online/apply)
 
 ## About the Founder
 Sheun is a Top Rated Specialist on Upwork and a verified Shopify Partner with deep expertise in Liquid programming, SEO sprints, and UX design.
 
-Email: sheunhost@gmail.com
-LinkedIn: https://www.linkedin.com/in/sheun-hub-26b876321
+## Contact
+- Email: sheunhost@gmail.com
+- LinkedIn: [Sheun Hub](https://www.linkedin.com/in/sheun-hub-26b876321)

@@ -1,0 +1,65 @@
+vite v6.4.2 building for production...
+transforming...
+✓ 2716 modules transformed.
+rendering chunks...
+computing gzip size...
+dist/index.html                                          3.22 kB │ gzip:   1.24 kB
+dist/assets/index-B3fRTmb7.css                         108.51 kB │ gzip:  15.99 kB
+dist/assets/chevron-down-nKPja7ah.js                     0.30 kB │ gzip:   0.25 kB
+dist/assets/chevron-left-CocxT17j.js                     0.30 kB │ gzip:   0.25 kB
+dist/assets/clock-COhsIVT4.js                            0.34 kB │ gzip:   0.27 kB
+dist/assets/arrow-left-mQvz_kgU.js                       0.34 kB │ gzip:   0.27 kB
+dist/assets/arrow-right-C1V4weOj.js                      0.34 kB │ gzip:   0.26 kB
+dist/assets/search-DWKjPq5E.js                           0.34 kB │ gzip:   0.27 kB
+dist/assets/circle-check-Bc3f9pFj.js                     0.35 kB │ gzip:   0.27 kB
+dist/assets/trending-up-J_k1FlA8.js                      0.35 kB │ gzip:   0.28 kB
+dist/assets/info-DN14OzIC.js                             0.37 kB │ gzip:   0.28 kB
+dist/assets/code-xml-DdJxIOUY.js                         0.38 kB │ gzip:   0.28 kB
+dist/assets/dollar-sign-DrV2mxG-.js                      0.39 kB │ gzip:   0.30 kB
+dist/assets/target-7DTyaSub.js                           0.39 kB │ gzip:   0.27 kB
+dist/assets/panels-top-left-C-E3d18Z.js                  0.40 kB │ gzip:   0.30 kB
+dist/assets/message-square-DXaGI0nw.js                   0.41 kB │ gzip:   0.31 kB
+dist/assets/globe-DJiHoZM9.js                            0.41 kB │ gzip:   0.30 kB
+dist/assets/mouse-pointer-2-CKt37pcC.js                  0.42 kB │ gzip:   0.32 kB
+dist/assets/chart-column-DIdVoweC.js                     0.42 kB │ gzip:   0.30 kB
+dist/assets/triangle-alert-D4bFckdu.js                   0.44 kB │ gzip:   0.32 kB
+dist/assets/shopping-cart-f_XuGQfe.js                    0.46 kB │ gzip:   0.33 kB
+dist/assets/send-Co56rJR2.js                             0.46 kB │ gzip:   0.34 kB
+dist/assets/refresh-cw-B5sJTL8I.js                       0.49 kB │ gzip:   0.33 kB
+dist/assets/file-text-DYbnMsCO.js                        0.51 kB │ gzip:   0.32 kB
+dist/assets/shopping-bag-cDGWHDXg.js                     0.51 kB │ gzip:   0.34 kB
+dist/assets/gift-BZSyldz6.js                             0.53 kB │ gzip:   0.36 kB
+dist/assets/ScrollReveal-vvyeT2iJ.js                     0.53 kB │ gzip:   0.38 kB
+dist/assets/quote-B8w6tOfP.js                            0.56 kB │ gzip:   0.31 kB
+dist/assets/layers-BOZ3YuMy.js                           0.59 kB │ gzip:   0.34 kB
+dist/assets/star-DbVQvoFg.js                             0.65 kB │ gzip:   0.40 kB
+dist/assets/sparkles-DKf5lICG.js                         0.67 kB │ gzip:   0.39 kB
+dist/assets/palette-CYuCcIS2.js                          0.68 kB │ gzip:   0.38 kB
+dist/assets/BlogPost-DwH5p3FZ.js                         9.70 kB │ gzip:   2.95 kB
+dist/assets/PrivacyPolicy-DWo3UnZF.js                   12.34 kB │ gzip:   2.47 kB
+dist/assets/PageWrapper-CiI62QAp.js                     13.20 kB │ gzip:   5.44 kB
+dist/assets/Calculator-DflJ9qu1.js                      14.35 kB │ gzip:   3.05 kB
+dist/assets/TermsOfService-Dd05_4AT.js                  15.01 kB │ gzip:   3.06 kB
+dist/assets/ConversionKillers-oeRtkmIm.js               18.79 kB │ gzip:   4.67 kB
+dist/assets/LeveragingShopifyMarkets-SqidsTPK.js        18.86 kB │ gzip:   4.50 kB
+dist/assets/ShopifyAudit-CIuCUqCh.js                    21.70 kB │ gzip:   4.81 kB
+dist/assets/servicesData-DvcNU4Hw.js                    23.96 kB │ gzip:   9.02 kB
+dist/assets/Blog-D3jJebbK.js                            26.25 kB │ gzip:   6.08 kB
+dist/assets/ShopifySpeedOptimization-Droz47ir.js        31.80 kB │ gzip:   6.14 kB
+dist/assets/Portfolio-C5q9r7NR.js                       32.44 kB │ gzip:   7.64 kB
+dist/assets/ServiceDetail-BLHoOsSK.js                   33.71 kB │ gzip:   6.24 kB
+dist/assets/ShopifySEOGuide-DHrvGD5R.js                 34.58 kB │ gzip:   6.68 kB
+dist/assets/About-B76c2VS_.js                           36.08 kB │ gzip:   7.52 kB
+dist/assets/BestDropshippingApps-Ce8uo-tT.js            36.20 kB │ gzip:   7.86 kB
+dist/assets/FashionDropshippingGuide-DAav8HnZ.js        36.91 kB │ gzip:   7.07 kB
+dist/assets/WooCommerceToShopifyMigration-0mY8BaJy.js   40.23 kB │ gzip:   6.91 kB
+dist/assets/ShopifySettingsGuide-DOqnIw9S.js            41.67 kB │ gzip:   7.79 kB
+dist/assets/Contact-CFUUhEaj.js                         42.59 kB │ gzip:   8.20 kB
+dist/assets/Apply-BNmU8a-C.js                           46.89 kB │ gzip:   9.16 kB
+dist/assets/Services-DW7s6iG_.js                        62.25 kB │ gzip:  13.84 kB
+dist/assets/ShopifySeoSprint-H5Cz5Pbu.js                84.05 kB │ gzip:  14.89 kB
+dist/assets/Home-DP6AlsRn.js                           505.19 kB │ gzip: 135.77 kB
+dist/assets/index-DOBf00hg.js                          673.41 kB │ gzip: 204.76 kB
+✓ built in 26.18s
+
+Generated at /tmp/tmp-341-yy9y5FedOKYP/stats.json

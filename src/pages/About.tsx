@@ -106,7 +106,7 @@ export default function About() {
                         className="flex items-center gap-2 px-4 py-2.5 rounded-2xl bg-white border border-[#E2E8F0] text-xs font-bold text-[#0F172A] hover:border-[#10b981] hover:shadow-md transition-all"
                         title={item.name}
                       >
-                        <img src={item.logo} alt={item.name} className="w-5 h-5 object-contain" />
+                        <img src={item.logo} alt={item.name} width="20" height="20" decoding="async" className="w-5 h-5 object-contain" />
                         <span>{item.name}</span>
                       </motion.a>
                     ))}
@@ -212,7 +212,7 @@ export default function About() {
                       key={idx} 
                       className={`relative aspect-square rounded-3xl overflow-hidden border border-[#E2E8F0] shadow-md group ${idx % 2 === 1 ? 'mt-8' : ''}`}
                     >
-                      <img src={img.src} alt={img.title} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
+                      <img src={img.src} alt={img.title} width="400" height="400" decoding="async" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
                       <div className="absolute inset-0 bg-gradient-to-t from-[#0F172A]/70 via-transparent to-transparent flex items-end p-5">
                         <span className="text-white text-xs font-bold tracking-wider uppercase">{img.title}</span>
                       </div>
@@ -303,6 +303,9 @@ export default function About() {
                         alt="Brand Reviewer" 
                         referrerPolicy="no-referrer"
                         loading="lazy" 
+                        width="44"
+                        height="44"
+                        decoding="async"
                         className="w-full h-full object-cover"
                       />
                     </div>
@@ -431,7 +434,7 @@ export default function About() {
                     className="p-3 bg-white/5 hover:bg-[#10b981] hover:text-[#09090b] text-white rounded-2xl border border-white/10 flex items-center justify-center transition-all overflow-hidden" 
                     title={item.name}
                   >
-                    <img src={item.logo} alt={item.name} className="w-5 h-5 object-contain" />
+                    <img src={item.logo} alt={item.name} width="20" height="20" decoding="async" className="w-5 h-5 object-contain" />
                   </a>
                 ))}
               </div>

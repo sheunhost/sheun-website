@@ -229,6 +229,9 @@ export default function Portfolio() {
                     src={project.image} 
                     alt="Sheun Hub Portfolio Design" 
                     referrerPolicy="no-referrer"
+                    width="400"
+                    height="500"
+                    decoding="async"
                     className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700"
                     loading="lazy"
                   />
@@ -268,10 +271,10 @@ export default function Portfolio() {
                 </Link>
                 <div className="flex items-center gap-4">
                   <a href="https://www.linkedin.com/in/sheun-hub-26b876321" target="_blank" rel="noopener noreferrer" className="p-4 bg-white/5 hover:bg-[#10b981] hover:text-[#09090b] text-white rounded-2xl transition-all border border-white/10 shrink-0 flex items-center justify-center overflow-hidden">
-                    <img src="https://images.rawpixel.com/image_png_social_square/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvdjk4Mi1kMS0xMC5wbmc.png" alt="LinkedIn" className="w-5 h-5 object-contain" />
+                    <img src="https://images.rawpixel.com/image_png_social_square/czNmcy1wcml2YXRlL3Jhd3BpeGVs_aW1hZ2VzL3dlYnNpdGVV_Y29udGVudC9sci92OTgyLWQxLTEwLnBuZw.png" alt="LinkedIn" width="20" height="20" decoding="async" className="w-5 h-5 object-contain" />
                   </a>
                   <a href="mailto:sheunhost@gmail.com" className="p-4 bg-white/5 hover:bg-[#10b981] hover:text-[#09090b] text-white rounded-2xl transition-all border border-white/10 shrink-0 flex items-center justify-center overflow-hidden">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Gmail_icon_%282020%29.svg/960px-Gmail_icon_%282020%29.svg.png?_=20221017173631" alt="Gmail" className="w-5 h-5 object-contain" />
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Gmail_icon_%282020%29.svg/960px-Gmail_icon_%282020%29.svg.png?_=20221017173631" alt="Gmail" width="20" height="20" decoding="async" className="w-5 h-5 object-contain" />
                   </a>
                 </div>
               </div>

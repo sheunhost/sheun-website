@@ -96,7 +96,7 @@ export default function WooCommerceToShopifyMigration() {
                 <Link to="/portfolio" className="flex items-center gap-4 pt-4 border-t border-white/10 group">
                   <div className="relative">
                     <div className="absolute inset-0 bg-green/20 rounded-full blur-lg group-hover:bg-green/40 transition-colors" />
-                    <img src="https://ui-avatars.com/api/?name=Sheun Hub+Hub&background=10b981&color=fff" className="w-12 h-12 rounded-full border-2 border-green relative z-10" alt="Sheun Hub" referrerPolicy="no-referrer" />
+                    <img src="https://ui-avatars.com/api/?name=Sheun Hub+Hub&background=10b981&color=fff" width="48" height="48" decoding="async" className="w-12 h-12 rounded-full border-2 border-green relative z-10" alt="Sheun Hub" referrerPolicy="no-referrer" />
                   </div>
                   <div>
                     <p className="font-bold group-hover:text-green transition-colors">Sheun Hub</p>
@@ -233,7 +233,7 @@ export default function WooCommerceToShopifyMigration() {
             {/* Discussion Section */}
             <div className="pt-24 mt-24 border-t border-navy/5">
               <div className="flex items-center gap-4 mb-12">
-                <img src="https://cdn-icons-png.flaticon.com/512/3670/3670051.png" alt="WhatsApp" className="w-7 h-7 object-contain" />
+                <img src="https://cdn-icons-png.flaticon.com/512/3670/3670051.png" alt="WhatsApp" width="28" height="28" decoding="async" className="w-7 h-7 object-contain" />
                 <h3 className="text-3xl font-bold text-navy tracking-tight uppercase italic">Community Discussion</h3>
               </div>
 
@@ -282,7 +282,7 @@ export default function WooCommerceToShopifyMigration() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-6xl mx-auto">
             <Link to="/blog/6" className="group flex gap-8 items-center bg-light p-8 rounded-3xl hover:bg-navy transition-colors duration-500">
               <div className="w-32 h-32 rounded-3xl overflow-hidden shrink-0 shadow-lg">
-                <img src="https://picsum.photos/seed/blog6/300/300" alt="SEO Guide" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
+                <img src="https://picsum.photos/seed/blog6/300/300" alt="SEO Guide" width="300" height="300" decoding="async" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
               </div>
               <div className="space-y-2">
                 <span className="text-[10px] font-bold text-green uppercase tracking-widest">Up Next</span>
@@ -292,7 +292,7 @@ export default function WooCommerceToShopifyMigration() {
 
             <Link to="/blog/2" className="group flex gap-8 items-center bg-light p-8 rounded-3xl hover:bg-navy transition-colors duration-500">
               <div className="w-32 h-32 rounded-3xl overflow-hidden shrink-0 shadow-lg">
-                <img src="https://picsum.photos/seed/blog2/300/300" alt="Speed Guide" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
+                <img src="https://picsum.photos/seed/blog2/300/300" alt="Speed Guide" width="300" height="300" decoding="async" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
               </div>
               <div className="space-y-2">
                 <span className="text-[10px] font-bold text-green uppercase tracking-widest">Performance</span>

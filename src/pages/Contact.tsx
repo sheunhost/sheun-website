@@ -222,11 +222,11 @@ export default function Contact() {
                   className="sm:col-span-2 group relative p-10 bg-navy text-white rounded-[40px] overflow-hidden shadow-2xl transition-all hover:bg-navy/95"
                 >
                   <div className="absolute top-0 right-0 p-10 opacity-20 group-hover:opacity-40 transition-opacity">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Gmail_icon_%282020%29.svg/960px-Gmail_icon_%282020%29.svg.png?_=20221017173631" alt="Gmail" className="w-[120px] h-[120px] object-contain" />
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Gmail_icon_%282020%29.svg/960px-Gmail_icon_%282020%29.svg.png?_=20221017173631" alt="Gmail" width="120" height="120" decoding="async" className="w-[120px] h-[120px] object-contain" />
                   </div>
                   <div className="relative z-10 space-y-10">
                     <div className="w-16 h-16 bg-white/10 rounded-2xl flex items-center justify-center backdrop-blur-md overflow-hidden">
-                      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Gmail_icon_%282020%29.svg/960px-Gmail_icon_%282020%29.svg.png?_=20221017173631" alt="Gmail" className="w-8 h-8 object-contain" />
+                      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Gmail_icon_%282020%29.svg/960px-Gmail_icon_%282020%29.svg.png?_=20221017173631" alt="Gmail" width="32" height="32" decoding="async" className="w-8 h-8 object-contain" />
                     </div>
                     <div className="space-y-3">
                       <h3 className="text-4xl font-bold tracking-tighter">Email us directly.</h3>
@@ -247,7 +247,7 @@ export default function Contact() {
                 >
                   <div className="space-y-10">
                     <div className="w-14 h-14 bg-white rounded-2xl flex items-center justify-center shadow-sm group-hover:bg-green transition-colors overflow-hidden">
-                      <img src="https://images.rawpixel.com/image_png_social_square/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvdjk4Mi1kMS0xMC5wbmc.png" alt="LinkedIn" className="w-8 h-8 object-contain" />
+                      <img src="https://images.rawpixel.com/image_png_social_square/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvdjk4Mi1kMS0xMC5wbmc.png" alt="LinkedIn" width="32" height="32" decoding="async" className="w-8 h-8 object-contain" />
                     </div>
                     <div className="space-y-2">
                       <p className="text-navy font-bold text-xl uppercase tracking-tighter">LinkedIn</p>

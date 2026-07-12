@@ -102,7 +102,7 @@ export default function ShopifySettingsGuide() {
             
             <div className="aspect-video bg-light w-full rounded-3xl overflow-hidden shadow-inner mb-12 relative flex items-center justify-center group">
               <Settings className="absolute text-navy opacity-10 group-hover:scale-110 transition-transform duration-700" size={160} />
-              <img src="https://picsum.photos/seed/blog1/1200/600" alt="Shopify settings" className="w-full h-full object-cover rounded-3xl z-10 opacity-90" />
+              <img src="https://picsum.photos/seed/blog1/1200/600" alt="Shopify settings" width="1200" height="600" decoding="async" className="w-full h-full object-cover rounded-3xl z-10 opacity-90" />
             </div>
 
             <div className="prose prose-lg md:prose-xl max-w-none prose-headings:font-bold prose-headings:text-navy prose-p:text-navy/80 prose-p:leading-relaxed font-sans">
@@ -253,7 +253,7 @@ export default function ShopifySettingsGuide() {
               <Link to="/portfolio" className="flex items-center gap-6 group hover:bg-light p-4 rounded-3xl transition-all -ml-4 pr-8 border border-transparent hover:border-navy/5">
                 <div className="relative">
                   <div className="absolute inset-0 bg-green/20 rounded-full blur-xl group-hover:bg-green/40 transition-colors" />
-                  <img src="https://ui-avatars.com/api/?name=Sheun Hub+Hub&background=10b981&color=fff" alt="Sheun Hub" className="w-20 h-20 rounded-full shadow-lg object-cover relative z-10 border-2 border-white" referrerPolicy="no-referrer" />
+                  <img src="https://ui-avatars.com/api/?name=Sheun Hub+Hub&background=10b981&color=fff" alt="Sheun Hub" width="80" height="80" decoding="async" className="w-20 h-20 rounded-full shadow-lg object-cover relative z-10 border-2 border-white" referrerPolicy="no-referrer" />
                 </div>
                 <div>
                   <p className="font-bold text-navy text-xl group-hover:text-green transition-colors leading-tight">By Sheun Hub</p>
@@ -266,7 +266,7 @@ export default function ShopifySettingsGuide() {
                 <p className="text-[10px] font-bold uppercase tracking-[0.3em] text-navy/40 mb-4 md:text-right">Share Article</p>
                 <div className="flex items-center gap-3 flex-wrap">
                   <button onClick={handleLinkedinShare} className="w-12 h-12 flex items-center justify-center bg-light border border-navy/10 text-navy rounded-full hover:bg-green hover:text-navy transition-colors shadow-sm focus:outline-none focus:ring-4 focus:ring-green/20 overflow-hidden" title="Share on LinkedIn">
-                    <img src="https://images.rawpixel.com/image_png_social_square/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvdjk4Mi1kMS0xMC5wbmc.png" alt="LinkedIn" className="w-6 h-6 object-contain" />
+                    <img src="https://images.rawpixel.com/image_png_social_square/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvdjk4Mi1kMS0xMC5wbmc.png" alt="LinkedIn" width="24" height="24" decoding="async" className="w-6 h-6 object-contain" />
                   </button>
                 </div>
               </div>
@@ -337,7 +337,7 @@ export default function ShopifySettingsGuide() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-5xl mx-auto">
             <Link to="/blog/2" className="group space-y-6 block">
               <div className="aspect-[16/10] rounded-xl overflow-hidden relative shadow-xl">
-                <img src="https://picsum.photos/seed/blog2/800/600" alt="Related Post" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+                <img src="https://picsum.photos/seed/blog2/800/600" alt="Related Post" width="800" height="600" decoding="async" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
                 <div className="absolute top-6 left-6">
                   <span className="bg-white/90 backdrop-blur-xl text-navy text-[10px] font-bold uppercase tracking-[0.3em] px-6 py-2 rounded-full shadow-xl">Shopify Tips</span>
                 </div>
@@ -352,7 +352,7 @@ export default function ShopifySettingsGuide() {
 
             <Link to="/blog/3" className="group space-y-6 block">
               <div className="aspect-[16/10] rounded-xl overflow-hidden relative shadow-xl">
-                <img src="https://picsum.photos/seed/blog3/800/600" alt="Related Post" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+                <img src="https://picsum.photos/seed/blog3/800/600" alt="Related Post" width="800" height="600" decoding="async" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
                 <div className="absolute top-6 left-6">
                   <span className="bg-white/90 backdrop-blur-xl text-navy text-[10px] font-bold uppercase tracking-[0.3em] px-6 py-2 rounded-full shadow-xl">Dropshipping</span>
                 </div>

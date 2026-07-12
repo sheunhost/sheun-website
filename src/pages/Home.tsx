@@ -797,6 +797,9 @@ export default function Home() {
                   src="https://mapplinks.com/wp-content/uploads/2020/06/screen1.png" 
                   alt="Sheun Hub - Shopify Development and Growth Expert" 
                   referrerPolicy="no-referrer"
+                  width="448"
+                  height="560"
+                  decoding="async"
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-[2s]" 
                   loading="lazy" 
                 />
@@ -810,13 +813,13 @@ export default function Home() {
                   
                   <div className="flex gap-4 pt-4 border-t border-white/10">
                     <a href="https://www.linkedin.com/in/sheun-hub-26b876321" target="_blank" rel="noopener noreferrer" className="p-2 bg-white/5 hover:bg-green hover:text-navy dark:text-white rounded-full text-white transition-all flex items-center justify-center overflow-hidden" title="LinkedIn">
-                      <img src="https://images.rawpixel.com/image_png_social_square/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvdjk4Mi1kMS0xMC5wbmc.png" alt="LinkedIn" className="w-5 h-5 object-contain" />
+                      <img src="https://images.rawpixel.com/image_png_social_square/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvdjk4Mi1kMS0xMC5wbmc.png" alt="LinkedIn" width="20" height="20" decoding="async" className="w-5 h-5 object-contain" />
                     </a>
                     <a href="https://www.upwork.com/freelancers/~017eb19011cd354946" target="_blank" rel="noopener noreferrer" className="p-2 bg-white/5 hover:bg-green hover:text-navy dark:text-white rounded-full text-white transition-all flex items-center justify-center overflow-hidden" title="Upwork">
-                      <img src="https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/upwork-icon.png" alt="Upwork" className="w-5 h-5 object-contain" />
+                      <img src="https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/upwork-icon.png" alt="Upwork" width="20" height="20" decoding="async" className="w-5 h-5 object-contain" />
                     </a>
                     <a href="mailto:sheunhost@gmail.com" className="p-2 bg-white/5 hover:bg-green hover:text-navy dark:text-white rounded-full text-white transition-all flex items-center justify-center overflow-hidden" title="Email">
-                      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Gmail_icon_%282020%29.svg/960px-Gmail_icon_%282020%29.svg.png?_=20221017173631" alt="Gmail" className="w-5 h-5 object-contain" />
+                      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Gmail_icon_%282020%29.svg/960px-Gmail_icon_%282020%29.svg.png?_=20221017173631" alt="Gmail" width="20" height="20" decoding="async" className="w-5 h-5 object-contain" />
                     </a>
                   </div>
                 </div>

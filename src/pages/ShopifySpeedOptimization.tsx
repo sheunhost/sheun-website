@@ -240,7 +240,7 @@ export default function ShopifySpeedOptimization() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-5xl mx-auto">
           <Link to="/blog/1" className="group space-y-6 block">
             <div className="aspect-[16/10] rounded-xl overflow-hidden relative shadow-xl">
-              <img src="https://picsum.photos/seed/blog1/800/600" alt="10 Shopify Settings Most Store Owners Miss" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+              <img src="https://picsum.photos/seed/blog1/800/600" alt="10 Shopify Settings Most Store Owners Miss" width="800" height="600" decoding="async" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
               <div className="absolute top-6 left-6">
                 <span className="bg-white/90 backdrop-blur-xl text-navy text-[10px] font-bold uppercase tracking-[0.3em] px-6 py-2 rounded-full shadow-xl">Shopify Tips</span>
               </div>
@@ -255,7 +255,7 @@ export default function ShopifySpeedOptimization() {
 
           <Link to="/blog/3" className="group space-y-6 block">
             <div className="aspect-[16/10] rounded-xl overflow-hidden relative shadow-xl">
-              <img src="https://picsum.photos/seed/blog3/800/600" alt="The Best Shopify Apps for Dropshipping Stores" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+              <img src="https://picsum.photos/seed/blog3/800/600" alt="The Best Shopify Apps for Dropshipping Stores" width="800" height="600" decoding="async" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
               <div className="absolute top-6 left-6">
                 <span className="bg-white/90 backdrop-blur-xl text-navy text-[10px] font-bold uppercase tracking-[0.3em] px-6 py-2 rounded-full shadow-xl">Dropshipping</span>
               </div>
