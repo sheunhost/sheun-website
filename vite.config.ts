@@ -20,7 +20,7 @@ export default defineConfig(({ mode }) => {
     },
     build: {
       outDir: 'dist',
-      sourcemap: true,
+      sourcemap: true, rollupOptions: { output: { manualChunks: { 'react-vendor': ['react', 'react-dom', 'react-router-dom', 'react-helmet-async'], 'framer-motion': ['framer-motion'], 'lucide-icons': ['lucide-react'] } } }
     },
   };
 });
