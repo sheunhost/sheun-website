@@ -46,7 +46,6 @@ export default function About() {
       }}
     >
       {/* About Hero - Premium High-Impact Grid */}
-      <ScrollReveal>
         <section className="relative pt-32 pb-24 md:pt-40 md:pb-32 bg-[#FFFFFF] overflow-hidden border-b border-[#E2E8F0]">
           {/* Subtle Background Gradients & Glows */}
           <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-[#10b981]/5 rounded-full blur-[140px] pointer-events-none -z-10"></div>
@@ -156,7 +155,6 @@ export default function About() {
             </div>
           </div>
         </section>
-      </ScrollReveal>
 
       {/* Hidden for SEO */}
       <div className="sr-only">

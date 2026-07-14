@@ -151,7 +151,6 @@ export default function Contact() {
       }}
     >
       {/* Contact Hero - Dynamic Editorial Style */}
-      <ScrollReveal>
         <section className="pt-48 pb-32 bg-navy-gradient relative overflow-hidden">
         <div className="absolute inset-0">
           <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-green/10 rounded-full blur-[120px] -translate-y-1/2 translate-x-1/3 opacity-30" />
@@ -203,7 +202,6 @@ export default function Contact() {
           </div>
         </div>
       </section>
-    </ScrollReveal>
 
       {/* Main Content: Bento Info + Master Form */}
       <ScrollReveal>

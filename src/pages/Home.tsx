@@ -355,16 +355,16 @@ const ServiceModal = ({ service, onClose }: { service: any; onClose: () => void 
 
   return (
     <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 md:p-6">
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
+      <div
+        
+        
         exit={{ opacity: 0 }}
         onClick={onClose}
         className="absolute inset-0 bg-navy/90 backdrop-blur-xl"
       />
-      <motion.div
-        initial={{ opacity: 0, scale: 0.9, y: 20 }}
-        animate={{ opacity: 1, scale: 1, y: 0 }}
+      <div
+        
+        
         exit={{ opacity: 0, scale: 0.9, y: 20 }}
         className="relative w-full max-w-4xl bg-white rounded-2xl overflow-hidden shadow-2xl max-h-[90vh] overflow-y-auto"
       >
@@ -442,7 +442,7 @@ const ServiceModal = ({ service, onClose }: { service: any; onClose: () => void 
             </div>
           </div>
         </div>
-      </motion.div>
+      </div>
     </div>
   );
 };
@@ -652,7 +652,6 @@ export default function Home() {
       }}
     >
       {/* Hero Section */}
-      <ScrollReveal>
         <section className="relative min-h-screen flex items-center pt-48 pb-20 bg-navy-gradient overflow-hidden">
           {/* Rail Text - Recipe 11 */}
         <div className="absolute left-6 top-1/2 -translate-y-1/2 hidden xl:block z-20">
@@ -673,10 +672,10 @@ export default function Home() {
 
         <div className="container mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-16 items-center relative z-10">
           <div className="lg:col-span-7 space-y-12">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+            <div
+              
+              
+              
               className="space-y-8"
             >
               <div className="inline-flex items-center gap-3 bg-white/5 backdrop-blur-xl border border-white/10 px-6 py-2 rounded-full">
@@ -686,32 +685,32 @@ export default function Home() {
 
               <h1 className="text-5xl md:text-[100px] font-bold text-white leading-[0.8] tracking-[-0.05em] text-balance">
                 <span className="block mb-4">
-                  <motion.span
+                  <span
                     key="headline-1"
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.1 }}
+                    
+                    
+                    
                   >
                     Shopify Development
-                  </motion.span>
+                  </span>
                   <br />
-                  <motion.span
+                  <span
                     key="headline-2"
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.2 }}
+                    
+                    
+                    
                   >
                     &amp; <span className="text-green"><WordRotator words={["Growth", "Scaling", "Speed", "SEO"]} /></span>
-                  </motion.span>
+                  </span>
                 </span>
-                <motion.span 
+                <span 
                   className="text-white italic font-serif font-light opacity-40 block"
-                  initial={{ opacity: 0, x: -20 }}
-                  animate={{ opacity: 0.4, x: 0 }}
-                  transition={{ delay: 0.4 }}
+                  
+                  
+                  
                 >
                   by Sheun Hub.
-                </motion.span>
+                </span>
               </h1>
 
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6 pt-8">
@@ -720,11 +719,11 @@ export default function Home() {
                   { title: "Store Optimization", desc: "Speed and UX refinement." },
                   { title: "E-commerce Scaling", desc: "Conversion focused design." }
                 ].map((item, i) => (
-                  <motion.div
+                  <div
                     key={i}
-                    initial={{ opacity: 0, scale: 0.9 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    transition={{ delay: 0.6 + i * 0.1 }}
+                    
+                    
+                    
                   >
                     <TiltCard depth={20}>
                       <div className="bg-white/5 border border-white/10 p-6 rounded-2xl h-full backdrop-blur-sm shadow-xl">
@@ -732,19 +731,19 @@ export default function Home() {
                         <p className="text-white/40 text-xs italic font-serif">{item.desc}</p>
                       </div>
                     </TiltCard>
-                  </motion.div>
+                  </div>
                 ))}
               </div>
 
                 <p className="text-white/60 text-xl md:text-2xl max-w-xl leading-relaxed font-light font-serif italic">
                   Scale your brand with a specialist in Custom Shopify Development and E-commerce Growth. From custom theme builds to technical store optimization, Sheun Hub helps businesses maximize revenue on the Shopify platform.
                 </p>
-            </motion.div>
+            </div>
 
-            <motion.div 
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.2, duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+            <div 
+              
+              
+              
               className="flex flex-col sm:flex-row items-center gap-8"
             >
               <Link 
@@ -762,12 +761,12 @@ export default function Home() {
               <Link to="/portfolio" className="w-full sm:w-auto text-white/80 hover:text-white px-8 py-4 rounded-full font-bold text-lg transition-all flex items-center justify-center gap-4 group text-center">
                 View Portfolio <div className="w-8 h-px bg-white/20 group-hover:w-16 group-hover:bg-green transition-all duration-500" />
               </Link>
-            </motion.div>
+            </div>
 
-            <motion.div 
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.4 }}
+            <div 
+              
+              
+              
               className="flex flex-wrap items-center gap-12 pt-8 border-t border-white/5"
             >
               {[
@@ -781,16 +780,16 @@ export default function Home() {
                   <p className="text-2xl font-bold text-white tracking-tight">{stat.value}</p>
                 </div>
               ))}
-            </motion.div>
+            </div>
           </div>
 
           <div className="lg:col-span-5 relative h-[500px] lg:h-[700px] flex items-center justify-center">
             <div className="relative w-full max-w-md aspect-[4/5]">
               {/* Main Card - Recipe 12 Oval Mask Feel */}
-              <motion.div
-                initial={{ opacity: 0, scale: 0.9 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
+              <div
+                
+                
+                
                 className="absolute inset-0 bg-white/5 backdrop-blur-3xl border border-white/10 rounded-3xl shadow-2xl overflow-hidden group"
               >
                 <img 
@@ -823,12 +822,12 @@ export default function Home() {
                     </a>
                   </div>
                 </div>
-              </motion.div>
+              </div>
 
               {/* Floating Elements - Hardware Feel Recipe 3 */}
-              <motion.div
-                animate={{ y: [0, -30, 0] }}
-                transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
+              <div
+                
+                
                 className="absolute -top-12 -right-12 w-64 h-64 bg-white/5 backdrop-blur-2xl border border-white/10 rounded-3xl shadow-2xl p-1 hidden sm:block"
               >
                 <div className="w-full h-full rounded-3xl bg-navy/60 flex flex-col items-center justify-center gap-6 border border-white/5">
@@ -840,7 +839,7 @@ export default function Home() {
                     <p className="text-white/30 text-[10px] uppercase font-bold tracking-[0.3em] mt-1">Avg. ROI Increase</p>
                   </div>
                 </div>
-              </motion.div>
+              </div>
             </div>
           </div>
         </div>
@@ -851,7 +850,6 @@ export default function Home() {
           <div className="w-px h-12 bg-gradient-to-b from-green to-transparent" />
         </div>
       </section>
-    </ScrollReveal>
 
     <div className="py-8 bg-[#0F172A] border-b border-white/5 overflow-hidden">
       <Marquee speed={40}>
@@ -877,9 +875,9 @@ export default function Home() {
             { label: "5.0 Star Expert", sub: "Loved By Merchants", icon: Star, color: "#F59E0B" },
             { label: "100% Satisfaction", sub: "Money-Back Guarantee", icon: CheckCircle2, color: "#09090b" }
           ].map((badge, idx) => (
-            <motion.div
+            <div
               key={idx}
-              whileHover={{ scale: 1.02, y: -2 }}
+              
               className="flex items-center gap-4 p-5 rounded-2xl bg-white border border-[#E2E8F0] shadow-[0_2px_8px_rgba(0,0,0,0.02)] hover:shadow-[0_12px_24px_-10px_rgba(0,0,0,0.05)] transition-all"
             >
               <div 
@@ -892,7 +890,7 @@ export default function Home() {
                 <div className="font-bold text-[#0F172A] text-sm leading-tight font-sans">{badge.label}</div>
                 <p className="text-[11px] text-[#71717a] font-medium mt-0.5">{badge.sub}</p>
               </div>
-            </motion.div>
+            </div>
           ))}
         </div>
       </div>
@@ -955,9 +953,9 @@ export default function Home() {
                 statLabel: "on business growth"
               }
             ].map((point, i) => (
-              <motion.div 
+              <div 
                 key={i} 
-                whileHover={{ y: -4 }}
+                
                 className="p-8 sm:p-10 bg-white rounded-3xl border border-[#E2E8F0] shadow-[0_2px_12px_rgba(0,0,0,0.01)] hover:shadow-[0_20px_40px_-15px_rgba(9,9,11,0.08)] transition-all space-y-6 relative overflow-hidden"
               >
                 <div className="flex items-start justify-between gap-4">
@@ -976,7 +974,7 @@ export default function Home() {
                   <h3 className="text-2xl font-bold text-[#0F172A] tracking-tight">{point.title}</h3>
                   <p className="text-[#71717a] text-sm leading-relaxed">{point.desc}</p>
                 </div>
-              </motion.div>
+              </div>
             ))}
           </div>
         </div>
@@ -1288,12 +1286,12 @@ export default function Home() {
             ].map((service, i) => (
               <motion.button
                 key={i}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-50px" }}
-                transition={{ delay: i * 0.15, duration: 0.6 }}
-                whileHover={{ y: -8 }}
-                whileTap={{ scale: 0.98 }}
+                
+                
+                
+                
+                
+                
                 onClick={() => {
                   setSelectedService(service);
                 }}
@@ -1346,12 +1344,12 @@ export default function Home() {
 
           <div className="max-w-3xl mx-auto relative">
             <AnimatePresence mode="wait">
-              <motion.div
+              <div
                 key={testimonialIndex}
-                initial={{ opacity: 0, x: 20 }}
-                animate={{ opacity: 1, x: 0 }}
+                
+                
                 exit={{ opacity: 0, x: -20 }}
-                transition={{ duration: 0.5 }}
+                
                 className="bg-white p-6 md:p-10 rounded-3xl shadow-xl border border-navy/5 flex flex-col md:flex-row items-center gap-8"
               >
                 <div className="shrink-0 relative">
@@ -1394,7 +1392,7 @@ export default function Home() {
                     <p className="text-navy dark:text-white/40 text-xs uppercase tracking-widest mt-1">{testimonials[testimonialIndex].role}</p>
                   </div>
                 </div>
-              </motion.div>
+              </div>
             </AnimatePresence>
 
             <div className="flex items-center justify-center gap-6 mt-10">
@@ -1467,12 +1465,12 @@ export default function Home() {
                 height: "h-[500px]"
               }
             ].map((item, i) => (
-              <motion.div
+              <div
                 key={i}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-50px" }}
-                transition={{ delay: i * 0.15, duration: 0.6 }}
+                
+                
+                
+                
                 className={cn(item.col)}
               >
                 <TiltCard depth={15} className="h-full">
@@ -1496,7 +1494,7 @@ export default function Home() {
                     </div>
                   </div>
                 </TiltCard>
-              </motion.div>
+              </div>
             ))}
           </div>
         </div>
@@ -1636,8 +1634,8 @@ export default function Home() {
                   {!isSuccess ? (
                     <motion.form 
                       key="home-contact-form"
-                      initial={{ opacity: 0 }}
-                      animate={{ opacity: 1 }}
+                      
+                      
                       exit={{ opacity: 0, scale: 0.95 }}
                       onSubmit={handleSubmit} 
                       className="space-y-8"
@@ -1706,10 +1704,10 @@ export default function Home() {
                       </button>
                     </motion.form>
                   ) : (
-                    <motion.div
+                    <div
                       key="home-contact-success"
-                      initial={{ opacity: 0, scale: 0.9, y: 10 }}
-                      animate={{ opacity: 1, scale: 1, y: 0 }}
+                      
+                      
                       className="text-center py-12 space-y-8"
                     >
                       <div className="w-24 h-24 bg-green text-navy dark:text-white rounded-2xl flex items-center justify-center mx-auto shadow-xl rotate-3">
@@ -1727,7 +1725,7 @@ export default function Home() {
                       >
                         Send another message
                       </button>
-                    </motion.div>
+                    </div>
                   )}
                 </AnimatePresence>
               </div>
@@ -1758,8 +1756,8 @@ export default function Home() {
                 {!isSubscribeSuccess ? (
                   <motion.form 
                     key="newsletter-form"
-                    initial={{ opacity: 0, y: 10 }}
-                    animate={{ opacity: 1, y: 0 }}
+                    
+                    
                     exit={{ opacity: 0, scale: 0.95 }}
                     onSubmit={handleSubscribe} 
                     className="relative flex flex-col sm:flex-row items-center gap-4 sm:gap-0"
@@ -1785,10 +1783,10 @@ export default function Home() {
                     </button>
                   </motion.form>
                 ) : (
-                  <motion.div 
+                  <div 
                     key="newsletter-success"
-                    initial={{ opacity: 0, scale: 0.9, y: 10 }}
-                    animate={{ opacity: 1, scale: 1, y: 0 }}
+                    
+                    
                     className="bg-green/10 border border-green/20 rounded-2xl p-8 text-center space-y-4"
                   >
                     <div className="w-16 h-16 bg-green text-navy dark:text-white rounded-full flex items-center justify-center mx-auto shadow-lg">
@@ -1798,7 +1796,7 @@ export default function Home() {
                       <p className="text-navy dark:text-white font-bold text-xl uppercase tracking-tighter">Congratulations! You're in!</p>
                       <p className="text-navy dark:text-white/60 font-serif italic">Your subscription is successful. A confirmation message from <span className="font-bold">sheunhost@gmail.com</span> will hit your inbox shortly.</p>
                     </div>
-                  </motion.div>
+                  </div>
                 )}
               </AnimatePresence>
               <p className="text-[10px] font-bold text-navy dark:text-white/40 uppercase tracking-widest mt-4 text-center md:text-left">
@@ -1815,10 +1813,10 @@ export default function Home() {
       <section className="py-48 bg-navy-gradient relative overflow-hidden">
         <div className="absolute inset-0 bg-green/5 opacity-50" />
         <div className="container mx-auto px-6 relative z-10 text-center">
-          <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
+          <div
+            
+            
+            
             className="max-w-5xl mx-auto space-y-16"
           >
             <h2 className="text-5xl md:text-[160px] font-bold text-white leading-[0.8] tracking-[-0.06em] uppercase">
@@ -1835,7 +1833,7 @@ export default function Home() {
                 View Portfolio <div className="w-12 h-px bg-white/20 group-hover:w-20 group-hover:bg-green transition-all duration-500" />
               </Link>
             </div>
-          </motion.div>
+          </div>
         </div>
       </section>
     </ScrollReveal>
