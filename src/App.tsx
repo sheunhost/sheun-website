@@ -13,7 +13,6 @@ import ScrollToTop from "./components/ScrollToTop";
 import ScrollToTopOnNavigation from "./components/ScrollToTopOnNavigation";
 import FloatingCalendly from "./components/FloatingCalendly";
 import GoogleAnalytics from "./components/GoogleAnalytics";
-import SmoothScroll from "./components/SmoothScroll";
 
 // Lazy load components
 const Home = lazy(() => import("./pages/Home"));
@@ -90,17 +89,15 @@ export default function App() {
       <Router>
         <GoogleAnalytics />
         <ScrollToTopOnNavigation />
-        <SmoothScroll>
-          <div className="min-h-screen flex flex-col">
-            <Navbar />
-            <main className="flex-grow">
-              <AnimatedRoutes />
-            </main>
-            <Footer />
-            <FloatingCalendly />
-            <ScrollToTop />
-          </div>
-        </SmoothScroll>
+        <div className="min-h-screen flex flex-col">
+          <Navbar />
+          <main className="flex-grow">
+            <AnimatedRoutes />
+          </main>
+          <Footer />
+          <FloatingCalendly />
+          <ScrollToTop />
+        </div>
       </Router>
     </HelmetProvider>
   );
