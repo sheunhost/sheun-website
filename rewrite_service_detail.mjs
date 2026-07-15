@@ -1,4 +1,6 @@
-import React, { useState, FormEvent, useEffect } from "react";
+import fs from 'fs';
+
+const content = `import React, { useState, FormEvent, useEffect } from "react";
 import { useParams, Link, Navigate } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { servicesData } from "../data/servicesData";
@@ -29,18 +31,18 @@ const CosmicBackground = ({ color }: { color: string }) => {
       {/* Nebula Glows */}
       <div 
         className="absolute top-[-20%] left-[-10%] w-[70vw] h-[70vw] rounded-full blur-[120px] mix-blend-screen opacity-40 animate-pulse"
-        style={{ background: `radial-gradient(circle, ${color} 0%, transparent 70%)` }}
+        style={{ background: \`radial-gradient(circle, \${color} 0%, transparent 70%)\` }}
       />
       <div 
         className="absolute bottom-[-20%] right-[-10%] w-[60vw] h-[60vw] rounded-full blur-[120px] mix-blend-screen opacity-30 animate-pulse"
-        style={{ background: `radial-gradient(circle, ${color} 0%, transparent 70%)`, animationDelay: '2s' }}
+        style={{ background: \`radial-gradient(circle, \${color} 0%, transparent 70%)\`, animationDelay: '2s' }}
       />
       
       {/* Grid Overlay */}
       <div 
         className="absolute inset-0 opacity-[0.03]" 
         style={{ 
-          backgroundImage: `linear-gradient(${color} 1px, transparent 1px), linear-gradient(90deg, ${color} 1px, transparent 1px)`,
+          backgroundImage: \`linear-gradient(\${color} 1px, transparent 1px), linear-gradient(90deg, \${color} 1px, transparent 1px)\`,
           backgroundSize: '40px 40px'
         }} 
       />
@@ -83,7 +85,7 @@ export default function ServiceDetail() {
     }
 
     const email = formData.get("email") as string;
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    const emailRegex = /^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$/;
     if (!email || !emailRegex.test(email)) {
       newErrors.email = "Please enter a valid email address.";
     }
@@ -142,10 +144,10 @@ export default function ServiceDetail() {
 
   return (
     <PageWrapper 
-      title={`${service.title} | Sheun Hub - Shopify Expert`}
+      title={\`\${service.title} | Sheun Hub - Shopify Expert\`}
       description={service.description}
       keywords={service.keywords}
-      canonical={`/services/${id}`}
+      canonical={\`/services/\${id}\`}
     >
       <div className="bg-[#050505] text-white min-h-screen relative font-sans selection:bg-white/20">
         <CosmicBackground color={theme.main} />
@@ -161,8 +163,8 @@ export default function ServiceDetail() {
                 className="inline-flex items-center justify-center p-6 rounded-full border mb-6 relative backdrop-blur-xl"
                 style={{ 
                   borderColor: theme.main, 
-                  backgroundColor: `${theme.main}15`,
-                  boxShadow: `0 0 40px ${theme.glow}`
+                  backgroundColor: \`\${theme.main}15\`,
+                  boxShadow: \`0 0 40px \${theme.glow}\`
                 }}
               >
                 {getIcon(service.icon)}
@@ -197,7 +199,7 @@ export default function ServiceDetail() {
                 <a 
                   href="#service-form" 
                   className="w-full sm:w-auto px-12 py-5 rounded-full font-bold text-lg transition-all transform hover:scale-105 flex items-center justify-center gap-3 group relative overflow-hidden"
-                  style={{ backgroundColor: theme.main, color: '#000', boxShadow: `0 0 30px ${theme.glow}` }}
+                  style={{ backgroundColor: theme.main, color: '#000', boxShadow: \`0 0 30px \${theme.glow}\` }}
                 >
                   <span className="relative z-10">Initiate Protocol</span>
                   <ArrowRight className="w-5 h-5 relative z-10 group-hover:translate-x-2 transition-transform" />
@@ -230,7 +232,7 @@ export default function ServiceDetail() {
                 <div className="w-full md:w-1/2">
                   <div 
                     className="p-12 rounded-3xl border backdrop-blur-xl relative overflow-hidden"
-                    style={{ borderColor: `${theme.main}30`, backgroundColor: 'rgba(0,0,0,0.4)' }}
+                    style={{ borderColor: \`\${theme.main}30\`, backgroundColor: 'rgba(0,0,0,0.4)' }}
                   >
                     <ShieldCheck className="absolute top-8 right-8 w-32 h-32 opacity-10" style={{ color: theme.main }} />
                     <h2 className="text-4xl font-bold mb-8 flex items-center gap-4">
@@ -255,7 +257,7 @@ export default function ServiceDetail() {
                       <div 
                         key={idx} 
                         className="p-4 rounded-2xl border backdrop-blur-md flex items-center gap-4"
-                        style={{ borderColor: `${theme.main}20`, backgroundColor: 'rgba(255,255,255,0.02)' }}
+                        style={{ borderColor: \`\${theme.main}20\`, backgroundColor: 'rgba(255,255,255,0.02)' }}
                       >
                         <CheckCircle2 className="w-6 h-6 shrink-0" style={{ color: theme.main }} />
                         <span className="font-medium text-white/90">{item}</span>
@@ -291,7 +293,7 @@ export default function ServiceDetail() {
                           </div>
                           <div 
                             className="w-[calc(100%-4rem)] md:w-[calc(50%-3rem)] p-8 rounded-3xl border backdrop-blur-md transition-all duration-500 hover:scale-[1.02]"
-                            style={{ borderColor: `${theme.main}30`, backgroundColor: 'rgba(255,255,255,0.03)', boxShadow: `inset 0 0 20px ${theme.glow}` }}
+                            style={{ borderColor: \`\${theme.main}30\`, backgroundColor: 'rgba(255,255,255,0.03)', boxShadow: \`inset 0 0 20px \${theme.glow}\` }}
                           >
                             <h3 className="text-2xl font-bold mb-3" style={{ color: theme.main }}>{title}</h3>
                             <p className="text-white/60 leading-relaxed">{desc || title}</p>
@@ -321,9 +323,9 @@ export default function ServiceDetail() {
                   <div 
                     className="p-12 md:p-20 rounded-[3rem] border relative backdrop-blur-2xl overflow-hidden group"
                     style={{ 
-                      borderColor: `${theme.main}40`, 
+                      borderColor: \`\${theme.main}40\`, 
                       backgroundColor: 'rgba(0,0,0,0.6)',
-                      boxShadow: `0 0 80px ${theme.glow}`
+                      boxShadow: \`0 0 80px \${theme.glow}\`
                     }}
                   >
                     <div className="absolute inset-0 bg-gradient-to-b from-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-1000" />
@@ -357,7 +359,7 @@ export default function ServiceDetail() {
                   <h2 className="text-4xl md:text-5xl font-black tracking-tighter mb-12">Why the Sheun Hub Architecture?</h2>
                   <div 
                     className="p-10 md:p-16 rounded-[2.5rem] border backdrop-blur-xl relative overflow-hidden"
-                    style={{ borderColor: `${theme.main}20`, backgroundColor: 'rgba(255,255,255,0.02)' }}
+                    style={{ borderColor: \`\${theme.main}20\`, backgroundColor: 'rgba(255,255,255,0.02)' }}
                   >
                     <p className="text-2xl md:text-3xl text-white/80 leading-relaxed font-light italic">
                       "{service.comparison}"
@@ -392,9 +394,9 @@ export default function ServiceDetail() {
                         key={idx} 
                         onClick={() => window.scrollTo(0, 0)} 
                         className="group block p-10 rounded-[2rem] border backdrop-blur-md transition-all duration-500 hover:-translate-y-2 relative overflow-hidden"
-                        style={{ borderColor: `${theme.main}20`, backgroundColor: 'rgba(255,255,255,0.03)' }}
+                        style={{ borderColor: \`\${theme.main}20\`, backgroundColor: 'rgba(255,255,255,0.03)' }}
                       >
-                        <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500" style={{ background: `radial-gradient(circle at top right, ${theme.glow}, transparent 70%)` }} />
+                        <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500" style={{ background: \`radial-gradient(circle at top right, \${theme.glow}, transparent 70%)\` }} />
                         <h3 className="text-3xl font-bold mb-4 relative z-10 text-white group-hover:text-white transition-colors">{work.name}</h3>
                         <p className="text-white/60 font-light text-lg mb-8 relative z-10">{work.result}</p>
                         <div 
@@ -468,9 +470,9 @@ export default function ServiceDetail() {
               <div 
                 className="rounded-[3rem] p-8 md:p-16 relative max-w-3xl mx-auto text-left backdrop-blur-2xl border"
                 style={{ 
-                  borderColor: `${theme.main}30`,
+                  borderColor: \`\${theme.main}30\`,
                   backgroundColor: 'rgba(10,10,12,0.7)',
-                  boxShadow: `0 20px 80px rgba(0,0,0,0.8), inset 0 0 40px ${theme.glow}`
+                  boxShadow: \`0 20px 80px rgba(0,0,0,0.8), inset 0 0 40px \${theme.glow}\`
                 }}
               >
                 <AnimatePresence mode="wait">
@@ -483,7 +485,7 @@ export default function ServiceDetail() {
                     >
                       <div 
                         className="w-24 h-24 rounded-full flex items-center justify-center mx-auto mb-8 shadow-2xl border"
-                        style={{ backgroundColor: `${theme.main}20`, borderColor: theme.main, color: theme.main }}
+                        style={{ backgroundColor: \`\${theme.main}20\`, borderColor: theme.main, color: theme.main }}
                       >
                         <CheckCircle2 className="w-12 h-12" />
                       </div>
@@ -572,7 +574,7 @@ export default function ServiceDetail() {
                         <textarea
                           name="message"
                           rows={5}
-                          placeholder={`Detail your specific requirements for ${service.title}...`}
+                          placeholder={\`Detail your specific requirements for \${service.title}...\`}
                           className="w-full bg-black/40 rounded-[2rem] py-6 px-8 border border-white/10 focus:border-white text-white placeholder:text-white/20 outline-none transition-all resize-none"
                         />
                         {errors.message && <p className="text-red-400 text-xs font-bold pl-4">{errors.message}</p>}
@@ -582,7 +584,7 @@ export default function ServiceDetail() {
                         <button
                           disabled={isSubmitting}
                           className="w-full h-20 rounded-full transition-all focus:scale-[0.98] relative group overflow-hidden"
-                          style={{ backgroundColor: theme.main, color: '#000', boxShadow: `0 0 30px ${theme.glow}` }}
+                          style={{ backgroundColor: theme.main, color: '#000', boxShadow: \`0 0 30px \${theme.glow}\` }}
                         >
                           <div className="relative z-10 h-full flex items-center justify-center gap-3 font-black text-lg">
                             {isSubmitting ? (
@@ -636,12 +638,12 @@ export default function ServiceDetail() {
                     return (
                       <Link 
                         key={key} 
-                        to={`/services/${key}`}
+                        to={\`/services/\${key}\`}
                         onClick={() => window.scrollTo(0, 0)}
                         className="group bg-[#0a0a0c] p-10 rounded-[2rem] border border-white/5 hover:-translate-y-2 transition-all duration-500 relative overflow-hidden flex flex-col h-full"
                         style={{ '--hover-color': relatedTheme.main } as any}
                       >
-                        <div className="absolute inset-0 opacity-0 group-hover:opacity-10 transition-opacity duration-500" style={{ background: `radial-gradient(circle at top right, ${relatedTheme.main}, transparent)` }} />
+                        <div className="absolute inset-0 opacity-0 group-hover:opacity-10 transition-opacity duration-500" style={{ background: \`radial-gradient(circle at top right, \${relatedTheme.main}, transparent)\` }} />
                         
                         <div className="w-16 h-16 rounded-2xl flex items-center justify-center mb-8 border border-white/10 bg-black/50" style={{ color: relatedTheme.main }}>
                           {/* Use the parent's getIcon logic but adapted for this */}
@@ -687,11 +689,11 @@ function FaqItem({ question, answer, theme }: { question: string, answer: string
           className="w-10 h-10 rounded-full flex items-center justify-center border transition-colors shrink-0"
           style={{ 
             borderColor: isOpen ? theme.main : 'rgba(255,255,255,0.2)',
-            backgroundColor: isOpen ? `${theme.main}20` : 'transparent',
+            backgroundColor: isOpen ? \`\${theme.main}20\` : 'transparent',
             color: isOpen ? theme.main : 'white'
           }}
         >
-          <ChevronDown className={`w-5 h-5 transition-transform duration-500 ${isOpen ? 'rotate-180' : ''}`} />
+          <ChevronDown className={\`w-5 h-5 transition-transform duration-500 \${isOpen ? 'rotate-180' : ''}\`} />
         </div>
       </button>
       <div 
@@ -705,3 +707,6 @@ function FaqItem({ question, answer, theme }: { question: string, answer: string
     </div>
   );
 }
+`;
+
+fs.writeFileSync("src/pages/ServiceDetail.tsx", content);
