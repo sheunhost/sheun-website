@@ -90,7 +90,7 @@ export default function BlogPost() {
       keywords={postInfo.keywords}
       canonical={`/blog/${id}`}
     >
-      <div className="pt-32 pb-8 bg-white border-b border-navy/5">
+      <div className="pt-32 pb-8 bg-white dark:bg-navy border-b border-navy/5 dark:border-white/5">
         <div className="container mx-auto px-6 max-w-4xl relative z-50">
           <Breadcrumbs 
             items={[

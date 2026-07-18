@@ -4,6 +4,8 @@ import { Link } from "react-router-dom";
 import { Calendar, User, Clock, CheckCircle2, ArrowRight } from "lucide-react";
 import ScrollReveal from "../components/ScrollReveal";
 import PageWrapper from "../components/PageWrapper";
+import { generateContentBlocks, faqsData } from "../data/blogExpandedData";
+import { PullQuote, CalloutBox, FAQSection } from "../components/BlogDeepDive";
 
 export default function LeveragingShopifyMarkets() {
   return (
@@ -13,7 +15,7 @@ export default function LeveragingShopifyMarkets() {
       keywords="Shopify Markets guide, international Shopify setup, Shopify multi-currency, Shopify expert UK, Shopify partner France, Shopify developer Germany"
       canonical="/blog/leveraging-shopify-markets"
     >
-      <article className="bg-white">
+      <article className="bg-white dark:bg-navy">
       {/* Editorial Hero */}
       <section className="pt-48 pb-32 bg-navy-gradient relative overflow-hidden">
         <div className="absolute inset-0 opacity-10">
@@ -76,8 +78,8 @@ export default function LeveragingShopifyMarkets() {
       {/* Main Content */}
       <section className="py-24">
         <ScrollReveal>
-          <div className="container mx-auto px-6 max-w-3xl prose prose-lg md:prose-xl prose-headings:text-navy prose-a:text-green text-navy/70 leading-relaxed">
-            <h2 className="text-4xl font-bold font-sans not-italic text-navy tracking-tight mt-12 mb-6">Why Shopify Markets Is a Game Changer for E-commerce</h2>
+          <div className="container mx-auto px-6 max-w-3xl prose prose-lg md:prose-xl prose-headings:text-navy dark:text-white prose-a:text-green text-navy/70 dark:text-white/70 leading-relaxed">
+            <h2 className="text-4xl font-bold font-sans not-italic text-navy dark:text-white tracking-tight mt-12 mb-6">Why Shopify Markets Is a Game Changer for E-commerce</h2>
             <p className="font-serif italic text-2xl mb-8 border-l-4 border-green pl-6">
               "You are intentionally capping your revenue if you're only selling within your domestic borders. With Shopify Markets, expanding your footprint doesn’t require separate stores or disconnected workflows anymore."
             </p>
@@ -91,22 +93,22 @@ export default function LeveragingShopifyMarkets() {
               If your goal is to dramatically increase your Total Addressable Market (TAM) while retaining operational sanity, let’s explore the technical strategies to successfully deploy Shopify Markets.
             </p>
 
-            <h2 className="text-3xl font-bold font-sans not-italic text-navy tracking-tight mt-16 mb-6">1. Mastering Currency Conversion and Localized Pricing</h2>
+            <h2 className="text-3xl font-bold font-sans not-italic text-navy dark:text-white tracking-tight mt-16 mb-6">1. Mastering Currency Conversion and Localized Pricing</h2>
             <p className="mb-6">
               Trust is the highest currency in e-commerce. A user in the United Kingdom expects to see their pricing in GBP (£), not an arbitrary USD amount that forces them to rely on Google for conversion. They want a predictable, guaranteed price.
             </p>
             <ul className="mb-6 space-y-4">
               <li className="flex gap-4">
                 <CheckCircle2 className="flex-shrink-0 text-green mt-1" size={24} />
-                <span><strong>Multi-Currency with Shopify Payments:</strong> If you are utilizing Shopify Payments, enabling local currencies is a one-click process. Shopify calculates the real-time FX rate automatically and rounds it (e.g., keeping prices ending in .99 or .00) to keep your aesthetic clean.</span>
+                <div className="text-navy dark:text-white"><strong>Multi-Currency with Shopify Payments:</strong> If you are utilizing Shopify Payments, enabling local currencies is a one-click process. Shopify calculates the real-time FX rate automatically and rounds it (e.g., keeping prices ending in .99 or .00) to keep your aesthetic clean.</div>
               </li>
               <li className="flex gap-4">
                 <CheckCircle2 className="flex-shrink-0 text-green mt-1" size={24} />
-                <span><strong>Fixed Price Adjustments per Market:</strong> Sometimes straight conversion doesn't work. The perceived value of an item might be higher in Europe than it is in Asia, or your distribution margins may be tighter in Australia. You can enforce a percentage-based surcharge or set fixed pricing catalogs per country specifically to protect your margins.</span>
+                <div className="text-navy dark:text-white"><strong>Fixed Price Adjustments per Market:</strong> Sometimes straight conversion doesn't work. The perceived value of an item might be higher in Europe than it is in Asia, or your distribution margins may be tighter in Australia. You can enforce a percentage-based surcharge or set fixed pricing catalogs per country specifically to protect your margins.</div>
               </li>
             </ul>
 
-            <h2 className="text-3xl font-bold font-sans not-italic text-navy tracking-tight mt-16 mb-6">2. Language Localization: Speak Your Customer's Language</h2>
+            <h2 className="text-3xl font-bold font-sans not-italic text-navy dark:text-white tracking-tight mt-16 mb-6">2. Language Localization: Speak Your Customer's Language</h2>
             <p className="mb-6">
               A staggering number of buyers will immediately bounce if a site is not in their native language or at least poorly translated. You cannot rely on the user's browser to execute a sloppy Google Translate extension.
             </p>
@@ -117,7 +119,7 @@ export default function LeveragingShopifyMarkets() {
               When configuring multiple languages, ensure that your technical SEO architecture implements the correct <code>hreflang</code> tags. Shopify usually handles this natively, but as a Shopify developer, I always run a deep audit to verify that Google correctly indexes your localized domain subfolders (e.g., yourdomain.com/fr/).
             </p>
 
-            <h2 className="text-3xl font-bold font-sans not-italic text-navy tracking-tight mt-16 mb-6">3. Seamless International Shipping and Duties</h2>
+            <h2 className="text-3xl font-bold font-sans not-italic text-navy dark:text-white tracking-tight mt-16 mb-6">3. Seamless International Shipping and Duties</h2>
             <p className="mb-6">
               The number one reason users abandon a cart during a cross-border checkout is the dreaded "unexpected shipping cost" or the "customs surprise." If your international customer is hit with an unexpected $40 duties bill by DHL when the product arrives, their likelihood of returning to buy from you again drops to zero.
             </p>
@@ -127,15 +129,15 @@ export default function LeveragingShopifyMarkets() {
             <ul className="mb-6 space-y-4">
               <li className="flex gap-4">
                 <CheckCircle2 className="flex-shrink-0 text-green mt-1" size={24} />
-                <span><strong>Duties and Import Taxes Calculated at Checkout:</strong> If you are on the Advanced Shopify plan (or Shopify Plus), leverage the automatic computation of Duties and Taxes. This allows the customer to pre-pay these costs upfront (DDP - Delivered Duty Paid), resulting in a smooth, surprise-free delivery.</span>
+                <div className="text-navy dark:text-white"><strong>Duties and Import Taxes Calculated at Checkout:</strong> If you are on the Advanced Shopify plan (or Shopify Plus), leverage the automatic computation of Duties and Taxes. This allows the customer to pre-pay these costs upfront (DDP - Delivered Duty Paid), resulting in a smooth, surprise-free delivery.</div>
               </li>
               <li className="flex gap-4">
                 <CheckCircle2 className="flex-shrink-0 text-green mt-1" size={24} />
-                <span><strong>Custom Shipping Profiles by Market:</strong> Your domestic rate might be "Free Shipping over $50", but offering that internationally could bankrupt you. Set up highly granular shipping profiles based on the exact market region.</span>
+                <div className="text-navy dark:text-white"><strong>Custom Shipping Profiles by Market:</strong> Your domestic rate might be "Free Shipping over $50", but offering that internationally could bankrupt you. Set up highly granular shipping profiles based on the exact market region.</div>
               </li>
             </ul>
 
-            <h2 className="text-3xl font-bold font-sans not-italic text-navy tracking-tight mt-16 mb-6">Start Scaling the Right Way</h2>
+            <h2 className="text-3xl font-bold font-sans not-italic text-navy dark:text-white tracking-tight mt-16 mb-6">Start Scaling the Right Way</h2>
             <p className="mb-6">
               There is massive growth potential outside your domestic market. Deploying Shopify Markets is not just clicking a button; it requires rigorous technical strategy, careful pricing structure adjustments, and deep technical SEO configurations. But when executed correctly, it effectively multiplies your business overnight without creating technical debt.
             </p>
@@ -146,13 +148,13 @@ export default function LeveragingShopifyMarkets() {
         {/* CTA Section */}
         <ScrollReveal>
           <div className="container mx-auto px-6 max-w-4xl mt-32">
-            <div className="bg-light border border-navy/5 p-16 rounded-[40px] text-center space-y-8 relative overflow-hidden">
+            <div className="bg-light dark:bg-white/5 border border-navy/5 dark:border-white/5 p-16 rounded-[40px] text-center space-y-8 relative overflow-hidden">
                <div className="absolute top-0 right-0 w-64 h-64 bg-green/10 rounded-full blur-[80px] -translate-y-1/2 translate-x-1/2" />
-               <h3 className="text-4xl font-bold font-sans text-navy tracking-tight relative z-10">Need Help Expanding Internationally?</h3>
-               <p className="text-xl text-navy/60 font-serif italic max-w-2xl mx-auto relative z-10">
+               <h3 className="text-4xl font-bold font-sans text-navy dark:text-white tracking-tight relative z-10">Need Help Expanding Internationally?</h3>
+               <p className="text-xl text-navy/60 dark:text-white/60 font-serif italic max-w-2xl mx-auto relative z-10">
                  Let me handle the complex technical implementation of Shopify Markets, multi-currency routing, and localization SEO. Focus on marketing; I’ll handle the code.
                </p>
-               <Link to="/contact" className="inline-flex items-center gap-4 bg-navy hover:bg-green text-white hover:text-navy px-10 py-5 rounded-full font-bold text-lg transition-all duration-500 shadow-xl relative z-10">
+               <Link to="/contact" className="inline-flex items-center gap-4 bg-navy hover:bg-green text-white hover:text-navy dark:text-white px-10 py-5 rounded-full font-bold text-lg transition-all duration-500 shadow-xl relative z-10">
                  Book a Consultation <ArrowRight size={20} />
                </Link>
             </div>

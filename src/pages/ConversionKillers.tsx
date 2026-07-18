@@ -14,6 +14,8 @@ import {
   Clock
 } from "lucide-react";
 import PageWrapper from "../components/PageWrapper";
+import { generateContentBlocks, faqsData } from "../data/blogExpandedData";
+import { PullQuote, CalloutBox, FAQSection } from "../components/BlogDeepDive";
 import { Link } from "react-router-dom";
 
 const conversionKillers = [
@@ -63,7 +65,7 @@ export default function ConversionKillers() {
       canonical="/shopify-not-converting"
     >
       {/* Hero Section */}
-      <section className="pt-32 pb-20 bg-white border-b border-navy/5">
+      <section className="pt-32 pb-20 bg-white dark:bg-navy border-b border-navy/5 dark:border-white/5">
         <div className="container mx-auto px-6 max-w-4xl">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -78,21 +80,33 @@ export default function ConversionKillers() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1 }}
-            className="text-4xl md:text-6xl font-bold text-navy mb-8 leading-tight tracking-tight"
+            className="text-4xl md:text-6xl font-bold text-navy dark:text-white mb-8 leading-tight tracking-tight"
           >
             Why Your Shopify Store Isn't Selling (And How to Fix It).
           </motion.h1>
 
-          <div className="prose prose-lg max-w-none text-navy/70 leading-relaxed font-serif italic mb-12">
+          <div className="prose prose-lg max-w-none text-navy/70 dark:text-white/70 leading-relaxed font-serif italic mb-12">
             <p className="text-xl">
               You're running ads. You're posting on socials. You see the 'Live View' in Shopify showing 20, 50, or 100 people on your site right now.
             </p>
+
+              <div className="bg-light dark:bg-white/5 p-8 rounded-2xl border border-navy/5 dark:border-white/5 my-12 hidden md:block">
+                <h4 className="text-xs font-bold text-navy dark:text-white uppercase tracking-[0.2em] mb-6">Table of Contents</h4>
+                <ul className="space-y-4 m-0 p-0 list-none text-sm text-navy/70 dark:text-white/70">
+                  <li className="hover:text-green cursor-pointer transition-colors flex items-center gap-3"><div className="w-1.5 h-1.5 rounded-full bg-green" /> Executive Summary</li>
+                  <li className="hover:text-green cursor-pointer transition-colors flex items-center gap-3"><div className="w-1.5 h-1.5 rounded-full bg-navy/20" /> Strategic Foundation</li>
+                  <li className="hover:text-green cursor-pointer transition-colors flex items-center gap-3"><div className="w-1.5 h-1.5 rounded-full bg-navy/20" /> Technical Implementation</li>
+                  <li className="hover:text-green cursor-pointer transition-colors flex items-center gap-3"><div className="w-1.5 h-1.5 rounded-full bg-navy/20" /> Deep Dive Analysis</li>
+                  <li className="hover:text-green cursor-pointer transition-colors flex items-center gap-3"><div className="w-1.5 h-1.5 rounded-full bg-navy/20" /> Frequently Asked Questions</li>
+                </ul>
+              </div>
+
             <p className="text-xl">
               But the 'Total Sales' remains at $0.00.
             </p>
           </div>
 
-          <p className="text-lg text-navy/60 leading-relaxed mb-12">
+          <p className="text-lg text-navy/60 dark:text-white/60 leading-relaxed mb-12">
             If your Shopify store is not converting, you don't have a traffic problem. You have a trust or friction problem. After reviewing dozens of stores, I've found that 90% of low conversion rates come down to the same five killers.
           </p>
         </div>
@@ -101,7 +115,7 @@ export default function ConversionKillers() {
       {/* The 5 Killers */}
       <section className="py-24 bg-offwhite">
         <div className="container mx-auto px-6 max-w-4xl">
-          <h2 className="text-3xl font-bold text-navy mb-16 text-center">The 5 Most Common Conversion Killers</h2>
+          <h2 className="text-3xl font-bold text-navy dark:text-white mb-16 text-center">The 5 Most Common Conversion Killers</h2>
           
           <div className="space-y-12">
             {conversionKillers.map((item, i) => (
@@ -110,29 +124,29 @@ export default function ConversionKillers() {
                 initial={{ opacity: 0, x: -20 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
-                className="bg-white p-8 md:p-12 rounded-[3rem] border border-navy/5 shadow-sm relative overflow-hidden"
+                className="bg-white dark:bg-navy p-8 md:p-12 rounded-[3rem] border border-navy/5 dark:border-white/5 shadow-sm relative overflow-hidden"
               >
                 <div className="flex flex-col md:flex-row gap-8 items-start">
                   <div className="w-14 h-14 rounded-2xl bg-navy text-white flex items-center justify-center shrink-0">
                     <item.icon size={28} />
                   </div>
                   <div>
-                    <h3 className="text-2xl font-bold text-navy mb-4">{item.title}</h3>
+                    <h3 className="text-2xl font-bold text-navy dark:text-white mb-4">{item.title}</h3>
                     
                     <div className="space-y-6">
                       <div>
                         <span className="text-xs font-bold uppercase tracking-widest text-red-500 block mb-2">The Killer:</span>
-                        <p className="text-navy/60">{item.killer}</p>
+                        <p className="text-navy/60 dark:text-white/60">{item.killer}</p>
                       </div>
                       
                       <div className="p-6 rounded-2xl bg-green/5 border border-green/10">
                         <span className="text-xs font-bold uppercase tracking-widest text-green block mb-2">The Fix:</span>
-                        <p className="text-navy/80 font-medium">{item.fix}</p>
+                        <p className="text-navy/80 dark:text-white/80 font-medium">{item.fix}</p>
                       </div>
 
-                      <div className="pt-4 border-t border-navy/5">
-                        <span className="text-xs font-bold uppercase tracking-widest text-navy/40 block mb-2">Real World Example:</span>
-                        <p className="text-sm text-navy/60 italic">"{item.example}"</p>
+                      <div className="pt-4 border-t border-navy/5 dark:border-white/5">
+                        <span className="text-xs font-bold uppercase tracking-widest text-navy/40 dark:text-white/40 block mb-2">Real World Example:</span>
+                        <p className="text-sm text-navy/60 dark:text-white/60 italic">"{item.example}"</p>
                       </div>
                     </div>
                   </div>
@@ -144,10 +158,10 @@ export default function ConversionKillers() {
       </section>
 
       {/* The "Stop Guessing" Section */}
-      <section className="py-24 bg-white">
+      <section className="py-24 bg-white dark:bg-navy">
         <div className="container mx-auto px-6 max-w-3xl text-center">
-          <h2 className="text-3xl md:text-5xl font-bold text-navy mb-8">Stop guessing. Start growing.</h2>
-          <p className="text-lg text-navy/60 mb-12 leading-relaxed">
+          <h2 className="text-3xl md:text-5xl font-bold text-navy dark:text-white mb-8">Stop guessing. Start growing.</h2>
+          <p className="text-lg text-navy/60 dark:text-white/60 mb-12 leading-relaxed">
             Every day your store sits with a low conversion rate is a day you are burning ad spend and leaving money on the table. You don't need a $10,000 redesign. You need a surgical list of what is broken and how to fix it.
           </p>
         </div>
@@ -160,7 +174,7 @@ export default function ConversionKillers() {
           <div className="bg-white/5 border border-white/10 p-12 md:p-20 rounded-[4rem] backdrop-blur-sm">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
               <div>
-                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-green text-navy text-xs font-bold uppercase tracking-widest mb-8">
+                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-green text-navy dark:text-white text-xs font-bold uppercase tracking-widest mb-8">
                   <Zap size={14} />
                   <span>Limited Weekly Slots</span>
                 </div>
@@ -184,9 +198,9 @@ export default function ConversionKillers() {
               </div>
 
               <div className="text-center lg:text-left">
-                <div className="bg-white p-10 md:p-12 rounded-[3rem] text-navy shadow-2xl">
+                <div className="bg-white dark:bg-navy p-10 md:p-12 rounded-[3rem] text-navy dark:text-white shadow-2xl">
                   <div className="mb-8">
-                    <span className="text-sm font-bold uppercase tracking-widest text-navy/40 block mb-2">Flat Fee Investment</span>
+                    <span className="text-sm font-bold uppercase tracking-widest text-navy/40 dark:text-white/40 block mb-2">Flat Fee Investment</span>
                     <div className="text-6xl font-bold">$197</div>
                   </div>
                   
@@ -198,7 +212,7 @@ export default function ConversionKillers() {
                     <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
                   </Link>
                   
-                  <div className="flex flex-col gap-4 text-sm font-medium text-navy/40">
+                  <div className="flex flex-col gap-4 text-sm font-medium text-navy/40 dark:text-white/40">
                     <div className="flex items-center justify-center lg:justify-start gap-2">
                       <Clock size={16} />
                       <span>48-Hour Delivery Guarantee</span>
@@ -218,8 +232,8 @@ export default function ConversionKillers() {
       {/* Footer Article Text */}
       <section className="py-24 bg-offwhite">
         <div className="container mx-auto px-6 max-w-4xl">
-          <div className="prose prose-navy max-w-none text-navy/70 leading-relaxed space-y-8">
-            <h3 className="text-2xl font-bold text-navy">Why is my Shopify store not selling?</h3>
+          <div className="prose prose-navy max-w-none text-navy/70 dark:text-white/70 leading-relaxed space-y-8">
+            <h3 className="text-2xl font-bold text-navy dark:text-white">Why is my Shopify store not selling?</h3>
             <p>
               It's a question I hear every week. You've followed the tutorials, set up the theme, and added products. But the sales aren't coming. Usually, it's not one big thing—it's a dozen small points of friction that add up to a "no" from your customer.
             </p>

@@ -32,7 +32,7 @@ const services = [
     desc: "Full dropshipping store for fashion, beauty, pets, or gadgets — supplier integration and conversion-optimized design.",
     fullDesc: "Start your dropshipping journey with a store built for salesI integrate reliable suppliers, optimize your product pages for high conversion, and set up automated fulfillment systems.",
     includes: ["Niche research", "Supplier setup", "Theme customization", "Upsell setup"],
-    price: "From $700",
+    price: "From $350",
     timeline: "2 Weeks",
     tag: "Growth",
     roadmap: [
@@ -50,7 +50,7 @@ const services = [
     desc: "Migrate from WooCommerce, WP, Squarespace, or Etsy to Shopify without losing data or SEO rankings.",
     fullDesc: "Move your store to Shopify without the stress. I handle the zero-data-loss transfer of products, customers, and orders, while strictly preserving your Google SEO rankings and search visibility.",
     includes: ["Product/order migration", "URL redirects", "SEO preservation", "Zero downtime"],
-    price: "From $500",
+    price: "From $250",
     timeline: "1-2 Weeks",
     tag: "Scale",
     roadmap: [
@@ -140,7 +140,7 @@ const services = [
     desc: "A deep, data-driven analysis of your store's user behavior, providing a strategic roadmap of UI/UX improvements to increase your sales without increasing traffic.",
     fullDesc: "Increase your sales without increasing trafficI perform a deep, data-driven analysis of your store's user behavior and provide a strategic roadmap of UI/UX improvements.",
     includes: ["UX Audit", "A/B Testing", "Heatmap Analysis", "Funnel Optimization"],
-    price: "$800",
+    price: "$200",
     timeline: "3 Weeks",
     tag: "Growth",
     roadmap: [
@@ -158,7 +158,7 @@ const services = [
     desc: "Seamless integration of marketing, loyalty, and logistics apps without slowing your store.",
     fullDesc: "Installing apps is easy, but configuring them correctly without destroying your store speed is hard. I handle complex setups for Klaviyo, Recharge, Yotpo, and more.",
     includes: ["App installation", "Theme integration", "Speed testing", "Workflow setup"],
-    price: "$300",
+    price: "$150",
     timeline: "3-5 Days",
     tag: "Support",
     roadmap: [
@@ -176,7 +176,7 @@ const services = [
     desc: "Lightning-fast page loads to improve Google rankings and customer retention.",
     fullDesc: "Every second of delay costs you salesI optimize your theme code, compress assets, and prune heavy apps to get your store to a 90+ score on Core Web Vitals.",
     includes: ["Core Web Vitals", "Image optimization", "Code minification", "App audit"],
-    price: "$400",
+    price: "$200",
     timeline: "1 Week",
     tag: "Performance",
     roadmap: [
@@ -244,18 +244,18 @@ const ServiceModal = ({ service, onClose }: { service: any; onClose: () => void 
         initial={{ opacity: 0, scale: 0.9, y: 20 }}
         animate={{ opacity: 1, scale: 1, y: 0 }}
         exit={{ opacity: 0, scale: 0.9, y: 20 }}
-        className="relative w-full max-w-4xl bg-white rounded-2xl overflow-hidden shadow-2xl max-h-[90vh] overflow-y-auto"
+        className="relative w-full max-w-4xl bg-white dark:bg-navy rounded-2xl overflow-hidden shadow-2xl max-h-[90vh] overflow-y-auto"
       >
         <button
           onClick={onClose}
-          className="absolute top-6 right-6 w-12 h-12 bg-light rounded-full flex items-center justify-center text-navy hover:bg-green hover:text-navy transition-all z-10"
+          className="absolute top-6 right-6 w-12 h-12 bg-light dark:bg-white/5 rounded-full flex items-center justify-center text-navy dark:text-white hover:bg-green hover:text-navy dark:text-white transition-all z-10"
         >
           <X size={24} />
         </button>
 
         <div className="grid grid-cols-1 lg:grid-cols-12">
           <div className="lg:col-span-5 bg-navy-gradient p-8 md:p-16 text-white space-y-10 md:space-y-12">
-            <div className="w-16 h-16 md:w-20 md:h-20 bg-green rounded-3xl flex items-center justify-center text-navy shadow-2xl shrink-0">
+            <div className="w-16 h-16 md:w-20 md:h-20 bg-green rounded-3xl flex items-center justify-center text-navy dark:text-white shadow-2xl shrink-0">
               <service.icon size={32} className="md:w-[40px] md:h-[40px]" />
             </div>
             <div className="space-y-4 md:space-y-6">
@@ -284,21 +284,21 @@ const ServiceModal = ({ service, onClose }: { service: any; onClose: () => void 
             </div>
           </div>
 
-          <div className="lg:col-span-7 p-8 md:p-16 space-y-10 md:space-y-12 bg-white">
+          <div className="lg:col-span-7 p-8 md:p-16 space-y-10 md:space-y-12 bg-white dark:bg-navy">
             <div className="space-y-6 md:space-y-8">
               <div className="flex items-center gap-3 md:gap-4">
                 <ListChecks className="text-green w-6 h-6 md:w-8 md:h-8" />
-                <h3 className="text-2xl md:text-3xl font-bold text-navy tracking-tight">Service Roadmap</h3>
+                <h3 className="text-2xl md:text-3xl font-bold text-navy dark:text-white tracking-tight">Service Roadmap</h3>
               </div>
               <div className="space-y-6 md:space-y-8 relative before:absolute before:left-5 before:top-2 before:bottom-2 before:w-px before:bg-navy/5">
                 {service.roadmap.map((step: any, i: number) => (
                   <div key={i} className="relative pl-12 md:pl-16 group">
-                    <div className="absolute left-0 top-1 w-8 h-8 md:w-10 md:h-10 bg-light rounded-2xl border border-navy/5 flex items-center justify-center text-xs md:text-sm font-bold text-navy group-hover:bg-green group-hover:border-green transition-all duration-500">
+                    <div className="absolute left-0 top-1 w-8 h-8 md:w-10 md:h-10 bg-light dark:bg-white/5 rounded-2xl border border-navy/5 flex items-center justify-center text-xs md:text-sm font-bold text-navy dark:text-white group-hover:bg-green group-hover:border-green transition-all duration-500">
                       {i + 1}
                     </div>
                     <div className="space-y-1 md:space-y-2">
-                      <p className="text-lg md:text-xl font-bold text-navy">{step.title}</p>
-                      <p className="text-navy/60 text-sm md:text-base leading-relaxed">{step.desc}</p>
+                      <p className="text-lg md:text-xl font-bold text-navy dark:text-white">{step.title}</p>
+                      <p className="text-navy/60 dark:text-white/60 text-sm md:text-base leading-relaxed">{step.desc}</p>
                     </div>
                   </div>
                 ))}
@@ -311,7 +311,7 @@ const ServiceModal = ({ service, onClose }: { service: any; onClose: () => void 
                   onClose();
                   navigate("/apply#apply-form");
                 }}
-                className="w-full bg-navy text-white py-5 md:py-6 rounded-full font-bold text-lg md:text-xl hover:bg-green hover:text-navy transition-all duration-500 flex items-center justify-center gap-3 md:gap-4 shadow-2xl"
+                className="w-full bg-navy text-white py-5 md:py-6 rounded-full font-bold text-lg md:text-xl hover:bg-green hover:text-navy dark:text-white transition-all duration-500 flex items-center justify-center gap-3 md:gap-4 shadow-2xl"
               >
                 Get Started <ArrowRight size={20} className="md:w-[24px] md:h-[24px]" />
               </button>
@@ -365,7 +365,7 @@ export default function Services() {
       }}
     >
       {/* Services Hero - Premium High-Impact Grid */}
-        <section className="relative pt-32 pb-24 md:pt-40 md:pb-32 bg-[#FFFFFF] overflow-hidden border-b border-[#E2E8F0]">
+        <section className="relative pt-32 pb-24 md:pt-40 md:pb-32 bg-[#FFFFFF] overflow-hidden border-b border-[#E2E8F0] dark:border-white/10">
           {/* Subtle Background Gradients & Glows */}
           <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-[#10b981]/5 rounded-full blur-[140px] pointer-events-none -z-10 animate-pulse"></div>
           <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-[#2563EB]/5 rounded-full blur-[140px] pointer-events-none -z-10"></div>
@@ -373,12 +373,12 @@ export default function Services() {
 
           <div className="container mx-auto px-6 max-w-7xl relative z-10">
             <div className="max-w-4xl space-y-8">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#F4F4F5] border border-[#E2E8F0] text-xs font-semibold uppercase tracking-wider text-[#0F172A]">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#F4F4F5] dark:bg-white/10 border border-[#E2E8F0] dark:border-white/10 text-xs font-semibold uppercase tracking-wider text-[#0F172A] dark:text-white">
                 <span className="flex h-2 w-2 rounded-full bg-[#10b981] animate-ping"></span>
                 Growth-Driven E-Commerce Solutions
               </div>
 
-              <h1 className="text-5xl sm:text-7xl lg:text-8xl font-bold text-[#0F172A] tracking-tight leading-[1.05] font-sans">
+              <h1 className="text-5xl sm:text-7xl lg:text-8xl font-bold text-[#0F172A] dark:text-white tracking-tight leading-[1.05] font-sans">
                 Shopify <span className="text-[#10b981] underline decoration-[#10b981]/20 underline-offset-8">Services</span> & Specialized Actions.
               </h1>
 
@@ -397,20 +397,20 @@ export default function Services() {
 
       {/* Services List/Grid */}
       <ScrollReveal>
-        <section className="py-32 bg-[#F8FAFC] border-b border-[#E2E8F0]">
+        <section className="py-32 bg-[#F8FAFC] dark:bg-white/5 border-b border-[#E2E8F0] dark:border-white/10">
         <div className={`container mx-auto px-6 ${viewMode === 'list' ? 'max-w-5xl' : 'max-w-7xl'}`}>
           <div className="flex justify-end mb-12">
-            <div className="bg-white border border-[#E2E8F0] p-1.5 rounded-2xl flex items-center shadow-sm">
+            <div className="bg-white dark:bg-navy border border-[#E2E8F0] dark:border-white/10 p-1.5 rounded-2xl flex items-center shadow-sm">
               <button 
                 onClick={() => setViewMode('grid')}
-                className={`w-11 h-11 rounded-xl transition-all flex items-center justify-center ${viewMode === 'grid' ? 'bg-[#10b981] text-white shadow-sm' : 'text-[#71717a] hover:text-[#0F172A] hover:bg-gray-100'}`}
+                className={`w-11 h-11 rounded-xl transition-all flex items-center justify-center ${viewMode === 'grid' ? 'bg-[#10b981] text-white shadow-sm' : 'text-[#71717a] dark:text-white/70 hover:text-[#0F172A] dark:text-white hover:bg-gray-100'}`}
                 aria-label="Grid View"
               >
                 <Grid size={18} />
               </button>
               <button 
                 onClick={() => setViewMode('list')}
-                className={`w-11 h-11 rounded-xl transition-all flex items-center justify-center ${viewMode === 'list' ? 'bg-[#10b981] text-white shadow-sm' : 'text-[#71717a] hover:text-[#0F172A] hover:bg-gray-100'}`}
+                className={`w-11 h-11 rounded-xl transition-all flex items-center justify-center ${viewMode === 'list' ? 'bg-[#10b981] text-white shadow-sm' : 'text-[#71717a] dark:text-white/70 hover:text-[#0F172A] dark:text-white hover:bg-gray-100'}`}
                 aria-label="List View"
               >
                 <List size={18} />
@@ -430,7 +430,7 @@ export default function Services() {
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, margin: "-100px" }}
-                  className="bg-white p-6 md:p-12 lg:p-16 rounded-[32px] border border-[#E2E8F0] relative overflow-hidden group hover:border-[#10b981]/50 transition-all duration-500 shadow-sm hover:shadow-2xl"
+                  className="bg-white dark:bg-navy p-6 md:p-12 lg:p-16 rounded-[32px] border border-[#E2E8F0] dark:border-white/10 relative overflow-hidden group hover:border-[#10b981]/50 transition-all duration-500 shadow-sm hover:shadow-2xl"
                 >
                   <div className="absolute top-0 right-0 p-8 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
                     <span className="inline-flex items-center gap-1.5 text-[10px] font-bold uppercase tracking-wider text-[#16A34A] bg-[#F0FDF4] border border-[#DCFCE7] px-4 py-1.5 rounded-full">
@@ -442,12 +442,12 @@ export default function Services() {
                   <div className="flex flex-col gap-12">
                     {/* Header */}
                     <div className="flex flex-col md:flex-row items-start md:items-center gap-6">
-                      <div className="w-20 h-20 bg-[#F4F4F5] rounded-3xl border border-[#E2E8F0] flex items-center justify-center text-[#0F172A] group-hover:bg-[#10b981] group-hover:text-white transition-all duration-500 shrink-0">
+                      <div className="w-20 h-20 bg-[#F4F4F5] dark:bg-white/10 rounded-3xl border border-[#E2E8F0] dark:border-white/10 flex items-center justify-center text-[#0F172A] dark:text-white group-hover:bg-[#10b981] group-hover:text-white transition-all duration-500 shrink-0">
                         <service.icon size={36} />
                       </div>
                       <div>
-                        <h3 className="text-3xl md:text-4xl font-bold text-[#0F172A] tracking-tight mb-2">{service.title}</h3>
-                        <p className="text-[#71717a] font-serif italic text-lg md:text-xl">{data.heading || service.desc}</p>
+                        <h3 className="text-3xl md:text-4xl font-bold text-[#0F172A] dark:text-white tracking-tight mb-2">{service.title}</h3>
+                        <p className="text-[#71717a] dark:text-white/70 font-serif italic text-lg md:text-xl">{data.heading || service.desc}</p>
                       </div>
                     </div>
 
@@ -456,7 +456,7 @@ export default function Services() {
                       <div className="space-y-8">
                         {/* Problem */}
                         <div className="space-y-3">
-                          <div className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#71717a] flex items-center gap-2">
+                          <div className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#71717a] dark:text-white/70 flex items-center gap-2">
                             <span className="w-1.5 h-1.5 bg-red-400 rounded-full animate-pulse" /> The Problem
                           </div>
                           <p className="text-[#334155] leading-relaxed font-medium">
@@ -466,7 +466,7 @@ export default function Services() {
 
                         {/* Scope */}
                         <div className="space-y-3">
-                          <div className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#71717a] flex items-center gap-2">
+                          <div className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#71717a] dark:text-white/70 flex items-center gap-2">
                             <span className="w-1.5 h-1.5 bg-[#10b981] rounded-full" /> My Solution (Scope)
                           </div>
                           <p className="text-[#334155] leading-relaxed font-medium">
@@ -476,9 +476,9 @@ export default function Services() {
                       </div>
 
                       {/* Deliverables & Actions */}
-                      <div className="bg-[#F8FAFC] p-8 rounded-3xl space-y-8 border border-[#E2E8F0] h-full flex flex-col justify-between">
+                      <div className="bg-[#F8FAFC] dark:bg-white/5 p-8 rounded-3xl space-y-8 border border-[#E2E8F0] dark:border-white/10 h-full flex flex-col justify-between">
                         <div className="space-y-4">
-                          <div className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#71717a]">Key Deliverables</div>
+                          <div className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#71717a] dark:text-white/70">Key Deliverables</div>
                           <ul className="space-y-3">
                             {data.deliverables.map((item, j) => (
                               <li key={j} className="flex items-start gap-3 text-[#334155] font-semibold text-sm">
@@ -489,15 +489,15 @@ export default function Services() {
                           </ul>
                         </div>
                         
-                        <div className="pt-8 border-t border-[#E2E8F0] flex flex-col sm:flex-row items-center justify-between gap-6">
+                        <div className="pt-8 border-t border-[#E2E8F0] dark:border-white/10 flex flex-col sm:flex-row items-center justify-between gap-6">
                           <div className="text-center sm:text-left">
-                            <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#71717a] mb-1">Starting At</p>
-                            <span className="text-[#0F172A] font-bold text-2xl tracking-tighter">{service.price}</span>
+                            <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#71717a] dark:text-white/70 mb-1">Starting At</p>
+                            <span className="text-[#0F172A] dark:text-white font-bold text-2xl tracking-tighter">{service.price}</span>
                           </div>
                           <Link 
                             to={`/services/${service.id}`}
                             onClick={() => window.scrollTo(0, 0)}
-                            className="w-full sm:w-auto bg-[#0F172A] text-white px-8 py-4 rounded-2xl font-bold text-sm uppercase flex items-center justify-center gap-3 hover:bg-[#10b981] hover:text-[#0F172A] transition-all duration-300 shadow-md"
+                            className="w-full sm:w-auto bg-[#0F172A] text-white px-8 py-4 rounded-2xl font-bold text-sm uppercase flex items-center justify-center gap-3 hover:bg-[#10b981] hover:text-[#0F172A] dark:text-white transition-all duration-300 shadow-md"
                           >
                             Learn More <ArrowRight size={16} />
                           </Link>
@@ -521,7 +521,7 @@ export default function Services() {
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true, margin: "-100px" }}
-                    className="bg-white p-8 md:p-10 rounded-[32px] border border-[#E2E8F0] relative overflow-hidden group hover:border-[#10b981]/50 hover:shadow-2xl transition-all duration-500 flex flex-col h-full"
+                    className="bg-white dark:bg-navy p-8 md:p-10 rounded-[32px] border border-[#E2E8F0] dark:border-white/10 relative overflow-hidden group hover:border-[#10b981]/50 hover:shadow-2xl transition-all duration-500 flex flex-col h-full"
                   >
                     <div className="absolute top-0 right-0 p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
                       <span className="text-[10px] font-bold uppercase tracking-widest text-[#16A34A] bg-[#F0FDF4] px-4 py-1.5 rounded-full border border-[#DCFCE7]">
@@ -529,24 +529,24 @@ export default function Services() {
                       </span>
                     </div>
 
-                     <div className="w-16 h-16 bg-[#F4F4F5] rounded-2xl border border-[#E2E8F0] flex items-center justify-center text-[#0F172A] group-hover:bg-[#10b981] group-hover:text-white transition-all duration-500 mb-8 shrink-0">
+                     <div className="w-16 h-16 bg-[#F4F4F5] dark:bg-white/10 rounded-2xl border border-[#E2E8F0] dark:border-white/10 flex items-center justify-center text-[#0F172A] dark:text-white group-hover:bg-[#10b981] group-hover:text-white transition-all duration-500 mb-8 shrink-0">
                       <service.icon size={28} />
                     </div>
                     
                     <div className="space-y-4 mb-8 flex-grow">
-                      <h3 className="text-2xl font-bold text-[#0F172A] tracking-tight leading-tight">{service.title}</h3>
+                      <h3 className="text-2xl font-bold text-[#0F172A] dark:text-white tracking-tight leading-tight">{service.title}</h3>
                       <p className="text-[#475569] font-medium leading-relaxed line-clamp-3 text-sm">{service.desc}</p>
                     </div>
 
-                    <div className="pt-8 border-t border-[#E2E8F0] flex items-center justify-between mt-auto">
+                    <div className="pt-8 border-t border-[#E2E8F0] dark:border-white/10 flex items-center justify-between mt-auto">
                       <div className="space-y-1">
-                        <p className="text-[10px] uppercase tracking-widest text-[#71717a] font-bold">Starting at</p>
-                        <p className="font-bold text-[#0F172A]">{service.price}</p>
+                        <p className="text-[10px] uppercase tracking-widest text-[#71717a] dark:text-white/70 font-bold">Starting at</p>
+                        <p className="font-bold text-[#0F172A] dark:text-white">{service.price}</p>
                       </div>
                       <Link 
                         to={`/services/${service.id}`}
                         onClick={() => window.scrollTo(0, 0)}
-                        className="w-12 h-12 bg-[#F4F4F5] border border-[#E2E8F0] rounded-full flex items-center justify-center text-[#0F172A] shadow-sm group-hover:bg-[#0F172A] group-hover:text-white transition-all"
+                        className="w-12 h-12 bg-[#F4F4F5] dark:bg-white/10 border border-[#E2E8F0] dark:border-white/10 rounded-full flex items-center justify-center text-[#0F172A] dark:text-white shadow-sm group-hover:bg-[#0F172A] group-hover:text-white transition-all"
                       >
                         <ArrowRight size={18} className="group-hover:-rotate-45 transition-transform" />
                       </Link>
@@ -574,13 +574,13 @@ export default function Services() {
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
               {[
                 { name: "Basic", price: "Custom", features: ["Store Setup", "Basic Theme Custom", "Up to 10 Products", "SEO Setup", "Bug Fixing"], popular: false },
-                { name: "Standard", price: "$700", features: ["Store Setup", "Advanced Theme Custom", "Up to 30 Products", "SEO Setup", "Bug Fixing", "Dropshipping Build"], popular: true },
-                { name: "Premium", price: "$1200+", features: ["Full Custom Build", "Unlimited Products", "SEO Setup", "Bug Fixing", "Migration", "30 Days Support"], popular: false },
+                { name: "Standard", price: "$350", features: ["Store Setup", "Advanced Theme Custom", "Up to 30 Products", "SEO Setup", "Bug Fixing", "Dropshipping Build"], popular: true },
+                { name: "Premium", price: "$600+", features: ["Full Custom Build", "Unlimited Products", "SEO Setup", "Bug Fixing", "Migration", "30 Days Support"], popular: false },
               ].map((tier, i) => (
                 <div
                   key={i}
                   className={`p-8 md:p-12 rounded-[32px] border transition-all duration-500 flex flex-col justify-between ${
-                    tier.popular ? "bg-[#10b981] text-[#0F172A] border-[#10b981] scale-100 lg:scale-105 shadow-2xl relative z-10" : "bg-white/5 text-white border-white/10"
+                    tier.popular ? "bg-[#10b981] text-[#0F172A] dark:text-white border-[#10b981] scale-100 lg:scale-105 shadow-2xl relative z-10" : "bg-white/5 text-white border-white/10"
                   }`}
                 >
                   <div>
@@ -593,14 +593,14 @@ export default function Services() {
                     )}
                     
                     <div className="mb-12">
-                      <div className={`text-sm font-extrabold uppercase tracking-widest mb-2 ${tier.popular ? "text-[#0F172A]/70" : "text-white/50"}`}>{tier.name}</div>
-                      <p className={`text-6xl font-black tracking-tight leading-none ${tier.popular ? "text-[#0F172A]" : "text-[#10b981]"}`}>{tier.price}</p>
+                      <div className={`text-sm font-extrabold uppercase tracking-widest mb-2 ${tier.popular ? "text-[#0F172A] dark:text-white/70" : "text-white/50"}`}>{tier.name}</div>
+                      <p className={`text-6xl font-black tracking-tight leading-none ${tier.popular ? "text-[#0F172A] dark:text-white" : "text-[#10b981]"}`}>{tier.price}</p>
                     </div>
                     
                     <ul className="space-y-6 mb-12">
                       {tier.features.map((f, j) => (
                         <li key={j} className="flex items-center gap-4 text-sm font-bold opacity-90">
-                          <CheckCircle2 size={18} className={tier.popular ? "text-[#0F172A]" : "text-[#10b981]"} /> {f}
+                          <CheckCircle2 size={18} className={tier.popular ? "text-[#0F172A] dark:text-white" : "text-[#10b981]"} /> {f}
                         </li>
                       ))}
                     </ul>
@@ -609,7 +609,7 @@ export default function Services() {
                   <Link 
                     to="/apply#apply-form" 
                     className={`w-full py-4.5 rounded-2xl font-bold text-center transition-all duration-300 block ${
-                      tier.popular ? "bg-[#0F172A] text-white hover:bg-[#1f2937] shadow-xl" : "bg-[#10b981] text-[#0F172A] hover:bg-[#059669]"
+                      tier.popular ? "bg-[#0F172A] text-white hover:bg-[#1f2937] shadow-xl" : "bg-[#10b981] text-[#0F172A] dark:text-white hover:bg-[#059669]"
                     }`}
                   >
                     Get Started
@@ -623,15 +623,15 @@ export default function Services() {
 
       {/* Testimonials Slider */}
       <ScrollReveal>
-        <section className="py-32 bg-white relative overflow-hidden border-t border-navy/5">
+        <section className="py-32 bg-white dark:bg-navy relative overflow-hidden border-t border-navy/5">
           <div className="absolute top-0 right-0 p-8 opacity-5 pointer-events-none">
             <Quote size={100} />
           </div>
           <div className="container mx-auto px-6 relative z-10">
             <div className="text-center space-y-6 mb-16">
-              <p className="text-navy/40 text-[10px] font-bold uppercase tracking-[0.3em]">Client Success</p>
-              <h2 className="text-4xl md:text-5xl font-bold text-navy tracking-tight">
-                Service <span className="italic font-serif font-light text-navy/40">Feedback</span>.
+              <p className="text-navy/40 dark:text-white/40 text-[10px] font-bold uppercase tracking-[0.3em]">Client Success</p>
+              <h2 className="text-4xl md:text-5xl font-bold text-navy dark:text-white tracking-tight">
+                Service <span className="italic font-serif font-light text-navy/40 dark:text-white/40">Feedback</span>.
               </h2>
             </div>
 
@@ -643,7 +643,7 @@ export default function Services() {
                   animate={{ opacity: 1, x: 0 }}
                   exit={{ opacity: 0, x: -20 }}
                   transition={{ duration: 0.5 }}
-                  className="bg-light p-6 md:p-10 rounded-3xl shadow-xl border border-navy/5 flex flex-col md:flex-row items-center gap-8"
+                  className="bg-light dark:bg-white/5 p-6 md:p-10 rounded-3xl shadow-xl border border-navy/5 flex flex-col md:flex-row items-center gap-8"
                 >
                   <div className="shrink-0 relative">
                     <div className="w-12 h-12 md:w-16 md:h-16 rounded-full overflow-hidden border-2 border-white shadow-md relative z-10">
@@ -654,7 +654,7 @@ export default function Services() {
                         referrerPolicy="no-referrer"
                       />
                     </div>
-                    <div className="absolute -bottom-1 -right-1 w-6 h-6 bg-green text-navy rounded-full flex items-center justify-center shadow z-20">
+                    <div className="absolute -bottom-1 -right-1 w-6 h-6 bg-green text-navy dark:text-white rounded-full flex items-center justify-center shadow z-20">
                       <Quote size={10} />
                     </div>
                   </div>
@@ -666,7 +666,7 @@ export default function Services() {
                       ))}
                     </div>
                     <div className="flex flex-col items-center md:items-start gap-2">
-                      <p className="text-navy/70 font-serif italic text-lg md:text-xl leading-relaxed transition-all duration-300">
+                      <p className="text-navy/70 dark:text-white/70 font-serif italic text-lg md:text-xl leading-relaxed transition-all duration-300">
                         "{isTestimonialExpanded || testimonials[testimonialIndex].content.length <= 150 
                           ? testimonials[testimonialIndex].content 
                           : `${testimonials[testimonialIndex].content.slice(0, 150)}...`}"
@@ -674,15 +674,15 @@ export default function Services() {
                       {testimonials[testimonialIndex].content.length > 150 && (
                         <button 
                           onClick={() => setIsTestimonialExpanded(!isTestimonialExpanded)}
-                          className="text-navy font-bold text-sm tracking-wide hover:text-green transition-colors mt-2 underline decoration-green decoration-2 underline-offset-4"
+                          className="text-navy dark:text-white font-bold text-sm tracking-wide hover:text-green transition-colors mt-2 underline decoration-green decoration-2 underline-offset-4"
                         >
                           {isTestimonialExpanded ? 'Read Less' : 'Read More'}
                         </button>
                       )}
                     </div>
                     <div>
-                      <h3 className="text-navy font-bold text-lg">{testimonials[testimonialIndex].name}</h3>
-                      <p className="text-navy/40 text-xs uppercase tracking-widest mt-1">{testimonials[testimonialIndex].role}</p>
+                      <h3 className="text-navy dark:text-white font-bold text-lg">{testimonials[testimonialIndex].name}</h3>
+                      <p className="text-navy/40 dark:text-white/40 text-xs uppercase tracking-widest mt-1">{testimonials[testimonialIndex].role}</p>
                     </div>
                   </div>
                 </motion.div>
@@ -691,7 +691,7 @@ export default function Services() {
               <div className="flex items-center justify-center gap-6 mt-10">
                 <button 
                   onClick={prevTestimonial}
-                  className="w-14 h-14 rounded-full bg-white border border-navy/10 flex items-center justify-center text-navy hover:bg-green hover:border-green transition-all shadow-lg hover:scale-105"
+                  className="w-14 h-14 rounded-full bg-white dark:bg-navy border border-navy/10 flex items-center justify-center text-navy dark:text-white hover:bg-green hover:border-green transition-all shadow-lg hover:scale-105"
                 >
                   <ChevronLeft size={24} />
                 </button>
@@ -708,7 +708,7 @@ export default function Services() {
 
                 <button 
                   onClick={nextTestimonial}
-                  className="w-14 h-14 rounded-full bg-white border border-navy/10 flex items-center justify-center text-navy hover:bg-green hover:border-green transition-all shadow-lg hover:scale-105"
+                  className="w-14 h-14 rounded-full bg-white dark:bg-navy border border-navy/10 flex items-center justify-center text-navy dark:text-white hover:bg-green hover:border-green transition-all shadow-lg hover:scale-105"
                 >
                   <ChevronRight size={24} />
                 </button>
@@ -720,24 +720,24 @@ export default function Services() {
 
       {/* FAQ - Bento Layout */}
       <ScrollReveal>
-        <section className="py-32 bg-white">
+        <section className="py-32 bg-white dark:bg-navy">
           <div className="container mx-auto px-6">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
               <div className="lg:col-span-4 space-y-8">
                 <div className="space-y-4">
-                  <p className="text-navy/40 text-[10px] font-bold uppercase tracking-[0.3em]">Support</p>
-                  <h2 className="text-5xl font-bold text-navy tracking-tight">Common <br />Questions.</h2>
+                  <p className="text-navy/40 dark:text-white/40 text-[10px] font-bold uppercase tracking-[0.3em]">Support</p>
+                  <h2 className="text-5xl font-bold text-navy dark:text-white tracking-tight">Common <br />Questions.</h2>
                 </div>
-                <p className="text-navy/40 text-lg leading-relaxed">
+                <p className="text-navy/40 dark:text-white/40 text-lg leading-relaxed">
                   Everything you need to know about working with me on your Shopify project.
                 </p>
-                <div className="bg-light p-8 rounded-xl border border-navy/5 space-y-4">
+                <div className="bg-light dark:bg-white/5 p-8 rounded-xl border border-navy/5 space-y-4">
                   <MessageSquare className="text-green" size={32} />
-                  <h3 className="text-xl font-bold text-navy">Still have questions?</h3>
-                  <p className="text-navy/40 text-sm">I'm here to help. Let's chat about your specific needs.</p>
+                  <h3 className="text-xl font-bold text-navy dark:text-white">Still have questions?</h3>
+                  <p className="text-navy/40 dark:text-white/40 text-sm">I'm here to help. Let's chat about your specific needs.</p>
                   <button 
                     onClick={() => navigate("/apply#apply-form")} 
-                    className="inline-block text-navy font-bold text-sm border-b-2 border-green pb-1 text-left"
+                    className="inline-block text-navy dark:text-white font-bold text-sm border-b-2 border-green pb-1 text-left"
                   >
                     Get Started
                   </button>
@@ -749,10 +749,10 @@ export default function Services() {
                   <div key={i} className="border border-navy/5 rounded-xl overflow-hidden">
                     <button
                       onClick={() => setOpenFaq(openFaq === i ? null : i)}
-                      className="w-full p-8 text-left flex items-center justify-between bg-light hover:bg-light/80 transition-colors"
+                      className="w-full p-8 text-left flex items-center justify-between bg-light dark:bg-white/5 hover:bg-light dark:bg-white/5/80 transition-colors"
                     >
-                      <span className="font-bold text-navy text-lg">{faq.q}</span>
-                      <div className={`w-8 h-8 rounded-full bg-white flex items-center justify-center transition-transform ${openFaq === i ? "rotate-180 bg-green text-navy" : "text-navy/20"}`}>
+                      <span className="font-bold text-navy dark:text-white text-lg">{faq.q}</span>
+                      <div className={`w-8 h-8 rounded-full bg-white dark:bg-navy flex items-center justify-center transition-transform ${openFaq === i ? "rotate-180 bg-green text-navy dark:text-white" : "text-navy/20 dark:text-white/20"}`}>
                         <ChevronDown size={20} />
                       </div>
                     </button>
@@ -764,7 +764,7 @@ export default function Services() {
                           exit={{ height: 0 }}
                           className="overflow-hidden"
                         >
-                          <div className="p-8 text-navy/60 text-lg leading-relaxed border-t border-navy/5 bg-white">
+                          <div className="p-8 text-navy/60 dark:text-white/60 text-lg leading-relaxed border-t border-navy/5 bg-white dark:bg-navy">
                             {faq.a}
                           </div>
                         </motion.div>
@@ -780,7 +780,7 @@ export default function Services() {
 
       {/* Main Consultation CTA */}
       <ScrollReveal>
-        <section className="py-32 bg-light">
+        <section className="py-32 bg-light dark:bg-white/5">
           <div className="container mx-auto px-6">
             <div className="bg-navy rounded-[60px] p-12 md:p-24 relative overflow-hidden">
               <div className="absolute inset-0 opacity-20">
@@ -811,7 +811,7 @@ export default function Services() {
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                       <Link 
                         to="/apply#apply-form" 
-                        className="bg-green text-navy px-8 py-5 rounded-full font-bold text-lg hover:scale-105 transition-all duration-300 shadow-xl shadow-green/20 text-center flex items-center justify-center gap-2"
+                        className="bg-green text-navy dark:text-white px-8 py-5 rounded-full font-bold text-lg hover:scale-105 transition-all duration-300 shadow-xl shadow-green/20 text-center flex items-center justify-center gap-2"
                       >
                         Book Call <ArrowRight size={20} />
                       </Link>
@@ -849,9 +849,9 @@ export default function Services() {
 
       {/* Comprehensive Shopify Services SEO Context */}
       <ScrollReveal>
-        <section className="py-24 bg-white border-t border-navy/5">
+        <section className="py-24 bg-white dark:bg-navy border-t border-navy/5">
           <div className="container mx-auto px-6">
-            <div className="max-w-4xl mx-auto prose prose-lg prose-headings:text-navy prose-a:text-green text-navy/70 leading-relaxed">
+            <div className="max-w-4xl mx-auto prose prose-lg prose-headings:text-navy dark:text-white prose-a:text-green text-navy/70 dark:text-white/70 leading-relaxed">
               <h2 className="text-3xl md:text-4xl font-bold font-sans not-italic mb-6 tracking-tight">Expert Custom Shopify Development Services</h2>
               <p className="mb-6 font-serif italic text-xl">
                 In today's competitive digital landscape, a generic store won't cut it. Whether you are an ambitious e-commerce owner looking to scale globally or a local retailer ready to take your physical storefront online, a fast, conversion-optimized Shopify site is paramount. As a dedicated Shopify developer and e-commerce growth expert, we deliver end-to-end custom development tailored to high-growth brands in fashion, beauty, gadgets, and pet supply niches.
@@ -895,7 +895,7 @@ export default function Services() {
               <div className="flex flex-col sm:flex-row items-center justify-center gap-12">
                 <button 
                   onClick={() => navigate("/apply#apply-form")} 
-                  className="w-full sm:w-auto bg-green text-navy px-16 py-8 rounded-full font-bold text-2xl hover:scale-105 transition-all duration-500 green-glow"
+                  className="w-full sm:w-auto bg-green text-navy dark:text-white px-16 py-8 rounded-full font-bold text-2xl hover:scale-105 transition-all duration-500 green-glow"
                 >
                   Get Started
                 </button>
@@ -906,10 +906,10 @@ export default function Services() {
               </div>
 
               <div className="pt-12 flex items-center justify-center gap-4">
-                <a href="https://www.linkedin.com/in/sheun-hub-26b876321" target="_blank" rel="noopener noreferrer" className="p-4 bg-white/10 hover:bg-green hover:text-navy text-white rounded-full transition-all border border-white/10 flex items-center justify-center shrink-0 overflow-hidden">
+                <a href="https://www.linkedin.com/in/sheun-hub-26b876321" target="_blank" rel="noopener noreferrer" className="p-4 bg-white/10 hover:bg-green hover:text-navy dark:text-white text-white rounded-full transition-all border border-white/10 flex items-center justify-center shrink-0 overflow-hidden">
                   <img src="https://images.rawpixel.com/image_png_social_square/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvdjk4Mi1kMS0xMC5wbmc.png" alt="LinkedIn" className="w-6 h-6 object-contain" />
                 </a>
-                <a href="mailto:sheunhost@gmail.com" className="p-4 bg-white/10 hover:bg-green hover:text-navy text-white rounded-full transition-all border border-white/10 flex items-center justify-center shrink-0">
+                <a href="mailto:sheunhost@gmail.com" className="p-4 bg-white/10 hover:bg-green hover:text-navy dark:text-white text-white rounded-full transition-all border border-white/10 flex items-center justify-center shrink-0">
                   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
                 </a>
               </div>

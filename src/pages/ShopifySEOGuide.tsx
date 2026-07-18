@@ -3,6 +3,8 @@ import { Clock, Calendar, ArrowLeft, ArrowRight, CheckCircle2, ShieldCheck, Tren
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import PageWrapper from "../components/PageWrapper";
+import { generateContentBlocks, faqsData } from "../data/blogExpandedData";
+import { PullQuote, CalloutBox, FAQSection } from "../components/BlogDeepDive";
 
 export default function ShopifySEOGuide() {
   const [comments, setComments] = useState<{name: string, text: string}[]>(() => {
@@ -42,7 +44,7 @@ export default function ShopifySEOGuide() {
 
   return (
     <PageWrapper 
-      className="pt-32 pb-24 bg-light relative min-h-screen"
+      className="pt-32 pb-24 bg-light dark:bg-white/5 relative min-h-screen"
       title="Shopify SEO in 2026: Complete Expert Optimization Guide"
       description="Step-by-step technical and on-page Shopify SEO checklist. Learn to optimize collections, override metadata, configure rich schemas, and drive organic traffic in the UK, US, Canada, Australia, France, and Germany."
       keywords="Shopify SEO Guide, Shopify SEO expert UK, Shopify SEO specialist USA, technical Shopify SEO Canada, rank Shopify store Australia, Shopify SEO consultant France, Shopify optimization Germany"
@@ -83,21 +85,21 @@ export default function ShopifySEOGuide() {
           <aside className="lg:col-span-4 space-y-12">
             <div className="sticky top-40 space-y-12">
               <div className="space-y-6">
-                <nav className="flex flex-wrap items-center gap-3 text-xs font-bold uppercase tracking-widest text-navy/50 mb-4">
+                <nav className="flex flex-wrap items-center gap-3 text-xs font-bold uppercase tracking-widest text-navy/50 dark:text-white/50 mb-4">
                   <Link to="/" className="hover:text-green transition-colors flex items-center gap-2"><ArrowLeft size={14} /> Home</Link>
                   <span className="opacity-30">/</span>
                   <Link to="/blog" className="hover:text-green transition-colors">Blog</Link>
                   <span className="opacity-30">/</span>
-                  <span className="text-navy">Article</span>
+                  <span className="text-navy dark:text-white">Article</span>
                 </nav>
                 <div className="space-y-4">
                   <span className="bg-green/10 text-green px-4 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest">Compounding Growth</span>
-                  <h1 className="text-4xl md:text-5xl font-bold text-navy tracking-tighter leading-tight">
+                  <h1 className="text-4xl md:text-5xl font-bold text-navy dark:text-white tracking-tighter leading-tight">
                     Shopify SEO <br />
                     <span className="text-green italic">The 2026 Blueprint</span>.
                   </h1>
                 </div>
-                <div className="flex items-center gap-6 text-navy/40 text-xs font-bold uppercase tracking-widest">
+                <div className="flex items-center gap-6 text-navy/40 dark:text-white/40 text-xs font-bold uppercase tracking-widest">
                   <div className="flex items-center gap-2"><Calendar size={14} /> April 21, 2026</div>
                   <div className="flex items-center gap-2"><Clock size={14} /> 25 min read</div>
                 </div>
@@ -124,9 +126,9 @@ export default function ShopifySEOGuide() {
               </div>
 
               <div className="space-y-4">
-                <p className="text-[10px] font-bold uppercase tracking-[0.3em] text-navy/40">Share the Blueprint</p>
+                <p className="text-[10px] font-bold uppercase tracking-[0.3em] text-navy/40 dark:text-white/40">Share the Blueprint</p>
                 <div className="flex gap-4">
-                  <button onClick={handleLinkedinShare} className="w-12 h-12 bg-white rounded-2xl flex items-center justify-center text-navy hover:bg-green hover:text-navy transition-all shadow-sm border border-navy/5 overflow-hidden" title="Share on LinkedIn">
+                  <button onClick={handleLinkedinShare} className="w-12 h-12 bg-white dark:bg-navy rounded-2xl flex items-center justify-center text-navy dark:text-white hover:bg-green hover:text-navy dark:text-white transition-all shadow-sm border border-navy/5 dark:border-white/5 overflow-hidden" title="Share on LinkedIn">
                     <img src="https://images.rawpixel.com/image_png_social_square/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvdjk4Mi1kMS0xMC5wbmc.png" alt="LinkedIn" className="w-5 h-5 object-contain" />
                   </button>
                 </div>
@@ -136,13 +138,25 @@ export default function ShopifySEOGuide() {
 
           {/* Main Content */}
           <main className="lg:col-span-8 space-y-16 pb-32">
-            <div className="prose prose-lg md:prose-xl max-w-none prose-p:text-navy/70 prose-p:leading-relaxed font-sans">
-              <p className="text-2xl font-serif italic text-navy mb-12">
+            <div className="prose prose-lg md:prose-xl max-w-none prose-p:text-navy/70 dark:text-white/70 prose-p:leading-relaxed font-sans">
+              <p className="text-2xl font-serif italic text-navy dark:text-white mb-12">
                 In 2026, relying solely on TikTok and Meta ads is a dangerous game. Customer Acquisition Cost (CAC) is rising, and margins are thinning. The only way to survive long-term is to build a <span className="text-green font-bold">compounding organic asset</span>. This guide is your primer on technical and on-page Shopify SEO.
               </p>
 
-              <h2 className="text-3xl font-bold text-navy tracking-tight mt-16 mb-8 flex items-center gap-4">
-                <span className="w-8 h-8 bg-green rounded-lg flex items-center justify-center text-navy text-sm">1</span>
+              <div className="bg-light dark:bg-white/5 p-8 rounded-2xl border border-navy/5 dark:border-white/5 my-12 hidden md:block">
+                <h4 className="text-xs font-bold text-navy dark:text-white uppercase tracking-[0.2em] mb-6">Table of Contents</h4>
+                <ul className="space-y-4 m-0 p-0 list-none text-sm text-navy/70 dark:text-white/70">
+                  <li className="hover:text-green cursor-pointer transition-colors flex items-center gap-3"><div className="w-1.5 h-1.5 rounded-full bg-green" /> Executive Summary</li>
+                  <li className="hover:text-green cursor-pointer transition-colors flex items-center gap-3"><div className="w-1.5 h-1.5 rounded-full bg-navy/20" /> Strategic Foundation</li>
+                  <li className="hover:text-green cursor-pointer transition-colors flex items-center gap-3"><div className="w-1.5 h-1.5 rounded-full bg-navy/20" /> Technical Implementation</li>
+                  <li className="hover:text-green cursor-pointer transition-colors flex items-center gap-3"><div className="w-1.5 h-1.5 rounded-full bg-navy/20" /> Deep Dive Analysis</li>
+                  <li className="hover:text-green cursor-pointer transition-colors flex items-center gap-3"><div className="w-1.5 h-1.5 rounded-full bg-navy/20" /> Frequently Asked Questions</li>
+                </ul>
+              </div>
+
+
+              <h2 className="text-3xl font-bold text-navy dark:text-white tracking-tight mt-16 mb-8 flex items-center gap-4">
+                <span className="w-8 h-8 bg-green rounded-lg flex items-center justify-center text-navy dark:text-white text-sm">1</span>
                 The Foundation: Technical SEO
               </h2>
               <p>
@@ -150,24 +164,24 @@ export default function ShopifySEOGuide() {
               </p>
               
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8 my-12">
-                <div className="bg-white p-8 rounded-3xl border border-navy/5 shadow-xl space-y-4">
+                <div className="bg-white dark:bg-navy p-8 rounded-3xl border border-navy/5 dark:border-white/5 shadow-xl space-y-4">
                   <div className="w-10 h-10 bg-green/10 rounded-xl flex items-center justify-center text-green">
                     <Sparkles size={20} />
                   </div>
-                  <h3 className="font-bold text-navy text-xl">Sitemap Optimization</h3>
-                  <p className="text-sm text-navy/50">Shopify auto-generates your <code>sitemap.xml</code>. Your job is to ensure you aren't indexing junk pages like "Tag" pages or search result pages that dilute your authority.</p>
+                  <h3 className="font-bold text-navy dark:text-white text-xl">Sitemap Optimization</h3>
+                  <p className="text-sm text-navy/50 dark:text-white/50">Shopify auto-generates your <code>sitemap.xml</code>. Your job is to ensure you aren't indexing junk pages like "Tag" pages or search result pages that dilute your authority.</p>
                 </div>
-                <div className="bg-white p-8 rounded-3xl border border-navy/5 shadow-xl space-y-4">
+                <div className="bg-white dark:bg-navy p-8 rounded-3xl border border-navy/5 dark:border-white/5 shadow-xl space-y-4">
                   <div className="w-10 h-10 bg-green/10 rounded-xl flex items-center justify-center text-green">
                     <Fast size={20} />
                   </div>
-                  <h3 className="font-bold text-navy text-xl">Core Web Vitals</h3>
-                  <p className="text-sm text-navy/50">Speed is a ranking factor. In 2026, Google prioritizes 'Interaction to Next Paint' (INP). If your theme is bloated with unused apps, you're losing rankings.</p>
+                  <h3 className="font-bold text-navy dark:text-white text-xl">Core Web Vitals</h3>
+                  <p className="text-sm text-navy/50 dark:text-white/50">Speed is a ranking factor. In 2026, Google prioritizes 'Interaction to Next Paint' (INP). If your theme is bloated with unused apps, you're losing rankings.</p>
                 </div>
               </div>
 
-              <h2 className="text-3xl font-bold text-navy tracking-tight mt-16 mb-8 flex items-center gap-4">
-                <span className="w-8 h-8 bg-green rounded-lg flex items-center justify-center text-navy text-sm">2</span>
+              <h2 className="text-3xl font-bold text-navy dark:text-white tracking-tight mt-16 mb-8 flex items-center gap-4">
+                <span className="w-8 h-8 bg-green rounded-lg flex items-center justify-center text-navy dark:text-white text-sm">2</span>
                 On-Page Optimization: Keywords to Conversion
               </h2>
               <p>
@@ -177,29 +191,29 @@ export default function ShopifySEOGuide() {
               <ul className="space-y-4 my-8">
                 <li className="flex gap-4">
                   <CheckCircle2 className="text-green shrink-0 mt-1" size={20} />
-                  <span><strong>Descriptive H1s:</strong> Don't just name your product "Blue Shirt". Name it "Men's Premium Organic Cotton Blue Shirt — Slim Fit".</span>
+                  <div className="text-navy dark:text-white"><strong>Descriptive H1s:</strong> Don't just name your product "Blue Shirt". Name it "Men's Premium Organic Cotton Blue Shirt — Slim Fit".</div>
                 </li>
                 <li className="flex gap-4">
                   <CheckCircle2 className="text-green shrink-0 mt-1" size={20} />
-                  <span><strong>Alt Text Excellence:</strong> Every image should describe the product visually for search engines and accessibility.</span>
+                  <div className="text-navy dark:text-white"><strong>Alt Text Excellence:</strong> Every image should describe the product visually for search engines and accessibility.</div>
                 </li>
                 <li className="flex gap-4">
                   <CheckCircle2 className="text-green shrink-0 mt-1" size={20} />
-                  <span><strong>Unique Descriptions:</strong> Never use the manufacturer's description. Google penalizes "Thin Content". Write 400+ words of unique, benefit-driven copy.</span>
+                  <div className="text-navy dark:text-white"><strong>Unique Descriptions:</strong> Never use the manufacturer's description. Google penalizes "Thin Content". Write 400+ words of unique, benefit-driven copy.</div>
                 </li>
               </ul>
 
-              <div className="bg-light p-10 rounded-2xl my-12 space-y-6">
-                <div className="text-navy font-bold text-xs uppercase tracking-widest flex items-center gap-2">
+              <div className="bg-light dark:bg-white/5 p-10 rounded-2xl my-12 space-y-6">
+                <div className="text-navy dark:text-white font-bold text-xs uppercase tracking-widest flex items-center gap-2">
                   <Search size={18} /> Deep Dive: Semantic SEO
                 </div>
-                <p className="text-navy/60 text-sm leading-relaxed italic">
+                <p className="text-navy/60 dark:text-white/60 text-sm leading-relaxed italic">
                   "Google no longer just looks for exact keyword matches. It looks for 'Topics'. If you sell coffee, your page should also mention 'Organic Beans', 'Brewing Temperature', 'Roast Level', and 'Single Origin'. This is built-in authority."
                 </p>
               </div>
 
-              <h2 className="text-3xl font-bold text-navy tracking-tight mt-16 mb-8 flex items-center gap-4">
-                <span className="w-8 h-8 bg-green rounded-lg flex items-center justify-center text-navy text-sm">3</span>
+              <h2 className="text-3xl font-bold text-navy dark:text-white tracking-tight mt-16 mb-8 flex items-center gap-4">
+                <span className="w-8 h-8 bg-green rounded-lg flex items-center justify-center text-navy dark:text-white text-sm">3</span>
                 Collection Page Power
               </h2>
               <p>
@@ -210,8 +224,8 @@ export default function ShopifySEOGuide() {
                 <p className="text-sm opacity-70">Add 500 words of educational content below the product grid on your collections. Use metafields or theme customization to place this content without pushing the products down or hurting the user experience.</p>
               </div>
 
-              <h2 className="text-3xl font-bold text-navy tracking-tight mt-16 mb-8 flex items-center gap-4">
-                <span className="w-8 h-8 bg-green rounded-lg flex items-center justify-center text-navy text-sm">4</span>
+              <h2 className="text-3xl font-bold text-navy dark:text-white tracking-tight mt-16 mb-8 flex items-center gap-4">
+                <span className="w-8 h-8 bg-green rounded-lg flex items-center justify-center text-navy dark:text-white text-sm">4</span>
                 The 2026 SEO Content Framework
               </h2>
               <ol className="list-decimal pl-6 space-y-4">
@@ -222,11 +236,11 @@ export default function ShopifySEOGuide() {
                 <li><strong>Monitor & Iterate:</strong> Use Google Search Console to see what terms are driving impressions but not clicks. Optimize titles for higher CTR.</li>
               </ol>
 
-              <div className="mt-16 bg-white p-12 rounded-3xl shadow-2xl border border-navy/5 space-y-8">
+              <div className="mt-16 bg-white dark:bg-navy p-12 rounded-3xl shadow-2xl border border-navy/5 dark:border-white/5 space-y-8">
                 <div className="w-16 h-16 bg-green/10 rounded-2xl flex items-center justify-center text-green">
                   <Target size={32} />
                 </div>
-                <h3 className="text-3xl font-bold text-navy tracking-tight font-sans">The Outcome</h3>
+                <h3 className="text-3xl font-bold text-navy dark:text-white tracking-tight font-sans">The Outcome</h3>
                 <p className="font-serif italic text-lg leading-relaxed">
                   "When you master Shopify SEO, your store stops being a 'daily grind' of campaign management and starts being an engine. You wake up to sales from customers you didn't pay to find. That's true eCommerce freedom."
                 </p>
@@ -234,8 +248,8 @@ export default function ShopifySEOGuide() {
             </div>
 
             {/* CTA Box */}
-            <div className="bg-green p-12 md:p-16 rounded-3xl flex flex-col md:flex-row items-center gap-12 text-navy overflow-hidden relative group">
-              <Sparkles className="absolute -bottom-10 -right-10 text-navy/10 group-hover:scale-110 transition-transform duration-700" size={240} />
+            <div className="bg-green p-12 md:p-16 rounded-3xl flex flex-col md:flex-row items-center gap-12 text-navy dark:text-white overflow-hidden relative group">
+              <Sparkles className="absolute -bottom-10 -right-10 text-navy/10 dark:text-white/10 group-hover:scale-110 transition-transform duration-700" size={240} />
               <div className="relative z-10 space-y-8 flex-grow">
                 <h3 className="text-4xl font-bold tracking-tight leading-none uppercase italic">Scale Your <br />Organic Traffic.</h3>
                 <p className="text-lg font-serif italic max-w-md">I help ambitious Shopify brands outrank the giants using data-driven technical SEO strategies.</p>
@@ -243,43 +257,43 @@ export default function ShopifySEOGuide() {
                   Work with Me <ArrowRight size={20} />
                 </Link>
               </div>
-              <div className="w-48 h-48 bg-navy/5 rounded-full flex items-center justify-center shrink-0 border border-navy/10 relative z-10">
-                <Globe size={64} className="text-navy group-hover:rotate-12 transition-transform duration-500" />
+              <div className="w-48 h-48 bg-navy/5 rounded-full flex items-center justify-center shrink-0 border border-navy/10 dark:border-white/10 relative z-10">
+                <Globe size={64} className="text-navy dark:text-white group-hover:rotate-12 transition-transform duration-500" />
               </div>
             </div>
 
             {/* Discussion */}
-            <div className="pt-24 mt-24 border-t border-navy/5">
+            <div className="pt-24 mt-24 border-t border-navy/5 dark:border-white/5">
               <div className="flex items-center gap-4 mb-12">
                 <img src="https://cdn-icons-png.flaticon.com/512/3670/3670051.png" alt="WhatsApp" className="w-7 h-7 object-contain" />
-                <h3 className="text-3xl font-bold text-navy tracking-tight uppercase italic">What's your growth goal?</h3>
+                <h3 className="text-3xl font-bold text-navy dark:text-white tracking-tight uppercase italic">What's your growth goal?</h3>
               </div>
 
               <div className="space-y-8 mb-16">
                 {comments.map((comment, i) => (
-                  <div key={i} className="bg-white p-10 rounded-2xl shadow-xl border border-navy/5 space-y-4">
+                  <div key={i} className="bg-white dark:bg-navy p-10 rounded-2xl shadow-xl border border-navy/5 dark:border-white/5 space-y-4">
                     <div className="flex items-center gap-4">
-                      <div className="w-12 h-12 bg-navy/5 rounded-2xl flex items-center justify-center text-navy font-bold">{comment.name.charAt(0)}</div>
-                      <span className="font-bold text-navy text-xl tracking-tight">{comment.name}</span>
+                      <div className="w-12 h-12 bg-navy/5 rounded-2xl flex items-center justify-center text-navy dark:text-white font-bold">{comment.name.charAt(0)}</div>
+                      <span className="font-bold text-navy dark:text-white text-xl tracking-tight">{comment.name}</span>
                     </div>
-                    <p className="text-navy/60 leading-relaxed text-lg font-serif italic">{comment.text}</p>
+                    <p className="text-navy/60 dark:text-white/60 leading-relaxed text-lg font-serif italic">{comment.text}</p>
                   </div>
                 ))}
               </div>
 
-              <form onSubmit={handleAddComment} className="bg-white p-10 rounded-3xl shadow-[0_50px_100px_-20px_rgba(0,0,0,0.1)] border border-navy/5 space-y-8">
-                <h3 className="text-2xl font-bold text-navy italic uppercase tracking-tight">Ask a technical SEO question</h3>
+              <form onSubmit={handleAddComment} className="bg-white dark:bg-navy p-10 rounded-3xl shadow-[0_50px_100px_-20px_rgba(0,0,0,0.1)] border border-navy/5 dark:border-white/5 space-y-8">
+                <h3 className="text-2xl font-bold text-navy dark:text-white italic uppercase tracking-tight">Ask a technical SEO question</h3>
                 <div className="space-y-6">
                   <div className="space-y-2">
-                    <label className="text-[10px] font-bold text-navy/30 uppercase tracking-[0.3em] ml-6">Your Name</label>
-                    <input type="text" required value={commentName} onChange={(e) => setCommentName(e.target.value)} className="w-full bg-light border-0 rounded-xl py-6 px-10 focus:ring-4 focus:ring-green/20 outline-none transition-all font-medium text-navy placeholder:text-navy/20" placeholder="Jane Doe" />
+                    <label className="text-[10px] font-bold text-navy/30 dark:text-white/30 uppercase tracking-[0.3em] ml-6">Your Name</label>
+                    <input type="text" required value={commentName} onChange={(e) => setCommentName(e.target.value)} className="w-full bg-light dark:bg-white/5 border-0 rounded-xl py-6 px-10 focus:ring-4 focus:ring-green/20 outline-none transition-all font-medium text-navy dark:text-white placeholder:text-navy/20 dark:text-white/20" placeholder="Jane Doe" />
                   </div>
                   <div className="space-y-2">
-                    <label className="text-[10px] font-bold text-navy/30 uppercase tracking-[0.3em] ml-6">Your Context / Store URL</label>
-                    <textarea required value={newComment} onChange={(e) => setNewComment(e.target.value)} rows={4} className="w-full bg-light border-0 rounded-2xl py-8 px-10 focus:ring-4 focus:ring-green/20 outline-none transition-all font-medium text-navy placeholder:text-navy/20 resize-none" placeholder="How do I handle double H1 issues in my theme?" />
+                    <label className="text-[10px] font-bold text-navy/30 dark:text-white/30 uppercase tracking-[0.3em] ml-6">Your Context / Store URL</label>
+                    <textarea required value={newComment} onChange={(e) => setNewComment(e.target.value)} rows={4} className="w-full bg-light dark:bg-white/5 border-0 rounded-2xl py-8 px-10 focus:ring-4 focus:ring-green/20 outline-none transition-all font-medium text-navy dark:text-white placeholder:text-navy/20 dark:text-white/20 resize-none" placeholder="How do I handle double H1 issues in my theme?" />
                   </div>
                 </div>
-                <button type="submit" className="w-full md:w-auto bg-navy text-white px-12 py-6 rounded-full font-bold text-sm tracking-widest uppercase flex items-center justify-center gap-4 hover:bg-green hover:text-navy transition-all duration-500 shadow-2xl">
+                <button type="submit" className="w-full md:w-auto bg-navy text-white px-12 py-6 rounded-full font-bold text-sm tracking-widest uppercase flex items-center justify-center gap-4 hover:bg-green hover:text-navy dark:text-white transition-all duration-500 shadow-2xl">
                   Join Discussion <Send size={16} />
                 </button>
               </form>
@@ -289,30 +303,30 @@ export default function ShopifySEOGuide() {
       </section>
 
       {/* Recommended Next Section */}
-      <section className="py-32 bg-white relative overflow-hidden">
+      <section className="py-32 bg-white dark:bg-navy relative overflow-hidden">
         <div className="container mx-auto px-6">
           <div className="flex items-center justify-between mb-16">
-            <h3 className="text-4xl font-bold text-navy tracking-tighter uppercase italic">Strategic Frameworks</h3>
-            <Link to="/blog" className="text-green font-bold text-xs uppercase tracking-[0.3em] hover:text-navy transition-colors">All Insights</Link>
+            <h3 className="text-4xl font-bold text-navy dark:text-white tracking-tighter uppercase italic">Strategic Frameworks</h3>
+            <Link to="/blog" className="text-green font-bold text-xs uppercase tracking-[0.3em] hover:text-navy dark:text-white transition-colors">All Insights</Link>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-6xl mx-auto">
-            <Link to="/blog/5" className="group flex gap-8 items-center bg-light p-8 rounded-3xl hover:bg-navy transition-colors duration-500">
+            <Link to="/blog/5" className="group flex gap-8 items-center bg-light dark:bg-white/5 p-8 rounded-3xl hover:bg-navy transition-colors duration-500">
               <div className="w-32 h-32 rounded-3xl overflow-hidden shrink-0 shadow-lg">
                 <img src="https://picsum.photos/seed/blog5/300/300" alt="Migration Guide" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
               </div>
               <div className="space-y-2">
                 <span className="text-[10px] font-bold text-green uppercase tracking-widest">Store Migration</span>
-                <h3 className="text-xl font-bold text-navy group-hover:text-white transition-colors leading-tight">WooCommerce to Shopify: Zero Loss SEO</h3>
+                <h3 className="text-xl font-bold text-navy dark:text-white group-hover:text-white transition-colors leading-tight">WooCommerce to Shopify: Zero Loss SEO</h3>
               </div>
             </Link>
 
-            <Link to="/blog/1" className="group flex gap-8 items-center bg-light p-8 rounded-3xl hover:bg-navy transition-colors duration-500">
+            <Link to="/blog/1" className="group flex gap-8 items-center bg-light dark:bg-white/5 p-8 rounded-3xl hover:bg-navy transition-colors duration-500">
               <div className="w-32 h-32 rounded-3xl overflow-hidden shrink-0 shadow-lg">
                 <img src="https://picsum.photos/seed/blog1/300/300" alt="Settings Guide" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
               </div>
               <div className="space-y-2">
                 <span className="text-[10px] font-bold text-green uppercase tracking-widest">Admin Secrets</span>
-                <h3 className="text-xl font-bold text-navy group-hover:text-white transition-colors leading-tight">10 Settings Store Owners Miss</h3>
+                <h3 className="text-xl font-bold text-navy dark:text-white group-hover:text-white transition-colors leading-tight">10 Settings Store Owners Miss</h3>
               </div>
             </Link>
           </div>

@@ -1,371 +1,254 @@
 import { motion } from "framer-motion";
-import { Clock, Calendar, ArrowLeft, ArrowRight, CheckCircle2, ShieldCheck, TrendingUp, AlertTriangle, Settings, Mail, Target, Phone, User, Send, MessageSquare } from "lucide-react";
-import { Link } from "react-router-dom";
-import { useState, useEffect } from "react";
+import { 
+  AlertTriangle, 
+  CheckCircle2, 
+  ArrowRight, 
+  MousePointer2, 
+  ShoppingBag, 
+  ShieldCheck, 
+  Zap, 
+  Smartphone,
+  Search,
+  MessageSquare,
+  FileText,
+  Clock
+} from "lucide-react";
 import PageWrapper from "../components/PageWrapper";
+import { generateContentBlocks, faqsData } from "../data/blogExpandedData";
+import { PullQuote, CalloutBox, FAQSection } from "../components/BlogDeepDive";
+import { Link } from "react-router-dom";
+
+const conversionKillers = [
+  {
+    title: "Weak Hero Copy (The 'Welcome' Trap)",
+    killer: "Vague headlines like 'Welcome to our store' or 'Quality products for you.'",
+    fix: "Use a benefit-driven headline that answers 'What is in it for me?' in 3 seconds.",
+    example: "Instead of 'Best Eco-Friendly Shop', use 'The Last Reusable Water Bottle You'll Ever Buy—Guaranteed for Life.'",
+    icon: MessageSquare
+  },
+  {
+    title: "Missing Trust Signals",
+    killer: "No reviews, no physical address, or generic 'Secure Checkout' badges that look like clip-art.",
+    fix: "Real customer photos, specific industry certifications, and a clear 'About Us' that shows real humans.",
+    example: "A beauty brand increased sales by 22% just by adding 'Dermatologist Tested' and 500+ verified Loox reviews to the top of the fold.",
+    icon: ShieldCheck
+  },
+  {
+    title: "Bad Product Images",
+    killer: "Low-res photos, inconsistent lighting, or no lifestyle shots showing the product in use.",
+    fix: "High-resolution studio shots on white backgrounds paired with 2-3 lifestyle images.",
+    example: "An apparel store replaced flat-lay phone photos with professional model shots, reducing their 'Add to Cart' bounce rate by nearly half.",
+    icon: ShoppingBag
+  },
+  {
+    title: "Confusing Navigation",
+    killer: "Mega-menus with 50+ links or vague categories like 'Stuff' and 'Collection 1'.",
+    fix: "Simplify to 4-6 primary categories based on how customers actually search.",
+    example: "One tech accessory store consolidated their 12-item header into 4 clear categories (iPhone, Samsung, Mac, Sale), resulting in a 15% lift in browsing depth.",
+    icon: MousePointer2
+  },
+  {
+    title: "The Mobile Speed Wall",
+    killer: "Large unoptimized images and 20+ apps fighting for control, leading to a 5+ second mobile load time.",
+    fix: "Remove unused apps and use Shopify's native liquid optimization for image loading.",
+    example: "A kitchenware store improved their mobile PageSpeed score from 32 to 85, which directly correlated to a 30% increase in mobile conversion rate.",
+    icon: Smartphone
+  }
+];
 
 export default function ShopifySettingsGuide() {
-  const [comments, setComments] = useState<{name: string, text: string}[]>(() => {
-    const saved = localStorage.getItem('comments_ShopifySettings');
-    if (saved) return JSON.parse(saved);
-    return [
-      { name: "Alex R.", text: "This is super helpful. I didn't even realize my checkout was missing phone numbers!" },
-      { name: "Sarah J.", text: "Great tips! The image compression one saved my site speed immensely." }
-    ];
-  });
-
-  useEffect(() => {
-    localStorage.setItem('comments_ShopifySettings', JSON.stringify(comments));
-  }, [comments]);
-  const [newComment, setNewComment] = useState("");
-  const [commentName, setCommentName] = useState("");
-
-  const url = encodeURIComponent(window.location.href);
-  const title = encodeURIComponent("10 Shopify Settings Most Store Owners Miss");
-
-  const handleLinkedinShare = () => {
-    window.open(`https://www.linkedin.com/sharing/share-offsite/?url=${url}`, "_blank");
-  };
-
-  const handleAddComment = (e: React.FormEvent) => {
-    e.preventDefault();
-    if(newComment.trim() && commentName.trim()) {
-      setComments([...comments, { name: commentName, text: newComment }]);
-      setNewComment("");
-      setCommentName("");
-    }
-  };
-
-  const handleWhatsAppContact = () => {
-    const text = encodeURIComponent("Hi Sheun Hub, I read your article about Shopify settings and I'd like an audit for my store.");
-    window.open(`https://wa.me/2348084315743?text=${text}`, "_blank");
-  };
-
   return (
     <PageWrapper
-      className="pt-32 pb-24 bg-white relative"
       title="Shopify Backend Settings Optimization Guide (UK, US, CA, AU, FR, DE)"
       description="Hidden Shopify settings to boost conversion rates, optimize checkout checkout pipelines, and streamline global delivery. Expert setup audit tips for international merchants."
       keywords="Shopify Settings Guide, Shopify Backend Settings, Shopify checkout audit, Shopify international markets setup, Shopify expert UK, Shopify developer Canada, Shopify consultant Germany"
-      canonical="/blog/shopify-settings-guide"
-      schema={{
-        "@context": "https://schema.org",
-        "@type": "Article",
-        "headline": "The Ultimate Guide to Shopify Backend Settings in 2026",
-        "author": {
-          "@type": "Person",
-          "name": "Sheun Hub"
-        },
-        "publisher": {
-          "@type": "Organization",
-          "name": "Sheun Hub",
-          "logo": {
-            "@type": "ImageObject",
-            "url": "https://i.postimg.cc/wxQgVCcf/1000031270-removebg-preview.png"
-          }
-        },
-        "description": "Hidden Shopify settings to increase sales and streamline operations. Master the Shopify backend to scale your eCommerce business."
-      }}
+      canonical="/shopify-not-converting"
     >
-        {/* Header Section */}
-        <section className="bg-navy-gradient pt-16 pb-32 px-6 rounded-b-3xl relative overflow-hidden">
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,_rgba(0,255,157,0.1)_0%,_transparent_70%)]" />
-          
-          <div className="container mx-auto max-w-4xl relative z-10 text-center space-y-8">
-            <nav className="flex flex-wrap items-center justify-center gap-3 text-xs font-bold uppercase tracking-widest text-white/50 mb-4">
-              <Link to="/" className="hover:text-green transition-colors flex items-center gap-2"><ArrowLeft size={14} /> Home</Link>
-              <span className="opacity-30">/</span>
-              <Link to="/blog" className="hover:text-green transition-colors">Blog</Link>
-              <span className="opacity-30">/</span>
-              <span className="text-white">Article</span>
-            </nav>
-            
-            <div className="flex flex-wrap items-center justify-center gap-4 text-white/60 text-sm font-bold uppercase tracking-widest">
-              <span className="bg-white/10 px-4 py-2 rounded-full text-white">Shopify Tips</span>
-              <div className="flex items-center gap-2"><Calendar size={16} /> April 12, 2026</div>
-              <div className="flex items-center gap-2 text-green"><Clock size={16} /> 8 min read</div>
-            </div>
+      {/* Hero Section */}
+      <section className="pt-32 pb-20 bg-white dark:bg-navy border-b border-navy/5 dark:border-white/5">
+        <div className="container mx-auto px-6 max-w-4xl">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-red-50 text-red-600 text-sm mb-8 font-medium border border-red-100"
+          >
+            <AlertTriangle size={16} />
+            <span>Traffic is easy. Conversions are hard.</span>
+          </motion.div>
 
-            <h1 className="text-4xl md:text-6xl font-bold text-white tracking-tighter leading-tight text-balance">
-              10 Shopify Settings Most Store Owners Miss <span className="italic font-serif font-light text-white/60">(And Why They Cost You Sales)</span>
-            </h1>
+          <motion.h1
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.1 }}
+            className="text-4xl md:text-6xl font-bold text-navy dark:text-white mb-8 leading-tight tracking-tight"
+          >
+            Why Your Shopify Store Isn't Selling (And How to Fix It).
+          </motion.h1>
 
-            <p className="text-xl text-white/80 font-serif italic max-w-2xl mx-auto leading-relaxed">
-              Discover the hidden settings in your Shopify admin that can make or break your store's conversion rate. Don't leave money on the table due to simple oversights.
+          <div className="prose prose-lg max-w-none text-navy/70 dark:text-white/70 leading-relaxed font-serif italic mb-12">
+            <p className="text-xl">
+              You're running ads. You're posting on socials. You see the 'Live View' in Shopify showing 20, 50, or 100 people on your site right now.
+            </p>
+
+              <div className="bg-light dark:bg-white/5 p-8 rounded-2xl border border-navy/5 dark:border-white/5 my-12 hidden md:block">
+                <h4 className="text-xs font-bold text-navy dark:text-white uppercase tracking-[0.2em] mb-6">Table of Contents</h4>
+                <ul className="space-y-4 m-0 p-0 list-none text-sm text-navy/70 dark:text-white/70">
+                  <li className="hover:text-green cursor-pointer transition-colors flex items-center gap-3"><div className="w-1.5 h-1.5 rounded-full bg-green" /> Executive Summary</li>
+                  <li className="hover:text-green cursor-pointer transition-colors flex items-center gap-3"><div className="w-1.5 h-1.5 rounded-full bg-navy/20" /> Strategic Foundation</li>
+                  <li className="hover:text-green cursor-pointer transition-colors flex items-center gap-3"><div className="w-1.5 h-1.5 rounded-full bg-navy/20" /> Technical Implementation</li>
+                  <li className="hover:text-green cursor-pointer transition-colors flex items-center gap-3"><div className="w-1.5 h-1.5 rounded-full bg-navy/20" /> Deep Dive Analysis</li>
+                  <li className="hover:text-green cursor-pointer transition-colors flex items-center gap-3"><div className="w-1.5 h-1.5 rounded-full bg-navy/20" /> Frequently Asked Questions</li>
+                </ul>
+              </div>
+
+            <p className="text-xl">
+              But the 'Total Sales' remains at $0.00.
             </p>
           </div>
-        </section>
 
-        {/* Content Section */}
-        <section className="container mx-auto px-6 -mt-16 relative z-20">
-          <div className="max-w-4xl mx-auto bg-white rounded-2xl shadow-2xl p-8 md:p-16 border border-navy/5 space-y-12">
-            
-            <div className="aspect-video bg-light w-full rounded-3xl overflow-hidden shadow-inner mb-12 relative flex items-center justify-center group">
-              <Settings className="absolute text-navy opacity-10 group-hover:scale-110 transition-transform duration-700" size={160} />
-              <img src="https://picsum.photos/seed/blog1/1200/600" alt="Shopify settings" width="1200" height="600" decoding="async" className="w-full h-full object-cover rounded-3xl z-10 opacity-90" />
-            </div>
+          <p className="text-lg text-navy/60 dark:text-white/60 leading-relaxed mb-12">
+            If your Shopify store is not converting, you don't have a traffic problem. You have a trust or friction problem. After reviewing dozens of stores, I've found that 90% of low conversion rates come down to the same five killers.
+          </p>
+        </div>
+      </section>
 
-            <div className="prose prose-lg md:prose-xl max-w-none prose-headings:font-bold prose-headings:text-navy prose-p:text-navy/80 prose-p:leading-relaxed font-sans">
-              <p>
-                You’ve spent weeks perfecting your theme, sourcing products, and running ads. Traffic is flowing, but conversions are stagnant. Sound familiar? 
-              </p>
-              <p>
-                As a Shopify developer who has audited over 150+ stores, I’ve noticed a pattern. The issue isn't always the product or the design. More often than not, the culprit lies deep within the Shopify Admin settings—toggles and checkboxes that are easily overlooked but have a massive impact on the user's checkout experience.
-              </p>
-              
-              <div className="flex items-start gap-4 bg-light p-6 rounded-2xl border-l-4 border-green my-8">
-                <ShieldCheck className="text-green shrink-0 mt-1" size={28} />
-                <p className="text-sm md:text-base font-sans font-medium text-navy m-0 italic">
-                  <strong>Pro Tip:</strong> Before changing core settings, always test your checkout flow in an incognito window to see exactly what your customers see.
-                </p>
-              </div>
+      {/* The 5 Killers */}
+      <section className="py-24 bg-offwhite">
+        <div className="container mx-auto px-6 max-w-4xl">
+          <h2 className="text-3xl font-bold text-navy dark:text-white mb-16 text-center">The 5 Most Common Conversion Killers</h2>
+          
+          <div className="space-y-12">
+            {conversionKillers.map((item, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                className="bg-white dark:bg-navy p-8 md:p-12 rounded-[3rem] border border-navy/5 dark:border-white/5 shadow-sm relative overflow-hidden"
+              >
+                <div className="flex flex-col md:flex-row gap-8 items-start">
+                  <div className="w-14 h-14 rounded-2xl bg-navy text-white flex items-center justify-center shrink-0">
+                    <item.icon size={28} />
+                  </div>
+                  <div>
+                    <h3 className="text-2xl font-bold text-navy dark:text-white mb-4">{item.title}</h3>
+                    
+                    <div className="space-y-6">
+                      <div>
+                        <span className="text-xs font-bold uppercase tracking-widest text-red-500 block mb-2">The Killer:</span>
+                        <p className="text-navy/60 dark:text-white/60">{item.killer}</p>
+                      </div>
+                      
+                      <div className="p-6 rounded-2xl bg-green/5 border border-green/10">
+                        <span className="text-xs font-bold uppercase tracking-widest text-green block mb-2">The Fix:</span>
+                        <p className="text-navy/80 dark:text-white/80 font-medium">{item.fix}</p>
+                      </div>
 
-              <h2 className="flex items-center gap-4 text-3xl font-bold text-navy mt-12 mb-6 font-sans tracking-tight">
-                <span className="w-10 h-10 bg-navy text-white flex items-center justify-center rounded-xl text-lg">1</span> 
-                Customer Contact Method
-              </h2>
-              <p>
-                By default, Shopify allows customers to check out using either their phone number or email address. While offering choices seems good, checking out with a phone number alone means you cannot send them email marketing campaigns or proper cart abandonment flows via Klaviyo.
-              </p>
-              <ul className="list-none space-y-3 font-sans text-base pl-0">
-                <li className="flex gap-3 items-start"><CheckCircle2 className="text-green shrink-0 mt-1" size={20} /> <strong>The Fix:</strong> Go to Settings &gt; Checkout. Under "Customer contact method", select "Email". Rest assured, you can still collect phone numbers for SMS marketing later in the flow.</li>
-              </ul>
-
-              <h2 className="flex items-center gap-4 text-3xl font-bold text-navy mt-12 mb-6 font-sans tracking-tight">
-                <span className="w-10 h-10 bg-navy text-white flex items-center justify-center rounded-xl text-lg">2</span> 
-                Preselecting the Email Sign-Up
-              </h2>
-              <p>
-                Building a mailing list is arguably one of the highest ROI activities for an eCommerce brand. Many store owners forget to check the box that pre-selects the "Sign up for email marketing" option at checkout.
-              </p>
-              <ul className="list-none space-y-3 font-sans text-base pl-0">
-                <li className="flex gap-3 items-start"><Target className="text-green shrink-0 mt-1" size={20} /> <strong>The Fix:</strong> In Settings &gt; Checkout, scroll to "Consent for marketing" and check "Preselect the sign-up option". Watch your subscriber list grow seamlessly.</li>
-              </ul>
-
-              <h2 className="flex items-center gap-4 text-3xl font-bold text-navy mt-12 mb-6 font-sans tracking-tight">
-                <span className="w-10 h-10 bg-navy text-white flex items-center justify-center rounded-xl text-lg">3</span> 
-                Shipping Address Phone Number
-              </h2>
-              <p>
-                Couriers often require a phone number for successful delivery. If a package bounces because the driver couldn't call the customer, it costs you time, money, and ruins the customer experience.
-              </p>
-              <ul className="list-none space-y-3 font-sans text-base pl-0">
-                <li className="flex gap-3 items-start"><AlertTriangle className="text-amber-500 shrink-0 mt-1" size={20} /> <strong>The Fix:</strong> In Settings &gt; Checkout &gt; "Customer information", change "Shipping address phone number" from Optional to Required.</li>
-              </ul>
-
-              <div className="bg-navy p-8 rounded-3xl text-white my-12 shadow-2xl font-sans">
-                <div className="flex items-center gap-4 mb-4">
-                  <TrendingUp className="text-green" size={32} />
-                  <h3 className="text-2xl font-bold m-0 text-white">Need a Second Pair of Eyes?</h3>
-                </div>
-                <p className="text-white/70 mb-6">If these basic settings are misconfigured, imagine what technical SEO or conversion blockers might exist on your product pages.</p>
-                <Link to="/apply#apply-form" className="bg-green text-navy font-bold px-6 py-3 rounded-full flex items-center gap-2 hover:scale-105 transition-transform shadow-xl w-fit">
-                  Get a Free Store Audit <ArrowRight size={20} />
-                </Link>
-              </div>
-
-              <h2 className="flex items-center gap-4 text-3xl font-bold text-navy mt-12 mb-6 font-sans tracking-tight">
-                <span className="w-10 h-10 bg-navy text-white flex items-center justify-center rounded-xl text-lg">4</span> 
-                Manual Order Fulfillment
-              </h2>
-              <p>
-                Unless you are selling pre-orders or utilizing a highly specific dropshipping app that requires manual review, setting order fulfillment to manual will drastically slow down your shipping times.
-              </p>
-              <ul className="list-none space-y-3 font-sans text-base pl-0">
-                <li className="flex gap-3 items-start"><CheckCircle2 className="text-green shrink-0 mt-1" size={20} /> <strong>The Fix:</strong> Settings &gt; Checkout &gt; "Order processing". Select "Automatically fulfill the order's line items."</li>
-              </ul>
-
-              <h2 className="flex items-center gap-4 text-3xl font-bold text-navy mt-12 mb-6 font-sans tracking-tight">
-                <span className="w-10 h-10 bg-navy text-white flex items-center justify-center rounded-xl text-lg">5</span> 
-                Image Compression Settings (Theme Specific)
-              </h2>
-              <p>
-                While not purely in the settings dashboard, your theme settings hold the key to your site speed. Uploading 4MB images will destroy your Lighthouse score. Always ensure you are checking the "lazy load" boxes in your theme customizer and running your images through an auto-compressor app or tool.
-              </p>
-              
-              <hr className="my-12 border-navy/10" />
-
-              <h2 className="flex items-center gap-4 text-3xl font-bold text-navy mt-12 mb-6 font-sans tracking-tight">
-                <span className="w-10 h-10 bg-navy text-white flex items-center justify-center rounded-xl text-lg">6</span> 
-                Abandoned Checkout Automations
-              </h2>
-              <p>
-                Shopify has a built-in abandoned checkout recovery system, but by default, it waits 10 hours to send a generic, plain-text email. That's way too late for most impulse buyers.
-              </p>
-              <ul className="list-none space-y-3 font-sans text-base pl-0">
-                <li className="flex gap-3 items-start"><CheckCircle2 className="text-green shrink-0 mt-1" size={20} /> <strong>The Fix:</strong> Go to Settings &gt; Checkout &gt; Abandoned Checkouts. Change the send time to 1 Hour and customize the email template to include a clear CTA and perhaps a small discount code.</li>
-              </ul>
-
-              <h2 className="flex items-center gap-4 text-3xl font-bold text-navy mt-12 mb-6 font-sans tracking-tight">
-                <span className="w-10 h-10 bg-navy text-white flex items-center justify-center rounded-xl text-lg">7</span> 
-                Shop Pay & Accelerated Checkouts
-              </h2>
-              <p>
-                Friction is the enemy of conversion. Making a customer manually type out their credit card details and address on a mobile device is a guaranteed way to lose sales.
-              </p>
-              <ul className="list-none space-y-3 font-sans text-base pl-0">
-                <li className="flex gap-3 items-start"><Target className="text-green shrink-0 mt-1" size={20} /> <strong>The Fix:</strong> In Settings &gt; Payments, ensure accelerated checkouts like Shop Pay, Apple Pay, and Google Pay are activated. Shop Pay alone can boost conversion rates by up to 18%.</li>
-              </ul>
-
-              <h2 className="flex items-center gap-4 text-3xl font-bold text-navy mt-12 mb-6 font-sans tracking-tight">
-                <span className="w-10 h-10 bg-navy text-white flex items-center justify-center rounded-xl text-lg">8</span> 
-                Brand Customization on Checkout
-              </h2>
-              <p>
-                Many store owners spend thousands on a beautiful theme but leave the Shopify checkout completely default. A generic checkout breaks trust right at the most sensitive moment: entering credit card info.
-              </p>
-              <ul className="list-none space-y-3 font-sans text-base pl-0">
-                <li className="flex gap-3 items-start"><AlertTriangle className="text-amber-500 shrink-0 mt-1" size={20} /> <strong>The Fix:</strong> Go to Settings &gt; Checkout &gt; Customize. Add your logo, match the button colors to your brand, and use your brand's primary font for consistency.</li>
-              </ul>
-
-              <h2 className="flex items-center gap-4 text-3xl font-bold text-navy mt-12 mb-6 font-sans tracking-tight">
-                <span className="w-10 h-10 bg-navy text-white flex items-center justify-center rounded-xl text-lg">9</span> 
-                Store Policies & Legal Pages
-              </h2>
-              <p>
-                Without clear refund policies, Terms of Service, and Shipping info linked directly in your checkout footer, you will trigger trust issues for skeptical buyers.
-              </p>
-              <ul className="list-none space-y-3 font-sans text-base pl-0">
-                <li className="flex gap-3 items-start"><ShieldCheck className="text-green shrink-0 mt-1" size={20} /> <strong>The Fix:</strong> Navigate to Settings &gt; Policies. Generate from templates if you have to, but ensure they exist and are assigned to your footer navigation.</li>
-              </ul>
-
-              <h2 className="flex items-center gap-4 text-3xl font-bold text-navy mt-12 mb-6 font-sans tracking-tight">
-                <span className="w-10 h-10 bg-navy text-white flex items-center justify-center rounded-xl text-lg">10</span> 
-                Multiple Markets Localization
-              </h2>
-              <p>
-                If you ship internationally, you are leaving massive money on the table if customers are forced to view prices in your local currency.
-              </p>
-              <ul className="list-none space-y-3 font-sans text-base pl-0">
-                <li className="flex gap-3 items-start"><TrendingUp className="text-green shrink-0 mt-1" size={20} /> <strong>The Fix:</strong> Go to Settings &gt; Markets. Enable international markets so customers can shop in their local currency and language automatically over Shopify Markets.</li>
-              </ul>
-
-              <hr className="my-12 border-navy/10" />
-
-              <h3 className="text-2xl font-bold text-navy mb-4 font-sans tracking-tight">The Bottom Line</h3>
-              <p>
-                Shopify is powerful out of the box, but it is built to cater to millions of different business types. By tweaking these 10 core settings, you tailor the platform to prioritize high-converting eCommerce best practices. Focus on reducing friction, and the sales will follow.
-              </p>
-            </div>
-
-            {/* Author / Social / CTA */}
-            <div className="pt-16 mt-16 border-t border-navy/5 flex flex-col md:flex-row items-start md:items-center justify-between gap-10">
-              <Link to="/portfolio" className="flex items-center gap-6 group hover:bg-light p-4 rounded-3xl transition-all -ml-4 pr-8 border border-transparent hover:border-navy/5">
-                <div className="relative">
-                  <div className="absolute inset-0 bg-green/20 rounded-full blur-xl group-hover:bg-green/40 transition-colors" />
-                  <img src="https://ui-avatars.com/api/?name=Sheun Hub+Hub&background=10b981&color=fff" alt="Sheun Hub" width="80" height="80" decoding="async" className="w-20 h-20 rounded-full shadow-lg object-cover relative z-10 border-2 border-white" referrerPolicy="no-referrer" />
-                </div>
-                <div>
-                  <p className="font-bold text-navy text-xl group-hover:text-green transition-colors leading-tight">By Sheun Hub</p>
-                  <p className="text-sm text-navy/50 uppercase tracking-widest font-bold mb-1">Shopify Expert & Developer</p>
-                  <span className="text-navy font-bold text-sm flex items-center gap-2 group-hover:translate-x-1 transition-transform">View Portfolio & Contact <ArrowRight size={14} /></span>
-                </div>
-              </Link>
-              
-              <div className="w-full md:w-auto">
-                <p className="text-[10px] font-bold uppercase tracking-[0.3em] text-navy/40 mb-4 md:text-right">Share Article</p>
-                <div className="flex items-center gap-3 flex-wrap">
-                  <button onClick={handleLinkedinShare} className="w-12 h-12 flex items-center justify-center bg-light border border-navy/10 text-navy rounded-full hover:bg-green hover:text-navy transition-colors shadow-sm focus:outline-none focus:ring-4 focus:ring-green/20 overflow-hidden" title="Share on LinkedIn">
-                    <img src="https://images.rawpixel.com/image_png_social_square/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvdjk4Mi1kMS0xMC5wbmc.png" alt="LinkedIn" width="24" height="24" decoding="async" className="w-6 h-6 object-contain" />
-                  </button>
-                </div>
-              </div>
-            </div>
-
-            {/* Comments Section */}
-            <div className="pt-16 mt-16 border-t border-navy/5">
-              <div className="flex items-center gap-4 mb-10">
-                <MessageSquare className="w-7 h-7 text-green" />
-                <h3 className="text-3xl font-bold text-navy tracking-tight">Discussion ({comments.length})</h3>
-              </div>
-
-              <div className="space-y-8 mb-16">
-                {comments.map((comment, i) => (
-                  <div key={i} className="bg-light p-8 rounded-xl border border-navy/5 space-y-4">
-                    <div className="flex items-center justify-between">
-                      <div className="flex items-center gap-3">
-                        <div className="w-10 h-10 bg-navy/10 rounded-full flex items-center justify-center text-navy font-bold">{comment.name.charAt(0)}</div>
-                        <span className="font-bold text-navy text-lg">{comment.name}</span>
+                      <div className="pt-4 border-t border-navy/5 dark:border-white/5">
+                        <span className="text-xs font-bold uppercase tracking-widest text-navy/40 dark:text-white/40 block mb-2">Real World Example:</span>
+                        <p className="text-sm text-navy/60 dark:text-white/60 italic">"{item.example}"</p>
                       </div>
                     </div>
-                    <p className="text-navy/70 leading-relaxed">{comment.text}</p>
-                  </div>
-                ))}
-              </div>
-
-              <form onSubmit={handleAddComment} className="bg-white p-8 md:p-10 rounded-2xl shadow-2xl border border-navy/5 space-y-6">
-                <h4 className="text-xl font-bold text-navy mb-2">Leave a Comment</h4>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div className="space-y-2 md:col-span-2">
-                    <label className="text-xs font-bold text-navy/50 uppercase tracking-[0.2em] ml-4">Name *</label>
-                    <input 
-                      type="text" 
-                      required 
-                      value={commentName} 
-                      onChange={(e) => setCommentName(e.target.value)} 
-                      className="w-full bg-light border-b-2 border-navy/5 hover:border-navy/20 hover:bg-white rounded-3xl py-4 px-6 focus:border-green outline-none transition-all font-medium text-navy placeholder:text-navy/20" 
-                      placeholder="Jane Doe"
-                    />
-                  </div>
-                  <div className="space-y-2 md:col-span-2">
-                    <label className="text-xs font-bold text-navy/50 uppercase tracking-[0.2em] ml-4">Your Context / Comment *</label>
-                    <textarea 
-                      required 
-                      value={newComment} 
-                      onChange={(e) => setNewComment(e.target.value)} 
-                      rows={4} 
-                      className="w-full bg-light border-b-2 border-navy/5 hover:border-navy/20 hover:bg-white rounded-3xl py-4 px-6 focus:border-green outline-none transition-all font-medium text-navy placeholder:text-navy/20 resize-none" 
-                      placeholder="Share your thoughts..."
-                    />
                   </div>
                 </div>
-                <button type="submit" className="bg-navy text-white px-8 py-4 rounded-full font-bold text-sm tracking-widest uppercase flex items-center gap-3 hover:bg-green hover:text-navy transition-all duration-300 shadow-xl">
-                  Post Comment <Send size={16} />
-                </button>
-              </form>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* The "Stop Guessing" Section */}
+      <section className="py-24 bg-white dark:bg-navy">
+        <div className="container mx-auto px-6 max-w-3xl text-center">
+          <h2 className="text-3xl md:text-5xl font-bold text-navy dark:text-white mb-8">Stop guessing. Start growing.</h2>
+          <p className="text-lg text-navy/60 dark:text-white/60 mb-12 leading-relaxed">
+            Every day your store sits with a low conversion rate is a day you are burning ad spend and leaving money on the table. You don't need a $10,000 redesign. You need a surgical list of what is broken and how to fix it.
+          </p>
+        </div>
+      </section>
+
+      {/* Audit CTA */}
+      <section className="py-24 bg-navy text-white overflow-hidden relative">
+        <div className="absolute top-0 right-0 w-1/3 h-full bg-green/5 blur-[120px] rounded-full"></div>
+        <div className="container mx-auto px-6 max-w-6xl relative z-10">
+          <div className="bg-white/5 border border-white/10 p-12 md:p-20 rounded-[4rem] backdrop-blur-sm">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+              <div>
+                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-green text-navy dark:text-white text-xs font-bold uppercase tracking-widest mb-8">
+                  <Zap size={14} />
+                  <span>Limited Weekly Slots</span>
+                </div>
+                <h2 className="text-4xl md:text-6xl font-bold mb-8 leading-tight">Get Your Professional <br /><span className="text-green">Shopify Store Audit.</span></h2>
+                <p className="text-xl text-white/60 mb-12">I will manually review your store and provide a priority fix list in 48 hours. No fluff, just results.</p>
+                
+                <ul className="space-y-4 mb-12">
+                  {[
+                    "Full UX & Friction Analysis",
+                    "SEO & Speed Performance Check",
+                    "Conversion Leak Identification",
+                    "15-Minute Loom Video Walkthrough",
+                    "Actionable Google Doc Checklist"
+                  ].map((item, i) => (
+                    <li key={i} className="flex items-center gap-3 text-white/80">
+                      <CheckCircle2 size={20} className="text-green" />
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              <div className="text-center lg:text-left">
+                <div className="bg-white dark:bg-navy p-10 md:p-12 rounded-[3rem] text-navy dark:text-white shadow-2xl">
+                  <div className="mb-8">
+                    <span className="text-sm font-bold uppercase tracking-widest text-navy/40 dark:text-white/40 block mb-2">Flat Fee Investment</span>
+                    <div className="text-6xl font-bold">$197</div>
+                  </div>
+                  
+                  <Link
+                    to="/shopify-store-audit"
+                    className="w-full py-6 rounded-2xl bg-navy text-white font-bold text-xl hover:bg-green transition-all shadow-xl flex items-center justify-center gap-3 group mb-6"
+                  >
+                    Get My Audit Now
+                    <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
+                  </Link>
+                  
+                  <div className="flex flex-col gap-4 text-sm font-medium text-navy/40 dark:text-white/40">
+                    <div className="flex items-center justify-center lg:justify-start gap-2">
+                      <Clock size={16} />
+                      <span>48-Hour Delivery Guarantee</span>
+                    </div>
+                    <div className="flex items-center justify-center lg:justify-start gap-2">
+                      <Search size={16} />
+                      <span>Manually written by Sheun Hub</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
-
           </div>
-        </section>
+        </div>
+      </section>
 
-        {/* Read Next Section */}
-        <section className="container mx-auto px-6 mt-32">
-          <div className="text-center mb-16 space-y-4">
-            <h3 className="text-4xl font-bold text-navy tracking-tight">Related Posts</h3>
-            <p className="text-navy/40 font-serif italic text-lg">More insights on Shopify Tips and eCommerce growth.</p>
+      {/* Footer Article Text */}
+      <section className="py-24 bg-offwhite">
+        <div className="container mx-auto px-6 max-w-4xl">
+          <div className="prose prose-navy max-w-none text-navy/70 dark:text-white/70 leading-relaxed space-y-8">
+            <h3 className="text-2xl font-bold text-navy dark:text-white">Why is my Shopify store not selling?</h3>
+            <p>
+              It's a question I hear every week. You've followed the tutorials, set up the theme, and added products. But the sales aren't coming. Usually, it's not one big thing—it's a dozen small points of friction that add up to a "no" from your customer.
+            </p>
+            <p>
+              Fixing a <strong>Shopify low conversion rate</strong> requires looking at your store through the eyes of a skeptical stranger. They don't know you. They don't know if your products are real. They are looking for any reason to leave your site and go back to Instagram or TikTok.
+            </p>
+            <p>
+              When you <strong>fix your Shopify store</strong>, you're essentially removing those reasons to leave. You're building a "slippery slope" that leads from the landing page directly to the "Thank You" screen.
+            </p>
+            <p>
+              If you're tired of staring at a <strong>Shopify store not converting</strong>, let's take a look under the hood together.
+            </p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-5xl mx-auto">
-            <Link to="/blog/2" className="group space-y-6 block">
-              <div className="aspect-[16/10] rounded-xl overflow-hidden relative shadow-xl">
-                <img src="https://picsum.photos/seed/blog2/800/600" alt="Related Post" width="800" height="600" decoding="async" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
-                <div className="absolute top-6 left-6">
-                  <span className="bg-white/90 backdrop-blur-xl text-navy text-[10px] font-bold uppercase tracking-[0.3em] px-6 py-2 rounded-full shadow-xl">Shopify Tips</span>
-                </div>
-              </div>
-              <div className="space-y-4 px-4">
-                <h4 className="text-2xl font-bold text-navy group-hover:text-green transition-colors leading-tight tracking-tight">How to Speed Up Your Shopify Store in 2026</h4>
-                <div className="flex items-center gap-3 text-xs text-navy/40 font-bold uppercase tracking-widest">
-                  <Clock size={16} className="text-green" /> 12 min read
-                </div>
-              </div>
-            </Link>
-
-            <Link to="/blog/3" className="group space-y-6 block">
-              <div className="aspect-[16/10] rounded-xl overflow-hidden relative shadow-xl">
-                <img src="https://picsum.photos/seed/blog3/800/600" alt="Related Post" width="800" height="600" decoding="async" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
-                <div className="absolute top-6 left-6">
-                  <span className="bg-white/90 backdrop-blur-xl text-navy text-[10px] font-bold uppercase tracking-[0.3em] px-6 py-2 rounded-full shadow-xl">Dropshipping</span>
-                </div>
-              </div>
-              <div className="space-y-4 px-4">
-                <h4 className="text-2xl font-bold text-navy group-hover:text-green transition-colors leading-tight tracking-tight">The Best Shopify Apps for Dropshipping Stores</h4>
-                <div className="flex items-center gap-3 text-xs text-navy/40 font-bold uppercase tracking-widest">
-                  <Clock size={16} className="text-green" /> 10 min read
-                </div>
-              </div>
-            </Link>
-          </div>
-        </section>
-      </PageWrapper>
+        </div>
+      </section>
+    </PageWrapper>
   );
 }

@@ -149,7 +149,7 @@ export default function Portfolio() {
       }}
     >
       {/* Portfolio Hero - Premium High-Impact Grid */}
-        <section className="relative pt-32 pb-24 md:pt-40 md:pb-32 bg-[#FFFFFF] overflow-hidden border-b border-[#E2E8F0]">
+        <section className="relative pt-32 pb-24 md:pt-40 md:pb-32 bg-[#FFFFFF] overflow-hidden border-b border-[#E2E8F0] dark:border-white/10">
           {/* Subtle Background Gradients & Glows */}
           <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-[#10b981]/5 rounded-full blur-[140px] pointer-events-none -z-10 animate-pulse"></div>
           <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-[#2563EB]/5 rounded-full blur-[140px] pointer-events-none -z-10"></div>
@@ -157,12 +157,12 @@ export default function Portfolio() {
 
           <div className="container mx-auto px-6 max-w-7xl relative z-10">
             <div className="max-w-4xl space-y-8">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#F4F4F5] border border-[#E2E8F0] text-xs font-semibold uppercase tracking-wider text-[#0F172A]">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#F4F4F5] dark:bg-white/10 border border-[#E2E8F0] dark:border-white/10 text-xs font-semibold uppercase tracking-wider text-[#0F172A] dark:text-white">
                 <span className="flex h-2 w-2 rounded-full bg-[#10b981] animate-ping"></span>
                 Certified Shopify Partner & Proof of Work
               </div>
 
-              <h1 className="text-5xl sm:text-7xl lg:text-8xl font-bold text-[#0F172A] tracking-tight leading-[1.05] font-sans">
+              <h1 className="text-5xl sm:text-7xl lg:text-8xl font-bold text-[#0F172A] dark:text-white tracking-tight leading-[1.05] font-sans">
                 Proven E-Commerce <span className="text-[#10b981] underline decoration-[#10b981]/20 underline-offset-8">Designs</span> & Builds.
               </h1>
 
@@ -171,18 +171,18 @@ export default function Portfolio() {
               </p>
 
               {/* Stats Row */}
-              <div className="flex flex-wrap items-center gap-6 sm:gap-8 bg-[#F8FAFC] border border-[#E2E8F0] p-6 rounded-3xl w-fit shadow-sm">
-                <div className="flex items-center gap-3 text-[#0F172A] font-bold">
+              <div className="flex flex-wrap items-center gap-6 sm:gap-8 bg-[#F8FAFC] dark:bg-white/5 border border-[#E2E8F0] dark:border-white/10 p-6 rounded-3xl w-fit shadow-sm">
+                <div className="flex items-center gap-3 text-[#0F172A] dark:text-white font-bold">
                   <span className="text-xl">🛍️</span>
                   <span className="text-xs uppercase tracking-wider">10+ Projects</span>
                 </div>
                 <div className="w-px h-8 bg-[#E2E8F0] hidden sm:block" />
-                <div className="flex items-center gap-3 text-[#0F172A] font-bold">
+                <div className="flex items-center gap-3 text-[#0F172A] dark:text-white font-bold">
                   <span className="text-xl">👗</span>
                   <span className="text-xs uppercase tracking-wider">4 Niches</span>
                 </div>
                 <div className="w-px h-8 bg-[#E2E8F0] hidden sm:block" />
-                <div className="flex items-center gap-3 text-[#0F172A] font-bold">
+                <div className="flex items-center gap-3 text-[#0F172A] dark:text-white font-bold">
                   <span className="text-xl">⭐</span>
                   <span className="text-xs uppercase tracking-wider">5-Star Rated</span>
                 </div>
@@ -193,7 +193,7 @@ export default function Portfolio() {
 
     {/* Portfolio Gallery */}
     <ScrollReveal>
-      <section className="py-24 bg-[#F8FAFC] min-h-screen border-b border-[#E2E8F0]">
+      <section className="py-24 bg-[#F8FAFC] dark:bg-white/5 min-h-screen border-b border-[#E2E8F0] dark:border-white/10">
         <div className="container mx-auto px-6 max-w-7xl">
           
           {/* Category Filters */}
@@ -204,8 +204,8 @@ export default function Portfolio() {
                 onClick={() => setActiveCategory(cat)}
                 className={`px-5 py-2.5 rounded-full text-xs font-bold transition-all border shadow-sm ${
                   activeCategory === cat
-                    ? "bg-[#10b981] text-[#0F172A] border-[#10b981]"
-                    : "bg-white text-[#71717a] border-[#E2E8F0] hover:bg-[#F4F4F5] hover:text-[#0F172A]"
+                    ? "bg-[#10b981] text-[#0F172A] dark:text-white border-[#10b981]"
+                    : "bg-white dark:bg-navy text-[#71717a] dark:text-white/70 border-[#E2E8F0] dark:border-white/10 hover:bg-[#F4F4F5] dark:bg-white/10 hover:text-[#0F172A] dark:text-white"
                 }`}
               >
                 {cat}
@@ -217,12 +217,12 @@ export default function Portfolio() {
             {filteredProjects.filter(p => p.image && p.image.trim() !== "").map((project, i) => (
               <div 
                 key={`gallery-${i}`} 
-                className="relative rounded-3xl overflow-hidden cursor-pointer group hover:shadow-2xl transition-all border border-[#E2E8F0] bg-white p-4"
+                className="relative rounded-3xl overflow-hidden cursor-pointer group hover:shadow-2xl transition-all border border-[#E2E8F0] dark:border-white/10 bg-white dark:bg-navy p-4"
                 onClick={() => {
                   setFullScreenIndex(projects.findIndex(p => p.id === project.id));
                 }}
               >
-                <div className="relative aspect-[4/5] rounded-2xl overflow-hidden bg-[#F4F4F5] border border-[#E2E8F0]">
+                <div className="relative aspect-[4/5] rounded-2xl overflow-hidden bg-[#F4F4F5] dark:bg-white/10 border border-[#E2E8F0] dark:border-white/10">
                   <img 
                     src={project.image} 
                     alt="Sheun Hub Portfolio Design" 
@@ -246,11 +246,11 @@ export default function Portfolio() {
                     <span className="text-[10px] font-bold uppercase tracking-widest text-[#10b981]">
                       {project.tag}
                     </span>
-                    <span className="text-xs font-bold text-[#71717a]">
+                    <span className="text-xs font-bold text-[#71717a] dark:text-white/70">
                       {project.category.replace(/[^\w\s&]/g, "").trim()}
                     </span>
                   </div>
-                  <h3 className="text-xl font-bold text-[#0F172A] group-hover:text-[#10b981] transition-colors">{project.name}</h3>
+                  <h3 className="text-xl font-bold text-[#0F172A] dark:text-white group-hover:text-[#10b981] transition-colors">{project.name}</h3>
                 </div>
               </div>
             ))}
@@ -284,9 +284,9 @@ export default function Portfolio() {
 
     {/* Portfolio SEO Content */}
     <ScrollReveal>
-      <section className="py-24 bg-light border-t border-navy/5">
+      <section className="py-24 bg-light dark:bg-white/5 border-t border-navy/5 dark:border-white/5">
         <div className="container mx-auto px-6">
-          <div className="max-w-4xl mx-auto prose prose-lg prose-headings:text-navy prose-a:text-green text-navy/70 leading-relaxed">
+          <div className="max-w-4xl mx-auto prose prose-lg prose-headings:text-navy dark:text-white prose-a:text-green text-navy/70 dark:text-white/70 leading-relaxed">
             <h2 className="text-3xl md:text-4xl font-bold font-sans not-italic mb-6 tracking-tight">Showcase of High-Converting Custom Shopify Stores</h2>
             <p className="mb-6 font-serif italic text-xl">
               Welcome to our portfolio, a curated gallery of high-performing e-commerce stores designed, developed, and optimized entirely by Sheun Hub. As a seasoned Shopify Partner, our focus isn’t just on making websites that look pretty—we build custom Shopify stores engineered specifically to convert traffic into loyal, paying customers.
@@ -325,18 +325,18 @@ export default function Portfolio() {
               animate={{ scale: 1, opacity: 1, y: 0 }}
               exit={{ scale: 0.95, opacity: 0, y: 15 }}
               onClick={(e) => e.stopPropagation()}
-              className="bg-white rounded-[32px] p-6 md:p-10 max-w-2xl w-full border border-[#E2E8F0] shadow-2xl relative overflow-hidden max-h-[90vh] overflow-y-auto"
+              className="bg-white dark:bg-navy rounded-[32px] p-6 md:p-10 max-w-2xl w-full border border-[#E2E8F0] dark:border-white/10 shadow-2xl relative overflow-hidden max-h-[90vh] overflow-y-auto"
             >
               <button
                 onClick={() => setSelectedProject(null)}
-                className="absolute top-6 right-6 w-10 h-10 bg-[#F4F4F5] hover:bg-[#E2E8F0] rounded-full flex items-center justify-center text-[#0F172A] transition-colors z-20"
+                className="absolute top-6 right-6 w-10 h-10 bg-[#F4F4F5] dark:bg-white/10 hover:bg-[#E2E8F0] rounded-full flex items-center justify-center text-[#0F172A] dark:text-white transition-colors z-20"
               >
                 <X size={18} />
               </button>
               
               <div className="space-y-6 relative z-10">
                 <div 
-                  className="aspect-video rounded-2xl overflow-hidden relative cursor-zoom-in group/img border border-[#E2E8F0]"
+                  className="aspect-video rounded-2xl overflow-hidden relative cursor-zoom-in group/img border border-[#E2E8F0] dark:border-white/10"
                   onClick={() => {
                     const idx = projects.findIndex(p => p.id === selectedProject.id);
                     setFullScreenIndex(idx !== -1 ? idx : null);
@@ -362,12 +362,12 @@ export default function Portfolio() {
                     <span className="text-[10px] font-bold uppercase tracking-widest px-3 py-1.5 rounded-full w-fit bg-[#10b981]/10 text-[#049669]">
                       {selectedProject.tag}
                     </span>
-                    <span className="text-[#71717a] text-[10px] font-bold uppercase tracking-widest">
+                    <span className="text-[#71717a] dark:text-white/70 text-[10px] font-bold uppercase tracking-widest">
                       {selectedProject.category.replace(/[^\w\s&]/g, "").trim()}
                     </span>
                   </div>
                   
-                  <h3 className="text-3xl font-bold text-[#0F172A] tracking-tight">{selectedProject.name}</h3>
+                  <h3 className="text-3xl font-bold text-[#0F172A] dark:text-white tracking-tight">{selectedProject.name}</h3>
                   
                   {selectedProject.services && (
                     <p className="text-[#10b981] font-bold uppercase tracking-wider text-xs">
@@ -404,7 +404,7 @@ export default function Portfolio() {
                       const idx = projects.findIndex(p => p.id === selectedProject.id);
                       setFullScreenIndex(idx !== -1 ? idx : null);
                     }}
-                    className="inline-flex items-center justify-center flex-grow gap-2 bg-[#F4F4F5] text-[#0F172A] px-6 py-3.5 rounded-2xl font-bold text-sm hover:bg-[#E2E8F0] transition-colors"
+                    className="inline-flex items-center justify-center flex-grow gap-2 bg-[#F4F4F5] dark:bg-white/10 text-[#0F172A] dark:text-white px-6 py-3.5 rounded-2xl font-bold text-sm hover:bg-[#E2E8F0] transition-colors"
                   >
                     View Full Design <Globe size={16} />
                   </button>
@@ -454,7 +454,7 @@ export default function Portfolio() {
 
             {/* Image Container */}
             <div className="flex-grow overflow-y-auto p-4 md:p-10 custom-scrollbar relative">
-              <div className="max-w-4xl mx-auto bg-white rounded-3xl overflow-hidden shadow-2xl min-h-full flex flex-col">
+              <div className="max-w-4xl mx-auto bg-white dark:bg-navy rounded-3xl overflow-hidden shadow-2xl min-h-full flex flex-col">
                 <img 
                   src={projects[fullScreenIndex].image} 
                   alt="Full Design" 

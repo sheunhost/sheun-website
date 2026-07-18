@@ -67,7 +67,7 @@ export default function Footer() {
         {/* Trust Badges */}
         <div className="flex flex-wrap justify-center md:justify-around items-center gap-8 mb-12 py-10 border-y border-white/5 bg-white/[0.02] rounded-3xl mt-8">
           <div className="flex items-center gap-5 group">
-            <div className="w-14 h-14 rounded-2xl flex items-center justify-center bg-white/5 text-green border border-white/10 group-hover:bg-green group-hover:text-navy group-hover:-translate-y-1 transition-all duration-300 shadow-lg">
+            <div className="w-14 h-14 rounded-2xl flex items-center justify-center bg-white/5 text-green border border-white/10 group-hover:bg-green group-hover:text-navy dark:text-white group-hover:-translate-y-1 transition-all duration-300 shadow-lg">
               <Lock size={24} />
             </div>
             <div className="flex flex-col">
@@ -76,7 +76,7 @@ export default function Footer() {
             </div>
           </div>
           <div className="flex items-center gap-5 group">
-            <div className="w-14 h-14 rounded-2xl flex items-center justify-center bg-white/5 text-green border border-white/10 group-hover:bg-green group-hover:text-navy group-hover:-translate-y-1 transition-all duration-300 shadow-lg">
+            <div className="w-14 h-14 rounded-2xl flex items-center justify-center bg-white/5 text-green border border-white/10 group-hover:bg-green group-hover:text-navy dark:text-white group-hover:-translate-y-1 transition-all duration-300 shadow-lg">
               <Zap size={24} />
             </div>
             <div className="flex flex-col">
@@ -85,7 +85,7 @@ export default function Footer() {
             </div>
           </div>
           <div className="flex items-center gap-5 group">
-            <div className="w-14 h-14 rounded-2xl flex items-center justify-center bg-white/5 text-green border border-white/10 group-hover:bg-green group-hover:text-navy group-hover:-translate-y-1 transition-all duration-300 shadow-lg">
+            <div className="w-14 h-14 rounded-2xl flex items-center justify-center bg-white/5 text-green border border-white/10 group-hover:bg-green group-hover:text-navy dark:text-white group-hover:-translate-y-1 transition-all duration-300 shadow-lg">
               <Award size={24} />
             </div>
             <div className="flex flex-col">

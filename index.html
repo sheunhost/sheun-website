@@ -38,7 +38,21 @@
       }
     </script>
 
-    <!-- Manifest -->
+    
+    <!-- Theme initialization to prevent FOUC -->
+    <script>
+      (function() {
+        try {
+          var theme = localStorage.getItem('ui-theme');
+          if (theme === 'dark' || (!theme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark');
+          } else {
+            document.documentElement.classList.remove('dark');
+          }
+        } catch (e) {}
+      })();
+    </script>
+  <!-- Manifest -->
     <link rel="manifest" href="/manifest.json" />
   </head>
   <body>

@@ -905,7 +905,7 @@ export default function Home() {
 
         <div className="container mx-auto px-6 max-w-7xl">
           <div className="max-w-4xl mx-auto text-center mb-24 space-y-4">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#F4F4F5] border border-[#E2E8F0] text-xs font-semibold uppercase tracking-wider text-[#0F172A] mb-2">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#F4F4F5] dark:bg-white/5 border border-[#E2E8F0] dark:border-white/10 text-xs font-semibold uppercase tracking-wider text-[#0F172A] dark:text-white/80 mb-2">
               <AlertTriangle size={14} className="text-[#F59E0B]" />
               The Reality of E-Commerce
             </div>
@@ -971,7 +971,7 @@ export default function Home() {
                   </div>
                 </div>
                 <div className="space-y-3">
-                  <h3 className="text-2xl font-bold text-[#0F172A] tracking-tight">{point.title}</h3>
+                  <h3 className="text-2xl font-bold text-[#0F172A] dark:text-white tracking-tight">{point.title}</h3>
                   <p className="text-[#71717a] text-sm leading-relaxed">{point.desc}</p>
                 </div>
               </div>
@@ -1102,39 +1102,39 @@ export default function Home() {
               Why brands choose <br />
               <span className="text-[#10b981] underline decoration-[#10b981]/20 underline-offset-8 italic font-serif font-light">Sheun Hub over Agencies.</span>
             </h2>
-            <p className="text-[#71717a] text-lg sm:text-xl font-serif italic leading-relaxed">
+            <p className="text-[#71717a] dark:text-white/70 text-lg sm:text-xl font-serif italic leading-relaxed">
               Finding the "best Shopify developer" shouldn't mean paying agency overheads or gambling on cheap, unreliable freelancers.
             </p>
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch">
             {/* Cheap Freelancer */}
-            <div className="p-8 sm:p-10 rounded-3xl border border-[#E2E8F0] bg-[#F8FAFC] dark:bg-navy/60 space-y-8 flex flex-col opacity-60 grayscale hover:grayscale-0 hover:opacity-100 hover:border-red-200 transition-all duration-300">
+            <div className="p-8 sm:p-10 rounded-3xl border border-[#E2E8F0] dark:border-white/10 bg-[#F8FAFC] dark:bg-navy/40 space-y-8 flex flex-col opacity-60 grayscale hover:grayscale-0 hover:opacity-100 hover:border-red-200 dark:hover:border-red-500/30 transition-all duration-300">
               <div className="space-y-2">
-                <span className="text-xs font-bold uppercase tracking-widest text-[#71717a]">Option 01</span>
-                <h3 className="text-2xl font-bold text-[#0F172A] tracking-tight">Generic Freelancer</h3>
+                <span className="text-xs font-bold uppercase tracking-widest text-[#71717a] dark:text-white/40">Option 01</span>
+                <h3 className="text-2xl font-bold text-[#0F172A] dark:text-white tracking-tight">Generic Freelancer</h3>
                 <p className="text-red-500 text-xs font-bold uppercase tracking-widest">Low Cost, High Risk</p>
               </div>
-              <ul className="space-y-4 flex-grow border-t border-[#E2E8F0] pt-6">
-                <li className="flex items-start gap-3 text-[#71717a] text-sm leading-relaxed">
+              <ul className="space-y-4 flex-grow border-t border-[#E2E8F0] dark:border-white/10 pt-6">
+                <li className="flex items-start gap-3 text-[#71717a] dark:text-white/60 text-sm leading-relaxed">
                   <X size={18} className="text-red-500 shrink-0 mt-0.5" />
                   Language & communication barriers
                 </li>
-                <li className="flex items-start gap-3 text-[#71717a] text-sm leading-relaxed">
+                <li className="flex items-start gap-3 text-[#71717a] dark:text-white/60 text-sm leading-relaxed">
                   <X size={18} className="text-red-500 shrink-0 mt-0.5" />
                   Cookie-cutter, generic template stores
                 </li>
-                <li className="flex items-start gap-3 text-[#71717a] text-sm leading-relaxed">
+                <li className="flex items-start gap-3 text-[#71717a] dark:text-white/60 text-sm leading-relaxed">
                   <X size={18} className="text-red-500 shrink-0 mt-0.5" />
                   Unreliable timelines, delays & ghosting
                 </li>
-                <li className="flex items-start gap-3 text-[#71717a] text-sm leading-relaxed">
+                <li className="flex items-start gap-3 text-[#71717a] dark:text-white/60 text-sm leading-relaxed">
                   <X size={18} className="text-red-500 shrink-0 mt-0.5" />
                   No understanding of commercial conversion strategy
                 </li>
               </ul>
-              <div className="pt-6 border-t border-[#E2E8F0]">
-                <p className="text-[#71717a] font-bold text-xs uppercase tracking-wider">Hidden Cost: <span className="text-red-500 font-mono">Broken Stores</span></p>
+              <div className="pt-6 border-t border-[#E2E8F0] dark:border-white/10">
+                <p className="text-[#71717a] dark:text-white/40 font-bold text-xs uppercase tracking-wider">Hidden Cost: <span className="text-red-500 font-mono">Broken Stores</span></p>
               </div>
             </div>
 
@@ -1180,32 +1180,32 @@ export default function Home() {
             </div>
 
             {/* Big Agency */}
-            <div className="p-8 sm:p-10 rounded-3xl border border-[#E2E8F0] bg-[#F8FAFC] dark:bg-navy/60 space-y-8 flex flex-col opacity-60 grayscale hover:grayscale-0 hover:opacity-100 hover:border-red-200 transition-all duration-300">
+            <div className="p-8 sm:p-10 rounded-3xl border border-[#E2E8F0] dark:border-white/10 bg-[#F8FAFC] dark:bg-navy/40 space-y-8 flex flex-col opacity-60 grayscale hover:grayscale-0 hover:opacity-100 hover:border-red-200 dark:hover:border-red-500/30 transition-all duration-300">
               <div className="space-y-2">
-                <span className="text-xs font-bold uppercase tracking-widest text-[#71717a]">Option 02</span>
-                <h3 className="text-2xl font-bold text-[#0F172A] tracking-tight">Big Digital Agency</h3>
+                <span className="text-xs font-bold uppercase tracking-widest text-[#71717a] dark:text-white/40">Option 02</span>
+                <h3 className="text-2xl font-bold text-[#0F172A] dark:text-white tracking-tight">Big Digital Agency</h3>
                 <p className="text-red-500 text-xs font-bold uppercase tracking-widest">High Cost, Low Attention</p>
               </div>
-              <ul className="space-y-4 flex-grow border-t border-[#E2E8F0] pt-6">
-                <li className="flex items-start gap-3 text-[#71717a] text-sm leading-relaxed">
+              <ul className="space-y-4 flex-grow border-t border-[#E2E8F0] dark:border-white/10 pt-6">
+                <li className="flex items-start gap-3 text-[#71717a] dark:text-white/60 text-sm leading-relaxed">
                   <X size={18} className="text-red-500 shrink-0 mt-0.5" />
                   $5k+ minimum project setup & monthly retainers
                 </li>
-                <li className="flex items-start gap-3 text-[#71717a] text-sm leading-relaxed">
+                <li className="flex items-start gap-3 text-[#71717a] dark:text-white/60 text-sm leading-relaxed">
                   <X size={18} className="text-red-500 shrink-0 mt-0.5" />
                   Your project is outsourced to junior developers/interns
                 </li>
-                <li className="flex items-start gap-3 text-[#71717a] text-sm leading-relaxed">
+                <li className="flex items-start gap-3 text-[#71717a] dark:text-white/60 text-sm leading-relaxed">
                   <X size={18} className="text-red-500 shrink-0 mt-0.5" />
                   Overwhelming bureaucracy & slow ticket-system responses
                 </li>
-                <li className="flex items-start gap-3 text-[#71717a] text-sm leading-relaxed">
+                <li className="flex items-start gap-3 text-[#71717a] dark:text-white/60 text-sm leading-relaxed">
                   <X size={18} className="text-red-500 shrink-0 mt-0.5" />
                   You're treated as just another ticket in their queue
                 </li>
               </ul>
-              <div className="pt-6 border-t border-[#E2E8F0]">
-                <p className="text-[#71717a] font-bold text-xs uppercase tracking-wider">Hidden Cost: <span className="text-red-500 font-mono">Inefficiency</span></p>
+              <div className="pt-6 border-t border-[#E2E8F0] dark:border-white/10">
+                <p className="text-[#71717a] dark:text-white/40 font-bold text-xs uppercase tracking-wider">Hidden Cost: <span className="text-red-500 font-mono">Inefficiency</span></p>
               </div>
             </div>
           </div>
@@ -1330,7 +1330,7 @@ export default function Home() {
 
       {/* Testimonials Slider */}
       <ScrollReveal>
-        <section className="py-32 bg-light relative overflow-hidden border-t border-navy/5">
+        <section className="py-32 bg-light dark:bg-navy relative overflow-hidden border-t border-navy/5 dark:border-white/5">
         <div className="absolute top-0 right-0 p-8 opacity-5 pointer-events-none">
           <Quote size={100} />
         </div>
@@ -1350,7 +1350,7 @@ export default function Home() {
                 
                 exit={{ opacity: 0, x: -20 }}
                 
-                className="bg-white p-6 md:p-10 rounded-3xl shadow-xl border border-navy/5 flex flex-col md:flex-row items-center gap-8"
+                className="bg-white dark:bg-navy/80 p-6 md:p-10 rounded-3xl shadow-xl border border-navy/5 dark:border-white/5 flex flex-col md:flex-row items-center gap-8"
               >
                 <div className="shrink-0 relative">
                   <div className="w-12 h-12 md:w-16 md:h-16 rounded-full overflow-hidden border-2 border-white shadow-md relative z-10">
@@ -1398,7 +1398,7 @@ export default function Home() {
             <div className="flex items-center justify-center gap-6 mt-10">
               <button 
                 onClick={prevTestimonial}
-                className="w-14 h-14 rounded-full bg-white border border-navy/10 flex items-center justify-center text-navy dark:text-white hover:bg-green hover:border-green transition-all shadow-lg hover:scale-105"
+                className="w-14 h-14 rounded-full bg-white dark:bg-navy/80 border border-navy/10 dark:border-white/10 flex items-center justify-center text-navy dark:text-white hover:bg-green dark:hover:bg-green hover:border-green dark:hover:border-green hover:text-navy dark:hover:text-navy transition-all shadow-lg hover:scale-105"
               >
                 <ChevronLeft size={24} />
               </button>
@@ -1415,7 +1415,7 @@ export default function Home() {
 
               <button 
                 onClick={nextTestimonial}
-                className="w-14 h-14 rounded-full bg-white border border-navy/10 flex items-center justify-center text-navy dark:text-white hover:bg-green hover:border-green transition-all shadow-lg hover:scale-105"
+                className="w-14 h-14 rounded-full bg-white dark:bg-navy/80 border border-navy/10 dark:border-white/10 flex items-center justify-center text-navy dark:text-white hover:bg-green dark:hover:bg-green hover:border-green dark:hover:border-green hover:text-navy dark:hover:text-navy transition-all shadow-lg hover:scale-105"
               >
                 <ChevronRight size={24} />
               </button>
@@ -1565,7 +1565,7 @@ export default function Home() {
                 />
                 <div className="absolute inset-0 bg-gradient-to-tr from-navy via-navy/50 to-transparent" />
               </div>
-              <div className="absolute -bottom-10 -left-10 bg-green text-navy dark:text-white p-10 rounded-2xl shadow-2xl border-4 border-navy border-t-0 animate-bounce-slow">
+              <div className="absolute -bottom-10 -left-10 bg-green text-navy p-10 rounded-2xl shadow-2xl border-4 border-navy border-t-0 animate-bounce-slow">
                 <p className="text-6xl font-bold tracking-tighter mb-2">100%</p>
                 <p className="text-xs uppercase font-bold tracking-widest opacity-80">Job Success Rate</p>
               </div>

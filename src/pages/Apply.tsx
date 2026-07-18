@@ -211,7 +211,7 @@ export default function Apply() {
             >
               <button 
                 onClick={() => document.getElementById('apply-form')?.scrollIntoView({ behavior: 'smooth' })}
-                className="group bg-green text-navy font-bold text-lg px-8 py-4 rounded-full hover:bg-white transition-all duration-300 flex items-center justify-center gap-3 shadow-[0_0_40px_rgba(202,255,0,0.3)] hover:shadow-[0_0_60px_rgba(202,255,0,0.5)] cursor-pointer"
+                className="group bg-green text-navy dark:text-white font-bold text-lg px-8 py-4 rounded-full hover:bg-white dark:bg-navy transition-all duration-300 flex items-center justify-center gap-3 shadow-[0_0_40px_rgba(202,255,0,0.3)] hover:shadow-[0_0_60px_rgba(202,255,0,0.5)] cursor-pointer"
               >
                 Apply For Your Store Build <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
               </button>
@@ -253,7 +253,7 @@ export default function Apply() {
 
       {/* Trust Bar */}
       <ScrollReveal>
-        <section className="bg-white border-b border-navy/5 py-12">
+        <section className="bg-white dark:bg-navy border-b border-navy/5 dark:border-white/5 py-12">
         <div className="container mx-auto px-6">
           <div className="flex flex-wrap items-center justify-center gap-x-16 gap-y-8 opacity-40 grayscale hover:grayscale-0 transition-all duration-500">
             <span className="font-black text-2xl tracking-tighter">SHOPIFY PARTNER</span>
@@ -266,31 +266,31 @@ export default function Apply() {
 
       {/* Why Choose Section for Ad Traffic Context */}
       <ScrollReveal>
-        <section className="py-24 bg-white">
+        <section className="py-24 bg-white dark:bg-navy">
           <div className="container mx-auto px-6 max-w-5xl">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              <div className="bg-light p-8 rounded-2xl border border-navy/5 hover:-translate-y-2 transition-all duration-300">
+              <div className="bg-light dark:bg-white/5 p-8 rounded-2xl border border-navy/5 dark:border-white/5 hover:-translate-y-2 transition-all duration-300">
                 <div className="w-12 h-12 bg-navy text-green rounded-xl flex items-center justify-center mb-6">
                   <Zap size={24} />
                 </div>
-                <h3 className="text-xl font-bold text-navy tracking-tight mb-3">Lightning Fast</h3>
-                <p className="text-navy/60 leading-relaxed font-serif text-sm">Most themes drag down conversion with bloated code. I build lightweight, ultra-fast experiences that pass Google Core Web Vitals with flying colors.</p>
+                <h3 className="text-xl font-bold text-navy dark:text-white tracking-tight mb-3">Lightning Fast</h3>
+                <p className="text-navy/60 dark:text-white/60 leading-relaxed font-serif text-sm">Most themes drag down conversion with bloated code. I build lightweight, ultra-fast experiences that pass Google Core Web Vitals with flying colors.</p>
               </div>
               
-              <div className="bg-light p-8 rounded-2xl border border-navy/5 hover:-translate-y-2 transition-all duration-300">
+              <div className="bg-light dark:bg-white/5 p-8 rounded-2xl border border-navy/5 dark:border-white/5 hover:-translate-y-2 transition-all duration-300">
                 <div className="w-12 h-12 bg-navy text-green rounded-xl flex items-center justify-center mb-6">
                   <Target size={24} />
                 </div>
-                <h3 className="text-xl font-bold text-navy tracking-tight mb-3">CRO Engineering</h3>
-                <p className="text-navy/60 leading-relaxed font-serif text-sm">Traffic isn't cheap. Every design decision I make is focused on removing friction to maximize your Add-To-Cart and Checkout completion rates.</p>
+                <h3 className="text-xl font-bold text-navy dark:text-white tracking-tight mb-3">CRO Engineering</h3>
+                <p className="text-navy/60 dark:text-white/60 leading-relaxed font-serif text-sm">Traffic isn't cheap. Every design decision I make is focused on removing friction to maximize your Add-To-Cart and Checkout completion rates.</p>
               </div>
 
-              <div className="bg-light p-8 rounded-2xl border border-navy/5 hover:-translate-y-2 transition-all duration-300">
+              <div className="bg-light dark:bg-white/5 p-8 rounded-2xl border border-navy/5 dark:border-white/5 hover:-translate-y-2 transition-all duration-300">
                 <div className="w-12 h-12 bg-navy text-green rounded-xl flex items-center justify-center mb-6">
                   <DollarSign size={24} />
                 </div>
-                <h3 className="text-xl font-bold text-navy tracking-tight mb-3">Revenue Focused</h3>
-                <p className="text-navy/60 leading-relaxed font-serif text-sm">I don't just 'make things look pretty'. I organize product architecture, up-sells, and cross-sells to actively increase your Average Order Value (AOV).</p>
+                <h3 className="text-xl font-bold text-navy dark:text-white tracking-tight mb-3">Revenue Focused</h3>
+                <p className="text-navy/60 dark:text-white/60 leading-relaxed font-serif text-sm">I don't just 'make things look pretty'. I organize product architecture, up-sells, and cross-sells to actively increase your Average Order Value (AOV).</p>
               </div>
             </div>
           </div>
@@ -299,7 +299,7 @@ export default function Apply() {
 
       {/* Qualification Form - Moved Higher */}
       <ScrollReveal>
-        <section className="py-32 bg-light relative" id="apply-form">
+        <section className="py-32 bg-light dark:bg-white/5 relative" id="apply-form">
         <div className="absolute inset-0 opacity-5 pointer-events-none">
           <div className="absolute top-0 right-0 w-1/2 h-full bg-navy" />
         </div>
@@ -313,7 +313,7 @@ export default function Apply() {
                   <CheckCircle2 size={80} className="text-green" />
                 </div>
                 <div className="relative z-10 space-y-4">
-                  <h3 className="text-2xl font-bold text-navy tracking-tight">The Right Fit</h3>
+                  <h3 className="text-2xl font-bold text-navy dark:text-white tracking-tight">The Right Fit</h3>
                   <ul className="space-y-3">
                     {[
                       "You value quality over the lowest price.",
@@ -321,7 +321,7 @@ export default function Apply() {
                       "You see e-commerce as an investment.",
                       "You want a direct partner, not an agency."
                     ].map((item, i) => (
-                      <li key={i} className="flex items-center gap-3 text-navy/70 text-sm font-medium">
+                      <li key={i} className="flex items-center gap-3 text-navy/70 dark:text-white/70 text-sm font-medium">
                         <CheckCircle2 className="text-green shrink-0" size={16} />
                         {item}
                       </li>
@@ -329,12 +329,12 @@ export default function Apply() {
                   </ul>
                 </div>
               </div>
-              <div className="p-10 bg-navy/5 rounded-[40px] border border-navy/10 space-y-6 relative overflow-hidden group hover:bg-navy/10 transition-colors">
+              <div className="p-10 bg-navy/5 rounded-[40px] border border-navy/10 dark:border-white/10 space-y-6 relative overflow-hidden group hover:bg-navy/10 transition-colors">
                 <div className="absolute top-0 right-0 p-8 opacity-10 rotate-12 group-hover:rotate-0 transition-transform text-red-500">
                   <Info size={80} />
                 </div>
                 <div className="relative z-10 space-y-4">
-                  <h3 className="text-2xl font-bold text-navy tracking-tight">Not a Fit</h3>
+                  <h3 className="text-2xl font-bold text-navy dark:text-white tracking-tight">Not a Fit</h3>
                   <ul className="space-y-3">
                     {[
                       "You're looking for the 'cheapest' fix.",
@@ -342,7 +342,7 @@ export default function Apply() {
                       "You expect complex builds in 24 hours.",
                       "You want a 'get rich quick' scheme."
                     ].map((item, i) => (
-                      <li key={i} className="flex items-center gap-3 text-navy/40 text-sm font-medium">
+                      <li key={i} className="flex items-center gap-3 text-navy/40 dark:text-white/40 text-sm font-medium">
                         <div className="w-1.5 h-1.5 rounded-full bg-navy/20 shrink-0" />
                         {item}
                       </li>
@@ -357,9 +357,9 @@ export default function Apply() {
               transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
               className="flex justify-center mb-8 hidden md:flex"
             >
-              <ChevronDown size={48} className="text-navy opacity-30" />
+              <ChevronDown size={48} className="text-navy dark:text-white opacity-30" />
             </motion.div>
-            <div className="bg-white p-8 md:p-24 rounded-xl border border-navy/5 shadow-3xl relative overflow-hidden group/form">
+            <div className="bg-white dark:bg-navy p-8 md:p-24 rounded-xl border border-navy/5 dark:border-white/5 shadow-3xl relative overflow-hidden group/form">
                   {/* Technical Background Accents */}
                   <div className="absolute top-0 left-0 w-full h-[2px] bg-gradient-to-r from-transparent via-green/30 to-transparent scale-x-0 group-hover/form:scale-x-100 transition-transform duration-1000" />
                   <div className="absolute top-0 left-0 p-12 opacity-[0.02] -z-0">
@@ -389,13 +389,13 @@ export default function Apply() {
                                 activeFormSection === step 
                                   ? 'bg-navy text-green scale-110' 
                                   : activeFormSection > step 
-                                    ? 'bg-green text-navy' 
-                                    : 'bg-light text-navy/20'
+                                    ? 'bg-green text-navy dark:text-white' 
+                                    : 'bg-light dark:bg-white/5 text-navy/20 dark:text-white/20'
                               }`}>
                                 {activeFormSection > step ? <CheckCircle2 size={20} /> : `0${step}`}
                               </div>
                               <span className={`text-[8px] font-black uppercase tracking-[0.3em] transition-colors ${
-                                activeFormSection === step ? 'text-navy' : 'text-navy/20'
+                                activeFormSection === step ? 'text-navy dark:text-white' : 'text-navy/20 dark:text-white/20'
                               }`}>
                                 {step === 1 ? 'Contact' : 'Details'}
                               </span>
@@ -415,8 +415,8 @@ export default function Apply() {
                               className="space-y-12"
                             >
                               <div className="space-y-2">
-                                <h3 className="text-4xl font-bold text-navy tracking-tight">Tell me about yourself.</h3>
-                                <p className="text-navy/40 font-serif italic">Let's start with the basics of who you are.</p>
+                                <h3 className="text-4xl font-bold text-navy dark:text-white tracking-tight">Tell me about yourself.</h3>
+                                <p className="text-navy/40 dark:text-white/40 font-serif italic">Let's start with the basics of who you are.</p>
                               </div>
 
                               <div className="space-y-10">
@@ -431,9 +431,9 @@ export default function Apply() {
                                 )}
                                 <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
                                   <div className="space-y-4">
-                                    <label htmlFor="name" className="text-[10px] font-black uppercase tracking-[0.4em] text-navy/40 ml-4">Full Name</label>
+                                    <label htmlFor="name" className="text-[10px] font-black uppercase tracking-[0.4em] text-navy/40 dark:text-white/40 ml-4">Full Name</label>
                                     <div className="relative group">
-                                      <User className="absolute left-6 top-1/2 -translate-y-1/2 text-navy/10 group-focus-within:text-green transition-colors" size={20} aria-hidden="true" />
+                                      <User className="absolute left-6 top-1/2 -translate-y-1/2 text-navy/10 dark:text-white/10 group-focus-within:text-green transition-colors" size={20} aria-hidden="true" />
                                       <input 
                                         required 
                                         id="name" 
@@ -442,12 +442,12 @@ export default function Apply() {
                                         value={formData.name}
                                         onChange={handleInputChange}
                                         placeholder="John Doe" 
-                                        className="w-full bg-light border-b-2 border-transparent rounded-[24px] py-6 pl-16 pr-8 focus:border-green focus:bg-white outline-none transition-all font-bold text-navy placeholder:text-navy/10" 
+                                        className="w-full bg-light dark:bg-white/5 border-b-2 border-transparent rounded-[24px] py-6 pl-16 pr-8 focus:border-green focus:bg-white dark:bg-navy outline-none transition-all font-bold text-navy dark:text-white placeholder:text-navy/10 dark:text-white/10" 
                                       />
                                     </div>
                                   </div>
                                   <div className="space-y-4">
-                                    <label htmlFor="email" className="text-[10px] font-black uppercase tracking-[0.4em] text-navy/40 ml-4">Email Address</label>
+                                    <label htmlFor="email" className="text-[10px] font-black uppercase tracking-[0.4em] text-navy/40 dark:text-white/40 ml-4">Email Address</label>
                                     <div className="relative group">
                                       <div className="absolute left-6 top-1/2 -translate-y-1/2 flex items-center justify-center">
                                         <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Gmail_icon_%282020%29.svg/960px-Gmail_icon_%282020%29.svg.png?_=20221017173631" alt="Gmail" className="w-5 h-5 object-contain" />
@@ -460,16 +460,16 @@ export default function Apply() {
                                         value={formData.email}
                                         onChange={handleInputChange}
                                         placeholder="john@example.com" 
-                                        className="w-full bg-light border-b-2 border-transparent rounded-[24px] py-6 pl-16 pr-8 focus:border-green focus:bg-white outline-none transition-all font-bold text-navy placeholder:text-navy/10" 
+                                        className="w-full bg-light dark:bg-white/5 border-b-2 border-transparent rounded-[24px] py-6 pl-16 pr-8 focus:border-green focus:bg-white dark:bg-navy outline-none transition-all font-bold text-navy dark:text-white placeholder:text-navy/10 dark:text-white/10" 
                                       />
                                     </div>
                                   </div>
                                 </div>
                                 <div className="grid grid-cols-1 md:grid-cols-1 gap-10">
                                   <div className="space-y-4">
-                                    <label htmlFor="store_url" className="text-[10px] font-black uppercase tracking-[0.4em] text-navy/40 ml-4">Store Website (Optional)</label>
+                                    <label htmlFor="store_url" className="text-[10px] font-black uppercase tracking-[0.4em] text-navy/40 dark:text-white/40 ml-4">Store Website (Optional)</label>
                                     <div className="relative group">
-                                      <Globe className="absolute left-6 top-1/2 -translate-y-1/2 text-navy/10 group-focus-within:text-green transition-colors" size={20} aria-hidden="true" />
+                                      <Globe className="absolute left-6 top-1/2 -translate-y-1/2 text-navy/10 dark:text-white/10 group-focus-within:text-green transition-colors" size={20} aria-hidden="true" />
                                       <input 
                                         id="store_url" 
                                         type="text" 
@@ -477,7 +477,7 @@ export default function Apply() {
                                         value={formData.store_url}
                                         onChange={handleInputChange}
                                         placeholder="yourstore.com" 
-                                        className="w-full bg-light border-b-2 border-transparent rounded-[24px] py-6 pl-16 pr-8 focus:border-green focus:bg-white outline-none transition-all font-bold text-navy placeholder:text-navy/10" 
+                                        className="w-full bg-light dark:bg-white/5 border-b-2 border-transparent rounded-[24px] py-6 pl-16 pr-8 focus:border-green focus:bg-white dark:bg-navy outline-none transition-all font-bold text-navy dark:text-white placeholder:text-navy/10 dark:text-white/10" 
                                       />
                                     </div>
                                   </div>
@@ -490,7 +490,7 @@ export default function Apply() {
                                   whileTap={{ scale: 0.98 }}
                                   type="button"
                                   onClick={nextStep}
-                                  className="bg-navy text-white px-10 py-5 rounded-full font-bold shadow-xl flex items-center gap-3 group/btn hover:bg-green hover:text-navy transition-all duration-300"
+                                  className="bg-navy text-white px-10 py-5 rounded-full font-bold shadow-xl flex items-center gap-3 group/btn hover:bg-green hover:text-navy dark:text-white transition-all duration-300"
                                 >
                                   Continue to Details <ArrowRight size={18} className="group-hover/btn:translate-x-1 transition-transform" aria-hidden="true" />
                                 </motion.button>
@@ -509,12 +509,12 @@ export default function Apply() {
                               className="space-y-12"
                             >
                               <div className="space-y-2">
-                                <h3 className="text-4xl font-bold text-navy tracking-tight">The Technical Mission.</h3>
-                                <p className="text-navy/40 font-serif italic">What exactly do you need built or optimized?</p>
+                                <h3 className="text-4xl font-bold text-navy dark:text-white tracking-tight">The Technical Mission.</h3>
+                                <p className="text-navy/40 dark:text-white/40 font-serif italic">What exactly do you need built or optimized?</p>
                               </div>
 
                               <div className="space-y-10">
-                                <span className="text-[10px] font-black uppercase tracking-[0.4em] text-navy/40 ml-4">What service do you need?</span>
+                                <span className="text-[10px] font-black uppercase tracking-[0.4em] text-navy/40 dark:text-white/40 ml-4">What service do you need?</span>
                                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4" role="radiogroup">
                                   {[
                                     "Shopify Store Build",
@@ -537,10 +537,10 @@ export default function Apply() {
                                         className="peer sr-only" 
                                         required 
                                       />
-                                      <div className="bg-light p-6 rounded-[24px] border-2 border-transparent peer-checked:border-green peer-checked:bg-white peer-checked:shadow-xl transition-all duration-300 flex items-center justify-between group-hover:bg-white group-hover:scale-[1.02]">
-                                        <span className="text-sm font-bold text-navy/60 group-hover:text-navy transition-colors">{type}</span>
-                                        <div className="w-6 h-6 rounded-full border-2 border-navy/10 flex items-center justify-center peer-checked:bg-green peer-checked:border-green">
-                                          <div className="w-2 h-2 bg-white rounded-full opacity-0 peer-checked:opacity-100" />
+                                      <div className="bg-light dark:bg-white/5 p-6 rounded-[24px] border-2 border-transparent peer-checked:border-green peer-checked:bg-white dark:bg-navy peer-checked:shadow-xl transition-all duration-300 flex items-center justify-between group-hover:bg-white dark:bg-navy group-hover:scale-[1.02]">
+                                        <span className="text-sm font-bold text-navy/60 dark:text-white/60 group-hover:text-navy dark:text-white transition-colors">{type}</span>
+                                        <div className="w-6 h-6 rounded-full border-2 border-navy/10 dark:border-white/10 flex items-center justify-center peer-checked:bg-green peer-checked:border-green">
+                                          <div className="w-2 h-2 bg-white dark:bg-navy rounded-full opacity-0 peer-checked:opacity-100" />
                                         </div>
                                       </div>
                                     </label>
@@ -548,16 +548,16 @@ export default function Apply() {
                                 </div>
 
                                 <div className="space-y-4">
-                                  <label htmlFor="budget" className="text-[10px] font-bold text-navy/40 uppercase tracking-[0.3em] ml-4">Project Budget</label>
+                                  <label htmlFor="budget" className="text-[10px] font-bold text-navy/40 dark:text-white/40 uppercase tracking-[0.3em] ml-4">Project Budget</label>
                                   <div className="relative group">
-                                    <DollarSign className="absolute left-6 top-1/2 -translate-y-1/2 text-navy/10 group-focus-within:text-green transition-colors pointer-events-none" size={20} aria-hidden="true" />
+                                    <DollarSign className="absolute left-6 top-1/2 -translate-y-1/2 text-navy/10 dark:text-white/10 group-focus-within:text-green transition-colors pointer-events-none" size={20} aria-hidden="true" />
                                     <select 
                                       required 
                                       id="budget" 
                                       name="budget" 
                                       value={formData.budget}
                                       onChange={handleInputChange}
-                                      className="w-full bg-light border-b-2 border-transparent rounded-[24px] py-6 pl-16 pr-8 focus:border-green focus:bg-white outline-none transition-all font-bold text-navy appearance-none cursor-pointer" 
+                                      className="w-full bg-light dark:bg-white/5 border-b-2 border-transparent rounded-[24px] py-6 pl-16 pr-8 focus:border-green focus:bg-white dark:bg-navy outline-none transition-all font-bold text-navy dark:text-white appearance-none cursor-pointer" 
                                     >
                                       <option value="" disabled>Select an estimated budget...</option>
                                       <option value="Less than $500">Less than $500</option>
@@ -565,12 +565,12 @@ export default function Apply() {
                                       <option value="$2,000 - $5,000">$2,000 - $5,000</option>
                                       <option value="$5,000+">$5,000+</option>
                                     </select>
-                                    <ChevronDown className="absolute right-8 top-1/2 -translate-y-1/2 text-navy/40 pointer-events-none" size={20} />
+                                    <ChevronDown className="absolute right-8 top-1/2 -translate-y-1/2 text-navy/40 dark:text-white/40 pointer-events-none" size={20} />
                                   </div>
                                 </div>
 
                                 <div className="space-y-4">
-                                  <label htmlFor="goals" className="text-[10px] font-bold text-navy/40 uppercase tracking-[0.3em] ml-4">Project Goals</label>
+                                  <label htmlFor="goals" className="text-[10px] font-bold text-navy/40 dark:text-white/40 uppercase tracking-[0.3em] ml-4">Project Goals</label>
                                   <textarea 
                                     required 
                                     id="goals" 
@@ -579,7 +579,7 @@ export default function Apply() {
                                     onChange={handleInputChange}
                                     rows={4} 
                                     placeholder="Describe what you want to achieve..." 
-                                    className="w-full bg-light border-b-2 border-transparent rounded-xl py-8 px-10 focus:border-green focus:bg-white outline-none transition-all resize-none font-medium text-navy placeholder:text-navy/10" 
+                                    className="w-full bg-light dark:bg-white/5 border-b-2 border-transparent rounded-xl py-8 px-10 focus:border-green focus:bg-white dark:bg-navy outline-none transition-all resize-none font-medium text-navy dark:text-white placeholder:text-navy/10 dark:text-white/10" 
                                   />
                                 </div>
                               </div>
@@ -588,7 +588,7 @@ export default function Apply() {
                                 <button 
                                   type="button"
                                   onClick={prevStep}
-                                  className="text-navy/40 text-[10px] font-black uppercase tracking-widest hover:text-navy transition-colors"
+                                  className="text-navy/40 dark:text-white/40 text-[10px] font-black uppercase tracking-widest hover:text-navy dark:text-white transition-colors"
                                 >
                                   ← Back
                                 </button>
@@ -596,7 +596,7 @@ export default function Apply() {
                                   whileHover={{ scale: 1.02 }}
                                   whileTap={{ scale: 0.98 }}
                                   disabled={isSubmitting}
-                                  className="bg-navy text-white px-10 py-5 rounded-full font-bold shadow-xl flex items-center gap-3 group/btn hover:bg-green hover:text-navy transition-all duration-300 disabled:opacity-50"
+                                  className="bg-navy text-white px-10 py-5 rounded-full font-bold shadow-xl flex items-center gap-3 group/btn hover:bg-green hover:text-navy dark:text-white transition-all duration-300 disabled:opacity-50"
                                 >
                                   {isSubmitting ? (
                                     <div className="w-6 h-6 border-2 border-white/30 border-t-green rounded-full animate-spin" />
@@ -628,12 +628,12 @@ export default function Apply() {
                           <div className="absolute inset-0 bg-green/10 animate-pulse" />
                         </div>
                         <div className="space-y-6">
-                          <h3 className="text-4xl md:text-5xl lg:text-6xl font-bold text-navy tracking-tighter">Congratulations! Application Received.</h3>
-                          <p className="text-navy/60 text-xl max-w-lg mx-auto leading-relaxed">
+                          <h3 className="text-4xl md:text-5xl lg:text-6xl font-bold text-navy dark:text-white tracking-tighter">Congratulations! Application Received.</h3>
+                          <p className="text-navy/60 dark:text-white/60 text-xl max-w-lg mx-auto leading-relaxed">
                             Your form has been successfully submitted. You will receive a copy of your submission from <span className="font-bold">sheunhost@gmail.com</span> shortly. I will personally review your project within 24 hours. Keep an eye on your WhatsApp or email for a follow-up.
                           </p>
                         </div>
-                        <div className="w-full max-w-md mx-auto h-2 bg-light rounded-full overflow-hidden">
+                        <div className="w-full max-w-md mx-auto h-2 bg-light dark:bg-white/5 rounded-full overflow-hidden">
                           <motion.div 
                             initial={{ width: 0 }}
                             animate={{ width: "100%" }}
@@ -641,7 +641,7 @@ export default function Apply() {
                             className="h-full bg-green"
                           />
                         </div>
-                        <p className="text-[10px] font-bold uppercase tracking-[0.4em] text-navy/20">Redirecting to project coordination...</p>
+                        <p className="text-[10px] font-bold uppercase tracking-[0.4em] text-navy/20 dark:text-white/20">Redirecting to project coordination...</p>
                       </motion.div>
                     )}
                   </AnimatePresence>
@@ -653,27 +653,27 @@ export default function Apply() {
 
       {/* Video Previews */}
       <ScrollReveal>
-        <section className="bg-white border-b border-navy/5 py-24">
+        <section className="bg-white dark:bg-navy border-b border-navy/5 dark:border-white/5 py-24">
           <div className="container mx-auto px-6">
             <div className="relative text-center mb-16 space-y-4">
-              <h2 className="text-4xl md:text-5xl font-bold text-navy tracking-tighter">Happy Clients.</h2>
-              <p className="text-navy/40 font-serif italic text-xl max-w-2xl mx-auto">
+              <h2 className="text-4xl md:text-5xl font-bold text-navy dark:text-white tracking-tighter">Happy Clients.</h2>
+              <p className="text-navy/40 dark:text-white/40 font-serif italic text-xl max-w-2xl mx-auto">
                 Watch a few walkthroughs from my happy clients and store optimizations.
               </p>
               <div className="absolute top-1/2 -translate-y-1/2 right-0 hidden md:flex items-center gap-4">
-                <button type="button" onClick={() => scrollVideos('left')} className="p-4 bg-navy text-white rounded-full hover:bg-green hover:text-navy transition-all duration-300 shadow-xl" aria-label="Previous videos">
+                <button type="button" onClick={() => scrollVideos('left')} className="p-4 bg-navy text-white rounded-full hover:bg-green hover:text-navy dark:text-white transition-all duration-300 shadow-xl" aria-label="Previous videos">
                   <ChevronLeft size={24} />
                 </button>
-                <button type="button" onClick={() => scrollVideos('right')} className="p-4 bg-navy text-white rounded-full hover:bg-green hover:text-navy transition-all duration-300 shadow-xl" aria-label="Next videos">
+                <button type="button" onClick={() => scrollVideos('right')} className="p-4 bg-navy text-white rounded-full hover:bg-green hover:text-navy dark:text-white transition-all duration-300 shadow-xl" aria-label="Next videos">
                   <ChevronRight size={24} />
                 </button>
               </div>
             </div>
             <div className="md:hidden flex justify-center gap-4 mb-8">
-              <button type="button" onClick={() => scrollVideos('left')} className="p-4 bg-navy text-white rounded-full hover:bg-green hover:text-navy transition-all duration-300 shadow-xl" aria-label="Previous videos">
+              <button type="button" onClick={() => scrollVideos('left')} className="p-4 bg-navy text-white rounded-full hover:bg-green hover:text-navy dark:text-white transition-all duration-300 shadow-xl" aria-label="Previous videos">
                 <ChevronLeft size={24} />
               </button>
-              <button type="button" onClick={() => scrollVideos('right')} className="p-4 bg-navy text-white rounded-full hover:bg-green hover:text-navy transition-all duration-300 shadow-xl" aria-label="Next videos">
+              <button type="button" onClick={() => scrollVideos('right')} className="p-4 bg-navy text-white rounded-full hover:bg-green hover:text-navy dark:text-white transition-all duration-300 shadow-xl" aria-label="Next videos">
                 <ChevronRight size={24} />
               </button>
             </div>
@@ -686,7 +686,7 @@ export default function Apply() {
                   "1190279909",
                   "1190279925"
                 ].map((videoId, idx) => (
-                  <div key={idx} className="relative shrink-0 w-[85vw] sm:w-[320px] md:w-[350px] lg:w-[400px] rounded-2xl overflow-hidden aspect-[16/9] border border-navy/5 shadow-xl bg-black transition-all duration-500 hover:-translate-y-2 snap-center">
+                  <div key={idx} className="relative shrink-0 w-[85vw] sm:w-[320px] md:w-[350px] lg:w-[400px] rounded-2xl overflow-hidden aspect-[16/9] border border-navy/5 dark:border-white/5 shadow-xl bg-black transition-all duration-500 hover:-translate-y-2 snap-center">
                     <iframe 
                       src={`https://player.vimeo.com/video/${videoId}`} 
                       allow="autoplay; fullscreen; picture-in-picture"
@@ -704,11 +704,11 @@ export default function Apply() {
 
       {/* Social Proof Accent */}
       <ScrollReveal>
-        <section className="py-24 bg-white border-y border-navy/5 overflow-hidden">
+        <section className="py-24 bg-white dark:bg-navy border-y border-navy/5 dark:border-white/5 overflow-hidden">
         <div className="container mx-auto px-6">
           <div className="flex flex-wrap items-center justify-center gap-x-12 gap-y-6 opacity-30 grayscale hover:grayscale-0 transition-all duration-700">
             {['Forbes', 'Spotify', 'Shopify', 'Nike'].map((item) => (
-              <span key={item} className="text-3xl md:text-4xl font-black font-serif tracking-tighter text-navy">{item}</span>
+              <span key={item} className="text-3xl md:text-4xl font-black font-serif tracking-tighter text-navy dark:text-white">{item}</span>
             ))}
           </div>
         </div>
@@ -717,7 +717,7 @@ export default function Apply() {
 
       {/* Info Boxes - Recipe 11 */}
       <ScrollReveal>
-        <section className="py-32 bg-light">
+        <section className="py-32 bg-light dark:bg-white/5">
         <div className="container mx-auto px-6">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
             {[
@@ -728,14 +728,14 @@ export default function Apply() {
               <motion.div 
                 key={i}
                 whileHover={{ y: -10 }}
-                className="p-8 md:p-16 bg-white rounded-3xl space-y-6 md:space-y-8 border border-navy/5 shadow-xl group transition-all"
+                className="p-8 md:p-16 bg-white dark:bg-navy rounded-3xl space-y-6 md:space-y-8 border border-navy/5 dark:border-white/5 shadow-xl group transition-all"
               >
-                <div className="w-16 h-16 md:w-20 md:h-20 bg-light rounded-3xl flex items-center justify-center text-navy group-hover:bg-green group-hover:text-navy transition-all duration-500 shadow-sm border border-navy/5">
+                <div className="w-16 h-16 md:w-20 md:h-20 bg-light dark:bg-white/5 rounded-3xl flex items-center justify-center text-navy dark:text-white group-hover:bg-green group-hover:text-navy dark:text-white transition-all duration-500 shadow-sm border border-navy/5 dark:border-white/5">
                   <box.icon size={32} className="md:w-[40px] md:h-[40px]" />
                 </div>
                 <div className="space-y-3 md:space-y-4 text-center md:text-left">
-                  <h3 className="text-xl md:text-2xl font-bold text-navy uppercase tracking-widest">{box.title}</h3>
-                  <p className="text-navy/40 text-base md:text-lg leading-relaxed font-serif italic">{box.desc}</p>
+                  <h3 className="text-xl md:text-2xl font-bold text-navy dark:text-white uppercase tracking-widest">{box.title}</h3>
+                  <p className="text-navy/40 dark:text-white/40 text-base md:text-lg leading-relaxed font-serif italic">{box.desc}</p>
                 </div>
               </motion.div>
             ))}
