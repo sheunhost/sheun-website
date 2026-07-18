@@ -355,16 +355,16 @@ const ServiceModal = ({ service, onClose }: { service: any; onClose: () => void 
 
   return (
     <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 md:p-6">
-      <div
-        
-        
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
         onClick={onClose}
         className="absolute inset-0 bg-navy/90 backdrop-blur-xl"
       />
-      <div
-        
-        
+      <motion.div
+        initial={{ opacity: 0, scale: 0.9, y: 20 }}
+        animate={{ opacity: 1, scale: 1, y: 0 }}
         exit={{ opacity: 0, scale: 0.9, y: 20 }}
         className="relative w-full max-w-4xl bg-white rounded-2xl overflow-hidden shadow-2xl max-h-[90vh] overflow-y-auto"
       >
@@ -442,7 +442,7 @@ const ServiceModal = ({ service, onClose }: { service: any; onClose: () => void 
             </div>
           </div>
         </div>
-      </div>
+      </motion.div>
     </div>
   );
 };
@@ -462,27 +462,12 @@ export default function Home() {
   const [emailErrorPlan, setEmailErrorPlan] = useState("");
 
   const [selectedService, setSelectedService] = useState<any | null>(null);
-  const [testimonialIndex, setTestimonialIndex] = useState(0);
-  const [isTestimonialExpanded, setIsTestimonialExpanded] = useState(false);
-
+    
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-  const nextTestimonial = () => {
-    setIsTestimonialExpanded(false);
-    setTestimonialIndex((prev) => (prev + 1) % testimonials.length);
-  };
-
-  const prevTestimonial = () => {
-    setIsTestimonialExpanded(false);
-    setTestimonialIndex((prev) => (prev - 1 + testimonials.length) % testimonials.length);
-  };
-
-  useEffect(() => {
-    if (isTestimonialExpanded) return;
-    const timer = setInterval(nextTestimonial, 8000);
-    return () => clearInterval(timer);
-  }, [isTestimonialExpanded]);
-
+  
+  
+  
   const handlePlanRequest = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const form = e.currentTarget;
@@ -1118,19 +1103,19 @@ export default function Home() {
               <ul className="space-y-4 flex-grow border-t border-[#E2E8F0] dark:border-white/10 pt-6">
                 <li className="flex items-start gap-3 text-[#71717a] dark:text-white/60 text-sm leading-relaxed">
                   <X size={18} className="text-red-500 shrink-0 mt-0.5" />
-                  Language & communication barriers
+                  Struggles with communication, frequently misinterpreting complex requirements leading to costly re-dos.
                 </li>
                 <li className="flex items-start gap-3 text-[#71717a] dark:text-white/60 text-sm leading-relaxed">
                   <X size={18} className="text-red-500 shrink-0 mt-0.5" />
-                  Cookie-cutter, generic template stores
+                  Relies on generic, bloated templates that fail to capture your unique brand identity or build trust.
                 </li>
                 <li className="flex items-start gap-3 text-[#71717a] dark:text-white/60 text-sm leading-relaxed">
                   <X size={18} className="text-red-500 shrink-0 mt-0.5" />
-                  Unreliable timelines, delays & ghosting
+                  Plagued by unreliable timelines, sudden disappearances, and a lack of professional accountability.
                 </li>
                 <li className="flex items-start gap-3 text-[#71717a] dark:text-white/60 text-sm leading-relaxed">
                   <X size={18} className="text-red-500 shrink-0 mt-0.5" />
-                  No understanding of commercial conversion strategy
+                  Focuses solely on getting the code working without any understanding of what actually drives sales.
                 </li>
               </ul>
               <div className="pt-6 border-t border-[#E2E8F0] dark:border-white/10">
@@ -1155,23 +1140,23 @@ export default function Home() {
               <ul className="space-y-4 flex-grow border-t border-white/10 pt-6 relative z-10">
                 <li className="flex items-start gap-3 text-white/90 text-sm leading-relaxed">
                   <CheckCircle2 size={18} className="text-[#10b981] shrink-0 mt-0.5" />
-                  Direct partnership with a certified remote specialist
+                  Work directly with a dedicated Shopify specialist—ensuring no details are lost in translation.
                 </li>
                 <li className="flex items-start gap-3 text-white/90 text-sm leading-relaxed">
                   <CheckCircle2 size={18} className="text-[#10b981] shrink-0 mt-0.5" />
-                  Bespoke Liquid coding, zero theme-bloat & technical SEO
+                  Bespoke, lightweight Liquid code built from the ground up for maximum speed and technical SEO.
                 </li>
                 <li className="flex items-start gap-3 text-white/90 text-sm leading-relaxed">
                   <CheckCircle2 size={18} className="text-[#10b981] shrink-0 mt-0.5" />
-                  Strategic focus on conversion metrics & commercial growth
+                  Every technical decision is driven by conversion psychology, ROI, and commercial growth metrics.
                 </li>
                 <li className="flex items-start gap-3 text-white/90 text-sm leading-relaxed">
                   <CheckCircle2 size={18} className="text-[#10b981] shrink-0 mt-0.5" />
-                  Transparent project cost structures without agency bloat
+                  Clear, upfront project pricing that eliminates the hidden fees and bloated overhead of traditional agencies.
                 </li>
                 <li className="flex items-start gap-3 text-white/90 text-sm leading-relaxed">
                   <CheckCircle2 size={18} className="text-[#10b981] shrink-0 mt-0.5" />
-                  Highly proactive, clear, and direct communications
+                  Experience highly proactive, crystal-clear communication and rapid feedback loops throughout the project.
                 </li>
               </ul>
               <div className="pt-6 border-t border-white/10 relative z-10">
@@ -1189,19 +1174,19 @@ export default function Home() {
               <ul className="space-y-4 flex-grow border-t border-[#E2E8F0] dark:border-white/10 pt-6">
                 <li className="flex items-start gap-3 text-[#71717a] dark:text-white/60 text-sm leading-relaxed">
                   <X size={18} className="text-red-500 shrink-0 mt-0.5" />
-                  $5k+ minimum project setup & monthly retainers
+                  Forces you into massive minimum engagement fees and insists on locking you into long-term retainers.
                 </li>
                 <li className="flex items-start gap-3 text-[#71717a] dark:text-white/60 text-sm leading-relaxed">
                   <X size={18} className="text-red-500 shrink-0 mt-0.5" />
-                  Your project is outsourced to junior developers/interns
+                  Quietly outsources the actual execution of your project to inexperienced junior developers or interns.
                 </li>
                 <li className="flex items-start gap-3 text-[#71717a] dark:text-white/60 text-sm leading-relaxed">
                   <X size={18} className="text-red-500 shrink-0 mt-0.5" />
-                  Overwhelming bureaucracy & slow ticket-system responses
+                  Stifles progress with overwhelming bureaucracy, account managers, and slow support-ticket systems.
                 </li>
                 <li className="flex items-start gap-3 text-[#71717a] dark:text-white/60 text-sm leading-relaxed">
                   <X size={18} className="text-red-500 shrink-0 mt-0.5" />
-                  You're treated as just another ticket in their queue
+                  Treats your ambitious brand as just another number in their massive queue rather than a strategic partner.
                 </li>
               </ul>
               <div className="pt-6 border-t border-[#E2E8F0] dark:border-white/10">
@@ -1342,87 +1327,47 @@ export default function Home() {
             </h2>
           </div>
 
-          <div className="max-w-3xl mx-auto relative">
-            <AnimatePresence mode="wait">
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
+            {testimonials.map((testimonial, idx) => (
               <div
-                key={testimonialIndex}
-                
-                
-                exit={{ opacity: 0, x: -20 }}
-                
-                className="bg-white dark:bg-navy/80 p-6 md:p-10 rounded-3xl shadow-xl border border-navy/5 dark:border-white/5 flex flex-col md:flex-row items-center gap-8"
+                key={idx}
+                className="bg-white dark:bg-navy/80 p-8 rounded-3xl shadow-xl border border-navy/5 dark:border-white/5 flex flex-col h-full"
               >
-                <div className="shrink-0 relative">
-                  <div className="w-12 h-12 md:w-16 md:h-16 rounded-full overflow-hidden border-2 border-white shadow-md relative z-10">
-                    <img 
-                      src={testimonials[testimonialIndex].image} 
-                      alt={testimonials[testimonialIndex].name} 
-                      className="w-full h-full object-cover" 
-                      referrerPolicy="no-referrer"
-                    />
-                  </div>
-                  <div className="absolute -bottom-1 -right-1 w-6 h-6 bg-green text-navy dark:text-white rounded-full flex items-center justify-center shadow z-20">
-                    <Quote size={10} />
-                  </div>
-                </div>
-
-                <div className="space-y-4 flex-grow text-center md:text-left">
-                  <div className="flex items-center justify-center md:justify-start gap-1">
-                    {[...Array(testimonials[testimonialIndex].rating || 5)].map((_, j) => (
-                      <Star key={j} size={16} fill="currentColor" className="text-[#FFC107]" />
-                    ))}
-                  </div>
-                  <div className="flex flex-col items-center md:items-start gap-2">
-                    <p className="text-navy dark:text-white/70 font-serif italic text-lg md:text-xl leading-relaxed transition-all duration-300">
-                      "{isTestimonialExpanded || testimonials[testimonialIndex].content.length <= 150 
-                        ? testimonials[testimonialIndex].content 
-                        : `${testimonials[testimonialIndex].content.slice(0, 150)}...`}"
-                    </p>
-                    {testimonials[testimonialIndex].content.length > 150 && (
-                      <button 
-                        onClick={() => setIsTestimonialExpanded(!isTestimonialExpanded)}
-                        className="text-navy dark:text-white font-bold text-sm tracking-wide hover:text-green transition-colors mt-2 underline decoration-green decoration-2 underline-offset-4"
-                      >
-                        {isTestimonialExpanded ? 'Read Less' : 'Read More'}
-                      </button>
-                    )}
+                <div className="flex items-center gap-4 mb-6">
+                  <div className="shrink-0 relative">
+                    <div className="w-16 h-16 rounded-full overflow-hidden border-2 border-white shadow-md relative z-10">
+                      <img 
+                        src={testimonial.image} 
+                        alt={testimonial.name} 
+                        className="w-full h-full object-cover" 
+                        referrerPolicy="no-referrer"
+                      />
+                    </div>
+                    <div className="absolute -bottom-1 -right-1 w-6 h-6 bg-green text-navy rounded-full flex items-center justify-center shadow z-20">
+                      <Quote size={10} />
+                    </div>
                   </div>
                   <div>
-                    <h3 className="text-navy dark:text-white font-bold text-lg">{testimonials[testimonialIndex].name}</h3>
-                    <p className="text-navy dark:text-white/40 text-xs uppercase tracking-widest mt-1">{testimonials[testimonialIndex].role}</p>
+                    <h3 className="text-navy dark:text-white font-bold text-lg leading-tight">{testimonial.name}</h3>
+                    <p className="text-navy dark:text-white/40 text-xs uppercase tracking-widest mt-1">{testimonial.role}</p>
                   </div>
                 </div>
-              </div>
-            </AnimatePresence>
 
-            <div className="flex items-center justify-center gap-6 mt-10">
-              <button 
-                onClick={prevTestimonial}
-                className="w-14 h-14 rounded-full bg-white dark:bg-navy/80 border border-navy/10 dark:border-white/10 flex items-center justify-center text-navy dark:text-white hover:bg-green dark:hover:bg-green hover:border-green dark:hover:border-green hover:text-navy dark:hover:text-navy transition-all shadow-lg hover:scale-105"
-              >
-                <ChevronLeft size={24} />
-              </button>
-              
-              <div className="flex gap-2">
-                {testimonials.map((_, idx) => (
-                  <button 
-                    key={idx}
-                    onClick={() => setTestimonialIndex(idx)}
-                    className={`h-2 rounded-full transition-all ${idx === testimonialIndex ? 'w-8 bg-green' : 'w-2 bg-navy/10 hover:bg-navy/30'}`}
-                  />
-                ))}
+                <div className="flex items-center gap-1 mb-4">
+                  {[...Array(testimonial.rating || 5)].map((_, j) => (
+                    <Star key={j} size={14} fill="currentColor" className="text-[#FFC107]" />
+                  ))}
+                </div>
+                
+                <p className="text-navy dark:text-white/70 font-serif italic text-base leading-relaxed flex-grow">
+                  "{testimonial.content}"
+                </p>
               </div>
-
-              <button 
-                onClick={nextTestimonial}
-                className="w-14 h-14 rounded-full bg-white dark:bg-navy/80 border border-navy/10 dark:border-white/10 flex items-center justify-center text-navy dark:text-white hover:bg-green dark:hover:bg-green hover:border-green dark:hover:border-green hover:text-navy dark:hover:text-navy transition-all shadow-lg hover:scale-105"
-              >
-                <ChevronRight size={24} />
-              </button>
-            </div>
+            ))}
           </div>
         </div>
-      </section>
+</section>
     </ScrollReveal>
 
     {/* Portfolio Preview - Bento Grid */}
@@ -1539,9 +1484,9 @@ export default function Home() {
               
               <div className="space-y-6 pt-4">
                 {[
-                  { title: "Custom Liquid Mastery", desc: "No cookie-cutter templates. Features coded purely for your brand's unique needs." },
-                  { title: "Speed Obsessive", desc: "Ultra-fast load times mathematically proven to increase conversion rates." },
-                  { title: "Direct Communication", desc: "No middle-men or project managers. You work directly with the technical architect." }
+                  { title: "Custom Liquid Mastery", desc: "We abandon bloated, cookie-cutter themes in favor of bespoke Liquid architecture. Every line of code is purpose-built for your brand, guaranteeing a unique storefront that doesn't sacrifice performance." },
+                  { title: "Speed Obsessive", desc: "We engineer your store with a relentless focus on performance. By optimizing assets and streamlining scripts, we achieve ultra-fast sub-second load times mathematically proven to significantly increase conversion rates and reduce bounce." },
+                  { title: "Direct Communication", desc: "Bypass the typical agency bureaucracy and work directly one-on-one with the technical architect. Enjoy clear, proactive updates, fast feedback loops, and zero miscommunications from start to finish." }
                 ].map((item, i) => (
                   <div key={i} className="flex gap-6 items-start">
                     <div className="w-12 h-12 rounded-full bg-white/5 border border-white/10 flex items-center justify-center shrink-0 text-green mt-1">
@@ -1549,7 +1494,7 @@ export default function Home() {
                     </div>
                     <div>
                       <h3 className="text-xl font-bold mb-2">{item.title}</h3>
-                      <p className="text-white/40 leading-relaxed max-w-sm">{item.desc}</p>
+                      <p className="text-white/40 leading-relaxed max-w-md">{item.desc}</p>
                     </div>
                   </div>
                 ))}

@@ -52,19 +52,29 @@ async function prerender() {
     const port = server.address().port;
     console.log(`Test server running on port ${port}`);
 
-    // Standard local launch if not in CI/Vercel, but for Vercel build use chromium
+    // Check if google-chrome binary is present locally
     const isLocal = !process.env.VERCEL && !process.env.CI;
+    const hasGoogleChrome = fs.existsSync('/usr/bin/google-chrome');
     
     let browser;
     try {
-      browser = await puppeteer.launch({
-        args: isLocal ? ['--no-sandbox', '--disable-setuid-sandbox'] : chromium.args,
-        defaultViewport: chromium.defaultViewport,
-        executablePath: isLocal ? '/usr/bin/google-chrome' : await chromium.executablePath(),
-        headless: isLocal ? 'new' : chromium.headless,
-      });
+      if (isLocal && hasGoogleChrome) {
+        browser = await puppeteer.launch({
+          args: ['--no-sandbox', '--disable-setuid-sandbox'],
+          defaultViewport: chromium.defaultViewport,
+          executablePath: '/usr/bin/google-chrome',
+          headless: 'new',
+        });
+      } else {
+        browser = await puppeteer.launch({
+          args: chromium.args,
+          defaultViewport: chromium.defaultViewport,
+          executablePath: await chromium.executablePath(),
+          headless: chromium.headless,
+        });
+      }
     } catch (e) {
-      console.log('Standard launch failed, trying chromium-specific launch...');
+      console.log('Initial launch failed, trying fallback launch...');
       browser = await puppeteer.launch({
         args: chromium.args,
         defaultViewport: chromium.defaultViewport,
@@ -104,9 +114,13 @@ async function prerender() {
           fs.mkdirSync(routeDir, { recursive: true });
         }
         
-        const filePath = route === '/' ? path.join(distPath, 'index.html') : path.join(routeDir, 'index.html');
-        fs.writeFileSync(filePath, html);
-        console.log(`Saved ${filePath}`);
+        const filePath = path.join(routeDir, 'index.html');
+        if (route === '/') {
+          fs.writeFileSync(path.join(distPath, 'index-prerendered.html'), html);
+        } else {
+          fs.writeFileSync(filePath, html);
+        }
+        console.log(`Saved ${route}`);
       } catch (err) {
         console.error(`Error prerendering ${route}:`, err);
       } finally {
@@ -116,6 +130,7 @@ async function prerender() {
 
     await browser.close();
     server.close();
+    fs.renameSync(path.join(distPath, 'index-prerendered.html'), path.join(distPath, 'index.html'));
     console.log('Prerendering complete!');
   });
 }

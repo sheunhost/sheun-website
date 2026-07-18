@@ -11,7 +11,7 @@ export default defineConfig(({ mode }) => {
       react(),
     ],
     define: {
-      'process.env': { ...process.env, ...env },
+      'process.env.NODE_ENV': JSON.stringify(mode),
     },
     resolve: {
       alias: {

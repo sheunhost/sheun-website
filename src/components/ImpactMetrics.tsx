@@ -24,16 +24,16 @@ export function ImpactMetrics() {
   const activeColor = metrics.find(m => m.id === activeMetric)?.color || '#10b981';
 
   return (
-    <section className="py-32 bg-white relative overflow-hidden">
+    <section className="py-32 bg-white dark:bg-navy relative overflow-hidden">
       <div className="container mx-auto px-6 max-w-7xl">
         <div className="text-center max-w-3xl mx-auto mb-20 space-y-4">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#F4F4F5] border border-[#E2E8F0] text-xs font-semibold uppercase tracking-wider text-[#0F172A] mb-2">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#F4F4F5] dark:bg-white/10 border border-[#E2E8F0] dark:border-white/10 text-xs font-semibold uppercase tracking-wider text-[#0F172A] dark:text-white mb-2">
             Measurable ROI
           </div>
-          <h2 className="text-5xl md:text-7xl font-bold text-navy tracking-tighter">
+          <h2 className="text-5xl md:text-7xl font-bold text-navy dark:text-white tracking-tighter">
             Key Impact <span className="text-[#10b981] italic font-serif font-light">Metrics</span>.
           </h2>
-          <p className="text-[#71717a] text-lg sm:text-xl font-serif italic leading-relaxed">
+          <p className="text-[#71717a] dark:text-white/70 text-lg sm:text-xl font-serif italic leading-relaxed">
             Beautiful design is useless if it doesn't convert. Here is the average trajectory of stores 6 months post-rebuild.
           </p>
         </div>
@@ -48,8 +48,8 @@ export function ImpactMetrics() {
                 onClick={() => setActiveMetric(metric.id)}
                 className={`px-6 py-3 rounded-full text-sm font-bold transition-all duration-300 ${
                   activeMetric === metric.id 
-                    ? 'bg-white text-navy shadow-lg scale-105' 
-                    : 'bg-white/5 text-white/50 hover:bg-white/10 hover:text-white'
+                    ? 'bg-white dark:bg-navy text-navy dark:text-white shadow-lg scale-105' 
+                    : 'bg-white dark:bg-navy/5 text-white/50 hover:bg-white dark:bg-navy/10 hover:text-white'
                 }`}
               >
                 {metric.label}
@@ -59,7 +59,7 @@ export function ImpactMetrics() {
 
           <div className="h-[400px] w-full relative z-10">
             <ResponsiveContainer width="100%" height="100%">
-              <AreaChart data={data} margin={{ top: 20, right: 30, left: 0, bottom: 0 }}>
+              <AreaChart data={data} margin={{ top: 20, right: 30, left: 20, bottom: 0 }}>
                 <defs>
                   <linearGradient id="colorMetric" x1="0" y1="0" x2="0" y2="1">
                     <stop offset="5%" stopColor={activeColor} stopOpacity={0.8}/>
@@ -83,7 +83,8 @@ export function ImpactMetrics() {
                   dx={-10}
                   tickFormatter={(value) => {
                     const m = metrics.find(m => m.id === activeMetric);
-                    return `${m?.prefix}${value}${m?.suffix}`;
+                    const formattedValue = value >= 1000 ? (value / 1000) + 'k' : value;
+                    return `${m?.prefix}${formattedValue}${m?.suffix}`;
                   }}
                 />
                 <Tooltip
