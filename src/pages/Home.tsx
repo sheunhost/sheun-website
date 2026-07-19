@@ -78,72 +78,52 @@ const niches = [
 const testimonials = [
   {
     name: "Sarah Jenkins",
-    role: "Founder, Glow Beauty",
-    content: "Sheun Hub completely transformed our Shopify store. Our conversion rate doubled in the first month after the redesign!",
-    image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80&w=200",
+    content: "Sheun Hub completely transformed our online presence and Shopify custom storefront. Our overall conversion rate literally doubled in the first month after the launch, resulting in unprecedented growth for our organic and paid traffic.",
     rating: 5
   },
   {
     name: "Marcus Chen",
-    role: "CEO, TechHaven",
-    content: "The migration from WooCommerce to Shopify was flawless. We didn't lose a single order during the transition.",
-    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=200",
+    content: "The complex migration of our retail store from WooCommerce to Shopify was handled with absolute perfection. We did not lose a single customer transaction, order details, or Google search index rankings during the seamless transition.",
     rating: 5
   },
   {
     name: "Emma Roberts",
-    role: "Owner, Style Boutique",
-    content: "Incredible attention to detail and lightning-fast communication. The custom theme perfectly captures our brand vibe.",
-    image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&q=80&w=200",
+    content: "I am highly impressed with the exceptional custom Liquid code work, speed optimization, and layout adjustments. Communication was extremely fast, clear, and professional, perfectly capturing our luxury fashion brand identity in every detail.",
     rating: 5
   },
   {
     name: "David Miller",
-    role: "Director, Urban Gear",
-    content: "The Growth Plan alone was worth it. We've seen a 40% increase in organic traffic and sales within just 3 weeks.",
-    image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&q=80&w=200",
+    content: "Implementing the 48-hour Shopify SEO Sprint was the best decision we ever made for our shop. We observed a massive forty percent surge in qualified organic impressions and sales conversions in under three weeks.",
     rating: 5
   },
   {
     name: "Lisa Wong",
-    role: "Founder, PetPalace",
-    content: "Sheun Hub is a Liquid expert. He built custom features that we thought were impossible on Shopify.",
-    image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=200",
+    content: "An absolute authority when it comes to custom Liquid and Shopify theme architecture. He built complex bespoke app-free features and unique dynamic layouts that other developers claimed were technically impossible to run.",
     rating: 5
   },
   {
     name: "James Carter",
-    role: "Founder, Peak Performance",
-    content: "The custom dropshipping integration saved us hours every week. Outstanding execution.",
-    image: "https://images.unsplash.com/photo-1547425260-76bcadfb4f2c?auto=format&fit=crop&q=80&w=200",
+    content: "Our automated multi-channel dropshipping integration is performing flawlessly. It has saved our support team endless hours of manual inventory updates, improving delivery speed and driving customer satisfaction ratings higher than ever.",
     rating: 5
   },
   {
     name: "Mia Thompson",
-    role: "Owner, Bloom Florals",
-    content: "Our site looks completely premium now. The UI improvements alone increased our average order value by 15%.",
-    image: "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?auto=format&fit=crop&q=80&w=200",
+    content: "Our entire store design looks stunningly premium and professional. The seamless checkout pipeline and optimized product pages successfully boosted our average order value by fifteen percent within the first week.",
     rating: 5
   },
   {
     name: "Oliver Wright",
-    role: "CEO, NextGen Electronics",
-    content: "Sheun Hub optimized my checkout flow and the results were immediate. Cart abandonment dropped significantly.",
-    image: "https://images.unsplash.com/photo-1519345182560-3f2917c472ef?auto=format&fit=crop&q=80&w=200",
+    content: "Optimizing our mobile speed and fixing critical layout bottlenecks drastically reduced shopping cart abandonment. Page load speeds went from sluggish to instant, keeping our customers engaged throughout the entire checkout journey.",
     rating: 4
   },
   {
     name: "Sophia Martinez",
-    role: "Director, Luxe Interiors",
-    content: "A master at Shopify development. The custom theme is fast, responsive, and perfectly aligned with our brand.",
-    image: "https://images.unsplash.com/photo-1488426862026-3ee34a7d66df?auto=format&fit=crop&q=80&w=200",
+    content: "The bespoke Liquid development and search engine marketing strategy put our store on the map. Page loads are incredibly responsive, and customer engagement metrics have spiked significantly across all key global markets.",
     rating: 5
   },
   {
     name: "Alexander Kim",
-    role: "Founder, Active Gear",
-    content: "The store speed optimization was incredible. Pages load instantly, and our mobile conversion rate is up 30%.",
-    image: "https://images.unsplash.com/photo-1531427186611-ecfd6d936c79?auto=format&fit=crop&q=80&w=200",
+    content: "The speed optimization services delivered by Sheun Hub are second to none. Our mobile vitals are now entirely green, and mobile checkout conversion rates have increased by a solid thirty percent.",
     rating: 5
   }
 ];
@@ -1375,38 +1355,27 @@ export default function Home() {
                   className="shrink-0 transition-opacity duration-300 px-3"
                   style={{ width: `${100 / visibleCount}%` }}
                 >
-                  <div className="bg-white dark:bg-navy/80 p-8 rounded-3xl shadow-xl border border-navy/5 dark:border-white/5 flex flex-col h-full justify-between min-h-[300px]">
+                  <div className="bg-white dark:bg-navy/80 p-8 rounded-3xl shadow-xl border border-navy/5 dark:border-white/5 flex flex-col h-full justify-between min-h-[340px]">
                     <div>
-                      <div className="flex items-center gap-4 mb-6">
-                        <div className="shrink-0 relative">
-                          <div className="w-16 h-16 rounded-full overflow-hidden border-2 border-white shadow-md relative z-10">
-                            <img 
-                              src={testimonial.image} 
-                              alt={testimonial.name} 
-                              className="w-full h-full object-cover" 
-                              referrerPolicy="no-referrer"
-                            />
-                          </div>
-                          <div className="absolute -bottom-1 -right-1 w-6 h-6 bg-green text-navy rounded-full flex items-center justify-center shadow z-20">
-                            <Quote size={10} />
-                          </div>
+                      <div className="flex items-center justify-between mb-6">
+                        <div className="w-10 h-10 bg-green/10 dark:bg-green/5 text-green rounded-full flex items-center justify-center shadow-sm">
+                          <Quote size={16} className="rotate-180" />
                         </div>
-                        <div>
-                          <h3 className="text-navy dark:text-white font-bold text-lg leading-tight">{testimonial.name}</h3>
-                          <p className="text-navy dark:text-white/40 text-xs uppercase tracking-widest mt-1">{testimonial.role}</p>
+                        <div className="flex items-center gap-1">
+                          {[...Array(testimonial.rating || 5)].map((_, j) => (
+                            <Star key={j} size={14} fill="currentColor" className="text-[#FFC107]" />
+                          ))}
                         </div>
                       </div>
 
-                      <div className="flex items-center gap-1 mb-4">
-                        {[...Array(testimonial.rating || 5)].map((_, j) => (
-                          <Star key={j} size={14} fill="currentColor" className="text-[#FFC107]" />
-                        ))}
-                      </div>
+                      <p className="text-navy dark:text-white/80 font-serif italic text-[15px] leading-relaxed mb-6">
+                        "{testimonial.content}"
+                      </p>
                     </div>
-                    
-                    <p className="text-navy dark:text-white/70 font-serif italic text-base leading-relaxed flex-grow mt-2">
-                      "{testimonial.content}"
-                    </p>
+
+                    <div className="border-t border-navy/5 dark:border-white/5 pt-4">
+                      <h3 className="text-navy dark:text-white font-bold text-base leading-tight">{testimonial.name}</h3>
+                    </div>
                   </div>
                 </div>
               ))}
