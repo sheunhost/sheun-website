@@ -26,15 +26,15 @@ export default function About() {
   const navigate = useNavigate();
   return (
     <PageWrapper 
-      title="About Sheun Hub | Certified Shopify Partner & Developer (UK, US, CA, AU, FR, DE)" 
-      description="Meet Sheun Hub, a certified Shopify Partner, developer, and SEO expert. Helping merchants across the UK, US, Canada, Australia, France, and Germany build high-performance Shopify stores, migrations, and SEO sprints."
-      keywords="shopify developer UK, freelance shopify developer, shopify developer Australia, shopify expert Canada, United States Shopify Expert, shopify expert France, shopify developer Germany, About Sheun Hub, Shopify Partner, custom liquid themes, WooCommerce to Shopify migration"
+      title="About Sheun Hub | Certified Shopify Partner & Developer" 
+      description="Meet Sheun Hub, a certified Shopify Partner, developer, and SEO expert. Helping merchants worldwide build high-performance Shopify stores, migrations, and SEO sprints."
+      keywords="shopify developer, freelance shopify developer, About Sheun Hub, Shopify Partner, custom liquid themes, WooCommerce to Shopify migration"
       canonical="/about"
       schema={{
         "@context": "https://schema.org",
         "@type": "AboutPage",
         "name": "About Sheun Hub - Certified Shopify Partner & SEO Consultant",
-        "description": "Learn more about Sheun Hub, a certified Shopify Partner and remote e-commerce developer helping brands in the UK, US, Canada, Australia, France, and Germany scale with speed, migrations, and SEO sprints.",
+        "description": "Learn more about Sheun Hub, a certified Shopify Partner and remote e-commerce developer helping brands worldwide scale with speed, migrations, and SEO sprints.",
         "url": "https://sheun.online/about",
         "mainEntity": {
           "@type": "Person",
@@ -159,7 +159,7 @@ export default function About() {
       {/* Hidden for SEO */}
       <div className="sr-only">
         <h2>Who I Work With</h2>
-        <p>I provide high-end Shopify development for ambitious brands worldwide, with dedicated focus on primary markets: United Kingdom (Shopify Expert UK), United States (E-commerce Scaling), Canada (Shopify Expert Canada), and Australia (Shopify Developer Australia).</p>
+        <p>I provide high-end Shopify development for ambitious brands worldwide, delivering high-performance setups, e-commerce scaling, custom migrations, and advanced optimizations.</p>
       </div>
 
       {/* Global Credibility - Premium Modern Section */}
@@ -229,7 +229,7 @@ export default function About() {
         <div className="container mx-auto px-6 max-w-7xl text-center">
           <p className="text-xs sm:text-sm text-[#475569] font-medium tracking-wide flex items-center justify-center gap-2">
             <span>🌍</span>
-            <span>Timezone-flexible real-time communications for merchants in the <strong>UK, US, Canada, Australia, France, and Germany</strong>. I work while you work.</span>
+            <span>Timezone-flexible real-time communications for ambitious merchants <strong>worldwide</strong>. I work while you work.</span>
           </p>
         </div>
       </section>
@@ -353,7 +353,7 @@ export default function About() {
                 { title: "Direct Contact", desc: "You work directly with me. No project managers, no communication gaps, just pure momentum.", icon: MessageSquare },
                 { title: "Surgical Precision", desc: "I focus on high-impact optimizations that move your store's revenue needle instantly.", icon: Zap },
                 { title: "Business Strategy", desc: "My Business Management degree ensures every technical decision is tied to commercial outcomes.", icon: Layout },
-                { title: "Global Specialist", desc: "I understand the local buyer behaviors of the UK, US, CA, AU, France, and German markets.", icon: Star },
+                { title: "Global Specialist", desc: "I understand the local buyer behaviors and conversion trends of international markets.", icon: Star },
               ].map((card, i) => (
                 <motion.div 
                   key={i} 
@@ -399,7 +399,7 @@ export default function About() {
                 <span className="text-[#10b981] underline decoration-[#10b981]/20 underline-offset-8 italic font-serif font-light">your vision?</span>
               </h2>
               <p className="text-[#a1a1aa] text-lg sm:text-xl max-w-2xl mx-auto leading-relaxed">
-                I am currently accepting new projects for ambitious merchants based in the UK, US, Canada, Australia, and worldwide. Let's build a store that crushes metrics.
+                I am currently accepting new projects for ambitious merchants worldwide. Let's build a store that crushes metrics.
               </p>
               
               <div className="flex flex-col sm:flex-row items-center justify-center gap-6 pt-4">

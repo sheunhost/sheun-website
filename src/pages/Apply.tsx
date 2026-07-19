@@ -166,8 +166,8 @@ export default function Apply() {
   return (
     <PageWrapper 
       title="Hire a Shopify Developer & SEO Specialist | Apply to Work with Sheun Hub" 
-      description="Ready to build or scale your storefront? Apply for custom Shopify themes, WooCommerce migrations, SEO sprints, or speed optimization projects. Custom, transparent quotes for brands in the UK, US, CA, AU, FR, and DE."
-      keywords="Hire Shopify Expert UK, Hire Shopify Developer USA, Shopify Migration Service Canada, Shopify SEO Sprint Australia, Shopify Developer France, Shopify Partner Germany"
+      description="Ready to build or scale your storefront? Apply for custom Shopify themes, WooCommerce migrations, SEO sprints, or speed optimization projects. Custom, transparent quotes for brands worldwide."
+      keywords="Hire Shopify Expert, Hire Shopify Developer, Shopify Migration Service, Shopify SEO Sprint, Shopify Developer, Shopify Partner"
       canonical="/apply"
       schema={{
         "@context": "https://schema.org",

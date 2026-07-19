@@ -41,8 +41,8 @@ export default function FashionDropshippingGuide() {
     <PageWrapper
       className="pt-32 pb-24 bg-white dark:bg-navy relative"
       title="High-Converting Fashion Dropshipping Shopify Store Design & Strategy"
-      description="Learn to build a high-converting fashion dropshipping Shopify store. Supplier strategies, custom Liquid theme branding, and conversion tactics for merchants in the UK, US, CA, AU, FR, and DE."
-      keywords="Fashion Dropshipping Shopify, Shopify dropshipping builder UK, custom clothing store USA, fashion e-commerce expert Canada, fashion Shopify developer Australia, Shopify developer France, Shopify dropshipping Germany"
+      description="Learn to build a high-converting fashion dropshipping Shopify store. Supplier strategies, custom Liquid theme branding, and conversion tactics for merchants worldwide."
+      keywords="Fashion Dropshipping Shopify, Shopify dropshipping builder, custom clothing store, fashion e-commerce expert, fashion Shopify developer"
       canonical="/blog/fashion-dropshipping-guide"
       schema={{
         "@context": "https://schema.org",

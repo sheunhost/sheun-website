@@ -40,9 +40,9 @@ export default function BestDropshippingApps() {
   return (
     <PageWrapper
       className="pt-32 pb-24 bg-white dark:bg-navy relative"
-      title="Best Shopify Dropshipping Apps for High Conversions (UK, US, CA, AU, FR, DE)"
+      title="Best Shopify Dropshipping Apps for High Conversions"
       description="The definitive checklist of Shopify dropshipping apps for 2026. Discover sourcing, inventory synchronization, custom fulfillment, and speed-optimized layouts for international merchants."
-      keywords="Shopify Dropshipping Apps, best sourcing tools, dropshipping builder UK, Shopify store setup USA, e-commerce automation Canada, Shopify integration Australia, dropshipping France, Shopify partner Germany"
+      keywords="Shopify Dropshipping Apps, best sourcing tools, dropshipping builder, Shopify store setup, e-commerce automation, Shopify integration"
       canonical="/blog/best-dropshipping-apps-2026"
       schema={{
         "@context": "https://schema.org",

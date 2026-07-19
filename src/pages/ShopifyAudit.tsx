@@ -70,9 +70,9 @@ export default function ShopifyAudit() {
 
   return (
     <PageWrapper
-      title="Shopify Store Audit & CRO Performance Analysis (UK, US, CA, AU, FR, DE)"
-      description="Get an expert Shopify store audit, technical SEO inspection, and conversion rate analysis (CRO). 48-hour delivery with video walkthrough. Stop guessing and start scaling in the UK, US, Canada, Australia, France, and Germany."
-      keywords="shopify store audit UK, shopify audit service USA, shopify CRO expert Canada, shopify speed optimization Australia, shopify SEO audit France, shopify store optimization Germany, conversion rate analysis"
+      title="Shopify Store Audit & CRO Performance Analysis"
+      description="Get an expert Shopify store audit, technical SEO inspection, and conversion rate analysis (CRO). 48-hour delivery with video walkthrough. Stop guessing and start scaling your store worldwide."
+      keywords="shopify store audit, shopify audit service, shopify CRO expert, shopify speed optimization, shopify SEO audit, shopify store optimization, conversion rate analysis"
       canonical="/shopify-store-audit"
     >
       {/* Hero Section */}

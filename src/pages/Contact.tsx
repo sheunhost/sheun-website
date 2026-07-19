@@ -132,8 +132,8 @@ export default function Contact() {
   return (
     <PageWrapper 
       title="Contact Sheun Hub | Certified Shopify Partner & SEO Specialist" 
-      description="Get a premium Shopify store build, custom theme, technical SEO audit, or a WooCommerce-to-Shopify migration project started. Remote partner consulting for the UK, US, Canada, Australia, France, and Germany."
-      keywords="Contact Shopify Expert, Hire Shopify Developer UK, Shopify SEO consultation USA, Shopify migration expert Canada, Free Shopify Audit Australia, Shopify freelancer France, Shopify Partner Germany"
+      description="Get a premium Shopify store build, custom theme, technical SEO audit, or a WooCommerce-to-Shopify migration project started. Remote partner consulting for ambitious brands worldwide."
+      keywords="Contact Shopify Expert, Hire Shopify Developer, Shopify SEO consultation, Shopify migration expert, Free Shopify Audit, Shopify freelancer, Shopify Partner"
       canonical="/contact"
       schema={{
         "@context": "https://schema.org",

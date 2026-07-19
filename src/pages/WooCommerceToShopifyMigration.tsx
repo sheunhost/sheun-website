@@ -45,8 +45,8 @@ export default function WooCommerceToShopifyMigration() {
   return (
     <PageWrapper
       title="WooCommerce to Shopify Migration SEO: 2026 Checklist & Expert Services"
-      description="Migrate WooCommerce to Shopify without losing Google search rankings. Complete step-by-step SEO checklist, URL 301 mapping, and expert migration services for brands in the UK, US, Canada, Australia, France, and Germany."
-      keywords="migrate WooCommerce to Shopify, WooCommerce to Shopify migration, Shopify migration expert, WooCommerce to Shopify SEO checklist, ecommerce migration services UK, WooCommerce to Shopify migration agency Canada, Shopify partner migration Australia, Shopify partner France, Shopify developer Germany"
+      description="Migrate WooCommerce to Shopify without losing Google search rankings. Complete step-by-step SEO checklist, URL 301 mapping, and expert migration services for brands worldwide."
+      keywords="migrate WooCommerce to Shopify, WooCommerce to Shopify migration, Shopify migration expert, WooCommerce to Shopify SEO checklist, ecommerce migration services, WooCommerce to Shopify migration agency, Shopify partner migration"
       canonical="/blog/woocommerce-to-shopify-migration"
     >
       <div className="pt-32 pb-24 bg-light dark:bg-white/5 relative min-h-screen">

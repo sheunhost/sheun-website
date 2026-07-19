@@ -132,9 +132,9 @@ export default function Portfolio() {
 
   return (
     <PageWrapper 
-      title="Shopify Developer Portfolio & Case Studies (UK, US, CA, AU, FR, DE)" 
-      description="Explore premium custom Shopify builds, WooCommerce migrations, speed enhancements, and SEO case studies. Proven Shopify partner results for merchants in the UK, US, Canada, Australia, France, and Germany."
-      keywords="Shopify Portfolio, E-commerce Case Studies, WooCommerce to Shopify migration portfolio, Shopify SEO case studies UK, Shopify Developer portfolio Canada, Shopify expert Australia, Shopify custom Liquid France, Shopify designer Germany, custom Liquid development examples"
+      title="Shopify Developer Portfolio & Case Studies | Sheun Hub" 
+      description="Explore premium custom Shopify builds, WooCommerce migrations, speed enhancements, and SEO case studies. Proven Shopify partner results for merchants worldwide."
+      keywords="Shopify Portfolio, E-commerce Case Studies, WooCommerce to Shopify migration portfolio, Shopify SEO case studies, Shopify Developer portfolio, Shopify expert, Shopify custom Liquid, Shopify designer, custom Liquid development examples"
       canonical="/portfolio"
       schema={{
         "@context": "https://schema.org",

@@ -10,9 +10,9 @@ import { PullQuote, CalloutBox, FAQSection } from "../components/BlogDeepDive";
 export default function LeveragingShopifyMarkets() {
   return (
     <PageWrapper
-      title="How to Leverage Shopify Markets for International Sales (UK, US, CA, AU, FR, DE)"
-      description="Scale your store globally with Shopify Markets. Configure custom pricing, duties calculation, localized SEO, and multi-currency checkouts for the UK, US, Canada, Australia, France, and Germany."
-      keywords="Shopify Markets guide, international Shopify setup, Shopify multi-currency, Shopify expert UK, Shopify partner France, Shopify developer Germany"
+      title="How to Leverage Shopify Markets for International Sales"
+      description="Scale your store globally with Shopify Markets. Configure custom pricing, duties calculation, localized SEO, and multi-currency checkouts for international sales worldwide."
+      keywords="Shopify Markets guide, international Shopify setup, Shopify multi-currency, Shopify expert, Shopify partner, Shopify developer"
       canonical="/blog/leveraging-shopify-markets"
     >
       <article className="bg-white dark:bg-navy">

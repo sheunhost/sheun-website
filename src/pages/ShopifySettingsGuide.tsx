@@ -59,9 +59,9 @@ const conversionKillers = [
 export default function ShopifySettingsGuide() {
   return (
     <PageWrapper
-      title="Shopify Backend Settings Optimization Guide (UK, US, CA, AU, FR, DE)"
+      title="Shopify Backend Settings Optimization Guide"
       description="Hidden Shopify settings to boost conversion rates, optimize checkout checkout pipelines, and streamline global delivery. Expert setup audit tips for international merchants."
-      keywords="Shopify Settings Guide, Shopify Backend Settings, Shopify checkout audit, Shopify international markets setup, Shopify expert UK, Shopify developer Canada, Shopify consultant Germany"
+      keywords="Shopify Settings Guide, Shopify Backend Settings, Shopify checkout audit, Shopify international markets setup"
       canonical="/shopify-not-converting"
     >
       {/* Hero Section */}

@@ -614,15 +614,15 @@ export default function Home() {
 
   return (
     <PageWrapper 
-      title="Best Shopify Developer, Consultant & SEO Expert (UK, US, CA, AU, FR, DE) | Sheun Hub" 
-      description="Need a certified Shopify Developer & SEO Consultant? Sheun Hub provides custom store builds, technical SEO audits, WooCommerce migrations, and speed optimizations for brands in the UK, US, Canada, Australia, France, and Germany."
-      keywords="best shopify developer, affordable shopify developer, shopify expert reviews, shopify expert UK, freelance shopify developer, shopify developer Australia, shopify expert Canada, shopify expert USA, shopify developer France, shopify expert Germany, WooCommerce to Shopify migration, Shopify SEO Sprint, Technical Shopify SEO Audit, Custom Shopify Themes, E-commerce CRO, speed optimization"
+      title="Best Shopify Developer, Consultant & SEO Expert | Sheun Hub" 
+      description="Need a certified Shopify Developer & SEO Consultant? Sheun Hub provides custom store builds, technical SEO audits, WooCommerce migrations, and speed optimizations for global brands worldwide."
+      keywords="best shopify developer, affordable shopify developer, shopify expert reviews, freelance shopify developer, WooCommerce to Shopify migration, Shopify SEO Sprint, Technical Shopify SEO Audit, Custom Shopify Themes, E-commerce CRO, speed optimization"
       canonical="/"
       schema={{
         "@context": "https://schema.org",
         "@type": "ProfilePage",
         "name": "Shopify Developer, SEO Specialist & Growth Expert - Sheun Hub",
-        "description": "Scale your brand with a certified Shopify Partner specializing in WooCommerce migrations, technical SEO audits, custom theme development, and performance optimization across the UK, US, Canada, Australia, France, and Germany.",
+        "description": "Scale your brand with a certified Shopify Partner specializing in WooCommerce migrations, technical SEO audits, custom theme development, and performance optimization for e-commerce brands worldwide.",
         "url": "https://sheun.online",
         "mainEntity": {
           "@type": "Person",

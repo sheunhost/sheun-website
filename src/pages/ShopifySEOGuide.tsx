@@ -46,8 +46,8 @@ export default function ShopifySEOGuide() {
     <PageWrapper 
       className="pt-32 pb-24 bg-light dark:bg-white/5 relative min-h-screen"
       title="Shopify SEO in 2026: Complete Expert Optimization Guide"
-      description="Step-by-step technical and on-page Shopify SEO checklist. Learn to optimize collections, override metadata, configure rich schemas, and drive organic traffic in the UK, US, Canada, Australia, France, and Germany."
-      keywords="Shopify SEO Guide, Shopify SEO expert UK, Shopify SEO specialist USA, technical Shopify SEO Canada, rank Shopify store Australia, Shopify SEO consultant France, Shopify optimization Germany"
+      description="Step-by-step technical and on-page Shopify SEO checklist. Learn to optimize collections, override metadata, configure rich schemas, and drive organic traffic for merchants worldwide."
+      keywords="Shopify SEO Guide, Shopify SEO expert, Shopify SEO specialist, technical Shopify SEO, rank Shopify store, Shopify SEO consultant, Shopify optimization"
       canonical="/shopify-seo-guide"
       schema={{
         "@context": "https://schema.org",

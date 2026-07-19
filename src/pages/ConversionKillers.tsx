@@ -59,9 +59,9 @@ const conversionKillers = [
 export default function ConversionKillers() {
   return (
     <PageWrapper
-      title="Shopify Store Not Converting? CRO Optimization Guide (UK, US, CA, AU, FR, DE)"
-      description="Is your Shopify storefront getting traffic but no sales? Fix low Shopify conversion rates, checkout drop-offs, and design errors. Professional CRO audit services in the UK, US, Canada, Australia, France, and Germany."
-      keywords="Shopify store not converting UK, Shopify conversion optimization USA, e-commerce CRO audit Canada, fix checkout drop-off Australia, Shopify checkout audit France, Shopify CRO expert Germany"
+      title="Shopify Store Not Converting? CRO Optimization Guide"
+      description="Is your Shopify storefront getting traffic but no sales? Fix low Shopify conversion rates, checkout drop-offs, and design errors. Professional CRO audit services for brands worldwide."
+      keywords="Shopify store not converting, Shopify conversion optimization, e-commerce CRO audit, fix checkout drop-off, Shopify checkout audit, Shopify CRO expert"
       canonical="/shopify-not-converting"
     >
       {/* Hero Section */}

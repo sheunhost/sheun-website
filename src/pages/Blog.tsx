@@ -96,8 +96,8 @@ export default function Blog() {
   return (
     <PageWrapper 
       title="Shopify Development, Migration & SEO Blog | Sheun Hub"
-      description="Step-by-step guides, e-commerce migration checklists, speed optimization strategies, and professional Shopify SEO tips. Trusted by brands in the UK, US, CA, AU, FR, and DE."
-      keywords="Shopify Blog, Shopify SEO tutorial, WooCommerce to Shopify migration checklist, Shopify Speed Optimization guide UK, Shopify Expert blog USA, Shopify Partner France, Shopify developer Germany"
+      description="Step-by-step guides, e-commerce migration checklists, speed optimization strategies, and professional Shopify SEO tips trusted by brands worldwide."
+      keywords="Shopify Blog, Shopify SEO tutorial, WooCommerce to Shopify migration checklist, Shopify Speed Optimization guide"
       canonical="/blog"
       schema={{
         "@context": "https://schema.org",

@@ -40,9 +40,9 @@ export default function ShopifySpeedOptimization() {
   return (
     <PageWrapper
       className="pt-32 pb-24 bg-white dark:bg-navy relative"
-      title="Shopify Speed Optimization & Core Web Vitals Specialist (UK, US, CA, AU, FR, DE)"
-      description="Optimize your Shopify storefront speed and mobile Core Web Vitals. Reduce script bloat, lazy-load assets, and boost mobile conversions. Speed audit services in the UK, US, Canada, Australia, France, and Germany."
-      keywords="Shopify Speed Optimization UK, Core Web Vitals Shopify USA, improve Shopify pagespeed Canada, Shopify developer speed Australia, Shopify speed optimization France, Shopify speed expert Germany"
+      title="Shopify Speed Optimization & Core Web Vitals Specialist"
+      description="Optimize your Shopify storefront speed and mobile Core Web Vitals. Reduce script bloat, lazy-load assets, and boost mobile conversions. Speed audit services for e-commerce brands worldwide."
+      keywords="Shopify Speed Optimization, Core Web Vitals Shopify, improve Shopify pagespeed, Shopify developer speed, Shopify speed optimization, Shopify speed expert"
       canonical="/blog/shopify-speed-optimization"
       schema={{
         "@context": "https://schema.org",

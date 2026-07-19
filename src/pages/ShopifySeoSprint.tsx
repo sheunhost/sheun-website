@@ -272,9 +272,9 @@ export default function ShopifySeoSprint() {
 
   return (
     <PageWrapper
-      title="48-Hour Shopify SEO Sprint (UK, US, CA, AU, FR, DE) | Sheun Hub"
-      description="Turn your Shopify store into an organic traffic powerhouse in 48 hours. Professional technical SEO audits, metadata overrides, index fixes, and collection mapping for merchants in the UK, US, Canada, Australia, France, and Germany."
-      keywords="Shopify SEO Expert UK, Shopify SEO Sprint USA, Technical SEO Audit Shopify Canada, Hire Shopify SEO Specialist Australia, Shopify SEO France, Shopify optimization Germany, E-commerce Organic Traffic, Fix Shopify Indexing"
+      title="48-Hour Shopify SEO Sprint | Sheun Hub"
+      description="Turn your Shopify store into an organic traffic powerhouse in 48 hours. Professional technical SEO audits, metadata overrides, index fixes, and collection mapping for merchants worldwide."
+      keywords="Shopify SEO Expert, Shopify SEO Sprint, Technical SEO Audit Shopify, Hire Shopify SEO Specialist, Shopify SEO, Shopify optimization, E-commerce Organic Traffic, Fix Shopify Indexing"
       canonical="/shopify-seo-sprint"
     >
       {/* Inject SEO Schemas */}
