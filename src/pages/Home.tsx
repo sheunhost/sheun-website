@@ -463,6 +463,36 @@ export default function Home() {
 
   const [selectedService, setSelectedService] = useState<any | null>(null);
     
+  const [testimonialIndex, setTestimonialIndex] = useState(0);
+  const [visibleCount, setVisibleCount] = useState(3);
+  const [isPaused, setIsPaused] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth >= 1024) {
+        setVisibleCount(3);
+      } else if (window.innerWidth >= 768) {
+        setVisibleCount(2);
+      } else {
+        setVisibleCount(1);
+      }
+    };
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  useEffect(() => {
+    if (isPaused) return;
+    const timer = setInterval(() => {
+      setTestimonialIndex((prev) => {
+        const maxIndex = testimonials.length - visibleCount;
+        return prev >= maxIndex ? 0 : prev + 1;
+      });
+    }, 4500);
+    return () => clearInterval(timer);
+  }, [visibleCount, isPaused]);
+
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
   
@@ -1328,43 +1358,105 @@ export default function Home() {
           </div>
 
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
-            {testimonials.map((testimonial, idx) => (
-              <div
-                key={idx}
-                className="bg-white dark:bg-navy/80 p-8 rounded-3xl shadow-xl border border-navy/5 dark:border-white/5 flex flex-col h-full"
-              >
-                <div className="flex items-center gap-4 mb-6">
-                  <div className="shrink-0 relative">
-                    <div className="w-16 h-16 rounded-full overflow-hidden border-2 border-white shadow-md relative z-10">
-                      <img 
-                        src={testimonial.image} 
-                        alt={testimonial.name} 
-                        className="w-full h-full object-cover" 
-                        referrerPolicy="no-referrer"
-                      />
-                    </div>
-                    <div className="absolute -bottom-1 -right-1 w-6 h-6 bg-green text-navy rounded-full flex items-center justify-center shadow z-20">
-                      <Quote size={10} />
-                    </div>
-                  </div>
-                  <div>
-                    <h3 className="text-navy dark:text-white font-bold text-lg leading-tight">{testimonial.name}</h3>
-                    <p className="text-navy dark:text-white/40 text-xs uppercase tracking-widest mt-1">{testimonial.role}</p>
-                  </div>
-                </div>
+          {/* Slider Viewport Container */}
+          <div 
+            className="relative max-w-7xl mx-auto overflow-hidden px-1 py-4"
+            onMouseEnter={() => setIsPaused(true)}
+            onMouseLeave={() => setIsPaused(false)}
+          >
+            <motion.div
+              className="flex flex-row flex-nowrap"
+              animate={{ x: `-${testimonialIndex * (100 / visibleCount)}%` }}
+              transition={{ type: "spring", stiffness: 80, damping: 20 }}
+            >
+              {testimonials.map((testimonial, idx) => (
+                <div
+                  key={idx}
+                  className="shrink-0 transition-opacity duration-300 px-3"
+                  style={{ width: `${100 / visibleCount}%` }}
+                >
+                  <div className="bg-white dark:bg-navy/80 p-8 rounded-3xl shadow-xl border border-navy/5 dark:border-white/5 flex flex-col h-full justify-between min-h-[300px]">
+                    <div>
+                      <div className="flex items-center gap-4 mb-6">
+                        <div className="shrink-0 relative">
+                          <div className="w-16 h-16 rounded-full overflow-hidden border-2 border-white shadow-md relative z-10">
+                            <img 
+                              src={testimonial.image} 
+                              alt={testimonial.name} 
+                              className="w-full h-full object-cover" 
+                              referrerPolicy="no-referrer"
+                            />
+                          </div>
+                          <div className="absolute -bottom-1 -right-1 w-6 h-6 bg-green text-navy rounded-full flex items-center justify-center shadow z-20">
+                            <Quote size={10} />
+                          </div>
+                        </div>
+                        <div>
+                          <h3 className="text-navy dark:text-white font-bold text-lg leading-tight">{testimonial.name}</h3>
+                          <p className="text-navy dark:text-white/40 text-xs uppercase tracking-widest mt-1">{testimonial.role}</p>
+                        </div>
+                      </div>
 
-                <div className="flex items-center gap-1 mb-4">
-                  {[...Array(testimonial.rating || 5)].map((_, j) => (
-                    <Star key={j} size={14} fill="currentColor" className="text-[#FFC107]" />
-                  ))}
+                      <div className="flex items-center gap-1 mb-4">
+                        {[...Array(testimonial.rating || 5)].map((_, j) => (
+                          <Star key={j} size={14} fill="currentColor" className="text-[#FFC107]" />
+                        ))}
+                      </div>
+                    </div>
+                    
+                    <p className="text-navy dark:text-white/70 font-serif italic text-base leading-relaxed flex-grow mt-2">
+                      "{testimonial.content}"
+                    </p>
+                  </div>
                 </div>
-                
-                <p className="text-navy dark:text-white/70 font-serif italic text-base leading-relaxed flex-grow">
-                  "{testimonial.content}"
-                </p>
-              </div>
-            ))}
+              ))}
+            </motion.div>
+          </div>
+
+          {/* Navigation Controls */}
+          <div className="flex items-center justify-center gap-6 mt-12 relative z-20">
+            <button
+              onClick={() => {
+                setTestimonialIndex((prev) => {
+                  const maxIndex = testimonials.length - visibleCount;
+                  return prev <= 0 ? maxIndex : prev - 1;
+                });
+              }}
+              className="w-12 h-12 rounded-full border border-navy/10 dark:border-white/10 flex items-center justify-center hover:bg-navy hover:text-white dark:hover:bg-white dark:hover:text-navy text-navy dark:text-white transition-all cursor-pointer bg-white dark:bg-navy shadow-md"
+              aria-label="Previous testimonial"
+            >
+              <ChevronLeft size={20} />
+            </button>
+            
+            {/* Pagination Dots */}
+            <div className="flex items-center gap-2">
+              {[...Array(testimonials.length - visibleCount + 1)].map((_, i) => (
+                <button
+                  key={i}
+                  onClick={() => setTestimonialIndex(i)}
+                  className={cn(
+                    "h-2.5 rounded-full transition-all duration-300 cursor-pointer",
+                    testimonialIndex === i 
+                      ? "w-8 bg-green" 
+                      : "w-2.5 bg-navy/10 dark:bg-white/10 hover:bg-navy/30 dark:hover:bg-white/30"
+                  )}
+                  aria-label={`Go to slide ${i + 1}`}
+                />
+              ))}
+            </div>
+
+            <button
+              onClick={() => {
+                setTestimonialIndex((prev) => {
+                  const maxIndex = testimonials.length - visibleCount;
+                  return prev >= maxIndex ? 0 : prev + 1;
+                });
+              }}
+              className="w-12 h-12 rounded-full border border-navy/10 dark:border-white/10 flex items-center justify-center hover:bg-navy hover:text-white dark:hover:bg-white dark:hover:text-navy text-navy dark:text-white transition-all cursor-pointer bg-white dark:bg-navy shadow-md"
+              aria-label="Next testimonial"
+            >
+              <ChevronRight size={20} />
+            </button>
           </div>
         </div>
 </section>
