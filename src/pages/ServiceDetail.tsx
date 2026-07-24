@@ -103,8 +103,10 @@ export default function ServiceDetail() {
     
     if (validateForm(formData)) {
       setIsSubmitting(true);
+      formData.append("access_key", "c0573f7d-6191-4374-bc31-ee70ee9fa226");
+      formData.append("subject", `New Service Inquiry: ${service.title}`);
       try {
-        const response = await fetch("https://formspree.io/f/xvgzlypy", {
+        const response = await fetch("https://api.web3forms.com/submit", {
           method: "POST",
           body: formData,
           headers: {

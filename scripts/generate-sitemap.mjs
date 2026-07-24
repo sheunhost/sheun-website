@@ -21,7 +21,34 @@ const baseRoutes = [
   { url: '/woocommerce-to-shopify-migration', priority: '0.8', changefreq: 'monthly' },
   { url: '/best-dropshipping-apps', priority: '0.8', changefreq: 'monthly' },
   { url: '/fashion-dropshipping-guide', priority: '0.8', changefreq: 'monthly' },
-  { url: '/leveraging-shopify-markets', priority: '0.8', changefreq: 'monthly' }
+  { url: '/leveraging-shopify-markets', priority: '0.8', changefreq: 'monthly' },
+  // Automation Routes
+  { url: '/automation', priority: '1.0', changefreq: 'weekly' },
+  { url: '/automation/services', priority: '0.9', changefreq: 'weekly' },
+  { url: '/automation/solutions', priority: '0.8', changefreq: 'monthly' },
+  { url: '/automation/industries', priority: '0.8', changefreq: 'monthly' },
+  { url: '/automation/case-studies', priority: '0.8', changefreq: 'monthly' },
+  { url: '/automation/about', priority: '0.8', changefreq: 'monthly' },
+  { url: '/automation/faq', priority: '0.8', changefreq: 'monthly' },
+  { url: '/automation/contact', priority: '0.8', changefreq: 'monthly' },
+  { url: '/automation/privacy-policy', priority: '0.5', changefreq: 'yearly' },
+  { url: '/automation/terms', priority: '0.5', changefreq: 'yearly' },
+  { url: '/automation/services/ai-workflow-automation', priority: '0.8', changefreq: 'monthly' },
+  { url: '/automation/services/gohighlevel-crm', priority: '0.8', changefreq: 'monthly' },
+  { url: '/automation/services/ai-chatbots', priority: '0.8', changefreq: 'monthly' },
+  { url: '/automation/services/ai-voice-agents', priority: '0.8', changefreq: 'monthly' },
+  { url: '/automation/services/business-process-automation', priority: '0.8', changefreq: 'monthly' },
+  { url: '/automation/services/crm-integration', priority: '0.8', changefreq: 'monthly' },
+  { url: '/automation/services/email-marketing-automation', priority: '0.8', changefreq: 'monthly' },
+  { url: '/automation/services/custom-api-n8n-zapier', priority: '0.8', changefreq: 'monthly' },
+  { url: '/automation/services/workflow', priority: '0.8', changefreq: 'monthly' },
+  { url: '/automation/services/gohighlevel', priority: '0.8', changefreq: 'monthly' },
+  { url: '/automation/services/chatbot', priority: '0.8', changefreq: 'monthly' },
+  { url: '/automation/services/voice', priority: '0.8', changefreq: 'monthly' },
+  { url: '/automation/services/business-process', priority: '0.8', changefreq: 'monthly' },
+  { url: '/automation/services/crm-migration', priority: '0.8', changefreq: 'monthly' },
+  { url: '/automation/services/email-marketing', priority: '0.8', changefreq: 'monthly' },
+  { url: '/automation/services/api', priority: '0.8', changefreq: 'monthly' }
 ];
 
 const serviceIds = ['setup', 'dropshipping', 'migration', 'custom', 'plus', 'bug', 'seo', 'cro', 'apps', 'speed'];

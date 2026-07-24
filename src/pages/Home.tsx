@@ -501,6 +501,16 @@ export default function Home() {
       });
       const data = await response.json();
       if (data.success) {
+        // Sync to Mailchimp
+        fetch("/api/connect/subscribe", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ 
+            email,
+            firstName: formData.get("name")?.toString().split(" ")[0] || ""
+          })
+        }).catch(err => console.error("Mailchimp Sync Error:", err));
+
         setPlanRequested(true);
         form.reset();
       } else {
@@ -997,7 +1007,7 @@ export default function Home() {
                     <div className="space-y-2">
                       <label className="text-sm font-bold text-navy dark:text-white ml-4">Your Name *</label>
                       <input 
-                        type="text" 
+                        type="text" name="name" 
                         required
                         placeholder="John Doe" 
                         className="w-full bg-white border-2 border-navy/5 rounded-full py-4 px-6 focus:border-green outline-none transition-all"

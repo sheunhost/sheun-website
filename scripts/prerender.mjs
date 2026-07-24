@@ -29,7 +29,35 @@ const baseRoutes = [
   '/woocommerce-to-shopify-migration',
   '/best-dropshipping-apps',
   '/fashion-dropshipping-guide',
-  '/leveraging-shopify-markets'
+  '/leveraging-shopify-markets',
+  // Automation Routes
+  '/automation',
+  '/automation/services',
+  '/automation/solutions',
+  '/automation/industries',
+  '/automation/case-studies',
+  '/automation/about',
+  '/automation/faq',
+  '/automation/contact',
+  '/automation/privacy-policy',
+  '/automation/terms',
+  '/automation/thank-you',
+  '/automation/services/ai-workflow-automation',
+  '/automation/services/gohighlevel-crm',
+  '/automation/services/ai-chatbots',
+  '/automation/services/ai-voice-agents',
+  '/automation/services/business-process-automation',
+  '/automation/services/crm-integration',
+  '/automation/services/email-marketing-automation',
+  '/automation/services/custom-api-n8n-zapier',
+  '/automation/services/workflow',
+  '/automation/services/gohighlevel',
+  '/automation/services/chatbot',
+  '/automation/services/voice',
+  '/automation/services/business-process',
+  '/automation/services/crm-migration',
+  '/automation/services/email-marketing',
+  '/automation/services/api'
 ];
 
 const serviceIds = ['setup', 'dropshipping', 'migration', 'custom', 'plus', 'bug', 'seo', 'cro', 'apps', 'speed'];

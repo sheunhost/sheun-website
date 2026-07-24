@@ -1,28 +1,35 @@
-# Sheun Hub - Shopify Development & E-commerce Growth
+# Sheun & Sheun Automation
+> Automate Smarter. Scale Faster. | Enterprise AI Automation & Shopify Platform Engineering
 
-> Professional Shopify development and e-commerce growth services for global brands.
+## Overview
+Sheun operates two specialized technical divisions under the same domain (https://sheun.online):
 
-Sheun Hub is a certified Shopify Partner, developer, and SEO expert helping e-commerce brands worldwide scale their businesses.
+1. **Sheun Automation Division** (https://sheun.online/automation)
+Focuses on AI workflow automation, GoHighLevel CRM setup, conversational AI chatbots, sub-600ms AI voice agents, Business Process Automation (BPA), CRM migrations, email marketing sequences, and custom API/n8n middleware engineering.
 
-## Core Services
-- Custom Shopify Theme Development & Headless Commerce
-- WooCommerce to Shopify Migrations
-- Technical Shopify SEO & Store Speed Optimization
-- E-commerce Conversion Rate Optimization (CRO)
-- Store Setup, Dropshipping Solutions, and Ongoing Support
+2. **Sheun Shopify Division** (https://sheun.online/services)
+Focuses on high-converting Shopify store development, custom Liquid theme design, WooCommerce to Shopify migration, conversion rate optimization (CRO), and e-commerce SEO.
 
-## Key Pages
-- [Home](https://sheun.online/)
-- [About](https://sheun.online/about)
-- [Services](https://sheun.online/services)
-- [Portfolio](https://sheun.online/portfolio)
-- [Blog & Insights](https://sheun.online/blog)
-- [ROI Calculator](https://sheun.online/calculator)
-- [Contact/Apply](https://sheun.online/apply)
+## Sheun Automation Services
+- **AI Workflow Automation**: Self-executing AI pipelines powered by GPT-4o and Gemini 1.5 Flash for document parsing, lead routing, and database execution. (https://sheun.online/automation/services/ai-workflow-automation)
+- **GoHighLevel CRM Setup & Automation**: Complete GHL customization, sub-600ms speed-to-lead SMS/Email nurture flows, missed-call text-back, and booking calendars. (https://sheun.online/automation/services/gohighlevel-crm)
+- **AI Chatbot Development**: RAG-trained conversational AI bots deployed across Website, WhatsApp, and Slack with function-calling capabilities. (https://sheun.online/automation/services/ai-chatbots)
+- **AI Voice Agent & Calling Solutions**: Human-sounding AI voice callers for 24/7 inbound scheduling and outbound speed-to-lead verification. (https://sheun.online/automation/services/ai-voice-agents)
+- **Business Process Automation**: Enterprise operational re-engineering across finance, HR, inventory, and procurement. (https://sheun.online/automation/services/business-process-automation)
+- **CRM Integration & Migration**: Zero-loss data migrations between Salesforce, HubSpot, GoHighLevel, and Zoho with bi-directional webhooks. (https://sheun.online/automation/services/crm-integration)
+- **Email & Marketing Automation**: Behavioral lifecycle email and SMS sequences in Klaviyo, ActiveCampaign, and GoHighLevel. (https://sheun.online/automation/services/email-marketing-automation)
+- **Custom API & Middleware**: Custom REST/GraphQL webhooks, serverless microservices, and self-hosted n8n enterprise workflow servers. (https://sheun.online/automation/services/custom-api-n8n-zapier)
 
-## About the Founder
-Sheun is a Top Rated Specialist on Upwork and a verified Shopify Partner with deep expertise in Liquid programming, SEO sprints, and UX design.
+## Key Automation Pages
+- Home: https://sheun.online/automation
+- Services: https://sheun.online/automation/services
+- Solutions: https://sheun.online/automation/solutions
+- Industries: https://sheun.online/automation/industries
+- Case Studies: https://sheun.online/automation/case-studies
+- About: https://sheun.online/automation/about
+- FAQ: https://sheun.online/automation/faq
+- Contact & Strategy Call: https://sheun.online/automation/contact
 
-## Contact
-- Email: sheunhost@gmail.com
-- LinkedIn: [Sheun Hub](https://www.linkedin.com/in/sheun-hub-26b876321)
+## Engineering Standards & Contact
+- SOC2 compliant API data privacy with zero retraining on private company data.
+- Direct Contact: hello@sheun.online

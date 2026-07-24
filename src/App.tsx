@@ -38,6 +38,24 @@ const BestDropshippingApps = lazy(() => import("./pages/BestDropshippingApps"));
 const FashionDropshippingGuide = lazy(() => import("./pages/FashionDropshippingGuide"));
 const LeveragingShopifyMarkets = lazy(() => import("./pages/LeveragingShopifyMarkets"));
 
+// Lazy load Automation components
+const AutomationHome = lazy(() => import("./automation/pages/AutomationHome"));
+const AutomationServices = lazy(() => import("./automation/pages/AutomationServices"));
+const AutomationServiceDetail = lazy(() => import("./automation/pages/AutomationServiceDetail"));
+const AutomationSolutions = lazy(() => import("./automation/pages/AutomationSolutions"));
+const AutomationIndustries = lazy(() => import("./automation/pages/AutomationIndustries"));
+const AutomationCaseStudies = lazy(() => import("./automation/pages/AutomationCaseStudies"));
+const AutomationAbout = lazy(() => import("./automation/pages/AutomationAbout"));
+const AutomationFAQ = lazy(() => import("./automation/pages/AutomationFAQ"));
+const AutomationContact = lazy(() => import("./automation/pages/AutomationContact"));
+const AutomationPrivacyPolicy = lazy(() => import("./automation/pages/AutomationPrivacyPolicy"));
+const AutomationTerms = lazy(() => import("./automation/pages/AutomationTerms"));
+const AutomationThankYou = lazy(() => import("./automation/pages/AutomationThankYou"));
+const AutomationNotFound = lazy(() => import("./automation/pages/AutomationNotFound"));
+
+import AutomationNavbar from "./automation/components/AutomationNavbar";
+import AutomationFooter from "./automation/components/AutomationFooter";
+
 // Loading fallback
 const PageLoader = () => (
   <div className="flex items-center justify-center min-h-screen">
@@ -52,6 +70,7 @@ function AnimatedRoutes() {
     <AnimatePresence mode="wait">
       <Suspense fallback={<PageLoader />}>
         <Routes location={location} key={location.pathname}>
+          {/* Main Site Routes */}
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/services" element={<Services />} />
@@ -77,9 +96,51 @@ function AnimatedRoutes() {
           <Route path="/apply" element={<Apply />} />
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
           <Route path="/terms-of-service" element={<TermsOfService />} />
+
+          {/* Automation Section Routes */}
+          <Route path="/automation" element={<AutomationHome />} />
+          <Route path="/automation/services" element={<AutomationServices />} />
+          <Route path="/automation/services/:slug" element={<AutomationServiceDetail />} />
+          <Route path="/automation/solutions" element={<AutomationSolutions />} />
+          <Route path="/automation/industries" element={<AutomationIndustries />} />
+          <Route path="/automation/case-studies" element={<AutomationCaseStudies />} />
+          <Route path="/automation/about" element={<AutomationAbout />} />
+          <Route path="/automation/faq" element={<AutomationFAQ />} />
+          <Route path="/automation/contact" element={<AutomationContact />} />
+          <Route path="/automation/privacy-policy" element={<AutomationPrivacyPolicy />} />
+          <Route path="/automation/terms" element={<AutomationTerms />} />
+          <Route path="/automation/thank-you" element={<AutomationThankYou />} />
+
+          {/* Legacy Automation Service Route Aliases */}
+          <Route path="/automation/services/workflow" element={<Navigate to="/automation/services/ai-workflow-automation" replace />} />
+          <Route path="/automation/services/gohighlevel" element={<Navigate to="/automation/services/gohighlevel-crm" replace />} />
+          <Route path="/automation/services/chatbot" element={<Navigate to="/automation/services/ai-chatbots" replace />} />
+          <Route path="/automation/services/voice" element={<Navigate to="/automation/services/ai-voice-agents" replace />} />
+          <Route path="/automation/services/business-process" element={<Navigate to="/automation/services/business-process-automation" replace />} />
+          <Route path="/automation/services/crm-migration" element={<Navigate to="/automation/services/crm-integration" replace />} />
+          <Route path="/automation/services/email-marketing" element={<Navigate to="/automation/services/email-marketing-automation" replace />} />
+          <Route path="/automation/services/api" element={<Navigate to="/automation/services/custom-api-n8n-zapier" replace />} />
+          <Route path="/automation/*" element={<AutomationNotFound />} />
         </Routes>
       </Suspense>
     </AnimatePresence>
+  );
+}
+
+function Layout() {
+  const location = useLocation();
+  const isAutomation = location.pathname.startsWith('/automation');
+
+  return (
+    <div className={`min-h-screen flex flex-col ${isAutomation ? 'bg-slate-950 text-slate-100' : ''}`}>
+      {isAutomation ? <AutomationNavbar /> : <Navbar />}
+      <main className="flex-grow">
+        <AnimatedRoutes />
+      </main>
+      {isAutomation ? <AutomationFooter /> : <Footer />}
+      {!isAutomation && <FloatingCalendly />}
+      <ScrollToTop />
+    </div>
   );
 }
 
@@ -89,15 +150,7 @@ export default function App() {
       <Router>
         <GoogleAnalytics />
         <ScrollToTopOnNavigation />
-        <div className="min-h-screen flex flex-col">
-          <Navbar />
-          <main className="flex-grow">
-            <AnimatedRoutes />
-          </main>
-          <Footer />
-          <FloatingCalendly />
-          <ScrollToTop />
-        </div>
+        <Layout />
       </Router>
     </HelmetProvider>
   );

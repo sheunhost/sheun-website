@@ -1,5 +1,7 @@
-import { motion } from "framer-motion";
-import { CheckCircle2, Award, GraduationCap, Star, MapPin, Globe, ArrowRight, Code2, Rocket, Zap, Layout, MessageSquare, Mail, Users, Target, Activity, Lightbulb, Eye, Handshake, TrendingUp, Linkedin, Twitter, Cpu } from "lucide-react";
+const fs = require('fs');
+
+const content = `import { motion } from "framer-motion";
+import { CheckCircle2, Award, GraduationCap, Star, MapPin, Globe, ArrowRight, Code2, Rocket, Zap, Layout, MessageSquare, Mail, Users, Target, Activity, Lightbulb, Eye, Handshake, TrendingUp, Linkedin, Twitter } from "lucide-react";
 import PageWrapper from "../components/PageWrapper";
 import { Link, useNavigate } from "react-router-dom";
 import ScrollReveal from "../components/ScrollReveal";
@@ -285,3 +287,6 @@ export default function About() {
     </PageWrapper>
   );
 }
+`;
+
+fs.writeFileSync('/app/applet/src/pages/About.tsx', content);

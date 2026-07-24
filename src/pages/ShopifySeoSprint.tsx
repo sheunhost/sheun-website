@@ -206,9 +206,33 @@ export default function ShopifySeoSprint() {
     setOpenFaq(openFaq === index ? null : index);
   };
 
-  const handleAuditSubmit = (e: React.FormEvent) => {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const handleAuditSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setFormSubmitted(true);
+    setIsSubmitting(true);
+    
+    const formElement = e.currentTarget;
+    const submitData = new FormData(formElement);
+    submitData.append("access_key", "c0573f7d-6191-4374-bc31-ee70ee9fa226");
+    submitData.append("subject", "New Shopify SEO Sprint Review Request");
+
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: submitData
+      });
+      
+      const data = await response.json();
+      if (data.success) {
+        setFormSubmitted(true);
+      } else {
+        console.error("Form submission failed", data);
+      }
+    } catch (err) {
+      console.error("Form submission error", err);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   // Structured Data Schemas
