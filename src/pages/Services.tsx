@@ -352,17 +352,31 @@ export default function Services() {
       description="Professional Shopify services: custom theme builds, WooCommerce migrations, technical SEO audits, and 48-hour SEO sprints. Scaling sales for e-commerce merchants worldwide."
       keywords="Shopify Services, Store Setup, Shopify Migration, Theme Customization, E-commerce SEO, Convertion Rate Optimization, shopify dropshipping expert, hire shopify seo expert, shopify experts, shopify freelancer, hire someone to build shopify store, shopify migration, shopify migration agency, shopify migration experts, build shopify store for us, shopify web designer, shopify developers, shopify website designer, shopify agency, hire shopify expert, shopify consultant, freelance shopify developer, shopify website designers, magento to shopify migration, shopify designers, shopify website design company, shopify developers for hire, shopify marketing experts, shopify website experts, shopify seo expert, shopify expert agency, shopify agency partners, shopify migration services, hire someone to set up shopify store, woocommerce to shopify migration, shopify coding expert, web designer for shopify, shopify freelance developer, shopify designer freelance, migrate woocommerce to shopify, shopify developer agency, shopify plus experts, shopify design experts, shopify expert help, certified shopify expert, shopify expert website builder, shopify developer hire, shopify store expert, freelance shopify website designer, hire someone to build our shopify store, shopify web agency, find shopify experts, shopify to bigcommerce migration, migrate from shopify to bigcommerce, wordpress to shopify migration, bigcommerce to shopify migration, shopify consultation, shopify seo specialist, shopify professionals, shopify expert hire, hire expert shopify, shopify development service, best shopify website designers, best shopify agency, shopify experts seo, shopify expert developer, shopify ecommerce experts, hire a shopify seo expert"
       canonical="/services"
-      schema={{
-         "@context": "https://schema.org",
-         "@type": "Service",
-         "name": "Shopify Development Services",
-         "provider": {
-            "@type": "Person",
-            "name": "Sheun Hub"
-         },
-         "description": "Expert Shopify store setup, data migration, theme customization, and holistic E-commerce growth.",
-         "url": "https://sheun.online/services"
-      }}
+      schema={[
+        {
+          "@context": "https://schema.org",
+          "@type": "Service",
+          "name": "Shopify Development Services",
+          "provider": {
+             "@type": "Organization",
+             "name": "Sheun Hub"
+          },
+          "description": "Expert Shopify store setup, data migration, theme customization, and holistic E-commerce growth.",
+          "url": "https://sheun.online/services"
+        },
+        {
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          "mainEntity": faqs.map((faq) => ({
+            "@type": "Question",
+            "name": faq.q,
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": faq.a
+            }
+          }))
+        }
+      ]}
     >
       {/* Services Hero - Premium High-Impact Grid */}
         <section className="relative pt-32 pb-24 md:pt-40 md:pb-32 bg-[#FFFFFF] overflow-hidden border-b border-[#E2E8F0] dark:border-white/10">

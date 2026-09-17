@@ -7,7 +7,7 @@ import { fileURLToPath } from 'url';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
-const distPath = path.resolve(__dirname, '../dist');
+const distPath = path.resolve(process.cwd(), 'dist');
 
 const baseRoutes = [
   '/',
@@ -49,15 +49,7 @@ const baseRoutes = [
   '/automation/services/business-process-automation',
   '/automation/services/crm-integration',
   '/automation/services/email-marketing-automation',
-  '/automation/services/custom-api-n8n-zapier',
-  '/automation/services/workflow',
-  '/automation/services/gohighlevel',
-  '/automation/services/chatbot',
-  '/automation/services/voice',
-  '/automation/services/business-process',
-  '/automation/services/crm-migration',
-  '/automation/services/email-marketing',
-  '/automation/services/api'
+  '/automation/services/custom-api-n8n-zapier'
 ];
 
 const serviceIds = ['setup', 'dropshipping', 'migration', 'custom', 'plus', 'bug', 'seo', 'cro', 'apps', 'speed'];
@@ -158,7 +150,12 @@ async function prerender() {
 
     await browser.close();
     server.close();
-    fs.renameSync(path.join(distPath, 'index-prerendered.html'), path.join(distPath, 'index.html'));
+    const prerenderedHome = path.join(distPath, 'index-prerendered.html');
+    const finalHome = path.join(distPath, 'index.html');
+    if (fs.existsSync(prerenderedHome)) {
+      fs.copyFileSync(prerenderedHome, finalHome);
+      fs.unlinkSync(prerenderedHome);
+    }
     console.log('Prerendering complete!');
   });
 }

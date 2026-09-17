@@ -3,7 +3,7 @@ import { ArrowRight, Star, ShoppingBag, Globe, Trophy, CheckCircle2, Layout, Ref
 import { Link, useNavigate } from "react-router-dom";
 import { GoogleGenAI } from "@google/genai";
 import PageWrapper from "../components/PageWrapper";
-import SEO from "../components/SEO";
+import { SEO } from "../components/SEO";
 import { useState, FormEvent, useEffect } from "react";
 import { AnimatePresence } from "framer-motion";
 import { cn, openCalendlyPopup } from "../lib/utils";
@@ -44,88 +44,29 @@ const services = [
   },
 ];
 
-const portfolio = [
-  {
-    name: "Rooibru",
-    tag: "Real Client Project",
-    desc: "Full Shopify build for a premium drink store — custom design, product setup, and store optimization.",
-    image: "https://images.unsplash.com/photo-1544148103-0773bf10d330?auto=format&fit=crop&q=80&w=800",
-    link: "https://rooibru.com",
-  },
-  {
-    name: "Fashion Nova",
-    tag: "Fashion Inspiration",
-    desc: "The standard for high-converting Shopify fashion dropshipping stores.",
-    image: "https://picsum.photos/seed/fashion/800/600",
-    link: "#",
-  },
-  {
-    name: "Uproot Clean",
-    tag: "Pet Inspiration",
-    desc: "5-figure monthly sales pet store with smart upsell flows.",
-    image: "https://picsum.photos/seed/pets/800/600",
-    link: "#",
-  },
-];
 
-const niches = [
-  { name: "Fashion", desc: "Trendy dropshipping stores built to convert", image: "https://cdn-images.farfetch-contents.com/31/90/40/19/31904019_61489160_1000.jpg" },
-  { name: "Beauty", desc: "Elegant, trust-building beauty storefronts", image: "https://www.raycochrane.co.uk/wp-content/uploads/2017/08/Woman-having-facial-mask-at-beauty-salon-133557705_3645x2734.jpg" },
-  { name: "Pets", desc: "Upsell-optimized pet product stores", image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRi4cmUVsx11t41Zvm2ZUF02sFqGoo152yezg&s" },
-  { name: "Gadgets", desc: "High-converting tech & accessories stores", image: "https://dodptt9f4zk9h.cloudfront.net/stores/97090/collections/a524d801cea38da741c3f7ad6fde21ae6a29f8f6.jpeg" },
-];
 
 const testimonials = [
   {
     name: "Sarah Jenkins",
-    content: "Sheun Hub completely transformed our online presence and Shopify custom storefront. Our overall conversion rate literally doubled in the first month after the launch, resulting in unprecedented growth for our organic and paid traffic.",
-    rating: 5
+    rating: 5,
+    content: "Sheun Hub completely transformed our online presence. Our conversion rate doubled within the first month after the redesign.",
   },
   {
-    name: "Marcus Chen",
-    content: "The complex migration of our retail store from WooCommerce to Shopify was handled with absolute perfection. We did not lose a single customer transaction, order details, or Google search index rankings during the seamless transition.",
-    rating: 5
+    name: "Michael Chen",
+    rating: 5,
+    content: "The level of expertise in Shopify development is unmatched. They handled our complex migration flawlessly without any downtime.",
   },
   {
-    name: "Emma Roberts",
-    content: "I am highly impressed with the exceptional custom Liquid code work, speed optimization, and layout adjustments. Communication was extremely fast, clear, and professional, perfectly capturing our luxury fashion brand identity in every detail.",
-    rating: 5
+    name: "Emma Watson",
+    rating: 5,
+    content: "Incredible attention to detail and UX. Our new custom theme perfectly captures our brand identity while being lightning fast.",
   },
   {
-    name: "David Miller",
-    content: "Implementing the 48-hour Shopify SEO Sprint was the best decision we ever made for our shop. We observed a massive forty percent surge in qualified organic impressions and sales conversions in under three weeks.",
-    rating: 5
+    name: "David Rodriguez",
+    rating: 5,
+    content: "The best investment we've made for our e-commerce business. The technical SEO improvements alone brought in massive organic traffic.",
   },
-  {
-    name: "Lisa Wong",
-    content: "An absolute authority when it comes to custom Liquid and Shopify theme architecture. He built complex bespoke app-free features and unique dynamic layouts that other developers claimed were technically impossible to run.",
-    rating: 5
-  },
-  {
-    name: "James Carter",
-    content: "Our automated multi-channel dropshipping integration is performing flawlessly. It has saved our support team endless hours of manual inventory updates, improving delivery speed and driving customer satisfaction ratings higher than ever.",
-    rating: 5
-  },
-  {
-    name: "Mia Thompson",
-    content: "Our entire store design looks stunningly premium and professional. The seamless checkout pipeline and optimized product pages successfully boosted our average order value by fifteen percent within the first week.",
-    rating: 5
-  },
-  {
-    name: "Oliver Wright",
-    content: "Optimizing our mobile speed and fixing critical layout bottlenecks drastically reduced shopping cart abandonment. Page load speeds went from sluggish to instant, keeping our customers engaged throughout the entire checkout journey.",
-    rating: 4
-  },
-  {
-    name: "Sophia Martinez",
-    content: "The bespoke Liquid development and search engine marketing strategy put our store on the map. Page loads are incredibly responsive, and customer engagement metrics have spiked significantly across all key global markets.",
-    rating: 5
-  },
-  {
-    name: "Alexander Kim",
-    content: "The speed optimization services delivered by Sheun Hub are second to none. Our mobile vitals are now entirely green, and mobile checkout conversion rates have increased by a solid thirty percent.",
-    rating: 5
-  }
 ];
 
 const SEOReport = ({ data }: { data: any }) => {
@@ -1441,81 +1382,7 @@ export default function Home() {
 </section>
     </ScrollReveal>
 
-    {/* Portfolio Preview - Bento Grid */}
-    <ScrollReveal>
-      <section className="py-32 bg-white dark:bg-navy">
-        <div className="container mx-auto px-6">
-          <div className="flex flex-col md:flex-row md:items-center justify-between gap-8 mb-24">
-            <h2 className="text-5xl md:text-8xl font-bold text-navy dark:text-white tracking-tighter leading-[0.85]">
-              Selected <span className="italic font-serif font-light text-navy dark:text-white/40">Works</span>.
-            </h2>
-            <Link to="/portfolio" className="group flex items-center gap-4 text-navy dark:text-white font-bold text-lg">
-              View All Projects
-              <div className="w-12 h-12 rounded-full border border-navy/10 flex items-center justify-center group-hover:bg-navy group-hover:text-white transition-all">
-                <ArrowRight size={20} />
-              </div>
-            </Link>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-12 gap-12">
-            {[
-              {
-                title: "Beauty",
-                category: "Beauty & Skincare",
-                image: "https://www.chesterwellnesscentre.co.uk/wp-content/uploads/2023/08/Essentials-of-Skin-Care.jpg",
-                col: "md:col-span-8",
-                height: "h-[700px]"
-              },
-              {
-                title: "PET",
-                category: "Pet Supplies",
-                image: "https://m.media-amazon.com/images/we/81Ei5upG6ZL._AC_UF1000,1000_QL80_.jpg",
-                col: "md:col-span-4",
-                height: "h-[700px]"
-              },
-              {
-                title: "Gadgets",
-                category: "Gadgets",
-                image: "https://miro.medium.com/0*G29d-grLDSv2GyEc.jpg",
-                col: "md:col-span-12",
-                height: "h-[500px]"
-              }
-            ].map((item, i) => (
-              <div
-                key={i}
-                
-                
-                
-                
-                className={cn(item.col)}
-              >
-                <TiltCard depth={15} className="h-full">
-                  <div className={cn("relative group overflow-hidden rounded-3xl cursor-pointer p-8 flex flex-col justify-end w-full", item.height)}>
-                    <img 
-                      src={item.image} 
-                      alt={item.title} 
-                      referrerPolicy="no-referrer"
-                      className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-[2s]" 
-                      loading="lazy" 
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-navy via-navy/20 to-transparent opacity-80 group-hover:opacity-90 transition-opacity" />
-                    <div className="relative z-10 flex items-end justify-between w-full">
-                      <div className="space-y-4">
-                        <p className="text-green text-[10px] font-bold uppercase tracking-[0.4em]">{item.category}</p>
-                        <h3 className="text-[clamp(1.5rem,3vw,2.25rem)] font-bold text-white tracking-tight line-clamp-1">{item.title}</h3>
-                      </div>
-                      <div className="w-16 h-16 rounded-full bg-white/10 backdrop-blur-xl border border-white/20 flex items-center justify-center text-white opacity-0 group-hover:opacity-100 transition-all translate-y-4 group-hover:translate-y-0 shrink-0">
-                        <ArrowRight size={24} className="-rotate-45" />
-                      </div>
-                    </div>
-                  </div>
-                </TiltCard>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-    </ScrollReveal>
+    
 
     {/* Call to Action Section */}
     <ScrollReveal>

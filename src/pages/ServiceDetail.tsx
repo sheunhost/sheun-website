@@ -142,12 +142,30 @@ export default function ServiceDetail() {
     }
   };
 
+  const serviceSchema = service ? {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": service.title,
+    "description": service.description,
+    "provider": {
+      "@type": "Organization",
+      "name": "Sheun Hub"
+    },
+    "offers": {
+      "@type": "Offer",
+      "priceRange": "$$$"
+    }
+  } : null;
+
+  const combinedSchema = [serviceSchema, faqSchema].filter(Boolean);
+
   return (
     <PageWrapper 
       title={`${service.title} | Sheun Hub - Shopify Expert`}
       description={service.description}
       keywords={service.keywords}
       canonical={`/services/${id}`}
+      schema={combinedSchema}
     >
       <div className="bg-[#050505] text-white min-h-screen relative font-sans selection:bg-white/20">
         <CosmicBackground color={theme.main} />
@@ -665,9 +683,6 @@ export default function ServiceDetail() {
         </section>
 
       </div>
-      {faqSchema && (
-        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
-      )}
     </PageWrapper>
   );
 }

@@ -1,7 +1,7 @@
 import { motion, useScroll, useSpring } from "framer-motion";
 import { ReactNode } from "react";
 import { useLocation } from "react-router-dom";
-import { useSEO } from "../../hooks/useSEO";
+import { SEO } from "../../components/SEO";
 
 interface AutomationPageWrapperProps {
   children: ReactNode;
@@ -34,22 +34,32 @@ export default function AutomationPageWrapper({
 
   const defaultDesc = description || "Sheun Automation builds intelligent AI workflows, custom GoHighLevel CRMs, AI chatbots, voice agents, and business process automations that scale operations without extra headcount.";
   
-  const defaultImage = image || "https://i.postimg.cc/wxQgVCcf/1000031270-removebg-preview.png";
+  const defaultImage = image || "https://www.sheun.online/og-image.png";
   
   const currentPath = canonical || location.pathname;
-  const canonicalUrl = `https://sheun.online${currentPath === "/" ? "/automation" : currentPath}`;
+  const canonicalUrl = `https://www.sheun.online${currentPath === "/" ? "/automation" : currentPath}`;
 
   const defaultSchema = {
     "@context": "https://schema.org",
     "@type": "ProfessionalService",
-    "name": "Sheun Automation",
+    "name": "Sheun Hub Automation Division",
+    "parentOrganization": {
+      "@type": "ProfessionalService",
+      "@id": "https://www.sheun.online/#organization",
+      "name": "Sheun Hub",
+      "url": "https://www.sheun.online"
+    },
     "alternateName": "Sheun AI Automation & Workflow Division",
-    "url": "https://sheun.online/automation",
+    "url": "https://www.sheun.online/automation",
     "logo": defaultImage,
     "image": defaultImage,
+    "email": "sheunhost@gmail.com",
+    "founder": {
+      "@type": "Person",
+      "name": "Sheun"
+    },
     "description": defaultDesc,
     "slogan": "Automate Smarter. Scale Faster.",
-    "telephone": "+1-800-AUTOMATE",
     "priceRange": "$$$",
     "address": {
       "@type": "PostalAddress",
@@ -57,14 +67,10 @@ export default function AutomationPageWrapper({
     },
     "sameAs": [
       "https://github.com/sheunhost",
-      "https://twitter.com/sheunhub"
+      "https://twitter.com/sheunhub",
+      "https://www.linkedin.com/in/sheun-hub-26b876321"
     ],
-    "areaServed": [
-      { "@type": "Country", "name": "United States" },
-      { "@type": "Country", "name": "United Kingdom" },
-      { "@type": "Country", "name": "Canada" },
-      { "@type": "Country", "name": "Australia" }
-    ],
+    "areaServed": "Worldwide",
     "knowsAbout": [
       "AI Workflow Automation",
       "GoHighLevel CRM Architecture",
@@ -92,13 +98,13 @@ export default function AutomationPageWrapper({
         "@type": "ListItem",
         "position": 1,
         "name": "Home",
-        "item": "https://sheun.online"
+        "item": "https://www.sheun.online"
       },
       {
         "@type": "ListItem",
         "position": 2,
         "name": "Automation",
-        "item": "https://sheun.online/automation"
+        "item": "https://www.sheun.online/automation"
       },
       {
         "@type": "ListItem",
@@ -109,12 +115,20 @@ export default function AutomationPageWrapper({
     ]
   } : null;
 
-  useSEO(fullTitle, defaultDesc, canonicalUrl, finalSchema, breadcrumbSchema, keywords, defaultImage);
-
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 12 }}
-      animate={{ opacity: 1, y: 0 }}
+    <>
+      <SEO 
+        title={fullTitle} 
+        description={defaultDesc} 
+        canonical={canonicalUrl} 
+        schema={finalSchema} 
+        breadcrumbSchema={breadcrumbSchema} 
+        keywords={keywords} 
+        image={defaultImage} 
+      />
+      <motion.div
+        initial={{ opacity: 0, y: 12 }}
+        animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: -12 }}
       transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
       className={`min-h-screen bg-slate-950 text-slate-100 selection:bg-cyan-500 selection:text-slate-950 ${className || ""}`}
@@ -125,5 +139,6 @@ export default function AutomationPageWrapper({
         style={{ scaleX }} 
       />
     </motion.div>
+    </>
   );
 }

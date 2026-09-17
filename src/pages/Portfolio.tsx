@@ -225,7 +225,7 @@ export default function Portfolio() {
                 <div className="relative aspect-[4/5] rounded-2xl overflow-hidden bg-[#F4F4F5] dark:bg-white/10 border border-[#E2E8F0] dark:border-white/10">
                   <img 
                     src={project.image} 
-                    alt="Sheun Hub Portfolio Design" 
+                    alt={`${project.name} - Custom Shopify Store Design by Sheun Hub`} 
                     referrerPolicy="no-referrer"
                     width="400"
                     height="500"

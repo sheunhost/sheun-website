@@ -23,7 +23,7 @@ export default function AutomationFooter() {
             </div>
             <div>
               <h4 className="text-white font-bold text-base">Looking for Shopify Development & E-Commerce Growth?</h4>
-              <p className="text-slate-400 text-sm mt-0.5">Sheun operates two specialized divisions for maximum domain focus.</p>
+              <p className="text-slate-400 text-sm mt-0.5">Sheun Hub operates two specialized divisions for maximum domain focus.</p>
             </div>
           </div>
           <div className="flex items-center gap-3 shrink-0">
@@ -53,7 +53,7 @@ export default function AutomationFooter() {
                 </div>
               </div>
               <div className="flex items-center gap-1.5">
-                <span className="text-xl font-bold text-white">Sheun</span>
+                <span className="text-xl font-bold text-white">Sheun Hub</span>
                 <span className="text-xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-400">
                   Automation
                 </span>
@@ -131,7 +131,7 @@ export default function AutomationFooter() {
         {/* Bottom Rights */}
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500 font-mono">
           <div>
-            © {currentYear} Sheun Automation (A Division of Sheun.online). All rights reserved.
+            © {currentYear} Sheun Hub Automation (A Division of Sheun Hub). All rights reserved.
           </div>
           <div className="flex items-center gap-6">
             <Link to="/automation/privacy-policy" className="hover:text-slate-300 transition-colors">Privacy Policy</Link>

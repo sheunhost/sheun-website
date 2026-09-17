@@ -269,45 +269,14 @@ export default function ShopifySeoSprint() {
     }))
   };
 
-  const breadcrumbSchema = {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    "itemListElement": [
-      {
-        "@type": "ListItem",
-        "position": 1,
-        "name": "Home",
-        "item": "https://sheun.online"
-      },
-      {
-        "@type": "ListItem",
-        "position": 2,
-        "name": "Services",
-        "item": "https://sheun.online/services"
-      },
-      {
-        "@type": "ListItem",
-        "position": 3,
-        "name": "48-Hour Shopify SEO Sprint",
-        "item": "https://sheun.online/shopify-seo-sprint"
-      }
-    ]
-  };
-
   return (
     <PageWrapper
       title="48-Hour Shopify SEO Sprint | Sheun Hub"
       description="Turn your Shopify store into an organic traffic powerhouse in 48 hours. Professional technical SEO audits, metadata overrides, index fixes, and collection mapping for merchants worldwide."
       keywords="Shopify SEO Expert, Shopify SEO Sprint, Technical SEO Audit Shopify, Hire Shopify SEO Specialist, Shopify SEO, Shopify optimization, E-commerce Organic Traffic, Fix Shopify Indexing"
       canonical="/shopify-seo-sprint"
+      schema={[serviceSchema, faqSchema]}
     >
-      {/* Inject SEO Schemas */}
-      <Helmet>
-        <script type="application/ld+json">{JSON.stringify(serviceSchema)}</script>
-        <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
-        <script type="application/ld+json">{JSON.stringify(breadcrumbSchema)}</script>
-      </Helmet>
-
       {/* SECTION 1: HERO */}
       <section className="relative pt-32 pb-24 md:pt-40 md:pb-32 bg-[#FFFFFF] overflow-hidden border-b border-[#E2E8F0]">
         {/* Subtle Background Gradients & Glows */}

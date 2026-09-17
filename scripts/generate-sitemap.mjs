@@ -40,15 +40,7 @@ const baseRoutes = [
   { url: '/automation/services/business-process-automation', priority: '0.8', changefreq: 'monthly' },
   { url: '/automation/services/crm-integration', priority: '0.8', changefreq: 'monthly' },
   { url: '/automation/services/email-marketing-automation', priority: '0.8', changefreq: 'monthly' },
-  { url: '/automation/services/custom-api-n8n-zapier', priority: '0.8', changefreq: 'monthly' },
-  { url: '/automation/services/workflow', priority: '0.8', changefreq: 'monthly' },
-  { url: '/automation/services/gohighlevel', priority: '0.8', changefreq: 'monthly' },
-  { url: '/automation/services/chatbot', priority: '0.8', changefreq: 'monthly' },
-  { url: '/automation/services/voice', priority: '0.8', changefreq: 'monthly' },
-  { url: '/automation/services/business-process', priority: '0.8', changefreq: 'monthly' },
-  { url: '/automation/services/crm-migration', priority: '0.8', changefreq: 'monthly' },
-  { url: '/automation/services/email-marketing', priority: '0.8', changefreq: 'monthly' },
-  { url: '/automation/services/api', priority: '0.8', changefreq: 'monthly' }
+  { url: '/automation/services/custom-api-n8n-zapier', priority: '0.8', changefreq: 'monthly' }
 ];
 
 const serviceIds = ['setup', 'dropshipping', 'migration', 'custom', 'plus', 'bug', 'seo', 'cro', 'apps', 'speed'];
@@ -65,7 +57,7 @@ const date = new Date().toISOString().split('T')[0];
 const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 ${routes.map(r => `  <url>
-    <loc>https://sheun.online${r.url}</loc>
+    <loc>https://www.sheun.online${r.url}</loc>
     <lastmod>${date}</lastmod>
     <changefreq>${r.changefreq}</changefreq>
     <priority>${r.priority}</priority>

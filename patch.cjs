@@ -1,50 +1,32 @@
 const fs = require('fs');
-const file = '/app/applet/src/pages/ShopifySeoSprint.tsx';
-let content = fs.readFileSync(file, 'utf8');
-const target = `  const handleAuditSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    setFormSubmitted(true);
-  };`;
-const replacement = `  const [isSubmitting, setIsSubmitting] = useState(false);
-  const handleAuditSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-    
-    const formElement = e.currentTarget;
-    const submitData = new FormData(formElement);
-    submitData.append("access_key", "c0573f7d-6191-4374-bc31-ee70ee9fa226");
-    submitData.append("subject", "New Shopify SEO Sprint Review Request");
+const content = fs.readFileSync('src/pages/Home.tsx', 'utf-8');
 
-    try {
-      const response = await fetch("https://api.web3forms.com/submit", {
-        method: "POST",
-        body: submitData
-      });
-      
-      const data = await response.json();
-      if (data.success) {
-        setFormSubmitted(true);
-      } else {
-        console.error("Form submission failed", data);
-      }
-    } catch (err) {
-      console.error("Form submission error", err);
-    } finally {
-      setIsSubmitting(false);
-    }
-  };`;
+const testimonialsCode = `
+const testimonials = [
+  {
+    name: "Sarah Jenkins",
+    rating: 5,
+    content: "Sheun Hub completely transformed our online presence. Our conversion rate doubled within the first month after the redesign.",
+  },
+  {
+    name: "Michael Chen",
+    rating: 5,
+    content: "The level of expertise in Shopify development is unmatched. They handled our complex migration flawlessly without any downtime.",
+  },
+  {
+    name: "Emma Watson",
+    rating: 5,
+    content: "Incredible attention to detail and UX. Our new custom theme perfectly captures our brand identity while being lightning fast.",
+  },
+  {
+    name: "David Rodriguez",
+    rating: 5,
+    content: "The best investment we've made for our e-commerce business. The technical SEO improvements alone brought in massive organic traffic.",
+  },
+];
 
-content = content.replace(target, replacement);
+`;
 
-content = content.replace('type="text"\\n                        required\\n                        placeholder="Sheun Hub Owner"', 'type="text"\\n                        name="name"\\n                        required\\n                        placeholder="Sheun Hub Owner"');
-
-content = content.replace('type="text"\\n                        required\\n                        placeholder="mystore.com"', 'type="text"\\n                        name="store_url"\\n                        required\\n                        placeholder="mystore.com"');
-
-content = content.replace('type="email"\\n                        required\\n                        placeholder="founder@mystore.com"', 'type="email"\\n                        name="email"\\n                        required\\n                        placeholder="founder@mystore.com"');
-
-content = content.replace('className="w-full px-4 py-3 rounded-xl bg-[#F8FAFC] border border-[#E2E8F0] text-sm focus:outline-none focus:border-[#16A34A]"\\n                      >', 'name="revenue"\\n                        className="w-full px-4 py-3 rounded-xl bg-[#F8FAFC] border border-[#E2E8F0] text-sm focus:outline-none focus:border-[#16A34A]"\\n                      >');
-
-content = content.replace('Claim Free SEO Review <ArrowRight size={16} />', '{isSubmitting ? "Submitting..." : "Claim Free SEO Review"} <ArrowRight size={16} />');
-
-
-fs.writeFileSync(file, content);
+const newContent = content.replace('const SEOReport = ', testimonialsCode + 'const SEOReport = ');
+fs.writeFileSync('src/pages/Home.tsx', newContent);
+console.log("Patched!");

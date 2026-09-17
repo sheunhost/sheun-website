@@ -235,7 +235,7 @@ export const servicesData = {
       }
     ],
     "testimonial": {
-      "quote": "We were terrified of losing our SEO traffic moving from WooCommerce. Sheun handled the 301 redirects perfectly. Not a single drop in traffic.",
+      "quote": "We were terrified of losing our SEO traffic moving from WooCommerce. Sheun Hub handled the 301 redirects perfectly. Not a single drop in traffic.",
       "author": "David R.",
       "role": "CEO, Summer Collection"
     },
@@ -315,7 +315,7 @@ export const servicesData = {
       }
     ],
     "testimonial": {
-      "quote": "We needed a custom product configurator that no app could provide. Sheun coded it beautifully from scratch in Liquid.",
+      "quote": "We needed a custom product configurator that no app could provide. Sheun Hub coded it beautifully from scratch in Liquid.",
       "author": "Elena M.",
       "role": "Director, OFINO"
     },

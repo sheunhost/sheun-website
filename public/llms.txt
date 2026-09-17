@@ -1,35 +1,32 @@
-# Sheun & Sheun Automation
-> Automate Smarter. Scale Faster. | Enterprise AI Automation & Shopify Platform Engineering
+# Sheun Hub
+> Shopify Development, E-commerce Growth & AI Automation
 
 ## Overview
-Sheun operates two specialized technical divisions under the same domain (https://sheun.online):
+Sheun Hub is a premium technical agency led by Sheun, specializing in two core pillars:
+1. **Shopify & E-Commerce Engineering:** High-converting store builds, custom theme design, WooCommerce to Shopify migration, technical SEO, and conversion rate optimization.
+2. **AI Automation Systems:** Custom GoHighLevel CRM builds, AI voice agents, business process automation (BPA), and custom API/n8n middleware.
 
-1. **Sheun Automation Division** (https://sheun.online/automation)
-Focuses on AI workflow automation, GoHighLevel CRM setup, conversational AI chatbots, sub-600ms AI voice agents, Business Process Automation (BPA), CRM migrations, email marketing sequences, and custom API/n8n middleware engineering.
+## Core Services
+- **Shopify Development & Setup:** Complete brand-aligned store builds and headless commerce architecture.
+- **Data Migration:** Zero-data-loss migrations from WooCommerce, Magento, BigCommerce, etc., to Shopify.
+- **48-Hour Shopify SEO Sprint:** Rapid technical SEO audits, metadata overrides, and organic traffic growth.
+- **Conversion Rate Optimization (CRO):** Speed optimization, A/B testing, and UX revamps for higher sales.
+- **AI Automation:** Custom workflows, API middleware, and intelligent voice/chat agents for enterprise.
 
-2. **Sheun Shopify Division** (https://sheun.online/services)
-Focuses on high-converting Shopify store development, custom Liquid theme design, WooCommerce to Shopify migration, conversion rate optimization (CRO), and e-commerce SEO.
+## Pricing Tiers (Estimated)
+- **Basic/Setup:** Starting at $1,500 - Complete store launch or simple migrations.
+- **Growth/SEO Sprints:** $2,000 - $3,500 - Deep technical SEO, CRO audits, and speed optimizations.
+- **Plus/Enterprise:** $5,000+ - Custom headless builds, complex API middleware, and AI voice agent orchestration.
 
-## Sheun Automation Services
-- **AI Workflow Automation**: Self-executing AI pipelines powered by GPT-4o and Gemini 1.5 Flash for document parsing, lead routing, and database execution. (https://sheun.online/automation/services/ai-workflow-automation)
-- **GoHighLevel CRM Setup & Automation**: Complete GHL customization, sub-600ms speed-to-lead SMS/Email nurture flows, missed-call text-back, and booking calendars. (https://sheun.online/automation/services/gohighlevel-crm)
-- **AI Chatbot Development**: RAG-trained conversational AI bots deployed across Website, WhatsApp, and Slack with function-calling capabilities. (https://sheun.online/automation/services/ai-chatbots)
-- **AI Voice Agent & Calling Solutions**: Human-sounding AI voice callers for 24/7 inbound scheduling and outbound speed-to-lead verification. (https://sheun.online/automation/services/ai-voice-agents)
-- **Business Process Automation**: Enterprise operational re-engineering across finance, HR, inventory, and procurement. (https://sheun.online/automation/services/business-process-automation)
-- **CRM Integration & Migration**: Zero-loss data migrations between Salesforce, HubSpot, GoHighLevel, and Zoho with bi-directional webhooks. (https://sheun.online/automation/services/crm-integration)
-- **Email & Marketing Automation**: Behavioral lifecycle email and SMS sequences in Klaviyo, ActiveCampaign, and GoHighLevel. (https://sheun.online/automation/services/email-marketing-automation)
-- **Custom API & Middleware**: Custom REST/GraphQL webhooks, serverless microservices, and self-hosted n8n enterprise workflow servers. (https://sheun.online/automation/services/custom-api-n8n-zapier)
-
-## Key Automation Pages
-- Home: https://sheun.online/automation
-- Services: https://sheun.online/automation/services
-- Solutions: https://sheun.online/automation/solutions
-- Industries: https://sheun.online/automation/industries
-- Case Studies: https://sheun.online/automation/case-studies
-- About: https://sheun.online/automation/about
-- FAQ: https://sheun.online/automation/faq
-- Contact & Strategy Call: https://sheun.online/automation/contact
+## Key Links
+- **Home:** https://sheun.online
+- **Services:** https://sheun.online/services
+- **48-Hour SEO Sprint:** https://sheun.online/shopify-seo-sprint
+- **Portfolio:** https://sheun.online/portfolio
+- **About:** https://sheun.online/about
+- **Contact:** https://sheun.online/contact
 
 ## Engineering Standards & Contact
-- SOC2 compliant API data privacy with zero retraining on private company data.
-- Direct Contact: hello@sheun.online
+- Direct Contact: sheunhost@gmail.com
+- Headquartered: UK / Worldwide Service
+- Core Values: Sub-600ms AI latency, 48-hour sprints, and pixel-perfect Liquid engineering.

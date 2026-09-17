@@ -1,28 +1,47 @@
-import { useSEO } from "../hooks/useSEO";
+import React from 'react';
+import { Helmet } from 'react-helmet-async';
 
 interface SEOProps {
   title: string;
   description: string;
   canonical: string;
-  schema?: Record<string, any>;
-  breadcrumbs?: { name: string; item: string }[];
+  schema?: any;
+  breadcrumbSchema?: any;
+  keywords?: string;
+  image?: string;
 }
 
-export default function SEO({ title, description, canonical, schema, breadcrumbs }: SEOProps) {
-  const fullUrl = `https://sheun.online${canonical === '/' ? '' : canonical}`;
-  
-  const breadcrumbSchema = breadcrumbs ? {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    "itemListElement": breadcrumbs.map((bc, idx) => ({
-      "@type": "ListItem",
-      "position": idx + 1,
-      "name": bc.name,
-      "item": `https://sheun.online${bc.item}`
-    }))
-  } : null;
-
-  useSEO(title, description, fullUrl, schema, breadcrumbSchema, undefined, undefined);
-
-  return null;
+export function SEO({ title, description, canonical, schema, breadcrumbSchema, keywords, image }: SEOProps) {
+  return (
+    <Helmet>
+      <title>{title}</title>
+      <meta name="description" content={description} />
+      {keywords && <meta name="keywords" content={keywords} />}
+      
+      <link rel="canonical" href={canonical} />
+      
+      <meta property="og:title" content={title} />
+      <meta property="og:description" content={description} />
+      {image && <meta property="og:image" content={image} />}
+      <meta property="og:url" content={canonical} />
+      
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:title" content={title} />
+      <meta name="twitter:description" content={description} />
+      {image && <meta name="twitter:image" content={image} />}
+      
+      {schema && (
+        <script type="application/ld+json">
+          {JSON.stringify(schema)}
+        </script>
+      )}
+      
+      {breadcrumbSchema && (
+        <script type="application/ld+json">
+          {JSON.stringify(breadcrumbSchema)}
+        </script>
+      )}
+    </Helmet>
+  );
 }
+

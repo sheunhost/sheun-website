@@ -165,7 +165,7 @@ export default function AutomationServices() {
             </div>
             <div className="bg-slate-900 p-6 rounded-2xl border border-cyan-500/40 space-y-3 relative">
               <div className="text-cyan-400 font-bold text-sm flex items-center gap-1">
-                Sheun AI Custom Engineering <Zap className="w-4 h-4 text-cyan-400" />
+                Sheun Hub AI Custom Engineering <Zap className="w-4 h-4 text-cyan-400" />
               </div>
               <p className="text-xs text-slate-300">Self-healing LLM pipelines, sub-second execution, SOC2 security, and unlimited task scalability.</p>
             </div>

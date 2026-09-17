@@ -11,7 +11,7 @@
         }
       ],
       "destination": "https://www.sheun.online/$1",
-      "permanent": true
+      "statusCode": 301
     }
   ],
   "rewrites": [

@@ -61,7 +61,7 @@ export default function AutomationNavbar() {
             <div className="flex flex-col">
               <div className="flex items-center gap-1.5">
                 <span className="text-lg font-bold tracking-tight text-white group-hover:text-cyan-400 transition-colors">
-                  Sheun
+                  Sheun Hub
                 </span>
                 <span className="text-lg font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-400">
                   Automation
