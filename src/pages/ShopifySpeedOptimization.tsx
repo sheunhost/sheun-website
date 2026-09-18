@@ -57,7 +57,7 @@ export default function ShopifySpeedOptimization() {
           "name": "Sheun Hub",
           "logo": {
             "@type": "ImageObject",
-            "url": "https://i.postimg.cc/wxQgVCcf/1000031270-removebg-preview.png"
+            "url": "https://www.sheun.online/logo.png"
           }
         },
         "description": "Optimize your Shopify store speed. Discover how to improve Shopify core web vitals, implement lazy loading, and compress images to boost conversion rates."

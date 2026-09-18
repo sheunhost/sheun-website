@@ -16,7 +16,7 @@ export default function Footer() {
           <div className="space-y-8">
             <Link to="/" className="inline-block">
               <img 
-                src="https://i.postimg.cc/wxQgVCcf/1000031270-removebg-preview.png" 
+                src="/logo.png" 
                 alt="Sheun Hub - Shopify Development and Growth Expert" 
                 referrerPolicy="no-referrer"
                 loading="lazy"

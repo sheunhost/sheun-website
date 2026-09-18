@@ -51,7 +51,7 @@ export default function AutomationPageWrapper({
     },
     "alternateName": "Sheun AI Automation & Workflow Division",
     "url": "https://www.sheun.online/automation",
-    "logo": defaultImage,
+    "logo": "https://www.sheun.online/logo.png",
     "image": defaultImage,
     "email": "sheunhost@gmail.com",
     "founder": {

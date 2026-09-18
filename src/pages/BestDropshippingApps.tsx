@@ -57,7 +57,7 @@ export default function BestDropshippingApps() {
           "name": "Sheun Hub",
           "logo": {
             "@type": "ImageObject",
-            "url": "https://i.postimg.cc/wxQgVCcf/1000031270-removebg-preview.png"
+            "url": "https://www.sheun.online/logo.png"
           }
         },
         "description": "Discover the top 7 Shopify apps for dropshipping in 2026. From sourcing products to boosting conversions, these tools are essential."

@@ -41,7 +41,7 @@ export default function Navbar() {
         <div className="flex items-center gap-8 lg:gap-10">
           <Link to="/" className="flex items-center group">
             <img 
-              src="https://i.postimg.cc/wxQgVCcf/1000031270-removebg-preview.png" 
+              src="/logo.png" 
               alt="Sheun Hub - Shopify Development and Growth Expert" 
               referrerPolicy="no-referrer"
               loading="lazy"

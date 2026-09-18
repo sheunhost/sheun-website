@@ -62,7 +62,7 @@ export default function ShopifySEOGuide() {
           "name": "Sheun Hub",
           "logo": {
             "@type": "ImageObject",
-            "url": "https://i.postimg.cc/wxQgVCcf/1000031270-removebg-preview.png"
+            "url": "https://www.sheun.online/logo.png"
           }
         },
         "description": "A beginner-friendly complete guide to mastering Shopify SEO on your eCommerce store."

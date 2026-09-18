@@ -57,7 +57,7 @@ export default function FashionDropshippingGuide() {
           "name": "Sheun Hub",
           "logo": {
             "@type": "ImageObject",
-            "url": "https://i.postimg.cc/wxQgVCcf/1000031270-removebg-preview.png"
+            "url": "https://www.sheun.online/logo.png"
           }
         },
         "description": "Build a high-converting fashion dropshipping store. Discover premium themes, supplier strategies, and branding tactics that win."

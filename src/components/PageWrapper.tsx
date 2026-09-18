@@ -45,7 +45,7 @@ export default function PageWrapper({
     "name": "Sheun Hub",
     "alternateName": "Sheun Hub",
     "url": "https://www.sheun.online",
-    "logo": defaultImage,
+    "logo": "https://www.sheun.online/logo.png",
     "image": defaultImage,
     "email": "sheunhost@gmail.com",
     "founder": {
