@@ -32,13 +32,13 @@ export default function Footer() {
           <div>
             <h4 className="text-sm font-bold uppercase tracking-[0.3em] text-white/20 mb-8">Services</h4>
             <ul className="space-y-4 font-medium">
-              <li><Link to="/services" className="text-white/60 hover:text-green transition-colors">Store Setup</Link></li>
-              <li><Link to="/services" className="text-white/60 hover:text-green transition-colors">Custom Dev</Link></li>
-              <li><Link to="/services" className="text-white/60 hover:text-green transition-colors">Migrations</Link></li>
-              <li><Link to="/services" className="text-white/60 hover:text-green transition-colors">SEO & Speed</Link></li>
-              <li><Link to="/shopify-seo-sprint" className="text-green font-bold hover:text-white transition-colors">48-Hr SEO Sprint ($250)</Link></li>
-              <li><Link to="/shopify-store-audit" className="text-green font-bold hover:text-white transition-colors">Shopify Store Audit ($197)</Link></li>
-              <li><Link to="/shopify-not-converting" className="text-white/40 hover:text-green transition-colors">Fix Low Sales (Tips)</Link></li>
+              <li><Link to="/services" className="text-white/60 hover:text-[#8B5CF6] transition-colors">Store Setup</Link></li>
+              <li><Link to="/services" className="text-white/60 hover:text-[#8B5CF6] transition-colors">Custom Dev</Link></li>
+              <li><Link to="/services" className="text-white/60 hover:text-[#8B5CF6] transition-colors">Migrations</Link></li>
+              <li><Link to="/services" className="text-white/60 hover:text-[#8B5CF6] transition-colors">SEO & Speed</Link></li>
+              <li><Link to="/shopify-seo-sprint" className="text-[#8B5CF6] font-bold hover:text-white transition-colors">48-Hr SEO Sprint ($250)</Link></li>
+              <li><Link to="/shopify-store-audit" className="text-[#8B5CF6] font-bold hover:text-white transition-colors">Shopify Store Audit ($197)</Link></li>
+              <li><Link to="/shopify-not-converting" className="text-white/40 hover:text-[#8B5CF6] transition-colors">Fix Low Sales (Tips)</Link></li>
             </ul>
           </div>
 
@@ -46,10 +46,10 @@ export default function Footer() {
           <div>
             <h4 className="text-sm font-bold uppercase tracking-[0.3em] text-white/20 mb-8">Resources</h4>
             <ul className="space-y-4 font-medium">
-              <li><Link to="/about" className="text-white/60 hover:text-green transition-colors">About</Link></li>
-              <li><Link to="/portfolio" className="text-white/60 hover:text-green transition-colors">Portfolio</Link></li>
-              <li><Link to="/blog" className="text-white/60 hover:text-green transition-colors">Blog</Link></li>
-              <li><Link to="/apply#apply-form" className="text-white/60 hover:text-green transition-colors">Apply</Link></li>
+              <li><Link to="/about" className="text-white/60 hover:text-[#8B5CF6] transition-colors">About</Link></li>
+              <li><Link to="/portfolio" className="text-white/60 hover:text-[#8B5CF6] transition-colors">Portfolio</Link></li>
+              <li><Link to="/blog" className="text-white/60 hover:text-[#8B5CF6] transition-colors">Blog</Link></li>
+              <li><Link to="/apply#apply-form" className="text-white/60 hover:text-[#8B5CF6] transition-colors">Apply</Link></li>
             </ul>
           </div>
 
@@ -57,9 +57,9 @@ export default function Footer() {
           <div>
             <h4 className="text-sm font-bold uppercase tracking-[0.3em] text-white/20 mb-8">Social & Contact</h4>
             <ul className="space-y-4 font-medium">
-              <li><a href="mailto:sheunhost@gmail.com" className="text-white/60 hover:text-green transition-colors flex items-center gap-3"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Gmail_icon_%282020%29.svg/960px-Gmail_icon_%282020%29.svg.png?_=20221017173631" alt="Gmail" className="w-4 h-4 object-contain" /> Email</a></li>
-              <li><a href="https://www.linkedin.com/in/sheun-hub-26b876321" target="_blank" rel="noopener noreferrer" className="text-white/60 hover:text-green transition-colors flex items-center gap-3"><img src="https://images.rawpixel.com/image_png_social_square/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvdjk4Mi1kMS0xMC5wbmc.png" alt="LinkedIn" className="w-4 h-4 object-contain" /> LinkedIn</a></li>
-              <li><a href="https://www.upwork.com/freelancers/~017eb19011cd354946" target="_blank" rel="noopener noreferrer" className="text-white/60 hover:text-green transition-colors flex items-center gap-3"><img src="https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/upwork-icon.png" alt="Upwork" className="w-4 h-4 object-contain" /> Upwork</a></li>
+              <li><a href="mailto:sheunhost@gmail.com" className="text-white/60 hover:text-[#8B5CF6] transition-colors flex items-center gap-3"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Gmail_icon_%282020%29.svg/960px-Gmail_icon_%282020%29.svg.png?_=20221017173631" alt="Gmail" className="w-4 h-4 object-contain" /> Email</a></li>
+              <li><a href="https://www.linkedin.com/in/sheun-hub-26b876321" target="_blank" rel="noopener noreferrer" className="text-white/60 hover:text-[#8B5CF6] transition-colors flex items-center gap-3"><img src="https://images.rawpixel.com/image_png_social_square/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvdjk4Mi1kMS0xMC5wbmc.png" alt="LinkedIn" className="w-4 h-4 object-contain" /> LinkedIn</a></li>
+              <li><a href="https://www.upwork.com/freelancers/~017eb19011cd354946" target="_blank" rel="noopener noreferrer" className="text-white/60 hover:text-[#8B5CF6] transition-colors flex items-center gap-3"><img src="https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/upwork-icon.png" alt="Upwork" className="w-4 h-4 object-contain" /> Upwork</a></li>
             </ul>
           </div>
         </div>
@@ -67,7 +67,7 @@ export default function Footer() {
         {/* Trust Badges */}
         <div className="flex flex-wrap justify-center md:justify-around items-center gap-8 mb-12 py-10 border-y border-white/5 bg-white/[0.02] rounded-3xl mt-8">
           <div className="flex items-center gap-5 group">
-            <div className="w-14 h-14 rounded-2xl flex items-center justify-center bg-white/5 text-green border border-white/10 group-hover:bg-green group-hover:text-navy dark:text-white group-hover:-translate-y-1 transition-all duration-300 shadow-lg">
+            <div className="w-14 h-14 rounded-2xl flex items-center justify-center bg-white/5 text-[#8B5CF6] border border-white/10 group-hover:bg-[#6D28D9] group-hover:text-white group-hover:-translate-y-1 transition-all duration-300 shadow-lg">
               <Lock size={24} />
             </div>
             <div className="flex flex-col">
@@ -76,7 +76,7 @@ export default function Footer() {
             </div>
           </div>
           <div className="flex items-center gap-5 group">
-            <div className="w-14 h-14 rounded-2xl flex items-center justify-center bg-white/5 text-green border border-white/10 group-hover:bg-green group-hover:text-navy dark:text-white group-hover:-translate-y-1 transition-all duration-300 shadow-lg">
+            <div className="w-14 h-14 rounded-2xl flex items-center justify-center bg-white/5 text-[#8B5CF6] border border-white/10 group-hover:bg-[#6D28D9] group-hover:text-white group-hover:-translate-y-1 transition-all duration-300 shadow-lg">
               <Zap size={24} />
             </div>
             <div className="flex flex-col">
@@ -85,7 +85,7 @@ export default function Footer() {
             </div>
           </div>
           <div className="flex items-center gap-5 group">
-            <div className="w-14 h-14 rounded-2xl flex items-center justify-center bg-white/5 text-green border border-white/10 group-hover:bg-green group-hover:text-navy dark:text-white group-hover:-translate-y-1 transition-all duration-300 shadow-lg">
+            <div className="w-14 h-14 rounded-2xl flex items-center justify-center bg-white/5 text-[#8B5CF6] border border-white/10 group-hover:bg-[#6D28D9] group-hover:text-white group-hover:-translate-y-1 transition-all duration-300 shadow-lg">
               <Award size={24} />
             </div>
             <div className="flex flex-col">
@@ -100,7 +100,7 @@ export default function Footer() {
             © 2026 Sheun Hub. All rights reserved.
           </p>
           <div className="flex flex-col md:flex-row items-center gap-6">
-            <span className="bg-white/5 text-green text-[10px] font-bold uppercase tracking-widest px-4 py-2 rounded-full border border-white/5 flex items-center gap-2">
+            <span className="bg-white/5 text-[#8B5CF6] text-[10px] font-bold uppercase tracking-widest px-4 py-2 rounded-full border border-white/5 flex items-center gap-2">
               <ShieldCheck size={12} /> Verified & Secure
             </span>
             <div className="flex items-center gap-6 text-xs font-medium text-white/20">

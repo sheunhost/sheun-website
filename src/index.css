@@ -7,8 +7,14 @@
   --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
   --font-serif: "Newsreader", "Cormorant Garamond", serif;
   
-  --color-navy: #09090b; /* Zinc 950 - modern SaaS dark */
-  --color-green: #10b981; /* Emerald 500 - vibrant accent */
+  --color-navy: #08090B; /* Near-black luxury background */
+  --color-primary-text: #F5F3EE; /* Off-white primary typography */
+  --color-green: #8B5CF6; /* Refined violet accent (seamlessly re-maps default accent) */
+  --color-violet: #8B5CF6; /* Refined violet */
+  --color-deep-violet: #6D28D9; /* Deep violet - dominant */
+  --color-magenta: #C026D3; /* Muted magenta - secondary */
+  --color-subtle-pink: #EC4899; /* Subtle pink gradient touch */
+  --color-accent-orange: #F97316; /* Accent orange touch */
   --color-muted: #71717a; /* Zinc 500 */
   --color-light: #f4f4f5; /* Zinc 100 */
 
@@ -34,7 +40,7 @@
   }
 
   body {
-    @apply bg-white text-navy font-sans antialiased selection:bg-green selection:text-white dark:bg-navy dark:text-white transition-colors duration-300;
+    @apply bg-white text-navy font-sans antialiased selection:bg-[#6D28D9] selection:text-white dark:bg-navy dark:text-white transition-colors duration-300;
     overflow-x: clip;
   }
 
@@ -54,7 +60,7 @@
   }
   
   .bg-navy-gradient {
-    background: linear-gradient(180deg, #09090b 0%, #18181b 100%);
+    background: linear-gradient(180deg, #08090B 0%, #121318 100%);
   }
   
   .text-balance {
@@ -66,16 +72,16 @@
   }
 
   .premium-shadow {
-    box-shadow: 0 20px 40px -15px rgba(9, 9, 11, 0.1);
+    box-shadow: 0 20px 40px -15px rgba(8, 9, 11, 0.1);
   }
 
-  .green-glow {
-    box-shadow: 0 0 40px -10px rgba(16, 185, 129, 0.5);
+  .green-glow, .violet-glow {
+    box-shadow: 0 0 40px -10px rgba(109, 40, 217, 0.45);
   }
 }
 
 .glass-nav {
-  background: rgba(9, 9, 11, 0.85);
+  background: rgba(8, 9, 11, 0.85);
   @apply backdrop-blur-xl border-b border-white/10 shadow-2xl;
 }
 

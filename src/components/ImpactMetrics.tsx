@@ -16,12 +16,12 @@ export function ImpactMetrics() {
   const [activeMetric, setActiveMetric] = useState<'conversion' | 'aov' | 'revenue'>('revenue');
 
   const metrics = [
-    { id: 'revenue', label: 'Monthly Revenue', prefix: '$', suffix: '', color: '#10b981' },
-    { id: 'conversion', label: 'Conversion Rate', prefix: '', suffix: '%', color: '#3b82f6' },
-    { id: 'aov', label: 'Average Order Value', prefix: '$', suffix: '', color: '#f59e0b' }
+    { id: 'revenue', label: 'Monthly Revenue', prefix: '$', suffix: '', color: '#8B5CF6' },
+    { id: 'conversion', label: 'Conversion Rate', prefix: '', suffix: '%', color: '#C026D3' },
+    { id: 'aov', label: 'Average Order Value', prefix: '$', suffix: '', color: '#F97316' }
   ] as const;
 
-  const activeColor = metrics.find(m => m.id === activeMetric)?.color || '#10b981';
+  const activeColor = metrics.find(m => m.id === activeMetric)?.color || '#8B5CF6';
 
   return (
     <section className="py-32 bg-white dark:bg-navy relative overflow-hidden">
@@ -31,7 +31,7 @@ export function ImpactMetrics() {
             Measurable ROI
           </div>
           <h2 className="text-5xl md:text-7xl font-bold text-navy dark:text-white tracking-tighter">
-            Key Impact <span className="text-[#10b981] italic font-serif font-light">Metrics</span>.
+            Key Impact <span className="text-[#8B5CF6] italic font-serif font-light">Metrics</span>.
           </h2>
           <p className="text-[#71717a] dark:text-white/70 text-lg sm:text-xl font-serif italic leading-relaxed">
             Beautiful design is useless if it doesn't convert. Here is the average trajectory of stores 6 months post-rebuild.

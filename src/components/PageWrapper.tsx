@@ -128,7 +128,7 @@ export default function PageWrapper({
     >
       
       {children}
-      <motion.div className="fixed top-0 left-0 right-0 h-1 bg-green origin-left z-[100]" style={{ scaleX }} />
+      <motion.div className="fixed top-0 left-0 right-0 h-1 bg-gradient-to-r from-[#6D28D9] via-[#8B5CF6] to-[#C026D3] origin-left z-[100]" style={{ scaleX }} />
     </motion.main>
     </>
   );

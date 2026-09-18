@@ -46,7 +46,7 @@ export default function Navbar() {
               referrerPolicy="no-referrer"
               loading="lazy"
               className={cn(
-                "rounded-full object-cover shadow-lg border-2 border-green/20 transition-all duration-500",
+                "rounded-full object-cover shadow-lg border-2 border-[#6D28D9]/20 transition-all duration-500",
                 isScrolled ? "h-16 w-16 md:h-20 md:w-20" : "h-20 w-20 md:h-32 md:w-32"
               )} 
             />
@@ -61,13 +61,13 @@ export default function Navbar() {
                 className={cn(
                   "text-xs font-bold uppercase tracking-[0.2em] transition-all relative group",
                   location.pathname === link.href 
-                    ? "text-green" 
-                    : isScrolled ? "text-navy font-bold hover:text-green" : "text-white hover:text-green"
+                    ? "text-[#8B5CF6]" 
+                    : isScrolled ? "text-navy font-bold hover:text-[#8B5CF6]" : "text-white hover:text-[#8B5CF6]"
                 )}
               >
                 {link.name}
                 <motion.div
-                  className="absolute -bottom-2 left-0 right-0 h-0.5 bg-green"
+                  className="absolute -bottom-2 left-0 right-0 h-0.5 bg-[#8B5CF6]"
                   initial={false}
                   animate={{
                     scaleX: location.pathname === link.href ? 1 : 0,
@@ -81,10 +81,10 @@ export default function Navbar() {
             <Link 
               to="/apply" 
               className={cn(
-                "px-6 py-3 rounded-full font-bold text-xs uppercase tracking-widest transition-all",
+                "px-6 py-3 rounded-full font-bold text-xs uppercase tracking-widest transition-all shadow-md",
                 isScrolled 
-                  ? "bg-navy text-white hover:bg-green hover:text-navy" 
-                  : "bg-green text-navy hover:bg-white"
+                  ? "bg-[#08090B] text-white hover:bg-[#6D28D9]" 
+                  : "bg-[#6D28D9] text-white hover:bg-[#8B5CF6] shadow-[#6D28D9]/25"
               )}
             >
               Apply Now
@@ -101,23 +101,23 @@ export default function Navbar() {
               "p-2 rounded-xl transition-all duration-300",
               isScrolled 
                 ? "text-navy hover:bg-navy/5" 
-                : "text-green hover:bg-white/10"
+                : "text-[#8B5CF6] hover:bg-white/10"
             )}
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           >
-            {isMobileMenuOpen ? <X size={32} className={cn(isScrolled ? "text-navy" : "text-green")} /> : (
+            {isMobileMenuOpen ? <X size={32} className={cn(isScrolled ? "text-navy" : "text-[#8B5CF6]")} /> : (
               <div className="space-y-1.5 p-1">
                 <div className={cn(
                   "w-6 h-0.5 rounded-full transition-all duration-300",
-                  isScrolled ? "bg-navy" : "bg-green"
+                  isScrolled ? "bg-navy" : "bg-[#8B5CF6]"
                 )}></div>
                 <div className={cn(
                   "w-8 h-0.5 rounded-full transition-all duration-300",
-                  isScrolled ? "bg-navy" : "bg-green"
+                  isScrolled ? "bg-navy" : "bg-[#8B5CF6]"
                 )}></div>
                 <div className={cn(
                   "w-5 h-0.5 rounded-full transition-all duration-300",
-                  isScrolled ? "bg-navy" : "bg-green"
+                  isScrolled ? "bg-navy" : "bg-[#8B5CF6]"
                 )}></div>
               </div>
             )}
@@ -142,11 +142,11 @@ export default function Navbar() {
                   onClick={() => setIsMobileMenuOpen(false)}
                   className={cn(
                     "text-2xl font-bold flex items-center justify-between tracking-tighter",
-                    location.pathname === link.href ? "text-green" : "text-navy"
+                    location.pathname === link.href ? "text-[#8B5CF6]" : "text-navy"
                   )}
                 >
                   {link.name}
-                  <ChevronRight size={20} className="text-green" />
+                  <ChevronRight size={20} className="text-[#8B5CF6]" />
                 </Link>
               ))}
             </div>

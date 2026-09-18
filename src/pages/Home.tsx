@@ -80,7 +80,7 @@ const SEOReport = ({ data }: { data: any }) => {
           <div className="absolute top-0 right-0 p-8 opacity-5">
             <Globe size={120} />
           </div>
-          <div className="flex items-center gap-3 text-green relative z-10">
+          <div className="flex items-center gap-3 text-[#8B5CF6] relative z-10">
             <Globe size={20} />
             <span className="text-[10px] font-bold uppercase tracking-widest">Store Analysis</span>
           </div>
@@ -89,7 +89,7 @@ const SEOReport = ({ data }: { data: any }) => {
           <div className="pt-4 flex flex-wrap gap-4 relative z-10">
              <div className="bg-white/10 px-4 py-2 rounded-2xl">
                <p className="text-[8px] text-white/40 uppercase font-bold">Niche</p>
-               <p className="font-bold text-green">{data.store_summary.detected_niche}</p>
+               <p className="font-bold text-[#8B5CF6]">{data.store_summary.detected_niche}</p>
              </div>
              <div className="bg-white/10 px-4 py-2 rounded-2xl">
                <p className="text-[8px] text-white/40 uppercase font-bold">Target Audience</p>
@@ -97,16 +97,16 @@ const SEOReport = ({ data }: { data: any }) => {
              </div>
           </div>
         </div>
-        <div className="bg-green p-8 rounded-2xl flex flex-col items-center justify-center text-center space-y-2 shadow-xl shadow-green/20">
-           <p className="text-navy dark:text-white/60 text-[10px] font-bold uppercase tracking-widest">SEO Score</p>
-           <p className="text-7xl font-black text-navy dark:text-white tracking-tighter">{data.store_summary.current_seo_score}</p>
-           <Trophy className="text-navy dark:text-white/20" size={40} />
+        <div className="bg-gradient-to-br from-[#6D28D9] to-[#8B5CF6] p-8 rounded-2xl flex flex-col items-center justify-center text-center space-y-2 shadow-xl shadow-[#6D28D9]/20 text-white">
+           <p className="text-white/70 text-[10px] font-bold uppercase tracking-widest">SEO Score</p>
+           <p className="text-7xl font-black text-white tracking-tighter">{data.store_summary.current_seo_score}</p>
+           <Trophy className="text-white/30" size={40} />
         </div>
       </div>
 
       {/* Biggest Opportunity */}
-      <div className="bg-navy/5 border-2 border-green/20 p-8 rounded-2xl flex items-start gap-6 group hover:bg-green/5 transition-colors">
-        <div className="w-12 h-12 bg-green rounded-2xl flex items-center justify-center text-navy dark:text-white shrink-0 shadow-lg shadow-green/20">
+      <div className="bg-navy/5 border-2 border-[#6D28D9]/20 p-8 rounded-2xl flex items-start gap-6 group hover:bg-[#6D28D9]/5 transition-colors">
+        <div className="w-12 h-12 bg-[#6D28D9] rounded-2xl flex items-center justify-center text-white shrink-0 shadow-lg shadow-[#6D28D9]/20">
           <Zap size={24} />
         </div>
         <div className="space-y-1">
@@ -118,16 +118,16 @@ const SEOReport = ({ data }: { data: any }) => {
       {/* Keywords Grid */}
       <div className="space-y-6">
         <div className="flex items-center gap-3">
-          <Search className="text-green" size={24} />
+          <Search className="text-[#8B5CF6]" size={24} />
           <h4 className="text-2xl font-bold text-navy dark:text-white">Primary Keywords</h4>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           {data.keywords.map((kw: any, i: number) => (
             <div key={i} className="bg-white border border-navy/5 p-6 rounded-3xl hover:shadow-lg transition-shadow group">
               <div className="flex justify-between items-start mb-4">
-                <p className="text-lg font-bold text-navy dark:text-white group-hover:text-green transition-colors">{kw.keyword}</p>
+                <p className="text-lg font-bold text-navy dark:text-white group-hover:text-[#8B5CF6] transition-colors">{kw.keyword}</p>
                 <span className={`text-[8px] font-bold uppercase px-2 py-1 rounded-full ${
-                  kw.difficulty === 'Easy' ? 'bg-green/10 text-green' : 
+                  kw.difficulty === 'Easy' ? 'bg-[#6D28D9]/10 text-[#8B5CF6]' : 
                   kw.difficulty === 'Medium' ? 'bg-yellow-500/10 text-yellow-600' : 'bg-red-500/10 text-red-600'
                 }`}>
                   {kw.difficulty}
@@ -155,7 +155,7 @@ const SEOReport = ({ data }: { data: any }) => {
       {/* Longtail Keywords */}
       <div className="space-y-6">
         <div className="flex items-center gap-3">
-          <TrendingUp className="text-green" size={24} />
+          <TrendingUp className="text-[#8B5CF6]" size={24} />
           <h4 className="text-2xl font-bold text-navy dark:text-white">Long-tail Opportunities</h4>
         </div>
         <div className="bg-navy p-8 rounded-2xl space-y-6 shadow-2xl">
@@ -168,9 +168,9 @@ const SEOReport = ({ data }: { data: any }) => {
               <div className="flex items-center gap-4">
                 <div className="text-right">
                   <p className="text-[8px] text-white/40 uppercase font-bold">Potential</p>
-                  <p className="text-green font-bold">{lt.conversion_potential}</p>
+                  <p className="text-[#8B5CF6] font-bold">{lt.conversion_potential}</p>
                 </div>
-                <div className="w-10 h-10 bg-white/5 rounded-xl flex items-center justify-center text-green">
+                <div className="w-10 h-10 bg-white/5 rounded-xl flex items-center justify-center text-[#8B5CF6]">
                   <CheckCircle2 size={20} />
                 </div>
               </div>
@@ -201,15 +201,15 @@ const SEOReport = ({ data }: { data: any }) => {
         </div>
         <div className="space-y-6">
           <div className="flex items-center gap-3">
-            <Rocket className="text-green" size={24} />
+            <Rocket className="text-[#8B5CF6]" size={24} />
             <h4 className="text-2xl font-bold text-navy dark:text-white">Quick Wins</h4>
           </div>
           <div className="space-y-4">
             {data.quick_wins.map((win: any, i: number) => (
-              <div key={i} className="bg-green/5 border border-green/10 p-6 rounded-3xl space-y-3">
+              <div key={i} className="bg-[#6D28D9]/5 border border-[#6D28D9]/15 p-6 rounded-3xl space-y-3">
                 <p className="font-bold text-navy dark:text-white">{win.action}</p>
                 <p className="text-xs text-navy dark:text-white/60 italic">Where: {win.where}</p>
-                <div className="flex items-center gap-2 text-green font-bold text-[10px] uppercase tracking-widest bg-green/10 w-fit px-3 py-1 rounded-full">
+                <div className="flex items-center gap-2 text-[#8B5CF6] font-bold text-[10px] uppercase tracking-widest bg-[#6D28D9]/10 w-fit px-3 py-1 rounded-full">
                   <Zap size={14} />
                   Impact: {win.impact}
                 </div>
@@ -232,7 +232,7 @@ const SEOReport = ({ data }: { data: any }) => {
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12 relative z-10">
               <div className="space-y-6">
-                <p className="text-green text-[10px] font-bold uppercase tracking-widest">What they have that you don't</p>
+                <p className="text-[#8B5CF6] text-[10px] font-bold uppercase tracking-widest">What they have that you don't</p>
                 <div className="space-y-4">
                   {data.competitor_analysis.gaps.map((gap: any, i: number) => (
                     <div key={i} className="flex gap-4">
@@ -248,11 +248,11 @@ const SEOReport = ({ data }: { data: any }) => {
                 </div>
               </div>
               <div className="space-y-6">
-                <p className="text-green text-[10px] font-bold uppercase tracking-widest">How to outrank them</p>
+                <p className="text-[#8B5CF6] text-[10px] font-bold uppercase tracking-widest">How to outrank them</p>
                 <div className="space-y-4">
                   {data.competitor_analysis.outrank_strategy.map((strategy: any, i: number) => (
                     <div key={i} className="flex gap-4">
-                      <div className="w-6 h-6 rounded-full bg-green/20 flex items-center justify-center text-green shrink-0">
+                      <div className="w-6 h-6 rounded-full bg-[#6D28D9]/20 flex items-center justify-center text-[#8B5CF6] shrink-0">
                         <CheckCircle2 size={14} />
                       </div>
                       <div className="space-y-1">
@@ -291,14 +291,14 @@ const ServiceModal = ({ service, onClose }: { service: any; onClose: () => void 
       >
         <button
           onClick={onClose}
-          className="absolute top-6 right-6 w-12 h-12 bg-light rounded-full flex items-center justify-center text-navy dark:text-white hover:bg-green hover:text-navy dark:text-white transition-all z-10"
+          className="absolute top-6 right-6 w-12 h-12 bg-light rounded-full flex items-center justify-center text-navy dark:text-white hover:bg-[#6D28D9] hover:text-white transition-all z-10"
         >
           <X size={24} />
         </button>
 
         <div className="grid grid-cols-1 lg:grid-cols-12">
           <div className="lg:col-span-5 bg-navy p-8 md:p-12 text-white space-y-8">
-            <div className="w-16 h-16 bg-green rounded-2xl flex items-center justify-center text-navy dark:text-white">
+            <div className="w-16 h-16 bg-gradient-to-br from-[#6D28D9] to-[#8B5CF6] rounded-2xl flex items-center justify-center text-white">
               <service.icon size={32} />
             </div>
             <div className="space-y-4">
@@ -307,14 +307,14 @@ const ServiceModal = ({ service, onClose }: { service: any; onClose: () => void 
             </div>
             <div className="space-y-4 pt-8 border-t border-white/10">
               <div className="flex items-center gap-4">
-                <Clock className="text-green" size={20} />
+                <Clock className="text-[#8B5CF6]" size={20} />
                 <div>
                   <p className="text-[10px] font-bold uppercase tracking-widest text-white/40">Timeline</p>
                   <p className="font-bold">{service.timeline}</p>
                 </div>
               </div>
               <div className="flex items-center gap-4">
-                <DollarSign className="text-green" size={20} />
+                <DollarSign className="text-[#8B5CF6]" size={20} />
                 <div>
                   <p className="text-[10px] font-bold uppercase tracking-widest text-white/40">Starting From</p>
                   <p className="font-bold">{service.price}</p>
@@ -326,13 +326,13 @@ const ServiceModal = ({ service, onClose }: { service: any; onClose: () => void 
           <div className="lg:col-span-7 p-8 md:p-12 space-y-10">
             <div className="space-y-6">
               <div className="flex items-center gap-3">
-                <ListChecks className="text-green" size={24} />
+                <ListChecks className="text-[#8B5CF6]" size={24} />
                 <h4 className="text-2xl font-bold text-navy dark:text-white">Service Roadmap</h4>
               </div>
               <div className="space-y-6 relative before:absolute before:left-4 before:top-2 before:bottom-2 before:w-px before:bg-navy/5">
                 {service.roadmap.map((step: any, i: number) => (
                   <div key={i} className="relative pl-12 group">
-                    <div className="absolute left-0 top-1 w-8 h-8 bg-light rounded-full border-2 border-navy/5 flex items-center justify-center text-xs font-bold text-navy dark:text-white group-hover:bg-green group-hover:border-green transition-all">
+                    <div className="absolute left-0 top-1 w-8 h-8 bg-light rounded-full border-2 border-navy/5 flex items-center justify-center text-xs font-bold text-navy dark:text-white group-hover:bg-[#6D28D9] group-hover:border-[#6D28D9] group-hover:text-white transition-all">
                       {i + 1}
                     </div>
                     <div className="space-y-1">
@@ -356,7 +356,7 @@ const ServiceModal = ({ service, onClose }: { service: any; onClose: () => void 
                     contact.scrollIntoView({ behavior: 'smooth' });
                   }
                 }}
-                className="w-full bg-navy text-white py-5 rounded-full font-bold text-lg hover:bg-green hover:text-navy dark:text-white transition-all flex items-center justify-center gap-3 shadow-xl"
+                className="w-full bg-[#6D28D9] text-white py-5 rounded-full font-bold text-lg hover:bg-[#8B5CF6] transition-all flex items-center justify-center gap-3 shadow-xl shadow-[#6D28D9]/20"
               >
                 Get Started with {service.title} <ArrowRight size={20} />
               </a>
@@ -602,7 +602,7 @@ export default function Home() {
           {/* Rail Text - Recipe 11 */}
         <div className="absolute left-6 top-1/2 -translate-y-1/2 hidden xl:block z-20">
           <div className="flex flex-col items-center gap-8">
-            <div className="w-px h-24 bg-green/20" />
+            <div className="w-px h-24 bg-[#8B5CF6]/20" />
             <span className="[writing-mode:vertical-rl] rotate-180 text-[10px] font-bold uppercase tracking-[0.4em] text-white/30">
               Shopify Partner · 2024 Edition
             </span>
@@ -611,9 +611,9 @@ export default function Home() {
 
         {/* Dynamic Background - Recipe 7 */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <div className="absolute top-[-10%] left-[-10%] w-[60%] h-[60%] bg-[#064e4b]/20 rounded-full blur-[160px] animate-pulse" />
-          <div className="absolute bottom-[-10%] right-[-10%] w-[50%] h-[50%] bg-[#064e4b]/10 rounded-full blur-[150px]" />
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--color-green)_1px,_transparent_1px)] bg-[size:60px_60px] opacity-[0.03]" />
+          <div className="absolute top-[-10%] left-[-10%] w-[60%] h-[60%] bg-[#6D28D9]/15 rounded-full blur-[160px] animate-pulse" />
+          <div className="absolute bottom-[-10%] right-[-10%] w-[50%] h-[50%] bg-[#C026D3]/10 rounded-full blur-[150px]" />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_#8B5CF6_1px,_transparent_1px)] bg-[size:60px_60px] opacity-[0.03]" />
         </div>
 
         <div className="container mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-16 items-center relative z-10">
@@ -625,8 +625,8 @@ export default function Home() {
               className="space-y-8"
             >
               <div className="inline-flex items-center gap-3 bg-white/5 backdrop-blur-xl border border-white/10 px-6 py-2 rounded-full">
-                <div className="w-1.5 h-1.5 bg-green rounded-full" />
-                <span className="text-green text-[10px] font-bold uppercase tracking-[0.2em]">Available for new projects</span>
+                <div className="w-1.5 h-1.5 bg-[#8B5CF6] rounded-full" />
+                <span className="text-[#8B5CF6] text-[10px] font-bold uppercase tracking-[0.2em]">Available for new projects</span>
               </div>
 
               <h1 className="text-5xl md:text-[100px] font-bold text-white leading-[0.8] tracking-[-0.05em] text-balance">
@@ -646,7 +646,7 @@ export default function Home() {
                     
                     
                   >
-                    &amp; <span className="text-green"><WordRotator words={["Growth", "Scaling", "Speed", "SEO"]} /></span>
+                    &amp; <span className="text-[#8B5CF6]"><WordRotator words={["Growth", "Scaling", "Speed", "SEO"]} /></span>
                   </span>
                 </span>
                 <span 
@@ -673,7 +673,7 @@ export default function Home() {
                   >
                     <TiltCard depth={20}>
                       <div className="bg-white/5 border border-white/10 p-6 rounded-2xl h-full backdrop-blur-sm shadow-xl">
-                        <div className="text-green text-sm font-bold uppercase tracking-widest mb-1">{item.title}</div>
+                        <div className="text-[#8B5CF6] text-sm font-bold uppercase tracking-widest mb-1">{item.title}</div>
                         <p className="text-white/40 text-xs italic font-serif">{item.desc}</p>
                       </div>
                     </TiltCard>
@@ -694,18 +694,18 @@ export default function Home() {
             >
               <Link 
                 to="/apply" 
-                className="w-full sm:w-auto bg-green text-navy dark:text-white px-8 md:px-12 py-4 md:py-6 rounded-full font-bold text-lg hover:scale-105 transition-all duration-500 green-glow flex items-center justify-center gap-3 text-center"
+                className="w-full sm:w-auto bg-[#6D28D9] text-white hover:bg-gradient-to-r hover:from-[#6D28D9] hover:via-[#8B5CF6] hover:to-[#C026D3] px-8 md:px-12 py-4 md:py-6 rounded-full font-bold text-lg hover:scale-105 transition-all duration-500 shadow-xl shadow-[#6D28D9]/30 flex items-center justify-center gap-3 text-center"
               >
                 Get Started <ArrowRight size={20} />
               </Link>
               <Link 
                 to="/services" 
-                className="text-white font-bold hover:text-green transition-colors flex items-center gap-2"
+                className="text-white font-bold hover:text-[#8B5CF6] transition-colors flex items-center gap-2"
               >
                 Explore Services <ChevronDown size={16} />
               </Link>
               <Link to="/portfolio" className="w-full sm:w-auto text-white/80 hover:text-white px-8 py-4 rounded-full font-bold text-lg transition-all flex items-center justify-center gap-4 group text-center">
-                View Portfolio <div className="w-8 h-px bg-white/20 group-hover:w-16 group-hover:bg-green transition-all duration-500" />
+                View Portfolio <div className="w-8 h-px bg-white/20 group-hover:w-16 group-hover:bg-[#8B5CF6] transition-all duration-500" />
               </Link>
             </div>
 
@@ -751,19 +751,19 @@ export default function Home() {
                 <div className="absolute inset-0 bg-gradient-to-t from-navy via-navy/40 to-transparent" />
                 <div className="absolute bottom-16 left-12 right-12 space-y-6">
                   <div className="flex gap-2">
-                    {[...Array(5)].map((_, i) => <Star key={i} size={12} className="fill-green text-green" />)}
+                    {[...Array(5)].map((_, i) => <Star key={i} size={12} className="fill-[#8B5CF6] text-[#8B5CF6]" />)}
                   </div>
                   <h3 className="text-white font-bold text-4xl tracking-tighter leading-none">Top Rated <br />Shopify Expert.</h3>
                   <p className="text-white/60 text-lg font-serif italic">Top Rated Shopify Specialist</p>
                   
                   <div className="flex gap-4 pt-4 border-t border-white/10">
-                    <a href="https://www.linkedin.com/in/sheun-hub-26b876321" target="_blank" rel="noopener noreferrer" className="p-2 bg-white/5 hover:bg-green hover:text-navy dark:text-white rounded-full text-white transition-all flex items-center justify-center overflow-hidden" title="LinkedIn">
+                    <a href="https://www.linkedin.com/in/sheun-hub-26b876321" target="_blank" rel="noopener noreferrer" className="p-2 bg-white/5 hover:bg-[#6D28D9] hover:text-white rounded-full text-white transition-all flex items-center justify-center overflow-hidden" title="LinkedIn">
                       <img src="https://images.rawpixel.com/image_png_social_square/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvdjk4Mi1kMS0xMC5wbmc.png" alt="LinkedIn" width="20" height="20" decoding="async" className="w-5 h-5 object-contain" />
                     </a>
-                    <a href="https://www.upwork.com/freelancers/~017eb19011cd354946" target="_blank" rel="noopener noreferrer" className="p-2 bg-white/5 hover:bg-green hover:text-navy dark:text-white rounded-full text-white transition-all flex items-center justify-center overflow-hidden" title="Upwork">
+                    <a href="https://www.upwork.com/freelancers/~017eb19011cd354946" target="_blank" rel="noopener noreferrer" className="p-2 bg-white/5 hover:bg-[#6D28D9] hover:text-white rounded-full text-white transition-all flex items-center justify-center overflow-hidden" title="Upwork">
                       <img src="https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/upwork-icon.png" alt="Upwork" width="20" height="20" decoding="async" className="w-5 h-5 object-contain" />
                     </a>
-                    <a href="mailto:sheunhost@gmail.com" className="p-2 bg-white/5 hover:bg-green hover:text-navy dark:text-white rounded-full text-white transition-all flex items-center justify-center overflow-hidden" title="Email">
+                    <a href="mailto:sheunhost@gmail.com" className="p-2 bg-white/5 hover:bg-[#6D28D9] hover:text-white rounded-full text-white transition-all flex items-center justify-center overflow-hidden" title="Email">
                       <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Gmail_icon_%282020%29.svg/960px-Gmail_icon_%282020%29.svg.png?_=20221017173631" alt="Gmail" width="20" height="20" decoding="async" className="w-5 h-5 object-contain" />
                     </a>
                   </div>
@@ -777,7 +777,7 @@ export default function Home() {
                 className="absolute -top-12 -right-12 w-64 h-64 bg-white/5 backdrop-blur-2xl border border-white/10 rounded-3xl shadow-2xl p-1 hidden sm:block"
               >
                 <div className="w-full h-full rounded-3xl bg-navy/60 flex flex-col items-center justify-center gap-6 border border-white/5">
-                  <div className="w-20 h-20 bg-green/10 rounded-3xl flex items-center justify-center text-green shadow-inner">
+                  <div className="w-20 h-20 bg-[#6D28D9]/10 rounded-3xl flex items-center justify-center text-[#8B5CF6] shadow-inner">
                     <ShoppingCart size={40} />
                   </div>
                   <div className="text-center">
@@ -793,7 +793,7 @@ export default function Home() {
         {/* Scroll Indicator */}
         <div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-40">
           <span className="text-[10px] font-bold uppercase tracking-widest text-white">Scroll</span>
-          <div className="w-px h-12 bg-gradient-to-b from-green to-transparent" />
+          <div className="w-px h-12 bg-gradient-to-b from-[#8B5CF6] to-transparent" />
         </div>
       </section>
 
@@ -802,7 +802,7 @@ export default function Home() {
         {['SHOPIFY EXPERT', 'CUSTOM LIQUID', 'HEADLESS COMMERCE', 'CRO SPECIALIST', 'SPEED OPTIMIZATION', 'TECHNICAL SEO', 'REACT & VITE', 'TAILWIND CSS'].map((text, i) => (
           <div key={i} className="flex items-center gap-16">
             <span className="text-white/40 font-bold text-sm tracking-[0.4em] uppercase">{text}</span>
-            <span className="text-green/40 text-xl font-bold">•</span>
+            <span className="text-[#8B5CF6]/40 text-xl font-bold">•</span>
           </div>
         ))}
       </Marquee>
@@ -816,7 +816,7 @@ export default function Home() {
       <div className="container mx-auto px-6 max-w-7xl relative z-10">
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
           {[
-            { label: "Shopify Partner", sub: "Verified & Certified", icon: ShieldCheck, color: "#10b981" },
+            { label: "Shopify Partner", sub: "Verified & Certified", icon: ShieldCheck, color: "#8B5CF6" },
             { label: "Upwork Top Rated", sub: "100% Success Rate", icon: Trophy, color: "#2563EB" },
             { label: "5.0 Star Expert", sub: "Loved By Merchants", icon: Star, color: "#F59E0B" },
             { label: "100% Satisfaction", sub: "Money-Back Guarantee", icon: CheckCircle2, color: "#09090b" }
@@ -846,7 +846,7 @@ export default function Home() {
     <ScrollReveal>
       <section className="py-32 bg-[#FFFFFF] dark:bg-navy relative overflow-hidden border-b border-[#E2E8F0]">
         {/* Glow Effects */}
-        <div className="absolute top-1/4 left-1/3 w-[500px] h-[500px] bg-[#10b981]/5 rounded-full blur-[120px] pointer-events-none -z-10"></div>
+        <div className="absolute top-1/4 left-1/3 w-[500px] h-[500px] bg-[#6D28D9]/5 rounded-full blur-[120px] pointer-events-none -z-10"></div>
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#E2E8F020_1px,transparent_1px),linear-gradient(to_bottom,#E2E8F020_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_50%,#000_70%,transparent_100%)] -z-10"></div>
 
         <div className="container mx-auto px-6 max-w-7xl">
@@ -857,7 +857,7 @@ export default function Home() {
             </div>
             <h2 className="text-5xl md:text-7xl font-bold text-navy dark:text-white tracking-tighter">
               Is your Shopify store <br />
-              <span className="text-[#10b981] underline decoration-[#10b981]/20 underline-offset-8 italic font-serif font-light">working for you?</span>
+              <span className="text-[#8B5CF6] underline decoration-[#8B5CF6]/20 underline-offset-8 italic font-serif font-light">working for you?</span>
             </h2>
             <p className="text-[#71717a] text-lg sm:text-xl font-serif italic max-w-2xl mx-auto leading-relaxed">
               Most Shopify stores fail not because the product is bad, but because the technical and user-experience foundation is weak.
@@ -870,7 +870,7 @@ export default function Home() {
                 title: "Your store is slow.", 
                 desc: "Every second of load time reduces conversions by 7%. If your store takes more than 3 seconds to load, you are literally throwing money away and hurting search rankings.",
                 icon: Zap,
-                color: "#10b981",
+                color: "#8B5CF6",
                 stat: "7% Loss",
                 statLabel: "per second delay"
               },
@@ -932,7 +932,7 @@ export default function Home() {
         <div className="container mx-auto px-6">
           <div className="max-w-4xl mx-auto space-y-12">
             <div className="text-center space-y-6">
-              <p className="text-green text-[10px] font-bold uppercase tracking-[0.3em]">Free Strategy Plan</p>
+              <p className="text-[#8B5CF6] text-[10px] font-bold uppercase tracking-[0.3em]">Free Strategy Plan</p>
               <h2 className="text-4xl md:text-6xl font-bold text-navy dark:text-white tracking-tight">
                 Scale Your <span className="italic font-serif font-light text-navy dark:text-white/40">Sales</span>.
               </h2>
@@ -951,7 +951,7 @@ export default function Home() {
                         type="text" name="name" 
                         required
                         placeholder="John Doe" 
-                        className="w-full bg-white border-2 border-navy/5 rounded-full py-4 px-6 focus:border-green outline-none transition-all"
+                        className="w-full bg-white border-2 border-navy/5 rounded-full py-4 px-6 focus:border-[#8B5CF6] outline-none transition-all"
                       />
                     </div>
                     <div className="space-y-2">
@@ -961,7 +961,7 @@ export default function Home() {
                         name="email"
                         required
                         placeholder="john@example.com" 
-                        className={`w-full bg-white border-2 ${emailErrorPlan ? 'border-red-500' : 'border-navy/5'} rounded-full py-4 px-6 focus:border-green outline-none transition-all`}
+                        className={`w-full bg-white border-2 ${emailErrorPlan ? 'border-red-500' : 'border-navy/5'} rounded-full py-4 px-6 focus:border-[#8B5CF6] outline-none transition-all`}
                       />
                       {emailErrorPlan && <p className="text-red-500 text-xs ml-4">{emailErrorPlan}</p>}
                     </div>
@@ -973,13 +973,13 @@ export default function Home() {
                       name="store_url"
                       required
                       placeholder="yourstore.com" 
-                      className="w-full bg-white border-2 border-navy/5 rounded-full py-4 px-6 focus:border-green outline-none transition-all"
+                      className="w-full bg-white border-2 border-navy/5 rounded-full py-4 px-6 focus:border-[#8B5CF6] outline-none transition-all"
                     />
                   </div>
                   <button 
                     type="submit"
                     disabled={isRequestingPlan}
-                    className="w-full bg-navy text-white py-5 rounded-full font-bold text-lg hover:bg-green hover:text-navy dark:text-white transition-colors disabled:opacity-50 flex items-center justify-center gap-3 shadow-lg"
+                    className="w-full bg-navy text-white py-5 rounded-full font-bold text-lg hover:bg-[#6D28D9] transition-colors disabled:opacity-50 flex items-center justify-center gap-3 shadow-lg"
                   >
                     {isRequestingPlan ? (
                       <>
@@ -999,8 +999,8 @@ export default function Home() {
                 </form>
               ) : (
                 <div className="text-center space-y-6 py-12">
-                  <div className="w-20 h-20 bg-green/20 rounded-full flex items-center justify-center mx-auto">
-                    <CheckCircle2 size={40} className="text-green" />
+                  <div className="w-20 h-20 bg-[#6D28D9]/20 rounded-full flex items-center justify-center mx-auto">
+                    <CheckCircle2 size={40} className="text-[#8B5CF6]" />
                   </div>
                   <h3 className="text-3xl font-bold text-navy dark:text-white tracking-tight">Congratulations! Request Received!</h3>
                   <p className="text-navy dark:text-white/60 text-lg max-w-md mx-auto leading-relaxed">
@@ -1012,7 +1012,7 @@ export default function Home() {
             
             <div className="bg-navy p-10 md:p-16 rounded-3xl shadow-2xl flex flex-col md:flex-row items-center justify-between gap-10 translate-y-6 relative overflow-hidden">
                <div className="absolute top-0 right-0 p-8 opacity-5">
-                  <TrendingUp size={150} className="text-green" />
+                  <TrendingUp size={150} className="text-[#8B5CF6]" />
                </div>
               <div className="space-y-4 text-center md:text-left relative z-10">
                 <h3 className="text-3xl font-bold text-white tracking-tight">Want to talk immediately?</h3>
@@ -1020,7 +1020,7 @@ export default function Home() {
                   Skip the line and book a free 1-on-1 strategy call with us to discuss your custom store build.
                 </p>
               </div>
-              <button onClick={openCalendlyPopup} className="shrink-0 relative z-10 bg-green text-navy dark:text-white px-10 py-5 rounded-full font-bold text-lg hover:scale-105 transition-all duration-300 shadow flex items-center gap-3 w-full md:w-auto justify-center cursor-pointer">
+              <button onClick={openCalendlyPopup} className="shrink-0 relative z-10 bg-[#6D28D9] text-white hover:bg-[#8B5CF6] px-10 py-5 rounded-full font-bold text-lg hover:scale-105 transition-all duration-300 shadow-xl shadow-[#6D28D9]/25 flex items-center gap-3 w-full md:w-auto justify-center cursor-pointer">
                 Book Strategy Call <ArrowRight size={20} />
               </button>
             </div>
@@ -1037,7 +1037,7 @@ export default function Home() {
       <section className="py-32 bg-white dark:bg-navy relative overflow-hidden border-b border-[#E2E8F0]">
         {/* Subtle decorative grid lines */}
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#E2E8F015_1px,transparent_1px),linear-gradient(to_bottom,#E2E8F015_1px,transparent_1px)] bg-[size:4rem_4rem] pointer-events-none -z-10"></div>
-        <div className="absolute top-1/2 left-1/2 w-[600px] h-[600px] bg-green/5 rounded-full blur-[140px] pointer-events-none -translate-x-1/2 -translate-y-1/2 -z-10"></div>
+        <div className="absolute top-1/2 left-1/2 w-[600px] h-[600px] bg-[#6D28D9]/5 rounded-full blur-[140px] pointer-events-none -translate-x-1/2 -translate-y-1/2 -z-10"></div>
 
         <div className="container mx-auto px-6 max-w-7xl">
           <div className="text-center max-w-3xl mx-auto mb-24 space-y-4">
@@ -1046,7 +1046,7 @@ export default function Home() {
             </div>
             <h2 className="text-5xl md:text-7xl font-bold text-navy dark:text-white tracking-tighter">
               Why brands choose <br />
-              <span className="text-[#10b981] underline decoration-[#10b981]/20 underline-offset-8 italic font-serif font-light">Sheun Hub over Agencies.</span>
+              <span className="text-[#8B5CF6] underline decoration-[#8B5CF6]/20 underline-offset-8 italic font-serif font-light">Sheun Hub over Agencies.</span>
             </h2>
             <p className="text-[#71717a] dark:text-white/70 text-lg sm:text-xl font-serif italic leading-relaxed">
               Finding the "best Shopify developer" shouldn't mean paying agency overheads or gambling on cheap, unreliable freelancers.
@@ -1085,43 +1085,43 @@ export default function Home() {
             </div>
 
             {/* Sheun Hub (The Expert) */}
-            <div className="p-8 sm:p-10 rounded-3xl bg-[#09090b] text-white space-y-8 flex flex-col relative shadow-[0_20px_50px_rgba(0,0,0,0.15)] lg:scale-105 z-10 border border-green/30">
+            <div className="p-8 sm:p-10 rounded-3xl bg-[#09090b] text-white space-y-8 flex flex-col relative shadow-[0_20px_50px_rgba(0,0,0,0.15)] lg:scale-105 z-10 border border-[#8B5CF6]/30">
               {/* Badge */}
-              <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-[#10b981] text-[#09090b] text-[10px] font-bold uppercase tracking-[0.25em] px-6 py-2 rounded-full shadow-lg">
+              <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-[#6D28D9] text-white text-[10px] font-bold uppercase tracking-[0.25em] px-6 py-2 rounded-full shadow-lg">
                 Most Reliable Choice
               </div>
               {/* Internal dotted background decoration */}
-              <div className="absolute inset-0 bg-[radial-gradient(rgba(16,185,129,0.15)_1px,transparent_1px)] bg-[size:16px_16px] rounded-3xl pointer-events-none"></div>
+              <div className="absolute inset-0 bg-[radial-gradient(rgba(139,92,246,0.15)_1px,transparent_1px)] bg-[size:16px_16px] rounded-3xl pointer-events-none"></div>
 
               <div className="space-y-2 relative z-10">
-                <span className="text-xs font-bold uppercase tracking-widest text-green">Partner Option</span>
+                <span className="text-xs font-bold uppercase tracking-widest text-[#8B5CF6]">Partner Option</span>
                 <h3 className="text-3xl font-bold text-white tracking-tight">Sheun Hub</h3>
-                <p className="text-[#10b981] text-xs font-bold uppercase tracking-widest">Professional Shopify Partner</p>
+                <p className="text-[#8B5CF6] text-xs font-bold uppercase tracking-widest">Professional Shopify Partner</p>
               </div>
               <ul className="space-y-4 flex-grow border-t border-white/10 pt-6 relative z-10">
                 <li className="flex items-start gap-3 text-white/90 text-sm leading-relaxed">
-                  <CheckCircle2 size={18} className="text-[#10b981] shrink-0 mt-0.5" />
+                  <CheckCircle2 size={18} className="text-[#8B5CF6] shrink-0 mt-0.5" />
                   Work directly with a dedicated Shopify specialist—ensuring no details are lost in translation.
                 </li>
                 <li className="flex items-start gap-3 text-white/90 text-sm leading-relaxed">
-                  <CheckCircle2 size={18} className="text-[#10b981] shrink-0 mt-0.5" />
+                  <CheckCircle2 size={18} className="text-[#8B5CF6] shrink-0 mt-0.5" />
                   Bespoke, lightweight Liquid code built from the ground up for maximum speed and technical SEO.
                 </li>
                 <li className="flex items-start gap-3 text-white/90 text-sm leading-relaxed">
-                  <CheckCircle2 size={18} className="text-[#10b981] shrink-0 mt-0.5" />
+                  <CheckCircle2 size={18} className="text-[#8B5CF6] shrink-0 mt-0.5" />
                   Every technical decision is driven by conversion psychology, ROI, and commercial growth metrics.
                 </li>
                 <li className="flex items-start gap-3 text-white/90 text-sm leading-relaxed">
-                  <CheckCircle2 size={18} className="text-[#10b981] shrink-0 mt-0.5" />
+                  <CheckCircle2 size={18} className="text-[#8B5CF6] shrink-0 mt-0.5" />
                   Clear, upfront project pricing that eliminates the hidden fees and bloated overhead of traditional agencies.
                 </li>
                 <li className="flex items-start gap-3 text-white/90 text-sm leading-relaxed">
-                  <CheckCircle2 size={18} className="text-[#10b981] shrink-0 mt-0.5" />
+                  <CheckCircle2 size={18} className="text-[#8B5CF6] shrink-0 mt-0.5" />
                   Experience highly proactive, crystal-clear communication and rapid feedback loops throughout the project.
                 </li>
               </ul>
               <div className="pt-6 border-t border-white/10 relative z-10">
-                <p className="text-white/80 font-bold text-xs uppercase tracking-wider">Result: <span className="text-[#10b981] font-mono">Profitable Scaled Store</span></p>
+                <p className="text-white/80 font-bold text-xs uppercase tracking-wider">Result: <span className="text-[#8B5CF6] font-mono">Profitable Scaled Store</span></p>
               </div>
             </div>
 
@@ -1165,14 +1165,14 @@ export default function Home() {
         <div className="container mx-auto px-6">
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-24">
             <div className="space-y-6">
-              <p className="text-green text-[10px] font-bold uppercase tracking-[0.4em]">Expertise</p>
+              <p className="text-[#8B5CF6] text-[10px] font-bold uppercase tracking-[0.4em]">Expertise</p>
               <h2 className="text-5xl md:text-8xl font-bold text-white tracking-tighter leading-[0.85]">
                 Crafting <span className="italic font-serif font-light text-white/40">Digital</span><br />
                 Commerce.
               </h2>
             </div>
             <Link to="/services" className="group flex items-center gap-4 text-white font-bold text-lg">
-              View All Services <div className="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center group-hover:bg-green group-hover:text-navy dark:text-white transition-all">
+              View All Services <div className="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center group-hover:bg-[#6D28D9] group-hover:text-white transition-all">
                 <ArrowRight size={20} />
               </div>
             </Link>
@@ -1243,7 +1243,7 @@ export default function Home() {
                 }}
                 className="p-6 md:p-8 lg:p-12 bg-navy space-y-6 md:space-y-10 group hover:bg-white/[0.02] transition-all cursor-pointer text-center w-full block border-r border-b border-white/5 flex flex-col items-center overflow-hidden"
               >
-                <div className="w-16 h-16 bg-white/5 rounded-2xl flex items-center justify-center text-green group-hover:scale-110 transition-transform duration-500 mx-auto transform-gpu">
+                <div className="w-16 h-16 bg-white/5 rounded-2xl flex items-center justify-center text-[#8B5CF6] group-hover:scale-110 transition-transform duration-500 mx-auto transform-gpu">
                   <service.icon size={32} />
                 </div>
                 <div className="space-y-4 md:space-y-6">
@@ -1252,7 +1252,7 @@ export default function Home() {
                 </div>
                 <div className="flex flex-wrap justify-center gap-3 pt-6 md:pt-8 border-t border-white/5 w-full">
                   {service.tags.map((tag, j) => (
-                    <span key={j} className="text-[10px] font-bold uppercase tracking-[0.2em] text-green bg-green/10 px-4 py-2 rounded-full">
+                    <span key={j} className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#8B5CF6] bg-[#6D28D9]/10 px-4 py-2 rounded-full">
                       {tag}
                     </span>
                   ))}
@@ -1309,7 +1309,7 @@ export default function Home() {
                   <div className="bg-white dark:bg-navy/80 p-8 rounded-3xl shadow-xl border border-navy/5 dark:border-white/5 flex flex-col h-full justify-between min-h-[340px]">
                     <div>
                       <div className="flex items-center justify-between mb-6">
-                        <div className="w-10 h-10 bg-green/10 dark:bg-green/5 text-green rounded-full flex items-center justify-center shadow-sm">
+                        <div className="w-10 h-10 bg-[#6D28D9]/10 dark:bg-[#6D28D9]/15 text-[#8B5CF6] rounded-full flex items-center justify-center shadow-sm">
                           <Quote size={16} className="rotate-180" />
                         </div>
                         <div className="flex items-center gap-1">
@@ -1357,7 +1357,7 @@ export default function Home() {
                   className={cn(
                     "h-2.5 rounded-full transition-all duration-300 cursor-pointer",
                     testimonialIndex === i 
-                      ? "w-8 bg-green" 
+                      ? "w-8 bg-[#8B5CF6]" 
                       : "w-2.5 bg-navy/10 dark:bg-white/10 hover:bg-navy/30 dark:hover:bg-white/30"
                   )}
                   aria-label={`Go to slide ${i + 1}`}
@@ -1391,13 +1391,13 @@ export default function Home() {
           <div className="max-w-4xl mx-auto text-center space-y-12">
             <h2 className="text-5xl md:text-7xl font-bold text-white tracking-tighter">
               Ready to scale <br />
-              <span className="text-green italic font-serif font-light">Your Shopify store?</span>
+              <span className="text-[#8B5CF6] italic font-serif font-light">Your Shopify store?</span>
             </h2>
             <p className="text-white/60 text-xl font-serif italic max-w-2xl mx-auto leading-relaxed">
               Join the high-performing brands that have transformed their e-commerce presence with bespoke development and strategic growth.
             </p>
             <div className="pt-8">
-              <Link to="/apply" className="inline-flex items-center gap-3 bg-green text-navy dark:text-white font-bold px-8 md:px-12 py-4 md:py-6 rounded-full hover:scale-105 transition-transform text-lg shadow-2xl">
+              <Link to="/apply" className="inline-flex items-center gap-3 bg-[#6D28D9] text-white hover:bg-[#8B5CF6] font-bold px-8 md:px-12 py-4 md:py-6 rounded-full hover:scale-105 transition-all duration-300 text-lg shadow-2xl shadow-[#6D28D9]/30">
                 Apply for Growth Plan <ArrowRight size={24} />
               </Link>
             </div>
@@ -1414,7 +1414,7 @@ export default function Home() {
             <div className="space-y-10">
               <h2 className="text-5xl md:text-7xl font-bold tracking-tight">
                 The Sheun Hub <br />
-                <span className="text-green italic font-serif font-light">Advantage</span>.
+                <span className="text-[#8B5CF6] italic font-serif font-light">Advantage</span>.
               </h2>
               <p className="text-white/60 text-xl max-w-lg leading-relaxed font-serif italic">
                 We don't just build stores; we build profitable eCommerce systems. Combining deep technical expertise with conversion rate psychology.
@@ -1427,7 +1427,7 @@ export default function Home() {
                   { title: "Direct Communication", desc: "Bypass the typical agency bureaucracy and work directly one-on-one with the technical architect. Enjoy clear, proactive updates, fast feedback loops, and zero miscommunications from start to finish." }
                 ].map((item, i) => (
                   <div key={i} className="flex gap-6 items-start">
-                    <div className="w-12 h-12 rounded-full bg-white/5 border border-white/10 flex items-center justify-center shrink-0 text-green mt-1">
+                    <div className="w-12 h-12 rounded-full bg-white/5 border border-white/10 flex items-center justify-center shrink-0 text-[#8B5CF6] mt-1">
                       <CheckCircle2 size={24} />
                     </div>
                     <div>
@@ -1448,7 +1448,7 @@ export default function Home() {
                 />
                 <div className="absolute inset-0 bg-gradient-to-tr from-navy via-navy/50 to-transparent" />
               </div>
-              <div className="absolute -bottom-10 -left-10 bg-green text-navy p-10 rounded-2xl shadow-2xl border-4 border-navy border-t-0 animate-bounce-slow">
+              <div className="absolute -bottom-10 -left-10 bg-[#6D28D9] text-white p-10 rounded-2xl shadow-2xl border-4 border-navy border-t-0 animate-bounce-slow">
                 <p className="text-6xl font-bold tracking-tighter mb-2">100%</p>
                 <p className="text-xs uppercase font-bold tracking-widest opacity-80">Job Success Rate</p>
               </div>
@@ -1480,7 +1480,7 @@ export default function Home() {
                   { icon: "gmail", label: "Email", value: "sheunhost@gmail.com" },
                 ].map((item, i) => (
                   <div key={i} className="flex flex-col sm:flex-row items-center sm:items-start gap-6 group text-center sm:text-left">
-                    <div className="w-14 h-14 bg-light rounded-2xl flex items-center justify-center text-navy dark:text-white group-hover:bg-green group-hover:text-navy dark:text-white transition-all shrink-0 overflow-hidden">
+                    <div className="w-14 h-14 bg-light rounded-2xl flex items-center justify-center text-navy dark:text-white group-hover:bg-[#6D28D9] group-hover:text-white transition-all shrink-0 overflow-hidden">
                       {item.icon === "whatsapp" ? (
                         <img src="https://cdn-icons-png.flaticon.com/512/3670/3670051.png" alt="WhatsApp" className="w-6 h-6 object-contain" />
                       ) : (
@@ -1497,14 +1497,14 @@ export default function Home() {
 
               <div className="p-10 bg-navy text-white rounded-2xl space-y-6 relative overflow-hidden shadow-2xl">
                 <div className="absolute top-0 right-0 p-8 opacity-10">
-                  <Zap size={100} className="text-green" />
+                  <Zap size={100} className="text-[#8B5CF6]" />
                 </div>
                 <div className="relative z-10 space-y-4">
                   <h3 className="text-xl font-bold">Free Growth Plan</h3>
                   <p className="text-white/40 text-sm leading-relaxed">
                     Not sure what your store needsWe'll provide a comprehensive review of your speed, design, and SEO — completely free.
                   </p>
-                  <Link to="/contact#contact-form" className="inline-flex items-center gap-2 text-green font-bold text-sm border-b border-green/20 pb-1 hover:border-green transition-all">
+                  <Link to="/contact#contact-form" className="inline-flex items-center gap-2 text-[#8B5CF6] font-bold text-sm border-b border-[#8B5CF6]/20 pb-1 hover:border-[#8B5CF6] transition-all">
                     Claim Your Growth Plan <ArrowRight size={16} />
                   </Link>
                 </div>
@@ -1531,7 +1531,7 @@ export default function Home() {
                             type="text"
                             name="name"
                             placeholder="John Doe"
-                            className="w-full bg-white border-b-2 border-navy/5 rounded-3xl py-5 px-8 focus:border-green outline-none transition-all font-medium text-navy dark:text-white placeholder:text-navy dark:text-white/20"
+                            className="w-full bg-white border-b-2 border-navy/5 rounded-3xl py-5 px-8 focus:border-[#8B5CF6] outline-none transition-all font-medium text-navy dark:text-white placeholder:text-navy dark:text-white/20"
                           />
                         </div>
                         <div className="space-y-3">
@@ -1541,7 +1541,7 @@ export default function Home() {
                             type="email"
                             name="email"
                             placeholder="john@example.com"
-                            className={`w-full bg-white border-b-2 ${emailErrorContact ? 'border-red-500' : 'border-navy/5'} rounded-3xl py-5 px-8 focus:border-green outline-none transition-all font-medium text-navy dark:text-white placeholder:text-navy dark:text-white/20`}
+                            className={`w-full bg-white border-b-2 ${emailErrorContact ? 'border-red-500' : 'border-navy/5'} rounded-3xl py-5 px-8 focus:border-[#8B5CF6] outline-none transition-all font-medium text-navy dark:text-white placeholder:text-navy dark:text-white/20`}
                           />
                           {emailErrorContact && <p className="text-red-500 text-xs ml-4">{emailErrorContact}</p>}
                         </div>
@@ -1550,7 +1550,7 @@ export default function Home() {
                       <div className="space-y-3">
                         <label className="text-[10px] font-bold text-navy dark:text-white/40 uppercase tracking-widest ml-4">Project Type</label>
                         <div className="relative">
-                          <select name="project_type" className="w-full bg-white border-b-2 border-navy/5 rounded-3xl py-5 px-8 focus:border-green outline-none transition-all appearance-none font-medium text-navy dark:text-white">
+                          <select name="project_type" className="w-full bg-white border-b-2 border-navy/5 rounded-3xl py-5 px-8 focus:border-[#8B5CF6] outline-none transition-all appearance-none font-medium text-navy dark:text-white">
                             <option>New Store Build</option>
                             <option>Dropshipping Store</option>
                             <option>Shopify Migration Service</option>
@@ -1569,13 +1569,13 @@ export default function Home() {
                           name="message"
                           rows={5}
                           placeholder="Tell us about your project goals..."
-                          className="w-full bg-white border-b-2 border-navy/5 rounded-2xl py-6 px-8 focus:border-green outline-none transition-all resize-none font-medium text-navy dark:text-white placeholder:text-navy dark:text-white/20"
+                          className="w-full bg-white border-b-2 border-navy/5 rounded-2xl py-6 px-8 focus:border-[#8B5CF6] outline-none transition-all resize-none font-medium text-navy dark:text-white placeholder:text-navy dark:text-white/20"
                         />
                       </div>
 
                       <button
                         disabled={isSubmitting}
-                        className="w-full bg-navy text-white py-6 rounded-full font-bold text-lg hover:bg-navy/90 transition-all flex items-center justify-center gap-4 group shadow-xl"
+                        className="w-full bg-navy text-white py-6 rounded-full font-bold text-lg hover:bg-[#6D28D9] transition-all flex items-center justify-center gap-4 group shadow-xl"
                       >
                         {isSubmitting ? (
                           <div className="w-6 h-6 border-4 border-white/30 border-t-white rounded-full animate-spin" />
@@ -1593,7 +1593,7 @@ export default function Home() {
                       
                       className="text-center py-12 space-y-8"
                     >
-                      <div className="w-24 h-24 bg-green text-navy dark:text-white rounded-2xl flex items-center justify-center mx-auto shadow-xl rotate-3">
+                      <div className="w-24 h-24 bg-[#6D28D9] text-white rounded-2xl flex items-center justify-center mx-auto shadow-xl rotate-3">
                         <CheckCircle2 size={48} />
                       </div>
                       <div className="space-y-4">
@@ -1604,7 +1604,7 @@ export default function Home() {
                       </div>
                       <button
                         onClick={() => setIsSuccess(false)}
-                        className="text-navy dark:text-white font-bold border-b-2 border-green pb-1 hover:text-green transition-colors"
+                        className="text-navy dark:text-white font-bold border-b-2 border-[#8B5CF6] pb-1 hover:text-[#8B5CF6] transition-colors"
                       >
                         Send another message
                       </button>
@@ -1624,7 +1624,7 @@ export default function Home() {
         <div className="container mx-auto px-6">
           <div className="max-w-5xl mx-auto bg-white rounded-2xl p-10 md:p-16 shadow-xl border border-navy/5 flex flex-col md:flex-row items-center gap-12">
             <div className="flex-1 space-y-6 text-center md:text-left">
-              <div className="inline-flex items-center justify-center w-16 h-16 bg-green/10 text-green rounded-2xl mb-2 overflow-hidden">
+              <div className="inline-flex items-center justify-center w-16 h-16 bg-[#6D28D9]/10 text-[#8B5CF6] rounded-2xl mb-2 overflow-hidden">
                 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Gmail_icon_%282020%29.svg/960px-Gmail_icon_%282020%29.svg.png?_=20221017173631" alt="Gmail" className="w-8 h-8 object-contain" />
               </div>
               <h2 className="text-4xl md:text-5xl font-bold text-navy dark:text-white tracking-tight">
@@ -1650,13 +1650,13 @@ export default function Home() {
                       name="email"
                       required
                       placeholder="Enter your email address" 
-                      className={`w-full bg-light border-2 ${emailErrorSubscribe ? 'border-red-500' : 'border-navy/5'} rounded-full py-6 pl-8 pr-8 sm:pr-40 focus:border-green outline-none transition-all font-medium text-navy dark:text-white placeholder:text-navy dark:text-white/20`}
+                      className={`w-full bg-light border-2 ${emailErrorSubscribe ? 'border-red-500' : 'border-navy/5'} rounded-full py-6 pl-8 pr-8 sm:pr-40 focus:border-[#8B5CF6] outline-none transition-all font-medium text-navy dark:text-white placeholder:text-navy dark:text-white/20`}
                     />
                     {emailErrorSubscribe && <p className="absolute -bottom-6 left-8 text-red-500 text-xs">{emailErrorSubscribe}</p>}
                     <button 
                       type="submit"
                       disabled={isSubscribing}
-                      className="w-full sm:w-auto sm:absolute sm:right-3 bg-navy text-white px-8 py-4 sm:py-4 rounded-full font-bold hover:bg-green hover:text-navy dark:text-white transition-colors disabled:opacity-50 min-h-[60px]"
+                      className="w-full sm:w-auto sm:absolute sm:right-3 bg-navy text-white px-8 py-4 sm:py-4 rounded-full font-bold hover:bg-[#6D28D9] hover:text-white transition-colors disabled:opacity-50 min-h-[60px]"
                     >
                       {isSubscribing ? (
                         <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin mx-auto" />
@@ -1670,9 +1670,9 @@ export default function Home() {
                     key="newsletter-success"
                     
                     
-                    className="bg-green/10 border border-green/20 rounded-2xl p-8 text-center space-y-4"
+                    className="bg-[#6D28D9]/10 border border-[#8B5CF6]/20 rounded-2xl p-8 text-center space-y-4"
                   >
-                    <div className="w-16 h-16 bg-green text-navy dark:text-white rounded-full flex items-center justify-center mx-auto shadow-lg">
+                    <div className="w-16 h-16 bg-[#6D28D9] text-white rounded-full flex items-center justify-center mx-auto shadow-lg">
                       <CheckCircle2 size={32} />
                     </div>
                     <div className="space-y-1">
@@ -1694,7 +1694,7 @@ export default function Home() {
     {/* CTA Banner - Recipe 2 */}
     <ScrollReveal>
       <section className="py-48 bg-navy-gradient relative overflow-hidden">
-        <div className="absolute inset-0 bg-green/5 opacity-50" />
+        <div className="absolute inset-0 bg-[#6D28D9]/5 opacity-50" />
         <div className="container mx-auto px-6 relative z-10 text-center">
           <div
             
@@ -1703,17 +1703,17 @@ export default function Home() {
             className="max-w-5xl mx-auto space-y-16"
           >
             <h2 className="text-5xl md:text-[160px] font-bold text-white leading-[0.8] tracking-[-0.06em] uppercase">
-              Ready to <span className="text-green italic font-serif font-light lowercase">Grow?</span>
+              Ready to <span className="text-[#8B5CF6] italic font-serif font-light lowercase">Grow?</span>
             </h2>
             <p className="text-white/60 text-2xl md:text-3xl max-w-3xl mx-auto leading-relaxed font-serif italic">
               Let's build a store that doesn't just look good, but converts visitors into loyal customers.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-12">
-              <Link to="/contact#contact-form" className="w-full sm:w-auto bg-green text-navy dark:text-white px-8 md:px-16 py-4 md:py-8 rounded-full font-bold text-xl md:text-2xl hover:scale-105 transition-all duration-500 green-glow flex items-center justify-center text-center">
+              <Link to="/contact#contact-form" className="w-full sm:w-auto bg-[#6D28D9] text-white hover:bg-gradient-to-r hover:from-[#6D28D9] hover:via-[#8B5CF6] hover:to-[#C026D3] px-8 md:px-16 py-4 md:py-8 rounded-full font-bold text-xl md:text-2xl hover:scale-105 transition-all duration-500 shadow-2xl shadow-[#6D28D9]/40 flex items-center justify-center text-center">
                 Get Your Free Growth Plan
               </Link>
               <Link to="/portfolio" className="w-full sm:w-auto text-white font-bold text-2xl flex items-center justify-center gap-6 group text-center">
-                View Portfolio <div className="w-12 h-px bg-white/20 group-hover:w-20 group-hover:bg-green transition-all duration-500" />
+                View Portfolio <div className="w-12 h-px bg-white/20 group-hover:w-20 group-hover:bg-[#8B5CF6] transition-all duration-500" />
               </Link>
             </div>
           </div>
