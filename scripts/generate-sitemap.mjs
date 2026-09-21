@@ -20,7 +20,7 @@ const baseRoutes = [
   { url: '/shopify-speed-optimization', priority: '0.8', changefreq: 'monthly' },
   { url: '/woocommerce-to-shopify-migration', priority: '0.8', changefreq: 'monthly' },
   { url: '/best-dropshipping-apps', priority: '0.8', changefreq: 'monthly' },
-  { url: '/fashion-dropshipping-guide', priority: '0.8', changefreq: 'monthly' },
+  { url: 'fashion-dropshipping-guide', priority: '0.8', changefreq: 'monthly' },
   { url: '/leveraging-shopify-markets', priority: '0.8', changefreq: 'monthly' },
   // Automation Routes
   { url: '/automation', priority: '1.0', changefreq: 'weekly' },
@@ -43,13 +43,39 @@ const baseRoutes = [
   { url: '/automation/services/custom-api-n8n-zapier', priority: '0.8', changefreq: 'monthly' }
 ];
 
-const serviceIds = ['setup', 'dropshipping', 'migration', 'custom', 'plus', 'bug', 'seo', 'cro', 'apps', 'speed'];
+const serviceIds = [
+  'setup',
+  'dropshipping',
+  'migration',
+  'custom',
+  'plus',
+  'bug',
+  'seo',
+  'cro',
+  'apps',
+  'speed',
+  'email-marketing',
+  'paid-ads',
+  'influencer-affiliate'
+];
+
 const blogIds = [1, 2, 3, 4, 5, 6, 7, 8];
+const blogSlugs = [
+  'shopify-settings-guide',
+  'shopify-speed-optimization',
+  'best-dropshipping-apps',
+  'fashion-dropshipping-guide',
+  'woocommerce-to-shopify-migration',
+  'shopify-seo-guide',
+  'leveraging-shopify-markets',
+  'shopify-not-converting'
+];
 
 const routes = [
   ...baseRoutes,
   ...serviceIds.map(id => ({ url: `/services/${id}`, priority: '0.8', changefreq: 'monthly' })),
-  ...blogIds.map(id => ({ url: `/blog/${id}`, priority: '0.8', changefreq: 'monthly' }))
+  ...blogIds.map(id => ({ url: `/blog/${id}`, priority: '0.8', changefreq: 'monthly' })),
+  ...blogSlugs.map(slug => ({ url: `/blog/${slug}`, priority: '0.8', changefreq: 'monthly' }))
 ];
 
 const date = new Date().toISOString().split('T')[0];
@@ -57,13 +83,16 @@ const date = new Date().toISOString().split('T')[0];
 const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 ${routes.map(r => `  <url>
-    <loc>https://www.sheun.online${r.url}</loc>
+    <loc>https://www.sheun.online${r.url.startsWith('/') ? r.url : `/${r.url}`}</loc>
     <lastmod>${date}</lastmod>
     <changefreq>${r.changefreq}</changefreq>
     <priority>${r.priority}</priority>
   </url>`).join('\n')}
 </urlset>`;
 
+fs.mkdirSync('public', { recursive: true });
 fs.writeFileSync('public/sitemap.xml', sitemap);
-fs.writeFileSync('dist/sitemap.xml', sitemap);
-console.log('Sitemap generated!');
+if (fs.existsSync('dist')) {
+  fs.writeFileSync('dist/sitemap.xml', sitemap);
+}
+console.log(`Sitemap generated with ${routes.length} URLs!`);
