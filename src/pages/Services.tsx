@@ -248,14 +248,14 @@ const ServiceModal = ({ service, onClose }: { service: any; onClose: () => void 
       >
         <button
           onClick={onClose}
-          className="absolute top-6 right-6 w-12 h-12 bg-light dark:bg-white/5 rounded-full flex items-center justify-center text-navy dark:text-white hover:bg-green hover:text-navy dark:text-white transition-all z-10"
+          className="absolute top-6 right-6 w-12 h-12 bg-light dark:bg-white/5 rounded-full flex items-center justify-center text-navy dark:text-white hover:bg-[#6D28D9] hover:text-white transition-all z-10"
         >
           <X size={24} />
         </button>
 
         <div className="grid grid-cols-1 lg:grid-cols-12">
           <div className="lg:col-span-5 bg-navy-gradient p-8 md:p-16 text-white space-y-10 md:space-y-12">
-            <div className="w-16 h-16 md:w-20 md:h-20 bg-green rounded-3xl flex items-center justify-center text-navy dark:text-white shadow-2xl shrink-0">
+            <div className="w-16 h-16 md:w-20 md:h-20 bg-[#6D28D9] rounded-3xl flex items-center justify-center text-white shadow-2xl shrink-0">
               <service.icon size={32} className="md:w-[40px] md:h-[40px]" />
             </div>
             <div className="space-y-4 md:space-y-6">
@@ -264,7 +264,7 @@ const ServiceModal = ({ service, onClose }: { service: any; onClose: () => void 
             </div>
             <div className="space-y-6 pt-10 border-t border-white/10">
               <div className="flex items-center gap-4 md:gap-6">
-                <div className="w-10 h-10 md:w-12 md:h-12 rounded-2xl bg-white/5 flex items-center justify-center text-green shrink-0">
+                <div className="w-10 h-10 md:w-12 md:h-12 rounded-2xl bg-white/5 flex items-center justify-center text-[#8B5CF6] shrink-0">
                   <Clock size={20} className="md:w-[24px] md:h-[24px]" />
                 </div>
                 <div>
@@ -273,7 +273,7 @@ const ServiceModal = ({ service, onClose }: { service: any; onClose: () => void 
                 </div>
               </div>
               <div className="flex items-center gap-4 md:gap-6">
-                <div className="w-10 h-10 md:w-12 md:h-12 rounded-2xl bg-white/5 flex items-center justify-center text-green shrink-0">
+                <div className="w-10 h-10 md:w-12 md:h-12 rounded-2xl bg-white/5 flex items-center justify-center text-[#8B5CF6] shrink-0">
                   <DollarSign size={20} className="md:w-[24px] md:h-[24px]" />
                 </div>
                 <div>
@@ -287,13 +287,13 @@ const ServiceModal = ({ service, onClose }: { service: any; onClose: () => void 
           <div className="lg:col-span-7 p-8 md:p-16 space-y-10 md:space-y-12 bg-white dark:bg-navy">
             <div className="space-y-6 md:space-y-8">
               <div className="flex items-center gap-3 md:gap-4">
-                <ListChecks className="text-green w-6 h-6 md:w-8 md:h-8" />
+                <ListChecks className="text-[#8B5CF6] w-6 h-6 md:w-8 md:h-8" />
                 <h3 className="text-2xl md:text-3xl font-bold text-navy dark:text-white tracking-tight">Service Roadmap</h3>
               </div>
               <div className="space-y-6 md:space-y-8 relative before:absolute before:left-5 before:top-2 before:bottom-2 before:w-px before:bg-navy/5">
                 {service.roadmap.map((step: any, i: number) => (
                   <div key={i} className="relative pl-12 md:pl-16 group">
-                    <div className="absolute left-0 top-1 w-8 h-8 md:w-10 md:h-10 bg-light dark:bg-white/5 rounded-2xl border border-navy/5 flex items-center justify-center text-xs md:text-sm font-bold text-navy dark:text-white group-hover:bg-green group-hover:border-green transition-all duration-500">
+                    <div className="absolute left-0 top-1 w-8 h-8 md:w-10 md:h-10 bg-light dark:bg-white/5 rounded-2xl border border-navy/5 flex items-center justify-center text-xs md:text-sm font-bold text-navy dark:text-white group-hover:bg-[#6D28D9] group-hover:border-[#6D28D9] group-hover:text-white transition-all duration-500">
                       {i + 1}
                     </div>
                     <div className="space-y-1 md:space-y-2">
@@ -311,7 +311,7 @@ const ServiceModal = ({ service, onClose }: { service: any; onClose: () => void 
                   onClose();
                   navigate("/apply#apply-form");
                 }}
-                className="w-full bg-navy text-white py-5 md:py-6 rounded-full font-bold text-lg md:text-xl hover:bg-green hover:text-navy dark:text-white transition-all duration-500 flex items-center justify-center gap-3 md:gap-4 shadow-2xl"
+                className="w-full bg-[#6D28D9] text-white py-5 md:py-6 rounded-full font-bold text-lg md:text-xl hover:bg-[#8B5CF6] transition-all duration-500 flex items-center justify-center gap-3 md:gap-4 shadow-2xl"
               >
                 Get Started <ArrowRight size={20} className="md:w-[24px] md:h-[24px]" />
               </button>
@@ -379,30 +379,34 @@ export default function Services() {
       ]}
     >
       {/* Services Hero - Premium High-Impact Grid */}
-        <section className="relative pt-32 pb-24 md:pt-40 md:pb-32 bg-[#FFFFFF] overflow-hidden border-b border-[#E2E8F0] dark:border-white/10">
+        <section className="relative pt-36 pb-24 md:pt-48 lg:pt-52 md:pb-32 bg-[#FFFFFF] dark:bg-navy overflow-hidden border-b border-[#E2E8F0] dark:border-white/10">
+          {/* Top Wall 3-Color Gradient Separator */}
+          <div className="absolute top-0 left-0 right-0 h-[3px] bg-gradient-to-r from-[#FF6B4A] via-[#D946EF] to-[#6D28D9] z-20" />
+
           {/* Subtle Background Gradients & Glows */}
-          <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-[#10b981]/5 rounded-full blur-[140px] pointer-events-none -z-10 animate-pulse"></div>
-          <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-[#2563EB]/5 rounded-full blur-[140px] pointer-events-none -z-10"></div>
+          <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-[#6D28D9]/10 rounded-full blur-[140px] pointer-events-none -z-10 animate-pulse"></div>
+          <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-[#D946EF]/10 rounded-full blur-[140px] pointer-events-none -z-10"></div>
+          <div className="absolute top-1/2 left-1/3 w-[350px] h-[350px] bg-[#FF6B4A]/10 rounded-full blur-[160px] pointer-events-none -z-10"></div>
           <div className="absolute inset-0 bg-[linear-gradient(to_right,#E2E8F015_1px,transparent_1px),linear-gradient(to_bottom,#E2E8F015_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_50%,#000_70%,transparent_100%)] -z-10"></div>
 
           <div className="container mx-auto px-6 max-w-7xl relative z-10">
             <div className="max-w-4xl space-y-8">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#F4F4F5] dark:bg-white/10 border border-[#E2E8F0] dark:border-white/10 text-xs font-semibold uppercase tracking-wider text-[#0F172A] dark:text-white">
-                <span className="flex h-2 w-2 rounded-full bg-[#10b981] animate-ping"></span>
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-[#FF6B4A]/10 via-[#D946EF]/10 to-[#6D28D9]/10 border border-[#D946EF]/30 text-xs font-bold uppercase tracking-wider text-[#D946EF] mt-8 md:mt-14 shadow-sm">
+                <span className="flex h-2 w-2 rounded-full bg-[#FF6B4A] animate-ping"></span>
                 Growth-Driven E-Commerce Solutions
               </div>
 
               <h1 className="text-5xl sm:text-7xl lg:text-8xl font-bold text-[#0F172A] dark:text-white tracking-tight leading-[1.05] font-sans">
-                Shopify <span className="text-[#10b981] underline decoration-[#10b981]/20 underline-offset-8">Services</span> & Specialized Actions.
+                Shopify <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FF6B4A] via-[#D946EF] to-[#8B5CF6] underline decoration-[#D946EF]/30 underline-offset-8">Services</span> & Specialized Actions.
               </h1>
 
               <div className="flex flex-col sm:flex-row sm:items-center gap-8 pt-2">
-                <p className="text-[#475569] text-lg sm:text-xl leading-relaxed max-w-2xl font-sans">
+                <p className="text-[#475569] dark:text-white/70 text-lg sm:text-xl leading-relaxed max-w-2xl font-sans">
                   Whether you're starting fresh, migrating from another platform, or launching a targeted sprint — I engineer high-speed Liquid systems optimized for maximum conversion rate.
                 </p>
-                <div className="inline-flex items-center gap-3 bg-[#F0FDF4] border border-[#DCFCE7] px-6 py-4 rounded-2xl shrink-0">
-                  <Gift className="text-[#16A34A]" size={22} />
-                  <span className="text-[#16A34A] font-bold text-sm">Free Store Audit Included</span>
+                <div className="inline-flex items-center gap-3 bg-[#FF6B4A]/10 dark:bg-[#FF6B4A]/10 border border-[#FF6B4A]/30 px-6 py-4 rounded-2xl shrink-0 text-[#FF6B4A]">
+                  <Gift className="text-[#FF6B4A]" size={22} />
+                  <span className="font-bold text-sm">Free Store Audit Included</span>
                 </div>
               </div>
             </div>
@@ -417,14 +421,14 @@ export default function Services() {
             <div className="bg-white dark:bg-navy border border-[#E2E8F0] dark:border-white/10 p-1.5 rounded-2xl flex items-center shadow-sm">
               <button 
                 onClick={() => setViewMode('grid')}
-                className={`w-11 h-11 rounded-xl transition-all flex items-center justify-center ${viewMode === 'grid' ? 'bg-[#10b981] text-white shadow-sm' : 'text-[#71717a] dark:text-white/70 hover:text-[#0F172A] dark:text-white hover:bg-gray-100'}`}
+                className={`w-11 h-11 rounded-xl transition-all flex items-center justify-center ${viewMode === 'grid' ? 'bg-[#6D28D9] text-white shadow-sm' : 'text-[#71717a] dark:text-white/70 hover:text-[#0F172A] dark:text-white hover:bg-gray-100'}`}
                 aria-label="Grid View"
               >
                 <Grid size={18} />
               </button>
               <button 
                 onClick={() => setViewMode('list')}
-                className={`w-11 h-11 rounded-xl transition-all flex items-center justify-center ${viewMode === 'list' ? 'bg-[#10b981] text-white shadow-sm' : 'text-[#71717a] dark:text-white/70 hover:text-[#0F172A] dark:text-white hover:bg-gray-100'}`}
+                className={`w-11 h-11 rounded-xl transition-all flex items-center justify-center ${viewMode === 'list' ? 'bg-[#6D28D9] text-white shadow-sm' : 'text-[#71717a] dark:text-white/70 hover:text-[#0F172A] dark:text-white hover:bg-gray-100'}`}
                 aria-label="List View"
               >
                 <List size={18} />
@@ -444,11 +448,11 @@ export default function Services() {
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, margin: "-100px" }}
-                  className="bg-white dark:bg-navy p-6 md:p-12 lg:p-16 rounded-[32px] border border-[#E2E8F0] dark:border-white/10 relative overflow-hidden group hover:border-[#10b981]/50 transition-all duration-500 shadow-sm hover:shadow-2xl"
+                  className="bg-white dark:bg-navy p-6 md:p-12 lg:p-16 rounded-[32px] border border-[#E2E8F0] dark:border-white/10 relative overflow-hidden group hover:border-[#8B5CF6]/50 transition-all duration-500 shadow-sm hover:shadow-2xl"
                 >
                   <div className="absolute top-0 right-0 p-8 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                    <span className="inline-flex items-center gap-1.5 text-[10px] font-bold uppercase tracking-wider text-[#16A34A] bg-[#F0FDF4] border border-[#DCFCE7] px-4 py-1.5 rounded-full">
-                      <span className="h-1.5 w-1.5 rounded-full bg-[#16A34A] animate-ping" />
+                    <span className="inline-flex items-center gap-1.5 text-[10px] font-bold uppercase tracking-wider text-[#8B5CF6] bg-[#6D28D9]/10 border border-[#8B5CF6]/30 px-4 py-1.5 rounded-full">
+                      <span className="h-1.5 w-1.5 rounded-full bg-[#8B5CF6] animate-ping" />
                       {service.tag}
                     </span>
                   </div>
@@ -456,7 +460,7 @@ export default function Services() {
                   <div className="flex flex-col gap-12">
                     {/* Header */}
                     <div className="flex flex-col md:flex-row items-start md:items-center gap-6">
-                      <div className="w-20 h-20 bg-[#F4F4F5] dark:bg-white/10 rounded-3xl border border-[#E2E8F0] dark:border-white/10 flex items-center justify-center text-[#0F172A] dark:text-white group-hover:bg-[#10b981] group-hover:text-white transition-all duration-500 shrink-0">
+                      <div className="w-20 h-20 bg-[#F4F4F5] dark:bg-white/10 rounded-3xl border border-[#E2E8F0] dark:border-white/10 flex items-center justify-center text-[#0F172A] dark:text-white group-hover:bg-[#6D28D9] group-hover:text-white transition-all duration-500 shrink-0">
                         <service.icon size={36} />
                       </div>
                       <div>
@@ -481,7 +485,7 @@ export default function Services() {
                         {/* Scope */}
                         <div className="space-y-3">
                           <div className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#71717a] dark:text-white/70 flex items-center gap-2">
-                            <span className="w-1.5 h-1.5 bg-[#10b981] rounded-full" /> My Solution (Scope)
+                            <span className="w-1.5 h-1.5 bg-[#8B5CF6] rounded-full" /> My Solution (Scope)
                           </div>
                           <p className="text-[#334155] leading-relaxed font-medium">
                             {data.scope}
@@ -496,7 +500,7 @@ export default function Services() {
                           <ul className="space-y-3">
                             {data.deliverables.map((item, j) => (
                               <li key={j} className="flex items-start gap-3 text-[#334155] font-semibold text-sm">
-                                <CheckCircle2 className="w-4 h-4 text-[#10b981] shrink-0 mt-0.5" />
+                                <CheckCircle2 className="w-4 h-4 text-[#8B5CF6] shrink-0 mt-0.5" />
                                 <span>{item}</span>
                               </li>
                             ))}
@@ -511,7 +515,7 @@ export default function Services() {
                           <Link 
                             to={`/services/${service.id}`}
                             onClick={() => window.scrollTo(0, 0)}
-                            className="w-full sm:w-auto bg-[#0F172A] text-white px-8 py-4 rounded-2xl font-bold text-sm uppercase flex items-center justify-center gap-3 hover:bg-[#10b981] hover:text-[#0F172A] dark:text-white transition-all duration-300 shadow-md"
+                            className="w-full sm:w-auto bg-[#0F172A] text-white px-8 py-4 rounded-2xl font-bold text-sm uppercase flex items-center justify-center gap-3 hover:bg-[#6D28D9] hover:text-white transition-all duration-300 shadow-md"
                           >
                             Learn More <ArrowRight size={16} />
                           </Link>
@@ -535,15 +539,15 @@ export default function Services() {
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true, margin: "-100px" }}
-                    className="bg-white dark:bg-navy p-8 md:p-10 rounded-[32px] border border-[#E2E8F0] dark:border-white/10 relative overflow-hidden group hover:border-[#10b981]/50 hover:shadow-2xl transition-all duration-500 flex flex-col h-full"
+                    className="bg-white dark:bg-navy p-8 md:p-10 rounded-[32px] border border-[#E2E8F0] dark:border-white/10 relative overflow-hidden group hover:border-[#8B5CF6]/50 hover:shadow-2xl transition-all duration-500 flex flex-col h-full"
                   >
                     <div className="absolute top-0 right-0 p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                      <span className="text-[10px] font-bold uppercase tracking-widest text-[#16A34A] bg-[#F0FDF4] px-4 py-1.5 rounded-full border border-[#DCFCE7]">
+                      <span className="text-[10px] font-bold uppercase tracking-widest text-[#8B5CF6] bg-[#6D28D9]/10 px-4 py-1.5 rounded-full border border-[#8B5CF6]/30">
                         {service.tag}
                       </span>
                     </div>
 
-                     <div className="w-16 h-16 bg-[#F4F4F5] dark:bg-white/10 rounded-2xl border border-[#E2E8F0] dark:border-white/10 flex items-center justify-center text-[#0F172A] dark:text-white group-hover:bg-[#10b981] group-hover:text-white transition-all duration-500 mb-8 shrink-0">
+                     <div className="w-16 h-16 bg-[#F4F4F5] dark:bg-white/10 rounded-2xl border border-[#E2E8F0] dark:border-white/10 flex items-center justify-center text-[#0F172A] dark:text-white group-hover:bg-[#6D28D9] group-hover:text-white transition-all duration-500 mb-8 shrink-0">
                       <service.icon size={28} />
                     </div>
                     
@@ -560,7 +564,7 @@ export default function Services() {
                       <Link 
                         to={`/services/${service.id}`}
                         onClick={() => window.scrollTo(0, 0)}
-                        className="w-12 h-12 bg-[#F4F4F5] dark:bg-white/10 border border-[#E2E8F0] dark:border-white/10 rounded-full flex items-center justify-center text-[#0F172A] dark:text-white shadow-sm group-hover:bg-[#0F172A] group-hover:text-white transition-all"
+                        className="w-12 h-12 bg-[#F4F4F5] dark:bg-white/10 border border-[#E2E8F0] dark:border-white/10 rounded-full flex items-center justify-center text-[#0F172A] dark:text-white shadow-sm group-hover:bg-[#6D28D9] group-hover:text-white transition-all"
                       >
                         <ArrowRight size={18} className="group-hover:-rotate-45 transition-transform" />
                       </Link>
@@ -577,11 +581,11 @@ export default function Services() {
       {/* Pricing Tiers - Bento Grid */}
       <ScrollReveal>
         <section className="py-32 bg-[#0F172A] relative overflow-hidden text-white">
-          <div className="absolute inset-0 bg-[radial-gradient(rgba(16,185,129,0.1)_1px,transparent_1px)] bg-[size:32px_32px] opacity-30 pointer-events-none"></div>
+          <div className="absolute inset-0 bg-[radial-gradient(rgba(139,92,246,0.15)_1px,transparent_1px)] bg-[size:32px_32px] opacity-30 pointer-events-none"></div>
           
           <div className="container mx-auto px-6 max-w-7xl relative z-10">
             <div className="text-center max-w-3xl mx-auto mb-24 space-y-4">
-              <span className="text-[#10b981] text-xs font-bold uppercase tracking-widest">Transparent Packages</span>
+              <span className="text-[#8B5CF6] text-xs font-bold uppercase tracking-widest">Transparent Packages</span>
               <h2 className="text-5xl md:text-7xl font-extrabold tracking-tight leading-none">Simple Plans.</h2>
             </div>
             
@@ -594,12 +598,12 @@ export default function Services() {
                 <div
                   key={i}
                   className={`p-8 md:p-12 rounded-[32px] border transition-all duration-500 flex flex-col justify-between ${
-                    tier.popular ? "bg-[#10b981] text-[#0F172A] dark:text-white border-[#10b981] scale-100 lg:scale-105 shadow-2xl relative z-10" : "bg-white/5 text-white border-white/10"
+                    tier.popular ? "bg-gradient-to-b from-[#6D28D9] to-[#5B21B6] text-white border-[#8B5CF6]/40 scale-100 lg:scale-105 shadow-2xl relative z-10" : "bg-white/5 text-white border-white/10"
                   }`}
                 >
                   <div>
                     {tier.popular ? (
-                      <span className="bg-[#0F172A] text-white text-[10px] font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-8 inline-block self-start border border-white/15">
+                      <span className="bg-white/20 text-white text-[10px] font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-8 inline-block self-start border border-white/25">
                         Most Popular
                       </span>
                     ) : (
@@ -607,14 +611,14 @@ export default function Services() {
                     )}
                     
                     <div className="mb-12">
-                      <div className={`text-sm font-extrabold uppercase tracking-widest mb-2 ${tier.popular ? "text-[#0F172A] dark:text-white/70" : "text-white/50"}`}>{tier.name}</div>
-                      <p className={`text-6xl font-black tracking-tight leading-none ${tier.popular ? "text-[#0F172A] dark:text-white" : "text-[#10b981]"}`}>{tier.price}</p>
+                      <div className={`text-sm font-extrabold uppercase tracking-widest mb-2 ${tier.popular ? "text-white/80" : "text-white/50"}`}>{tier.name}</div>
+                      <p className={`text-6xl font-black tracking-tight leading-none ${tier.popular ? "text-white" : "text-[#8B5CF6]"}`}>{tier.price}</p>
                     </div>
                     
                     <ul className="space-y-6 mb-12">
                       {tier.features.map((f, j) => (
                         <li key={j} className="flex items-center gap-4 text-sm font-bold opacity-90">
-                          <CheckCircle2 size={18} className={tier.popular ? "text-[#0F172A] dark:text-white" : "text-[#10b981]"} /> {f}
+                          <CheckCircle2 size={18} className={tier.popular ? "text-white" : "text-[#8B5CF6]"} /> {f}
                         </li>
                       ))}
                     </ul>
@@ -623,7 +627,7 @@ export default function Services() {
                   <Link 
                     to="/apply#apply-form" 
                     className={`w-full py-4.5 rounded-2xl font-bold text-center transition-all duration-300 block ${
-                      tier.popular ? "bg-[#0F172A] text-white hover:bg-[#1f2937] shadow-xl" : "bg-[#10b981] text-[#0F172A] dark:text-white hover:bg-[#059669]"
+                      tier.popular ? "bg-white text-navy hover:bg-white/90 shadow-xl" : "bg-[#6D28D9] text-white hover:bg-[#8B5CF6]"
                     }`}
                   >
                     Get Started
@@ -668,7 +672,7 @@ export default function Services() {
                         referrerPolicy="no-referrer"
                       />
                     </div>
-                    <div className="absolute -bottom-1 -right-1 w-6 h-6 bg-green text-navy dark:text-white rounded-full flex items-center justify-center shadow z-20">
+                    <div className="absolute -bottom-1 -right-1 w-6 h-6 bg-[#6D28D9] text-white rounded-full flex items-center justify-center shadow z-20">
                       <Quote size={10} />
                     </div>
                   </div>
@@ -688,7 +692,7 @@ export default function Services() {
                       {testimonials[testimonialIndex].content.length > 150 && (
                         <button 
                           onClick={() => setIsTestimonialExpanded(!isTestimonialExpanded)}
-                          className="text-navy dark:text-white font-bold text-sm tracking-wide hover:text-green transition-colors mt-2 underline decoration-green decoration-2 underline-offset-4"
+                          className="text-navy dark:text-white font-bold text-sm tracking-wide hover:text-[#8B5CF6] transition-colors mt-2 underline decoration-[#8B5CF6] decoration-2 underline-offset-4"
                         >
                           {isTestimonialExpanded ? 'Read Less' : 'Read More'}
                         </button>
@@ -705,7 +709,7 @@ export default function Services() {
               <div className="flex items-center justify-center gap-6 mt-10">
                 <button 
                   onClick={prevTestimonial}
-                  className="w-14 h-14 rounded-full bg-white dark:bg-navy border border-navy/10 flex items-center justify-center text-navy dark:text-white hover:bg-green hover:border-green transition-all shadow-lg hover:scale-105"
+                  className="w-14 h-14 rounded-full bg-white dark:bg-navy border border-navy/10 flex items-center justify-center text-navy dark:text-white hover:bg-[#6D28D9] hover:border-[#6D28D9] hover:text-white transition-all shadow-lg hover:scale-105"
                 >
                   <ChevronLeft size={24} />
                 </button>
@@ -715,14 +719,14 @@ export default function Services() {
                     <button 
                       key={idx}
                       onClick={() => setTestimonialIndex(idx)}
-                      className={`h-2 rounded-full transition-all ${idx === testimonialIndex ? 'w-8 bg-green' : 'w-2 bg-navy/10 hover:bg-navy/30'}`}
+                      className={`h-2 rounded-full transition-all ${idx === testimonialIndex ? 'w-8 bg-[#8B5CF6]' : 'w-2 bg-navy/10 dark:bg-white/10 hover:bg-navy/30'}`}
                     />
                   ))}
                 </div>
 
                 <button 
                   onClick={nextTestimonial}
-                  className="w-14 h-14 rounded-full bg-white dark:bg-navy border border-navy/10 flex items-center justify-center text-navy dark:text-white hover:bg-green hover:border-green transition-all shadow-lg hover:scale-105"
+                  className="w-14 h-14 rounded-full bg-white dark:bg-navy border border-navy/10 flex items-center justify-center text-navy dark:text-white hover:bg-[#6D28D9] hover:border-[#6D28D9] hover:text-white transition-all shadow-lg hover:scale-105"
                 >
                   <ChevronRight size={24} />
                 </button>
@@ -746,12 +750,12 @@ export default function Services() {
                   Everything you need to know about working with me on your Shopify project.
                 </p>
                 <div className="bg-light dark:bg-white/5 p-8 rounded-xl border border-navy/5 space-y-4">
-                  <MessageSquare className="text-green" size={32} />
+                  <MessageSquare className="text-[#8B5CF6]" size={32} />
                   <h3 className="text-xl font-bold text-navy dark:text-white">Still have questions?</h3>
                   <p className="text-navy/40 dark:text-white/40 text-sm">I'm here to help. Let's chat about your specific needs.</p>
                   <button 
                     onClick={() => navigate("/apply#apply-form")} 
-                    className="inline-block text-navy dark:text-white font-bold text-sm border-b-2 border-green pb-1 text-left"
+                    className="inline-block text-navy dark:text-white font-bold text-sm border-b-2 border-[#8B5CF6] pb-1 text-left hover:text-[#8B5CF6] transition-colors"
                   >
                     Get Started
                   </button>
@@ -766,7 +770,7 @@ export default function Services() {
                       className="w-full p-8 text-left flex items-center justify-between bg-light dark:bg-white/5 hover:bg-light dark:bg-white/5/80 transition-colors"
                     >
                       <span className="font-bold text-navy dark:text-white text-lg">{faq.q}</span>
-                      <div className={`w-8 h-8 rounded-full bg-white dark:bg-navy flex items-center justify-center transition-transform ${openFaq === i ? "rotate-180 bg-green text-navy dark:text-white" : "text-navy/20 dark:text-white/20"}`}>
+                      <div className={`w-8 h-8 rounded-full bg-white dark:bg-navy flex items-center justify-center transition-transform ${openFaq === i ? "rotate-180 bg-[#6D28D9] text-white" : "text-navy/20 dark:text-white/20"}`}>
                         <ChevronDown size={20} />
                       </div>
                     </button>
@@ -796,19 +800,22 @@ export default function Services() {
       <ScrollReveal>
         <section className="py-32 bg-light dark:bg-white/5">
           <div className="container mx-auto px-6">
-            <div className="bg-navy rounded-[60px] p-12 md:p-24 relative overflow-hidden">
+            <div className="bg-navy rounded-[60px] p-12 md:p-24 relative overflow-hidden border border-white/10">
+              {/* Pool Wall 3-Color Gradient Top Rim */}
+              <div className="absolute top-0 left-0 right-0 h-[3px] bg-gradient-to-r from-[#FF6B4A] via-[#D946EF] to-[#6D28D9] z-20" />
+              
               <div className="absolute inset-0 opacity-20">
-                <div className="absolute top-0 right-0 w-full h-full bg-green/20 blur-[120px] rounded-full translate-x-1/2 -translate-y-1/2" />
+                <div className="absolute top-0 right-0 w-full h-full bg-[#6D28D9]/20 blur-[120px] rounded-full translate-x-1/2 -translate-y-1/2" />
               </div>
               
               <div className="relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center text-center lg:text-left">
                 <div className="space-y-10">
-                  <div className="inline-flex items-center gap-3 bg-white/5 border border-white/10 px-6 py-3 rounded-full text-green">
+                  <div className="inline-flex items-center gap-3 bg-white/5 border border-white/10 px-6 py-3 rounded-full text-[#D946EF]">
                     <ShieldCheck size={20} />
                     <span className="text-[10px] font-bold uppercase tracking-[0.3em]">Direct Expert Access</span>
                   </div>
                   <h2 className="text-5xl md:text-7xl font-bold text-white tracking-tighter leading-[0.95]">
-                    Need a <span className="text-green italic font-serif font-light">Custom Quote</span> or Tech Consultation?
+                    Need a <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FF6B4A] via-[#D946EF] to-[#8B5CF6] italic font-serif font-light">Custom Quote</span> or Tech Consultation?
                   </h2>
                   <p className="text-white/60 text-xl md:text-2xl leading-relaxed font-serif italic max-w-xl">
                     Skip the generic plans. Let's discuss your specific store requirements and build a technical roadmap that actually works for your business.
@@ -825,7 +832,7 @@ export default function Services() {
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                       <Link 
                         to="/apply#apply-form" 
-                        className="bg-green text-navy dark:text-white px-8 py-5 rounded-full font-bold text-lg hover:scale-105 transition-all duration-300 shadow-xl shadow-green/20 text-center flex items-center justify-center gap-2"
+                        className="bg-gradient-to-r from-[#FF6B4A] via-[#D946EF] to-[#6D28D9] text-white px-8 py-5 rounded-full font-bold text-lg hover:opacity-95 hover:scale-105 transition-all duration-300 shadow-xl shadow-[#D946EF]/25 text-center flex items-center justify-center gap-2"
                       >
                         Book Call <ArrowRight size={20} />
                       </Link>
@@ -865,7 +872,7 @@ export default function Services() {
       <ScrollReveal>
         <section className="py-24 bg-white dark:bg-navy border-t border-navy/5">
           <div className="container mx-auto px-6">
-            <div className="max-w-4xl mx-auto prose prose-lg prose-headings:text-navy dark:text-white prose-a:text-green text-navy/70 dark:text-white/70 leading-relaxed">
+            <div className="max-w-4xl mx-auto prose prose-lg prose-headings:text-navy dark:text-white prose-a:text-[#8B5CF6] text-navy/70 dark:text-white/70 leading-relaxed">
               <h2 className="text-3xl md:text-4xl font-bold font-sans not-italic mb-6 tracking-tight">Expert Custom Shopify Development Services</h2>
               <p className="mb-6 font-serif italic text-xl">
                 In today's competitive digital landscape, a generic store won't cut it. Whether you are an ambitious e-commerce owner looking to scale globally or a local retailer ready to take your physical storefront online, a fast, conversion-optimized Shopify site is paramount. As a dedicated Shopify developer and e-commerce growth expert, we deliver end-to-end custom development tailored to high-growth brands in fashion, beauty, gadgets, and pet supply niches.
@@ -889,7 +896,10 @@ export default function Services() {
       {/* Free Audit CTA - Recipe 2 */}
       <ScrollReveal>
         <section className="py-48 bg-navy-gradient relative overflow-hidden">
-          <div className="absolute inset-0 bg-green/5 opacity-50" />
+          {/* Top Wall 3-Color Gradient Separator */}
+          <div className="absolute top-0 left-0 right-0 h-[3px] bg-gradient-to-r from-[#FF6B4A] via-[#D946EF] to-[#6D28D9]" />
+          
+          <div className="absolute inset-0 bg-[#6D28D9]/10 opacity-50" />
           <div className="container mx-auto px-6 relative z-10 text-center">
             <motion.div
               initial={{ opacity: 0, scale: 0.95 }}
@@ -897,11 +907,11 @@ export default function Services() {
               transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
               className="max-w-5xl mx-auto space-y-16"
             >
-              <div className="w-32 h-32 bg-white/5 rounded-2xl flex items-center justify-center text-green mx-auto shadow-2xl border border-white/10 backdrop-blur-xl">
+              <div className="w-32 h-32 bg-gradient-to-br from-[#FF6B4A]/10 via-[#D946EF]/10 to-[#6D28D9]/10 rounded-2xl flex items-center justify-center text-[#FF6B4A] mx-auto shadow-2xl border border-white/10 backdrop-blur-xl">
                 <Gift size={64} />
               </div>
               <h2 className="text-7xl md:text-[140px] font-bold text-white leading-[0.8] tracking-[-0.06em] uppercase">
-                Free Store <span className="text-green italic font-serif font-light lowercase">Audit.</span>
+                Free Store <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FF6B4A] via-[#D946EF] to-[#8B5CF6] italic font-serif font-light lowercase">Audit.</span>
               </h2>
               <p className="text-white/60 text-2xl md:text-3xl max-w-3xl mx-auto leading-relaxed font-serif italic">
                 Not sure where to startWe'll review your store and send you a growth tips report — completely free.
@@ -909,21 +919,21 @@ export default function Services() {
               <div className="flex flex-col sm:flex-row items-center justify-center gap-12">
                 <button 
                   onClick={() => navigate("/apply#apply-form")} 
-                  className="w-full sm:w-auto bg-green text-navy dark:text-white px-16 py-8 rounded-full font-bold text-2xl hover:scale-105 transition-all duration-500 green-glow"
+                  className="w-full sm:w-auto bg-gradient-to-r from-[#FF6B4A] via-[#D946EF] to-[#6D28D9] text-white px-16 py-8 rounded-full font-bold text-2xl hover:opacity-95 hover:scale-105 transition-all duration-500 shadow-2xl shadow-[#D946EF]/30"
                 >
                   Get Started
                 </button>
-                <div className="flex items-center gap-3 bg-white/5 border border-white/10 px-6 py-3 rounded-full text-green">
+                <div className="flex items-center gap-3 bg-white/5 border border-white/10 px-6 py-3 rounded-full text-[#8B5CF6]">
                   <ShieldCheck size={18} />
                   <span className="text-[10px] font-bold uppercase tracking-widest text-white/60">Trust Guaranteed</span>
                 </div>
               </div>
 
               <div className="pt-12 flex items-center justify-center gap-4">
-                <a href="https://www.linkedin.com/in/sheun-hub-26b876321" target="_blank" rel="noopener noreferrer" className="p-4 bg-white/10 hover:bg-green hover:text-navy dark:text-white text-white rounded-full transition-all border border-white/10 flex items-center justify-center shrink-0 overflow-hidden">
+                <a href="https://www.linkedin.com/in/sheun-hub-26b876321" target="_blank" rel="noopener noreferrer" className="p-4 bg-white/10 hover:bg-[#6D28D9] text-white rounded-full transition-all border border-white/10 flex items-center justify-center shrink-0 overflow-hidden">
                   <img src="https://images.rawpixel.com/image_png_social_square/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvdjk4Mi1kMS0xMC5wbmc.png" alt="LinkedIn" className="w-6 h-6 object-contain" />
                 </a>
-                <a href="mailto:sheunhost@gmail.com" className="p-4 bg-white/10 hover:bg-green hover:text-navy dark:text-white text-white rounded-full transition-all border border-white/10 flex items-center justify-center shrink-0">
+                <a href="mailto:sheunhost@gmail.com" className="p-4 bg-white/10 hover:bg-[#6D28D9] text-white rounded-full transition-all border border-white/10 flex items-center justify-center shrink-0">
                   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
                 </a>
               </div>

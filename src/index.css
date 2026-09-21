@@ -11,10 +11,11 @@
   --color-primary-text: #F5F3EE; /* Off-white primary typography */
   --color-green: #8B5CF6; /* Refined violet accent (seamlessly re-maps default accent) */
   --color-violet: #8B5CF6; /* Refined violet */
-  --color-deep-violet: #6D28D9; /* Deep violet - dominant */
-  --color-magenta: #C026D3; /* Muted magenta - secondary */
-  --color-subtle-pink: #EC4899; /* Subtle pink gradient touch */
-  --color-accent-orange: #F97316; /* Accent orange touch */
+  --color-deep-violet: #6D28D9; /* Deep violet - dominant 55-60% */
+  --color-magenta: #D946EF; /* Vibrant magenta - secondary 25-30% */
+  --color-subtle-pink: #EC4899; /* Subtle pink accent */
+  --color-coral: #FF6B4A; /* Logo warm coral - tertiary 15% */
+  --color-accent-orange: #F97316; /* Logo orange accent */
   --color-muted: #71717a; /* Zinc 500 */
   --color-light: #f4f4f5; /* Zinc 100 */
 
@@ -77,6 +78,50 @@
 
   .green-glow, .violet-glow {
     box-shadow: 0 0 40px -10px rgba(109, 40, 217, 0.45);
+  }
+
+  .gradient-logo-tri {
+    background: linear-gradient(135deg, #FF6B4A 0%, #D946EF 50%, #6D28D9 100%);
+  }
+
+  .gradient-logo-tri-h {
+    background: linear-gradient(90deg, #FF6B4A 0%, #D946EF 50%, #6D28D9 100%);
+  }
+
+  .text-gradient-tri {
+    background: linear-gradient(135deg, #FF6B4A 0%, #D946EF 45%, #8B5CF6 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .wall-gradient-top {
+    position: relative;
+  }
+  .wall-gradient-top::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #FF6B4A 0%, #D946EF 50%, #6D28D9 100%);
+    z-index: 20;
+  }
+
+  .pool-wall-card {
+    position: relative;
+    border-radius: 1.5rem;
+    overflow: hidden;
+  }
+  .pool-wall-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #FF6B4A 0%, #D946EF 50%, #6D28D9 100%);
+    z-index: 10;
   }
 }
 

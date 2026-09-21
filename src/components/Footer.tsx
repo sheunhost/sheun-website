@@ -4,7 +4,10 @@ import ConfigChecker from "./ConfigChecker";
 
 export default function Footer() {
   return (
-    <footer className="bg-navy-gradient text-white pt-24 pb-12 border-t border-white/5">
+    <footer className="bg-navy-gradient text-white pt-24 pb-12 border-t border-white/5 relative">
+      {/* Top Wall 3-Color Gradient Separator */}
+      <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-[#FF6B4A] via-[#D946EF] to-[#6D28D9]" />
+
       <div className="container mx-auto px-6">
         {/* API Status Check (Development Only or hidden) */}
         <div className="hidden">
@@ -36,8 +39,8 @@ export default function Footer() {
               <li><Link to="/services" className="text-white/60 hover:text-[#8B5CF6] transition-colors">Custom Dev</Link></li>
               <li><Link to="/services" className="text-white/60 hover:text-[#8B5CF6] transition-colors">Migrations</Link></li>
               <li><Link to="/services" className="text-white/60 hover:text-[#8B5CF6] transition-colors">SEO & Speed</Link></li>
-              <li><Link to="/shopify-seo-sprint" className="text-[#8B5CF6] font-bold hover:text-white transition-colors">48-Hr SEO Sprint ($250)</Link></li>
-              <li><Link to="/shopify-store-audit" className="text-[#8B5CF6] font-bold hover:text-white transition-colors">Shopify Store Audit ($197)</Link></li>
+              <li><Link to="/shopify-seo-sprint" className="text-[#D946EF] font-bold hover:text-white transition-colors">48-Hr SEO Sprint ($250)</Link></li>
+              <li><Link to="/shopify-store-audit" className="text-[#FF6B4A] font-bold hover:text-white transition-colors">Shopify Store Audit ($197)</Link></li>
               <li><Link to="/shopify-not-converting" className="text-white/40 hover:text-[#8B5CF6] transition-colors">Fix Low Sales (Tips)</Link></li>
             </ul>
           </div>

@@ -16,30 +16,36 @@ export function ImpactMetrics() {
   const [activeMetric, setActiveMetric] = useState<'conversion' | 'aov' | 'revenue'>('revenue');
 
   const metrics = [
-    { id: 'revenue', label: 'Monthly Revenue', prefix: '$', suffix: '', color: '#8B5CF6' },
-    { id: 'conversion', label: 'Conversion Rate', prefix: '', suffix: '%', color: '#C026D3' },
-    { id: 'aov', label: 'Average Order Value', prefix: '$', suffix: '', color: '#F97316' }
+    { id: 'revenue', label: 'Monthly Revenue', prefix: '$', suffix: '', color: '#8B5CF6', activeBg: 'bg-[#6D28D9]', shadow: 'shadow-[#6D28D9]/40' },
+    { id: 'conversion', label: 'Conversion Rate', prefix: '', suffix: '%', color: '#D946EF', activeBg: 'bg-[#D946EF]', shadow: 'shadow-[#D946EF]/40' },
+    { id: 'aov', label: 'Average Order Value', prefix: '$', suffix: '', color: '#FF6B4A', activeBg: 'bg-[#FF6B4A]', shadow: 'shadow-[#FF6B4A]/40' }
   ] as const;
 
-  const activeColor = metrics.find(m => m.id === activeMetric)?.color || '#8B5CF6';
+  const activeMetricObj = metrics.find(m => m.id === activeMetric) || metrics[0];
+  const activeColor = activeMetricObj.color;
 
   return (
     <section className="py-32 bg-white dark:bg-navy relative overflow-hidden">
       <div className="container mx-auto px-6 max-w-7xl">
         <div className="text-center max-w-3xl mx-auto mb-20 space-y-4">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#F4F4F5] dark:bg-white/10 border border-[#E2E8F0] dark:border-white/10 text-xs font-semibold uppercase tracking-wider text-[#0F172A] dark:text-white mb-2">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-gradient-to-r from-[#FF6B4A]/10 via-[#D946EF]/10 to-[#6D28D9]/10 border border-[#D946EF]/30 text-xs font-bold uppercase tracking-wider text-[#D946EF] mb-2">
+            <span className="w-2 h-2 rounded-full bg-[#FF6B4A] animate-pulse" />
             Measurable ROI
           </div>
           <h2 className="text-5xl md:text-7xl font-bold text-navy dark:text-white tracking-tighter">
-            Key Impact <span className="text-[#8B5CF6] italic font-serif font-light">Metrics</span>.
+            Key Impact <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FF6B4A] via-[#D946EF] to-[#8B5CF6] italic font-serif font-light">Metrics</span>.
           </h2>
           <p className="text-[#71717a] dark:text-white/70 text-lg sm:text-xl font-serif italic leading-relaxed">
             Beautiful design is useless if it doesn't convert. Here is the average trajectory of stores 6 months post-rebuild.
           </p>
         </div>
 
-        <div className="bg-[#09090b] rounded-[40px] p-8 md:p-12 shadow-2xl relative overflow-hidden">
-          <div className="absolute inset-0 bg-[radial-gradient(rgba(255,255,255,0.05)_1px,transparent_1px)] bg-[size:16px_16px] opacity-20 pointer-events-none"></div>
+        {/* Pool Wall Container Card */}
+        <div className="bg-[#09090b] rounded-[40px] p-8 md:p-12 shadow-2xl relative overflow-hidden border border-white/10">
+          {/* Pool Wall 3-Color Gradient Top Rim */}
+          <div className="absolute top-0 left-0 right-0 h-[3px] bg-gradient-to-r from-[#FF6B4A] via-[#D946EF] to-[#6D28D9] z-20" />
+          
+          <div className="absolute inset-0 bg-[radial-gradient(rgba(217,70,239,0.06)_1px,transparent_1px)] bg-[size:16px_16px] opacity-30 pointer-events-none"></div>
           
           <div className="flex flex-wrap gap-4 mb-12 relative z-10 justify-center">
             {metrics.map((metric) => (
@@ -48,8 +54,8 @@ export function ImpactMetrics() {
                 onClick={() => setActiveMetric(metric.id)}
                 className={`px-6 py-3 rounded-full text-sm font-bold transition-all duration-300 ${
                   activeMetric === metric.id 
-                    ? 'bg-white dark:bg-navy text-navy dark:text-white shadow-lg scale-105' 
-                    : 'bg-white dark:bg-navy/5 text-white/50 hover:bg-white dark:bg-navy/10 hover:text-white'
+                    ? `${metric.activeBg} text-white shadow-lg ${metric.shadow} scale-105` 
+                    : 'bg-white/5 text-white/50 hover:bg-white/10 hover:text-white'
                 }`}
               >
                 {metric.label}
@@ -111,15 +117,15 @@ export function ImpactMetrics() {
           <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-6 relative z-10 border-t border-white/10 pt-8">
             <div className="text-center">
               <p className="text-white/40 text-sm font-bold uppercase tracking-widest mb-2">Avg. Conversion Increase</p>
-              <p className="text-4xl font-bold text-white">+250%</p>
+              <p className="text-4xl font-bold text-[#FF6B4A]">+250%</p>
             </div>
             <div className="text-center border-t md:border-t-0 md:border-l border-white/10 pt-6 md:pt-0">
               <p className="text-white/40 text-sm font-bold uppercase tracking-widest mb-2">Avg. Revenue Lift</p>
-              <p className="text-4xl font-bold text-white">+500%</p>
+              <p className="text-4xl font-bold text-[#8B5CF6]">+500%</p>
             </div>
             <div className="text-center border-t md:border-t-0 md:border-l border-white/10 pt-6 md:pt-0">
               <p className="text-white/40 text-sm font-bold uppercase tracking-widest mb-2">ROI Timeline</p>
-              <p className="text-4xl font-bold text-white">&lt; 3 Months</p>
+              <p className="text-4xl font-bold text-[#D946EF]">&lt; 3 Months</p>
             </div>
           </div>
         </div>

@@ -55,8 +55,8 @@ export default function About() {
       }}
     >
       {/* About Hero - Premium High-Impact Grid */}
-      <section className="relative pt-32 pb-24 md:pt-40 md:pb-32 bg-[#FFFFFF] dark:bg-navy overflow-hidden border-b border-[#E2E8F0] dark:border-white/10">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#10b981]/10 rounded-full blur-[140px] pointer-events-none z-0"></div>
+      <section className="relative pt-36 pb-24 md:pt-48 lg:pt-52 md:pb-32 bg-[#FFFFFF] dark:bg-navy overflow-hidden border-b border-[#E2E8F0] dark:border-white/10">
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#6D28D9]/10 rounded-full blur-[140px] pointer-events-none z-0"></div>
         <div className="container mx-auto px-6 max-w-7xl relative z-10">
           <div className="grid lg:grid-cols-12 gap-12 lg:gap-20 items-center">
             
@@ -66,14 +66,14 @@ export default function About() {
               transition={{ duration: 0.8 }}
               className="lg:col-span-6 space-y-8"
             >
-              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#10b981]/10 border border-[#10b981]/20 text-xs font-semibold uppercase tracking-wider text-[#10b981]">
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#6D28D9]/10 border border-[#8B5CF6]/30 text-xs font-bold uppercase tracking-wider text-[#8B5CF6] mt-6 md:mt-10 shadow-sm">
                 <Star size={14} className="fill-current" />
                 <span>Certified Shopify Partner & Developer</span>
               </div>
               
               <h1 className="text-5xl md:text-7xl font-extrabold text-[#0F172A] dark:text-white tracking-tight leading-[1.1]">
                 Ecommerce Engineering & <br />
-                <span className="text-[#10b981] italic font-serif font-light">Strategy.</span>
+                <span className="text-[#8B5CF6] italic font-serif font-light">Strategy.</span>
               </h1>
               
               <p className="text-[#475569] dark:text-white/70 text-lg sm:text-xl font-serif italic max-w-xl leading-relaxed">
@@ -82,19 +82,19 @@ export default function About() {
               
               <div className="grid grid-cols-2 gap-4 pt-2">
                 <div className="flex items-center gap-2 text-xs sm:text-sm font-bold text-[#0F172A] dark:text-white bg-[#F4F4F5] dark:bg-white/5 py-3 px-4 rounded-2xl border border-[#E2E8F0] dark:border-white/10 shadow-sm">
-                  <GraduationCap size={18} className="text-[#10b981] shrink-0" />
+                  <GraduationCap size={18} className="text-[#8B5CF6] shrink-0" />
                   <span>B.Sc. Business Mgmt, OAU</span>
                 </div>
                 <div className="flex items-center gap-2 text-xs sm:text-sm font-bold text-[#0F172A] dark:text-white bg-[#F4F4F5] dark:bg-white/5 py-3 px-4 rounded-2xl border border-[#E2E8F0] dark:border-white/10 shadow-sm">
-                  <CheckCircle2 size={18} className="text-[#10b981] shrink-0" />
+                  <CheckCircle2 size={18} className="text-[#8B5CF6] shrink-0" />
                   <span>Certified Shopify Partner</span>
                 </div>
                 <div className="flex items-center gap-2 text-xs sm:text-sm font-bold text-[#0F172A] dark:text-white bg-[#F4F4F5] dark:bg-white/5 py-3 px-4 rounded-2xl border border-[#E2E8F0] dark:border-white/10 shadow-sm">
-                  <Award size={18} className="text-[#10b981] shrink-0" />
+                  <Award size={18} className="text-[#8B5CF6] shrink-0" />
                   <span>Top Rated Specialist</span>
                 </div>
                 <div className="flex items-center gap-2 text-xs sm:text-sm font-bold text-[#0F172A] dark:text-white bg-[#F4F4F5] dark:bg-white/5 py-3 px-4 rounded-2xl border border-[#E2E8F0] dark:border-white/10 shadow-sm">
-                  <Globe size={18} className="text-[#10b981] shrink-0" />
+                  <Globe size={18} className="text-[#8B5CF6] shrink-0" />
                   <span>Global Client Base</span>
                 </div>
               </div>
@@ -124,7 +124,7 @@ export default function About() {
                 <div className="absolute inset-0 bg-gradient-to-t from-[#0F172A]/85 via-[#0F172A]/20 to-transparent pointer-events-none"></div>
                 <div className="absolute bottom-6 left-6 right-6 z-20">
                   <div className="flex items-center gap-4 bg-white/10 backdrop-blur-md border border-white/20 p-4 rounded-2xl">
-                    <div className="w-12 h-12 bg-[#10b981] rounded-xl flex items-center justify-center text-[#09090b] shrink-0 shadow-md">
+                    <div className="w-12 h-12 bg-[#6D28D9] rounded-xl flex items-center justify-center text-white shrink-0 shadow-md">
                       <Globe size={24} strokeWidth={2.5} />
                     </div>
                     <div>
@@ -144,12 +144,12 @@ export default function About() {
         <section className="py-24 bg-[#F8FAFC] dark:bg-navy/90 relative overflow-hidden border-b border-[#E2E8F0] dark:border-white/10">
           <div className="container mx-auto px-6 max-w-7xl relative z-10">
             <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
-              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#10b981]/10 border border-[#10b981]/20 text-xs font-semibold uppercase tracking-wider text-[#10b981]">
+              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#6D28D9]/10 border border-[#8B5CF6]/30 text-xs font-semibold uppercase tracking-wider text-[#8B5CF6]">
                 <Sparkles size={14} />
                 <span>Who We Are & What We Do</span>
               </div>
               <h2 className="text-4xl md:text-5xl font-extrabold text-[#0F172A] dark:text-white tracking-tight">
-                Architecting Modern <span className="text-[#10b981] italic font-serif font-light">Commerce & Systems</span>.
+                Architecting Modern <span className="text-[#8B5CF6] italic font-serif font-light">Commerce & Systems</span>.
               </h2>
             </div>
 
@@ -169,11 +169,11 @@ export default function About() {
                   {/* Highlights Grid */}
                   <div className="grid grid-cols-2 md:grid-cols-4 gap-4 pt-4 border-t border-[#E2E8F0] dark:border-white/10">
                     <div className="p-4 rounded-2xl bg-[#F8FAFC] dark:bg-white/5 border border-[#E2E8F0] dark:border-white/10">
-                      <div className="text-xs font-bold uppercase tracking-wider text-[#10b981] mb-1">Founder</div>
+                      <div className="text-xs font-bold uppercase tracking-wider text-[#8B5CF6] mb-1">Founder</div>
                       <div className="font-bold text-[#0F172A] dark:text-white text-sm">Sheun Hub</div>
                     </div>
                     <div className="p-4 rounded-2xl bg-[#F8FAFC] dark:bg-white/5 border border-[#E2E8F0] dark:border-white/10">
-                      <div className="text-xs font-bold uppercase tracking-wider text-[#10b981] mb-1">E-Commerce</div>
+                      <div className="text-xs font-bold uppercase tracking-wider text-[#8B5CF6] mb-1">E-Commerce</div>
                       <div className="font-bold text-[#0F172A] dark:text-white text-sm">Simplified Liquid & Migration</div>
                     </div>
                     <div className="p-4 rounded-2xl bg-[#F8FAFC] dark:bg-white/5 border border-[#E2E8F0] dark:border-white/10">
@@ -181,7 +181,7 @@ export default function About() {
                       <div className="font-bold text-[#0F172A] dark:text-white text-sm">AI Agents & CRM Workflows</div>
                     </div>
                     <div className="p-4 rounded-2xl bg-[#F8FAFC] dark:bg-white/5 border border-[#E2E8F0] dark:border-white/10">
-                      <div className="text-xs font-bold uppercase tracking-wider text-[#10b981] mb-1">Our Team</div>
+                      <div className="text-xs font-bold uppercase tracking-wider text-[#8B5CF6] mb-1">Our Team</div>
                       <div className="font-bold text-[#0F172A] dark:text-white text-sm">Engineers & Designers</div>
                     </div>
                   </div>
@@ -194,7 +194,7 @@ export default function About() {
 
       {/* DEDICATED AUTOMATION LINK PORTAL ELEMENT */}
       <ScrollReveal>
-        <section className="py-16 bg-[#09090b] text-white relative overflow-hidden border-b border-[#10b981]/10">
+        <section className="py-16 bg-[#09090b] text-white relative overflow-hidden border-b border-[#6D28D9]/20">
           <div className="absolute top-0 right-0 w-96 h-96 bg-cyan-500/10 rounded-full blur-[140px] pointer-events-none"></div>
           <div className="container mx-auto px-6 max-w-7xl relative z-10">
             <div className="p-8 md:p-12 rounded-[32px] bg-gradient-to-r from-slate-900 via-slate-900/90 to-cyan-950/40 border border-cyan-500/30 shadow-2xl flex flex-col md:flex-row items-center justify-between gap-8">
@@ -230,22 +230,22 @@ export default function About() {
         <section className="py-24 bg-[#FFFFFF] dark:bg-navy relative overflow-hidden border-b border-[#E2E8F0] dark:border-white/10">
           <div className="container mx-auto px-6 max-w-5xl">
             <div className="text-center max-w-2xl mx-auto mb-16 space-y-3">
-              <span className="text-xs font-bold uppercase tracking-widest text-[#10b981]">The Journey</span>
+              <span className="text-xs font-bold uppercase tracking-widest text-[#8B5CF6]">The Journey</span>
               <h2 className="text-4xl md:text-5xl font-extrabold text-[#0F172A] dark:text-white tracking-tight">
-                Growth & Milestone <span className="text-[#10b981] italic font-serif font-light">Timeline</span>.
+                Growth & Milestone <span className="text-[#8B5CF6] italic font-serif font-light">Timeline</span>.
               </h2>
             </div>
 
             <div className="space-y-8 relative before:absolute before:inset-0 before:left-4 sm:before:left-1/2 before:-ml-px before:h-full before:w-0.5 before:bg-[#E2E8F0] dark:before:bg-white/10">
               {timeline.map((item, idx) => (
                 <div key={idx} className="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active">
-                  <div className="flex items-center justify-center w-9 h-9 rounded-full bg-white dark:bg-navy border-2 border-[#10b981] text-[#10b981] shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2">
+                  <div className="flex items-center justify-center w-9 h-9 rounded-full bg-white dark:bg-navy border-2 border-[#8B5CF6] text-[#8B5CF6] shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2">
                     <Star size={14} className="fill-current" />
                   </div>
                   <div className="w-[calc(100%-3.5rem)] md:w-[calc(50%-2.5rem)] bg-[#F8FAFC] dark:bg-white/5 p-6 rounded-2xl border border-[#E2E8F0] dark:border-white/10 shadow-sm space-y-2">
                     <div className="flex items-center justify-between space-x-2">
                       <h3 className="font-bold text-[#0F172A] dark:text-white">{item.title}</h3>
-                      <time className="font-serif italic text-xs font-bold text-[#10b981]">{item.year}</time>
+                      <time className="font-serif italic text-xs font-bold text-[#8B5CF6]">{item.year}</time>
                     </div>
                     <p className="text-xs text-[#475569] dark:text-white/70 leading-relaxed">{item.desc}</p>
                   </div>
@@ -261,9 +261,9 @@ export default function About() {
         <section className="py-24 bg-[#F8FAFC] dark:bg-navy/80 relative overflow-hidden border-b border-[#E2E8F0] dark:border-white/10">
           <div className="container mx-auto px-6 max-w-7xl">
             <div className="text-center max-w-2xl mx-auto mb-16 space-y-3">
-              <span className="text-xs font-bold uppercase tracking-widest text-[#10b981]">Technical Expertise</span>
+              <span className="text-xs font-bold uppercase tracking-widest text-[#8B5CF6]">Technical Expertise</span>
               <h2 className="text-4xl md:text-5xl font-extrabold text-[#0F172A] dark:text-white tracking-tight">
-                Skills & Core <span className="text-[#10b981] italic font-serif font-light">Stack</span>.
+                Skills & Core <span className="text-[#8B5CF6] italic font-serif font-light">Stack</span>.
               </h2>
             </div>
 
@@ -273,7 +273,7 @@ export default function About() {
                 {skills.map((skill, i) => (
                   <div key={i} className="bg-white dark:bg-white/5 p-6 rounded-2xl border border-[#E2E8F0] dark:border-white/10 shadow-sm space-y-4">
                     <div className="flex items-center justify-between">
-                      <div className="w-10 h-10 bg-[#10b981]/10 rounded-xl flex items-center justify-center text-[#10b981]">
+                      <div className="w-10 h-10 bg-[#6D28D9]/10 rounded-xl flex items-center justify-center text-[#8B5CF6]">
                         <skill.icon size={20} />
                       </div>
                       <span className="text-sm font-bold text-[#0F172A] dark:text-white">{skill.level}%</span>
@@ -282,7 +282,7 @@ export default function About() {
                       <h4 className="font-bold text-[#0F172A] dark:text-white text-sm mb-2">{skill.name}</h4>
                       <div className="w-full h-2 bg-[#E2E8F0] dark:bg-white/10 rounded-full overflow-hidden">
                         <div 
-                          className="h-full bg-[#10b981] rounded-full"
+                          className="h-full bg-[#8B5CF6] rounded-full"
                           style={{ width: `${skill.level}%` }}
                         ></div>
                       </div>
@@ -297,7 +297,7 @@ export default function About() {
                   {tags.map((tag, i) => (
                     <span 
                       key={i} 
-                      className="px-5 py-2.5 bg-[#F4F4F5] dark:bg-white/5 rounded-full text-xs font-bold text-[#0F172A] dark:text-white/80 border border-[#E2E8F0] dark:border-white/10 hover:border-[#10b981] hover:text-[#10b981] transition-all cursor-default"
+                      className="px-5 py-2.5 bg-[#F4F4F5] dark:bg-white/5 rounded-full text-xs font-bold text-[#0F172A] dark:text-white/80 border border-[#E2E8F0] dark:border-white/10 hover:border-[#8B5CF6] hover:text-[#8B5CF6] transition-all cursor-default"
                     >
                       {tag}
                     </span>
@@ -318,7 +318,7 @@ export default function About() {
                 Our Work Method
               </div>
               <h2 className="text-4xl md:text-6xl font-bold text-[#0F172A] dark:text-white tracking-tight">
-                How I <span className="text-[#10b981] italic font-serif font-light">Work</span>.
+                How I <span className="text-[#8B5CF6] italic font-serif font-light">Work</span>.
               </h2>
               <p className="text-[#475569] dark:text-white/70 text-base sm:text-lg font-serif italic max-w-2xl mx-auto">
                 No agency layers, no delays. I combine business strategy with high-end development.
@@ -338,7 +338,7 @@ export default function About() {
                   className="p-8 bg-[#F8FAFC] dark:bg-white/5 border border-[#E2E8F0] dark:border-white/10 rounded-3xl space-y-6 shadow-sm hover:shadow-md transition-all flex flex-col justify-between"
                 >
                   <div className="space-y-4">
-                    <div className="w-12 h-12 bg-[#10b981]/10 rounded-2xl flex items-center justify-center text-[#10b981]">
+                    <div className="w-12 h-12 bg-[#6D28D9]/10 rounded-2xl flex items-center justify-center text-[#8B5CF6]">
                       <card.icon size={24} className={card.icon === Star ? "fill-current" : ""} />
                     </div>
                     <div className="space-y-2">
@@ -346,7 +346,7 @@ export default function About() {
                       <p className="text-[#475569] dark:text-white/70 text-xs leading-relaxed">{card.desc}</p>
                     </div>
                   </div>
-                  <div className="pt-4 border-t border-[#E2E8F0] dark:border-white/10 flex items-center gap-2 text-[10px] font-bold text-[#10b981] uppercase tracking-widest">
+                  <div className="pt-4 border-t border-[#E2E8F0] dark:border-white/10 flex items-center gap-2 text-[10px] font-bold text-[#8B5CF6] uppercase tracking-widest">
                     <span>Phase 0{i+1}</span>
                     <div className="h-px bg-[#E2E8F0] dark:bg-white/10 flex-grow"></div>
                   </div>
@@ -359,9 +359,9 @@ export default function About() {
 
       {/* Premium CTA Section */}
       <ScrollReveal>
-        <section className="py-32 bg-[#09090b] text-white relative overflow-hidden border-t border-[#10b981]/10">
-          <div className="absolute inset-0 bg-[radial-gradient(rgba(16,185,129,0.15)_1px,transparent_1px)] bg-[size:24px_24px] opacity-40 pointer-events-none"></div>
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#10b981]/10 rounded-full blur-[140px] pointer-events-none -z-10"></div>
+        <section className="py-32 bg-[#09090b] text-white relative overflow-hidden border-t border-[#6D28D9]/20">
+          <div className="absolute inset-0 bg-[radial-gradient(rgba(109,40,217,0.15)_1px,transparent_1px)] bg-[size:24px_24px] opacity-40 pointer-events-none"></div>
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#6D28D9]/15 rounded-full blur-[140px] pointer-events-none -z-10"></div>
           
           <div className="container mx-auto px-6 max-w-5xl relative z-10 text-center">
             <motion.div
@@ -370,10 +370,10 @@ export default function About() {
               transition={{ duration: 0.8 }}
               className="space-y-10"
             >
-              <span className="text-xs font-bold uppercase tracking-widest text-[#10b981]">Let's Work Together</span>
+              <span className="text-xs font-bold uppercase tracking-widest text-[#8B5CF6]">Let's Work Together</span>
               <h2 className="text-5xl md:text-7xl font-extrabold text-white tracking-tight leading-tight">
                 Ready to build <br />
-                <span className="text-[#10b981] underline decoration-[#10b981]/20 underline-offset-8 italic font-serif font-light">your vision?</span>
+                <span className="text-[#8B5CF6] underline decoration-[#8B5CF6]/20 underline-offset-8 italic font-serif font-light">your vision?</span>
               </h2>
               <p className="text-[#a1a1aa] text-lg sm:text-xl max-w-2xl mx-auto leading-relaxed">
                 I am currently accepting new projects for ambitious merchants worldwide. Let's build a store that crushes metrics.
@@ -382,7 +382,7 @@ export default function About() {
               <div className="flex flex-col sm:flex-row items-center justify-center gap-6 pt-4">
                 <Link 
                   to="/apply" 
-                  className="w-full sm:w-auto px-8 py-5 rounded-2xl bg-[#10b981] text-[#09090b] font-bold text-lg hover:bg-[#059669] shadow-lg hover:shadow-xl transition-all flex items-center justify-center gap-2"
+                  className="w-full sm:w-auto px-8 py-5 rounded-2xl bg-[#6D28D9] hover:bg-[#8B5CF6] text-white font-bold text-lg shadow-lg hover:shadow-xl transition-all flex items-center justify-center gap-2"
                 >
                   Apply to Work with Sheun Hub
                   <ArrowRight size={20} />
@@ -406,7 +406,7 @@ export default function About() {
                     href={item.url} 
                     target="_blank" 
                     rel="noopener noreferrer" 
-                    className="p-3 bg-white/5 hover:bg-[#10b981] hover:text-[#09090b] text-white rounded-2xl border border-white/10 flex items-center justify-center transition-all overflow-hidden" 
+                    className="p-3 bg-white/5 hover:bg-[#6D28D9] hover:text-white text-white rounded-2xl border border-white/10 flex items-center justify-center transition-all overflow-hidden" 
                     title={item.name}
                   >
                     <img src={item.logo} alt={item.name} width="20" height="20" decoding="async" className="w-5 h-5 object-contain" />

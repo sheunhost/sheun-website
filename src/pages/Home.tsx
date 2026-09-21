@@ -611,49 +611,38 @@ export default function Home() {
 
         {/* Dynamic Background - Recipe 7 */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <div className="absolute top-[-10%] left-[-10%] w-[60%] h-[60%] bg-[#6D28D9]/15 rounded-full blur-[160px] animate-pulse" />
-          <div className="absolute bottom-[-10%] right-[-10%] w-[50%] h-[50%] bg-[#C026D3]/10 rounded-full blur-[150px]" />
+          <div className="absolute top-[-10%] left-[-10%] w-[60%] h-[60%] bg-[#6D28D9]/20 rounded-full blur-[160px] animate-pulse" />
+          <div className="absolute bottom-[-10%] right-[-10%] w-[50%] h-[50%] bg-[#D946EF]/15 rounded-full blur-[150px]" />
+          <div className="absolute top-1/2 left-1/2 w-[35%] h-[35%] bg-[#FF6B4A]/10 rounded-full blur-[180px]" />
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_#8B5CF6_1px,_transparent_1px)] bg-[size:60px_60px] opacity-[0.03]" />
         </div>
 
         <div className="container mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-16 items-center relative z-10">
           <div className="lg:col-span-7 space-y-12">
             <div
-              
-              
-              
               className="space-y-8"
             >
               <div className="inline-flex items-center gap-3 bg-white/5 backdrop-blur-xl border border-white/10 px-6 py-2 rounded-full">
-                <div className="w-1.5 h-1.5 bg-[#8B5CF6] rounded-full" />
-                <span className="text-[#8B5CF6] text-[10px] font-bold uppercase tracking-[0.2em]">Available for new projects</span>
+                <div className="w-2 h-2 bg-[#FF6B4A] rounded-full animate-ping" />
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FF6B4A] via-[#D946EF] to-[#8B5CF6] text-[10px] font-bold uppercase tracking-[0.2em]">Available for new projects</span>
               </div>
 
               <h1 className="text-5xl md:text-[100px] font-bold text-white leading-[0.8] tracking-[-0.05em] text-balance">
                 <span className="block mb-4">
                   <span
                     key="headline-1"
-                    
-                    
-                    
                   >
                     Shopify Development
                   </span>
                   <br />
                   <span
                     key="headline-2"
-                    
-                    
-                    
                   >
-                    &amp; <span className="text-[#8B5CF6]"><WordRotator words={["Growth", "Scaling", "Speed", "SEO"]} /></span>
+                    &amp; <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FF6B4A] via-[#D946EF] to-[#8B5CF6]"><WordRotator words={["Growth", "Scaling", "Speed", "SEO"]} /></span>
                   </span>
                 </span>
                 <span 
                   className="text-white italic font-serif font-light opacity-40 block"
-                  
-                  
-                  
                 >
                   by Sheun Hub.
                 </span>
@@ -661,19 +650,16 @@ export default function Home() {
 
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6 pt-8">
                 {[
-                  { title: "Custom Development", desc: "Bespoke Liquid coding." },
-                  { title: "Store Optimization", desc: "Speed and UX refinement." },
-                  { title: "E-commerce Scaling", desc: "Conversion focused design." }
+                  { title: "Custom Development", desc: "Bespoke Liquid coding.", color: "#8B5CF6", border: "hover:border-[#8B5CF6]/40" },
+                  { title: "Store Optimization", desc: "Speed and UX refinement.", color: "#D946EF", border: "hover:border-[#D946EF]/40" },
+                  { title: "E-commerce Scaling", desc: "Conversion focused design.", color: "#FF6B4A", border: "hover:border-[#FF6B4A]/40" }
                 ].map((item, i) => (
                   <div
                     key={i}
-                    
-                    
-                    
                   >
                     <TiltCard depth={20}>
-                      <div className="bg-white/5 border border-white/10 p-6 rounded-2xl h-full backdrop-blur-sm shadow-xl">
-                        <div className="text-[#8B5CF6] text-sm font-bold uppercase tracking-widest mb-1">{item.title}</div>
+                      <div className={`bg-white/5 border border-white/10 ${item.border} p-6 rounded-2xl h-full backdrop-blur-sm shadow-xl transition-all`}>
+                        <div style={{ color: item.color }} className="text-sm font-bold uppercase tracking-widest mb-1">{item.title}</div>
                         <p className="text-white/40 text-xs italic font-serif">{item.desc}</p>
                       </div>
                     </TiltCard>
@@ -687,32 +673,26 @@ export default function Home() {
             </div>
 
             <div 
-              
-              
-              
               className="flex flex-col sm:flex-row items-center gap-8"
             >
               <Link 
                 to="/apply" 
-                className="w-full sm:w-auto bg-[#6D28D9] text-white hover:bg-gradient-to-r hover:from-[#6D28D9] hover:via-[#8B5CF6] hover:to-[#C026D3] px-8 md:px-12 py-4 md:py-6 rounded-full font-bold text-lg hover:scale-105 transition-all duration-500 shadow-xl shadow-[#6D28D9]/30 flex items-center justify-center gap-3 text-center"
+                className="w-full sm:w-auto bg-gradient-to-r from-[#FF6B4A] via-[#D946EF] to-[#6D28D9] text-white hover:opacity-95 px-8 md:px-12 py-4 md:py-6 rounded-full font-bold text-lg hover:scale-105 transition-all duration-500 shadow-xl shadow-[#D946EF]/25 flex items-center justify-center gap-3 text-center"
               >
                 Get Started <ArrowRight size={20} />
               </Link>
               <Link 
                 to="/services" 
-                className="text-white font-bold hover:text-[#8B5CF6] transition-colors flex items-center gap-2"
+                className="text-white font-bold hover:text-[#D946EF] transition-colors flex items-center gap-2"
               >
                 Explore Services <ChevronDown size={16} />
               </Link>
               <Link to="/portfolio" className="w-full sm:w-auto text-white/80 hover:text-white px-8 py-4 rounded-full font-bold text-lg transition-all flex items-center justify-center gap-4 group text-center">
-                View Portfolio <div className="w-8 h-px bg-white/20 group-hover:w-16 group-hover:bg-[#8B5CF6] transition-all duration-500" />
+                View Portfolio <div className="w-8 h-px bg-white/20 group-hover:w-16 group-hover:bg-[#FF6B4A] transition-all duration-500" />
               </Link>
             </div>
 
             <div 
-              
-              
-              
               className="flex flex-wrap items-center gap-12 pt-8 border-t border-white/5"
             >
               {[
@@ -733,9 +713,6 @@ export default function Home() {
             <div className="relative w-full max-w-md aspect-[4/5]">
               {/* Main Card - Recipe 12 Oval Mask Feel */}
               <div
-                
-                
-                
                 className="absolute inset-0 bg-white/5 backdrop-blur-3xl border border-white/10 rounded-3xl shadow-2xl overflow-hidden group"
               >
                 <img 
@@ -751,7 +728,7 @@ export default function Home() {
                 <div className="absolute inset-0 bg-gradient-to-t from-navy via-navy/40 to-transparent" />
                 <div className="absolute bottom-16 left-12 right-12 space-y-6">
                   <div className="flex gap-2">
-                    {[...Array(5)].map((_, i) => <Star key={i} size={12} className="fill-[#8B5CF6] text-[#8B5CF6]" />)}
+                    {[...Array(5)].map((_, i) => <Star key={i} size={12} className="fill-[#FF6B4A] text-[#FF6B4A]" />)}
                   </div>
                   <h3 className="text-white font-bold text-4xl tracking-tighter leading-none">Top Rated <br />Shopify Expert.</h3>
                   <p className="text-white/60 text-lg font-serif italic">Top Rated Shopify Specialist</p>
@@ -772,16 +749,14 @@ export default function Home() {
 
               {/* Floating Elements - Hardware Feel Recipe 3 */}
               <div
-                
-                
                 className="absolute -top-12 -right-12 w-64 h-64 bg-white/5 backdrop-blur-2xl border border-white/10 rounded-3xl shadow-2xl p-1 hidden sm:block"
               >
                 <div className="w-full h-full rounded-3xl bg-navy/60 flex flex-col items-center justify-center gap-6 border border-white/5">
-                  <div className="w-20 h-20 bg-[#6D28D9]/10 rounded-3xl flex items-center justify-center text-[#8B5CF6] shadow-inner">
+                  <div className="w-20 h-20 bg-gradient-to-br from-[#FF6B4A]/15 via-[#D946EF]/15 to-[#6D28D9]/15 rounded-3xl flex items-center justify-center text-[#FF6B4A] shadow-inner">
                     <ShoppingCart size={40} />
                   </div>
                   <div className="text-center">
-                    <p className="text-white font-bold text-3xl tracking-tighter">+142%</p>
+                    <p className="text-transparent bg-clip-text bg-gradient-to-r from-[#FF6B4A] via-[#D946EF] to-[#8B5CF6] font-bold text-3xl tracking-tighter">+142%</p>
                     <p className="text-white/30 text-[10px] uppercase font-bold tracking-[0.3em] mt-1">Avg. ROI Increase</p>
                   </div>
                 </div>
@@ -793,7 +768,7 @@ export default function Home() {
         {/* Scroll Indicator */}
         <div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-40">
           <span className="text-[10px] font-bold uppercase tracking-widest text-white">Scroll</span>
-          <div className="w-px h-12 bg-gradient-to-b from-[#8B5CF6] to-transparent" />
+          <div className="w-px h-12 bg-gradient-to-b from-[#FF6B4A] via-[#D946EF] to-transparent" />
         </div>
       </section>
 
@@ -802,33 +777,35 @@ export default function Home() {
         {['SHOPIFY EXPERT', 'CUSTOM LIQUID', 'HEADLESS COMMERCE', 'CRO SPECIALIST', 'SPEED OPTIMIZATION', 'TECHNICAL SEO', 'REACT & VITE', 'TAILWIND CSS'].map((text, i) => (
           <div key={i} className="flex items-center gap-16">
             <span className="text-white/40 font-bold text-sm tracking-[0.4em] uppercase">{text}</span>
-            <span className="text-[#8B5CF6]/40 text-xl font-bold">•</span>
+            <span className="text-[#D946EF]/50 text-xl font-bold">•</span>
           </div>
         ))}
       </Marquee>
     </div>
 
-    {/* Credibility Bar */}
+    {/* Credibility Bar (The Badges Pool) */}
     <section className="py-12 bg-[#F8FAFC] dark:bg-navy border-b border-[#E2E8F0] relative overflow-hidden">
+      {/* Pool Wall 3-Color Gradient Top Rim */}
+      <div className="absolute top-0 left-0 right-0 h-[3px] bg-gradient-to-r from-[#FF6B4A] via-[#D946EF] to-[#6D28D9]" />
+
       {/* Background Dots */}
       <div className="absolute inset-0 bg-[radial-gradient(#E2E8F0_1px,transparent_1px)] bg-[size:24px_24px] opacity-40 pointer-events-none"></div>
       
       <div className="container mx-auto px-6 max-w-7xl relative z-10">
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
           {[
-            { label: "Shopify Partner", sub: "Verified & Certified", icon: ShieldCheck, color: "#8B5CF6" },
-            { label: "Upwork Top Rated", sub: "100% Success Rate", icon: Trophy, color: "#2563EB" },
-            { label: "5.0 Star Expert", sub: "Loved By Merchants", icon: Star, color: "#F59E0B" },
-            { label: "100% Satisfaction", sub: "Money-Back Guarantee", icon: CheckCircle2, color: "#09090b" }
+            { label: "Shopify Partner", sub: "Verified & Certified", icon: ShieldCheck, color: "#6D28D9" },
+            { label: "Upwork Top Rated", sub: "100% Success Rate", icon: Trophy, color: "#D946EF" },
+            { label: "5.0 Star Expert", sub: "Loved By Merchants", icon: Star, color: "#FF6B4A" },
+            { label: "100% Satisfaction", sub: "Money-Back Guarantee", icon: CheckCircle2, color: "#8B5CF6" }
           ].map((badge, idx) => (
             <div
               key={idx}
-              
-              className="flex items-center gap-4 p-5 rounded-2xl bg-white border border-[#E2E8F0] shadow-[0_2px_8px_rgba(0,0,0,0.02)] hover:shadow-[0_12px_24px_-10px_rgba(0,0,0,0.05)] transition-all"
+              className="flex items-center gap-4 p-5 rounded-2xl bg-white border border-[#E2E8F0] shadow-[0_2px_8px_rgba(0,0,0,0.02)] hover:shadow-[0_12px_24px_-10px_rgba(0,0,0,0.05)] transition-all group"
             >
               <div 
-                className="w-12 h-12 rounded-xl flex items-center justify-center shrink-0"
-                style={{ backgroundColor: `${badge.color}10`, color: badge.color }}
+                className="w-12 h-12 rounded-xl flex items-center justify-center shrink-0 transition-transform group-hover:scale-110"
+                style={{ backgroundColor: `${badge.color}15`, color: badge.color }}
               >
                 <badge.icon size={22} className={badge.icon === Star ? "fill-current" : ""} />
               </div>
@@ -941,7 +918,9 @@ export default function Home() {
               </p>
             </div>
 
-            <div className="bg-light p-8 md:p-12 rounded-3xl shadow-xl border border-navy/5">
+            <div className="bg-light p-8 md:p-12 rounded-3xl shadow-xl border border-navy/5 relative overflow-hidden">
+              {/* Top Wall 3-Color Gradient Separator */}
+              <div className="absolute top-0 left-0 right-0 h-[3px] bg-gradient-to-r from-[#FF6B4A] via-[#D946EF] to-[#6D28D9]" />
               {!planRequested ? (
                 <form onSubmit={handlePlanRequest} className="space-y-6">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -979,7 +958,7 @@ export default function Home() {
                   <button 
                     type="submit"
                     disabled={isRequestingPlan}
-                    className="w-full bg-navy text-white py-5 rounded-full font-bold text-lg hover:bg-[#6D28D9] transition-colors disabled:opacity-50 flex items-center justify-center gap-3 shadow-lg"
+                    className="w-full bg-gradient-to-r from-[#FF6B4A] via-[#D946EF] to-[#6D28D9] text-white py-5 rounded-full font-bold text-lg hover:opacity-95 transition-opacity disabled:opacity-50 flex items-center justify-center gap-3 shadow-lg shadow-[#D946EF]/20"
                   >
                     {isRequestingPlan ? (
                       <>
@@ -1010,7 +989,9 @@ export default function Home() {
               )}
             </div>
             
-            <div className="bg-navy p-10 md:p-16 rounded-3xl shadow-2xl flex flex-col md:flex-row items-center justify-between gap-10 translate-y-6 relative overflow-hidden">
+            <div className="bg-navy p-10 md:p-16 rounded-3xl shadow-2xl flex flex-col md:flex-row items-center justify-between gap-10 translate-y-6 relative overflow-hidden border border-white/10">
+               {/* Pool Wall Top Rim */}
+               <div className="absolute top-0 left-0 right-0 h-[3px] bg-gradient-to-r from-[#FF6B4A] via-[#D946EF] to-[#6D28D9]" />
                <div className="absolute top-0 right-0 p-8 opacity-5">
                   <TrendingUp size={150} className="text-[#8B5CF6]" />
                </div>
@@ -1020,7 +1001,7 @@ export default function Home() {
                   Skip the line and book a free 1-on-1 strategy call with us to discuss your custom store build.
                 </p>
               </div>
-              <button onClick={openCalendlyPopup} className="shrink-0 relative z-10 bg-[#6D28D9] text-white hover:bg-[#8B5CF6] px-10 py-5 rounded-full font-bold text-lg hover:scale-105 transition-all duration-300 shadow-xl shadow-[#6D28D9]/25 flex items-center gap-3 w-full md:w-auto justify-center cursor-pointer">
+              <button onClick={openCalendlyPopup} className="shrink-0 relative z-10 bg-[#FF6B4A] hover:bg-[#ff7e60] text-white px-10 py-5 rounded-full font-bold text-lg hover:scale-105 transition-all duration-300 shadow-xl shadow-[#FF6B4A]/30 flex items-center gap-3 w-full md:w-auto justify-center cursor-pointer">
                 Book Strategy Call <ArrowRight size={20} />
               </button>
             </div>
@@ -1178,7 +1159,9 @@ export default function Home() {
             </Link>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px bg-white/5 border border-white/5 rounded-2xl overflow-hidden">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px bg-white/5 border border-white/10 rounded-2xl overflow-hidden relative">
+            {/* Top Wall 3-Color Gradient Separator */}
+            <div className="absolute top-0 left-0 right-0 h-[3px] bg-gradient-to-r from-[#FF6B4A] via-[#D946EF] to-[#6D28D9] z-20" />
             {[
               {
                 title: "Store Setup",
@@ -1188,6 +1171,8 @@ export default function Home() {
                 tags: ["Dropshipping", "Branding", "Launch"],
                 timeline: "1-2 Weeks",
                 price: "$999",
+                color: "#8B5CF6",
+                tagColor: "text-[#8B5CF6] bg-[#6D28D9]/15",
                 roadmap: [
                   { title: "Discovery & Strategy", desc: "Understanding your products, niche, and target audience." },
                   { title: "Theme Selection & Branding", desc: "Choosing the right foundation and applying your visual identity." },
@@ -1204,6 +1189,8 @@ export default function Home() {
                 tags: ["Liquid", "API", "Performance"],
                 timeline: "2-4 Weeks",
                 price: "$1,499",
+                color: "#D946EF",
+                tagColor: "text-[#D946EF] bg-[#D946EF]/15",
                 roadmap: [
                   { title: "Technical Audit", desc: "Reviewing your current code and identifying bottlenecks." },
                   { title: "Feature Scoping", desc: "Defining the exact functionality and user experience." },
@@ -1217,10 +1204,11 @@ export default function Home() {
                 desc: "Safely upgrade to Shopify with absolutely zero downtime, preserving your hard-earned SEO rankings and customer data.",
                 fullDesc: "Switching platforms shouldn't be scaryWe ensure a 100% safe migration of your products, customers, orders, and most importantly, your SEO rankings.",
                 icon: Zap,
-
                 tags: ["Data", "SEO", "Zero Downtime"],
                 timeline: "2-3 Weeks",
                 price: "$1,999",
+                color: "#FF6B4A",
+                tagColor: "text-[#FF6B4A] bg-[#FF6B4A]/15",
                 roadmap: [
                   { title: "Data Mapping", desc: "Planning how data from your old platform fits into Shopify." },
                   { title: "Migration Setup", desc: "Configuring secure data transfer protocols." },
@@ -1232,18 +1220,15 @@ export default function Home() {
             ].map((service, i) => (
               <motion.button
                 key={i}
-                
-                
-                
-                
-                
-                
                 onClick={() => {
                   setSelectedService(service);
                 }}
                 className="p-6 md:p-8 lg:p-12 bg-navy space-y-6 md:space-y-10 group hover:bg-white/[0.02] transition-all cursor-pointer text-center w-full block border-r border-b border-white/5 flex flex-col items-center overflow-hidden"
               >
-                <div className="w-16 h-16 bg-white/5 rounded-2xl flex items-center justify-center text-[#8B5CF6] group-hover:scale-110 transition-transform duration-500 mx-auto transform-gpu">
+                <div 
+                  className="w-16 h-16 bg-white/5 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-500 mx-auto transform-gpu"
+                  style={{ color: service.color }}
+                >
                   <service.icon size={32} />
                 </div>
                 <div className="space-y-4 md:space-y-6">
@@ -1252,7 +1237,7 @@ export default function Home() {
                 </div>
                 <div className="flex flex-wrap justify-center gap-3 pt-6 md:pt-8 border-t border-white/5 w-full">
                   {service.tags.map((tag, j) => (
-                    <span key={j} className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#8B5CF6] bg-[#6D28D9]/10 px-4 py-2 rounded-full">
+                    <span key={j} className={`text-[10px] font-bold uppercase tracking-[0.2em] px-4 py-2 rounded-full ${service.tagColor}`}>
                       {tag}
                     </span>
                   ))}
@@ -1306,15 +1291,17 @@ export default function Home() {
                   className="shrink-0 transition-opacity duration-300 px-3"
                   style={{ width: `${100 / visibleCount}%` }}
                 >
-                  <div className="bg-white dark:bg-navy/80 p-8 rounded-3xl shadow-xl border border-navy/5 dark:border-white/5 flex flex-col h-full justify-between min-h-[340px]">
+                  <div className="bg-white dark:bg-navy/80 p-8 rounded-3xl shadow-xl border border-navy/5 dark:border-white/5 flex flex-col h-full justify-between min-h-[340px] relative overflow-hidden">
+                    {/* Pool Wall 3-Color Gradient Top Rim */}
+                    <div className="absolute top-0 left-0 right-0 h-[3px] bg-gradient-to-r from-[#FF6B4A] via-[#D946EF] to-[#6D28D9]" />
                     <div>
                       <div className="flex items-center justify-between mb-6">
-                        <div className="w-10 h-10 bg-[#6D28D9]/10 dark:bg-[#6D28D9]/15 text-[#8B5CF6] rounded-full flex items-center justify-center shadow-sm">
+                        <div className="w-10 h-10 bg-gradient-to-br from-[#FF6B4A]/10 via-[#D946EF]/10 to-[#6D28D9]/10 text-[#D946EF] rounded-full flex items-center justify-center shadow-sm">
                           <Quote size={16} className="rotate-180" />
                         </div>
                         <div className="flex items-center gap-1">
                           {[...Array(testimonial.rating || 5)].map((_, j) => (
-                            <Star key={j} size={14} fill="currentColor" className="text-[#FFC107]" />
+                            <Star key={j} size={14} fill="currentColor" className="text-[#FF6B4A]" />
                           ))}
                         </div>
                       </div>
@@ -1357,7 +1344,7 @@ export default function Home() {
                   className={cn(
                     "h-2.5 rounded-full transition-all duration-300 cursor-pointer",
                     testimonialIndex === i 
-                      ? "w-8 bg-[#8B5CF6]" 
+                      ? "w-8 bg-gradient-to-r from-[#FF6B4A] via-[#D946EF] to-[#6D28D9]" 
                       : "w-2.5 bg-navy/10 dark:bg-white/10 hover:bg-navy/30 dark:hover:bg-white/30"
                   )}
                   aria-label={`Go to slide ${i + 1}`}
@@ -1694,26 +1681,26 @@ export default function Home() {
     {/* CTA Banner - Recipe 2 */}
     <ScrollReveal>
       <section className="py-48 bg-navy-gradient relative overflow-hidden">
+        {/* Top Wall 3-Color Gradient Separator */}
+        <div className="absolute top-0 left-0 right-0 h-[3px] bg-gradient-to-r from-[#FF6B4A] via-[#D946EF] to-[#6D28D9]" />
+        
         <div className="absolute inset-0 bg-[#6D28D9]/5 opacity-50" />
         <div className="container mx-auto px-6 relative z-10 text-center">
           <div
-            
-            
-            
             className="max-w-5xl mx-auto space-y-16"
           >
             <h2 className="text-5xl md:text-[160px] font-bold text-white leading-[0.8] tracking-[-0.06em] uppercase">
-              Ready to <span className="text-[#8B5CF6] italic font-serif font-light lowercase">Grow?</span>
+              Ready to <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FF6B4A] via-[#D946EF] to-[#8B5CF6] italic font-serif font-light lowercase">Grow?</span>
             </h2>
             <p className="text-white/60 text-2xl md:text-3xl max-w-3xl mx-auto leading-relaxed font-serif italic">
               Let's build a store that doesn't just look good, but converts visitors into loyal customers.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-12">
-              <Link to="/contact#contact-form" className="w-full sm:w-auto bg-[#6D28D9] text-white hover:bg-gradient-to-r hover:from-[#6D28D9] hover:via-[#8B5CF6] hover:to-[#C026D3] px-8 md:px-16 py-4 md:py-8 rounded-full font-bold text-xl md:text-2xl hover:scale-105 transition-all duration-500 shadow-2xl shadow-[#6D28D9]/40 flex items-center justify-center text-center">
+              <Link to="/contact#contact-form" className="w-full sm:w-auto bg-gradient-to-r from-[#FF6B4A] via-[#D946EF] to-[#6D28D9] text-white hover:opacity-95 px-8 md:px-16 py-4 md:py-8 rounded-full font-bold text-xl md:text-2xl hover:scale-105 transition-all duration-500 shadow-2xl shadow-[#D946EF]/40 flex items-center justify-center text-center">
                 Get Your Free Growth Plan
               </Link>
               <Link to="/portfolio" className="w-full sm:w-auto text-white font-bold text-2xl flex items-center justify-center gap-6 group text-center">
-                View Portfolio <div className="w-12 h-px bg-white/20 group-hover:w-20 group-hover:bg-[#8B5CF6] transition-all duration-500" />
+                View Portfolio <div className="w-12 h-px bg-white/20 group-hover:w-20 group-hover:bg-[#FF6B4A] transition-all duration-500" />
               </Link>
             </div>
           </div>
