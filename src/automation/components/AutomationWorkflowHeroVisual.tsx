@@ -4,23 +4,26 @@ import { Cpu, MessageSquare, Database, Bot, Zap, CheckCircle2, ArrowRight } from
 export default function AutomationWorkflowHeroVisual() {
   return (
     <div className="relative w-full max-w-xl mx-auto lg:max-w-none">
-      {/* Sleek Subdued Background Glow */}
-      <div className="absolute -inset-1 bg-gradient-to-r from-emerald-500/10 via-cyan-500/10 to-blue-500/10 rounded-3xl blur-xl opacity-50" />
+      {/* Subtle Background Glow with Signature 3-Color Mix */}
+      <div className="absolute -inset-2 bg-gradient-to-r from-cyan-400/20 via-[#6D28D9]/15 to-[#FF6B4A]/15 rounded-3xl blur-2xl opacity-70 pointer-events-none" />
 
-      {/* Main Glassmorphic Container */}
-      <div className="relative bg-slate-900/95 border border-slate-800/90 rounded-3xl p-6 sm:p-7 shadow-2xl overflow-hidden backdrop-blur-2xl">
+      {/* Main Light Component Container */}
+      <div className="relative bg-white border border-[#E2E8F0] rounded-3xl p-6 sm:p-8 shadow-[0_15px_40px_-10px_rgba(0,0,0,0.08)] overflow-hidden">
         
+        {/* Top Rim Gradient Accent */}
+        <div className="absolute top-0 left-0 right-0 h-[3px] bg-gradient-to-r from-cyan-400 via-[#6D28D9] to-[#FF6B4A]" />
+
         {/* Top Header Controls */}
-        <div className="flex items-center justify-between border-b border-slate-800/80 pb-4 mb-6">
+        <div className="flex items-center justify-between border-b border-[#E2E8F0] pb-4 mb-6">
           <div className="flex items-center gap-2">
-            <span className="w-2.5 h-2.5 rounded-full bg-slate-700" />
-            <span className="w-2.5 h-2.5 rounded-full bg-slate-700" />
-            <span className="w-2.5 h-2.5 rounded-full bg-slate-700" />
-            <span className="text-xs font-mono text-slate-400 ml-2">system.workflow.engine</span>
+            <span className="w-2.5 h-2.5 rounded-full bg-slate-300" />
+            <span className="w-2.5 h-2.5 rounded-full bg-slate-300" />
+            <span className="w-2.5 h-2.5 rounded-full bg-slate-300" />
+            <span className="text-xs font-mono text-slate-500 ml-2 font-semibold">system.workflow.engine</span>
           </div>
-          <div className="flex items-center gap-2 px-2.5 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-xs font-mono">
-            <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-            Active Pipeline
+          <div className="flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-700 text-xs font-mono font-bold">
+            <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+            Live Pipeline Active
           </div>
         </div>
 
@@ -32,7 +35,7 @@ export default function AutomationWorkflowHeroVisual() {
             <motion.path
               d="M 80 45 L 180 115"
               stroke="#06B6D4"
-              strokeWidth="1.5"
+              strokeWidth="2"
               strokeDasharray="4 4"
               initial={{ strokeDashoffset: 20 }}
               animate={{ strokeDashoffset: 0 }}
@@ -40,8 +43,8 @@ export default function AutomationWorkflowHeroVisual() {
             />
             <motion.path
               d="M 280 45 L 180 115"
-              stroke="#06B6D4"
-              strokeWidth="1.5"
+              stroke="#6D28D9"
+              strokeWidth="2"
               strokeDasharray="4 4"
               initial={{ strokeDashoffset: 20 }}
               animate={{ strokeDashoffset: 0 }}
@@ -49,8 +52,8 @@ export default function AutomationWorkflowHeroVisual() {
             />
             <motion.path
               d="M 180 115 L 80 185"
-              stroke="#10B981"
-              strokeWidth="1.5"
+              stroke="#FF6B4A"
+              strokeWidth="2"
               strokeDasharray="4 4"
               initial={{ strokeDashoffset: 20 }}
               animate={{ strokeDashoffset: 0 }}
@@ -59,7 +62,7 @@ export default function AutomationWorkflowHeroVisual() {
             <motion.path
               d="M 180 115 L 280 185"
               stroke="#10B981"
-              strokeWidth="1.5"
+              strokeWidth="2"
               strokeDasharray="4 4"
               initial={{ strokeDashoffset: 20 }}
               animate={{ strokeDashoffset: 0 }}
@@ -68,46 +71,46 @@ export default function AutomationWorkflowHeroVisual() {
           </svg>
 
           {/* Node 1: Inbound Lead */}
-          <div className="relative z-10 p-3 bg-slate-950/90 rounded-2xl border border-slate-800 flex flex-col items-center text-center">
-            <div className="w-9 h-9 rounded-xl bg-blue-500/10 text-blue-400 flex items-center justify-center mb-2 border border-blue-500/20">
-              <MessageSquare className="w-4 h-4" />
+          <div className="relative z-10 p-3.5 bg-slate-50 rounded-2xl border border-slate-200/90 flex flex-col items-center text-center shadow-xs">
+            <div className="w-10 h-10 rounded-xl bg-cyan-100/70 text-cyan-700 flex items-center justify-center mb-2 border border-cyan-200">
+              <MessageSquare className="w-5 h-5" />
             </div>
-            <span className="text-xs font-semibold text-slate-200">Inbound Lead</span>
-            <span className="text-[10px] text-slate-400 font-mono mt-0.5">Webhook/Form</span>
+            <span className="text-xs font-bold text-[#0F172A]">Inbound Lead</span>
+            <span className="text-[10px] text-slate-500 font-mono mt-0.5">Webhook/Form</span>
           </div>
 
           {/* Center Latency Pill */}
           <div className="flex items-center justify-center">
-            <div className="px-2.5 py-1 bg-slate-800/60 border border-slate-700/60 rounded-full text-[10px] text-slate-300 font-mono">
-              &lt;45ms API Latency
+            <div className="px-2.5 py-1 bg-white border border-cyan-200 rounded-full text-[10px] text-cyan-800 font-mono font-bold shadow-xs">
+              &lt;45ms Latency
             </div>
           </div>
 
           {/* Node 2: CRM Sync */}
-          <div className="relative z-10 p-3 bg-slate-950/90 rounded-2xl border border-slate-800 flex flex-col items-center text-center">
-            <div className="w-9 h-9 rounded-xl bg-purple-500/10 text-purple-400 flex items-center justify-center mb-2 border border-purple-500/20">
-              <Database className="w-4 h-4" />
+          <div className="relative z-10 p-3.5 bg-slate-50 rounded-2xl border border-slate-200/90 flex flex-col items-center text-center shadow-xs">
+            <div className="w-10 h-10 rounded-xl bg-purple-100/70 text-[#6D28D9] flex items-center justify-center mb-2 border border-purple-200">
+              <Database className="w-5 h-5" />
             </div>
-            <span className="text-xs font-semibold text-slate-200">GoHighLevel</span>
-            <span className="text-[10px] text-slate-400 font-mono mt-0.5">CRM Pipeline</span>
+            <span className="text-xs font-bold text-[#0F172A]">GoHighLevel</span>
+            <span className="text-[10px] text-slate-500 font-mono mt-0.5">CRM Pipeline</span>
           </div>
 
           {/* CENTER NODE: AI Decision Core */}
           <div className="col-span-3 my-1 relative z-10 flex justify-center">
-            <div className="p-3.5 bg-slate-950/90 rounded-2xl border border-cyan-500/30 flex items-center gap-3.5 shadow-xl max-w-sm w-full">
-              <div className="w-10 h-10 rounded-xl bg-cyan-500/10 border border-cyan-500/30 text-cyan-400 flex items-center justify-center shrink-0">
-                <Cpu className="w-5 h-5" />
+            <div className="p-4 bg-gradient-to-r from-cyan-50 via-white to-purple-50 rounded-2xl border border-cyan-300 flex items-center gap-3.5 shadow-md max-w-sm w-full">
+              <div className="w-11 h-11 rounded-xl bg-gradient-to-tr from-cyan-500 to-[#6D28D9] text-white flex items-center justify-center shrink-0 shadow-sm">
+                <Cpu className="w-6 h-6" />
               </div>
               <div className="flex-1">
                 <div className="flex items-center justify-between">
-                  <span className="text-xs font-bold text-white">
+                  <span className="text-xs font-bold text-[#0F172A]">
                     AI Decision Core
                   </span>
-                  <span className="text-[9px] font-mono text-cyan-400 bg-cyan-950/80 px-1.5 py-0.5 rounded border border-cyan-800/80">
-                    LLM Engine
+                  <span className="text-[9px] font-mono text-cyan-700 bg-cyan-100 px-2 py-0.5 rounded-full font-bold border border-cyan-200">
+                    Sub-600ms AI
                   </span>
                 </div>
-                <div className="text-[11px] text-slate-400 mt-0.5">
+                <div className="text-[11px] text-slate-600 mt-0.5">
                   Parse intent → Score lead → Trigger instant voice call
                 </div>
               </div>
@@ -115,44 +118,44 @@ export default function AutomationWorkflowHeroVisual() {
           </div>
 
           {/* Node 3: AI Voice Agent */}
-          <div className="relative z-10 p-3 bg-slate-950/90 rounded-2xl border border-slate-800 flex flex-col items-center text-center">
-            <div className="w-9 h-9 rounded-xl bg-cyan-500/10 text-cyan-400 flex items-center justify-center mb-2 border border-cyan-500/20">
-              <Bot className="w-4 h-4" />
+          <div className="relative z-10 p-3.5 bg-slate-50 rounded-2xl border border-slate-200/90 flex flex-col items-center text-center shadow-xs">
+            <div className="w-10 h-10 rounded-xl bg-orange-100/70 text-[#FF6B4A] flex items-center justify-center mb-2 border border-orange-200">
+              <Bot className="w-5 h-5" />
             </div>
-            <span className="text-xs font-semibold text-slate-200">AI Voice Call</span>
-            <span className="text-[10px] text-slate-400 font-mono mt-0.5">Sub-600ms AI</span>
+            <span className="text-xs font-bold text-[#0F172A]">AI Voice Call</span>
+            <span className="text-[10px] text-slate-500 font-mono mt-0.5">Auto-Dialer</span>
           </div>
 
           {/* Center Icon */}
           <div className="flex items-center justify-center">
-            <div className="w-7 h-7 rounded-full bg-emerald-500/10 text-emerald-400 flex items-center justify-center border border-emerald-500/30">
-              <Zap className="w-3.5 h-3.5" />
+            <div className="w-8 h-8 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center border border-emerald-300">
+              <Zap className="w-4 h-4" />
             </div>
           </div>
 
           {/* Node 4: Calendar Sync */}
-          <div className="relative z-10 p-3 bg-slate-950/90 rounded-2xl border border-slate-800 flex flex-col items-center text-center">
-            <div className="w-9 h-9 rounded-xl bg-emerald-500/10 text-emerald-400 flex items-center justify-center mb-2 border border-emerald-500/20">
-              <CheckCircle2 className="w-4 h-4" />
+          <div className="relative z-10 p-3.5 bg-slate-50 rounded-2xl border border-slate-200/90 flex flex-col items-center text-center shadow-xs">
+            <div className="w-10 h-10 rounded-xl bg-emerald-100/70 text-emerald-700 flex items-center justify-center mb-2 border border-emerald-200">
+              <CheckCircle2 className="w-5 h-5" />
             </div>
-            <span className="text-xs font-semibold text-slate-200">Booked Meeting</span>
-            <span className="text-[10px] text-emerald-400 font-mono mt-0.5">Google Cal</span>
+            <span className="text-xs font-bold text-[#0F172A]">Booked Meeting</span>
+            <span className="text-[10px] text-emerald-700 font-mono mt-0.5 font-bold">Google Cal</span>
           </div>
 
         </div>
 
         {/* Live System Log Activity */}
-        <div className="mt-5 pt-3.5 border-t border-slate-800/80 bg-slate-950/70 rounded-xl p-3 font-mono text-[11px] text-slate-400 space-y-1.5">
-          <div className="flex items-center justify-between text-slate-300">
-            <span className="text-cyan-400">[10:42:01] Webhook Event:</span>
-            <span className="text-slate-400">Inbound Lead Qualification</span>
+        <div className="mt-5 pt-3.5 border-t border-[#E2E8F0] bg-slate-900 rounded-2xl p-3.5 font-mono text-[11px] text-slate-300 space-y-1.5 shadow-inner">
+          <div className="flex items-center justify-between">
+            <span className="text-cyan-400">[10:42:01] Webhook Inbound:</span>
+            <span className="text-slate-400">Lead qualification triggered</span>
           </div>
-          <div className="flex items-center justify-between text-slate-300">
-            <span className="text-blue-400">[10:42:02] AI Agent:</span>
-            <span className="text-slate-400">Score 94/100 → Voice Dispatch</span>
+          <div className="flex items-center justify-between">
+            <span className="text-purple-300">[10:42:02] AI Decision:</span>
+            <span className="text-slate-400">Score 95/100 → Voice agent outbound</span>
           </div>
-          <div className="flex items-center justify-between text-slate-300">
-            <span className="text-emerald-400">[10:42:06] Calendar Sync:</span>
+          <div className="flex items-center justify-between">
+            <span className="text-emerald-400 font-bold">[10:42:06] Confirmed:</span>
             <span className="text-emerald-400 font-semibold flex items-center gap-1">
               Slot booked on Calendar <ArrowRight className="w-3 h-3" />
             </span>

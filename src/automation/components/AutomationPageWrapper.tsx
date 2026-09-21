@@ -131,11 +131,11 @@ export default function AutomationPageWrapper({
         animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: -12 }}
       transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
-      className={`min-h-screen bg-slate-950 text-slate-100 selection:bg-cyan-500 selection:text-slate-950 ${className || ""}`}
+      className={`min-h-screen bg-white text-[#0F172A] selection:bg-cyan-500 selection:text-white ${className || ""}`}
     >
       {children}
       <motion.div 
-        className="fixed top-0 left-0 right-0 h-1 bg-gradient-to-r from-blue-600 via-cyan-400 to-emerald-400 origin-left z-[100]" 
+        className="fixed top-0 left-0 right-0 h-1 bg-gradient-to-r from-[#FF6B4A] via-cyan-500 to-[#6D28D9] origin-left z-[100]" 
         style={{ scaleX }} 
       />
     </motion.div>

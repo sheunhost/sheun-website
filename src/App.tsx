@@ -132,13 +132,13 @@ function Layout() {
   const isAutomation = location.pathname.startsWith('/automation');
 
   return (
-    <div className={`min-h-screen flex flex-col ${isAutomation ? 'bg-slate-950 text-slate-100' : ''}`}>
+    <div className="min-h-screen flex flex-col bg-white text-[#0F172A]">
       {isAutomation ? <AutomationNavbar /> : <Navbar />}
       <main className="flex-grow">
         <AnimatedRoutes />
       </main>
       {isAutomation ? <AutomationFooter /> : <Footer />}
-      {!isAutomation && <FloatingCalendly />}
+      <FloatingCalendly />
       <ScrollToTop />
     </div>
   );
