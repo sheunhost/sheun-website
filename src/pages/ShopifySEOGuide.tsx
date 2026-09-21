@@ -6,7 +6,7 @@ import PageWrapper from "../components/PageWrapper";
 import { generateContentBlocks, faqsData } from "../data/blogExpandedData";
 import { PullQuote, CalloutBox, FAQSection } from "../components/BlogDeepDive";
 
-export default function ShopifySEOGuide() {
+export default function ShopifySEOGuide({ isEmbedded = false }: { isEmbedded?: boolean }) {
   const [comments, setComments] = useState<{name: string, text: string}[]>(() => {
     const saved = localStorage.getItem('comments_ShopifySEO');
     if (saved) return JSON.parse(saved);
@@ -21,7 +21,7 @@ export default function ShopifySEOGuide() {
   const [newComment, setNewComment] = useState("");
   const [commentName, setCommentName] = useState("");
 
-  const url = encodeURIComponent(window.location.href);
+  const url = encodeURIComponent("https://www.sheun.online/shopify-seo-guide");
   const title = encodeURIComponent("Shopify SEO in 2026: The Beginner's Complete Guide");
 
   const handleLinkedinShare = () => {
@@ -42,32 +42,8 @@ export default function ShopifySEOGuide() {
     window.open(`https://wa.me/2348084315743?text=${text}`, "_blank");
   };
 
-  return (
-    <PageWrapper 
-      className="pt-32 pb-24 bg-light dark:bg-white/5 relative min-h-screen"
-      title="Shopify SEO in 2026: Complete Expert Optimization Guide"
-      description="Step-by-step technical and on-page Shopify SEO checklist. Learn to optimize collections, override metadata, configure rich schemas, and drive organic traffic for merchants worldwide."
-      keywords="Shopify SEO Guide, Shopify SEO expert, Shopify SEO specialist, technical Shopify SEO, rank Shopify store, Shopify SEO consultant, Shopify optimization"
-      canonical="/shopify-seo-guide"
-      schema={{
-        "@context": "https://schema.org",
-        "@type": "Article",
-        "headline": "Shopify SEO in 2026: The Beginner's Complete Guide",
-        "author": {
-          "@type": "Person",
-          "name": "Sheun Hub"
-        },
-        "publisher": {
-          "@type": "Organization",
-          "name": "Sheun Hub",
-          "logo": {
-            "@type": "ImageObject",
-            "url": "https://www.sheun.online/logo.png"
-          }
-        },
-        "description": "A beginner-friendly complete guide to mastering Shopify SEO on your eCommerce store."
-      }}
-    >
+  const content = (
+    <article className="pt-8 pb-24 bg-light dark:bg-white/5 relative min-h-screen">
       {/* Progress Bar */}
       <div className="fixed top-20 left-0 right-0 h-1 bg-navy/5 z-[60]">
         <motion.div 
@@ -332,6 +308,28 @@ export default function ShopifySEOGuide() {
           </div>
         </div>
       </section>
+    </article>
+  );
+
+  if (isEmbedded) {
+    return content;
+  }
+
+  return (
+    <PageWrapper 
+      className="pt-32 pb-24 bg-light dark:bg-white/5 relative min-h-screen"
+      title="Shopify SEO in 2026: The Beginner's Complete Guide | Sheun Hub"
+      description="Step-by-step technical and on-page Shopify SEO checklist. Learn to optimize collections, override metadata, configure rich schemas, and drive organic traffic."
+      keywords="Shopify SEO Guide, Shopify SEO expert, Shopify SEO specialist, technical Shopify SEO, rank Shopify store, Shopify SEO consultant, Shopify optimization"
+      canonical="/shopify-seo-guide"
+      image="https://images.unsplash.com/photo-1571867424488-4565932edb41?w=1200&h=630&auto=format&fit=crop&q=80"
+      type="article"
+      articlePublishedTime="2026-03-25T08:00:00Z"
+      articleModifiedTime="2026-09-21T08:00:00Z"
+      articleAuthor="Emmanuel Adedayo (Sheun)"
+      articleSection="SEO"
+    >
+      {content}
     </PageWrapper>
   );
 }

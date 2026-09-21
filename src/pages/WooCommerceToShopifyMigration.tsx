@@ -6,7 +6,7 @@ import PageWrapper from "../components/PageWrapper";
 import { generateContentBlocks, faqsData } from "../data/blogExpandedData";
 import { PullQuote, CalloutBox, FAQSection } from "../components/BlogDeepDive";
 
-export default function WooCommerceToShopifyMigration() {
+export default function WooCommerceToShopifyMigration({ isEmbedded = false }: { isEmbedded?: boolean }) {
   const [comments, setComments] = useState<{name: string, text: string}[]>(() => {
     const saved = localStorage.getItem('comments_WooToShopify');
     if (saved) return JSON.parse(saved);
@@ -21,7 +21,7 @@ export default function WooCommerceToShopifyMigration() {
   const [newComment, setNewComment] = useState("");
   const [commentName, setCommentName] = useState("");
 
-  const url = encodeURIComponent(window.location.href);
+  const url = encodeURIComponent("https://www.sheun.online/woocommerce-to-shopify-migration");
   const title = encodeURIComponent("How to Migrate from WooCommerce to Shopify Without Losing SEO");
 
   const handleLinkedinShare = () => {
@@ -42,14 +42,8 @@ export default function WooCommerceToShopifyMigration() {
     window.open(`https://wa.me/2348084315743?text=${text}`, "_blank");
   };
 
-  return (
-    <PageWrapper
-      title="WooCommerce to Shopify Migration SEO: 2026 Checklist & Expert Services"
-      description="Migrate WooCommerce to Shopify without losing Google search rankings. Complete step-by-step SEO checklist, URL 301 mapping, and expert migration services for brands worldwide."
-      keywords="migrate WooCommerce to Shopify, WooCommerce to Shopify migration, Shopify migration expert, WooCommerce to Shopify SEO checklist, ecommerce migration services, WooCommerce to Shopify migration agency, Shopify partner migration"
-      canonical="/blog/woocommerce-to-shopify-migration"
-    >
-      <div className="pt-32 pb-24 bg-light dark:bg-white/5 relative min-h-screen">
+  const content = (
+    <article className="pt-8 pb-24 bg-light dark:bg-white/5 relative min-h-screen">
         {/* Dynamic Progress Header */}
         <div className="fixed top-20 left-0 right-0 h-1 bg-navy/5 z-[60]">
         <motion.div 
@@ -316,7 +310,27 @@ export default function WooCommerceToShopifyMigration() {
           </div>
         </div>
       </section>
-    </div>
+    </article>
+  );
+
+  if (isEmbedded) {
+    return content;
+  }
+
+  return (
+    <PageWrapper
+      title="How to Migrate from WooCommerce to Shopify Without Losing SEO | Sheun Hub"
+      description="Migrate WooCommerce to Shopify without losing Google search rankings. Complete step-by-step SEO checklist, URL 301 mapping, and expert migration services."
+      keywords="migrate WooCommerce to Shopify, WooCommerce to Shopify migration, Shopify migration expert, WooCommerce to Shopify SEO checklist, ecommerce migration services, WooCommerce to Shopify migration agency, Shopify partner migration"
+      canonical="/woocommerce-to-shopify-migration"
+      image="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=1200&h=630&auto=format&fit=crop&q=80"
+      type="article"
+      articlePublishedTime="2026-03-28T08:00:00Z"
+      articleModifiedTime="2026-09-21T08:00:00Z"
+      articleAuthor="Emmanuel Adedayo (Sheun)"
+      articleSection="Shopify Tips"
+    >
+      {content}
     </PageWrapper>
   );
 }

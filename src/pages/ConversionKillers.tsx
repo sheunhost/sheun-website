@@ -56,14 +56,9 @@ const conversionKillers = [
   }
 ];
 
-export default function ConversionKillers() {
-  return (
-    <PageWrapper
-      title="Shopify Store Not Converting? CRO Optimization Guide"
-      description="Is your Shopify storefront getting traffic but no sales? Fix low Shopify conversion rates, checkout drop-offs, and design errors. Professional CRO audit services for brands worldwide."
-      keywords="Shopify store not converting, Shopify conversion optimization, e-commerce CRO audit, fix checkout drop-off, Shopify checkout audit, Shopify CRO expert"
-      canonical="/shopify-not-converting"
-    >
+export default function ConversionKillers({ isEmbedded = false }: { isEmbedded?: boolean }) {
+  const content = (
+    <article className="pt-8 pb-20">
       {/* Hero Section */}
       <section className="pt-32 pb-20 bg-white dark:bg-navy border-b border-navy/5 dark:border-white/5">
         <div className="container mx-auto px-6 max-w-4xl">
@@ -249,6 +244,27 @@ export default function ConversionKillers() {
           </div>
         </div>
       </section>
+    </article>
+  );
+
+  if (isEmbedded) {
+    return content;
+  }
+
+  return (
+    <PageWrapper
+      title="Why Your Shopify Store Isn't Selling: 8 Conversion Killers | Sheun Hub"
+      description="Is your Shopify storefront getting traffic but no sales? Fix low Shopify conversion rates, checkout drop-offs, and trust leaks with our conversion blueprint."
+      keywords="Shopify store not converting, Shopify conversion optimization, e-commerce CRO audit, fix checkout drop-off, Shopify checkout audit, Shopify CRO expert"
+      canonical="/shopify-not-converting"
+      image="https://images.unsplash.com/photo-1556740758-90de374c12ad?w=1200&h=630&auto=format&fit=crop&q=80"
+      type="article"
+      articlePublishedTime="2026-03-15T08:00:00Z"
+      articleModifiedTime="2026-09-21T08:00:00Z"
+      articleAuthor="Emmanuel Adedayo (Sheun)"
+      articleSection="CRO"
+    >
+      {content}
     </PageWrapper>
   );
 }

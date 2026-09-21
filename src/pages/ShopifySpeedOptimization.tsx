@@ -6,7 +6,7 @@ import PageWrapper from "../components/PageWrapper";
 import { generateContentBlocks, faqsData } from "../data/blogExpandedData";
 import { PullQuote, CalloutBox, FAQSection } from "../components/BlogDeepDive";
 
-export default function ShopifySpeedOptimization() {
+export default function ShopifySpeedOptimization({ isEmbedded = false }: { isEmbedded?: boolean }) {
   const [comments, setComments] = useState<{name: string, text: string}[]>(() => {
     const saved = localStorage.getItem('comments_ShopifySpeed');
     if (saved) return JSON.parse(saved);
@@ -21,7 +21,7 @@ export default function ShopifySpeedOptimization() {
   const [newComment, setNewComment] = useState("");
   const [commentName, setCommentName] = useState("");
 
-  const url = encodeURIComponent(window.location.href);
+  const url = encodeURIComponent("https://www.sheun.online/shopify-speed-optimization");
   const title = encodeURIComponent("How to Speed Up Your Shopify Store in 2026");
 
   const handleLinkedinShare = () => {
@@ -37,32 +37,8 @@ export default function ShopifySpeedOptimization() {
     }
   };
 
-  return (
-    <PageWrapper
-      className="pt-32 pb-24 bg-white dark:bg-navy relative"
-      title="Shopify Speed Optimization & Core Web Vitals Specialist"
-      description="Optimize your Shopify storefront speed and mobile Core Web Vitals. Reduce script bloat, lazy-load assets, and boost mobile conversions. Speed audit services for e-commerce brands worldwide."
-      keywords="Shopify Speed Optimization, Core Web Vitals Shopify, improve Shopify pagespeed, Shopify developer speed, Shopify speed optimization, Shopify speed expert"
-      canonical="/blog/shopify-speed-optimization"
-      schema={{
-        "@context": "https://schema.org",
-        "@type": "Article",
-        "headline": "How to Speed Up Your Shopify Store in 2026",
-        "author": {
-          "@type": "Person",
-          "name": "Sheun Hub"
-        },
-        "publisher": {
-          "@type": "Organization",
-          "name": "Sheun Hub",
-          "logo": {
-            "@type": "ImageObject",
-            "url": "https://www.sheun.online/logo.png"
-          }
-        },
-        "description": "Optimize your Shopify store speed. Discover how to improve Shopify core web vitals, implement lazy loading, and compress images to boost conversion rates."
-      }}
-    >
+  const content = (
+    <article className="pt-8 pb-24 bg-white dark:bg-navy relative">
       <section className="bg-navy-gradient pt-16 pb-32 px-6 rounded-b-3xl relative overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,_rgba(0,255,157,0.1)_0%,_transparent_70%)]" />
         
@@ -293,6 +269,27 @@ export default function ShopifySpeedOptimization() {
           </Link>
         </div>
       </section>
+    </article>
+  );
+
+  if (isEmbedded) {
+    return content;
+  }
+
+  return (
+    <PageWrapper
+      title="How to Speed Up Your Shopify Store in 2026 | Sheun Hub"
+      description="Step-by-step guide to Shopify speed optimization and Core Web Vitals. Eliminate script bloat, lazy-load assets, and achieve sub-1.5s mobile load times."
+      keywords="Shopify Speed Optimization, Core Web Vitals Shopify, improve Shopify pagespeed, Shopify developer speed, Shopify speed optimization, Shopify speed expert"
+      canonical="/shopify-speed-optimization"
+      image="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&h=630&auto=format&fit=crop&q=80"
+      type="article"
+      articlePublishedTime="2026-04-10T08:00:00Z"
+      articleModifiedTime="2026-09-21T08:00:00Z"
+      articleAuthor="Emmanuel Adedayo (Sheun)"
+      articleSection="Shopify Tips"
+    >
+      {content}
     </PageWrapper>
   );
 }

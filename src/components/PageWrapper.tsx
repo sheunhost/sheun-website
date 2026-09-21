@@ -12,6 +12,11 @@ interface PageWrapperProps {
   keywords?: string;
   schema?: Record<string, any>;
   image?: string;
+  type?: 'website' | 'article';
+  articlePublishedTime?: string;
+  articleModifiedTime?: string;
+  articleAuthor?: string;
+  articleSection?: string;
 }
 
 export default function PageWrapper({ 
@@ -22,7 +27,12 @@ export default function PageWrapper({
   canonical,
   keywords,
   schema,
-  image
+  image,
+  type = 'website',
+  articlePublishedTime,
+  articleModifiedTime,
+  articleAuthor,
+  articleSection
 }: PageWrapperProps) {
   const location = useLocation();
   const { scrollYProgress } = useScroll();
@@ -117,7 +127,12 @@ export default function PageWrapper({
         schema={finalSchema} 
         breadcrumbSchema={breadcrumbSchema} 
         keywords={keywords} 
-        image={ogImage} 
+        image={ogImage}
+        type={type}
+        articlePublishedTime={articlePublishedTime}
+        articleModifiedTime={articleModifiedTime}
+        articleAuthor={articleAuthor}
+        articleSection={articleSection}
       />
       <motion.main
         initial={{ opacity: 0, y: 20 }}

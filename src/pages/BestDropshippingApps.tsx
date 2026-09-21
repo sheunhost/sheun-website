@@ -6,7 +6,7 @@ import PageWrapper from "../components/PageWrapper";
 import { generateContentBlocks, faqsData } from "../data/blogExpandedData";
 import { PullQuote, CalloutBox, FAQSection } from "../components/BlogDeepDive";
 
-export default function BestDropshippingApps() {
+export default function BestDropshippingApps({ isEmbedded = false }: { isEmbedded?: boolean }) {
   const [comments, setComments] = useState<{name: string, text: string}[]>(() => {
     const saved = localStorage.getItem('comments_BestDropshipping');
     if (saved) return JSON.parse(saved);
@@ -21,7 +21,7 @@ export default function BestDropshippingApps() {
   const [newComment, setNewComment] = useState("");
   const [commentName, setCommentName] = useState("");
 
-  const url = encodeURIComponent(window.location.href);
+  const url = encodeURIComponent("https://www.sheun.online/best-dropshipping-apps");
   const title = encodeURIComponent("The Best Shopify Apps for Dropshipping Stores in 2026");
 
   const handleLinkedinShare = () => {
@@ -37,32 +37,8 @@ export default function BestDropshippingApps() {
     }
   };
 
-  return (
-    <PageWrapper
-      className="pt-32 pb-24 bg-white dark:bg-navy relative"
-      title="Best Shopify Dropshipping Apps for High Conversions"
-      description="The definitive checklist of Shopify dropshipping apps for 2026. Discover sourcing, inventory synchronization, custom fulfillment, and speed-optimized layouts for international merchants."
-      keywords="Shopify Dropshipping Apps, best sourcing tools, dropshipping builder, Shopify store setup, e-commerce automation, Shopify integration"
-      canonical="/blog/best-dropshipping-apps-2026"
-      schema={{
-        "@context": "https://schema.org",
-        "@type": "Article",
-        "headline": "Top 7 Shopify Apps for Dropshipping (2026 Edition)",
-        "author": {
-          "@type": "Person",
-          "name": "Sheun Hub"
-        },
-        "publisher": {
-          "@type": "Organization",
-          "name": "Sheun Hub",
-          "logo": {
-            "@type": "ImageObject",
-            "url": "https://www.sheun.online/logo.png"
-          }
-        },
-        "description": "Discover the top 7 Shopify apps for dropshipping in 2026. From sourcing products to boosting conversions, these tools are essential."
-      }}
-    >
+  const content = (
+    <article className="pt-8 pb-24 bg-white dark:bg-navy relative">
       <section className="bg-navy-gradient pt-16 pb-32 px-6 rounded-b-3xl relative overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,_rgba(0,255,157,0.1)_0%,_transparent_70%)]" />
         
@@ -324,6 +300,27 @@ export default function BestDropshippingApps() {
           </Link>
         </div>
       </section>
+    </article>
+  );
+
+  if (isEmbedded) {
+    return content;
+  }
+
+  return (
+    <PageWrapper
+      title="The Best Shopify Apps for Dropshipping Stores in 2026 | Sheun Hub"
+      description="Discover the top Shopify dropshipping apps in 2026. Compare sourcing platforms, inventory sync tools, custom packaging solutions, and automated order fulfillment."
+      keywords="Shopify Dropshipping Apps, best sourcing tools, dropshipping builder, Shopify store setup, e-commerce automation, Shopify integration"
+      canonical="/best-dropshipping-apps"
+      image="https://images.unsplash.com/photo-1556742049-0a67e55722c3?w=1200&h=630&auto=format&fit=crop&q=80"
+      type="article"
+      articlePublishedTime="2026-04-08T08:00:00Z"
+      articleModifiedTime="2026-09-21T08:00:00Z"
+      articleAuthor="Emmanuel Adedayo (Sheun)"
+      articleSection="Dropshipping"
+    >
+      {content}
     </PageWrapper>
   );
 }

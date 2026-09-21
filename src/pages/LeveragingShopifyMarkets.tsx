@@ -7,15 +7,9 @@ import PageWrapper from "../components/PageWrapper";
 import { generateContentBlocks, faqsData } from "../data/blogExpandedData";
 import { PullQuote, CalloutBox, FAQSection } from "../components/BlogDeepDive";
 
-export default function LeveragingShopifyMarkets() {
-  return (
-    <PageWrapper
-      title="How to Leverage Shopify Markets for International Sales"
-      description="Scale your store globally with Shopify Markets. Configure custom pricing, duties calculation, localized SEO, and multi-currency checkouts for international sales worldwide."
-      keywords="Shopify Markets guide, international Shopify setup, Shopify multi-currency, Shopify expert, Shopify partner, Shopify developer"
-      canonical="/blog/leveraging-shopify-markets"
-    >
-      <article className="bg-white dark:bg-navy">
+export default function LeveragingShopifyMarkets({ isEmbedded = false }: { isEmbedded?: boolean }) {
+  const content = (
+    <article className="bg-white dark:bg-navy">
       {/* Editorial Hero */}
       <section className="pt-48 pb-32 bg-navy-gradient relative overflow-hidden">
         <div className="absolute inset-0 opacity-10">
@@ -162,6 +156,26 @@ export default function LeveragingShopifyMarkets() {
         </ScrollReveal>
       </section>
     </article>
+  );
+
+  if (isEmbedded) {
+    return content;
+  }
+
+  return (
+    <PageWrapper
+      title="How to Leverage Shopify Markets for International Sales | Sheun Hub"
+      description="Scale your store globally with Shopify Markets. Configure custom pricing, duties calculation, localized SEO, and multi-currency checkouts for international sales."
+      keywords="Shopify Markets guide, international Shopify setup, Shopify multi-currency, Shopify expert, Shopify partner, Shopify developer"
+      canonical="/leveraging-shopify-markets"
+      image="https://images.unsplash.com/photo-1526304640581-d334cdbbf45e?w=1200&h=630&auto=format&fit=crop&q=80"
+      type="article"
+      articlePublishedTime="2026-03-20T08:00:00Z"
+      articleModifiedTime="2026-09-21T08:00:00Z"
+      articleAuthor="Emmanuel Adedayo (Sheun)"
+      articleSection="Shopify Tips"
+    >
+      {content}
     </PageWrapper>
   );
 }

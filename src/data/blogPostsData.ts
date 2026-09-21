@@ -276,3 +276,113 @@ export const blogPostsData: Record<string, BlogPostData> = {
     ]
   }
 };
+
+/**
+ * Generate a short, readable, SEO-friendly URL slug based on a blog title or main topic.
+ * Rules:
+ * - Lowercase letters
+ * - Hyphen delimited
+ * - Strips stop words and special characters
+ * - Short & descriptive
+ */
+export function generateBlogSlug(title: string): string {
+  const stopWords = new Set([
+    "a", "an", "the", "and", "or", "but", "for", "nor", "with", "at", 
+    "from", "by", "on", "in", "to", "into", "of", "about", "your", "why", 
+    "how", "is", "are", "and", "the", "in", "on", "you"
+  ]);
+
+  const clean = title
+    .toLowerCase()
+    .replace(/\|\s*sheun\s*hub/gi, "")
+    .replace(/[^\w\s-]/g, "")
+    .trim();
+
+  const words = clean.split(/\s+/).filter(w => w.length > 0);
+  const filtered = words.filter(w => !stopWords.has(w));
+  const finalWords = filtered.length >= 3 ? filtered : words;
+
+  return finalWords.slice(0, 6).join("-");
+}
+
+/**
+ * Find a blog post by ID or Slug.
+ */
+export function getBlogPost(idOrSlug: string | undefined): BlogPostData | undefined {
+  if (!idOrSlug) return undefined;
+  
+  // Direct ID match
+  if (blogPostsData[idOrSlug]) {
+    return blogPostsData[idOrSlug];
+  }
+  
+  // Lookup by slug or legacy ID
+  const cleanKey = idOrSlug.toLowerCase().trim();
+  return Object.values(blogPostsData).find(
+    post => post.slug === cleanKey || post.id === cleanKey
+  );
+}
+
+/**
+ * Get all blog posts as an array
+ */
+export function getAllBlogPosts(): BlogPostData[] {
+  return Object.values(blogPostsData);
+}
+
+/**
+ * Get full canonical URL for a blog post
+ */
+export function getBlogCanonicalUrl(post: BlogPostData, preferredMode: 'slug' | 'id' = 'id'): string {
+  const path = preferredMode === 'slug' ? `/blog/${post.slug}` : `/blog/${post.id}`;
+  return `https://www.sheun.online${path}`;
+}
+
+/**
+ * Generate complete BlogPosting Article JSON-LD Structured Data
+ */
+export function generateBlogSchema(post: BlogPostData, canonicalUrl?: string) {
+  const fullUrl = canonicalUrl || `https://www.sheun.online/blog/${post.id}`;
+
+  return {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "@id": `${fullUrl}#article`,
+    "headline": post.heading,
+    "name": post.title,
+    "description": post.description,
+    "image": [
+      post.image,
+      post.image.includes("?") ? `${post.image}&w=1200&h=630` : `${post.image}?w=1200&h=630`
+    ],
+    "datePublished": post.datePublished,
+    "dateModified": post.dateModified,
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": fullUrl
+    },
+    "url": fullUrl,
+    "author": {
+      "@type": "Person",
+      "name": "Emmanuel Adedayo (Sheun)",
+      "jobTitle": "Founder & Lead Developer",
+      "url": "https://www.sheun.online/about",
+      "sameAs": [
+        "https://github.com/sheunhost",
+        "https://twitter.com/sheunhub",
+        "https://www.linkedin.com/in/sheun-hub-26b876321"
+      ]
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Sheun Hub",
+      "url": "https://www.sheun.online",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.sheun.online/logo.png"
+      }
+    },
+    "articleSection": post.category,
+    "keywords": post.keywords
+  };
+}

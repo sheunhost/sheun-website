@@ -6,7 +6,7 @@ import PageWrapper from "../components/PageWrapper";
 import { generateContentBlocks, faqsData } from "../data/blogExpandedData";
 import { PullQuote, CalloutBox, FAQSection } from "../components/BlogDeepDive";
 
-export default function FashionDropshippingGuide() {
+export default function FashionDropshippingGuide({ isEmbedded = false }: { isEmbedded?: boolean }) {
   const [comments, setComments] = useState<{name: string, text: string}[]>(() => {
     const saved = localStorage.getItem('comments_FashionDropshipping');
     if (saved) return JSON.parse(saved);
@@ -21,7 +21,7 @@ export default function FashionDropshippingGuide() {
   const [newComment, setNewComment] = useState("");
   const [commentName, setCommentName] = useState("");
 
-  const url = encodeURIComponent(window.location.href);
+  const url = encodeURIComponent("https://www.sheun.online/fashion-dropshipping-guide");
   const title = encodeURIComponent("How to Build a Profitable Fashion Dropshipping Store on Shopify");
 
   const handleLinkedinShare = () => {
@@ -37,32 +37,8 @@ export default function FashionDropshippingGuide() {
     }
   };
 
-  return (
-    <PageWrapper
-      className="pt-32 pb-24 bg-white dark:bg-navy relative"
-      title="High-Converting Fashion Dropshipping Shopify Store Design & Strategy"
-      description="Learn to build a high-converting fashion dropshipping Shopify store. Supplier strategies, custom Liquid theme branding, and conversion tactics for merchants worldwide."
-      keywords="Fashion Dropshipping Shopify, Shopify dropshipping builder, custom clothing store, fashion e-commerce expert, fashion Shopify developer"
-      canonical="/blog/fashion-dropshipping-guide"
-      schema={{
-        "@context": "https://schema.org",
-        "@type": "Article",
-        "headline": "How to Build a 6-Figure Fashion Dropshipping Store in 2026",
-        "author": {
-          "@type": "Person",
-          "name": "Sheun Hub"
-        },
-        "publisher": {
-          "@type": "Organization",
-          "name": "Sheun Hub",
-          "logo": {
-            "@type": "ImageObject",
-            "url": "https://www.sheun.online/logo.png"
-          }
-        },
-        "description": "Build a high-converting fashion dropshipping store. Discover premium themes, supplier strategies, and branding tactics that win."
-      }}
-    >
+  const content = (
+    <article className="pt-8 pb-24 bg-white dark:bg-navy relative">
       {/* Editorial Hero */}
       <section className="bg-navy-gradient pt-16 pb-32 px-6 rounded-b-3xl relative overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,_rgba(0,255,157,0.1)_0%,_transparent_70%)]" />
@@ -327,6 +303,27 @@ export default function FashionDropshippingGuide() {
           </Link>
         </div>
       </section>
+    </article>
+  );
+
+  if (isEmbedded) {
+    return content;
+  }
+
+  return (
+    <PageWrapper
+      title="How to Build a Profitable Fashion Dropshipping Store on Shopify | Sheun Hub"
+      description="The complete guide to launching a profitable fashion dropshipping business on Shopify in 2026. Discover sourcing, aesthetic branding, marketing funnels, and sizing solutions."
+      keywords="Fashion Dropshipping Shopify, Shopify dropshipping builder, custom clothing store, fashion e-commerce expert, fashion Shopify developer"
+      canonical="/fashion-dropshipping-guide"
+      image="https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=1200&h=630&auto=format&fit=crop&q=80"
+      type="article"
+      articlePublishedTime="2026-04-05T08:00:00Z"
+      articleModifiedTime="2026-09-21T08:00:00Z"
+      articleAuthor="Emmanuel Adedayo (Sheun)"
+      articleSection="Dropshipping"
+    >
+      {content}
     </PageWrapper>
   );
 }

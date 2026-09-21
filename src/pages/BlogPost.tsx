@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom";
+import { useParams, useLocation, Navigate } from "react-router-dom";
 import ShopifySettingsGuide from "./ShopifySettingsGuide";
 import ShopifySpeedOptimization from "./ShopifySpeedOptimization";
 import BestDropshippingApps from "./BestDropshippingApps";
@@ -10,82 +10,53 @@ import ConversionKillers from "./ConversionKillers";
 import PageWrapper from "../components/PageWrapper";
 import Breadcrumbs from "../components/Breadcrumbs";
 import BlogRelatedServices from "../components/BlogRelatedServices";
-import { blogPostsData } from "../data/blogPostsData";
+import { getBlogPost, generateBlogSchema, blogPostsData } from "../data/blogPostsData";
 
 export default function BlogPost() {
   const { id } = useParams<{ id: string }>();
+  const location = useLocation();
 
-  const currentId = id && blogPostsData[id] ? id : "1";
-  const postData = blogPostsData[currentId];
+  const postData = getBlogPost(id) || blogPostsData["1"];
 
   const getComponent = (postId: string) => {
     switch (postId) {
       case "1":
-        return <ShopifySettingsGuide />;
+        return <ShopifySettingsGuide isEmbedded={true} />;
       case "2":
-        return <ShopifySpeedOptimization />;
+        return <ShopifySpeedOptimization isEmbedded={true} />;
       case "3":
-        return <BestDropshippingApps />;
+        return <BestDropshippingApps isEmbedded={true} />;
       case "4":
-        return <FashionDropshippingGuide />;
+        return <FashionDropshippingGuide isEmbedded={true} />;
       case "5":
-        return <WooCommerceToShopifyMigration />;
+        return <WooCommerceToShopifyMigration isEmbedded={true} />;
       case "6":
-        return <ShopifySEOGuide />;
+        return <ShopifySEOGuide isEmbedded={true} />;
       case "7":
-        return <LeveragingShopifyMarkets />;
+        return <LeveragingShopifyMarkets isEmbedded={true} />;
       case "8":
-        return <ConversionKillers />;
+        return <ConversionKillers isEmbedded={true} />;
       default:
-        return <ShopifySettingsGuide />;
+        return <ShopifySettingsGuide isEmbedded={true} />;
     }
   };
 
-  const postSchema = {
-    "@context": "https://schema.org",
-    "@type": "BlogPosting",
-    "@id": `https://www.sheun.online/blog/${postData.id}#article`,
-    "headline": postData.heading,
-    "name": postData.title,
-    "description": postData.description,
-    "image": postData.image,
-    "datePublished": postData.datePublished,
-    "dateModified": postData.dateModified,
-    "mainEntityOfPage": {
-      "@type": "WebPage",
-      "@id": `https://www.sheun.online/blog/${postData.id}`
-    },
-    "author": {
-      "@type": "Person",
-      "name": "Emmanuel Adedayo (Sheun)",
-      "jobTitle": "Founder & Lead Developer",
-      "url": "https://www.sheun.online/about",
-      "sameAs": [
-        "https://github.com/sheunhost",
-        "https://twitter.com/sheunhub",
-        "https://www.linkedin.com/in/sheun-hub-26b876321"
-      ]
-    },
-    "publisher": {
-      "@type": "Organization",
-      "name": "Sheun Hub",
-      "url": "https://www.sheun.online",
-      "logo": {
-        "@type": "ImageObject",
-        "url": "https://www.sheun.online/logo.png"
-      }
-    },
-    "articleSection": postData.category,
-    "keywords": postData.keywords
-  };
+  const canonicalPath = location.pathname;
+  const canonicalUrl = `https://www.sheun.online${canonicalPath}`;
+  const postSchema = generateBlogSchema(postData, canonicalUrl);
 
   return (
     <PageWrapper
       title={postData.title}
       description={postData.description}
       keywords={postData.keywords}
-      canonical={`/blog/${postData.id}`}
+      canonical={canonicalPath}
       image={postData.image}
+      type="article"
+      articlePublishedTime={postData.datePublished}
+      articleModifiedTime={postData.dateModified}
+      articleAuthor="Emmanuel Adedayo (Sheun)"
+      articleSection={postData.category}
       schema={postSchema}
     >
       <div className="pt-32 pb-8 bg-white dark:bg-navy border-b border-navy/5 dark:border-white/5">
@@ -98,7 +69,8 @@ export default function BlogPost() {
           />
         </div>
       </div>
-      <div className="-mt-32">
+      
+      <div className="-mt-8">
         {getComponent(postData.id)}
       </div>
       
@@ -113,4 +85,3 @@ export default function BlogPost() {
     </PageWrapper>
   );
 }
-
