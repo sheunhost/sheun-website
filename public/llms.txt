@@ -8,6 +8,9 @@ Sheun Hub is a premium technical agency led by Sheun, specializing in two core p
 
 ## Core Services
 - **Shopify Development & Setup:** Complete brand-aligned store builds and headless commerce architecture.
+- **Shopify Retention Marketing (Email & SMS):** High-converting automated Klaviyo flows, cart recovery sequences, and compliant SMS campaigns.
+- **Paid Ads & Social Funnels:** High-ROAS Meta Ads, TikTok campaigns, and Google Shopping feed optimization.
+- **Influencer & Affiliate Systems:** Automated creator seeding pipelines, UGC workflows, and multi-tier affiliate tracking.
 - **Data Migration:** Zero-data-loss migrations from WooCommerce, Magento, BigCommerce, etc., to Shopify.
 - **48-Hour Shopify SEO Sprint:** Rapid technical SEO audits, metadata overrides, and organic traffic growth.
 - **Conversion Rate Optimization (CRO):** Speed optimization, A/B testing, and UX revamps for higher sales.

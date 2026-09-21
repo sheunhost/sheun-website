@@ -235,16 +235,16 @@ export default function ShopifySettingsGuide() {
           <div className="prose prose-navy max-w-none text-navy/70 dark:text-white/70 leading-relaxed space-y-8">
             <h3 className="text-2xl font-bold text-navy dark:text-white">Why is my Shopify store not selling?</h3>
             <p>
-              It's a question I hear every week. You've followed the tutorials, set up the theme, and added products. But the sales aren't coming. Usually, it's not one big thing—it's a dozen small points of friction that add up to a "no" from your customer.
+              It's a question I hear every week. You've followed the tutorials, set up the theme, and added products. But the sales aren't coming. Usually, it's not one big thing: it's a dozen small points of friction that add up to a "no" from your customer.
             </p>
             <p>
               Fixing a <strong>Shopify low conversion rate</strong> requires looking at your store through the eyes of a skeptical stranger. They don't know you. They don't know if your products are real. They are looking for any reason to leave your site and go back to Instagram or TikTok.
             </p>
             <p>
-              When you <strong>fix your Shopify store</strong>, you're essentially removing those reasons to leave. You're building a "slippery slope" that leads from the landing page directly to the "Thank You" screen.
+              When you <strong>fix your Shopify store</strong>, you're essentially removing those reasons to leave. You're building a slippery slope that leads from the landing page directly to the "Thank You" screen.
             </p>
             <p>
-              If you're tired of staring at a <strong>Shopify store not converting</strong>, let's take a look under the hood together.
+              If you are tired of staring at a <strong>Shopify store not converting</strong>, check out our professional <Link to="/services/setup" className="text-green font-bold hover:underline">Shopify Store Setup & Configuration</Link> and <Link to="/services/cro" className="text-green font-bold hover:underline">Conversion Rate Optimization</Link> services.
             </p>
           </div>
         </div>

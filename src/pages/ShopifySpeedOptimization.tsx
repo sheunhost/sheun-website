@@ -96,12 +96,12 @@ export default function ShopifySpeedOptimization() {
           
           <div className="aspect-video bg-light dark:bg-white/5 w-full rounded-3xl overflow-hidden shadow-inner mb-12 relative flex items-center justify-center group">
             <Zap className="absolute text-navy dark:text-white opacity-10 group-hover:scale-110 transition-transform duration-700" size={160} />
-            <img src="https://picsum.photos/seed/blog2/1200/600" alt="Shopify speed optimization" className="w-full h-full object-cover rounded-3xl z-10 opacity-90" />
+            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&h=630&auto=format&fit=crop&q=80" alt="Shopify speed optimization" className="w-full h-full object-cover rounded-3xl z-10 opacity-90" />
           </div>
 
             <div className="prose prose-lg md:prose-xl max-w-none prose-headings:font-bold prose-headings:text-navy dark:text-white prose-p:text-navy/80 dark:text-white/80 prose-p:leading-relaxed font-sans">
               <p className="text-2xl leading-relaxed text-navy/90 dark:text-white/90 mb-12">
-                In the fast-paced world of digital commerce, the speed of your Shopify store is not just a technical metric—it is the single most important factor in your conversion rate marketing. In 2026, user expectations have reached a peak where even a 100-millisecond delay can result in a measurable drop in revenue.
+                In the fast-paced world of digital commerce, the speed of your Shopify store is not just a technical metric; it is the single most important factor in your conversion rate marketing. In 2026, user expectations have reached a peak where even a 100-millisecond delay can result in a measurable drop in revenue.
               </p>
 
               <div className="bg-light dark:bg-white/5 p-8 rounded-2xl border border-navy/5 dark:border-white/5 my-12 hidden md:block">

@@ -289,7 +289,7 @@ export default function Portfolio() {
           <div className="max-w-4xl mx-auto prose prose-lg prose-headings:text-navy dark:prose-headings:text-white prose-a:text-green text-navy/70 dark:text-white/70 leading-relaxed">
             <h2 className="text-3xl md:text-4xl font-bold font-sans not-italic mb-6 tracking-tight">Showcase of High-Converting Custom Shopify Stores</h2>
             <p className="mb-6 font-serif italic text-xl">
-              Welcome to our portfolio, a curated gallery of high-performing e-commerce stores designed, developed, and optimized entirely by Sheun Hub. As a seasoned Shopify Partner, our focus isn’t just on making websites that look pretty—we build custom Shopify stores engineered specifically to convert traffic into loyal, paying customers.
+              Welcome to our portfolio, a curated gallery of high-performing e-commerce stores designed, developed, and optimized entirely by Sheun Hub. As a seasoned Shopify Partner, our focus isn’t just on making websites that look pretty: we build custom Shopify stores engineered specifically to convert traffic into loyal, paying customers.
             </p>
             <h3 className="text-2xl font-bold font-sans not-italic mt-12 mb-4 tracking-tight">Diverse E-commerce Case Studies</h3>
             <p className="mb-4">

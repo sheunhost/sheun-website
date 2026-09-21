@@ -1,5 +1,5 @@
 import { motion, AnimatePresence } from "framer-motion";
-import { Layout, RefreshCw, ShoppingCart, Palette, Bug, Search, Rocket, Gift, ChevronDown, CheckCircle2, ArrowRight, Code2, Zap, MessageSquare, Star, X, Clock, DollarSign, ListChecks, ShieldCheck, Target, Quote, ChevronLeft, ChevronRight, Grid, List } from "lucide-react";
+import { Layout, RefreshCw, ShoppingCart, Palette, Bug, Search, Rocket, Gift, ChevronDown, CheckCircle2, ArrowRight, Code2, Zap, MessageSquare, Star, X, Clock, DollarSign, ListChecks, ShieldCheck, Target, Quote, ChevronLeft, ChevronRight, Grid, List, Mail, TrendingUp, Share2 } from "lucide-react";
 import PageWrapper from "../components/PageWrapper";
 import { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
@@ -11,7 +11,7 @@ const services = [
     id: "setup",
     icon: Layout,
     title: "Shopify Store Setup",
-    desc: "Complete Shopify store setup from scratch — theme, products, payments, and launch-ready configuration.",
+    desc: "Complete Shopify store setup from scratch: theme, products, payments, and launch-ready configuration.",
     fullDesc: "Launch your brand with a professional, high-converting Shopify store. I handle everything from theme selection and customization to essential app integrations and payment gateway setup.",
     includes: ["Theme setup", "Product upload", "Payment gateway", "Domain setup"],
     price: "Custom Quote",
@@ -29,7 +29,7 @@ const services = [
     id: "dropshipping",
     icon: ShoppingCart,
     title: "Dropshipping Build",
-    desc: "Full dropshipping store for fashion, beauty, pets, or gadgets — supplier integration and conversion-optimized design.",
+    desc: "Full dropshipping store for fashion, beauty, pets, or gadgets with supplier integration and conversion-optimized design.",
     fullDesc: "Start your dropshipping journey with a store built for salesI integrate reliable suppliers, optimize your product pages for high conversion, and set up automated fulfillment systems.",
     includes: ["Niche research", "Supplier setup", "Theme customization", "Upsell setup"],
     price: "From $350",
@@ -65,7 +65,7 @@ const services = [
     id: "custom",
     icon: Palette,
     title: "Custom Liquid Dev",
-    desc: "Bespoke Shopify store using premium themes — fully tailored to your brand identity with custom Liquid code.",
+    desc: "Bespoke Shopify store using premium themes, fully tailored to your brand identity with custom Liquid code.",
     fullDesc: "Go beyond standard theme limitationsI build custom Liquid sections, unique product page features, and complex logic that sets your store apart from the competition.",
     includes: ["Color/font branding", "Custom sections", "Mobile optimization", "Speed tuning"],
     price: "Custom Quote",
@@ -183,8 +183,62 @@ const services = [
       { title: "Speed Audit", desc: "Identifying the specific bottlenecks slowing down your store." },
       { title: "Image & Asset Optimization", desc: "Compressing and lazy-loading heavy visual content." },
       { title: "Code Cleanup", desc: "Minifying CSS/JS and removing unused theme fragments." },
-      { title: "App Script Pruning", desc: "Deferring heavy app scripts to improve initial load time." },
+      { title: "Script Deferral", desc: "Deferring heavy app scripts to improve initial load time." },
       { title: "Performance Reports", desc: "Final testing across mobile and desktop with before/after data." }
+    ]
+  },
+  {
+    id: "email-marketing",
+    icon: Mail,
+    title: "Email & SMS Marketing",
+    desc: "Turn one-time shoppers into lifelong brand advocates with high-converting Klaviyo email automation and SMS recovery funnels.",
+    fullDesc: "Maximize Customer Lifetime Value (LTV) with intelligent automated retention funnels. I design, write, and configure high-converting Klaviyo email and SMS flows including abandoned cart sequences, welcome series, post-purchase cross-sells, and VIP win-backs.",
+    includes: ["Klaviyo / Omnisend Setup", "Abandoned Cart Flow", "Welcome Series & Popup", "VIP & Win-Back Automations"],
+    price: "From $300",
+    timeline: "1-2 Weeks",
+    tag: "Marketing",
+    roadmap: [
+      { title: "Audit & Cohort Analysis", desc: "Inspecting list health, deliverability, and past purchase behavior." },
+      { title: "Template & Copy Design", desc: "Crafting branded, high-converting templates with persuasive copy." },
+      { title: "Core Flow Architecture", desc: "Building abandoned cart, welcome series, browse abandonment, and win-back flows." },
+      { title: "SMS & Modal Integration", desc: "Deploying high-converting opt-in modals and compliant SMS triggers." },
+      { title: "Testing & Revenue Attribution", desc: "Validating trigger logic, inbox placement, and revenue analytics." }
+    ]
+  },
+  {
+    id: "paid-ads",
+    icon: TrendingUp,
+    title: "Paid Ads & Social Funnels",
+    desc: "Scale your Shopify store with data-driven advertising campaigns engineered to acquire high-intent buyers and maximize Return on Ad Spend.",
+    fullDesc: "Stop burning ad spend on traffic that doesn't convert. I build and optimize end-to-end paid advertising funnels across Meta, TikTok, and Google Shopping, pairing laser-targeted audiences with high-converting landing pages to dramatically scale your return on ad spend (ROAS).",
+    includes: ["Meta & TikTok Ad Setup", "Google Shopping Feeds", "Audience Targeting & Retargeting", "ROAS & Pixel Tracking"],
+    price: "From $450",
+    timeline: "2 Weeks",
+    tag: "Acquisition",
+    roadmap: [
+      { title: "Economics & Angle Audit", desc: "Analyzing break-even ROAS, margins, and competitor creative angles." },
+      { title: "Tracking & CAPI Setup", desc: "Configuring server-side Conversions API and product feed catalogs." },
+      { title: "Campaign Build", desc: "Structuring prospecting campaigns and dynamic retargeting funnels." },
+      { title: "Landing Page Alignment", desc: "Optimizing product page hooks to match ad value propositions." },
+      { title: "Scaling & ROAS Management", desc: "Iterating top ad creatives and progressively scaling daily budgets." }
+    ]
+  },
+  {
+    id: "influencer-affiliate",
+    icon: Share2,
+    title: "Influencer & Affiliate Marketing",
+    desc: "Harness authentic creator influence with automated influencer seeding, UGC pipelines, and high-converting affiliate commission programs.",
+    fullDesc: "Harness the power of authentic social proof. I establish automated influencer seeding workflows, affiliate tracking programs (via UpPromote, Shopify Collabs, or GoAffPro), and UGC creator management systems that convert social proof into recurring sales.",
+    includes: ["Affiliate Portal Setup", "Influencer Outreach Sequences", "UGC Creator Guidelines", "Commission Tracking & Payouts"],
+    price: "From $350",
+    timeline: "1-2 Weeks",
+    tag: "Marketing",
+    roadmap: [
+      { title: "Commission Modeling", desc: "Establishing profitable tiered commission structures and policies." },
+      { title: "Portal Integration", desc: "Configuring branded ambassador sign-up portals and affiliate links." },
+      { title: "Outreach & Seeding Engine", desc: "Deploying automated creator outreach scripts and product gifting workflows." },
+      { title: "UGC Content Guidelines", desc: "Providing creator briefs to secure high-converting social video assets." },
+      { title: "Ambassador Scaling", desc: "Activating affiliates, tracking referrals, and incentivizing top creators." }
     ]
   }
 ];
@@ -402,7 +456,7 @@ export default function Services() {
 
               <div className="flex flex-col sm:flex-row sm:items-center gap-8 pt-2">
                 <p className="text-[#475569] dark:text-white/70 text-lg sm:text-xl leading-relaxed max-w-2xl font-sans">
-                  Whether you're starting fresh, migrating from another platform, or launching a targeted sprint — I engineer high-speed Liquid systems optimized for maximum conversion rate.
+                  Whether you're starting fresh, migrating from another platform, or launching a targeted sprint, I engineer high-speed Liquid systems optimized for maximum conversion rate.
                 </p>
                 <div className="inline-flex items-center gap-3 bg-[#FF6B4A]/10 dark:bg-[#FF6B4A]/10 border border-[#FF6B4A]/30 px-6 py-4 rounded-2xl shrink-0 text-[#FF6B4A]">
                   <Gift className="text-[#FF6B4A]" size={22} />
@@ -914,7 +968,7 @@ export default function Services() {
                 Free Store <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FF6B4A] via-[#D946EF] to-[#8B5CF6] italic font-serif font-light lowercase">Audit.</span>
               </h2>
               <p className="text-white/60 text-2xl md:text-3xl max-w-3xl mx-auto leading-relaxed font-serif italic">
-                Not sure where to startWe'll review your store and send you a growth tips report — completely free.
+                Not sure where to start? We'll review your store and send you a growth tips report, completely free.
               </p>
               <div className="flex flex-col sm:flex-row items-center justify-center gap-12">
                 <button 

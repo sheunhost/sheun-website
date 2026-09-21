@@ -4,7 +4,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { servicesData } from "../data/servicesData";
 import PageWrapper from "../components/PageWrapper";
 import ScrollReveal from "../components/ScrollReveal";
-import { ArrowRight, CheckCircle2, ShieldCheck, Star, ChevronDown, Zap, Target, Layout, RefreshCw, Palette, Bug, Search, ShoppingCart, Send, Mail, Linkedin } from "lucide-react";
+import { ArrowRight, CheckCircle2, ShieldCheck, Star, ChevronDown, Zap, Target, Layout, RefreshCw, Palette, Bug, Search, ShoppingCart, Send, Mail, Linkedin, TrendingUp, Share2 } from "lucide-react";
 
 const themeColors: Record<string, { main: string, glow: string, text: string, bg: string, border: string }> = {
   setup: { main: '#3b82f6', glow: 'rgba(59, 130, 246, 0.4)', text: 'text-blue-400', bg: 'bg-blue-500/10', border: 'border-blue-500/20' }, // Blue
@@ -17,6 +17,9 @@ const themeColors: Record<string, { main: string, glow: string, text: string, bg
   cro: { main: '#06b6d4', glow: 'rgba(6, 182, 212, 0.4)', text: 'text-cyan-400', bg: 'bg-cyan-500/10', border: 'border-cyan-500/20' }, // Cyan
   apps: { main: '#6366f1', glow: 'rgba(99, 102, 241, 0.4)', text: 'text-indigo-400', bg: 'bg-indigo-500/10', border: 'border-indigo-500/20' }, // Indigo
   speed: { main: '#f43f5e', glow: 'rgba(244, 63, 94, 0.4)', text: 'text-rose-400', bg: 'bg-rose-500/10', border: 'border-rose-500/20' }, // Rose
+  "email-marketing": { main: '#8b5cf6', glow: 'rgba(139, 92, 246, 0.4)', text: 'text-violet-400', bg: 'bg-violet-500/10', border: 'border-violet-500/20' }, // Violet
+  "paid-ads": { main: '#0ea5e9', glow: 'rgba(14, 165, 233, 0.4)', text: 'text-sky-400', bg: 'bg-sky-500/10', border: 'border-sky-500/20' }, // Sky
+  "influencer-affiliate": { main: '#d946ef', glow: 'rgba(217, 70, 239, 0.4)', text: 'text-fuchsia-400', bg: 'bg-fuchsia-500/10', border: 'border-fuchsia-500/20' }, // Fuchsia
 };
 
 // Cosmic Background Component
@@ -138,6 +141,9 @@ export default function ServiceDetail() {
       case "Search": return <Search className="w-12 h-12" style={{ color: theme.main }} />;
       case "Target": return <Target className="w-12 h-12" style={{ color: theme.main }} />;
       case "Zap": return <Zap className="w-12 h-12" style={{ color: theme.main }} />;
+      case "Mail": return <Mail className="w-12 h-12" style={{ color: theme.main }} />;
+      case "TrendingUp": return <TrendingUp className="w-12 h-12" style={{ color: theme.main }} />;
+      case "Share2": return <Share2 className="w-12 h-12" style={{ color: theme.main }} />;
       default: return <Zap className="w-12 h-12" style={{ color: theme.main }} />;
     }
   };

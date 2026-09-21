@@ -800,5 +800,209 @@ export const servicesData = {
       "role": "Growth Hacker"
     },
     "comparison": "Speed apps break themes and offer temporary fixes. I manually refactor your code and prune dead scripts for permanent, flawless performance gains."
+  },
+  "email-marketing": {
+    "title": "Shopify Email & SMS Marketing",
+    "heading": "Automated Retention Funnels That Generate 30%+ of Your Revenue",
+    "description": "Turn one-time shoppers into lifelong brand advocates with high-converting Klaviyo email automation and SMS recovery funnels.",
+    "icon": "Mail",
+    "problem": "Acquiring new customers is more expensive than ever due to rising ad costs. Relying only on top-of-funnel traffic without automated retention means leaving 30% to 40% of potential revenue on the table. Generic broadcast newsletters don't build loyalty or recover lost checkouts.",
+    "scope": "I design, write, and configure high-converting Klaviyo and SMS marketing architectures integrated directly into your Shopify store. From high-converting abandoned cart sequences and browse abandonment triggers to customer win-back flows and VIP segmentation, every touchpoint is optimized to maximize customer lifetime value (LTV) on autopilot.",
+    "deliverables": [
+      "Klaviyo / Omnisend Deep Shopify Integration",
+      "High-Converting Abandoned Cart & Checkout Flows",
+      "Welcome Series with Dynamic First-Order Discounts",
+      "Browse Abandonment & Price-Drop Automations",
+      "Post-Purchase Cross-Sell & Upsell Sequences",
+      "Compliant SMS Marketing & High-Capture Popups"
+    ],
+    "faqs": [
+      {
+        "q": "Which email platforms do you specialize in?",
+        "a": "I specialize in Klaviyo, Omnisend, and Shopify Email, with Klaviyo being the gold standard for e-commerce segmentation and predictive analytics."
+      },
+      {
+        "q": "Do you design the email templates and write the copy?",
+        "a": "Yes. Every flow includes custom-branded, mobile-responsive email templates with persuasive e-commerce copywriting and clear conversion hooks."
+      },
+      {
+        "q": "How quickly can these automated flows be launched?",
+        "a": "Full setup and testing typically takes 1 to 2 weeks, after which your automated sequences start generating revenue immediately."
+      },
+      {
+        "q": "Will SMS marketing annoy my customers?",
+        "a": "No. We implement strict TCPA/GDPR compliance with quiet hours, smart frequency capping, and high-value transactional or VIP incentives."
+      },
+      {
+        "q": "How do you measure email marketing ROI?",
+        "a": "We track placed order rates, revenue per recipient, open/click-through benchmarks, and total percentage of store revenue driven by automated flows."
+      }
+    ],
+    "keywords": "Shopify Email Marketing, Klaviyo Expert Shopify, E-Commerce SMS Marketing, Abandoned Cart Email Flow, Shopify Retention Marketing, Klaviyo Automations, Hire Klaviyo Expert",
+    "howItWorks": [
+      "Audit & Segmentation: Inspecting current list health, deliverability, and customer purchase cohorts.",
+      "Copy & Template Design: Crafting branded, high-converting templates optimized for mobile inboxes.",
+      "Flow Architecture: Engineering triggers, delay logic, and smart exclusions for all core flows.",
+      "SMS & Modal Integration: Deploying compliant, high-converting list growth popups and SMS opt-ins.",
+      "Testing & Launch: Quality assurance across Gmail/Apple Mail and real-time revenue attribution tracking."
+    ],
+    "pricing": {
+      "startingAt": "$300",
+      "details": "Includes core Klaviyo flow setup, custom template design, and SMS integration."
+    },
+    "recentWork": [
+      {
+        "name": "LumiereSkin",
+        "result": "34% of total revenue driven by automated Klaviyo flows",
+        "link": "/portfolio#b2"
+      },
+      {
+        "name": "Glow Beauty",
+        "result": "2.8x higher abandoned cart recovery rate",
+        "link": "/portfolio#f1"
+      }
+    ],
+    "testimonial": {
+      "quote": "Setting up our automated Klaviyo flows unlocked an extra $18k in monthly revenue without spending an additional dime on ads.",
+      "author": "Jessica Taylor",
+      "role": "Co-Founder, Velvet Aura"
+    },
+    "comparison": "Unlike agencies that send generic batch-and-blast newsletters, I engineer precision behavioral triggers and dynamic product feeds that monetize user intent automatically."
+  },
+  "paid-ads": {
+    "title": "Shopify Paid Ads & Social Funnels",
+    "heading": "High-ROAS Paid Acquisition on Meta, TikTok & Google Shopping",
+    "description": "Scale your Shopify store with data-driven advertising campaigns engineered to acquire high-intent buyers and maximize Return on Ad Spend.",
+    "icon": "TrendingUp",
+    "problem": "Most e-commerce brands waste thousands on paid ads because of misconfigured tracking pixels, weak offer structures, and disconnected landing page experiences. Without proper conversion tracking and full-funnel retargeting, customer acquisition costs (CAC) quickly become unsustainable.",
+    "scope": "I architect and manage full-funnel paid advertising systems across Meta (Facebook & Instagram), TikTok Ads, and Google Shopping. From server-side Conversions API (CAPI) tracking and Google Merchant Center feeds to creative testing frameworks and high-converting offer landing pages, every campaign is tuned for profitable scale.",
+    "deliverables": [
+      "Meta Conversions API (CAPI) & TikTok Pixel Setup",
+      "Google Merchant Center & Shopping Feed Optimization",
+      "Full-Funnel Campaign Architecture (Prospecting to Retargeting)",
+      "Ad Creative Angles & Hook Frameworks",
+      "High-Converting Landing Page Offer Alignment",
+      "ROAS & Blended CAC Attribution Dashboards"
+    ],
+    "faqs": [
+      {
+        "q": "What ad platforms do you support for Shopify?",
+        "a": "I manage Meta Ads (Facebook/Instagram), TikTok Ads Manager, and Google Ads (Performance Max & Google Shopping feeds)."
+      },
+      {
+        "q": "What is the recommended ad spend budget?",
+        "a": "A minimum monthly testing budget of $1,000 to $2,500 is recommended to gather statistically significant conversion data quickly."
+      },
+      {
+        "q": "How do you handle iOS tracking limitations?",
+        "a": "We install server-side Shopify Conversions API (CAPI) and UTM attribution tracking to ensure 95%+ event match quality."
+      },
+      {
+        "q": "Do you create the ad creatives and copy?",
+        "a": "Yes, I provide copy frameworks, visual layout guidelines, and offer angle concepts tailored to your product margins."
+      },
+      {
+        "q": "How do you scale winning campaigns?",
+        "a": "We use progressive budget scaling on winning creative angles while continuously testing new hooks to prevent ad fatigue."
+      }
+    ],
+    "keywords": "Shopify Facebook Ads, Meta Ads for Shopify, TikTok Ads eCommerce, Google Shopping Feed Shopify, Hire Shopify Ads Expert, Shopify ROAS Optimization, Scale Shopify Store",
+    "howItWorks": [
+      "Unit Economics Audit: Calculating your break-even ROAS, product margins, and customer lifetime value.",
+      "Pixel & CAPI Tracking: Setting up server-side event deduplication for 100% accurate attribution.",
+      "Campaign Setup: Structuring top-of-funnel testing campaigns and dynamic product retargeting ads.",
+      "Creative & Page Alignment: Ensuring ad hooks match product page value propositions for seamless checkout.",
+      "Optimization & Scaling: Daily budget adjustments, bid strategy management, and ROAS scaling."
+    ],
+    "pricing": {
+      "startingAt": "$450",
+      "details": "Includes tracking pixel setup, full campaign build, and creative strategy framework."
+    },
+    "recentWork": [
+      {
+        "name": "Momento",
+        "result": "Scaled Meta ROAS from 1.8x to 4.2x in 30 days",
+        "link": "/portfolio#f3"
+      },
+      {
+        "name": "TechHaven",
+        "result": "45% reduction in Google Shopping Cost Per Acquisition (CPA)",
+        "link": "/portfolio#b1"
+      }
+    ],
+    "testimonial": {
+      "quote": "Our cost per purchase dropped by 40% in our first month. The tracking setup and campaign structure are rock solid.",
+      "author": "Brandon Cole",
+      "role": "Marketing Director, Kinetix"
+    },
+    "comparison": "I combine deep technical pixel architecture with high-converting direct-response creative frameworks so your ad spend translates into profitable net revenue."
+  },
+  "influencer-affiliate": {
+    "title": "Influencer & Affiliate Marketing",
+    "heading": "Scalable Creator Partnerships & Automated Referral Systems",
+    "description": "Harness authentic creator influence with automated influencer seeding, UGC pipelines, and high-converting affiliate commission programs.",
+    "icon": "Share2",
+    "problem": "Cold outreach to influencers is time-consuming and often yields zero sales if tracking links, coupon codes, and creator briefs aren't properly structured. Without an automated affiliate backend, managing commissions and payouts becomes a logistical nightmare.",
+    "scope": "I build automated influencer seeding and affiliate management ecosystems for your Shopify store. Using top platforms like UpPromote, GoAffPro, or Shopify Collabs, I set up custom affiliate sign-up portals, multi-tier commission structures, automated creator outreach templates, and UGC content guidelines that convert social proof into recurring sales.",
+    "deliverables": [
+      "Custom Brand Affiliate & Ambassador Portal Setup",
+      "Multi-Tier Commission Rules & Automated Payouts",
+      "Influencer Seeding & Direct Outreach Sequences",
+      "UGC Creator Content Briefs & Usage Rights Guidelines",
+      "Shopify Collabs / UpPromote / GoAffPro Integration",
+      "Referral Sales Tracking & ROI Dashboard"
+    ],
+    "faqs": [
+      {
+        "q": "Which affiliate software do you recommend for Shopify?",
+        "a": "Depending on your budget and volume, I recommend UpPromote, GoAffPro, or native Shopify Collabs for seamless integration."
+      },
+      {
+        "q": "How do affiliates get tracked and paid?",
+        "a": "Affiliates receive custom tracking links and coupon codes that attribute sales automatically. Payouts can be handled via PayPal or bank transfer."
+      },
+      {
+        "q": "Do you provide influencer outreach templates?",
+        "a": "Yes. You receive high-converting direct-message and email pitch scripts proven to secure creator collaborations and gift seeding."
+      },
+      {
+        "q": "Can I use creator content in my paid ads?",
+        "a": "Yes, our creator guidelines include digital usage rights clauses so you can legally run UGC content in your Meta and TikTok ads."
+      },
+      {
+        "q": "What commission rate should I offer?",
+        "a": "We calculate optimal commission rates (typically 10%-20%) based on your product margins so partnerships remain highly profitable."
+      }
+    ],
+    "keywords": "Shopify Affiliate Marketing, Influencer Seeding Shopify, UGC Creator Pipeline, UpPromote Setup, Shopify Collabs Expert, E-Commerce Ambassador Program, Hire Affiliate Specialist",
+    "howItWorks": [
+      "Commission Modeling: Setting competitive, profitable commission rates based on product gross margins.",
+      "Portal & App Setup: Installing and styling a branded affiliate portal with registration forms.",
+      "Outreach Engine: Deploying automated creator pitch scripts and product seeding guidelines.",
+      "Tracking Configuration: Testing affiliate links, discount codes, and cookie tracking windows.",
+      "Launch & Scale: Activating your ambassador community and monitoring top-performing referral channels."
+    ],
+    "pricing": {
+      "startingAt": "$350",
+      "details": "Includes affiliate portal setup, commission configuration, and creator outreach playbook."
+    },
+    "recentWork": [
+      {
+        "name": "Bloom Florals",
+        "result": "Onboarded 45+ active micro-influencers generating 22% of revenue",
+        "link": "/portfolio#b3"
+      },
+      {
+        "name": "Urban Gear",
+        "result": "Generated $35,000 in tracked affiliate sales in 60 days",
+        "link": "/portfolio#f2"
+      }
+    ],
+    "testimonial": {
+      "quote": "Our ambassador program practically runs itself now. We have creators posting authentic TikToks every single week that drive steady organic sales.",
+      "author": "Chloe Vance",
+      "role": "Brand Manager, Aura Atelier"
+    },
+    "comparison": "Instead of manual spreadsheets and chaotic DMs, I deliver a fully automated affiliate system that turns loyal customers and creators into an active sales force."
   }
 };

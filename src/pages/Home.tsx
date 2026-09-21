@@ -25,7 +25,7 @@ const services = [
   {
     title: "Store Setup & Build",
     icon: Layout,
-    desc: "Complete Shopify store setup from scratch — theme, products, and configuration.",
+    desc: "Complete Shopify store setup from scratch: theme, products, and configuration.",
   },
   {
     title: "Shopify Migration Service",
@@ -1082,7 +1082,7 @@ export default function Home() {
               <ul className="space-y-4 flex-grow border-t border-white/10 pt-6 relative z-10">
                 <li className="flex items-start gap-3 text-white/90 text-sm leading-relaxed">
                   <CheckCircle2 size={18} className="text-[#8B5CF6] shrink-0 mt-0.5" />
-                  Work directly with a dedicated Shopify specialist—ensuring no details are lost in translation.
+                  Work directly with a dedicated Shopify specialist, ensuring no details are lost in translation.
                 </li>
                 <li className="flex items-start gap-3 text-white/90 text-sm leading-relaxed">
                   <CheckCircle2 size={18} className="text-[#8B5CF6] shrink-0 mt-0.5" />
@@ -1489,7 +1489,7 @@ export default function Home() {
                 <div className="relative z-10 space-y-4">
                   <h3 className="text-xl font-bold">Free Growth Plan</h3>
                   <p className="text-white/40 text-sm leading-relaxed">
-                    Not sure what your store needs? We'll provide a comprehensive review of your speed, design, and SEO — completely free.
+                    Not sure what your store needs? We'll provide a comprehensive review of your speed, design, and SEO completely free.
                   </p>
                   <Link to="/contact#contact-form" className="inline-flex items-center gap-2 text-[#8B5CF6] font-bold text-sm border-b border-[#8B5CF6]/20 pb-1 hover:border-[#8B5CF6] transition-all">
                     Claim Your Growth Plan <ArrowRight size={16} />
