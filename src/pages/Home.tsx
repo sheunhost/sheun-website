@@ -604,7 +604,7 @@ export default function Home() {
           <div className="flex flex-col items-center gap-8">
             <div className="w-px h-24 bg-[#8B5CF6]/20" />
             <span className="[writing-mode:vertical-rl] rotate-180 text-[10px] font-bold uppercase tracking-[0.4em] text-white/30">
-              Shopify Partner · 2024 Edition
+              Shopify Partner · 2026 Edition
             </span>
           </div>
         </div>

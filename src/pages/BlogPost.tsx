@@ -1,4 +1,4 @@
-import { useParams, useLocation, Navigate } from "react-router-dom";
+import { useParams, useLocation } from "react-router-dom";
 import ShopifySettingsGuide from "./ShopifySettingsGuide";
 import ShopifySpeedOptimization from "./ShopifySpeedOptimization";
 import BestDropshippingApps from "./BestDropshippingApps";
@@ -8,7 +8,8 @@ import ShopifySEOGuide from "./ShopifySEOGuide";
 import LeveragingShopifyMarkets from "./LeveragingShopifyMarkets";
 import ConversionKillers from "./ConversionKillers";
 import PageWrapper from "../components/PageWrapper";
-import Breadcrumbs from "../components/Breadcrumbs";
+import BlogArticleHeader from "../components/BlogArticleHeader";
+import SocialShare from "../components/SocialShare";
 import BlogRelatedServices from "../components/BlogRelatedServices";
 import { getBlogPost, generateBlogSchema, blogPostsData } from "../data/blogPostsData";
 
@@ -59,21 +60,26 @@ export default function BlogPost() {
       articleSection={postData.category}
       schema={postSchema}
     >
-      <div className="pt-32 pb-8 bg-white dark:bg-navy border-b border-navy/5 dark:border-white/5">
-        <div className="container mx-auto px-6 max-w-4xl relative z-50">
-          <Breadcrumbs 
-            items={[
-              { label: "Blog", path: "/blog" },
-              { label: postData.heading }
-            ]} 
-          />
-        </div>
-      </div>
-      
-      <div className="-mt-8">
+      {/* Organized Blog Article Header */}
+      <BlogArticleHeader post={postData} />
+
+      {/* Main Article Content */}
+      <main className="w-full bg-white dark:bg-navy">
         {getComponent(postData.id)}
+      </main>
+
+      {/* Single Organized Social Sharing Section */}
+      <div className="container mx-auto px-6 max-w-4xl">
+        <SocialShare
+          url={canonicalUrl}
+          title={postData.heading}
+          description={postData.description}
+          image={postData.image}
+          category={postData.category}
+        />
       </div>
-      
+
+      {/* Relevant Services */}
       {postData.relevantServices && postData.relevantServices.length > 0 && (
         <div className="container mx-auto px-6 max-w-4xl pb-24">
           <BlogRelatedServices 

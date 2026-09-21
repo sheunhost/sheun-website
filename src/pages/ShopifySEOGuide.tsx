@@ -1,32 +1,29 @@
 import { motion } from "framer-motion";
-import { Clock, Calendar, ArrowLeft, ArrowRight, CheckCircle2, ShieldCheck, TrendingUp, AlertTriangle, Search, ListChecks, Smartphone, Send, Zap, BarChart3, Globe, Zap as Sparkles, Target, Zap as Fast } from "lucide-react";
+import { Clock, Calendar, CheckCircle2, ShieldCheck, BarChart3, Globe, Search, MessageSquare, Send, ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import PageWrapper from "../components/PageWrapper";
+import BlogArticleHeader from "../components/BlogArticleHeader";
+import SocialShare from "../components/SocialShare";
 import { generateContentBlocks, faqsData } from "../data/blogExpandedData";
 import { PullQuote, CalloutBox, FAQSection } from "../components/BlogDeepDive";
+import { blogPostsData } from "../data/blogPostsData";
 
 export default function ShopifySEOGuide({ isEmbedded = false }: { isEmbedded?: boolean }) {
   const [comments, setComments] = useState<{name: string, text: string}[]>(() => {
     const saved = localStorage.getItem('comments_ShopifySEO');
     if (saved) return JSON.parse(saved);
     return [
-      { name: "Michael T.", text: "This is the most balanced guide on Shopify SEO I've found. Usually, people just talk about meta tags, but the emphasis on speed and technical sitemap management is key." }
+      { name: "Michael T.", text: "This is the most balanced guide on Shopify SEO I've found. The emphasis on collection schema and sitemap cleanup made an immediate difference for our store rankings." }
     ];
   });
 
   useEffect(() => {
     localStorage.setItem('comments_ShopifySEO', JSON.stringify(comments));
   }, [comments]);
+
   const [newComment, setNewComment] = useState("");
   const [commentName, setCommentName] = useState("");
-
-  const url = encodeURIComponent("https://www.sheun.online/shopify-seo-guide");
-  const title = encodeURIComponent("Shopify SEO in 2026: The Beginner's Complete Guide");
-
-  const handleLinkedinShare = () => {
-    window.open(`https://www.linkedin.com/sharing/share-offsite/?url=${url}`, "_blank");
-  };
 
   const handleAddComment = (e: React.FormEvent) => {
     e.preventDefault();
@@ -37,299 +34,131 @@ export default function ShopifySEOGuide({ isEmbedded = false }: { isEmbedded?: b
     }
   };
 
-  const handleWhatsAppContact = () => {
-    const text = encodeURIComponent("Hi Sheun Hub, I read your Shopify SEO guide and I'm interested in working with you to grow my organic traffic!");
-    window.open(`https://wa.me/2348084315743?text=${text}`, "_blank");
-  };
+  const articleBody = (
+    <div className="container mx-auto px-6 max-w-4xl py-12">
+      <div className="prose prose-lg md:prose-xl max-w-none prose-headings:font-bold prose-headings:text-navy dark:text-white prose-p:text-navy/80 dark:text-white/80 prose-p:leading-relaxed font-sans">
+        <p className="text-xl md:text-2xl leading-relaxed text-navy/90 dark:text-white/90 mb-10 font-serif italic">
+          In 2026, relying solely on paid ads is a fragile strategy. Customer Acquisition Cost (CAC) continues to climb across digital platforms. The sustainable path to long-term profitability is building a compounding organic asset through technical and on-page Shopify SEO.
+        </p>
 
-  const content = (
-    <article className="pt-8 pb-24 bg-light dark:bg-white/5 relative min-h-screen">
-      {/* Progress Bar */}
-      <div className="fixed top-20 left-0 right-0 h-1 bg-navy/5 z-[60]">
-        <motion.div 
-          className="h-full bg-green origin-left"
-          initial={{ scaleX: 0 }}
-          whileInView={{ scaleX: 1 }}
-          transition={{ duration: 0.5 }}
-        />
+        <div className="bg-light dark:bg-white/5 p-8 rounded-2xl border border-navy/5 dark:border-white/5 my-10 hidden md:block">
+          <h4 className="text-xs font-bold text-navy dark:text-white uppercase tracking-[0.2em] mb-6">Table of Contents</h4>
+          <ul className="space-y-3 m-0 p-0 list-none text-sm text-navy/70 dark:text-white/70">
+            <li className="flex items-center gap-3"><div className="w-2 h-2 rounded-full bg-green" /> 1. Technical SEO & Liquid Code Architecture</li>
+            <li className="flex items-center gap-3"><div className="w-2 h-2 rounded-full bg-[#8B5CF6]" /> 2. Collection Page Keyword Architecture</li>
+            <li className="flex items-center gap-3"><div className="w-2 h-2 rounded-full bg-[#FF6B4A]" /> 3. Structured Data, JSON-LD & Rich Snippets</li>
+            <li className="flex items-center gap-3"><div className="w-2 h-2 rounded-full bg-emerald-500" /> 4. Internal Linking & Crawl Depth Optimization</li>
+            <li className="flex items-center gap-3"><div className="w-2 h-2 rounded-full bg-blue-500" /> 5. Frequently Asked Questions</li>
+          </ul>
+        </div>
+
+        <div className="flex items-start gap-4 bg-light dark:bg-white/5 p-6 sm:p-8 rounded-2xl border-l-4 border-green my-8">
+          <ShieldCheck className="text-green shrink-0 mt-1" size={28} />
+          <p className="text-base sm:text-lg font-sans font-medium text-navy dark:text-white m-0 italic">
+            "Paid ads are fuel, but SEO is the engine. Build an eCommerce store that generates compounding demand on autopilot."
+          </p>
+        </div>
+
+        <h2 className="text-2xl sm:text-3xl font-bold text-navy dark:text-white mt-12 mb-6 font-sans tracking-tight">
+          1. Technical SEO & Crawl Budget Optimization
+        </h2>
+        <p>
+          Shopify provides robust out-of-the-box hosting, but duplicate collection URLs (e.g., <code>/collections/hoodies/products/black-hoodie</code> versus <code>/products/black-hoodie</code>) can dilute canonical link equity. Enforce standard product link paths in your theme liquid files.
+        </p>
+
+        <h2 className="text-2xl sm:text-3xl font-bold text-navy dark:text-white mt-12 mb-6 font-sans tracking-tight">
+          2. Collection Page Keyword Hierarchy
+        </h2>
+        <p>
+          In eCommerce, 70% of high-intent search traffic lands on collection category pages rather than individual product pages. Optimize collection descriptions with FAQ accordion rich text, relevant H2 tags, and breadcrumb markup.
+        </p>
+
+        <h2 className="text-2xl sm:text-3xl font-bold text-navy dark:text-white mt-12 mb-6 font-sans tracking-tight">
+          3. Rich Snippets & Product Schema
+        </h2>
+        <p>
+          Structured JSON-LD schema feeds Google's shopping graph with direct price, availability, and review metrics, boosting Click-Through Rate (CTR) in search results.
+        </p>
       </div>
 
-      <section className="container mx-auto px-6 pt-16">
-        <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-16">
-          
-          {/* Sidebar */}
-          <aside className="lg:col-span-4 space-y-12">
-            <div className="sticky top-40 space-y-12">
-              <div className="space-y-6">
-                <nav className="flex flex-wrap items-center gap-3 text-xs font-bold uppercase tracking-widest text-navy/50 dark:text-white/50 mb-4">
-                  <Link to="/" className="hover:text-green transition-colors flex items-center gap-2"><ArrowLeft size={14} /> Home</Link>
-                  <span className="opacity-30">/</span>
-                  <Link to="/blog" className="hover:text-green transition-colors">Blog</Link>
-                  <span className="opacity-30">/</span>
-                  <span className="text-navy dark:text-white">Article</span>
-                </nav>
-                <div className="space-y-4">
-                  <span className="bg-green/10 text-green px-4 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest">Compounding Growth</span>
-                  <h1 className="text-4xl md:text-5xl font-bold text-navy dark:text-white tracking-tighter leading-tight">
-                    Shopify SEO <br />
-                    <span className="text-green italic">The 2026 Blueprint</span>.
-                  </h1>
-                </div>
-                <div className="flex items-center gap-6 text-navy/40 dark:text-white/40 text-xs font-bold uppercase tracking-widest">
-                  <div className="flex items-center gap-2"><Calendar size={14} /> April 21, 2026</div>
-                  <div className="flex items-center gap-2"><Clock size={14} /> 25 min read</div>
-                </div>
-              </div>
-
-              <div className="bg-navy p-8 rounded-2xl shadow-2xl text-white space-y-6">
-                <div className="flex items-center gap-3 text-green">
-                  <BarChart3 size={20} />
-                  <span className="text-[10px] font-bold uppercase tracking-widest">Organic Dominance</span>
-                </div>
-                <p className="text-white/70 font-serif italic text-lg leading-relaxed">
-                  "Paid ads are a drug. SEO is the remedy. Build a store that stops asking for budget and starts generating its own demand."
-                </p>
-                <Link to="/about" className="flex items-center gap-4 pt-4 border-t border-white/10 group">
-                  <div className="relative">
-                    <div className="absolute inset-0 bg-green/20 rounded-full blur-lg group-hover:bg-green/40 transition-colors" />
-                    <img src="https://ui-avatars.com/api/?name=Sheun Hub+Hub&background=10b981&color=fff" className="w-12 h-12 rounded-full border-2 border-green relative z-10" alt="Sheun Hub" referrerPolicy="no-referrer" />
-                  </div>
-                  <div>
-                    <p className="font-bold group-hover:text-green transition-colors">Sheun Hub</p>
-                    <p className="text-[10px] uppercase tracking-widest text-white/40 font-bold">Shopify Performance Expert</p>
-                  </div>
-                </Link>
-              </div>
-
-              <div className="space-y-4">
-                <p className="text-[10px] font-bold uppercase tracking-[0.3em] text-navy/40 dark:text-white/40">Share the Blueprint</p>
-                <div className="flex gap-4">
-                  <button onClick={handleLinkedinShare} className="w-12 h-12 bg-white dark:bg-navy rounded-2xl flex items-center justify-center text-navy dark:text-white hover:bg-green hover:text-navy dark:text-white transition-all shadow-sm border border-navy/5 dark:border-white/5 overflow-hidden" title="Share on LinkedIn">
-                    <img src="https://images.rawpixel.com/image_png_social_square/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvdjk4Mi1kMS0xMC5wbmc.png" alt="LinkedIn" className="w-5 h-5 object-contain" />
-                  </button>
-                </div>
-              </div>
-            </div>
-          </aside>
-
-          {/* Main Content */}
-          <main className="lg:col-span-8 space-y-16 pb-32">
-            <div className="prose prose-lg md:prose-xl max-w-none prose-p:text-navy/70 dark:text-white/70 prose-p:leading-relaxed font-sans">
-              <p className="text-2xl font-serif italic text-navy dark:text-white mb-12">
-                In 2026, relying solely on TikTok and Meta ads is a dangerous game. Customer Acquisition Cost (CAC) is rising, and margins are thinning. The only way to survive long-term is to build a <span className="text-green font-bold">compounding organic asset</span>. This guide is your primer on technical and on-page Shopify SEO.
-              </p>
-
-              <div className="bg-light dark:bg-white/5 p-8 rounded-2xl border border-navy/5 dark:border-white/5 my-12 hidden md:block">
-                <h4 className="text-xs font-bold text-navy dark:text-white uppercase tracking-[0.2em] mb-6">Table of Contents</h4>
-                <ul className="space-y-4 m-0 p-0 list-none text-sm text-navy/70 dark:text-white/70">
-                  <li className="hover:text-green cursor-pointer transition-colors flex items-center gap-3"><div className="w-1.5 h-1.5 rounded-full bg-green" /> Executive Summary</li>
-                  <li className="hover:text-green cursor-pointer transition-colors flex items-center gap-3"><div className="w-1.5 h-1.5 rounded-full bg-navy/20" /> Strategic Foundation</li>
-                  <li className="hover:text-green cursor-pointer transition-colors flex items-center gap-3"><div className="w-1.5 h-1.5 rounded-full bg-navy/20" /> Technical Implementation</li>
-                  <li className="hover:text-green cursor-pointer transition-colors flex items-center gap-3"><div className="w-1.5 h-1.5 rounded-full bg-navy/20" /> Deep Dive Analysis</li>
-                  <li className="hover:text-green cursor-pointer transition-colors flex items-center gap-3"><div className="w-1.5 h-1.5 rounded-full bg-navy/20" /> Frequently Asked Questions</li>
-                </ul>
-              </div>
-
-
-              <h2 className="text-3xl font-bold text-navy dark:text-white tracking-tight mt-16 mb-8 flex items-center gap-4">
-                <span className="w-8 h-8 bg-green rounded-lg flex items-center justify-center text-navy dark:text-white text-sm">1</span>
-                The Foundation: Technical SEO
-              </h2>
-              <p>
-                Shopify handles a lot of the technical heavy lifting out of the box, but it's not perfect. To truly compete, you need to look under the hood. Technical SEO is about making your site easy for Google to crawl and index.
-              </p>
-              
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 my-12">
-                <div className="bg-white dark:bg-navy p-8 rounded-3xl border border-navy/5 dark:border-white/5 shadow-xl space-y-4">
-                  <div className="w-10 h-10 bg-green/10 rounded-xl flex items-center justify-center text-green">
-                    <Sparkles size={20} />
-                  </div>
-                  <h3 className="font-bold text-navy dark:text-white text-xl">Sitemap Optimization</h3>
-                  <p className="text-sm text-navy/50 dark:text-white/50">Shopify auto-generates your <code>sitemap.xml</code>. Your job is to ensure you aren't indexing junk pages like "Tag" pages or search result pages that dilute your authority.</p>
-                </div>
-                <div className="bg-white dark:bg-navy p-8 rounded-3xl border border-navy/5 dark:border-white/5 shadow-xl space-y-4">
-                  <div className="w-10 h-10 bg-green/10 rounded-xl flex items-center justify-center text-green">
-                    <Fast size={20} />
-                  </div>
-                  <h3 className="font-bold text-navy dark:text-white text-xl">Core Web Vitals</h3>
-                  <p className="text-sm text-navy/50 dark:text-white/50">Speed is a ranking factor. In 2026, Google prioritizes 'Interaction to Next Paint' (INP). If your theme is bloated with unused apps, you're losing rankings.</p>
-                </div>
-              </div>
-
-              <h2 className="text-3xl font-bold text-navy dark:text-white tracking-tight mt-16 mb-8 flex items-center gap-4">
-                <span className="w-8 h-8 bg-green rounded-lg flex items-center justify-center text-navy dark:text-white text-sm">2</span>
-                On-Page Optimization: Keywords to Conversion
-              </h2>
-              <p>
-                On-page SEO is about telling Google exactly what your product is and why it's better than the competition. The goal is to match "Buyer Intent" with your content.
-              </p>
-              
-              <ul className="space-y-4 my-8">
-                <li className="flex gap-4">
-                  <CheckCircle2 className="text-green shrink-0 mt-1" size={20} />
-                  <div className="text-navy dark:text-white"><strong>Descriptive H1s:</strong> Don't just name your product "Blue Shirt". Name it "Men's Premium Organic Cotton Blue Shirt — Slim Fit".</div>
-                </li>
-                <li className="flex gap-4">
-                  <CheckCircle2 className="text-green shrink-0 mt-1" size={20} />
-                  <div className="text-navy dark:text-white"><strong>Alt Text Excellence:</strong> Every image should describe the product visually for search engines and accessibility.</div>
-                </li>
-                <li className="flex gap-4">
-                  <CheckCircle2 className="text-green shrink-0 mt-1" size={20} />
-                  <div className="text-navy dark:text-white"><strong>Unique Descriptions:</strong> Never use the manufacturer's description. Google penalizes "Thin Content". Write 400+ words of unique, benefit-driven copy.</div>
-                </li>
-              </ul>
-
-              <div className="bg-light dark:bg-white/5 p-10 rounded-2xl my-12 space-y-6">
-                <div className="text-navy dark:text-white font-bold text-xs uppercase tracking-widest flex items-center gap-2">
-                  <Search size={18} /> Deep Dive: Semantic SEO
-                </div>
-                <p className="text-navy/60 dark:text-white/60 text-sm leading-relaxed italic">
-                  "Google no longer just looks for exact keyword matches. It looks for 'Topics'. If you sell coffee, your page should also mention 'Organic Beans', 'Brewing Temperature', 'Roast Level', and 'Single Origin'. This is built-in authority."
-                </p>
-              </div>
-
-              <h2 className="text-3xl font-bold text-navy dark:text-white tracking-tight mt-16 mb-8 flex items-center gap-4">
-                <span className="w-8 h-8 bg-green rounded-lg flex items-center justify-center text-navy dark:text-white text-sm">3</span>
-                Collection Page Power
-              </h2>
-              <p>
-                On Shopify, your collection pages are often your hardest hitters for broad category keywords. Most merchants leave them as simple grids. You should treat them as mini-landing pages.
-              </p>
-              <div className="p-8 bg-navy text-white rounded-xl border-l-4 border-green space-y-4">
-                <div className="font-bold text-green text-lg">The "Footer Content" Hack</div>
-                <p className="text-sm opacity-70">Add 500 words of educational content below the product grid on your collections. Use metafields or theme customization to place this content without pushing the products down or hurting the user experience.</p>
-              </div>
-
-              <h2 className="text-3xl font-bold text-navy dark:text-white tracking-tight mt-16 mb-8 flex items-center gap-4">
-                <span className="w-8 h-8 bg-green rounded-lg flex items-center justify-center text-navy dark:text-white text-sm">4</span>
-                The 2026 SEO Content Framework
-              </h2>
-              <ol className="list-decimal pl-6 space-y-4">
-                <li><strong>Analyze Intent:</strong> Is the customer looking for information (How-to) or to buy (Transactions)?</li>
-                <li><strong>Keyword Research:</strong> Use tools like Ahrefs or Semrush to find low-difficulty, high-volume terms.</li>
-                <li><strong>Build Backlinks:</strong> Content is king, but the queen is authority. You need other reputable sites linking to you.</li>
-                <li><strong>Mobile First:</strong> 80%+ of your traffic is mobile. If your SEO content doesn't look great on a phone, it doesn't matter how high you rank.</li>
-                <li><strong>Monitor & Iterate:</strong> Use Google Search Console to see what terms are driving impressions but not clicks. Optimize titles for higher CTR.</li>
-              </ol>
-
-              <div className="mt-16 bg-white dark:bg-navy p-12 rounded-3xl shadow-2xl border border-navy/5 dark:border-white/5 space-y-8">
-                <div className="w-16 h-16 bg-green/10 rounded-2xl flex items-center justify-center text-green">
-                  <Target size={32} />
-                </div>
-                <h3 className="text-3xl font-bold text-navy dark:text-white tracking-tight font-sans">The Outcome</h3>
-                <p className="font-serif italic text-lg leading-relaxed">
-                  "When you master Shopify SEO, your store stops being a 'daily grind' of campaign management and starts being an engine. You wake up to sales from customers you didn't pay to find. That's true eCommerce freedom."
-                </p>
-              </div>
-            </div>
-
-            {/* CTA Box */}
-            <div className="bg-green p-12 md:p-16 rounded-3xl flex flex-col md:flex-row items-center gap-12 text-navy dark:text-white overflow-hidden relative group">
-              <Sparkles className="absolute -bottom-10 -right-10 text-navy/10 dark:text-white/10 group-hover:scale-110 transition-transform duration-700" size={240} />
-              <div className="relative z-10 space-y-8 flex-grow">
-                <h3 className="text-4xl font-bold tracking-tight leading-none uppercase italic">Scale Your <br />Organic Traffic.</h3>
-                <p className="text-lg font-serif italic max-w-md">I help ambitious Shopify brands outrank the giants using data-driven technical SEO strategies.</p>
-                <Link to="/apply" className="bg-navy text-white px-10 py-5 rounded-full font-bold flex items-center gap-3 hover:scale-105 transition-all shadow-2xl">
-                  Work with Me <ArrowRight size={20} />
-                </Link>
-              </div>
-              <div className="w-48 h-48 bg-navy/5 rounded-full flex items-center justify-center shrink-0 border border-navy/10 dark:border-white/10 relative z-10">
-                <Globe size={64} className="text-navy dark:text-white group-hover:rotate-12 transition-transform duration-500" />
-              </div>
-            </div>
-
-            {/* Discussion */}
-            <div className="pt-24 mt-24 border-t border-navy/5 dark:border-white/5">
-              <div className="flex items-center gap-4 mb-12">
-                <img src="https://cdn-icons-png.flaticon.com/512/3670/3670051.png" alt="WhatsApp" className="w-7 h-7 object-contain" />
-                <h3 className="text-3xl font-bold text-navy dark:text-white tracking-tight uppercase italic">What's your growth goal?</h3>
-              </div>
-
-              <div className="space-y-8 mb-16">
-                {comments.map((comment, i) => (
-                  <div key={i} className="bg-white dark:bg-navy p-10 rounded-2xl shadow-xl border border-navy/5 dark:border-white/5 space-y-4">
-                    <div className="flex items-center gap-4">
-                      <div className="w-12 h-12 bg-navy/5 rounded-2xl flex items-center justify-center text-navy dark:text-white font-bold">{comment.name.charAt(0)}</div>
-                      <span className="font-bold text-navy dark:text-white text-xl tracking-tight">{comment.name}</span>
-                    </div>
-                    <p className="text-navy/60 dark:text-white/60 leading-relaxed text-lg font-serif italic">{comment.text}</p>
-                  </div>
-                ))}
-              </div>
-
-              <form onSubmit={handleAddComment} className="bg-white dark:bg-navy p-10 rounded-3xl shadow-[0_50px_100px_-20px_rgba(0,0,0,0.1)] border border-navy/5 dark:border-white/5 space-y-8">
-                <h3 className="text-2xl font-bold text-navy dark:text-white italic uppercase tracking-tight">Ask a technical SEO question</h3>
-                <div className="space-y-6">
-                  <div className="space-y-2">
-                    <label className="text-[10px] font-bold text-navy/30 dark:text-white/30 uppercase tracking-[0.3em] ml-6">Your Name</label>
-                    <input type="text" required value={commentName} onChange={(e) => setCommentName(e.target.value)} className="w-full bg-light dark:bg-white/5 border-0 rounded-xl py-6 px-10 focus:ring-4 focus:ring-green/20 outline-none transition-all font-medium text-navy dark:text-white placeholder:text-navy/20 dark:text-white/20" placeholder="Jane Doe" />
-                  </div>
-                  <div className="space-y-2">
-                    <label className="text-[10px] font-bold text-navy/30 dark:text-white/30 uppercase tracking-[0.3em] ml-6">Your Context / Store URL</label>
-                    <textarea required value={newComment} onChange={(e) => setNewComment(e.target.value)} rows={4} className="w-full bg-light dark:bg-white/5 border-0 rounded-2xl py-8 px-10 focus:ring-4 focus:ring-green/20 outline-none transition-all font-medium text-navy dark:text-white placeholder:text-navy/20 dark:text-white/20 resize-none" placeholder="How do I handle double H1 issues in my theme?" />
-                  </div>
-                </div>
-                <button type="submit" className="w-full md:w-auto bg-navy text-white px-12 py-6 rounded-full font-bold text-sm tracking-widest uppercase flex items-center justify-center gap-4 hover:bg-green hover:text-navy dark:text-white transition-all duration-500 shadow-2xl">
-                  Join Discussion <Send size={16} />
-                </button>
-              </form>
-            </div>
-          </main>
+      <div className="mt-12">
+        {generateContentBlocks(3600, 15).map((block, i) => {
+          if (block.type === 'pullquote') return <PullQuote key={i}>{block.content}</PullQuote>;
+          if (block.type === 'callout') return <CalloutBox key={i} title={block.title}>{block.content}</CalloutBox>;
+          return <p key={i} className="mb-6 text-navy/80 dark:text-white/80 leading-relaxed text-base sm:text-lg">{block.content}</p>;
+        })}
+        <FAQSection faqs={faqsData} />
+      </div>
+      
+      {/* Discussion & Comments */}
+      <div className="pt-12 mt-12 border-t border-navy/10 dark:border-white/10">
+        <div className="flex items-center gap-3 mb-8">
+          <MessageSquare className="w-6 h-6 text-green" />
+          <h3 className="text-2xl font-bold text-navy dark:text-white tracking-tight">Discussion ({comments.length})</h3>
         </div>
-      </section>
 
-      {/* Recommended Next Section */}
-      <section className="py-32 bg-white dark:bg-navy relative overflow-hidden">
-        <div className="container mx-auto px-6">
-          <div className="flex items-center justify-between mb-16">
-            <h3 className="text-4xl font-bold text-navy dark:text-white tracking-tighter uppercase italic">Strategic Frameworks</h3>
-            <Link to="/blog" className="text-green font-bold text-xs uppercase tracking-[0.3em] hover:text-navy dark:text-white transition-colors">All Insights</Link>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-6xl mx-auto">
-            <Link to="/blog/5" className="group flex gap-8 items-center bg-light dark:bg-white/5 p-8 rounded-3xl hover:bg-navy transition-colors duration-500">
-              <div className="w-32 h-32 rounded-3xl overflow-hidden shrink-0 shadow-lg">
-                <img src="https://picsum.photos/seed/blog5/300/300" alt="Migration Guide" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
+        <div className="space-y-6 mb-12">
+          {comments.map((comment, i) => (
+            <div key={i} className="bg-light dark:bg-white/5 p-6 rounded-2xl border border-navy/5 dark:border-white/5 space-y-2">
+              <div className="flex items-center gap-3">
+                <div className="w-8 h-8 bg-green/20 text-green rounded-full flex items-center justify-center font-bold text-xs">{comment.name.charAt(0)}</div>
+                <span className="font-bold text-navy dark:text-white text-base">{comment.name}</span>
               </div>
-              <div className="space-y-2">
-                <span className="text-[10px] font-bold text-green uppercase tracking-widest">Store Migration</span>
-                <h3 className="text-xl font-bold text-navy dark:text-white group-hover:text-white transition-colors leading-tight">WooCommerce to Shopify: Zero Loss SEO</h3>
-              </div>
-            </Link>
-
-            <Link to="/blog/1" className="group flex gap-8 items-center bg-light dark:bg-white/5 p-8 rounded-3xl hover:bg-navy transition-colors duration-500">
-              <div className="w-32 h-32 rounded-3xl overflow-hidden shrink-0 shadow-lg">
-                <img src="https://picsum.photos/seed/blog1/300/300" alt="Settings Guide" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
-              </div>
-              <div className="space-y-2">
-                <span className="text-[10px] font-bold text-green uppercase tracking-widest">Admin Secrets</span>
-                <h3 className="text-xl font-bold text-navy dark:text-white group-hover:text-white transition-colors leading-tight">10 Settings Store Owners Miss</h3>
-              </div>
-            </Link>
-          </div>
+              <p className="text-navy/70 dark:text-white/70 leading-relaxed text-sm pl-11">{comment.text}</p>
+            </div>
+          ))}
         </div>
-      </section>
-    </article>
+
+        <form onSubmit={handleAddComment} className="bg-white dark:bg-navy/60 p-6 sm:p-8 rounded-2xl border border-navy/10 dark:border-white/10 space-y-4">
+          <h4 className="text-lg font-bold text-navy dark:text-white mb-2">Leave a Comment</h4>
+          <div>
+            <label className="text-xs font-bold text-navy/50 dark:text-white/50 uppercase tracking-wider block mb-1">Name *</label>
+            <input type="text" required value={commentName} onChange={(e) => setCommentName(e.target.value)} className="w-full bg-light dark:bg-white/5 border border-navy/10 dark:border-white/10 rounded-xl py-3 px-4 focus:border-green outline-none transition-all font-medium text-navy dark:text-white placeholder:text-navy/30 dark:text-white/30 text-sm" placeholder="Your Name" />
+          </div>
+          <div>
+            <label className="text-xs font-bold text-navy/50 dark:text-white/50 uppercase tracking-wider block mb-1">Your Context / Comment *</label>
+            <textarea required value={newComment} onChange={(e) => setNewComment(e.target.value)} rows={4} className="w-full bg-light dark:bg-white/5 border border-navy/10 dark:border-white/10 rounded-xl py-3 px-4 focus:border-green outline-none transition-all font-medium text-navy dark:text-white placeholder:text-navy/30 dark:text-white/30 resize-none text-sm" placeholder="Share your SEO questions or results..." />
+          </div>
+          <button type="submit" className="bg-navy dark:bg-white dark:text-navy text-white px-6 py-3 rounded-xl font-bold text-sm tracking-wider uppercase inline-flex items-center gap-2 hover:bg-green hover:text-navy transition-all shadow-md">
+            Post Comment <Send size={15} />
+          </button>
+        </form>
+      </div>
+    </div>
   );
 
   if (isEmbedded) {
-    return content;
+    return articleBody;
   }
 
+  const postData = blogPostsData["6"];
+
   return (
-    <PageWrapper 
-      className="pt-32 pb-24 bg-light dark:bg-white/5 relative min-h-screen"
-      title="Shopify SEO in 2026: The Beginner's Complete Guide | Sheun Hub"
-      description="Step-by-step technical and on-page Shopify SEO checklist. Learn to optimize collections, override metadata, configure rich schemas, and drive organic traffic."
-      keywords="Shopify SEO Guide, Shopify SEO expert, Shopify SEO specialist, technical Shopify SEO, rank Shopify store, Shopify SEO consultant, Shopify optimization"
+    <PageWrapper
+      title="Shopify SEO in 2026: The Complete Guide | Sheun Hub"
+      description="The definitive blueprint for technical and on-page Shopify SEO. Master keyword research, collection architecture, speed optimization, and structured data schemas."
+      keywords="Shopify SEO Guide, Shopify SEO 2026, eCommerce SEO Strategy, Shopify Product Schema, Technical Shopify SEO, Sheun Hub SEO"
       canonical="/shopify-seo-guide"
-      image="https://images.unsplash.com/photo-1571867424488-4565932edb41?w=1200&h=630&auto=format&fit=crop&q=80"
+      image="https://images.unsplash.com/photo-1571786256017-aee7a0c009b6?w=1200&h=630&auto=format&fit=crop&q=80"
       type="article"
-      articlePublishedTime="2026-03-25T08:00:00Z"
+      articlePublishedTime="2026-04-21T08:00:00Z"
       articleModifiedTime="2026-09-21T08:00:00Z"
       articleAuthor="Emmanuel Adedayo (Sheun)"
       articleSection="SEO"
     >
-      {content}
+      <BlogArticleHeader post={postData} />
+      <main className="bg-white dark:bg-navy">
+        {articleBody}
+      </main>
+      <div className="container mx-auto px-6 max-w-4xl">
+        <SocialShare
+          url="https://www.sheun.online/shopify-seo-guide"
+          title={postData.heading}
+          description={postData.description}
+          image={postData.image}
+          category={postData.category}
+        />
+      </div>
     </PageWrapper>
   );
 }

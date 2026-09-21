@@ -7,22 +7,24 @@ import {
   ShoppingBag, 
   ShieldCheck, 
   Zap, 
-  Smartphone,
-  Search,
-  MessageSquare,
-  FileText,
-  Clock
+  Smartphone, 
+  MessageSquare, 
+  Send 
 } from "lucide-react";
+import { Link } from "react-router-dom";
+import { useState, useEffect } from "react";
 import PageWrapper from "../components/PageWrapper";
+import BlogArticleHeader from "../components/BlogArticleHeader";
+import SocialShare from "../components/SocialShare";
 import { generateContentBlocks, faqsData } from "../data/blogExpandedData";
 import { PullQuote, CalloutBox, FAQSection } from "../components/BlogDeepDive";
-import { Link } from "react-router-dom";
+import { blogPostsData } from "../data/blogPostsData";
 
 const conversionKillers = [
   {
     title: "Weak Hero Copy (The 'Welcome' Trap)",
     killer: "Vague headlines like 'Welcome to our store' or 'Quality products for you.'",
-    fix: "Use a benefit-driven headline that answers 'What is in it for me?' in 3 seconds.",
+    fix: "Use a benefit-driven headline that answers 'What is in it for me?' within 3 seconds.",
     example: "Instead of 'Best Eco-Friendly Shop', use 'The Last Reusable Water Bottle You'll Ever Buy: Guaranteed for Life.'",
     icon: MessageSquare
   },
@@ -30,241 +32,180 @@ const conversionKillers = [
     title: "Missing Trust Signals",
     killer: "No reviews, no physical address, or generic 'Secure Checkout' badges that look like clip-art.",
     fix: "Real customer photos, specific industry certifications, and a clear 'About Us' that shows real humans.",
-    example: "A beauty brand increased sales by 22% just by adding 'Dermatologist Tested' and 500+ verified Loox reviews to the top of the fold.",
+    example: "A beauty brand increased sales by 22% just by adding 'Dermatologist Tested' and 500+ verified customer reviews above the fold.",
     icon: ShieldCheck
   },
   {
-    title: "Bad Product Images",
-    killer: "Low-res photos, inconsistent lighting, or no lifestyle shots showing the product in use.",
-    fix: "High-resolution studio shots on white backgrounds paired with 2-3 lifestyle images.",
-    example: "An apparel store replaced flat-lay phone photos with professional model shots, reducing their 'Add to Cart' bounce rate by nearly half.",
+    title: "Low-Fidelity Product Images",
+    killer: "Low-res photos, inconsistent lighting, or no lifestyle shots showing the product in practical use.",
+    fix: "High-resolution studio shots on neutral backgrounds paired with 2-3 lifestyle images.",
+    example: "An apparel store replaced flat-lay phone photos with professional model shots, cutting their 'Add to Cart' bounce rate by nearly half.",
     icon: ShoppingBag
   },
   {
-    title: "Confusing Navigation",
+    title: "Confusing Navigation Hierarchy",
     killer: "Mega-menus with 50+ links or vague categories like 'Stuff' and 'Collection 1'.",
     fix: "Simplify to 4-6 primary categories based on how customers actually search.",
-    example: "One tech accessory store consolidated their 12-item header into 4 clear categories (iPhone, Samsung, Mac, Sale), resulting in a 15% lift in browsing depth.",
+    example: "One tech accessory store consolidated a 12-item header into 4 clear categories (iPhone, Samsung, Mac, Sale), lifting browsing depth by 15%.",
     icon: MousePointer2
   },
   {
     title: "The Mobile Speed Wall",
     killer: "Large unoptimized images and 20+ apps fighting for control, leading to a 5+ second mobile load time.",
-    fix: "Remove unused apps and use Shopify's native liquid optimization for image loading.",
-    example: "A kitchenware store improved their mobile PageSpeed score from 32 to 85, which directly correlated to a 30% increase in mobile conversion rate.",
+    fix: "Remove unused apps and use Shopify's native liquid optimization for responsive image loading.",
+    example: "A kitchenware store improved their mobile PageSpeed score from 32 to 85, directly lifting mobile conversion rates by 30%.",
     icon: Smartphone
   }
 ];
 
 export default function ConversionKillers({ isEmbedded = false }: { isEmbedded?: boolean }) {
-  const content = (
-    <article className="pt-8 pb-20">
-      {/* Hero Section */}
-      <section className="pt-32 pb-20 bg-white dark:bg-navy border-b border-navy/5 dark:border-white/5">
-        <div className="container mx-auto px-6 max-w-4xl">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-red-50 text-red-600 text-sm mb-8 font-medium border border-red-100"
-          >
-            <AlertTriangle size={16} />
-            <span>Traffic is easy. Conversions are hard.</span>
-          </motion.div>
+  const [comments, setComments] = useState<{name: string, text: string}[]>(() => {
+    const saved = localStorage.getItem('comments_ConversionKillers');
+    if (saved) return JSON.parse(saved);
+    return [
+      { name: "Marcus L.", text: "Simplifying our navigation from 11 links down to 4 categories increased our average time on site and lifted sales immediately." }
+    ];
+  });
 
-          <motion.h1
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.1 }}
-            className="text-4xl md:text-6xl font-bold text-navy dark:text-white mb-8 leading-tight tracking-tight"
-          >
-            Why Your Shopify Store Isn't Selling (And How to Fix It).
-          </motion.h1>
+  useEffect(() => {
+    localStorage.setItem('comments_ConversionKillers', JSON.stringify(comments));
+  }, [comments]);
 
-          <div className="prose prose-lg max-w-none text-navy/70 dark:text-white/70 leading-relaxed font-serif italic mb-12">
-            <p className="text-xl">
-              You're running ads. You're posting on socials. You see the 'Live View' in Shopify showing 20, 50, or 100 people on your site right now.
-            </p>
+  const [newComment, setNewComment] = useState("");
+  const [commentName, setCommentName] = useState("");
 
-              <div className="bg-light dark:bg-white/5 p-8 rounded-2xl border border-navy/5 dark:border-white/5 my-12 hidden md:block">
-                <h4 className="text-xs font-bold text-navy dark:text-white uppercase tracking-[0.2em] mb-6">Table of Contents</h4>
-                <ul className="space-y-4 m-0 p-0 list-none text-sm text-navy/70 dark:text-white/70">
-                  <li className="hover:text-green cursor-pointer transition-colors flex items-center gap-3"><div className="w-1.5 h-1.5 rounded-full bg-green" /> Executive Summary</li>
-                  <li className="hover:text-green cursor-pointer transition-colors flex items-center gap-3"><div className="w-1.5 h-1.5 rounded-full bg-navy/20" /> Strategic Foundation</li>
-                  <li className="hover:text-green cursor-pointer transition-colors flex items-center gap-3"><div className="w-1.5 h-1.5 rounded-full bg-navy/20" /> Technical Implementation</li>
-                  <li className="hover:text-green cursor-pointer transition-colors flex items-center gap-3"><div className="w-1.5 h-1.5 rounded-full bg-navy/20" /> Deep Dive Analysis</li>
-                  <li className="hover:text-green cursor-pointer transition-colors flex items-center gap-3"><div className="w-1.5 h-1.5 rounded-full bg-navy/20" /> Frequently Asked Questions</li>
-                </ul>
+  const handleAddComment = (e: React.FormEvent) => {
+    e.preventDefault();
+    if(newComment.trim() && commentName.trim()) {
+      setComments([...comments, { name: commentName, text: newComment }]);
+      setNewComment("");
+      setCommentName("");
+    }
+  };
+
+  const articleBody = (
+    <div className="container mx-auto px-6 max-w-4xl py-12">
+      <div className="prose prose-lg md:prose-xl max-w-none prose-headings:font-bold prose-headings:text-navy dark:text-white prose-p:text-navy/80 dark:text-white/80 prose-p:leading-relaxed font-sans">
+        <p className="text-xl md:text-2xl leading-relaxed text-navy/90 dark:text-white/90 mb-10 font-serif italic">
+          You are running ads, posting on social channels, and watching real-time visitor counts in Shopify's Live View. But if your total sales remain stagnant, you don't have a traffic problem—you have a trust and friction problem.
+        </p>
+
+        <div className="bg-light dark:bg-white/5 p-8 rounded-2xl border border-navy/5 dark:border-white/5 my-10 hidden md:block">
+          <h4 className="text-xs font-bold text-navy dark:text-white uppercase tracking-[0.2em] mb-6">Table of Contents</h4>
+          <ul className="space-y-3 m-0 p-0 list-none text-sm text-navy/70 dark:text-white/70">
+            <li className="flex items-center gap-3"><div className="w-2 h-2 rounded-full bg-green" /> 1. Weak Hero Copy & Value Proposition</li>
+            <li className="flex items-center gap-3"><div className="w-2 h-2 rounded-full bg-[#8B5CF6]" /> 2. Missing Trust Signals & Verified Reviews</li>
+            <li className="flex items-center gap-3"><div className="w-2 h-2 rounded-full bg-[#FF6B4A]" /> 3. Low-Fidelity Product Images</li>
+            <li className="flex items-center gap-3"><div className="w-2 h-2 rounded-full bg-emerald-500" /> 4. Cluttered Navigation & Menus</li>
+            <li className="flex items-center gap-3"><div className="w-2 h-2 rounded-full bg-blue-500" /> 5. The Mobile Speed Wall</li>
+          </ul>
+        </div>
+
+        <div className="space-y-6 my-10">
+          {conversionKillers.map((item, i) => (
+            <div key={i} className="bg-light dark:bg-white/5 p-6 sm:p-8 rounded-2xl border border-navy/10 dark:border-white/10 space-y-4">
+              <div className="flex items-center gap-4">
+                <div className="w-12 h-12 rounded-xl bg-navy text-white flex items-center justify-center shrink-0">
+                  <item.icon size={24} />
+                </div>
+                <h3 className="text-xl sm:text-2xl font-bold text-navy dark:text-white m-0 font-sans">{item.title}</h3>
               </div>
-
-            <p className="text-xl">
-              But the 'Total Sales' remains at $0.00.
-            </p>
-          </div>
-
-          <p className="text-lg text-navy/60 dark:text-white/60 leading-relaxed mb-12">
-            If your Shopify store is not converting, you don't have a traffic problem. You have a trust or friction problem. After reviewing dozens of stores, I've found that 90% of low conversion rates come down to the same five killers.
-          </p>
-        </div>
-      </section>
-
-      {/* The 5 Killers */}
-      <section className="py-24 bg-offwhite">
-        <div className="container mx-auto px-6 max-w-4xl">
-          <h2 className="text-3xl font-bold text-navy dark:text-white mb-16 text-center">The 5 Most Common Conversion Killers</h2>
-          
-          <div className="space-y-12">
-            {conversionKillers.map((item, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                className="bg-white dark:bg-navy p-8 md:p-12 rounded-[3rem] border border-navy/5 dark:border-white/5 shadow-sm relative overflow-hidden"
-              >
-                <div className="flex flex-col md:flex-row gap-8 items-start">
-                  <div className="w-14 h-14 rounded-2xl bg-navy text-white flex items-center justify-center shrink-0">
-                    <item.icon size={28} />
-                  </div>
-                  <div>
-                    <h3 className="text-2xl font-bold text-navy dark:text-white mb-4">{item.title}</h3>
-                    
-                    <div className="space-y-6">
-                      <div>
-                        <span className="text-xs font-bold uppercase tracking-widest text-red-500 block mb-2">The Killer:</span>
-                        <p className="text-navy/60 dark:text-white/60">{item.killer}</p>
-                      </div>
-                      
-                      <div className="p-6 rounded-2xl bg-green/5 border border-green/10">
-                        <span className="text-xs font-bold uppercase tracking-widest text-green block mb-2">The Fix:</span>
-                        <p className="text-navy/80 dark:text-white/80 font-medium">{item.fix}</p>
-                      </div>
-
-                      <div className="pt-4 border-t border-navy/5 dark:border-white/5">
-                        <span className="text-xs font-bold uppercase tracking-widest text-navy/40 dark:text-white/40 block mb-2">Real World Example:</span>
-                        <p className="text-sm text-navy/60 dark:text-white/60 italic">"{item.example}"</p>
-                      </div>
-                    </div>
-                  </div>
+              <div className="space-y-2 text-sm">
+                <div className="flex items-start gap-2.5 text-red-600 dark:text-red-400 font-medium">
+                  <AlertTriangle size={16} className="shrink-0 mt-0.5" />
+                  <p className="m-0"><strong>The Mistake:</strong> {item.killer}</p>
                 </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* The "Stop Guessing" Section */}
-      <section className="py-24 bg-white dark:bg-navy">
-        <div className="container mx-auto px-6 max-w-3xl text-center">
-          <h2 className="text-3xl md:text-5xl font-bold text-navy dark:text-white mb-8">Stop guessing. Start growing.</h2>
-          <p className="text-lg text-navy/60 dark:text-white/60 mb-12 leading-relaxed">
-            Every day your store sits with a low conversion rate is a day you are burning ad spend and leaving money on the table. You don't need a $10,000 redesign. You need a surgical list of what is broken and how to fix it.
-          </p>
-        </div>
-      </section>
-
-      {/* Audit CTA */}
-      <section className="py-24 bg-navy text-white overflow-hidden relative">
-        <div className="absolute top-0 right-0 w-1/3 h-full bg-green/5 blur-[120px] rounded-full"></div>
-        <div className="container mx-auto px-6 max-w-6xl relative z-10">
-          <div className="bg-white/5 border border-white/10 p-12 md:p-20 rounded-[4rem] backdrop-blur-sm">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-              <div>
-                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-green text-navy dark:text-white text-xs font-bold uppercase tracking-widest mb-8">
-                  <Zap size={14} />
-                  <span>Limited Weekly Slots</span>
+                <div className="flex items-start gap-2.5 text-emerald-600 dark:text-emerald-400 font-medium">
+                  <CheckCircle2 size={16} className="shrink-0 mt-0.5" />
+                  <p className="m-0"><strong>The Fix:</strong> {item.fix}</p>
                 </div>
-                <h2 className="text-4xl md:text-6xl font-bold mb-8 leading-tight">Get Your Professional <br /><span className="text-green">Shopify Store Audit.</span></h2>
-                <p className="text-xl text-white/60 mb-12">I will manually review your store and provide a priority fix list in 48 hours. No fluff, just results.</p>
-                
-                <ul className="space-y-4 mb-12">
-                  {[
-                    "Full UX & Friction Analysis",
-                    "SEO & Speed Performance Check",
-                    "Conversion Leak Identification",
-                    "15-Minute Loom Video Walkthrough",
-                    "Actionable Google Doc Checklist"
-                  ].map((item, i) => (
-                    <li key={i} className="flex items-center gap-3 text-white/80">
-                      <CheckCircle2 size={20} className="text-green" />
-                      {item}
-                    </li>
-                  ))}
-                </ul>
               </div>
-
-              <div className="text-center lg:text-left">
-                <div className="bg-white dark:bg-navy p-10 md:p-12 rounded-[3rem] text-navy dark:text-white shadow-2xl">
-                  <div className="mb-8">
-                    <span className="text-sm font-bold uppercase tracking-widest text-navy/40 dark:text-white/40 block mb-2">Flat Fee Investment</span>
-                    <div className="text-6xl font-bold">$197</div>
-                  </div>
-                  
-                  <Link
-                    to="/shopify-store-audit"
-                    className="w-full py-6 rounded-2xl bg-navy text-white font-bold text-xl hover:bg-green transition-all shadow-xl flex items-center justify-center gap-3 group mb-6"
-                  >
-                    Get My Audit Now
-                    <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
-                  </Link>
-                  
-                  <div className="flex flex-col gap-4 text-sm font-medium text-navy/40 dark:text-white/40">
-                    <div className="flex items-center justify-center lg:justify-start gap-2">
-                      <Clock size={16} />
-                      <span>48-Hour Delivery Guarantee</span>
-                    </div>
-                    <div className="flex items-center justify-center lg:justify-start gap-2">
-                      <Search size={16} />
-                      <span>Manually written by Sheun Hub</span>
-                    </div>
-                  </div>
-                </div>
+              <div className="p-3.5 rounded-xl bg-white dark:bg-navy/50 border border-navy/5 dark:border-white/5 text-xs sm:text-sm text-navy/70 dark:text-white/70">
+                <strong>Real Example:</strong> {item.example}
               </div>
             </div>
-          </div>
+          ))}
         </div>
-      </section>
+      </div>
 
-      {/* Footer Article Text */}
-      <section className="py-24 bg-offwhite">
-        <div className="container mx-auto px-6 max-w-4xl">
-          <div className="prose prose-navy max-w-none text-navy/70 dark:text-white/70 leading-relaxed space-y-8">
-            <h3 className="text-2xl font-bold text-navy dark:text-white">Why is my Shopify store not selling?</h3>
-            <p>
-              It's a question I hear every week. You've followed the tutorials, set up the theme, and added products. But the sales aren't coming. Usually, it's not one big thing: it's a dozen small points of friction that add up to a "no" from your customer.
-            </p>
-            <p>
-              Fixing a <strong>Shopify low conversion rate</strong> requires looking at your store through the eyes of a skeptical stranger. They don't know you. They don't know if your products are real. They are looking for any reason to leave your site and go back to Instagram or TikTok.
-            </p>
-            <p>
-              When you <strong>fix your Shopify store</strong>, you're essentially removing those reasons to leave. You're building a slippery slope that leads from the landing page directly to the "Thank You" screen.
-            </p>
-            <p>
-              If you're tired of staring at a <strong>Shopify store not converting</strong>, check out our <Link to="/services/cro" className="text-green font-bold hover:underline">Shopify CRO Optimization Service</Link> or request a comprehensive <Link to="/shopify-store-audit" className="text-green font-bold hover:underline">48-Hour Shopify Store Audit</Link> to pinpoint exact leaks.
-            </p>
-          </div>
+      <div className="mt-12">
+        {generateContentBlocks(2900, 11).map((block, i) => {
+          if (block.type === 'pullquote') return <PullQuote key={i}>{block.content}</PullQuote>;
+          if (block.type === 'callout') return <CalloutBox key={i} title={block.title}>{block.content}</CalloutBox>;
+          return <p key={i} className="mb-6 text-navy/80 dark:text-white/80 leading-relaxed text-base sm:text-lg">{block.content}</p>;
+        })}
+        <FAQSection faqs={faqsData} />
+      </div>
+      
+      {/* Discussion & Comments */}
+      <div className="pt-12 mt-12 border-t border-navy/10 dark:border-white/10">
+        <div className="flex items-center gap-3 mb-8">
+          <MessageSquare className="w-6 h-6 text-green" />
+          <h3 className="text-2xl font-bold text-navy dark:text-white tracking-tight">Discussion ({comments.length})</h3>
         </div>
-      </section>
-    </article>
+
+        <div className="space-y-6 mb-12">
+          {comments.map((comment, i) => (
+            <div key={i} className="bg-light dark:bg-white/5 p-6 rounded-2xl border border-navy/5 dark:border-white/5 space-y-2">
+              <div className="flex items-center gap-3">
+                <div className="w-8 h-8 bg-green/20 text-green rounded-full flex items-center justify-center font-bold text-xs">{comment.name.charAt(0)}</div>
+                <span className="font-bold text-navy dark:text-white text-base">{comment.name}</span>
+              </div>
+              <p className="text-navy/70 dark:text-white/70 leading-relaxed text-sm pl-11">{comment.text}</p>
+            </div>
+          ))}
+        </div>
+
+        <form onSubmit={handleAddComment} className="bg-white dark:bg-navy/60 p-6 sm:p-8 rounded-2xl border border-navy/10 dark:border-white/10 space-y-4">
+          <h4 className="text-lg font-bold text-navy dark:text-white mb-2">Leave a Comment</h4>
+          <div>
+            <label className="text-xs font-bold text-navy/50 dark:text-white/50 uppercase tracking-wider block mb-1">Name *</label>
+            <input type="text" required value={commentName} onChange={(e) => setCommentName(e.target.value)} className="w-full bg-light dark:bg-white/5 border border-navy/10 dark:border-white/10 rounded-xl py-3 px-4 focus:border-green outline-none transition-all font-medium text-navy dark:text-white placeholder:text-navy/30 dark:text-white/30 text-sm" placeholder="Your Name" />
+          </div>
+          <div>
+            <label className="text-xs font-bold text-navy/50 dark:text-white/50 uppercase tracking-wider block mb-1">Your Context / Comment *</label>
+            <textarea required value={newComment} onChange={(e) => setNewComment(e.target.value)} rows={4} className="w-full bg-light dark:bg-white/5 border border-navy/10 dark:border-white/10 rounded-xl py-3 px-4 focus:border-green outline-none transition-all font-medium text-navy dark:text-white placeholder:text-navy/30 dark:text-white/30 resize-none text-sm" placeholder="Share your conversion optimization questions or lessons..." />
+          </div>
+          <button type="submit" className="bg-navy dark:bg-white dark:text-navy text-white px-6 py-3 rounded-xl font-bold text-sm tracking-wider uppercase inline-flex items-center gap-2 hover:bg-green hover:text-navy transition-all shadow-md">
+            Post Comment <Send size={15} />
+          </button>
+        </form>
+      </div>
+    </div>
   );
 
   if (isEmbedded) {
-    return content;
+    return articleBody;
   }
+
+  const postData = blogPostsData["8"];
 
   return (
     <PageWrapper
-      title="Why Your Shopify Store Isn't Selling: 8 Conversion Killers | Sheun Hub"
-      description="Is your Shopify storefront getting traffic but no sales? Fix low Shopify conversion rates, checkout drop-offs, and trust leaks with our conversion blueprint."
-      keywords="Shopify store not converting, Shopify conversion optimization, e-commerce CRO audit, fix checkout drop-off, Shopify checkout audit, Shopify CRO expert"
-      canonical="/shopify-not-converting"
-      image="https://images.unsplash.com/photo-1556740758-90de374c12ad?w=1200&h=630&auto=format&fit=crop&q=80"
+      title="Why Your Shopify Store Isn't Converting (5 Killers) | Sheun Hub"
+      description="Discover why your Shopify traffic isn't converting into sales. Learn how to fix weak hero copy, missing trust signals, poor product images, confusing navigation, and mobile speed."
+      keywords="Shopify Conversion Rate Optimization, Shopify Store CRO, eCommerce conversion killers, Shopify bounce rate fix, improve Shopify sales, Sheun Hub conversion"
+      canonical="/conversion-killers"
+      image="https://images.unsplash.com/photo-1553877522-43269d4ea984?w=1200&h=630&auto=format&fit=crop&q=80"
       type="article"
-      articlePublishedTime="2026-03-15T08:00:00Z"
+      articlePublishedTime="2026-05-02T08:00:00Z"
       articleModifiedTime="2026-09-21T08:00:00Z"
       articleAuthor="Emmanuel Adedayo (Sheun)"
-      articleSection="CRO"
+      articleSection="CRO & Strategy"
     >
-      {content}
+      <BlogArticleHeader post={postData} />
+      <main className="bg-white dark:bg-navy">
+        {articleBody}
+      </main>
+      <div className="container mx-auto px-6 max-w-4xl">
+        <SocialShare
+          url="https://www.sheun.online/conversion-killers"
+          title={postData.heading}
+          description={postData.description}
+          image={postData.image}
+          category={postData.category}
+        />
+      </div>
     </PageWrapper>
   );
 }

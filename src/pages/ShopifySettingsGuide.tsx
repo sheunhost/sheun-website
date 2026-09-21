@@ -2,26 +2,27 @@ import { motion } from "framer-motion";
 import { 
   AlertTriangle, 
   CheckCircle2, 
-  ArrowRight, 
   Settings, 
-  ShoppingBag, 
-  ShieldCheck, 
+  DollarSign, 
+  Sliders, 
+  Globe, 
+  Lock, 
+  Truck, 
+  Users, 
   Zap, 
-  Globe,
-  Sliders,
-  DollarSign,
-  Mail,
-  Truck,
-  Users,
+  Code2, 
+  Mail, 
   Search,
-  Code2,
-  Lock,
-  MessageSquare
+  MessageSquare,
+  Send
 } from "lucide-react";
 import PageWrapper from "../components/PageWrapper";
-import { PullQuote, CalloutBox, FAQSection } from "../components/BlogDeepDive";
+import BlogArticleHeader from "../components/BlogArticleHeader";
+import SocialShare from "../components/SocialShare";
+import { PullQuote, CalloutBox } from "../components/BlogDeepDive";
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
+import { blogPostsData } from "../data/blogPostsData";
 
 const shopifySettings = [
   {
@@ -132,134 +133,122 @@ export default function ShopifySettingsGuide({ isEmbedded = false }: { isEmbedde
     }
   };
 
-  const content = (
-    <div className="pt-8 pb-20">
-      <div className="container mx-auto px-6 max-w-4xl">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#8B5CF6]/10 text-[#8B5CF6] text-sm mb-8 font-medium border border-[#8B5CF6]/20"
-        >
-          <Settings size={16} />
-          <span>Technical Store Configuration Guide</span>
-        </motion.div>
+  const articleBody = (
+    <div className="container mx-auto px-6 max-w-4xl py-12">
+      <div className="prose prose-lg max-w-none text-navy/80 dark:text-white/80 leading-relaxed font-serif italic mb-10">
+        <p className="text-xl md:text-2xl text-navy/90 dark:text-white/90">
+          Building a successful Shopify store isn't just about selecting a modern theme and driving ad traffic. Behind the scenes, subtle configuration oversights in your Shopify admin settings silently leak conversions, increase checkout drop-offs, and hinder international revenue.
+        </p>
+      </div>
 
-        <motion.h1
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.1 }}
-          className="text-4xl md:text-5xl lg:text-6xl font-bold text-navy dark:text-white mb-8 leading-tight tracking-tight font-sans"
-        >
-          10 Shopify Settings Most Store Owners Miss (And Why They Cost You Sales).
-        </motion.h1>
-
-        <div className="prose prose-lg max-w-none text-navy/70 dark:text-white/70 leading-relaxed font-serif italic mb-12">
-          <p className="text-xl">
-            Building a successful Shopify store isn't just about selecting a modern theme and driving ad traffic. Behind the scenes, subtle configuration oversights in your Shopify admin settings silently leak conversions, increase checkout drop-offs, and hinder international revenue.
-          </p>
-        </div>
-
-        <div className="space-y-8 my-16">
-          {shopifySettings.map((item, idx) => {
-            const Icon = item.icon;
-            return (
-              <motion.div 
-                key={idx}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                className="bg-light dark:bg-white/5 border border-navy/5 dark:border-white/5 rounded-3xl p-8 md:p-10 relative overflow-hidden group hover:border-[#8B5CF6]/30 transition-all shadow-sm"
-              >
-                <div className="flex flex-col md:flex-row md:items-start gap-6">
-                  <div className="w-14 h-14 rounded-2xl bg-[#8B5CF6]/10 text-[#8B5CF6] flex items-center justify-center shrink-0">
-                    <Icon size={28} />
+      <div className="space-y-6 my-12">
+        {shopifySettings.map((item, idx) => {
+          const Icon = item.icon;
+          return (
+            <div 
+              key={idx}
+              className="bg-light dark:bg-white/5 border border-navy/10 dark:border-white/10 rounded-2xl p-6 sm:p-8 relative overflow-hidden group hover:border-[#8B5CF6]/30 transition-all shadow-xs"
+            >
+              <div className="flex flex-col sm:flex-row sm:items-start gap-5">
+                <div className="w-12 h-12 rounded-xl bg-[#8B5CF6]/10 text-[#8B5CF6] flex items-center justify-center shrink-0">
+                  <Icon size={24} />
+                </div>
+                <div className="space-y-3 flex-1">
+                  <div className="flex items-center justify-between">
+                    <span className="text-xs font-mono font-bold text-[#8B5CF6] uppercase tracking-wider">Setting {item.number}</span>
                   </div>
-                  <div className="space-y-4 flex-1">
-                    <div className="flex items-center justify-between">
-                      <span className="text-sm font-mono font-bold text-[#8B5CF6] uppercase tracking-wider">Setting {item.number}</span>
+                  <h3 className="text-xl sm:text-2xl font-bold text-navy dark:text-white font-sans">{item.title}</h3>
+                  
+                  <div className="space-y-2 pt-1 text-sm">
+                    <div className="flex items-start gap-2.5 text-red-600 dark:text-red-400 font-medium">
+                      <AlertTriangle size={16} className="shrink-0 mt-0.5" />
+                      <p><strong>The Mistake:</strong> {item.killer}</p>
                     </div>
-                    <h2 className="text-2xl font-bold text-navy dark:text-white font-sans">{item.title}</h2>
-                    
-                    <div className="space-y-3 pt-2">
-                      <div className="flex items-start gap-3 text-red-600 dark:text-red-400 text-sm font-medium">
-                        <AlertTriangle size={18} className="shrink-0 mt-0.5" />
-                        <p><strong>The Mistake:</strong> {item.killer}</p>
-                      </div>
-                      <div className="flex items-start gap-3 text-emerald-600 dark:text-emerald-400 text-sm font-medium">
-                        <CheckCircle2 size={18} className="shrink-0 mt-0.5" />
-                        <p><strong>The Fix:</strong> {item.fix}</p>
-                      </div>
+                    <div className="flex items-start gap-2.5 text-emerald-600 dark:text-emerald-400 font-medium">
+                      <CheckCircle2 size={16} className="shrink-0 mt-0.5" />
+                      <p><strong>The Fix:</strong> {item.fix}</p>
                     </div>
+                  </div>
 
-                    <div className="p-4 rounded-xl bg-white dark:bg-navy/40 border border-navy/5 dark:border-white/5 text-xs md:text-sm text-navy/70 dark:text-white/70">
-                      <strong>How to configure:</strong> {item.example}
-                    </div>
+                  <div className="p-3.5 rounded-xl bg-white dark:bg-navy/50 border border-navy/5 dark:border-white/5 text-xs sm:text-sm text-navy/70 dark:text-white/70">
+                    <strong>How to configure:</strong> {item.example}
                   </div>
                 </div>
-              </motion.div>
-            );
-          })}
-        </div>
-
-        <PullQuote>
-          "The best Shopify stores aren't the ones with the most apps—they're the ones where every native setting is dialed in for frictionless buyer experience."
-        </PullQuote>
-
-        <CalloutBox title="Need a Full Storefront & Settings Audit?">
-          If you want an experienced Shopify developer to audit your backend configuration, verify your tracking pixels, and eliminate speed bottlenecks, check out our <Link to="/shopify-store-audit" className="font-bold underline text-[#8B5CF6]">48-Hour Shopify Store Audit</Link> or get in touch for custom setup support.
-        </CalloutBox>
-
-        {/* Comment Section */}
-        <div className="mt-20 pt-12 border-t border-navy/10 dark:border-white/10">
-          <h3 className="text-2xl font-bold text-navy dark:text-white mb-8">Discussion & Comments ({comments.length})</h3>
-          
-          <div className="space-y-6 mb-12">
-            {comments.map((c, i) => (
-              <div key={i} className="p-6 rounded-2xl bg-light dark:bg-white/5 border border-navy/5 dark:border-white/5">
-                <div className="flex items-center gap-3 mb-2">
-                  <div className="w-8 h-8 rounded-full bg-[#8B5CF6]/20 text-[#8B5CF6] font-bold flex items-center justify-center text-xs">
-                    {c.name.charAt(0)}
-                  </div>
-                  <span className="font-bold text-navy dark:text-white text-sm">{c.name}</span>
-                </div>
-                <p className="text-navy/70 dark:text-white/70 text-sm leading-relaxed">{c.text}</p>
               </div>
-            ))}
-          </div>
+            </div>
+          );
+        })}
+      </div>
 
-          <form onSubmit={handleAddComment} className="space-y-4">
-            <h4 className="font-bold text-navy dark:text-white text-lg">Leave a Comment</h4>
+      <PullQuote>
+        "The best Shopify stores aren't the ones with the most apps—they're the ones where every native setting is dialed in for frictionless buyer experience."
+      </PullQuote>
+
+      <CalloutBox title="Need a Full Storefront & Settings Audit?">
+        If you want an experienced Shopify developer to audit your backend configuration, verify your tracking pixels, and eliminate speed bottlenecks, check out our <Link to="/shopify-store-audit" className="font-bold underline text-[#8B5CF6]">48-Hour Shopify Store Audit</Link> or get in touch for custom setup support.
+      </CalloutBox>
+
+      {/* Discussion / Comments */}
+      <div className="mt-16 pt-12 border-t border-navy/10 dark:border-white/10">
+        <div className="flex items-center gap-3 mb-8">
+          <MessageSquare className="w-6 h-6 text-[#8B5CF6]" />
+          <h3 className="text-2xl font-bold text-navy dark:text-white">Discussion & Comments ({comments.length})</h3>
+        </div>
+        
+        <div className="space-y-6 mb-12">
+          {comments.map((c, i) => (
+            <div key={i} className="p-6 rounded-2xl bg-light dark:bg-white/5 border border-navy/5 dark:border-white/5 space-y-2">
+              <div className="flex items-center gap-3">
+                <div className="w-8 h-8 rounded-full bg-[#8B5CF6]/20 text-[#8B5CF6] font-bold flex items-center justify-center text-xs">
+                  {c.name.charAt(0)}
+                </div>
+                <span className="font-bold text-navy dark:text-white text-sm">{c.name}</span>
+              </div>
+              <p className="text-navy/70 dark:text-white/70 text-sm leading-relaxed pl-11">{c.text}</p>
+            </div>
+          ))}
+        </div>
+
+        <form onSubmit={handleAddComment} className="p-6 sm:p-8 rounded-2xl bg-white dark:bg-navy/60 border border-navy/10 dark:border-white/10 space-y-4">
+          <h4 className="font-bold text-navy dark:text-white text-lg mb-2">Leave a Comment</h4>
+          <div>
+            <label className="text-xs font-bold text-navy/50 dark:text-white/50 uppercase tracking-wider block mb-1">Name *</label>
             <input 
               type="text" 
               placeholder="Your Name" 
               value={commentName}
               onChange={(e) => setCommentName(e.target.value)}
-              className="w-full p-4 rounded-xl bg-light dark:bg-white/5 border border-navy/10 dark:border-white/10 text-navy dark:text-white text-sm focus:outline-none focus:border-[#8B5CF6]"
+              className="w-full p-3 rounded-xl bg-light dark:bg-white/5 border border-navy/10 dark:border-white/10 text-navy dark:text-white text-sm focus:outline-none focus:border-[#8B5CF6]"
               required
             />
+          </div>
+          <div>
+            <label className="text-xs font-bold text-navy/50 dark:text-white/50 uppercase tracking-wider block mb-1">Your Comment *</label>
             <textarea 
               rows={4}
               placeholder="Share your thoughts or questions about Shopify settings..." 
               value={newComment}
               onChange={(e) => setNewComment(e.target.value)}
-              className="w-full p-4 rounded-xl bg-light dark:bg-white/5 border border-navy/10 dark:border-white/10 text-navy dark:text-white text-sm focus:outline-none focus:border-[#8B5CF6]"
+              className="w-full p-3 rounded-xl bg-light dark:bg-white/5 border border-navy/10 dark:border-white/10 text-navy dark:text-white text-sm focus:outline-none focus:border-[#8B5CF6] resize-none"
               required
             />
-            <button 
-              type="submit"
-              className="px-8 py-3 bg-[#8B5CF6] hover:bg-[#7C3AED] text-white font-bold rounded-xl text-sm transition-all shadow-md"
-            >
-              Post Comment
-            </button>
-          </form>
-        </div>
+          </div>
+          <button 
+            type="submit"
+            className="px-6 py-3 bg-[#8B5CF6] hover:bg-[#7C3AED] text-white font-bold rounded-xl text-sm transition-all shadow-md inline-flex items-center gap-2"
+          >
+            Post Comment <Send size={15} />
+          </button>
+        </form>
       </div>
     </div>
   );
 
   if (isEmbedded) {
-    return content;
+    return articleBody;
   }
+
+  const postData = blogPostsData["1"];
 
   return (
     <PageWrapper
@@ -274,7 +263,19 @@ export default function ShopifySettingsGuide({ isEmbedded = false }: { isEmbedde
       articleAuthor="Emmanuel Adedayo (Sheun)"
       articleSection="Shopify Tips"
     >
-      {content}
+      <BlogArticleHeader post={postData} />
+      <main className="bg-white dark:bg-navy">
+        {articleBody}
+      </main>
+      <div className="container mx-auto px-6 max-w-4xl">
+        <SocialShare
+          url="https://www.sheun.online/shopify-settings-guide"
+          title={postData.heading}
+          description={postData.description}
+          image={postData.image}
+          category={postData.category}
+        />
+      </div>
     </PageWrapper>
   );
 }
