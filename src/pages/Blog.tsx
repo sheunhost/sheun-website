@@ -188,7 +188,7 @@ export default function Blog() {
       </section>
 
       {/* Narrative Section - The Intel */}
-      <section className="py-32 bg-white relative overflow-hidden">
+      <section className="py-32 bg-white dark:bg-navy relative overflow-hidden">
         <div className="container mx-auto px-6">
           <div className="max-w-4xl mx-auto space-y-12 text-center">
             <motion.div
@@ -196,7 +196,7 @@ export default function Blog() {
               whileInView={{ opacity: 1, y: 0 }}
               className="space-y-6"
             >
-              <h2 className="text-4xl md:text-6xl font-bold text-navy tracking-tight leading-none">
+              <h2 className="text-4xl md:text-6xl font-bold text-navy dark:text-white tracking-tight leading-none">
                 Open Source <br />
                 <span className="text-green italic font-serif font-light">Insights.</span>
               </h2>
@@ -207,7 +207,7 @@ export default function Blog() {
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               transition={{ delay: 0.2 }}
-              className="space-y-8 text-xl md:text-2xl text-navy/70 font-serif italic leading-relaxed"
+              className="space-y-8 text-xl md:text-2xl text-navy/70 dark:text-white/70 font-serif italic leading-relaxed"
             >
               <p>
                 The Sheun Hub blog is built on the philosophy that a rising tide lifts all boats. In an industry often guarded by "proprietary secrets," I choose to document my technical findings, platform experiments, and growth strategies openly.
@@ -222,12 +222,12 @@ export default function Blog() {
 
       {/* Featured Post */}
       {featuredPost && activeCategory === "All" && !searchQuery && (
-        <section className="py-24 bg-white">
+        <section className="py-24 bg-white dark:bg-navy">
           <div className="container mx-auto px-6">
             <motion.div
               whileHover={{ y: -10 }}
               transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-              className="bg-light rounded-xl overflow-hidden grid grid-cols-1 lg:grid-cols-2 items-center group cursor-pointer shadow-2xl border border-navy/5"
+              className="bg-light dark:bg-white/5 rounded-xl overflow-hidden grid grid-cols-1 lg:grid-cols-2 items-center group cursor-pointer shadow-2xl border border-navy/5 dark:border-white/10"
             >
               <div className="aspect-video lg:aspect-square overflow-hidden">
                 <img
@@ -241,24 +241,24 @@ export default function Blog() {
                 <span className="bg-green text-navy text-[10px] font-bold uppercase tracking-[0.3em] px-6 md:px-8 py-2 md:py-3 rounded-full shadow-lg">
                   Featured Article
                 </span>
-                <h2 className="text-2xl md:text-5xl font-bold text-navy tracking-tighter leading-[0.95] group-hover:text-green transition-colors duration-500 line-clamp-3 md:line-clamp-2">
+                <h2 className="text-2xl md:text-5xl font-bold text-navy dark:text-white tracking-tighter leading-[0.95] group-hover:text-green transition-colors duration-500 line-clamp-3 md:line-clamp-2">
                   {featuredPost.title}
                 </h2>
-                <p className="text-navy/60 text-lg md:text-xl leading-relaxed font-serif italic line-clamp-3">
+                <p className="text-navy/60 dark:text-white/70 text-lg md:text-xl leading-relaxed font-serif italic line-clamp-3">
                   {featuredPost.excerpt}
                 </p>
                 
-                <div className="flex flex-col sm:flex-row items-center justify-between gap-8 pt-8 md:pt-10 border-t border-navy/5">
+                <div className="flex flex-col sm:flex-row items-center justify-between gap-8 pt-8 md:pt-10 border-t border-navy/5 dark:border-white/10">
                   <div className="flex items-center gap-4">
                     <div className="w-12 h-12 md:w-14 md:h-14 rounded-2xl overflow-hidden shadow-xl shrink-0">
                       <img src="https://ui-avatars.com/api/?name=Sheun Hub+Hub&background=10b981&color=fff" alt="Sheun Hub" loading="lazy" />
                     </div>
                     <div>
-                      <p className="text-base md:text-lg font-bold text-navy">Sheun Hub</p>
-                      <p className="text-xs md:text-sm text-navy/40 font-serif italic">{featuredPost.date} · {featuredPost.readTime}</p>
+                      <p className="text-base md:text-lg font-bold text-navy dark:text-white">Sheun Hub</p>
+                      <p className="text-xs md:text-sm text-navy/40 dark:text-white/50 font-serif italic">{featuredPost.date} · {featuredPost.readTime}</p>
                     </div>
                   </div>
-                  <Link to="/blog/1" className="w-full sm:w-auto bg-navy text-white px-8 md:px-10 py-4 md:py-5 rounded-full font-bold text-base md:text-lg flex items-center justify-center gap-3 md:gap-4 group-hover:bg-green group-hover:text-navy transition-all duration-500 shadow-xl">
+                  <Link to="/blog/1" className="w-full sm:w-auto bg-navy dark:bg-white/15 text-white px-8 md:px-10 py-4 md:py-5 rounded-full font-bold text-base md:text-lg flex items-center justify-center gap-3 md:gap-4 group-hover:bg-green group-hover:text-navy transition-all duration-500 shadow-xl">
                     Read Article <ArrowRight size={18} />
                   </Link>
                 </div>
@@ -269,7 +269,7 @@ export default function Blog() {
       )}
 
       {/* Category Tabs */}
-      <section className="py-12 bg-white sticky top-20 z-40 border-b border-navy/5">
+      <section className="py-12 bg-white dark:bg-navy sticky top-20 z-40 border-b border-navy/5 dark:border-white/10">
         <div className="container mx-auto px-6">
           <div className="flex flex-wrap items-center justify-center gap-4">
             {categories.map((cat) => (
@@ -277,7 +277,7 @@ export default function Blog() {
                 key={cat}
                 onClick={() => setActiveCategory(cat)}
                 className={`px-6 py-2 rounded-full text-sm font-bold transition-all relative ${
-                  activeCategory === cat ? "text-navy" : "text-muted hover:text-navy"
+                  activeCategory === cat ? "text-navy dark:text-white" : "text-muted dark:text-white/60 hover:text-navy dark:hover:text-white"
                 }`}
               >
                 {cat}
@@ -295,7 +295,7 @@ export default function Blog() {
       </section>
 
       {/* Blog Grid */}
-      <section className="py-32 bg-white min-h-screen">
+      <section className="py-32 bg-white dark:bg-navy min-h-screen">
         <div className="container mx-auto px-6">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-16">
             {filteredPosts.filter(p => !p.featured || activeCategory !== "All").map((post, i) => (
@@ -316,25 +316,25 @@ export default function Blog() {
                       loading="lazy"
                     />
                     <div className="absolute top-6 left-6">
-                      <span className="bg-white/90 backdrop-blur-xl text-navy text-[10px] font-bold uppercase tracking-[0.3em] px-6 py-2 rounded-full shadow-xl">
+                      <span className="bg-white/90 dark:bg-navy/90 backdrop-blur-xl text-navy dark:text-white text-[10px] font-bold uppercase tracking-[0.3em] px-6 py-2 rounded-full shadow-xl">
                         {post.category}
                       </span>
                     </div>
                   </div>
                   
                   <div className="space-y-6 px-4 mt-8">
-                    <h3 className="text-2xl font-bold text-navy group-hover:text-green transition-colors duration-500 leading-tight tracking-tight line-clamp-2">
+                    <h3 className="text-2xl font-bold text-navy dark:text-white group-hover:text-green transition-colors duration-500 leading-tight tracking-tight line-clamp-2">
                       {post.title}
                     </h3>
-                    <p className="text-navy/40 text-lg leading-relaxed line-clamp-2 font-serif italic">
+                    <p className="text-navy/40 dark:text-white/60 text-lg leading-relaxed line-clamp-2 font-serif italic">
                       {post.excerpt}
                     </p>
                     
-                    <div className="flex items-center justify-between pt-6 border-t border-navy/5">
-                      <div className="flex items-center gap-3 text-xs text-navy/40 font-bold uppercase tracking-widest">
+                    <div className="flex items-center justify-between pt-6 border-t border-navy/5 dark:border-white/10">
+                      <div className="flex items-center gap-3 text-xs text-navy/40 dark:text-white/60 font-bold uppercase tracking-widest">
                         <Clock size={16} className="text-green" /> {post.readTime}
                       </div>
-                      <span className="bg-navy text-white px-6 py-3 rounded-full font-bold text-xs uppercase tracking-widest flex items-center gap-2 group-hover:bg-green group-hover:text-navy transition-all duration-500 shadow-lg group-hover:shadow-xl group-hover:scale-105 transform">
+                      <span className="bg-navy dark:bg-white/15 text-white px-6 py-3 rounded-full font-bold text-xs uppercase tracking-widest flex items-center gap-2 group-hover:bg-green group-hover:text-navy transition-all duration-500 shadow-lg group-hover:shadow-xl group-hover:scale-105 transform">
                         Read Story <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
                       </span>
                     </div>
@@ -346,7 +346,7 @@ export default function Blog() {
           
           {filteredPosts.length === 0 && (
             <div className="text-center py-32 space-y-8">
-              <p className="text-4xl font-bold text-navy tracking-tighter">No articles found matching your search.</p>
+              <p className="text-4xl font-bold text-navy dark:text-white tracking-tighter">No articles found matching your search.</p>
               <button onClick={() => {setSearchQuery(""); setActiveCategory("All")}} className="text-green font-bold text-xl underline underline-offset-8">
                 Clear all filters
               </button>
@@ -356,7 +356,7 @@ export default function Blog() {
       </section>
 
       {/* Newsletter Section */}
-      <section className="py-32 bg-light">
+      <section className="py-32 bg-light dark:bg-navy">
         <div className="container mx-auto px-6">
           <div className="bg-navy-gradient rounded-xl p-16 md:p-32 grid grid-cols-1 lg:grid-cols-2 gap-24 items-center relative overflow-hidden shadow-2xl">
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,_rgba(0,255,157,0.1)_0%,_transparent_70%)]" />

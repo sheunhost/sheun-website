@@ -123,7 +123,7 @@ const SEOReport = ({ data }: { data: any }) => {
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           {data.keywords.map((kw: any, i: number) => (
-            <div key={i} className="bg-white border border-navy/5 p-6 rounded-3xl hover:shadow-lg transition-shadow group">
+            <div key={i} className="bg-white dark:bg-white/5 border border-navy/5 dark:border-white/10 p-6 rounded-3xl hover:shadow-lg transition-shadow group">
               <div className="flex justify-between items-start mb-4">
                 <p className="text-lg font-bold text-navy dark:text-white group-hover:text-[#8B5CF6] transition-colors">{kw.keyword}</p>
                 <span className={`text-[8px] font-bold uppercase px-2 py-1 rounded-full ${
@@ -136,14 +136,14 @@ const SEOReport = ({ data }: { data: any }) => {
               <div className="grid grid-cols-2 gap-4 text-[10px]">
                 <div>
                   <p className="text-navy dark:text-white/40 uppercase font-bold">Volume</p>
-                  <p className="font-bold">{kw.volume}</p>
+                  <p className="font-bold text-navy dark:text-white">{kw.volume}</p>
                 </div>
                 <div>
                   <p className="text-navy dark:text-white/40 uppercase font-bold">Intent</p>
-                  <p className="font-bold">{kw.intent}</p>
+                  <p className="font-bold text-navy dark:text-white">{kw.intent}</p>
                 </div>
               </div>
-              <div className="mt-4 pt-4 border-t border-navy/5">
+              <div className="mt-4 pt-4 border-t border-navy/5 dark:border-white/10">
                 <p className="text-[10px] text-navy dark:text-white/40 uppercase font-bold mb-1">Where to use</p>
                 <p className="text-xs text-navy dark:text-white/70 leading-relaxed">{kw.where_to_use}</p>
               </div>
@@ -188,10 +188,10 @@ const SEOReport = ({ data }: { data: any }) => {
           </div>
           <div className="space-y-4">
             {data.seo_gaps.map((gap: any, i: number) => (
-              <div key={i} className="bg-red-50 border border-red-100 p-6 rounded-3xl space-y-3">
-                <p className="font-bold text-red-900">{gap.problem}</p>
-                <p className="text-xs text-red-700/80 italic">Location: {gap.location}</p>
-                <div className="bg-white p-4 rounded-2xl text-xs text-navy dark:text-white/70 border border-red-200">
+              <div key={i} className="bg-red-50 dark:bg-red-950/20 border border-red-100 dark:border-red-900/30 p-6 rounded-3xl space-y-3">
+                <p className="font-bold text-red-900 dark:text-red-300">{gap.problem}</p>
+                <p className="text-xs text-red-700/80 dark:text-red-400 italic">Location: {gap.location}</p>
+                <div className="bg-white dark:bg-white/5 p-4 rounded-2xl text-xs text-navy dark:text-white/80 border border-red-200 dark:border-red-900/40">
                   <p className="font-bold text-navy dark:text-white mb-1">Fix:</p>
                   {gap.fix}
                 </div>
@@ -206,7 +206,7 @@ const SEOReport = ({ data }: { data: any }) => {
           </div>
           <div className="space-y-4">
             {data.quick_wins.map((win: any, i: number) => (
-              <div key={i} className="bg-[#6D28D9]/5 border border-[#6D28D9]/15 p-6 rounded-3xl space-y-3">
+              <div key={i} className="bg-[#6D28D9]/5 dark:bg-white/5 border border-[#6D28D9]/15 dark:border-white/10 p-6 rounded-3xl space-y-3">
                 <p className="font-bold text-navy dark:text-white">{win.action}</p>
                 <p className="text-xs text-navy dark:text-white/60 italic">Where: {win.where}</p>
                 <div className="flex items-center gap-2 text-[#8B5CF6] font-bold text-[10px] uppercase tracking-widest bg-[#6D28D9]/10 w-fit px-3 py-1 rounded-full">
@@ -287,17 +287,17 @@ const ServiceModal = ({ service, onClose }: { service: any; onClose: () => void 
         initial={{ opacity: 0, scale: 0.9, y: 20 }}
         animate={{ opacity: 1, scale: 1, y: 0 }}
         exit={{ opacity: 0, scale: 0.9, y: 20 }}
-        className="relative w-full max-w-4xl bg-white rounded-2xl overflow-hidden shadow-2xl max-h-[90vh] overflow-y-auto"
+        className="relative w-full max-w-4xl bg-white dark:bg-navy rounded-2xl overflow-hidden shadow-2xl max-h-[90vh] overflow-y-auto border border-navy/10 dark:border-white/10"
       >
         <button
           onClick={onClose}
-          className="absolute top-6 right-6 w-12 h-12 bg-light rounded-full flex items-center justify-center text-navy dark:text-white hover:bg-[#6D28D9] hover:text-white transition-all z-10"
+          className="absolute top-6 right-6 w-12 h-12 bg-light dark:bg-white/10 rounded-full flex items-center justify-center text-navy dark:text-white hover:bg-[#6D28D9] hover:text-white transition-all z-10"
         >
           <X size={24} />
         </button>
 
         <div className="grid grid-cols-1 lg:grid-cols-12">
-          <div className="lg:col-span-5 bg-navy p-8 md:p-12 text-white space-y-8">
+          <div className="lg:col-span-5 bg-navy dark:bg-navy-light p-8 md:p-12 text-white space-y-8">
             <div className="w-16 h-16 bg-gradient-to-br from-[#6D28D9] to-[#8B5CF6] rounded-2xl flex items-center justify-center text-white">
               <service.icon size={32} />
             </div>
@@ -329,22 +329,22 @@ const ServiceModal = ({ service, onClose }: { service: any; onClose: () => void 
                 <ListChecks className="text-[#8B5CF6]" size={24} />
                 <h4 className="text-2xl font-bold text-navy dark:text-white">Service Roadmap</h4>
               </div>
-              <div className="space-y-6 relative before:absolute before:left-4 before:top-2 before:bottom-2 before:w-px before:bg-navy/5">
+              <div className="space-y-6 relative before:absolute before:left-4 before:top-2 before:bottom-2 before:w-px before:bg-navy/5 dark:before:bg-white/10">
                 {service.roadmap.map((step: any, i: number) => (
                   <div key={i} className="relative pl-12 group">
-                    <div className="absolute left-0 top-1 w-8 h-8 bg-light rounded-full border-2 border-navy/5 flex items-center justify-center text-xs font-bold text-navy dark:text-white group-hover:bg-[#6D28D9] group-hover:border-[#6D28D9] group-hover:text-white transition-all">
+                    <div className="absolute left-0 top-1 w-8 h-8 bg-light dark:bg-white/10 rounded-full border-2 border-navy/5 dark:border-white/10 flex items-center justify-center text-xs font-bold text-navy dark:text-white group-hover:bg-[#6D28D9] group-hover:border-[#6D28D9] group-hover:text-white transition-all">
                       {i + 1}
                     </div>
                     <div className="space-y-1">
                       <p className="font-bold text-navy dark:text-white">{step.title}</p>
-                      <p className="text-sm text-navy dark:text-white/60 leading-relaxed">{step.desc}</p>
+                      <p className="text-sm text-navy/70 dark:text-white/60 leading-relaxed">{step.desc}</p>
                     </div>
                   </div>
                 ))}
               </div>
             </div>
 
-            <div className="pt-8 border-t border-navy/5">
+            <div className="pt-8 border-t border-navy/5 dark:border-white/10">
               <a
                 href="#contact"
                 onClick={(e) => {
@@ -801,7 +801,7 @@ export default function Home() {
           ].map((badge, idx) => (
             <div
               key={idx}
-              className="flex items-center gap-4 p-5 rounded-2xl bg-white border border-[#E2E8F0] shadow-[0_2px_8px_rgba(0,0,0,0.02)] hover:shadow-[0_12px_24px_-10px_rgba(0,0,0,0.05)] transition-all group"
+              className="flex items-center gap-4 p-5 rounded-2xl bg-white dark:bg-white/5 border border-[#E2E8F0] dark:border-white/10 shadow-[0_2px_8px_rgba(0,0,0,0.02)] hover:shadow-[0_12px_24px_-10px_rgba(0,0,0,0.05)] transition-all group"
             >
               <div 
                 className="w-12 h-12 rounded-xl flex items-center justify-center shrink-0 transition-transform group-hover:scale-110"
@@ -810,8 +810,8 @@ export default function Home() {
                 <badge.icon size={22} className={badge.icon === Star ? "fill-current" : ""} />
               </div>
               <div>
-                <div className="font-bold text-[#0F172A] text-sm leading-tight font-sans">{badge.label}</div>
-                <p className="text-[11px] text-[#71717a] font-medium mt-0.5">{badge.sub}</p>
+                <div className="font-bold text-[#0F172A] dark:text-white text-sm leading-tight font-sans">{badge.label}</div>
+                <p className="text-[11px] text-[#71717a] dark:text-white/60 font-medium mt-0.5">{badge.sub}</p>
               </div>
             </div>
           ))}
@@ -836,7 +836,7 @@ export default function Home() {
               Is your Shopify store <br />
               <span className="text-[#8B5CF6] underline decoration-[#8B5CF6]/20 underline-offset-8 italic font-serif font-light">working for you?</span>
             </h2>
-            <p className="text-[#71717a] text-lg sm:text-xl font-serif italic max-w-2xl mx-auto leading-relaxed">
+            <p className="text-[#71717a] dark:text-white/70 text-lg sm:text-xl font-serif italic max-w-2xl mx-auto leading-relaxed">
               Most Shopify stores fail not because the product is bad, but because the technical and user-experience foundation is weak.
             </p>
           </div>
@@ -879,7 +879,7 @@ export default function Home() {
               <div 
                 key={i} 
                 
-                className="p-8 sm:p-10 bg-white rounded-3xl border border-[#E2E8F0] shadow-[0_2px_12px_rgba(0,0,0,0.01)] hover:shadow-[0_20px_40px_-15px_rgba(9,9,11,0.08)] transition-all space-y-6 relative overflow-hidden"
+                className="p-8 sm:p-10 bg-white dark:bg-white/5 rounded-3xl border border-[#E2E8F0] dark:border-white/10 shadow-[0_2px_12px_rgba(0,0,0,0.01)] hover:shadow-[0_20px_40px_-15px_rgba(9,9,11,0.08)] transition-all space-y-6 relative overflow-hidden"
               >
                 <div className="flex items-start justify-between gap-4">
                   <div 
@@ -889,13 +889,13 @@ export default function Home() {
                     <point.icon size={26} />
                   </div>
                   <div className="text-right">
-                    <div className="text-sm font-bold text-[#0F172A] font-mono">{point.stat}</div>
-                    <div className="text-[10px] text-[#71717a] font-medium uppercase tracking-wider mt-0.5">{point.statLabel}</div>
+                    <div className="text-sm font-bold text-[#0F172A] dark:text-white font-mono">{point.stat}</div>
+                    <div className="text-[10px] text-[#71717a] dark:text-white/60 font-medium uppercase tracking-wider mt-0.5">{point.statLabel}</div>
                   </div>
                 </div>
                 <div className="space-y-3">
                   <h3 className="text-2xl font-bold text-[#0F172A] dark:text-white tracking-tight">{point.title}</h3>
-                  <p className="text-[#71717a] text-sm leading-relaxed">{point.desc}</p>
+                  <p className="text-[#71717a] dark:text-white/70 text-sm leading-relaxed">{point.desc}</p>
                 </div>
               </div>
             ))}
@@ -918,7 +918,7 @@ export default function Home() {
               </p>
             </div>
 
-            <div className="bg-light p-8 md:p-12 rounded-3xl shadow-xl border border-navy/5 relative overflow-hidden">
+            <div className="bg-light dark:bg-white/5 p-8 md:p-12 rounded-3xl shadow-xl border border-navy/5 dark:border-white/10 relative overflow-hidden">
               {/* Top Wall 3-Color Gradient Separator */}
               <div className="absolute top-0 left-0 right-0 h-[3px] bg-gradient-to-r from-[#FF6B4A] via-[#D946EF] to-[#6D28D9]" />
               {!planRequested ? (
@@ -930,17 +930,17 @@ export default function Home() {
                         type="text" name="name" 
                         required
                         placeholder="John Doe" 
-                        className="w-full bg-white border-2 border-navy/5 rounded-full py-4 px-6 focus:border-[#8B5CF6] outline-none transition-all"
+                        className="w-full bg-white dark:bg-white/10 border-2 border-navy/5 dark:border-white/10 rounded-full py-4 px-6 focus:border-[#8B5CF6] outline-none transition-all text-navy dark:text-white placeholder:text-navy/40 dark:placeholder:text-white/40"
                       />
                     </div>
                     <div className="space-y-2">
                       <label className="text-sm font-bold text-navy dark:text-white ml-4">Email Address *</label>
                       <input 
                         type="email" 
-                        name="email"
+                        name="email" 
                         required
                         placeholder="john@example.com" 
-                        className={`w-full bg-white border-2 ${emailErrorPlan ? 'border-red-500' : 'border-navy/5'} rounded-full py-4 px-6 focus:border-[#8B5CF6] outline-none transition-all`}
+                        className={`w-full bg-white dark:bg-white/10 border-2 ${emailErrorPlan ? 'border-red-500' : 'border-navy/5 dark:border-white/10'} rounded-full py-4 px-6 focus:border-[#8B5CF6] outline-none transition-all text-navy dark:text-white placeholder:text-navy/40 dark:placeholder:text-white/40`}
                       />
                       {emailErrorPlan && <p className="text-red-500 text-xs ml-4">{emailErrorPlan}</p>}
                     </div>
@@ -949,10 +949,10 @@ export default function Home() {
                     <label className="text-sm font-bold text-navy dark:text-white ml-4">Store URL *</label>
                     <input 
                       type="text" 
-                      name="store_url"
+                      name="store_url" 
                       required
                       placeholder="yourstore.com" 
-                      className="w-full bg-white border-2 border-navy/5 rounded-full py-4 px-6 focus:border-[#8B5CF6] outline-none transition-all"
+                      className="w-full bg-white dark:bg-white/10 border-2 border-navy/5 dark:border-white/10 rounded-full py-4 px-6 focus:border-[#8B5CF6] outline-none transition-all text-navy dark:text-white placeholder:text-navy/40 dark:placeholder:text-white/40"
                     />
                   </div>
                   <button 
@@ -1022,7 +1022,7 @@ export default function Home() {
 
         <div className="container mx-auto px-6 max-w-7xl">
           <div className="text-center max-w-3xl mx-auto mb-24 space-y-4">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#F4F4F5] border border-[#E2E8F0] text-xs font-semibold uppercase tracking-wider text-[#0F172A] mb-2">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#F4F4F5] dark:bg-white/10 border border-[#E2E8F0] dark:border-white/10 text-xs font-semibold uppercase tracking-wider text-[#0F172A] dark:text-white mb-2">
               The Comparison
             </div>
             <h2 className="text-5xl md:text-7xl font-bold text-navy dark:text-white tracking-tighter">
@@ -1467,7 +1467,7 @@ export default function Home() {
                   { icon: "gmail", label: "Email", value: "sheunhost@gmail.com" },
                 ].map((item, i) => (
                   <div key={i} className="flex flex-col sm:flex-row items-center sm:items-start gap-6 group text-center sm:text-left">
-                    <div className="w-14 h-14 bg-light rounded-2xl flex items-center justify-center text-navy dark:text-white group-hover:bg-[#6D28D9] group-hover:text-white transition-all shrink-0 overflow-hidden">
+                    <div className="w-14 h-14 bg-light dark:bg-white/10 rounded-2xl flex items-center justify-center text-navy dark:text-white group-hover:bg-[#6D28D9] group-hover:text-white transition-all shrink-0 overflow-hidden">
                       {item.icon === "whatsapp" ? (
                         <img src="https://cdn-icons-png.flaticon.com/512/3670/3670051.png" alt="WhatsApp" className="w-6 h-6 object-contain" />
                       ) : (
@@ -1482,14 +1482,14 @@ export default function Home() {
                 ))}
               </div>
 
-              <div className="p-10 bg-navy text-white rounded-2xl space-y-6 relative overflow-hidden shadow-2xl">
+              <div className="p-10 bg-navy text-white rounded-2xl space-y-6 relative overflow-hidden shadow-2xl border border-white/5">
                 <div className="absolute top-0 right-0 p-8 opacity-10">
                   <Zap size={100} className="text-[#8B5CF6]" />
                 </div>
                 <div className="relative z-10 space-y-4">
                   <h3 className="text-xl font-bold">Free Growth Plan</h3>
                   <p className="text-white/40 text-sm leading-relaxed">
-                    Not sure what your store needsWe'll provide a comprehensive review of your speed, design, and SEO — completely free.
+                    Not sure what your store needs? We'll provide a comprehensive review of your speed, design, and SEO — completely free.
                   </p>
                   <Link to="/contact#contact-form" className="inline-flex items-center gap-2 text-[#8B5CF6] font-bold text-sm border-b border-[#8B5CF6]/20 pb-1 hover:border-[#8B5CF6] transition-all">
                     Claim Your Growth Plan <ArrowRight size={16} />
@@ -1499,7 +1499,7 @@ export default function Home() {
             </div>
 
             <div className="lg:col-span-7">
-              <div className="bg-light p-10 md:p-16 rounded-3xl border border-navy/5 shadow-sm">
+              <div className="bg-light dark:bg-white/5 p-10 md:p-16 rounded-3xl border border-navy/5 dark:border-white/10 shadow-sm">
                 <AnimatePresence mode="wait">
                   {!isSuccess ? (
                     <motion.form 
@@ -1518,7 +1518,7 @@ export default function Home() {
                             type="text"
                             name="name"
                             placeholder="John Doe"
-                            className="w-full bg-white border-b-2 border-navy/5 rounded-3xl py-5 px-8 focus:border-[#8B5CF6] outline-none transition-all font-medium text-navy dark:text-white placeholder:text-navy dark:text-white/20"
+                            className="w-full bg-white dark:bg-white/10 border-b-2 border-navy/5 dark:border-white/10 rounded-3xl py-5 px-8 focus:border-[#8B5CF6] outline-none transition-all font-medium text-navy dark:text-white placeholder:text-navy/40 dark:placeholder:text-white/40"
                           />
                         </div>
                         <div className="space-y-3">
@@ -1528,7 +1528,7 @@ export default function Home() {
                             type="email"
                             name="email"
                             placeholder="john@example.com"
-                            className={`w-full bg-white border-b-2 ${emailErrorContact ? 'border-red-500' : 'border-navy/5'} rounded-3xl py-5 px-8 focus:border-[#8B5CF6] outline-none transition-all font-medium text-navy dark:text-white placeholder:text-navy dark:text-white/20`}
+                            className={`w-full bg-white dark:bg-white/10 border-b-2 ${emailErrorContact ? 'border-red-500' : 'border-navy/5 dark:border-white/10'} rounded-3xl py-5 px-8 focus:border-[#8B5CF6] outline-none transition-all font-medium text-navy dark:text-white placeholder:text-navy/40 dark:placeholder:text-white/40`}
                           />
                           {emailErrorContact && <p className="text-red-500 text-xs ml-4">{emailErrorContact}</p>}
                         </div>
@@ -1537,15 +1537,15 @@ export default function Home() {
                       <div className="space-y-3">
                         <label className="text-[10px] font-bold text-navy dark:text-white/40 uppercase tracking-widest ml-4">Project Type</label>
                         <div className="relative">
-                          <select name="project_type" className="w-full bg-white border-b-2 border-navy/5 rounded-3xl py-5 px-8 focus:border-[#8B5CF6] outline-none transition-all appearance-none font-medium text-navy dark:text-white">
-                            <option>New Store Build</option>
-                            <option>Dropshipping Store</option>
-                            <option>Shopify Migration Service</option>
-                            <option>Theme Redesign</option>
-                            <option>Bug Fix</option>
-                            <option>Free Growth Plan</option>
+                          <select name="project_type" className="w-full bg-white dark:bg-navy border-b-2 border-navy/5 dark:border-white/10 rounded-3xl py-5 px-8 focus:border-[#8B5CF6] outline-none transition-all appearance-none font-medium text-navy dark:text-white">
+                            <option className="bg-white dark:bg-navy text-navy dark:text-white">New Store Build</option>
+                            <option className="bg-white dark:bg-navy text-navy dark:text-white">Dropshipping Store</option>
+                            <option className="bg-white dark:bg-navy text-navy dark:text-white">Shopify Migration Service</option>
+                            <option className="bg-white dark:bg-navy text-navy dark:text-white">Theme Redesign</option>
+                            <option className="bg-white dark:bg-navy text-navy dark:text-white">Bug Fix</option>
+                            <option className="bg-white dark:bg-navy text-navy dark:text-white">Free Growth Plan</option>
                           </select>
-                          <ChevronDown className="absolute right-8 top-1/2 -translate-y-1/2 text-navy dark:text-white/20 pointer-events-none" size={20} />
+                          <ChevronDown className="absolute right-8 top-1/2 -translate-y-1/2 text-navy dark:text-white/40 pointer-events-none" size={20} />
                         </div>
                       </div>
 
@@ -1556,7 +1556,7 @@ export default function Home() {
                           name="message"
                           rows={5}
                           placeholder="Tell us about your project goals..."
-                          className="w-full bg-white border-b-2 border-navy/5 rounded-2xl py-6 px-8 focus:border-[#8B5CF6] outline-none transition-all resize-none font-medium text-navy dark:text-white placeholder:text-navy dark:text-white/20"
+                          className="w-full bg-white dark:bg-white/10 border-b-2 border-navy/5 dark:border-white/10 rounded-2xl py-6 px-8 focus:border-[#8B5CF6] outline-none transition-all resize-none font-medium text-navy dark:text-white placeholder:text-navy/40 dark:placeholder:text-white/40"
                         />
                       </div>
 
@@ -1607,9 +1607,9 @@ export default function Home() {
 
     {/* Newsletter Section */}
     <ScrollReveal>
-      <section className="py-24 bg-light relative overflow-hidden border-y border-navy/5">
+      <section className="py-24 bg-light dark:bg-navy relative overflow-hidden border-y border-navy/5 dark:border-white/10">
         <div className="container mx-auto px-6">
-          <div className="max-w-5xl mx-auto bg-white rounded-2xl p-10 md:p-16 shadow-xl border border-navy/5 flex flex-col md:flex-row items-center gap-12">
+          <div className="max-w-5xl mx-auto bg-white dark:bg-white/5 rounded-2xl p-10 md:p-16 shadow-xl border border-navy/5 dark:border-white/10 flex flex-col md:flex-row items-center gap-12">
             <div className="flex-1 space-y-6 text-center md:text-left">
               <div className="inline-flex items-center justify-center w-16 h-16 bg-[#6D28D9]/10 text-[#8B5CF6] rounded-2xl mb-2 overflow-hidden">
                 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Gmail_icon_%282020%29.svg/960px-Gmail_icon_%282020%29.svg.png?_=20221017173631" alt="Gmail" className="w-8 h-8 object-contain" />
@@ -1617,7 +1617,7 @@ export default function Home() {
               <h2 className="text-4xl md:text-5xl font-bold text-navy dark:text-white tracking-tight">
                 Join the <span className="italic font-serif font-light text-navy dark:text-white/40">Newsletter</span>
               </h2>
-              <p className="text-navy dark:text-white/60 text-lg">
+              <p className="text-navy/70 dark:text-white/70 text-lg">
                 Get weekly tips on Shopify growth, conversion rate optimization, and eCommerce strategies.
               </p>
             </div>
@@ -1634,16 +1634,16 @@ export default function Home() {
                   >
                     <input 
                       type="email" 
-                      name="email"
+                      name="email" 
                       required
                       placeholder="Enter your email address" 
-                      className={`w-full bg-light border-2 ${emailErrorSubscribe ? 'border-red-500' : 'border-navy/5'} rounded-full py-6 pl-8 pr-8 sm:pr-40 focus:border-[#8B5CF6] outline-none transition-all font-medium text-navy dark:text-white placeholder:text-navy dark:text-white/20`}
+                      className={`w-full bg-light dark:bg-white/10 border-2 ${emailErrorSubscribe ? 'border-red-500' : 'border-navy/5 dark:border-white/10'} rounded-full py-6 pl-8 pr-8 sm:pr-40 focus:border-[#8B5CF6] outline-none transition-all font-medium text-navy dark:text-white placeholder:text-navy/40 dark:placeholder:text-white/40`}
                     />
                     {emailErrorSubscribe && <p className="absolute -bottom-6 left-8 text-red-500 text-xs">{emailErrorSubscribe}</p>}
                     <button 
                       type="submit"
                       disabled={isSubscribing}
-                      className="w-full sm:w-auto sm:absolute sm:right-3 bg-navy text-white px-8 py-4 sm:py-4 rounded-full font-bold hover:bg-[#6D28D9] hover:text-white transition-colors disabled:opacity-50 min-h-[60px]"
+                      className="w-full sm:w-auto sm:absolute sm:right-3 bg-navy dark:bg-[#6D28D9] text-white px-8 py-4 sm:py-4 rounded-full font-bold hover:bg-[#6D28D9] dark:hover:bg-[#8B5CF6] hover:text-white transition-colors disabled:opacity-50 min-h-[60px]"
                     >
                       {isSubscribing ? (
                         <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin mx-auto" />

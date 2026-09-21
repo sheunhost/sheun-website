@@ -132,7 +132,7 @@ function Layout() {
   const isAutomation = location.pathname.startsWith('/automation');
 
   return (
-    <div className="min-h-screen flex flex-col bg-white text-[#0F172A]">
+    <div className="min-h-screen flex flex-col bg-white dark:bg-navy text-[#0F172A] dark:text-white transition-colors duration-300">
       {isAutomation ? <AutomationNavbar /> : <Navbar />}
       <main className="flex-grow">
         <AnimatedRoutes />

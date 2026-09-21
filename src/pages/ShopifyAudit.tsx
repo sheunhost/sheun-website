@@ -76,7 +76,7 @@ export default function ShopifyAudit() {
       canonical="/shopify-store-audit"
     >
       {/* Hero Section */}
-      <section className="pt-32 pb-20 bg-white relative overflow-hidden">
+      <section className="pt-32 pb-20 bg-white dark:bg-navy relative overflow-hidden">
         {/* Top Wall 3-Color Gradient Separator */}
         <div className="absolute top-0 left-0 right-0 h-[3px] bg-gradient-to-r from-[#FF6B4A] via-[#D946EF] to-[#6D28D9] z-20" />
 
@@ -89,7 +89,7 @@ export default function ShopifyAudit() {
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-[#FF6B4A]/10 via-[#D946EF]/10 to-[#6D28D9]/10 text-navy text-sm mb-8 font-medium border border-[#D946EF]/30 shadow-sm"
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-[#FF6B4A]/10 via-[#D946EF]/10 to-[#6D28D9]/10 text-navy dark:text-white text-sm mb-8 font-medium border border-[#D946EF]/30 shadow-sm"
             >
               <ShieldCheck size={16} className="text-[#FF6B4A]" />
               <span className="text-[#D946EF] font-bold">Practitioner-Written Audit • 48-Hour Delivery</span>
@@ -99,7 +99,7 @@ export default function ShopifyAudit() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.1 }}
-              className="text-5xl md:text-7xl font-bold text-navy mb-8 leading-tight tracking-tight"
+              className="text-5xl md:text-7xl font-bold text-navy dark:text-white mb-8 leading-tight tracking-tight"
             >
               Shopify Store Audit — <br />
               <span className="italic font-serif font-light text-transparent bg-clip-text bg-gradient-to-r from-[#FF6B4A] via-[#D946EF] to-[#8B5CF6]">Know Exactly</span> What Is Hurting Your Sales.
@@ -109,7 +109,7 @@ export default function ShopifyAudit() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 }}
-              className="text-xl text-navy/60 mb-10 max-w-2xl mx-auto leading-relaxed"
+              className="text-xl text-navy/60 dark:text-white/70 mb-10 max-w-2xl mx-auto leading-relaxed"
             >
               Stop guessing why your traffic isn't converting. Get a high-impact, no-fluff teardown of your store's UX, SEO, and conversion leaks for a flat fee of $197.
             </motion.p>
@@ -127,17 +127,17 @@ export default function ShopifyAudit() {
                 Get My Audit for $197
                 <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
               </a>
-              <p className="text-sm text-navy/40 font-medium">Limited slots available weekly</p>
+              <p className="text-sm text-navy/40 dark:text-white/50 font-medium">Limited slots available weekly</p>
             </motion.div>
           </div>
         </div>
       </section>
 
       {/* Who It's For */}
-      <section className="py-24 bg-offwhite border-y border-navy/5">
+      <section className="py-24 bg-offwhite dark:bg-navy/80 border-y border-navy/5 dark:border-white/10">
         <div className="container mx-auto px-6 max-w-6xl">
           <div className="text-center mb-16">
-            <h2 className="text-3xl font-bold text-navy mb-4">Is your store in one of these positions?</h2>
+            <h2 className="text-3xl font-bold text-navy dark:text-white mb-4">Is your store in one of these positions?</h2>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -158,15 +158,15 @@ export default function ShopifyAudit() {
                 color: "#6D28D9"
               }
             ].map((item, i) => (
-              <div key={i} className="bg-white p-8 rounded-3xl border border-navy/5 shadow-sm relative overflow-hidden">
+              <div key={i} className="bg-white dark:bg-white/5 p-8 rounded-3xl border border-navy/5 dark:border-white/10 shadow-sm relative overflow-hidden">
                 <div 
                   className="w-10 h-10 rounded-full flex items-center justify-center mb-6"
                   style={{ backgroundColor: `${item.color}15`, color: item.color }}
                 >
                   <CheckCircle2 size={24} />
                 </div>
-                <h3 className="text-xl font-bold text-navy mb-4">{item.title}</h3>
-                <p className="text-navy/60 leading-relaxed">{item.desc}</p>
+                <h3 className="text-xl font-bold text-navy dark:text-white mb-4">{item.title}</h3>
+                <p className="text-navy/60 dark:text-white/70 leading-relaxed">{item.desc}</p>
               </div>
             ))}
           </div>
@@ -174,21 +174,21 @@ export default function ShopifyAudit() {
       </section>
 
       {/* What's Included */}
-      <section className="py-24 bg-white">
+      <section className="py-24 bg-white dark:bg-navy">
         <div className="container mx-auto px-6 max-w-6xl">
           <div className="max-w-3xl mb-16">
-            <h2 className="text-4xl font-bold text-navy mb-6">A Deep Dive Into Every Money-Making Variable.</h2>
-            <p className="text-lg text-navy/60">This isn't an automated report from a free tool. It's a manual, expert review of the 6 core pillars of your store.</p>
+            <h2 className="text-4xl font-bold text-navy dark:text-white mb-6">A Deep Dive Into Every Money-Making Variable.</h2>
+            <p className="text-lg text-navy/60 dark:text-white/70">This isn't an automated report from a free tool. It's a manual, expert review of the 6 core pillars of your store.</p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
             {auditSections.map((section, i) => (
               <div key={i} className="group">
-                <div className="w-12 h-12 rounded-2xl bg-navy/5 flex items-center justify-center text-navy mb-6 group-hover:bg-[#6D28D9] group-hover:text-white transition-colors duration-300">
+                <div className="w-12 h-12 rounded-2xl bg-navy/5 dark:bg-white/10 flex items-center justify-center text-navy dark:text-white mb-6 group-hover:bg-[#6D28D9] group-hover:text-white transition-colors duration-300">
                   <section.icon size={24} />
                 </div>
-                <h3 className="text-xl font-bold text-navy mb-3">{section.title}</h3>
-                <p className="text-navy/60 leading-relaxed text-sm">{section.desc}</p>
+                <h3 className="text-xl font-bold text-navy dark:text-white mb-3">{section.title}</h3>
+                <p className="text-navy/60 dark:text-white/70 leading-relaxed text-sm">{section.desc}</p>
               </div>
             ))}
           </div>
@@ -255,24 +255,24 @@ export default function ShopifyAudit() {
       </section>
 
       {/* FAQ */}
-      <section className="py-24 bg-white">
+      <section className="py-24 bg-white dark:bg-navy">
         <div className="container mx-auto px-6 max-w-3xl">
           <div className="text-center mb-16">
-            <h2 className="text-3xl font-bold text-navy">Questions? I have answers.</h2>
+            <h2 className="text-3xl font-bold text-navy dark:text-white">Questions? I have answers.</h2>
           </div>
 
           <div className="space-y-4">
             {faqs.map((faq, i) => (
-              <div key={i} className="border-b border-navy/10">
+              <div key={i} className="border-b border-navy/10 dark:border-white/10">
                 <button
                   onClick={() => setOpenFaq(openFaq === i ? null : i)}
                   className="w-full py-6 flex items-center justify-between text-left group cursor-pointer"
                 >
-                  <span className="text-lg font-bold text-navy group-hover:text-[#D946EF] transition-colors">{faq.q}</span>
-                  <ChevronDown className={`text-navy/20 transition-transform ${openFaq === i ? 'rotate-180 text-[#D946EF]' : ''}`} />
+                  <span className="text-lg font-bold text-navy dark:text-white group-hover:text-[#D946EF] transition-colors">{faq.q}</span>
+                  <ChevronDown className={`text-navy/20 dark:text-white/40 transition-transform ${openFaq === i ? 'rotate-180 text-[#D946EF]' : ''}`} />
                 </button>
                 <div className={`overflow-hidden transition-all duration-300 ${openFaq === i ? 'max-h-96 pb-6' : 'max-h-0'}`}>
-                  <p className="text-navy/60 leading-relaxed">{faq.a}</p>
+                  <p className="text-navy/60 dark:text-white/70 leading-relaxed">{faq.a}</p>
                 </div>
               </div>
             ))}
@@ -281,16 +281,16 @@ export default function ShopifyAudit() {
       </section>
 
       {/* Final CTA */}
-      <section id="book" className="py-24 bg-offwhite">
+      <section id="book" className="py-24 bg-offwhite dark:bg-navy/80">
         <div className="container mx-auto px-6 max-w-4xl">
-          <div className="bg-white p-12 md:p-20 rounded-[4rem] border border-navy/5 shadow-2xl text-center relative overflow-hidden">
+          <div className="bg-white dark:bg-white/5 p-12 md:p-20 rounded-[4rem] border border-navy/5 dark:border-white/10 shadow-2xl text-center relative overflow-hidden">
             {/* Pool Wall Top Rim */}
             <div className="absolute top-0 left-0 right-0 h-[3px] bg-gradient-to-r from-[#FF6B4A] via-[#D946EF] to-[#6D28D9]" />
             <div className="absolute top-0 right-0 w-48 h-48 bg-[#D946EF]/10 rounded-full blur-3xl pointer-events-none"></div>
 
             <div className="relative z-10">
-              <h2 className="text-4xl md:text-6xl font-bold text-navy mb-6 tracking-tight">Ready to fix your sales?</h2>
-              <p className="text-xl text-navy/60 mb-10">Book your Shopify Store Audit today for a one-time flat fee of $197.</p>
+              <h2 className="text-4xl md:text-6xl font-bold text-navy dark:text-white mb-6 tracking-tight">Ready to fix your sales?</h2>
+              <p className="text-xl text-navy/60 dark:text-white/70 mb-10">Book your Shopify Store Audit today for a one-time flat fee of $197.</p>
               
               <div className="flex flex-col items-center gap-6">
                 <a
@@ -299,7 +299,7 @@ export default function ShopifyAudit() {
                 >
                   Book My Audit Now — $197
                 </a>
-                <div className="flex items-center gap-2 text-navy/40 text-sm font-medium">
+                <div className="flex items-center gap-2 text-navy/40 dark:text-white/50 text-sm font-medium">
                   <Clock size={16} />
                   <span>Next delivery window: Within 48 Hours</span>
                 </div>

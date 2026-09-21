@@ -149,7 +149,7 @@ export default function Portfolio() {
       }}
     >
       {/* Portfolio Hero - Premium High-Impact Grid */}
-        <section className="relative pt-32 pb-24 md:pt-40 md:pb-32 bg-[#FFFFFF] overflow-hidden border-b border-[#E2E8F0] dark:border-white/10">
+        <section className="relative pt-32 pb-24 md:pt-40 md:pb-32 bg-[#FFFFFF] dark:bg-navy overflow-hidden border-b border-[#E2E8F0] dark:border-white/10">
           {/* Subtle Background Gradients & Glows */}
           <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-[#10b981]/5 rounded-full blur-[140px] pointer-events-none -z-10 animate-pulse"></div>
           <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-[#2563EB]/5 rounded-full blur-[140px] pointer-events-none -z-10"></div>
@@ -166,7 +166,7 @@ export default function Portfolio() {
                 Proven E-Commerce <span className="text-[#10b981] underline decoration-[#10b981]/20 underline-offset-8">Designs</span> & Builds.
               </h1>
 
-              <p className="text-[#475569] text-lg sm:text-xl leading-relaxed max-w-2xl font-sans">
+              <p className="text-[#475569] dark:text-white/70 text-lg sm:text-xl leading-relaxed max-w-2xl font-sans">
                 Explore custom Shopify theme designs, WooCommerce migration layouts, custom page template solutions, and high-performance product displays crafted by Sheun Hub.
               </p>
 
@@ -176,12 +176,12 @@ export default function Portfolio() {
                   <span className="text-xl">🛍️</span>
                   <span className="text-xs uppercase tracking-wider">10+ Projects</span>
                 </div>
-                <div className="w-px h-8 bg-[#E2E8F0] hidden sm:block" />
+                <div className="w-px h-8 bg-[#E2E8F0] dark:bg-white/10 hidden sm:block" />
                 <div className="flex items-center gap-3 text-[#0F172A] dark:text-white font-bold">
                   <span className="text-xl">👗</span>
                   <span className="text-xs uppercase tracking-wider">4 Niches</span>
                 </div>
-                <div className="w-px h-8 bg-[#E2E8F0] hidden sm:block" />
+                <div className="w-px h-8 bg-[#E2E8F0] dark:bg-white/10 hidden sm:block" />
                 <div className="flex items-center gap-3 text-[#0F172A] dark:text-white font-bold">
                   <span className="text-xl">⭐</span>
                   <span className="text-xs uppercase tracking-wider">5-Star Rated</span>
@@ -193,7 +193,7 @@ export default function Portfolio() {
 
     {/* Portfolio Gallery */}
     <ScrollReveal>
-      <section className="py-24 bg-[#F8FAFC] dark:bg-white/5 min-h-screen border-b border-[#E2E8F0] dark:border-white/10">
+      <section className="py-24 bg-[#F8FAFC] dark:bg-navy min-h-screen border-b border-[#E2E8F0] dark:border-white/10">
         <div className="container mx-auto px-6 max-w-7xl">
           
           {/* Category Filters */}
@@ -205,7 +205,7 @@ export default function Portfolio() {
                 className={`px-5 py-2.5 rounded-full text-xs font-bold transition-all border shadow-sm ${
                   activeCategory === cat
                     ? "bg-[#10b981] text-[#0F172A] dark:text-white border-[#10b981]"
-                    : "bg-white dark:bg-navy text-[#71717a] dark:text-white/70 border-[#E2E8F0] dark:border-white/10 hover:bg-[#F4F4F5] dark:bg-white/10 hover:text-[#0F172A] dark:text-white"
+                    : "bg-white dark:bg-white/5 text-[#71717a] dark:text-white/70 border-[#E2E8F0] dark:border-white/10 hover:bg-[#F4F4F5] dark:hover:bg-white/10 hover:text-[#0F172A] dark:hover:text-white"
                 }`}
               >
                 {cat}
@@ -217,7 +217,7 @@ export default function Portfolio() {
             {filteredProjects.filter(p => p.image && p.image.trim() !== "").map((project, i) => (
               <div 
                 key={`gallery-${i}`} 
-                className="relative rounded-3xl overflow-hidden cursor-pointer group hover:shadow-2xl transition-all border border-[#E2E8F0] dark:border-white/10 bg-white dark:bg-navy p-4"
+                className="relative rounded-3xl overflow-hidden cursor-pointer group hover:shadow-2xl transition-all border border-[#E2E8F0] dark:border-white/10 bg-white dark:bg-white/5 p-4"
                 onClick={() => {
                   setFullScreenIndex(projects.findIndex(p => p.id === project.id));
                 }}
@@ -284,9 +284,9 @@ export default function Portfolio() {
 
     {/* Portfolio SEO Content */}
     <ScrollReveal>
-      <section className="py-24 bg-light dark:bg-white/5 border-t border-navy/5 dark:border-white/5">
+      <section className="py-24 bg-light dark:bg-navy border-t border-navy/5 dark:border-white/5">
         <div className="container mx-auto px-6">
-          <div className="max-w-4xl mx-auto prose prose-lg prose-headings:text-navy dark:text-white prose-a:text-green text-navy/70 dark:text-white/70 leading-relaxed">
+          <div className="max-w-4xl mx-auto prose prose-lg prose-headings:text-navy dark:prose-headings:text-white prose-a:text-green text-navy/70 dark:text-white/70 leading-relaxed">
             <h2 className="text-3xl md:text-4xl font-bold font-sans not-italic mb-6 tracking-tight">Showcase of High-Converting Custom Shopify Stores</h2>
             <p className="mb-6 font-serif italic text-xl">
               Welcome to our portfolio, a curated gallery of high-performing e-commerce stores designed, developed, and optimized entirely by Sheun Hub. As a seasoned Shopify Partner, our focus isn’t just on making websites that look pretty—we build custom Shopify stores engineered specifically to convert traffic into loyal, paying customers.
@@ -375,7 +375,7 @@ export default function Portfolio() {
                     </p>
                   )}
                   
-                  <p className="text-[#475569] leading-relaxed text-base">
+                  <p className="text-[#475569] dark:text-white/70 leading-relaxed text-base">
                     {selectedProject.desc}
                   </p>
                 </div>
@@ -393,7 +393,7 @@ export default function Portfolio() {
                   ) : (
                     <Link 
                       to={`/contact?concept=${encodeURIComponent(selectedProject.name)}#contact-form`} 
-                      className="inline-flex items-center justify-center flex-grow gap-2 bg-[#09090b] text-white px-6 py-3.5 rounded-2xl font-bold text-sm hover:bg-[#10b981] hover:text-[#09090b] transition-colors"
+                      className="inline-flex items-center justify-center flex-grow gap-2 bg-[#09090b] dark:bg-white/15 text-white px-6 py-3.5 rounded-2xl font-bold text-sm hover:bg-[#10b981] dark:hover:bg-[#10b981] hover:text-[#09090b] dark:hover:text-[#09090b] transition-colors"
                     >
                       Get Custom Project Roadmap <ArrowRight size={16} />
                     </Link>
@@ -404,7 +404,7 @@ export default function Portfolio() {
                       const idx = projects.findIndex(p => p.id === selectedProject.id);
                       setFullScreenIndex(idx !== -1 ? idx : null);
                     }}
-                    className="inline-flex items-center justify-center flex-grow gap-2 bg-[#F4F4F5] dark:bg-white/10 text-[#0F172A] dark:text-white px-6 py-3.5 rounded-2xl font-bold text-sm hover:bg-[#E2E8F0] transition-colors"
+                    className="inline-flex items-center justify-center flex-grow gap-2 bg-[#F4F4F5] dark:bg-white/10 text-[#0F172A] dark:text-white px-6 py-3.5 rounded-2xl font-bold text-sm hover:bg-[#E2E8F0] dark:hover:bg-white/20 transition-colors"
                   >
                     View Full Design <Globe size={16} />
                   </button>

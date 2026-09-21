@@ -278,7 +278,7 @@ export default function ShopifySeoSprint() {
       schema={[serviceSchema, faqSchema]}
     >
       {/* SECTION 1: HERO */}
-      <section className="relative pt-32 pb-24 md:pt-40 md:pb-32 bg-[#FFFFFF] overflow-hidden border-b border-[#E2E8F0]">
+      <section className="relative pt-32 pb-24 md:pt-40 md:pb-32 bg-[#FFFFFF] dark:bg-navy overflow-hidden border-b border-[#E2E8F0] dark:border-white/10">
         {/* Top Wall 3-Color Gradient Separator */}
         <div className="absolute top-0 left-0 right-0 h-[3px] bg-gradient-to-r from-[#FF6B4A] via-[#D946EF] to-[#6D28D9] z-20" />
 
@@ -299,17 +299,17 @@ export default function ShopifySeoSprint() {
             >
               <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-[#FF6B4A]/10 via-[#D946EF]/10 to-[#6D28D9]/10 border border-[#D946EF]/30 shadow-sm">
                 <span className="flex h-2 w-2 rounded-full bg-[#FF6B4A] animate-ping"></span>
-                <span className="text-xs font-semibold uppercase tracking-widest text-[#0F172A]">
+                <span className="text-xs font-semibold uppercase tracking-widest text-[#0F172A] dark:text-white">
                   Limited to 5 Shopify Brands Per Week
                 </span>
               </div>
 
-              <h1 className="text-4xl sm:text-6xl lg:text-7xl font-bold text-[#0F172A] tracking-tight leading-[1.08] font-sans">
+              <h1 className="text-4xl sm:text-6xl lg:text-7xl font-bold text-[#0F172A] dark:text-white tracking-tight leading-[1.08] font-sans">
                 Increase Your Shopify <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FF6B4A] via-[#D946EF] to-[#8B5CF6] underline decoration-[#D946EF]/30 underline-offset-8">Organic Traffic</span> Without Paying for Ads.
               </h1>
 
-              <p className="text-lg sm:text-xl text-[#475569] leading-relaxed max-w-2xl mx-auto lg:mx-0">
-                The done-for-you <strong className="text-[#0F172A]">48-Hour Shopify SEO Sprint</strong> engineered specifically for ambitious 6- and 7-figure eCommerce stores ready to eliminate technical crawl traps, outrank competitors on Google, and turn organic impressions into high-margin revenue.
+              <p className="text-lg sm:text-xl text-[#475569] dark:text-white/70 leading-relaxed max-w-2xl mx-auto lg:mx-0">
+                The done-for-you <strong className="text-[#0F172A] dark:text-white">48-Hour Shopify SEO Sprint</strong> engineered specifically for ambitious 6- and 7-figure eCommerce stores ready to eliminate technical crawl traps, outrank competitors on Google, and turn organic impressions into high-margin revenue.
               </p>
 
               {/* Conversion Buttons */}
@@ -324,14 +324,14 @@ export default function ShopifySeoSprint() {
 
                 <a
                   href="#included"
-                  className="w-full sm:w-auto px-8 py-5 rounded-2xl bg-[#F8FAFC] text-[#0F172A] border border-[#E2E8F0] font-semibold text-lg hover:bg-[#E2E8F0]/50 transition-all flex items-center justify-center"
+                  className="w-full sm:w-auto px-8 py-5 rounded-2xl bg-[#F8FAFC] dark:bg-white/10 text-[#0F172A] dark:text-white border border-[#E2E8F0] dark:border-white/10 font-semibold text-lg hover:bg-[#E2E8F0]/50 dark:hover:bg-white/20 transition-all flex items-center justify-center"
                 >
                   See What's Included ($250)
                 </a>
               </div>
 
               {/* Trust Micro-Copy */}
-              <div className="pt-4 flex items-center justify-center lg:justify-start gap-6 text-sm text-[#475569]">
+              <div className="pt-4 flex items-center justify-center lg:justify-start gap-6 text-sm text-[#475569] dark:text-white/60">
                 <div className="flex items-center gap-2">
                   <ShieldCheck size={18} className="text-[#FF6B4A]" />
                   <span>100% Money-Back Guarantee</span>
@@ -436,13 +436,13 @@ export default function ShopifySeoSprint() {
                 <motion.div
                   animate={{ y: [0, -10, 0] }}
                   transition={{ repeat: Infinity, duration: 4, ease: "easeInOut" }}
-                  className="absolute -bottom-6 -left-6 bg-[#FFFFFF] p-4 rounded-2xl shadow-2xl border border-[#E2E8F0] hidden sm:flex items-center gap-4 z-20 max-w-xs"
+                  className="absolute -bottom-6 -left-6 bg-[#FFFFFF] dark:bg-navy-light p-4 rounded-2xl shadow-2xl border border-[#E2E8F0] dark:border-white/10 hidden sm:flex items-center gap-4 z-20 max-w-xs"
                 >
                   <div className="w-10 h-10 rounded-xl bg-[#FF6B4A]/10 flex items-center justify-center text-[#FF6B4A]">
                     <TrendingUp size={20} />
                   </div>
                   <div>
-                    <div className="text-xs font-semibold text-[#0F172A]">Revenue Unlocked</div>
+                    <div className="text-xs font-semibold text-[#0F172A] dark:text-white">Revenue Unlocked</div>
                     <div className="text-sm font-bold text-[#FF6B4A]">+$14,250/mo Organic</div>
                   </div>
                 </motion.div>
@@ -451,12 +451,12 @@ export default function ShopifySeoSprint() {
                 <motion.div
                   animate={{ y: [0, 10, 0] }}
                   transition={{ repeat: Infinity, duration: 5, ease: "easeInOut" }}
-                  className="absolute -top-6 -right-6 bg-[#FFFFFF] p-4 rounded-2xl shadow-2xl border border-[#E2E8F0] hidden sm:flex items-center gap-3 z-20"
+                  className="absolute -top-6 -right-6 bg-[#FFFFFF] dark:bg-navy-light p-4 rounded-2xl shadow-2xl border border-[#E2E8F0] dark:border-white/10 hidden sm:flex items-center gap-3 z-20"
                 >
                   <CheckCircle2 size={24} className="text-[#D946EF]" />
                   <div>
-                    <div className="text-xs font-bold text-[#0F172A]">XML Sitemap Resubmitted</div>
-                    <div className="text-[10px] text-[#475569]">Indexed in 48 Hours</div>
+                    <div className="text-xs font-bold text-[#0F172A] dark:text-white">XML Sitemap Resubmitted</div>
+                    <div className="text-[10px] text-[#475569] dark:text-white/60">Indexed in 48 Hours</div>
                   </div>
                 </motion.div>
 
@@ -468,9 +468,9 @@ export default function ShopifySeoSprint() {
       </section>
 
       {/* SECTION 2: TRUSTED EXPERTISE */}
-      <section className="py-12 bg-[#F8FAFC] border-b border-[#E2E8F0]">
+      <section className="py-12 bg-[#F8FAFC] dark:bg-navy border-b border-[#E2E8F0] dark:border-white/10">
         <div className="container mx-auto px-6 max-w-7xl">
-          <p className="text-center text-xs font-bold uppercase tracking-widest text-[#475569] mb-8">
+          <p className="text-center text-xs font-bold uppercase tracking-widest text-[#475569] dark:text-white/60 mb-8">
             World-Class Standards & Proven Shopify Ecosystem Mastery
           </p>
           
@@ -484,7 +484,7 @@ export default function ShopifySeoSprint() {
               <motion.div
                 key={idx}
                 whileHover={{ scale: 1.03 }}
-                className="flex items-center gap-4 p-5 rounded-2xl bg-[#FFFFFF] border border-[#E2E8F0] shadow-sm transition-all"
+                className="flex items-center gap-4 p-5 rounded-2xl bg-[#FFFFFF] dark:bg-white/5 border border-[#E2E8F0] dark:border-white/10 shadow-sm transition-all"
               >
                 <div 
                   className="w-12 h-12 rounded-xl flex items-center justify-center shrink-0"
@@ -493,8 +493,8 @@ export default function ShopifySeoSprint() {
                   <badge.icon size={24} />
                 </div>
                 <div>
-                  <h3 className="font-bold text-[#0F172A] text-sm leading-tight font-sans">{badge.label}</h3>
-                  <p className="text-xs text-[#475569] mt-0.5">{badge.sub}</p>
+                  <h3 className="font-bold text-[#0F172A] dark:text-white text-sm leading-tight font-sans">{badge.label}</h3>
+                  <p className="text-xs text-[#475569] dark:text-white/60 mt-0.5">{badge.sub}</p>
                 </div>
               </motion.div>
             ))}
@@ -503,14 +503,14 @@ export default function ShopifySeoSprint() {
       </section>
 
       {/* SECTION 3: THE PROBLEMS */}
-      <section className="py-24 bg-[#FFFFFF]">
+      <section className="py-24 bg-[#FFFFFF] dark:bg-navy">
         <div className="container mx-auto px-6 max-w-7xl">
           <div className="max-w-3xl mx-auto text-center mb-16 space-y-4">
             <h2 className="text-xs font-bold uppercase tracking-widest text-[#FF6B4A]">The Silent Store Killer</h2>
-            <h3 className="text-3xl sm:text-5xl font-bold text-[#0F172A] tracking-tight font-sans">
+            <h3 className="text-3xl sm:text-5xl font-bold text-[#0F172A] dark:text-white tracking-tight font-sans">
               Why Your Shopify Store Is Losing Sales Every Single Day
             </h3>
-            <p className="text-lg text-[#475569] leading-relaxed">
+            <p className="text-lg text-[#475569] dark:text-white/70 leading-relaxed">
               You invested thousands designing a gorgeous Shopify theme and sourcing winning products. Yet active searchers with credit cards in hand are buying from competitors.
             </p>
           </div>
@@ -524,23 +524,23 @@ export default function ShopifySeoSprint() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: idx * 0.15 }}
                 whileHover={{ y: -8, transition: { duration: 0.2 } }}
-                className="p-8 rounded-3xl bg-[#F8FAFC] border border-[#E2E8F0] shadow-sm hover:shadow-xl hover:border-[#D946EF]/40 transition-all flex flex-col justify-between group relative overflow-hidden"
+                className="p-8 rounded-3xl bg-[#F8FAFC] dark:bg-white/5 border border-[#E2E8F0] dark:border-white/10 shadow-sm hover:shadow-xl hover:border-[#D946EF]/40 transition-all flex flex-col justify-between group relative overflow-hidden"
               >
                 <div className="absolute top-0 right-0 w-32 h-32 bg-[#FF6B4A]/5 rounded-full blur-2xl group-hover:bg-[#D946EF]/10 transition-colors"></div>
                 
                 <div className="space-y-6 relative z-10">
-                  <div className="w-14 h-14 rounded-2xl bg-[#FFFFFF] border border-[#E2E8F0] shadow-md flex items-center justify-center text-[#0F172A] group-hover:bg-gradient-to-r group-hover:from-[#FF6B4A] group-hover:to-[#D946EF] group-hover:text-white transition-all duration-300">
+                  <div className="w-14 h-14 rounded-2xl bg-[#FFFFFF] dark:bg-white/10 border border-[#E2E8F0] dark:border-white/10 shadow-md flex items-center justify-center text-[#0F172A] dark:text-white group-hover:bg-gradient-to-r group-hover:from-[#FF6B4A] group-hover:to-[#D946EF] group-hover:text-white transition-all duration-300">
                     <card.icon size={28} />
                   </div>
 
-                  <h4 className="text-2xl font-bold text-[#0F172A] font-sans">{card.title}</h4>
+                  <h4 className="text-2xl font-bold text-[#0F172A] dark:text-white font-sans">{card.title}</h4>
                   
-                  <p className="text-[#475569] leading-relaxed text-base">{card.desc}</p>
+                  <p className="text-[#475569] dark:text-white/70 leading-relaxed text-base">{card.desc}</p>
                 </div>
 
-                <div className="pt-8 mt-8 border-t border-[#E2E8F0] flex items-baseline justify-between relative z-10">
-                  <span className="text-sm text-[#475569]">{card.statLabel}</span>
-                  <span className="text-lg font-bold text-[#0F172A] font-mono group-hover:text-[#FF6B4A] transition-colors">{card.stat}</span>
+                <div className="pt-8 mt-8 border-t border-[#E2E8F0] dark:border-white/10 flex items-baseline justify-between relative z-10">
+                  <span className="text-sm text-[#475569] dark:text-white/60">{card.statLabel}</span>
+                  <span className="text-lg font-bold text-[#0F172A] dark:text-white font-mono group-hover:text-[#FF6B4A] transition-colors">{card.stat}</span>
                 </div>
               </motion.div>
             ))}
@@ -549,14 +549,14 @@ export default function ShopifySeoSprint() {
       </section>
 
       {/* SECTION 4: WHY MOST SHOPIFY STORES DON'T RANK */}
-      <section className="py-24 bg-[#F8FAFC] border-y border-[#E2E8F0]">
+      <section className="py-24 bg-[#F8FAFC] dark:bg-navy border-y border-[#E2E8F0] dark:border-white/10">
         <div className="container mx-auto px-6 max-w-7xl">
           <div className="max-w-3xl mx-auto text-center mb-16 space-y-4">
             <h2 className="text-xs font-bold uppercase tracking-widest text-[#D946EF]">Platform Structural Roadblocks</h2>
-            <h3 className="text-3xl sm:text-5xl font-bold text-[#0F172A] tracking-tight font-sans">
+            <h3 className="text-3xl sm:text-5xl font-bold text-[#0F172A] dark:text-white tracking-tight font-sans">
               Why Most Shopify Stores Fail to Rank on Google
             </h3>
-            <p className="text-lg text-[#475569]">
+            <p className="text-lg text-[#475569] dark:text-white/70">
               Out of the box, Shopify introduces severe technical SEO vulnerabilities. If these structural flaws aren't repaired in your theme code, Google actively penalizes your rankings.
             </p>
           </div>
@@ -566,20 +566,20 @@ export default function ShopifySeoSprint() {
               <motion.div
                 key={idx}
                 whileHover={{ scale: 1.02 }}
-                className="p-8 rounded-3xl bg-[#FFFFFF] border border-[#E2E8F0] shadow-sm flex items-start gap-5 transition-all"
+                className="p-8 rounded-3xl bg-[#FFFFFF] dark:bg-white/5 border border-[#E2E8F0] dark:border-white/10 shadow-sm flex items-start gap-5 transition-all"
               >
-                <div className="p-3.5 rounded-2xl bg-[#F8FAFC] border border-[#E2E8F0] text-[#6D28D9] shrink-0 mt-1">
+                <div className="p-3.5 rounded-2xl bg-[#F8FAFC] dark:bg-white/10 border border-[#E2E8F0] dark:border-white/10 text-[#6D28D9] shrink-0 mt-1">
                   <flaw.icon size={24} />
                 </div>
                 <div className="space-y-2">
-                  <h4 className="text-lg font-bold text-[#0F172A] font-sans">{flaw.title}</h4>
-                  <p className="text-sm text-[#475569] leading-relaxed">{flaw.desc}</p>
+                  <h4 className="text-lg font-bold text-[#0F172A] dark:text-white font-sans">{flaw.title}</h4>
+                  <p className="text-sm text-[#475569] dark:text-white/70 leading-relaxed">{flaw.desc}</p>
                 </div>
               </motion.div>
             ))}
           </div>
 
-          <div className="mt-16 p-8 rounded-3xl bg-[#FFFFFF] border border-[#E2E8F0] max-w-4xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-6 shadow-md relative overflow-hidden">
+          <div className="mt-16 p-8 rounded-3xl bg-[#FFFFFF] dark:bg-white/5 border border-[#E2E8F0] dark:border-white/10 max-w-4xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-6 shadow-md relative overflow-hidden">
             {/* Subtle Pool Wall Top Rim */}
             <div className="absolute top-0 left-0 right-0 h-[3px] bg-gradient-to-r from-[#FF6B4A] via-[#D946EF] to-[#6D28D9]" />
 
@@ -588,8 +588,8 @@ export default function ShopifySeoSprint() {
                 <ShieldCheck size={28} />
               </div>
               <div>
-                <h4 className="font-bold text-[#0F172A] text-lg">I Fix Every Single One of These Flaws</h4>
-                <p className="text-sm text-[#475569]">Done-for-you technical implementation in 48 hours without disrupting your daily operations.</p>
+                <h4 className="font-bold text-[#0F172A] dark:text-white text-lg">I Fix Every Single One of These Flaws</h4>
+                <p className="text-sm text-[#475569] dark:text-white/70">Done-for-you technical implementation in 48 hours without disrupting your daily operations.</p>
               </div>
             </div>
             <a
@@ -603,7 +603,7 @@ export default function ShopifySeoSprint() {
       </section>
 
       {/* SECTION 5: MY SEO SPRINT INTRO */}
-      <section className="py-24 bg-[#FFFFFF]">
+      <section className="py-24 bg-[#FFFFFF] dark:bg-navy">
         <div className="container mx-auto px-6 max-w-7xl">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             
@@ -612,17 +612,17 @@ export default function ShopifySeoSprint() {
                 <Sparkles size={14} /> The Antidote to Slow SEO Agencies
               </div>
 
-              <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-[#0F172A] tracking-tight leading-tight font-sans">
+              <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-[#0F172A] dark:text-white tracking-tight leading-tight font-sans">
                 Introducing the <br />
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FF6B4A] via-[#D946EF] to-[#8B5CF6] inline-block mt-2">48-Hour Shopify SEO Sprint</span>
               </h2>
 
-              <p className="text-lg text-[#475569] leading-relaxed">
-                Traditional SEO agencies charge <strong className="text-[#0F172A]">$3,000/month for 6+ months</strong> just to write keyword-stuffed blog articles and send automated PDF reports you don't have time to read.
+              <p className="text-lg text-[#475569] dark:text-white/70 leading-relaxed">
+                Traditional SEO agencies charge <strong className="text-[#0F172A] dark:text-white">$3,000/month for 6+ months</strong> just to write keyword-stuffed blog articles and send automated PDF reports you don't have time to read.
               </p>
 
-              <p className="text-lg text-[#475569] leading-relaxed">
-                I eliminate the retainer bloat. In exactly <strong className="text-[#0F172A]">48 hours</strong>, I personally execute a complete foundational, technical, and structural SEO transformation directly in your store's codebase.
+              <p className="text-lg text-[#475569] dark:text-white/70 leading-relaxed">
+                I eliminate the retainer bloat. In exactly <strong className="text-[#0F172A] dark:text-white">48 hours</strong>, I personally execute a complete foundational, technical, and structural SEO transformation directly in your store's codebase.
               </p>
 
               <ul className="space-y-4 pt-2">
@@ -632,7 +632,7 @@ export default function ShopifySeoSprint() {
                   "100% focused on eCommerce transactional intent",
                   "Comprehensive Loom walkthrough explaining every change"
                 ].map((item, idx) => (
-                  <li key={idx} className="flex items-center gap-3 text-[#0F172A] font-medium text-base">
+                  <li key={idx} className="flex items-center gap-3 text-[#0F172A] dark:text-white font-medium text-base">
                     <div className="w-6 h-6 rounded-full bg-gradient-to-r from-[#FF6B4A] to-[#D946EF] text-white flex items-center justify-center shrink-0 shadow-sm">
                       <Check size={14} strokeWidth={3} />
                     </div>
@@ -644,20 +644,20 @@ export default function ShopifySeoSprint() {
 
             {/* Comparison Table Graphics */}
             <div className="lg:col-span-6">
-              <div className="rounded-3xl border border-[#E2E8F0] bg-[#F8FAFC] p-8 sm:p-10 shadow-xl space-y-8 relative overflow-hidden">
-                <h3 className="text-xl font-bold text-[#0F172A] text-center pb-6 border-b border-[#E2E8F0]">
+              <div className="rounded-3xl border border-[#E2E8F0] dark:border-white/10 bg-[#F8FAFC] dark:bg-white/5 p-8 sm:p-10 shadow-xl space-y-8 relative overflow-hidden">
+                <h3 className="text-xl font-bold text-[#0F172A] dark:text-white text-center pb-6 border-b border-[#E2E8F0] dark:border-white/10">
                   Old School Agency Retainer vs. <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FF6B4A] via-[#D946EF] to-[#6D28D9]">Sheun Hub Sprint</span>
                 </h3>
 
                 <div className="grid grid-cols-2 gap-6">
                   
                   {/* Agency Side */}
-                  <div className="p-6 rounded-2xl bg-white border border-red-200 space-y-4 opacity-75">
-                    <div className="text-xs font-bold uppercase text-red-600 tracking-wider">Traditional Agency</div>
-                    <div className="text-3xl font-bold text-[#0F172A] sm:text-4xl">$18,000+</div>
-                    <div className="text-xs text-[#475569]">$3,000/mo × 6 months minimum</div>
+                  <div className="p-6 rounded-2xl bg-white dark:bg-navy-light border border-red-200 dark:border-red-900/40 space-y-4 opacity-75">
+                    <div className="text-xs font-bold uppercase text-red-600 dark:text-red-400 tracking-wider">Traditional Agency</div>
+                    <div className="text-3xl font-bold text-[#0F172A] dark:text-white sm:text-4xl">$18,000+</div>
+                    <div className="text-xs text-[#475569] dark:text-white/60">$3,000/mo × 6 months minimum</div>
                     
-                    <ul className="space-y-2.5 pt-2 text-xs text-[#475569]">
+                    <ul className="space-y-2.5 pt-2 text-xs text-[#475569] dark:text-white/60">
                       <li className="flex items-center gap-2 text-red-500"><X size={14} /> Slow 6-month timeline</li>
                       <li className="flex items-center gap-2 text-red-500"><X size={14} /> Generic AI blog posts</li>
                       <li className="flex items-center gap-2 text-red-500"><X size={14} /> You have to hire devs to fix code</li>
@@ -692,17 +692,17 @@ export default function ShopifySeoSprint() {
       </section>
 
       {/* SECTION 6: EVERYTHING INCLUDED */}
-      <section id="included" className="py-24 bg-[#F8FAFC] border-t border-[#E2E8F0] relative">
+      <section id="included" className="py-24 bg-[#F8FAFC] dark:bg-navy border-t border-[#E2E8F0] dark:border-white/10 relative">
         {/* Top Wall 3-Color Gradient Separator */}
         <div className="absolute top-0 left-0 right-0 h-[3px] bg-gradient-to-r from-[#FF6B4A] via-[#D946EF] to-[#6D28D9]" />
 
         <div className="container mx-auto px-6 max-w-7xl">
           <div className="max-w-3xl mx-auto text-center mb-20 space-y-4">
             <h2 className="text-xs font-bold uppercase tracking-widest text-[#FF6B4A]">Complete Deliverables Grid</h2>
-            <h3 className="text-3xl sm:text-5xl font-bold text-[#0F172A] tracking-tight font-sans">
+            <h3 className="text-3xl sm:text-5xl font-bold text-[#0F172A] dark:text-white tracking-tight font-sans">
               Everything Included in Your $250 Sprint
             </h3>
-            <p className="text-lg text-[#475569]">
+            <p className="text-lg text-[#475569] dark:text-white/70">
               No guesswork. When you book your sprint, I execute all 12 of these core deliverables directly inside your Shopify store.
             </p>
           </div>
@@ -716,19 +716,19 @@ export default function ShopifySeoSprint() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: idx * 0.05 }}
                 whileHover={{ y: -6, transition: { duration: 0.2 } }}
-                className="p-8 rounded-3xl bg-[#FFFFFF] border border-[#E2E8F0] shadow-sm hover:shadow-xl hover:border-[#D946EF]/40 transition-all flex flex-col justify-between group"
+                className="p-8 rounded-3xl bg-[#FFFFFF] dark:bg-white/5 border border-[#E2E8F0] dark:border-white/10 shadow-sm hover:shadow-xl hover:border-[#D946EF]/40 transition-all flex flex-col justify-between group"
               >
                 <div className="space-y-4">
-                  <div className="w-12 h-12 rounded-2xl bg-[#F8FAFC] border border-[#E2E8F0] flex items-center justify-center text-[#D946EF] group-hover:bg-gradient-to-r group-hover:from-[#FF6B4A] group-hover:to-[#D946EF] group-hover:text-white transition-all duration-300">
+                  <div className="w-12 h-12 rounded-2xl bg-[#F8FAFC] dark:bg-white/10 border border-[#E2E8F0] dark:border-white/10 flex items-center justify-center text-[#D946EF] group-hover:bg-gradient-to-r group-hover:from-[#FF6B4A] group-hover:to-[#D946EF] group-hover:text-white transition-all duration-300">
                     <item.icon size={24} />
                   </div>
 
-                  <h4 className="text-xl font-bold text-[#0F172A] font-sans">{item.title}</h4>
+                  <h4 className="text-xl font-bold text-[#0F172A] dark:text-white font-sans">{item.title}</h4>
                   
-                  <p className="text-sm text-[#475569] leading-relaxed">{item.desc}</p>
+                  <p className="text-sm text-[#475569] dark:text-white/70 leading-relaxed">{item.desc}</p>
                 </div>
 
-                <div className="pt-6 mt-6 border-t border-[#E2E8F0] flex items-center gap-2 text-xs font-semibold text-[#FF6B4A]">
+                <div className="pt-6 mt-6 border-t border-[#E2E8F0] dark:border-white/10 flex items-center gap-2 text-xs font-semibold text-[#FF6B4A]">
                   <CheckCircle2 size={16} /> Included in 48-Hr Sprint
                 </div>
               </motion.div>
@@ -738,38 +738,38 @@ export default function ShopifySeoSprint() {
       </section>
 
       {/* SECTION 7: MY PROCESS */}
-      <section className="py-24 bg-[#FFFFFF]">
+      <section className="py-24 bg-[#FFFFFF] dark:bg-navy">
         <div className="container mx-auto px-6 max-w-7xl">
           <div className="max-w-3xl mx-auto text-center mb-20 space-y-4">
             <h2 className="text-xs font-bold uppercase tracking-widest text-[#FF6B4A]">Seamless Execution</h2>
-            <h3 className="text-3xl sm:text-5xl font-bold text-[#0F172A] tracking-tight font-sans">
+            <h3 className="text-3xl sm:text-5xl font-bold text-[#0F172A] dark:text-white tracking-tight font-sans">
               Our 48-Hour Implementation Timeline
             </h3>
-            <p className="text-lg text-[#475569]">
+            <p className="text-lg text-[#475569] dark:text-white/70">
               I designed the Sheun Hub workflow to require almost zero friction from you. Here is how your store transforms step-by-step:
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8 relative">
             {/* Connecting Timeline Line for Desktop */}
-            <div className="hidden md:block absolute top-1/2 left-0 right-0 h-1 bg-[#E2E8F0] -z-0 transform -translate-y-12"></div>
+            <div className="hidden md:block absolute top-1/2 left-0 right-0 h-1 bg-[#E2E8F0] dark:bg-white/10 -z-0 transform -translate-y-12"></div>
 
             {processSteps.map((proc, idx) => (
               <motion.div
                 key={idx}
                 whileHover={{ y: -5 }}
-                className="p-8 rounded-3xl bg-[#F8FAFC] border border-[#E2E8F0] shadow-sm relative z-10 flex flex-col justify-between space-y-6"
+                className="p-8 rounded-3xl bg-[#F8FAFC] dark:bg-white/5 border border-[#E2E8F0] dark:border-white/10 shadow-sm relative z-10 flex flex-col justify-between space-y-6"
               >
                 <div>
                   <div className="flex items-center justify-between mb-6">
                     <span className="text-4xl font-extrabold font-mono text-transparent bg-clip-text bg-gradient-to-r from-[#FF6B4A] to-[#D946EF]">{proc.step}</span>
-                    <span className="px-3 py-1 rounded-full bg-[#FFFFFF] border border-[#E2E8F0] text-[10px] font-bold text-[#0F172A] uppercase tracking-wider">
+                    <span className="px-3 py-1 rounded-full bg-[#FFFFFF] dark:bg-white/10 border border-[#E2E8F0] dark:border-white/10 text-[10px] font-bold text-[#0F172A] dark:text-white uppercase tracking-wider">
                       {proc.tag}
                     </span>
                   </div>
 
-                  <h4 className="text-xl font-bold text-[#0F172A] mb-3 font-sans">{proc.title}</h4>
-                  <p className="text-sm text-[#475569] leading-relaxed">{proc.desc}</p>
+                  <h4 className="text-xl font-bold text-[#0F172A] dark:text-white mb-3 font-sans">{proc.title}</h4>
+                  <p className="text-sm text-[#475569] dark:text-white/70 leading-relaxed">{proc.desc}</p>
                 </div>
 
                 {idx < 3 && (
@@ -836,14 +836,14 @@ export default function ShopifySeoSprint() {
       </section>
 
       {/* SECTION 9: TESTIMONIALS */}
-      <section className="py-24 bg-[#FFFFFF] border-b border-[#E2E8F0]">
+      <section className="py-24 bg-[#FFFFFF] dark:bg-navy border-b border-[#E2E8F0] dark:border-white/10">
         <div className="container mx-auto px-6 max-w-7xl">
           <div className="max-w-3xl mx-auto text-center mb-20 space-y-4">
             <h2 className="text-xs font-bold uppercase tracking-widest text-[#FF6B4A]">Social Proof</h2>
-            <h3 className="text-3xl sm:text-5xl font-bold text-[#0F172A] tracking-tight font-sans">
+            <h3 className="text-3xl sm:text-5xl font-bold text-[#0F172A] dark:text-white tracking-tight font-sans">
               Trusted by Ambitious 6- & 7-Figure Shopify Founders
             </h3>
-            <p className="text-lg text-[#475569]">
+            <p className="text-lg text-[#475569] dark:text-white/70">
               Results from stores completed through Sheun Hub. Details anonymised. Read what high-growth store owners say about the impact of a Sheun Hub sprint:
             </p>
           </div>
@@ -853,7 +853,7 @@ export default function ShopifySeoSprint() {
               <motion.div
                 key={idx}
                 whileHover={{ y: -8 }}
-                className="p-8 rounded-3xl bg-[#F8FAFC] border border-[#E2E8F0] shadow-sm flex flex-col justify-between space-y-8 relative group"
+                className="p-8 rounded-3xl bg-[#F8FAFC] dark:bg-white/5 border border-[#E2E8F0] dark:border-white/10 shadow-sm flex flex-col justify-between space-y-8 relative group"
               >
                 <div className="space-y-4">
                   <div className="flex gap-1">
@@ -862,15 +862,15 @@ export default function ShopifySeoSprint() {
                     ))}
                   </div>
 
-                  <p className="text-[#0F172A] text-base sm:text-lg leading-relaxed italic font-serif">
+                  <p className="text-[#0F172A] dark:text-white/90 text-base sm:text-lg leading-relaxed italic font-serif">
                     "{test.quote}"
                   </p>
                 </div>
 
-                <div className="flex items-center justify-between pt-6 border-t border-[#E2E8F0]">
+                <div className="flex items-center justify-between pt-6 border-t border-[#E2E8F0] dark:border-white/10">
                   <div>
-                    <h4 className="font-bold text-[#0F172A] text-sm font-sans">{test.author}</h4>
-                    <p className="text-xs text-[#475569]">{test.role}</p>
+                    <h4 className="font-bold text-[#0F172A] dark:text-white text-sm font-sans">{test.author}</h4>
+                    <p className="text-xs text-[#475569] dark:text-white/60">{test.role}</p>
                   </div>
                   <span className="px-2.5 py-1 rounded-full bg-gradient-to-r from-[#FF6B4A]/10 via-[#D946EF]/10 to-[#6D28D9]/10 border border-[#D946EF]/30 text-[#6D28D9] text-[10px] font-mono font-bold hidden sm:inline-block">
                     {test.revenue}
@@ -883,9 +883,9 @@ export default function ShopifySeoSprint() {
       </section>
 
       {/* SECTION 10: PRICING CARD */}
-      <section id="pricing" className="py-24 bg-[#F8FAFC]">
+      <section id="pricing" className="py-24 bg-[#F8FAFC] dark:bg-navy">
         <div className="container mx-auto px-6 max-w-7xl">
-          <div className="max-w-xl mx-auto rounded-[2.5rem] bg-[#FFFFFF] p-8 sm:p-12 border-2 border-[#D946EF]/40 shadow-2xl relative overflow-hidden text-center">
+          <div className="max-w-xl mx-auto rounded-[2.5rem] bg-[#FFFFFF] dark:bg-white/5 p-8 sm:p-12 border-2 border-[#D946EF]/40 shadow-2xl relative overflow-hidden text-center">
             {/* Pool Wall Top Rim */}
             <div className="absolute top-0 left-0 right-0 h-[4px] bg-gradient-to-r from-[#FF6B4A] via-[#D946EF] to-[#6D28D9]" />
 
@@ -894,16 +894,16 @@ export default function ShopifySeoSprint() {
             </div>
 
             <div className="space-y-4 pt-4">
-              <h3 className="text-3xl font-bold text-[#0F172A] font-sans">48-Hour Shopify SEO Sprint</h3>
-              <p className="text-sm text-[#475569]">One-time flat fee. Zero hidden retainer costs. Done-for-you implementation.</p>
+              <h3 className="text-3xl font-bold text-[#0F172A] dark:text-white font-sans">48-Hour Shopify SEO Sprint</h3>
+              <p className="text-sm text-[#475569] dark:text-white/70">One-time flat fee. Zero hidden retainer costs. Done-for-you implementation.</p>
 
               <div className="py-6 flex items-baseline justify-center gap-2">
-                <span className="text-6xl sm:text-7xl font-extrabold text-[#0F172A] tracking-tight font-sans">$250</span>
-                <span className="text-lg text-[#475569] font-medium">/ flat fee</span>
+                <span className="text-6xl sm:text-7xl font-extrabold text-[#0F172A] dark:text-white tracking-tight font-sans">$250</span>
+                <span className="text-lg text-[#475569] dark:text-white/60 font-medium">/ flat fee</span>
               </div>
             </div>
 
-            <div className="w-full h-px bg-[#E2E8F0] my-8"></div>
+            <div className="w-full h-px bg-[#E2E8F0] dark:bg-white/10 my-8"></div>
 
             <ul className="space-y-4 text-left mb-10 max-w-sm mx-auto">
               {[
@@ -916,7 +916,7 @@ export default function ShopifySeoSprint() {
                 "JSON-LD Schema Markup Injection",
                 "100% Ironclad Money-Back Guarantee"
               ].map((feature, i) => (
-                <li key={i} className="flex items-center gap-3 text-sm text-[#0F172A] font-medium">
+                <li key={i} className="flex items-center gap-3 text-sm text-[#0F172A] dark:text-white font-medium">
                   <CheckCircle2 size={18} className="text-[#FF6B4A] shrink-0" />
                   <span>{feature}</span>
                 </li>
@@ -930,7 +930,7 @@ export default function ShopifySeoSprint() {
               Book My Sprint Now - $250
             </a>
 
-            <div className="mt-6 flex items-center justify-center gap-2 text-xs text-[#475569]">
+            <div className="mt-6 flex items-center justify-center gap-2 text-xs text-[#475569] dark:text-white/60">
               <ShieldCheck size={16} className="text-[#FF6B4A]" />
               <span>Protected by our 100% Refund Guarantee</span>
             </div>
@@ -939,30 +939,30 @@ export default function ShopifySeoSprint() {
       </section>
 
       {/* SECTION 11: FAQ */}
-      <section className="py-24 bg-[#FFFFFF] border-t border-[#E2E8F0]">
+      <section className="py-24 bg-[#FFFFFF] dark:bg-navy border-t border-[#E2E8F0] dark:border-white/10">
         <div className="container mx-auto px-6 max-w-4xl">
           <div className="text-center mb-16 space-y-4">
             <h2 className="text-xs font-bold uppercase tracking-widest text-[#D946EF]">Got Questions?</h2>
-            <h3 className="text-3xl sm:text-5xl font-bold text-[#0F172A] tracking-tight font-sans">
+            <h3 className="text-3xl sm:text-5xl font-bold text-[#0F172A] dark:text-white tracking-tight font-sans">
               Frequently Asked Questions
             </h3>
-            <p className="text-[#475569]">Everything you need to know about booking your 48-Hour Shopify SEO Sprint.</p>
+            <p className="text-[#475569] dark:text-white/70">Everything you need to know about booking your 48-Hour Shopify SEO Sprint.</p>
           </div>
 
           <div className="space-y-4">
             {faqs.map((faq, idx) => (
               <div 
                 key={idx}
-                className="rounded-2xl border border-[#E2E8F0] bg-[#F8FAFC] overflow-hidden transition-all"
+                className="rounded-2xl border border-[#E2E8F0] dark:border-white/10 bg-[#F8FAFC] dark:bg-white/5 overflow-hidden transition-all"
               >
                 <button
                   onClick={() => toggleFaq(idx)}
-                  className="w-full p-6 text-left flex items-center justify-between font-bold text-[#0F172A] text-lg hover:text-[#FF6B4A] transition-colors"
+                  className="w-full p-6 text-left flex items-center justify-between font-bold text-[#0F172A] dark:text-white text-lg hover:text-[#FF6B4A] transition-colors"
                 >
                   <span className="pr-4 font-sans">{faq.q}</span>
                   <ChevronDown 
                     size={20} 
-                    className={`shrink-0 text-[#475569] transition-transform duration-300 ${openFaq === idx ? "transform rotate-180 text-[#D946EF]" : ""}`} 
+                    className={`shrink-0 text-[#475569] dark:text-white/60 transition-transform duration-300 ${openFaq === idx ? "transform rotate-180 text-[#D946EF]" : ""}`} 
                   />
                 </button>
 
@@ -973,7 +973,7 @@ export default function ShopifySeoSprint() {
                       animate={{ height: "auto", opacity: 1 }}
                       exit={{ height: 0, opacity: 0 }}
                       transition={{ duration: 0.3 }}
-                      className="px-6 pb-6 text-[#475569] leading-relaxed text-sm sm:text-base border-t border-[#E2E8F0] pt-4 bg-[#FFFFFF]"
+                      className="px-6 pb-6 text-[#475569] dark:text-white/70 leading-relaxed text-sm sm:text-base border-t border-[#E2E8F0] dark:border-white/10 pt-4 bg-[#FFFFFF] dark:bg-navy-light"
                     >
                       {faq.a}
                     </motion.div>
@@ -1028,7 +1028,7 @@ export default function ShopifySeoSprint() {
 
             {/* Intake Form */}
             <div className="lg:col-span-6">
-              <div className="rounded-3xl bg-white p-8 sm:p-10 text-[#0F172A] shadow-2xl relative overflow-hidden">
+              <div className="rounded-3xl bg-white dark:bg-navy-light p-8 sm:p-10 text-[#0F172A] dark:text-white shadow-2xl relative overflow-hidden">
                 {/* Pool Wall Top Rim */}
                 <div className="absolute top-0 left-0 right-0 h-[3px] bg-gradient-to-r from-[#FF6B4A] via-[#D946EF] to-[#6D28D9]" />
 
@@ -1041,68 +1041,68 @@ export default function ShopifySeoSprint() {
                     <div className="w-16 h-16 bg-[#FF6B4A]/15 text-[#FF6B4A] rounded-full flex items-center justify-center mx-auto">
                       <CheckCircle2 size={36} />
                     </div>
-                    <h3 className="text-2xl font-bold text-[#0F172A]">Sprint Request Received!</h3>
-                    <p className="text-sm text-[#475569] max-w-sm mx-auto">
-                      Thank you for requesting your sprint for <strong className="text-[#0F172A]">{storeName || "your store"}</strong>. A confirmation message from <span className="font-bold">sheunhost@gmail.com</span> will arrive in your inbox shortly.
+                    <h3 className="text-2xl font-bold text-[#0F172A] dark:text-white">Sprint Request Received!</h3>
+                    <p className="text-sm text-[#475569] dark:text-white/70 max-w-sm mx-auto">
+                      Thank you for requesting your sprint for <strong className="text-[#0F172A] dark:text-white">{storeName || "your store"}</strong>. A confirmation message from <span className="font-bold">sheunhost@gmail.com</span> will arrive in your inbox shortly.
                     </p>
                     <button
                       onClick={() => setFormSubmitted(false)}
-                      className="mt-6 px-6 py-2.5 rounded-xl bg-[#F8FAFC] border border-[#E2E8F0] text-xs font-bold uppercase text-[#475569] hover:bg-[#E2E8F0]"
+                      className="mt-6 px-6 py-2.5 rounded-xl bg-[#F8FAFC] dark:bg-white/10 border border-[#E2E8F0] dark:border-white/10 text-xs font-bold uppercase text-[#475569] dark:text-white/70 hover:bg-[#E2E8F0] dark:hover:bg-white/20"
                     >
                       Submit Another Store
                     </button>
                   </motion.div>
                 ) : (
                   <form onSubmit={handleAuditSubmit} className="space-y-5">
-                    <h3 className="text-xl font-bold text-[#0F172A] mb-2">Book Your Free SEO Review</h3>
+                    <h3 className="text-xl font-bold text-[#0F172A] dark:text-white mb-2">Book Your Free SEO Review</h3>
                     
                     <div>
-                      <label className="block text-xs font-bold uppercase text-[#475569] mb-1.5">Your Name</label>
+                      <label className="block text-xs font-bold uppercase text-[#475569] dark:text-white/60 mb-1.5">Your Name</label>
                       <input
                         type="text"
                         required
                         placeholder="Sheun Hub Owner"
                         value={storeName}
                         onChange={(e) => setStoreName(e.target.value)}
-                        className="w-full px-4 py-3 rounded-xl bg-[#F8FAFC] border border-[#E2E8F0] text-sm focus:outline-none focus:border-[#D946EF]"
+                        className="w-full px-4 py-3 rounded-xl bg-[#F8FAFC] dark:bg-white/5 border border-[#E2E8F0] dark:border-white/10 text-sm text-[#0F172A] dark:text-white placeholder:text-[#475569]/50 dark:placeholder:text-white/30 focus:outline-none focus:border-[#D946EF]"
                       />
                     </div>
 
                     <div>
-                      <label className="block text-xs font-bold uppercase text-[#475569] mb-1.5">Shopify Store URL</label>
+                      <label className="block text-xs font-bold uppercase text-[#475569] dark:text-white/60 mb-1.5">Shopify Store URL</label>
                       <input
                         type="text"
                         required
                         placeholder="mystore.com"
                         value={storeUrl}
                         onChange={(e) => setStoreUrl(e.target.value)}
-                        className="w-full px-4 py-3 rounded-xl bg-[#F8FAFC] border border-[#E2E8F0] text-sm focus:outline-none focus:border-[#D946EF]"
+                        className="w-full px-4 py-3 rounded-xl bg-[#F8FAFC] dark:bg-white/5 border border-[#E2E8F0] dark:border-white/10 text-sm text-[#0F172A] dark:text-white placeholder:text-[#475569]/50 dark:placeholder:text-white/30 focus:outline-none focus:border-[#D946EF]"
                       />
                     </div>
 
                     <div>
-                      <label className="block text-xs font-bold uppercase text-[#475569] mb-1.5">Work Email</label>
+                      <label className="block text-xs font-bold uppercase text-[#475569] dark:text-white/60 mb-1.5">Work Email</label>
                       <input
                         type="email"
                         required
                         placeholder="founder@mystore.com"
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
-                        className="w-full px-4 py-3 rounded-xl bg-[#F8FAFC] border border-[#E2E8F0] text-sm focus:outline-none focus:border-[#D946EF]"
+                        className="w-full px-4 py-3 rounded-xl bg-[#F8FAFC] dark:bg-white/5 border border-[#E2E8F0] dark:border-white/10 text-sm text-[#0F172A] dark:text-white placeholder:text-[#475569]/50 dark:placeholder:text-white/30 focus:outline-none focus:border-[#D946EF]"
                       />
                     </div>
 
                     <div>
-                      <label className="block text-xs font-bold uppercase text-[#475569] mb-1.5">Monthly Organic Revenue</label>
+                      <label className="block text-xs font-bold uppercase text-[#475569] dark:text-white/60 mb-1.5">Monthly Organic Revenue</label>
                       <select 
                         value={revenue}
                         onChange={(e) => setRevenue(e.target.value)}
-                        className="w-full px-4 py-3 rounded-xl bg-[#F8FAFC] border border-[#E2E8F0] text-sm focus:outline-none focus:border-[#D946EF]"
+                        className="w-full px-4 py-3 rounded-xl bg-[#F8FAFC] dark:bg-navy border border-[#E2E8F0] dark:border-white/10 text-sm text-[#0F172A] dark:text-white focus:outline-none focus:border-[#D946EF]"
                       >
-                        <option>$10k - $50k / month</option>
-                        <option>$50k - $100k / month</option>
-                        <option>$100k - $500k / month</option>
-                        <option>$500k+ / month</option>
+                        <option value="$10k - $50k / month" className="bg-white dark:bg-navy text-[#0F172A] dark:text-white">$10k - $50k / month</option>
+                        <option value="$50k - $100k / month" className="bg-white dark:bg-navy text-[#0F172A] dark:text-white">$50k - $100k / month</option>
+                        <option value="$100k - $500k / month" className="bg-white dark:bg-navy text-[#0F172A] dark:text-white">$100k - $500k / month</option>
+                        <option value="$500k+ / month" className="bg-white dark:bg-navy text-[#0F172A] dark:text-white">$500k+ / month</option>
                       </select>
                     </div>
 
@@ -1114,7 +1114,7 @@ export default function ShopifySeoSprint() {
                       <Send size={18} className="transform group-hover:translate-x-1 transition-transform" />
                     </button>
 
-                    <p className="text-[11px] text-center text-[#475569]">
+                    <p className="text-[11px] text-center text-[#475569] dark:text-white/60">
                       🔒 100% Confidential. No credit card required to submit review.
                     </p>
                   </form>

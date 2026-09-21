@@ -81,7 +81,7 @@ export default function Calculator() {
       </section>
 
       {/* Calculator Section */}
-      <section className="py-24 bg-offwhite">
+      <section className="py-24 bg-offwhite dark:bg-navy/80">
         <div className="container mx-auto px-6">
           <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12">
             
@@ -90,15 +90,15 @@ export default function Calculator() {
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              className="lg:col-span-5 space-y-12 bg-white p-8 md:p-10 rounded-[2.5rem] shadow-[0_20px_40px_-15px_rgba(0,0,0,0.05)] border border-navy/5"
+              className="lg:col-span-5 space-y-12 bg-white dark:bg-white/5 p-8 md:p-10 rounded-[2.5rem] shadow-[0_20px_40px_-15px_rgba(0,0,0,0.05)] border border-navy/5 dark:border-white/10"
             >
-              <h2 className="text-2xl font-bold text-navy mb-8">Your Current Metrics</h2>
+              <h2 className="text-2xl font-bold text-navy dark:text-white mb-8">Your Current Metrics</h2>
               
               {/* Monthly Visitors */}
               <div className="space-y-4">
                 <div className="flex justify-between items-center">
-                  <label className="font-medium text-navy">Monthly Visitors</label>
-                  <span className="text-xl font-bold text-navy">{visitors.toLocaleString()}</span>
+                  <label className="font-medium text-navy dark:text-white">Monthly Visitors</label>
+                  <span className="text-xl font-bold text-navy dark:text-white">{visitors.toLocaleString()}</span>
                 </div>
                 <input 
                   type="range" 
@@ -107,15 +107,15 @@ export default function Calculator() {
                   step="500"
                   value={visitors} 
                   onChange={(e) => setVisitors(Number(e.target.value))}
-                  className="w-full h-2 bg-navy/10 rounded-lg appearance-none cursor-pointer accent-green"
+                  className="w-full h-2 bg-navy/10 dark:bg-white/10 rounded-lg appearance-none cursor-pointer accent-green"
                 />
               </div>
 
               {/* Average Order Value */}
               <div className="space-y-4">
                 <div className="flex justify-between items-center">
-                  <label className="font-medium text-navy">Avg. Order Value ($)</label>
-                  <span className="text-xl font-bold text-navy">${aov}</span>
+                  <label className="font-medium text-navy dark:text-white">Avg. Order Value ($)</label>
+                  <span className="text-xl font-bold text-navy dark:text-white">${aov}</span>
                 </div>
                 <input 
                   type="range" 
@@ -124,15 +124,15 @@ export default function Calculator() {
                   step="5"
                   value={aov} 
                   onChange={(e) => setAov(Number(e.target.value))}
-                  className="w-full h-2 bg-navy/10 rounded-lg appearance-none cursor-pointer accent-green"
+                  className="w-full h-2 bg-navy/10 dark:bg-white/10 rounded-lg appearance-none cursor-pointer accent-green"
                 />
               </div>
 
               {/* Conversion Rate */}
               <div className="space-y-4">
                 <div className="flex justify-between items-center">
-                  <label className="font-medium text-navy">Conversion Rate (%)</label>
-                  <span className="text-xl font-bold text-navy">{convRate.toFixed(2)}%</span>
+                  <label className="font-medium text-navy dark:text-white">Conversion Rate (%)</label>
+                  <span className="text-xl font-bold text-navy dark:text-white">{convRate.toFixed(2)}%</span>
                 </div>
                 <input 
                   type="range" 
@@ -141,15 +141,15 @@ export default function Calculator() {
                   step="0.1"
                   value={convRate} 
                   onChange={(e) => setConvRate(Number(e.target.value))}
-                  className="w-full h-2 bg-navy/10 rounded-lg appearance-none cursor-pointer accent-green"
+                  className="w-full h-2 bg-navy/10 dark:bg-white/10 rounded-lg appearance-none cursor-pointer accent-green"
                 />
               </div>
 
               {/* Profit Margin */}
               <div className="space-y-4">
                 <div className="flex justify-between items-center">
-                  <label className="font-medium text-navy">Net Profit Margin (%)</label>
-                  <span className="text-xl font-bold text-navy">{margin}%</span>
+                  <label className="font-medium text-navy dark:text-white">Net Profit Margin (%)</label>
+                  <span className="text-xl font-bold text-navy dark:text-white">{margin}%</span>
                 </div>
                 <input 
                   type="range" 
@@ -158,7 +158,7 @@ export default function Calculator() {
                   step="1"
                   value={margin} 
                   onChange={(e) => setMargin(Number(e.target.value))}
-                  className="w-full h-2 bg-navy/10 rounded-lg appearance-none cursor-pointer accent-green"
+                  className="w-full h-2 bg-navy/10 dark:bg-white/10 rounded-lg appearance-none cursor-pointer accent-green"
                 />
               </div>
             </motion.div>

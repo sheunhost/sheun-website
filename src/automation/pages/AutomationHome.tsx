@@ -224,7 +224,7 @@ export default function AutomationHome() {
       description="We design custom AI voice agents, GoHighLevel CRM architectures, and automated API pipelines that eliminate manual tasks and scale business operations."
     >
       {/* ================= SECTION 1: HERO & VALUE PROPOSITION ================= */}
-      <section className="relative pt-32 pb-20 md:pt-40 md:pb-28 bg-[#FFFFFF] overflow-hidden border-b border-[#E2E8F0]">
+      <section className="relative pt-32 pb-20 md:pt-40 md:pb-28 bg-[#FFFFFF] dark:bg-navy overflow-hidden border-b border-[#E2E8F0] dark:border-white/10">
         
         {/* Subtle Ambient Background Lighting with Brand Palette */}
         <div className="absolute top-0 right-10 w-[500px] h-[500px] bg-cyan-400/10 rounded-full blur-[140px] pointer-events-none -z-10" />
@@ -238,13 +238,13 @@ export default function AutomationHome() {
             <div className="lg:col-span-7 space-y-6 text-center lg:text-left">
               
               {/* Department Badge */}
-              <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-cyan-50 border border-cyan-200/80 text-cyan-800 text-xs font-mono font-bold tracking-wide shadow-xs">
+              <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-cyan-50 dark:bg-cyan-950/40 border border-cyan-200/80 dark:border-cyan-500/30 text-cyan-800 dark:text-cyan-300 text-xs font-mono font-bold tracking-wide shadow-xs">
                 <span className="w-2 h-2 rounded-full bg-cyan-500 animate-pulse" />
                 <span>Sheun Hub Automation Division • B2B AI Systems</span>
               </div>
 
               {/* Headline */}
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-[#0F172A] tracking-tight leading-[1.12]">
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-[#0F172A] dark:text-white tracking-tight leading-[1.12]">
                 Autonomous Systems That Eliminate{" "}
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-600 via-cyan-500 to-[#6D28D9]">
                   Operational Drag
@@ -252,7 +252,7 @@ export default function AutomationHome() {
               </h1>
 
               {/* Punchy Condensed Subheadline */}
-              <p className="text-base sm:text-lg text-[#334155] leading-relaxed max-w-2xl mx-auto lg:mx-0">
+              <p className="text-base sm:text-lg text-[#334155] dark:text-white/70 leading-relaxed max-w-2xl mx-auto lg:mx-0">
                 We engineer custom API workflows, intelligent AI voice agents, and GoHighLevel CRM infrastructure that handle your repetitive tasks—accelerating response times, eliminating manual errors, and scaling operations without added payroll.
               </p>
 
@@ -269,25 +269,25 @@ export default function AutomationHome() {
 
                 <a
                   href="#system-audit"
-                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-7 py-4 rounded-2xl font-bold text-base text-[#0F172A] bg-slate-50 hover:bg-slate-100 border border-[#CBD5E1] transition-all"
+                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-7 py-4 rounded-2xl font-bold text-base text-[#0F172A] dark:text-white bg-slate-50 dark:bg-white/5 hover:bg-slate-100 dark:hover:bg-white/10 border border-[#CBD5E1] dark:border-white/10 transition-all"
                 >
                   <span>Request Written Audit</span>
                 </a>
               </div>
 
               {/* Strategic Metrics Proof Ribbon */}
-              <div className="pt-6 grid grid-cols-3 gap-6 border-t border-[#E2E8F0] max-w-lg mx-auto lg:mx-0">
+              <div className="pt-6 grid grid-cols-3 gap-6 border-t border-[#E2E8F0] dark:border-white/10 max-w-lg mx-auto lg:mx-0">
                 <div>
-                  <div className="text-2xl sm:text-3xl font-extrabold text-[#0F172A] font-mono">&lt;60s</div>
-                  <div className="text-xs text-slate-500 mt-0.5 font-medium">Speed to Lead</div>
+                  <div className="text-2xl sm:text-3xl font-extrabold text-[#0F172A] dark:text-white font-mono">&lt;60s</div>
+                  <div className="text-xs text-slate-500 dark:text-white/50 mt-0.5 font-medium">Speed to Lead</div>
                 </div>
                 <div>
                   <div className="text-2xl sm:text-3xl font-extrabold text-cyan-600 font-mono">100%</div>
-                  <div className="text-xs text-slate-500 mt-0.5 font-medium">Data Fidelity</div>
+                  <div className="text-xs text-slate-500 dark:text-white/50 mt-0.5 font-medium">Data Fidelity</div>
                 </div>
                 <div>
                   <div className="text-2xl sm:text-3xl font-extrabold text-[#6D28D9] font-mono">14 Days</div>
-                  <div className="text-xs text-slate-500 mt-0.5 font-medium">Live Production</div>
+                  <div className="text-xs text-slate-500 dark:text-white/50 mt-0.5 font-medium">Live Production</div>
                 </div>
               </div>
 
@@ -303,18 +303,18 @@ export default function AutomationHome() {
       </section>
 
       {/* ================= SECTION 2: MANUAL VS AUTONOMOUS ================= */}
-      <section className="py-20 md:py-24 bg-[#F8FAFC] relative border-b border-[#E2E8F0]">
+      <section className="py-20 md:py-24 bg-[#F8FAFC] dark:bg-navy/90 relative border-b border-[#E2E8F0] dark:border-white/10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           
           <div className="max-w-3xl mx-auto text-center mb-16 space-y-3">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white border border-[#E2E8F0] text-slate-600 text-xs font-mono font-semibold shadow-xs">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white dark:bg-white/5 border border-[#E2E8F0] dark:border-white/10 text-slate-600 dark:text-white/80 text-xs font-mono font-semibold shadow-xs">
               <AlertTriangle className="w-3.5 h-3.5 text-amber-500" />
               <span>The Operational Gap</span>
             </div>
-            <h2 className="text-3xl sm:text-4xl font-extrabold text-[#0F172A] tracking-tight">
+            <h2 className="text-3xl sm:text-4xl font-extrabold text-[#0F172A] dark:text-white tracking-tight">
               Stop Losing Hours to Repetitive Manual Work
             </h2>
-            <p className="text-slate-600 text-base leading-relaxed">
+            <p className="text-slate-600 dark:text-white/70 text-base leading-relaxed">
               When software tools run in disconnected silos, your team loses up to 30% of their workday copy-pasting data, chasing leads, and fixing human entry errors.
             </p>
           </div>
@@ -323,67 +323,67 @@ export default function AutomationHome() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
             
             {/* Left: The Legacy Manual Workflow */}
-            <div className="p-8 sm:p-10 rounded-3xl bg-white border border-[#E2E8F0] space-y-6 shadow-sm hover:shadow-md transition-shadow">
-              <div className="flex items-center justify-between pb-4 border-b border-slate-100">
+            <div className="p-8 sm:p-10 rounded-3xl bg-white dark:bg-white/5 border border-[#E2E8F0] dark:border-white/10 space-y-6 shadow-sm hover:shadow-md transition-shadow">
+              <div className="flex items-center justify-between pb-4 border-b border-slate-100 dark:border-white/10">
                 <div className="flex items-center gap-2 text-rose-600 text-sm font-bold font-mono">
                   <Clock className="w-4 h-4" />
                   <span>Manual Operations</span>
                 </div>
-                <span className="text-xs px-2.5 py-1 rounded-full bg-rose-50 text-rose-700 border border-rose-200 font-mono font-bold">
+                <span className="text-xs px-2.5 py-1 rounded-full bg-rose-50 dark:bg-rose-950/40 text-rose-700 dark:text-rose-400 border border-rose-200 dark:border-rose-900/40 font-mono font-bold">
                   High Overhead
                 </span>
               </div>
 
-              <ul className="space-y-4 text-sm text-slate-600">
+              <ul className="space-y-4 text-sm text-slate-600 dark:text-white/70">
                 <li className="flex items-start gap-3">
-                  <span className="w-5 h-5 rounded-full bg-rose-100 text-rose-600 flex items-center justify-center shrink-0 mt-0.5 font-mono text-xs font-bold">✕</span>
+                  <span className="w-5 h-5 rounded-full bg-rose-100 dark:bg-rose-950/60 text-rose-600 dark:text-rose-400 flex items-center justify-center shrink-0 mt-0.5 font-mono text-xs font-bold">✕</span>
                   <span>Inbound leads wait 2–6 hours for initial outreach while sales reps are busy.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="w-5 h-5 rounded-full bg-rose-100 text-rose-600 flex items-center justify-center shrink-0 mt-0.5 font-mono text-xs font-bold">✕</span>
+                  <span className="w-5 h-5 rounded-full bg-rose-100 dark:bg-rose-950/60 text-rose-600 dark:text-rose-400 flex items-center justify-center shrink-0 mt-0.5 font-mono text-xs font-bold">✕</span>
                   <span>Manual typing across spreadsheets, CRMs, and email tools creates costly keying errors.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="w-5 h-5 rounded-full bg-rose-100 text-rose-600 flex items-center justify-center shrink-0 mt-0.5 font-mono text-xs font-bold">✕</span>
+                  <span className="w-5 h-5 rounded-full bg-rose-100 dark:bg-rose-950/60 text-rose-600 dark:text-rose-400 flex items-center justify-center shrink-0 mt-0.5 font-mono text-xs font-bold">✕</span>
                   <span>Follow-up emails and reminders slip through the cracks when team members get overwhelmed.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="w-5 h-5 rounded-full bg-rose-100 text-rose-600 flex items-center justify-center shrink-0 mt-0.5 font-mono text-xs font-bold">✕</span>
+                  <span className="w-5 h-5 rounded-full bg-rose-100 dark:bg-rose-950/60 text-rose-600 dark:text-rose-400 flex items-center justify-center shrink-0 mt-0.5 font-mono text-xs font-bold">✕</span>
                   <span>Scaling requires hiring more administrative staff, rapidly inflating payroll expenses.</span>
                 </li>
               </ul>
             </div>
 
             {/* Right: The Autonomous Architecture */}
-            <div className="p-8 sm:p-10 rounded-3xl bg-white border-2 border-cyan-400/80 space-y-6 relative shadow-xl overflow-hidden">
+            <div className="p-8 sm:p-10 rounded-3xl bg-white dark:bg-white/5 border-2 border-cyan-400/80 dark:border-cyan-500/50 space-y-6 relative shadow-xl overflow-hidden">
               {/* Top Gradient Rim */}
               <div className="absolute top-0 left-0 right-0 h-[4px] bg-gradient-to-r from-cyan-500 via-cyan-400 to-[#6D28D9]" />
 
-              <div className="flex items-center justify-between pb-4 border-b border-slate-100">
-                <div className="flex items-center gap-2 text-cyan-700 text-sm font-bold font-mono">
-                  <Zap className="w-4 h-4 text-cyan-600" />
+              <div className="flex items-center justify-between pb-4 border-b border-slate-100 dark:border-white/10">
+                <div className="flex items-center gap-2 text-cyan-700 dark:text-cyan-400 text-sm font-bold font-mono">
+                  <Zap className="w-4 h-4 text-cyan-600 dark:text-cyan-400" />
                   <span>Sheun Hub Autonomous Architecture</span>
                 </div>
-                <span className="text-xs px-2.5 py-1 rounded-full bg-cyan-50 text-cyan-700 border border-cyan-200 font-mono font-bold">
+                <span className="text-xs px-2.5 py-1 rounded-full bg-cyan-50 dark:bg-cyan-950/40 text-cyan-700 dark:text-cyan-300 border border-cyan-200 dark:border-cyan-500/30 font-mono font-bold">
                   100% Automated
                 </span>
               </div>
 
-              <ul className="space-y-4 text-sm text-[#0F172A] font-medium">
+              <ul className="space-y-4 text-sm text-[#0F172A] dark:text-white font-medium">
                 <li className="flex items-start gap-3">
-                  <CheckCircle2 className="w-5 h-5 text-emerald-600 shrink-0 mt-0.5" />
+                  <CheckCircle2 className="w-5 h-5 text-emerald-600 dark:text-emerald-400 shrink-0 mt-0.5" />
                   <span>AI Voice Agent initiates callbacks in under 60 seconds and books meetings instantly.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <CheckCircle2 className="w-5 h-5 text-emerald-600 shrink-0 mt-0.5" />
+                  <CheckCircle2 className="w-5 h-5 text-emerald-600 dark:text-emerald-400 shrink-0 mt-0.5" />
                   <span>API webhooks synchronize customer data across CRM, billing, and project tools in real time.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <CheckCircle2 className="w-5 h-5 text-emerald-600 shrink-0 mt-0.5" />
+                  <CheckCircle2 className="w-5 h-5 text-emerald-600 dark:text-emerald-400 shrink-0 mt-0.5" />
                   <span>Automated multi-channel SMS/Email nurture campaigns trigger based on real prospect actions.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <CheckCircle2 className="w-5 h-5 text-emerald-600 shrink-0 mt-0.5" />
+                  <CheckCircle2 className="w-5 h-5 text-emerald-600 dark:text-emerald-400 shrink-0 mt-0.5" />
                   <span>Handles 10x lead and order volume with zero added headcount or payroll inflation.</span>
                 </li>
               </ul>
@@ -395,18 +395,18 @@ export default function AutomationHome() {
       </section>
 
       {/* ================= SECTION 3: THE FOUR SYSTEM PILLARS ================= */}
-      <section id="pillars" className="py-20 md:py-24 bg-[#FFFFFF] relative border-b border-[#E2E8F0]">
+      <section id="pillars" className="py-20 md:py-24 bg-[#FFFFFF] dark:bg-navy relative border-b border-[#E2E8F0] dark:border-white/10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           
           <div className="max-w-3xl mx-auto text-center mb-16 space-y-3">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-50 border border-cyan-200 text-cyan-800 text-xs font-mono font-bold">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-50 dark:bg-cyan-950/40 border border-cyan-200 dark:border-cyan-500/30 text-cyan-800 dark:text-cyan-300 text-xs font-mono font-bold">
               <Layers className="w-3.5 h-3.5" />
               <span>Core Technical Capabilities</span>
             </div>
-            <h2 className="text-3xl sm:text-4xl font-extrabold text-[#0F172A] tracking-tight">
+            <h2 className="text-3xl sm:text-4xl font-extrabold text-[#0F172A] dark:text-white tracking-tight">
               Our Four Engineering Pillars
             </h2>
-            <p className="text-slate-600 text-base leading-relaxed">
+            <p className="text-slate-600 dark:text-white/70 text-base leading-relaxed">
               Modular, enterprise-grade automation capabilities designed for rapid deployment and bulletproof reliability.
             </p>
           </div>
@@ -422,20 +422,20 @@ export default function AutomationHome() {
                   onClick={() => setActivePillar(idx)}
                   className={`p-5 rounded-2xl border text-left transition-all cursor-pointer ${
                     isActive
-                      ? "bg-white border-cyan-500 shadow-lg shadow-cyan-500/10 ring-2 ring-cyan-400/20"
-                      : "bg-slate-50 border-[#E2E8F0] hover:bg-white hover:border-slate-300 text-slate-600"
+                      ? "bg-white dark:bg-white/10 border-cyan-500 shadow-lg shadow-cyan-500/10 ring-2 ring-cyan-400/20"
+                      : "bg-slate-50 dark:bg-white/5 border-[#E2E8F0] dark:border-white/10 hover:bg-white dark:hover:bg-white/10 hover:border-slate-300 text-slate-600 dark:text-white/70"
                   }`}
                 >
                   <div className="flex items-center justify-between mb-2">
-                    <IconComp className={`w-5 h-5 ${isActive ? "text-cyan-600" : "text-slate-400"}`} />
-                    <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-200/80 text-slate-700 font-bold">
+                    <IconComp className={`w-5 h-5 ${isActive ? "text-cyan-600 dark:text-cyan-400" : "text-slate-400 dark:text-white/40"}`} />
+                    <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-200/80 dark:bg-white/10 text-slate-700 dark:text-white/70 font-bold">
                       0{idx + 1}
                     </span>
                   </div>
-                  <div className={`text-sm font-bold line-clamp-1 ${isActive ? "text-[#0F172A]" : "text-slate-700"}`}>
+                  <div className={`text-sm font-bold line-clamp-1 ${isActive ? "text-[#0F172A] dark:text-white" : "text-slate-700 dark:text-white/80"}`}>
                     {pillar.title}
                   </div>
-                  <div className="text-[11px] text-slate-500 mt-1 line-clamp-1 font-mono">
+                  <div className="text-[11px] text-slate-500 dark:text-white/50 mt-1 line-clamp-1 font-mono">
                     {pillar.badge}
                   </div>
                 </button>
@@ -448,45 +448,45 @@ export default function AutomationHome() {
             const currentPillar = pillars[activePillar];
             const IconComponent = currentPillar.icon;
             return (
-              <div className="bg-white border border-[#E2E8F0] rounded-3xl p-8 sm:p-12 shadow-xl grid grid-cols-1 lg:grid-cols-12 gap-10 items-center relative overflow-hidden">
+              <div className="bg-white dark:bg-white/5 border border-[#E2E8F0] dark:border-white/10 rounded-3xl p-8 sm:p-12 shadow-xl grid grid-cols-1 lg:grid-cols-12 gap-10 items-center relative overflow-hidden">
                 {/* Top rim accent */}
                 <div className="absolute top-0 left-0 right-0 h-[4px] bg-gradient-to-r from-cyan-500 via-[#6D28D9] to-[#FF6B4A]" />
 
                 <div className="lg:col-span-7 space-y-6">
                   <div className="flex items-center gap-3">
-                    <div className="w-12 h-12 rounded-2xl bg-cyan-100 text-cyan-700 flex items-center justify-center shrink-0 shadow-sm border border-cyan-200">
+                    <div className="w-12 h-12 rounded-2xl bg-cyan-100 dark:bg-cyan-950/60 text-cyan-700 dark:text-cyan-400 flex items-center justify-center shrink-0 shadow-sm border border-cyan-200 dark:border-cyan-500/30">
                       <IconComponent className="w-6 h-6" />
                     </div>
                     <div>
-                      <span className="text-xs font-mono text-cyan-800 font-bold px-2.5 py-0.5 rounded-full bg-cyan-50 border border-cyan-200">
+                      <span className="text-xs font-mono text-cyan-800 dark:text-cyan-300 font-bold px-2.5 py-0.5 rounded-full bg-cyan-50 dark:bg-cyan-950/40 border border-cyan-200 dark:border-cyan-500/30">
                         {currentPillar.badge}
                       </span>
-                      <h3 className="text-2xl font-bold text-[#0F172A] mt-1">{currentPillar.title}</h3>
+                      <h3 className="text-2xl font-bold text-[#0F172A] dark:text-white mt-1">{currentPillar.title}</h3>
                     </div>
                   </div>
 
-                  <p className="text-slate-600 text-base leading-relaxed">
+                  <p className="text-slate-600 dark:text-white/70 text-base leading-relaxed">
                     {currentPillar.summary}
                   </p>
 
                   <div className="space-y-3 pt-2">
-                    <div className="text-xs font-mono text-slate-500 uppercase tracking-wider font-bold">Key Functional Outcomes</div>
+                    <div className="text-xs font-mono text-slate-500 dark:text-white/50 uppercase tracking-wider font-bold">Key Functional Outcomes</div>
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                       {currentPillar.outcomes.map((outcome, i) => (
-                        <div key={i} className="flex items-center gap-2.5 text-sm text-[#0F172A]">
-                          <Check className="w-4 h-4 text-emerald-600 shrink-0" />
+                        <div key={i} className="flex items-center gap-2.5 text-sm text-[#0F172A] dark:text-white">
+                          <Check className="w-4 h-4 text-emerald-600 dark:text-emerald-400 shrink-0" />
                           <span>{outcome}</span>
                         </div>
                       ))}
                     </div>
                   </div>
 
-                  <div className="pt-6 border-t border-slate-100 flex flex-wrap items-center justify-between gap-4">
+                  <div className="pt-6 border-t border-slate-100 dark:border-white/10 flex flex-wrap items-center justify-between gap-4">
                     <div className="flex items-center gap-2">
-                      <span className="text-xs font-mono text-slate-500 font-semibold">Tech Stack:</span>
+                      <span className="text-xs font-mono text-slate-500 dark:text-white/50 font-semibold">Tech Stack:</span>
                       <div className="flex flex-wrap gap-1.5">
                         {currentPillar.techStack.map((tech, t) => (
-                          <span key={t} className="text-[10px] font-mono px-2.5 py-1 rounded-lg bg-slate-100 text-slate-700 font-medium">
+                          <span key={t} className="text-[10px] font-mono px-2.5 py-1 rounded-lg bg-slate-100 dark:bg-white/10 text-slate-700 dark:text-white/80 font-medium">
                             {tech}
                           </span>
                         ))}
@@ -536,18 +536,18 @@ export default function AutomationHome() {
       </section>
 
       {/* ================= SECTION 4: REAL-WORLD INDUSTRY BLUEPRINTS ================= */}
-      <section className="py-20 md:py-24 bg-[#F8FAFC] relative border-b border-[#E2E8F0]">
+      <section className="py-20 md:py-24 bg-[#F8FAFC] dark:bg-navy/90 relative border-b border-[#E2E8F0] dark:border-white/10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           
           <div className="max-w-3xl mx-auto text-center mb-16 space-y-3">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white border border-[#E2E8F0] text-emerald-700 text-xs font-mono font-bold shadow-xs">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white dark:bg-white/5 border border-[#E2E8F0] dark:border-white/10 text-emerald-700 dark:text-emerald-400 text-xs font-mono font-bold shadow-xs">
               <Building2 className="w-3.5 h-3.5" />
               <span>Industry Workflows</span>
             </div>
-            <h2 className="text-3xl sm:text-4xl font-extrabold text-[#0F172A] tracking-tight">
+            <h2 className="text-3xl sm:text-4xl font-extrabold text-[#0F172A] dark:text-white tracking-tight">
               Tailored Blueprints for High-Growth Sectors
             </h2>
-            <p className="text-slate-600 text-base leading-relaxed">
+            <p className="text-slate-600 dark:text-white/70 text-base leading-relaxed">
               See how our automation systems produce measurable ROI across high-volume industries.
             </p>
           </div>
@@ -562,11 +562,11 @@ export default function AutomationHome() {
                   onClick={() => setActiveIndustry(i)}
                   className={`px-5 py-3 rounded-xl border text-sm font-bold transition-all flex items-center gap-2 cursor-pointer ${
                     activeIndustry === i
-                      ? "bg-white border-cyan-500 text-cyan-800 shadow-md ring-2 ring-cyan-400/20"
-                      : "bg-white/80 border-[#E2E8F0] text-slate-600 hover:text-[#0F172A] hover:bg-white"
+                      ? "bg-white dark:bg-white/10 border-cyan-500 text-cyan-800 dark:text-cyan-300 shadow-md ring-2 ring-cyan-400/20"
+                      : "bg-white/80 dark:bg-white/5 border-[#E2E8F0] dark:border-white/10 text-slate-600 dark:text-white/70 hover:text-[#0F172A] dark:hover:text-white hover:bg-white dark:hover:bg-white/10"
                   }`}
                 >
-                  <IconComp className="w-4 h-4 text-cyan-600" />
+                  <IconComp className="w-4 h-4 text-cyan-600 dark:text-cyan-400" />
                   <span>{ind.name}</span>
                 </button>
               );
@@ -577,33 +577,33 @@ export default function AutomationHome() {
           {(() => {
             const ind = industries[activeIndustry];
             return (
-              <div className="bg-white border border-[#E2E8F0] rounded-3xl p-8 sm:p-10 max-w-4xl mx-auto space-y-6 shadow-xl relative overflow-hidden">
-                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-6 border-b border-slate-100">
+              <div className="bg-white dark:bg-white/5 border border-[#E2E8F0] dark:border-white/10 rounded-3xl p-8 sm:p-10 max-w-4xl mx-auto space-y-6 shadow-xl relative overflow-hidden">
+                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-6 border-b border-slate-100 dark:border-white/10">
                   <div>
-                    <span className="text-xs font-mono text-cyan-700 font-bold uppercase tracking-wider">{ind.tagline}</span>
-                    <h3 className="text-2xl font-bold text-[#0F172A] mt-1">{ind.name} Blueprint</h3>
+                    <span className="text-xs font-mono text-cyan-700 dark:text-cyan-400 font-bold uppercase tracking-wider">{ind.tagline}</span>
+                    <h3 className="text-2xl font-bold text-[#0F172A] dark:text-white mt-1">{ind.name} Blueprint</h3>
                   </div>
-                  <div className="px-4 py-2 rounded-xl bg-emerald-50 border border-emerald-200 text-emerald-800 text-xs font-mono font-bold shrink-0">
+                  <div className="px-4 py-2 rounded-xl bg-emerald-50 dark:bg-emerald-950/40 border border-emerald-200 dark:border-emerald-500/30 text-emerald-800 dark:text-emerald-300 text-xs font-mono font-bold shrink-0">
                     {ind.metrics}
                   </div>
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div className="p-6 rounded-2xl bg-rose-50/60 border border-rose-100 space-y-2">
-                    <div className="text-xs font-mono text-rose-700 font-bold uppercase">Manual Bottleneck</div>
-                    <p className="text-sm text-slate-700 leading-relaxed">{ind.manualState}</p>
+                  <div className="p-6 rounded-2xl bg-rose-50/60 dark:bg-rose-950/20 border border-rose-100 dark:border-rose-900/30 space-y-2">
+                    <div className="text-xs font-mono text-rose-700 dark:text-rose-400 font-bold uppercase">Manual Bottleneck</div>
+                    <p className="text-sm text-slate-700 dark:text-white/70 leading-relaxed">{ind.manualState}</p>
                   </div>
 
-                  <div className="p-6 rounded-2xl bg-cyan-50/60 border border-cyan-200 space-y-2">
-                    <div className="text-xs font-mono text-cyan-800 font-bold uppercase">Automated System</div>
-                    <p className="text-sm text-[#0F172A] leading-relaxed font-medium">{ind.automatedState}</p>
+                  <div className="p-6 rounded-2xl bg-cyan-50/60 dark:bg-cyan-950/30 border border-cyan-200 dark:border-cyan-500/30 space-y-2">
+                    <div className="text-xs font-mono text-cyan-800 dark:text-cyan-300 font-bold uppercase">Automated System</div>
+                    <p className="text-sm text-[#0F172A] dark:text-white leading-relaxed font-medium">{ind.automatedState}</p>
                   </div>
                 </div>
 
                 <div className="text-right pt-2">
                   <Link
                     to="/automation/industries"
-                    className="inline-flex items-center gap-1.5 text-xs font-bold text-cyan-700 hover:text-cyan-800 transition-colors"
+                    className="inline-flex items-center gap-1.5 text-xs font-bold text-cyan-700 dark:text-cyan-400 hover:text-cyan-800 dark:hover:text-cyan-300 transition-colors"
                   >
                     <span>View All Industry Architectures</span>
                     <ArrowRight className="w-3.5 h-3.5" />
@@ -617,18 +617,18 @@ export default function AutomationHome() {
       </section>
 
       {/* ================= SECTION 5: 14-DAY DELIVERY METHODOLOGY ================= */}
-      <section className="py-20 md:py-24 bg-[#FFFFFF] relative border-b border-[#E2E8F0]">
+      <section className="py-20 md:py-24 bg-[#FFFFFF] dark:bg-navy relative border-b border-[#E2E8F0] dark:border-white/10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           
           <div className="max-w-3xl mx-auto text-center mb-16 space-y-3">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-50 border border-cyan-200 text-cyan-800 text-xs font-mono font-bold">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-50 dark:bg-cyan-950/40 border border-cyan-200 dark:border-cyan-500/30 text-cyan-800 dark:text-cyan-300 text-xs font-mono font-bold">
               <Workflow className="w-3.5 h-3.5" />
               <span>Disciplined Execution</span>
             </div>
-            <h2 className="text-3xl sm:text-4xl font-extrabold text-[#0F172A] tracking-tight">
+            <h2 className="text-3xl sm:text-4xl font-extrabold text-[#0F172A] dark:text-white tracking-tight">
               Live Production in Exactly 14 Days
             </h2>
-            <p className="text-slate-600 text-base leading-relaxed">
+            <p className="text-slate-600 dark:text-white/70 text-base leading-relaxed">
               Our engineering-first roadmap eliminates disruption and ensures your workflows launch flawlessly.
             </p>
           </div>
@@ -638,16 +638,16 @@ export default function AutomationHome() {
             {implementationSteps.map((step, idx) => (
               <div 
                 key={idx}
-                className="bg-white border border-[#E2E8F0] p-7 rounded-2xl space-y-3 relative shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between"
+                className="bg-white dark:bg-white/5 border border-[#E2E8F0] dark:border-white/10 p-7 rounded-2xl space-y-3 relative shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between"
               >
                 <div>
-                  <div className="text-xs font-mono font-bold text-cyan-700 uppercase tracking-wider mb-2">
+                  <div className="text-xs font-mono font-bold text-cyan-700 dark:text-cyan-400 uppercase tracking-wider mb-2">
                     Phase {step.phase}
                   </div>
-                  <h3 className="text-base font-bold text-[#0F172A] mb-2">{step.title}</h3>
-                  <p className="text-xs text-slate-600 leading-relaxed">{step.desc}</p>
+                  <h3 className="text-base font-bold text-[#0F172A] dark:text-white mb-2">{step.title}</h3>
+                  <p className="text-xs text-slate-600 dark:text-white/70 leading-relaxed">{step.desc}</p>
                 </div>
-                <div className="pt-4 border-t border-slate-100 text-[11px] font-mono text-slate-500 font-semibold">
+                <div className="pt-4 border-t border-slate-100 dark:border-white/10 text-[11px] font-mono text-slate-500 dark:text-white/50 font-semibold">
                   Timeline: {step.days}
                 </div>
               </div>
@@ -658,18 +658,18 @@ export default function AutomationHome() {
       </section>
 
       {/* ================= SECTION 6: CLIENT CASE STUDIES ================= */}
-      <section className="py-20 md:py-24 bg-[#F8FAFC] relative border-b border-[#E2E8F0]">
+      <section className="py-20 md:py-24 bg-[#F8FAFC] dark:bg-navy/90 relative border-b border-[#E2E8F0] dark:border-white/10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           
           <div className="max-w-3xl mx-auto text-center mb-16 space-y-3">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white border border-[#E2E8F0] text-emerald-700 text-xs font-mono font-bold shadow-xs">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white dark:bg-white/5 border border-[#E2E8F0] dark:border-white/10 text-emerald-700 dark:text-emerald-400 text-xs font-mono font-bold shadow-xs">
               <ShieldCheck className="w-3.5 h-3.5" />
               <span>Verified Results</span>
             </div>
-            <h2 className="text-3xl sm:text-4xl font-extrabold text-[#0F172A] tracking-tight">
+            <h2 className="text-3xl sm:text-4xl font-extrabold text-[#0F172A] dark:text-white tracking-tight">
               Measurable Client Outcomes
             </h2>
-            <p className="text-slate-600 text-base leading-relaxed">
+            <p className="text-slate-600 dark:text-white/70 text-base leading-relaxed">
               Real business metrics unlocked through custom AI automation systems.
             </p>
           </div>
@@ -678,40 +678,40 @@ export default function AutomationHome() {
             {AUTOMATION_CASE_STUDIES.slice(0, 2).map((cs) => (
               <div 
                 key={cs.id}
-                className="bg-white border border-[#E2E8F0] rounded-3xl p-8 sm:p-10 shadow-lg flex flex-col justify-between"
+                className="bg-white dark:bg-white/5 border border-[#E2E8F0] dark:border-white/10 rounded-3xl p-8 sm:p-10 shadow-lg flex flex-col justify-between"
               >
                 <div>
                   <div className="flex items-center justify-between mb-4">
-                    <span className="text-xs font-mono px-3 py-1 rounded-full bg-cyan-50 text-cyan-800 border border-cyan-200 font-bold">
+                    <span className="text-xs font-mono px-3 py-1 rounded-full bg-cyan-50 dark:bg-cyan-950/40 text-cyan-800 dark:text-cyan-300 border border-cyan-200 dark:border-cyan-500/30 font-bold">
                       {cs.industry}
                     </span>
-                    <span className="text-xs font-bold text-slate-500">{cs.clientName}</span>
+                    <span className="text-xs font-bold text-slate-500 dark:text-white/50">{cs.clientName}</span>
                   </div>
 
-                  <h3 className="text-xl font-bold text-[#0F172A] mb-4">{cs.title}</h3>
+                  <h3 className="text-xl font-bold text-[#0F172A] dark:text-white mb-4">{cs.title}</h3>
 
-                  <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-6 p-4 rounded-2xl bg-slate-50 border border-slate-200">
+                  <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-6 p-4 rounded-2xl bg-slate-50 dark:bg-white/5 border border-slate-200 dark:border-white/10">
                     {cs.results.map((r, i) => (
                       <div key={i} className="text-center">
-                        <div className="text-base font-bold text-cyan-700 font-mono">{r.metric}</div>
-                        <div className="text-[10px] text-slate-600 mt-0.5 line-clamp-2">{r.label}</div>
+                        <div className="text-base font-bold text-cyan-700 dark:text-cyan-400 font-mono">{r.metric}</div>
+                        <div className="text-[10px] text-slate-600 dark:text-white/60 mt-0.5 line-clamp-2">{r.label}</div>
                       </div>
                     ))}
                   </div>
 
-                  <p className="text-xs text-slate-600 italic leading-relaxed bg-slate-50/80 p-4 rounded-xl border border-slate-200">
+                  <p className="text-xs text-slate-600 dark:text-white/70 italic leading-relaxed bg-slate-50/80 dark:bg-white/5 p-4 rounded-xl border border-slate-200 dark:border-white/10">
                     &quot;{cs.testimonial.quote}&quot;
                   </p>
                 </div>
 
-                <div className="pt-4 mt-6 border-t border-slate-100 flex items-center justify-between">
+                <div className="pt-4 mt-6 border-t border-slate-100 dark:border-white/10 flex items-center justify-between">
                   <div>
-                    <div className="text-xs font-bold text-[#0F172A]">{cs.testimonial.author}</div>
-                    <div className="text-[10px] text-slate-500">{cs.testimonial.role}, {cs.testimonial.company}</div>
+                    <div className="text-xs font-bold text-[#0F172A] dark:text-white">{cs.testimonial.author}</div>
+                    <div className="text-[10px] text-slate-500 dark:text-white/50">{cs.testimonial.role}, {cs.testimonial.company}</div>
                   </div>
                   <Link
                     to="/automation/case-studies"
-                    className="text-xs font-bold text-cyan-700 hover:text-cyan-800 flex items-center gap-1"
+                    className="text-xs font-bold text-cyan-700 dark:text-cyan-400 hover:text-cyan-800 dark:hover:text-cyan-300 flex items-center gap-1"
                   >
                     Full Case Study <ArrowRight className="w-3.5 h-3.5" />
                   </Link>
@@ -724,38 +724,38 @@ export default function AutomationHome() {
       </section>
 
       {/* ================= SECTION 7: CALL SCHEDULING & SYSTEM AUDIT FORM ================= */}
-      <section id="system-audit" className="py-24 bg-[#FFFFFF] relative overflow-hidden">
+      <section id="system-audit" className="py-24 bg-[#FFFFFF] dark:bg-navy relative overflow-hidden">
         {/* Top Rim Gradient */}
         <div className="absolute top-0 left-0 right-0 h-[3px] bg-gradient-to-r from-cyan-400 via-[#6D28D9] to-[#FF6B4A]" />
 
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           
           <div className="text-center mb-12 space-y-4">
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-cyan-50 border border-cyan-200 text-cyan-800 text-xs font-mono font-bold">
-              <Sparkles className="w-4 h-4 text-cyan-600" />
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-cyan-50 dark:bg-cyan-950/40 border border-cyan-200 dark:border-cyan-500/30 text-cyan-800 dark:text-cyan-300 text-xs font-mono font-bold">
+              <Sparkles className="w-4 h-4 text-cyan-600 dark:text-cyan-400" />
               <span>Direct Engineering Audit</span>
             </div>
 
-            <h2 className="text-3xl sm:text-5xl font-extrabold text-[#0F172A] tracking-tight">
+            <h2 className="text-3xl sm:text-5xl font-extrabold text-[#0F172A] dark:text-white tracking-tight">
               Audit Your Software &amp; Workflow Stack
             </h2>
 
-            <p className="text-base sm:text-lg text-slate-600 max-w-2xl mx-auto">
+            <p className="text-base sm:text-lg text-slate-600 dark:text-white/70 max-w-2xl mx-auto">
               Choose how you want to connect: book an instant 30-minute calendar strategy call, or submit your software stack for a tailored written architecture blueprint.
             </p>
 
             {/* Audit Mode Switcher Tabs */}
-            <div className="inline-flex p-1.5 rounded-2xl bg-slate-100 border border-[#CBD5E1] gap-2 mt-4">
+            <div className="inline-flex p-1.5 rounded-2xl bg-slate-100 dark:bg-white/5 border border-[#CBD5E1] dark:border-white/10 gap-2 mt-4">
               <button
                 type="button"
                 onClick={() => setAuditTab("book")}
                 className={`px-5 py-2.5 rounded-xl text-xs font-bold transition-all flex items-center gap-2 cursor-pointer ${
                   auditTab === "book"
-                    ? "bg-white text-cyan-800 shadow-sm border border-slate-200"
-                    : "text-slate-600 hover:text-[#0F172A]"
+                    ? "bg-white dark:bg-white/15 text-cyan-800 dark:text-cyan-300 shadow-sm border border-slate-200 dark:border-white/10"
+                    : "text-slate-600 dark:text-white/60 hover:text-[#0F172A] dark:hover:text-white"
                 }`}
               >
-                <Calendar className="w-4 h-4 text-cyan-600" />
+                <Calendar className="w-4 h-4 text-cyan-600 dark:text-cyan-400" />
                 <span>Instant Calendar Booking</span>
               </button>
               <button
@@ -763,11 +763,11 @@ export default function AutomationHome() {
                 onClick={() => setAuditTab("form")}
                 className={`px-5 py-2.5 rounded-xl text-xs font-bold transition-all flex items-center gap-2 cursor-pointer ${
                   auditTab === "form"
-                    ? "bg-white text-cyan-800 shadow-sm border border-slate-200"
-                    : "text-slate-600 hover:text-[#0F172A]"
+                    ? "bg-white dark:bg-white/15 text-cyan-800 dark:text-cyan-300 shadow-sm border border-slate-200 dark:border-white/10"
+                    : "text-slate-600 dark:text-white/60 hover:text-[#0F172A] dark:hover:text-white"
                 }`}
               >
-                <Send className="w-4 h-4 text-[#6D28D9]" />
+                <Send className="w-4 h-4 text-[#6D28D9] dark:text-purple-400" />
                 <span>Request Written Audit Form</span>
               </button>
             </div>
@@ -775,30 +775,30 @@ export default function AutomationHome() {
 
           {/* TAB 1: Instant Calendar Booking Card */}
           {auditTab === "book" && (
-            <div className="bg-white border border-[#E2E8F0] rounded-3xl p-8 sm:p-12 shadow-2xl text-center space-y-8 relative overflow-hidden">
-              <div className="w-16 h-16 rounded-2xl bg-cyan-100 text-cyan-700 flex items-center justify-center mx-auto shadow-sm border border-cyan-200">
+            <div className="bg-white dark:bg-white/5 border border-[#E2E8F0] dark:border-white/10 rounded-3xl p-8 sm:p-12 shadow-2xl text-center space-y-8 relative overflow-hidden">
+              <div className="w-16 h-16 rounded-2xl bg-cyan-100 dark:bg-cyan-950/60 text-cyan-700 dark:text-cyan-400 flex items-center justify-center mx-auto shadow-sm border border-cyan-200 dark:border-cyan-500/30">
                 <Calendar className="w-8 h-8" />
               </div>
 
               <div className="space-y-2 max-w-xl mx-auto">
-                <h3 className="text-2xl font-bold text-[#0F172A]">Book Your 30-Minute AI Systems Call</h3>
-                <p className="text-sm text-slate-600 leading-relaxed">
+                <h3 className="text-2xl font-bold text-[#0F172A] dark:text-white">Book Your 30-Minute AI Systems Call</h3>
+                <p className="text-sm text-slate-600 dark:text-white/70 leading-relaxed">
                   Our live calendar is synced directly with our engineering team. Pick a time that fits your schedule for an immediate 1-on-1 technical review.
                 </p>
               </div>
 
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-2xl mx-auto text-left py-2">
-                <div className="p-4 rounded-xl bg-slate-50 border border-slate-200 space-y-1">
-                  <div className="text-xs font-bold text-[#0F172A]">1. Workflow Review</div>
-                  <p className="text-[11px] text-slate-500">We inspect your repetitive daily tasks & manual typing bottlenecks.</p>
+                <div className="p-4 rounded-xl bg-slate-50 dark:bg-white/5 border border-slate-200 dark:border-white/10 space-y-1">
+                  <div className="text-xs font-bold text-[#0F172A] dark:text-white">1. Workflow Review</div>
+                  <p className="text-[11px] text-slate-500 dark:text-white/60">We inspect your repetitive daily tasks & manual typing bottlenecks.</p>
                 </div>
-                <div className="p-4 rounded-xl bg-slate-50 border border-slate-200 space-y-1">
-                  <div className="text-xs font-bold text-[#0F172A]">2. Tech Architecture</div>
-                  <p className="text-[11px] text-slate-500">We recommend exact API hooks, AI models, and CRM configurations.</p>
+                <div className="p-4 rounded-xl bg-slate-50 dark:bg-white/5 border border-slate-200 dark:border-white/10 space-y-1">
+                  <div className="text-xs font-bold text-[#0F172A] dark:text-white">2. Tech Architecture</div>
+                  <p className="text-[11px] text-slate-500 dark:text-white/60">We recommend exact API hooks, AI models, and CRM configurations.</p>
                 </div>
-                <div className="p-4 rounded-xl bg-slate-50 border border-slate-200 space-y-1">
-                  <div className="text-xs font-bold text-[#0F172A]">3. Fixed Timeline & Cost</div>
-                  <p className="text-[11px] text-slate-500">We map out your 14-day production roadmap with clear ROI metrics.</p>
+                <div className="p-4 rounded-xl bg-slate-50 dark:bg-white/5 border border-slate-200 dark:border-white/10 space-y-1">
+                  <div className="text-xs font-bold text-[#0F172A] dark:text-white">3. Fixed Timeline & Cost</div>
+                  <p className="text-[11px] text-slate-500 dark:text-white/60">We map out your 14-day production roadmap with clear ROI metrics.</p>
                 </div>
               </div>
 
@@ -813,24 +813,24 @@ export default function AutomationHome() {
                 </button>
               </div>
 
-              <div className="flex items-center justify-center gap-6 pt-4 text-xs text-slate-500 font-mono">
-                <span className="flex items-center gap-1.5"><ShieldCheck className="w-4 h-4 text-emerald-600" /> Free 30-Min Call</span>
-                <span className="flex items-center gap-1.5"><Lock className="w-4 h-4 text-cyan-600" /> Strict NDA Included</span>
-                <span className="flex items-center gap-1.5"><Clock className="w-4 h-4 text-[#6D28D9]" /> Zero Sales Fluff</span>
+              <div className="flex items-center justify-center gap-6 pt-4 text-xs text-slate-500 dark:text-white/50 font-mono">
+                <span className="flex items-center gap-1.5"><ShieldCheck className="w-4 h-4 text-emerald-600 dark:text-emerald-400" /> Free 30-Min Call</span>
+                <span className="flex items-center gap-1.5"><Lock className="w-4 h-4 text-cyan-600 dark:text-cyan-400" /> Strict NDA Included</span>
+                <span className="flex items-center gap-1.5"><Clock className="w-4 h-4 text-[#6D28D9] dark:text-purple-400" /> Zero Sales Fluff</span>
               </div>
             </div>
           )}
 
           {/* TAB 2: Web3Forms & CRM Integrated Lead Capture Form */}
           {auditTab === "form" && (
-            <div className="bg-white border border-[#E2E8F0] rounded-3xl p-8 sm:p-12 shadow-2xl relative overflow-hidden">
+            <div className="bg-white dark:bg-white/5 border border-[#E2E8F0] dark:border-white/10 rounded-3xl p-8 sm:p-12 shadow-2xl relative overflow-hidden">
               {isSuccess ? (
                 <div className="text-center py-10 space-y-6">
-                  <div className="w-16 h-16 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center mx-auto">
+                  <div className="w-16 h-16 rounded-full bg-emerald-100 dark:bg-emerald-950/60 text-emerald-600 dark:text-emerald-400 flex items-center justify-center mx-auto">
                     <CheckCircle className="w-10 h-10" />
                   </div>
-                  <h3 className="text-2xl font-bold text-[#0F172A]">Audit Request Received!</h3>
-                  <p className="text-sm text-slate-600 max-w-md mx-auto leading-relaxed">
+                  <h3 className="text-2xl font-bold text-[#0F172A] dark:text-white">Audit Request Received!</h3>
+                  <p className="text-sm text-slate-600 dark:text-white/70 max-w-md mx-auto leading-relaxed">
                     Thank you, {formData.fullName}. Our lead automation architect is reviewing your software stack and will deliver your custom blueprint to <strong>{formData.email}</strong> within 24 hours.
                   </p>
                   <button
@@ -846,7 +846,7 @@ export default function AutomationHome() {
                         message: ""
                       });
                     }}
-                    className="px-6 py-2.5 rounded-xl bg-slate-100 text-slate-700 text-xs font-bold hover:bg-slate-200"
+                    className="px-6 py-2.5 rounded-xl bg-slate-100 dark:bg-white/10 text-slate-700 dark:text-white text-xs font-bold hover:bg-slate-200 dark:hover:bg-white/20"
                   >
                     Submit Another Request
                   </button>
@@ -854,14 +854,14 @@ export default function AutomationHome() {
               ) : (
                 <form onSubmit={handleFormSubmit} className="space-y-6">
                   {errorMessage && (
-                    <div className="p-4 rounded-xl bg-rose-50 border border-rose-200 text-rose-700 text-xs font-mono">
+                    <div className="p-4 rounded-xl bg-rose-50 dark:bg-rose-950/40 border border-rose-200 dark:border-rose-900/40 text-rose-700 dark:text-rose-400 text-xs font-mono">
                       {errorMessage}
                     </div>
                   )}
 
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                     <div>
-                      <label className="block text-xs font-mono font-bold text-slate-700 uppercase mb-1.5">
+                      <label className="block text-xs font-mono font-bold text-slate-700 dark:text-white/80 uppercase mb-1.5">
                         Full Name *
                       </label>
                       <input
@@ -870,12 +870,12 @@ export default function AutomationHome() {
                         value={formData.fullName}
                         onChange={(e) => setFormData({ ...formData, fullName: e.target.value })}
                         placeholder="e.g. Marcus Vance"
-                        className="w-full bg-slate-50 border border-[#CBD5E1] rounded-xl px-4 py-3 text-sm text-[#0F172A] focus:outline-none focus:border-cyan-500 focus:bg-white"
+                        className="w-full bg-slate-50 dark:bg-white/5 border border-[#CBD5E1] dark:border-white/10 rounded-xl px-4 py-3 text-sm text-[#0F172A] dark:text-white focus:outline-none focus:border-cyan-500 focus:bg-white dark:focus:bg-white/10"
                       />
                     </div>
 
                     <div>
-                      <label className="block text-xs font-mono font-bold text-slate-700 uppercase mb-1.5">
+                      <label className="block text-xs font-mono font-bold text-slate-700 dark:text-white/80 uppercase mb-1.5">
                         Work Email *
                       </label>
                       <input
@@ -884,14 +884,14 @@ export default function AutomationHome() {
                         value={formData.email}
                         onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                         placeholder="marcus@company.com"
-                        className="w-full bg-slate-50 border border-[#CBD5E1] rounded-xl px-4 py-3 text-sm text-[#0F172A] focus:outline-none focus:border-cyan-500 focus:bg-white"
+                        className="w-full bg-slate-50 dark:bg-white/5 border border-[#CBD5E1] dark:border-white/10 rounded-xl px-4 py-3 text-sm text-[#0F172A] dark:text-white focus:outline-none focus:border-cyan-500 focus:bg-white dark:focus:bg-white/10"
                       />
                     </div>
                   </div>
 
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                     <div>
-                      <label className="block text-xs font-mono font-bold text-slate-700 uppercase mb-1.5">
+                      <label className="block text-xs font-mono font-bold text-slate-700 dark:text-white/80 uppercase mb-1.5">
                         Company Name *
                       </label>
                       <input
@@ -900,12 +900,12 @@ export default function AutomationHome() {
                         value={formData.companyName}
                         onChange={(e) => setFormData({ ...formData, companyName: e.target.value })}
                         placeholder="e.g. Apex Logistics"
-                        className="w-full bg-slate-50 border border-[#CBD5E1] rounded-xl px-4 py-3 text-sm text-[#0F172A] focus:outline-none focus:border-cyan-500 focus:bg-white"
+                        className="w-full bg-slate-50 dark:bg-white/5 border border-[#CBD5E1] dark:border-white/10 rounded-xl px-4 py-3 text-sm text-[#0F172A] dark:text-white focus:outline-none focus:border-cyan-500 focus:bg-white dark:focus:bg-white/10"
                       />
                     </div>
 
                     <div>
-                      <label className="block text-xs font-mono font-bold text-slate-700 uppercase mb-1.5">
+                      <label className="block text-xs font-mono font-bold text-slate-700 dark:text-white/80 uppercase mb-1.5">
                         Phone Number (Optional)
                       </label>
                       <input
@@ -913,31 +913,31 @@ export default function AutomationHome() {
                         value={formData.phone}
                         onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                         placeholder="+1 (555) 000-0000"
-                        className="w-full bg-slate-50 border border-[#CBD5E1] rounded-xl px-4 py-3 text-sm text-[#0F172A] focus:outline-none focus:border-cyan-500 focus:bg-white"
+                        className="w-full bg-slate-50 dark:bg-white/5 border border-[#CBD5E1] dark:border-white/10 rounded-xl px-4 py-3 text-sm text-[#0F172A] dark:text-white focus:outline-none focus:border-cyan-500 focus:bg-white dark:focus:bg-white/10"
                       />
                     </div>
                   </div>
 
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                     <div>
-                      <label className="block text-xs font-mono font-bold text-slate-700 uppercase mb-1.5">
+                      <label className="block text-xs font-mono font-bold text-slate-700 dark:text-white/80 uppercase mb-1.5">
                         Primary Automation Focus
                       </label>
                       <select
                         value={formData.automationFocus}
                         onChange={(e) => setFormData({ ...formData, automationFocus: e.target.value })}
-                        className="w-full bg-slate-50 border border-[#CBD5E1] rounded-xl px-4 py-3 text-sm text-[#0F172A] focus:outline-none focus:border-cyan-500 focus:bg-white"
+                        className="w-full bg-slate-50 dark:bg-white/5 border border-[#CBD5E1] dark:border-white/10 rounded-xl px-4 py-3 text-sm text-[#0F172A] dark:text-white focus:outline-none focus:border-cyan-500 focus:bg-white dark:focus:bg-white/10"
                       >
-                        <option value="AI Voice Agents & Calling">AI Voice Agents &amp; Inbound Calling</option>
-                        <option value="API & Workflow Middleware">API &amp; Middleware (n8n / Make / Python)</option>
-                        <option value="GoHighLevel CRM Setup">GoHighLevel CRM Architecture</option>
-                        <option value="E-Commerce & Data Sync">E-Commerce &amp; Data Sync (Shopify / ERP)</option>
-                        <option value="Complete Systems Overhaul">Complete Systems Overhaul</option>
+                        <option value="AI Voice Agents & Calling" className="dark:bg-navy dark:text-white">AI Voice Agents &amp; Inbound Calling</option>
+                        <option value="API & Workflow Middleware" className="dark:bg-navy dark:text-white">API &amp; Middleware (n8n / Make / Python)</option>
+                        <option value="GoHighLevel CRM Setup" className="dark:bg-navy dark:text-white">GoHighLevel CRM Architecture</option>
+                        <option value="E-Commerce & Data Sync" className="dark:bg-navy dark:text-white">E-Commerce &amp; Data Sync (Shopify / ERP)</option>
+                        <option value="Complete Systems Overhaul" className="dark:bg-navy dark:text-white">Complete Systems Overhaul</option>
                       </select>
                     </div>
 
                     <div>
-                      <label className="block text-xs font-mono font-bold text-slate-700 uppercase mb-1.5">
+                      <label className="block text-xs font-mono font-bold text-slate-700 dark:text-white/80 uppercase mb-1.5">
                         Current Software Stack
                       </label>
                       <input
@@ -945,13 +945,13 @@ export default function AutomationHome() {
                         value={formData.currentStack}
                         onChange={(e) => setFormData({ ...formData, currentStack: e.target.value })}
                         placeholder="e.g. HubSpot, Shopify, Google Sheets, Slack"
-                        className="w-full bg-slate-50 border border-[#CBD5E1] rounded-xl px-4 py-3 text-sm text-[#0F172A] focus:outline-none focus:border-cyan-500 focus:bg-white"
+                        className="w-full bg-slate-50 dark:bg-white/5 border border-[#CBD5E1] dark:border-white/10 rounded-xl px-4 py-3 text-sm text-[#0F172A] dark:text-white focus:outline-none focus:border-cyan-500 focus:bg-white dark:focus:bg-white/10"
                       />
                     </div>
                   </div>
 
                   <div>
-                    <label className="block text-xs font-mono font-bold text-slate-700 uppercase mb-1.5">
+                    <label className="block text-xs font-mono font-bold text-slate-700 dark:text-white/80 uppercase mb-1.5">
                       What is your biggest manual bottleneck right now?
                     </label>
                     <textarea
@@ -959,7 +959,7 @@ export default function AutomationHome() {
                       value={formData.message}
                       onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                       placeholder="Briefly describe what repetitive task or disconnect takes up your team's time..."
-                      className="w-full bg-slate-50 border border-[#CBD5E1] rounded-xl px-4 py-3 text-sm text-[#0F172A] focus:outline-none focus:border-cyan-500 focus:bg-white"
+                      className="w-full bg-slate-50 dark:bg-white/5 border border-[#CBD5E1] dark:border-white/10 rounded-xl px-4 py-3 text-sm text-[#0F172A] dark:text-white focus:outline-none focus:border-cyan-500 focus:bg-white dark:focus:bg-white/10"
                     />
                   </div>
 
@@ -972,7 +972,7 @@ export default function AutomationHome() {
                     <span>{isSubmitting ? "Submitting Audit Request..." : "Request Written Blueprint (Direct to Inbox)"}</span>
                   </button>
 
-                  <p className="text-center text-[11px] text-slate-500 font-mono">
+                  <p className="text-center text-[11px] text-slate-500 dark:text-white/50 font-mono">
                     Direct integration via Web3Forms &amp; CRM • 100% Confidential • Response within 24 hours
                   </p>
                 </form>
@@ -984,14 +984,14 @@ export default function AutomationHome() {
       </section>
 
       {/* ================= SECTION 8: FAQS ================= */}
-      <section className="py-20 md:py-24 bg-[#F8FAFC] relative border-b border-[#E2E8F0]">
+      <section className="py-20 md:py-24 bg-[#F8FAFC] dark:bg-navy/90 relative border-b border-[#E2E8F0] dark:border-white/10">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           
           <div className="text-center mb-16 space-y-3">
-            <h2 className="text-3xl sm:text-4xl font-extrabold text-[#0F172A] tracking-tight">
+            <h2 className="text-3xl sm:text-4xl font-extrabold text-[#0F172A] dark:text-white tracking-tight">
               Frequently Asked Questions
             </h2>
-            <p className="text-slate-600 text-base">
+            <p className="text-slate-600 dark:text-white/70 text-base">
               Clear answers regarding security, timelines, and software tool compatibility.
             </p>
           </div>
@@ -1000,17 +1000,17 @@ export default function AutomationHome() {
             {AUTOMATION_FAQS.map((faq, idx) => (
               <div 
                 key={idx}
-                className="bg-white border border-[#E2E8F0] rounded-2xl overflow-hidden shadow-xs transition-colors"
+                className="bg-white dark:bg-white/5 border border-[#E2E8F0] dark:border-white/10 rounded-2xl overflow-hidden shadow-xs transition-colors"
               >
                 <button
                   onClick={() => setOpenFaq(openFaq === idx ? null : idx)}
-                  className="w-full px-6 py-5 text-left font-bold text-base text-[#0F172A] flex items-center justify-between gap-4 focus:outline-none cursor-pointer"
+                  className="w-full px-6 py-5 text-left font-bold text-base text-[#0F172A] dark:text-white flex items-center justify-between gap-4 focus:outline-none cursor-pointer"
                 >
                   <span>{faq.question}</span>
-                  <ChevronRight className={`w-5 h-5 text-cyan-600 transition-transform duration-200 shrink-0 ${openFaq === idx ? "rotate-90" : ""}`} />
+                  <ChevronRight className={`w-5 h-5 text-cyan-600 dark:text-cyan-400 transition-transform duration-200 shrink-0 ${openFaq === idx ? "rotate-90" : ""}`} />
                 </button>
                 {openFaq === idx && (
-                  <div className="px-6 pb-6 text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-4">
+                  <div className="px-6 pb-6 text-sm text-slate-600 dark:text-white/70 leading-relaxed border-t border-slate-100 dark:border-white/10 pt-4">
                     {faq.answer}
                   </div>
                 )}

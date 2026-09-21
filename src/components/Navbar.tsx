@@ -90,11 +90,7 @@ export default function Navbar() {
                       "text-xs font-bold uppercase tracking-[0.2em] transition-all relative group",
                       isActive
                         ? "text-[#8B5CF6]"
-                        : isScrolled
-                          ? "text-navy dark:text-white font-semibold hover:text-[#D946EF]"
-                          : isDarkHero
-                            ? "text-white/90 hover:text-[#D946EF]"
-                            : "text-navy dark:text-white font-semibold hover:text-[#D946EF]"
+                        : "text-navy dark:text-white font-semibold hover:text-[#D946EF]"
                     )}
                   >
                     {link.name}
@@ -130,33 +126,17 @@ export default function Navbar() {
         <div className="flex items-center gap-4 lg:hidden">
           <ThemeToggle />
           <button
-            className={cn(
-              "p-2 rounded-xl transition-all duration-300",
-              isScrolled 
-                ? "text-navy dark:text-white hover:bg-navy/5 dark:hover:bg-white/5" 
-                : isDarkHero 
-                  ? "text-white hover:bg-white/10" 
-                  : "text-navy dark:text-white hover:bg-navy/5 dark:hover:bg-white/5"
-            )}
+            className="p-2 rounded-xl transition-all duration-300 text-navy dark:text-white hover:bg-navy/5 dark:hover:bg-white/5"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             aria-label="Toggle navigation menu"
           >
             {isMobileMenuOpen ? (
-              <X size={32} className={cn(isScrolled || !isDarkHero ? "text-navy dark:text-white" : "text-white")} />
+              <X size={32} className="text-navy dark:text-white" />
             ) : (
               <div className="space-y-1.5 p-1">
-                <div className={cn(
-                  "w-6 h-0.5 rounded-full transition-all duration-300",
-                  isScrolled || !isDarkHero ? "bg-navy dark:bg-white" : "bg-white"
-                )}></div>
-                <div className={cn(
-                  "w-8 h-0.5 rounded-full transition-all duration-300",
-                  isScrolled || !isDarkHero ? "bg-navy dark:bg-white" : "bg-white"
-                )}></div>
-                <div className={cn(
-                  "w-5 h-0.5 rounded-full transition-all duration-300",
-                  isScrolled || !isDarkHero ? "bg-navy dark:bg-white" : "bg-white"
-                )}></div>
+                <div className="w-6 h-0.5 rounded-full transition-all duration-300 bg-navy dark:bg-white"></div>
+                <div className="w-8 h-0.5 rounded-full transition-all duration-300 bg-navy dark:bg-white"></div>
+                <div className="w-5 h-0.5 rounded-full transition-all duration-300 bg-navy dark:bg-white"></div>
               </div>
             )}
           </button>
