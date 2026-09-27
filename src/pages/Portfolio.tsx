@@ -4,6 +4,7 @@ import PageWrapper from "../components/PageWrapper";
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import ScrollReveal from "../components/ScrollReveal";
+import Portfolio3DStage from "../components/Portfolio3DStage";
 
 
 const categories = ["All", "👗 Fashion", "💄 Beauty & Skincare", "🐾 Pets", "📱 Gadgets"];
@@ -190,6 +191,9 @@ export default function Portfolio() {
             </div>
           </div>
         </section>
+
+    {/* Responsive 3D Viewport Stage */}
+    <Portfolio3DStage />
 
     {/* Portfolio Gallery */}
     <ScrollReveal>

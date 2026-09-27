@@ -13,6 +13,7 @@ import { TiltCard } from "../components/TiltCard";
 
 import { Marquee } from "../components/Marquee";
 import { WordRotator } from "../components/WordRotator";
+import Shopify3DEngine from "../components/Shopify3DEngine";
 
 const stats = [
   { label: "Stores Built", value: "20+" },
@@ -406,6 +407,7 @@ export default function Home() {
   useEffect(() => {
     if (isPaused) return;
     const timer = setInterval(() => {
+      if (document.hidden) return;
       setTestimonialIndex((prev) => {
         const maxIndex = testimonials.length - visibleCount;
         return prev >= maxIndex ? 0 : prev + 1;
@@ -818,6 +820,9 @@ export default function Home() {
         </div>
       </div>
     </section>
+
+    {/* Progressive 3D Shopify Performance Engine (Isolated, Non-LCP, WebGL-Optimized) */}
+    <Shopify3DEngine />
 
     {/* Pain Points Section */}
     <ScrollReveal>

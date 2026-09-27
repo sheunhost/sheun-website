@@ -5,6 +5,7 @@ import { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import ScrollReveal from "../components/ScrollReveal";
 import { servicesData } from "../data/servicesData";
+import Services3DArchitecture from "../components/Services3DArchitecture";
 
 const services = [
   {
@@ -631,6 +632,9 @@ export default function Services() {
         </div>
       </section>
     </ScrollReveal>
+
+      {/* Interactive 3D Shopify Liquid Architecture Matrix */}
+      <Services3DArchitecture />
 
       {/* Pricing Tiers - Bento Grid */}
       <ScrollReveal>

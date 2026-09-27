@@ -1,14 +1,17 @@
-import { motion } from "framer-motion";
-import { ReactNode } from "react";
+import { motion, useInView } from "framer-motion";
+import { ReactNode, useRef } from "react";
 
 export function Marquee({ children, speed = 40, reverse = false }: { children: ReactNode, speed?: number, reverse?: boolean }) {
+  const containerRef = useRef<HTMLDivElement>(null);
+  const isInView = useInView(containerRef, { margin: "100px" });
+
   return (
-    <div className="overflow-hidden flex w-full relative">
+    <div ref={containerRef} className="overflow-hidden flex w-full relative">
       <motion.div
         className="flex whitespace-nowrap will-change-transform"
-        animate={{
+        animate={isInView ? {
           x: reverse ? ["-100%", "0%"] : ["0%", "-100%"]
-        }}
+        } : {}}
         transition={{
           repeat: Infinity,
           ease: "linear",
@@ -21,9 +24,9 @@ export function Marquee({ children, speed = 40, reverse = false }: { children: R
       </motion.div>
       <motion.div
         className="flex whitespace-nowrap will-change-transform absolute left-full top-0 h-full"
-        animate={{
+        animate={isInView ? {
           x: reverse ? ["-100%", "0%"] : ["0%", "-100%"]
-        }}
+        } : {}}
         transition={{
           repeat: Infinity,
           ease: "linear",

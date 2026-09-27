@@ -30,6 +30,7 @@ import {
 } from "lucide-react";
 import { Helmet } from "react-helmet-async";
 import PageWrapper from "../components/PageWrapper";
+import SeoSprint3DScanner from "../components/SeoSprint3DScanner";
 
 interface FaqItem {
   q: string;
@@ -690,6 +691,9 @@ export default function ShopifySeoSprint() {
           </div>
         </div>
       </section>
+
+      {/* SECTION 5B: 3D TECHNICAL CRAWL SCANNER */}
+      <SeoSprint3DScanner />
 
       {/* SECTION 6: EVERYTHING INCLUDED */}
       <section id="included" className="py-24 bg-[#F8FAFC] dark:bg-navy border-t border-[#E2E8F0] dark:border-white/10 relative">

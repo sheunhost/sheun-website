@@ -3,6 +3,7 @@ import { CheckCircle2, Award, GraduationCap, Star, MapPin, Globe, ArrowRight, Co
 import PageWrapper from "../components/PageWrapper";
 import { Link, useNavigate } from "react-router-dom";
 import ScrollReveal from "../components/ScrollReveal";
+import About3DGlobe from "../components/About3DGlobe";
 
 const timeline = [
   { year: "2023", title: "Graduated, OAU", desc: "B.Sc. Business Management from Obafemi Awolowo University." },
@@ -308,6 +309,9 @@ export default function About() {
           </div>
         </section>
       </ScrollReveal>
+
+      {/* 3D Global Client Network */}
+      <About3DGlobe />
 
       {/* HOW I WORK */}
       <ScrollReveal>
