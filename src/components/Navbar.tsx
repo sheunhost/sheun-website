@@ -26,13 +26,19 @@ const darkHeroRoutes = [
 ];
 
 const isDarkHeroRoute = (pathname: string) => {
-  if (pathname === "/") return true;
-  if (pathname.startsWith("/blog")) return true;
-  if (pathname === "/contact") return true;
-  if (pathname === "/apply") return true;
-  if (pathname === "/calculator") return true;
-  if (pathname === "/privacy-policy" || pathname === "/terms-of-service") return true;
-  return false;
+  // Routes with light background hero in light mode
+  if (
+    pathname === "/services" ||
+    pathname.startsWith("/services/") ||
+    pathname === "/portfolio" ||
+    pathname === "/about" ||
+    pathname === "/shopify-seo-sprint" ||
+    pathname === "/seo-sprint"
+  ) {
+    return false;
+  }
+  // All other pages (Home /, /blog, /blog/*, /contact, /apply, /calculator, /privacy-policy, /terms-of-service, etc.) have dark navy hero backgrounds
+  return true;
 };
 
 export default function Navbar() {
@@ -41,10 +47,11 @@ export default function Navbar() {
   const location = useLocation();
 
   const isDarkHero = isDarkHeroRoute(location.pathname);
+  const isDarkBackground = !isScrolled && isDarkHero;
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 80);
+      setIsScrolled(window.scrollY > 50);
     };
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
@@ -59,8 +66,10 @@ export default function Navbar() {
         className={cn(
           "fixed top-0 left-0 right-0 z-50 transition-all duration-500",
           isScrolled 
-            ? "bg-white/95 dark:bg-navy/95 backdrop-blur-xl shadow-[0_8px_32px_rgba(0,0,0,0.1)] py-4" 
-            : "bg-transparent py-6 md:py-7"
+            ? "bg-white/95 dark:bg-navy/95 backdrop-blur-xl shadow-[0_8px_32px_rgba(0,0,0,0.12)] py-4 border-b border-slate-200/80 dark:border-white/10" 
+            : isDarkHero
+              ? "bg-navy/60 backdrop-blur-md py-6 md:py-7 border-b border-white/10"
+              : "bg-white/60 dark:bg-navy/60 backdrop-blur-md py-6 md:py-7 border-b border-slate-200/40 dark:border-white/10"
         )}
       >
         <div className="container mx-auto px-6 flex items-center justify-between">
@@ -89,8 +98,10 @@ export default function Navbar() {
                     className={cn(
                       "text-xs font-bold uppercase tracking-[0.2em] transition-all relative group",
                       isActive
-                        ? "text-[#8B5CF6]"
-                        : "text-navy dark:text-white font-semibold hover:text-[#D946EF]"
+                        ? "text-[#D946EF] dark:text-[#D946EF]"
+                        : isDarkBackground
+                          ? "text-white/95 hover:text-white drop-shadow-sm hover:text-[#D946EF]"
+                          : "text-[#0F172A] dark:text-white hover:text-[#D946EF]"
                     )}
                   >
                     {link.name}
@@ -112,31 +123,36 @@ export default function Navbar() {
                 className={cn(
                   "px-6 py-3 rounded-full font-bold text-xs uppercase tracking-widest transition-all shadow-md",
                   isScrolled 
-                    ? "bg-[#08090B] text-white hover:bg-gradient-to-r hover:from-[#FF6B4A] hover:via-[#D946EF] hover:to-[#6D28D9]" 
+                    ? "bg-[#08090B] dark:bg-white dark:text-[#08090B] text-white hover:bg-gradient-to-r hover:from-[#FF6B4A] hover:via-[#D946EF] hover:to-[#6D28D9] dark:hover:text-white" 
                     : "bg-gradient-to-r from-[#FF6B4A] via-[#D946EF] to-[#6D28D9] text-white hover:opacity-90 shadow-[0_4px_20px_rgba(217,70,239,0.3)]"
                 )}
               >
                 Apply Now
               </Link>
-              <ThemeToggle />
+              <ThemeToggle isDarkBackground={isDarkBackground} />
             </div>
           </div>
 
         {/* Mobile Toggle & Theme */}
         <div className="flex items-center gap-4 lg:hidden">
-          <ThemeToggle />
+          <ThemeToggle isDarkBackground={isDarkBackground} />
           <button
-            className="p-2 rounded-xl transition-all duration-300 text-navy dark:text-white hover:bg-navy/5 dark:hover:bg-white/5"
+            className={cn(
+              "p-2 rounded-xl transition-all duration-300",
+              isDarkBackground
+                ? "text-white hover:bg-white/10"
+                : "text-[#0F172A] dark:text-white hover:bg-navy/5 dark:hover:bg-white/5"
+            )}
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             aria-label="Toggle navigation menu"
           >
             {isMobileMenuOpen ? (
-              <X size={32} className="text-navy dark:text-white" />
+              <X size={32} className={isDarkBackground ? "text-white" : "text-[#0F172A] dark:text-white"} />
             ) : (
               <div className="space-y-1.5 p-1">
-                <div className="w-6 h-0.5 rounded-full transition-all duration-300 bg-navy dark:bg-white"></div>
-                <div className="w-8 h-0.5 rounded-full transition-all duration-300 bg-navy dark:bg-white"></div>
-                <div className="w-5 h-0.5 rounded-full transition-all duration-300 bg-navy dark:bg-white"></div>
+                <div className={cn("w-6 h-0.5 rounded-full transition-all duration-300", isDarkBackground ? "bg-white" : "bg-[#0F172A] dark:bg-white")}></div>
+                <div className={cn("w-8 h-0.5 rounded-full transition-all duration-300", isDarkBackground ? "bg-white" : "bg-[#0F172A] dark:bg-white")}></div>
+                <div className={cn("w-5 h-0.5 rounded-full transition-all duration-300", isDarkBackground ? "bg-white" : "bg-[#0F172A] dark:bg-white")}></div>
               </div>
             )}
           </button>
@@ -150,7 +166,7 @@ export default function Navbar() {
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
-            className="absolute top-full left-0 right-0 bg-white/95 dark:bg-navy/95 backdrop-blur-2xl border-b border-navy/5 dark:border-white/10 p-8 lg:hidden shadow-2xl"
+            className="absolute top-full left-0 right-0 bg-white/98 dark:bg-navy/98 backdrop-blur-2xl border-b border-slate-200 dark:border-white/10 p-8 lg:hidden shadow-2xl"
           >
             <div className="flex flex-col space-y-6">
               {navLinks.map((link) => (
@@ -159,12 +175,12 @@ export default function Navbar() {
                   to={link.href}
                   onClick={() => setIsMobileMenuOpen(false)}
                   className={cn(
-                    "text-2xl font-bold flex items-center justify-between tracking-tighter",
-                    location.pathname === link.href ? "text-[#8B5CF6]" : "text-navy dark:text-white"
+                    "text-2xl font-bold flex items-center justify-between tracking-tighter transition-colors",
+                    location.pathname === link.href ? "text-[#D946EF]" : "text-[#0F172A] dark:text-white hover:text-[#D946EF]"
                   )}
                 >
                   {link.name}
-                  <ChevronRight size={20} className="text-[#8B5CF6]" />
+                  <ChevronRight size={20} className={location.pathname === link.href ? "text-[#D946EF]" : "text-[#8B5CF6]"} />
                 </Link>
               ))}
             </div>
