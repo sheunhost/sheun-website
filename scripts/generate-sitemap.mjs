@@ -20,7 +20,7 @@ const baseRoutes = [
   { url: '/shopify-speed-optimization', priority: '0.8', changefreq: 'monthly' },
   { url: '/woocommerce-to-shopify-migration', priority: '0.8', changefreq: 'monthly' },
   { url: '/best-dropshipping-apps', priority: '0.8', changefreq: 'monthly' },
-  { url: 'fashion-dropshipping-guide', priority: '0.8', changefreq: 'monthly' },
+  { url: '/fashion-dropshipping-guide', priority: '0.8', changefreq: 'monthly' },
   { url: '/leveraging-shopify-markets', priority: '0.8', changefreq: 'monthly' },
   // Automation Routes
   { url: '/automation', priority: '1.0', changefreq: 'weekly' },

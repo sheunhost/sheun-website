@@ -31,7 +31,7 @@ export default function AutomationServices() {
 
   return (
     <AutomationPageWrapper
-      title="AI Automation Services & Systems | Sheun Automation"
+      title="AI Automation Services & Systems | Sheun Hub"
       description="Explore our 8 specialized AI automation services: AI Workflow Automation, GoHighLevel CRM, AI Chatbots, Voice Agents, Process Automation, CRM Migrations, Email Sequences, and Custom APIs."
     >
       {/* Header Banner */}

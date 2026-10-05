@@ -5,8 +5,8 @@ import AutomationPageWrapper from "../components/AutomationPageWrapper";
 export default function AutomationThankYou() {
   return (
     <AutomationPageWrapper
-      title="Consultation Request Confirmed | Sheun Automation"
-      description="Thank you for booking an AI Automation Strategy Session with Sheun Automation. Our engineering team is reviewing your details."
+      title="Consultation Request Confirmed | Sheun Hub"
+      description="Thank you for booking an AI Automation Strategy Session with Sheun Hub. Our engineering team is reviewing your details."
     >
       <section className="min-h-[80vh] pt-32 pb-20 flex items-center justify-center bg-slate-950 text-center">
         <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">

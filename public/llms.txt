@@ -22,12 +22,16 @@ Sheun Hub is a premium technical agency led by Sheun, specializing in two core p
 - **Plus/Enterprise:** $5,000+ - Custom headless builds, complex API middleware, and AI voice agent orchestration.
 
 ## Key Links
-- **Home:** https://sheun.online
-- **Services:** https://sheun.online/services
-- **48-Hour SEO Sprint:** https://sheun.online/shopify-seo-sprint
-- **Portfolio:** https://sheun.online/portfolio
-- **About:** https://sheun.online/about
-- **Contact:** https://sheun.online/contact
+- **Home:** https://www.sheun.online/
+- **Services:** https://www.sheun.online/services
+- **48-Hour SEO Sprint:** https://www.sheun.online/shopify-seo-sprint
+- **Portfolio:** https://www.sheun.online/portfolio
+- **AI Automation Division:** https://www.sheun.online/automation
+- **Automation Services:** https://www.sheun.online/automation/services
+- **Automation Solutions:** https://www.sheun.online/automation/solutions
+- **About:** https://www.sheun.online/about
+- **Contact:** https://www.sheun.online/contact
+- **Automation Consultation:** https://www.sheun.online/automation/contact
 
 ## Engineering Standards & Contact
 - Direct Contact: sheunhost@gmail.com

@@ -478,6 +478,353 @@ const mainPages = {
   }
 };
 
+const automationPages = {
+  "/automation": {
+    title: "B2B Systems & AI Automation Architecture | Sheun Hub",
+    heading: "Autonomous Systems That Eliminate Operational Drag",
+    description: "We design custom AI voice agents, GoHighLevel CRM architectures, and automated API pipelines that eliminate manual tasks and scale business operations.",
+    keywords: "AI automation, AI voice agents, GoHighLevel CRM, workflow automation, n8n, Make.com, business process automation, Sheun Hub",
+    type: "website",
+    contentHtml: `
+      <article>
+        <h1>Autonomous Systems That Eliminate Operational Drag</h1>
+        <p>By Sheun Hub Automation Division | Lead Architect: Emmanuel Adedayo (Sheun)</p>
+        <p>We engineer autonomous B2B AI systems, custom GoHighLevel CRM architectures, sub-600ms AI voice agents, and self-hosted n8n workflow middleware to eliminate repetitive manual tasks and accelerate revenue operations.</p>
+        <h2>Core Automation Pillars</h2>
+        <ul>
+          <li><strong>AI Voice & Inbound Calling Agents:</strong> Human-sounding voice agents with sub-600ms latency for 24/7 lead qualification and booking.</li>
+          <li><strong>API & Workflow Middleware:</strong> Zero-data-loss pipelines built on n8n, Make.com, and custom Python/Node.js microservices.</li>
+          <li><strong>GoHighLevel CRM Architecture:</strong> Sub-60s speed-to-lead nurturing, automated SMS/email sequences, and review generation.</li>
+          <li><strong>E-Commerce & Data Synchronization:</strong> Real-time inventory sync, fulfillment routing, and ERP integration.</li>
+        </ul>
+        <nav>
+          <a href="/automation/services">All Automation Services</a> | 
+          <a href="/automation/solutions">Turnkey Solutions</a> | 
+          <a href="/automation/industries">Industries We Serve</a> | 
+          <a href="/automation/case-studies">Case Studies</a> | 
+          <a href="/automation/contact">Schedule Strategy Session</a>
+        </nav>
+      </article>
+    `
+  },
+  "/automation/services": {
+    title: "AI Automation Services & Systems | Sheun Hub",
+    heading: "Our Automation Services",
+    description: "Explore our 8 specialized AI automation services: AI Workflow Automation, GoHighLevel CRM, AI Chatbots, Voice Agents, Process Automation, CRM Migrations, Email Sequences, and Custom APIs.",
+    keywords: "AI automation services, AI workflows, CRM automation, AI chatbots, voice callers, Sheun Hub",
+    type: "website",
+    contentHtml: `
+      <article>
+        <h1>Our Automation Services</h1>
+        <p>Sheun Hub builds scalable, deterministic automation systems tailored to high-velocity business operations.</p>
+        <h2>8 Specialized Engineering Services</h2>
+        <ul>
+          <li><a href="/automation/services/ai-workflow-automation">AI Workflow Automation</a>: Autonomous pipelines powered by LLMs and webhooks.</li>
+          <li><a href="/automation/services/gohighlevel-crm">GoHighLevel CRM Setup & Automation</a>: Complete snapshot ecosystems and lead routing.</li>
+          <li><a href="/automation/services/ai-chatbots">AI Chatbot Development</a>: RAG-trained 24/7 customer care and lead qualification bots.</li>
+          <li><a href="/automation/services/ai-voice-agents">AI Voice Agent & Calling Solutions</a>: Sub-600ms latency voice callers for inbound & outbound.</li>
+          <li><a href="/automation/services/business-process-automation">Business Process Automation (BPA)</a>: Frictionless cross-department workflows and approvals.</li>
+          <li><a href="/automation/services/crm-integration">CRM Integration & Migration</a>: Zero-loss customer database migrations and two-way sync.</li>
+          <li><a href="/automation/services/email-marketing-automation">Email & Marketing Automation</a>: Behavior-triggered flows and deliverability warming.</li>
+          <li><a href="/automation/services/custom-api-n8n-zapier">Custom API & Middleware Engineering</a>: Self-hosted n8n servers and serverless microservices.</li>
+        </ul>
+      </article>
+    `
+  },
+  "/automation/solutions": {
+    title: "Turnkey AI Automation Solutions | Sheun Hub",
+    heading: "AI & Automation Solutions",
+    description: "Pre-architected AI workflow solutions engineered for instant deployment across sales, customer care, operations, and data infrastructure.",
+    keywords: "turnkey automation solutions, speed to lead, automated customer service, CRM migration, Sheun Hub",
+    type: "website",
+    contentHtml: `
+      <article>
+        <h1>Turnkey AI & Automation Solutions</h1>
+        <p>Pre-engineered systems deployed rapidly to eliminate operational bottlenecks and drive immediate ROI.</p>
+        <ul>
+          <li><strong>Speed-to-Lead Engine:</strong> Sub-30s prospect engagement across SMS, voice, and email.</li>
+          <li><strong>24/7 Omnichannel Customer Bot:</strong> Resolve 70% of support queries automatically.</li>
+          <li><strong>Inbound AI Phone Dispatcher:</strong> Zero missed calls with sub-600ms latency response.</li>
+          <li><strong>Document Parsing & Contract Auto-Generation:</strong> Automated PDF extraction into CRM.</li>
+          <li><strong>Zero-Downtime CRM Migration:</strong> 100% data preservation and de-duplication.</li>
+          <li><strong>Self-Hosted n8n Middleware:</strong> Save 90% on Zapier task overage fees.</li>
+        </ul>
+      </article>
+    `
+  },
+  "/automation/industries": {
+    title: "Industry-Specific AI Automation Solutions | Sheun Hub",
+    heading: "Industries We Serve with Custom AI Automation",
+    description: "Tailored AI workflow blueprints for Healthcare, Real Estate, Legal, Marketing Agencies, E-commerce, Finance, Construction, and Hospitality.",
+    keywords: "healthcare automation, real estate AI, legal automation, agency workflow automation, Sheun Hub",
+    type: "website",
+    contentHtml: `
+      <article>
+        <h1>Industries We Serve</h1>
+        <p>Tailored AI automation architectures mapped to vertical-specific compliance and software standards.</p>
+        <ul>
+          <li><strong>Healthcare & Clinics:</strong> 24/7 patient booking, cancellation backfilling, and intake routing.</li>
+          <li><strong>Real Estate & Property:</strong> Sub-30s buyer screening, tour scheduling, and tenant maintenance dispatch.</li>
+          <li><strong>Legal & Professional Services:</strong> Automated client intake, retainer generation, and document parsing.</li>
+          <li><strong>Marketing Agencies:</strong> Snapshot deployments, multi-subaccount reporting, and onboarding automation.</li>
+          <li><strong>E-Commerce & DTC:</strong> Multi-channel inventory reconciliation, supplier alerts, and review collection.</li>
+          <li><strong>Financial Services:</strong> Automated KYC verification, transaction categorization, and invoice reconciliation.</li>
+        </ul>
+      </article>
+    `
+  },
+  "/automation/case-studies": {
+    title: "Automation Case Studies & Verified Results | Sheun Hub",
+    heading: "Case Studies & Verified Results",
+    description: "Explore real case studies showing how AI workflow automation, GoHighLevel setups, and AI voice agents drove measurable revenue and time savings.",
+    keywords: "automation case studies, AI workflow results, GoHighLevel case study, Sheun Hub results",
+    type: "website",
+    contentHtml: `
+      <article>
+        <h1>Case Studies & Verified Results</h1>
+        <p>Proven operational outcomes delivered for growing businesses worldwide by Sheun Hub.</p>
+        <ul>
+          <li><strong>Dental Practice Group:</strong> AI Voice Receptionist recovered $42,000/mo in missed after-hours bookings with sub-600ms response speed.</li>
+          <li><strong>B2B SaaS Growth Agency:</strong> Automated onboarding workflow reduced new client kickoff time from 3 days to 45 seconds.</li>
+          <li><strong>E-Commerce Multi-Brand Retailer:</strong> Multi-channel inventory synchronization reduced out-of-stock cancellations by 94%.</li>
+        </ul>
+      </article>
+    `
+  },
+  "/automation/about": {
+    title: "About Automation Systems & Engineering | Sheun Hub",
+    heading: "Automate Smarter. Scale Faster.",
+    description: "Learn about the Sheun Hub Automation Division, our engineering standards, and how we build deterministic AI and automation systems for scaling enterprises.",
+    keywords: "about Sheun Hub automation, automation engineering team, Emmanuel Adedayo, Sheun",
+    type: "website",
+    contentHtml: `
+      <article>
+        <h1>About Sheun Hub Automation Division</h1>
+        <p>Led by Emmanuel Adedayo (Sheun), we are a boutique engineering team designing deterministic automation systems that eliminate operational drag.</p>
+        <p>Our core engineering principles prioritize sub-600ms voice latency, SOC2-compliant API data isolation, zero model retraining on client assets, and high-velocity business scaling without linear payroll growth.</p>
+      </article>
+    `
+  },
+  "/automation/faq": {
+    title: "Automation Frequently Asked Questions | Sheun Hub",
+    heading: "Frequently Asked Questions About AI Automation",
+    description: "Answers to common questions regarding AI workflow automation, GoHighLevel CRM setup, AI chatbots, voice agents, data security, and implementation timelines.",
+    keywords: "AI automation FAQ, GoHighLevel questions, voice agent FAQ, data security automation, Sheun Hub",
+    type: "website",
+    contentHtml: `
+      <article>
+        <h1>Frequently Asked Questions About AI Automation</h1>
+        <dl>
+          <dt>What is the difference between AI Automation and standard Zapier workflows?</dt>
+          <dd>Standard Zapier uses static If-This-Then-That rules. AI Automation embeds LLMs that understand unstructured documents, summarize context, make intelligent decisions, and execute multi-step logic.</dd>
+          <dt>How secure is our company data when using AI models?</dt>
+          <dd>We use enterprise SOC2-compliant endpoints where your data is never used to retrain public AI models. All API keys and secrets are securely vault-encrypted.</dd>
+          <dt>How fast can an automation project be deployed?</dt>
+          <dd>Standard systems are mapped, built, stress-tested, and deployed in production within 7 to 14 business days.</dd>
+        </dl>
+      </article>
+    `
+  },
+  "/automation/contact": {
+    title: "Book AI Automation Consultation | Sheun Hub",
+    heading: "Schedule Your Free AI & Automation Strategy Session",
+    description: "Book a free 30-minute AI & Automation Strategy Session with our engineering team to map your workflows, software stack, and projected ROI.",
+    keywords: "book automation consultation, AI strategy session, hire automation engineer, Sheun Hub",
+    type: "website",
+    contentHtml: `
+      <article>
+        <h1>Schedule Your Free AI & Automation Strategy Session</h1>
+        <p>Meet directly with lead automation engineer Emmanuel Adedayo (Sheun) to audit your current manual processes, review your tech stack, and architect a customized automation blueprint.</p>
+        <p>Email: sheunhost@gmail.com | Worldwide remote consulting.</p>
+      </article>
+    `
+  },
+  "/automation/privacy-policy": {
+    title: "Privacy Policy - Automation Division | Sheun Hub",
+    heading: "Privacy Policy - Automation Division",
+    description: "Sheun Hub Automation Division Privacy Policy outlining our data encryption, SOC2 API compliance, and strict commitment to client data protection.",
+    keywords: "automation privacy policy, Sheun Hub privacy",
+    type: "website"
+  },
+  "/automation/terms": {
+    title: "Terms of Service - Automation Division | Sheun Hub",
+    heading: "Terms of Service - Automation Division",
+    description: "Sheun Hub Automation Division Terms of Service governing AI workflow development, CRM custom deployments, SLA support terms, and client intellectual property.",
+    keywords: "automation terms of service, Sheun Hub terms",
+    type: "website"
+  },
+  "/automation/thank-you": {
+    title: "Consultation Request Confirmed | Sheun Hub",
+    heading: "Strategy Session Confirmed",
+    description: "Thank you for requesting an AI & Automation Strategy Session with Sheun Hub. Our lead engineering team is analyzing your project details.",
+    keywords: "consultation confirmed, Sheun Hub automation",
+    type: "website"
+  }
+};
+
+const automationServices = {
+  "ai-workflow-automation": {
+    title: "AI Workflow Automation | Sheun Hub",
+    heading: "Autonomous AI Workflows That Execute Complex Operations 24/7",
+    description: "Transform manual tasks into self-executing AI workflows powered by LLMs, custom webhooks, and intelligent decision matrices.",
+    keywords: "AI workflow automation, n8n, Zapier, Make.com, LLM workflow, intelligent document processing, Sheun Hub",
+    badge: "Core AI Engine",
+    contentHtml: `
+      <article>
+        <h1>Autonomous AI Workflows That Execute Complex Operations 24/7</h1>
+        <p>By Sheun Hub Automation Division | Lead Engineer: Emmanuel Adedayo (Sheun)</p>
+        <p>Eliminate repetitive human intervention. We engineer bespoke AI workflow pipelines that parse unstructured documents, make context-aware decisions, route leads, and execute actions across your entire tech stack.</p>
+        <h2>Key Benefits</h2>
+        <ul>
+          <li>90% Reduction in Cycle Time: Sub-second operational executions.</li>
+          <li>Zero Data Entry Errors: 99.9% field accuracy.</li>
+          <li>24/7/365 Continuous Execution without human lag.</li>
+        </ul>
+      </article>
+    `
+  },
+  "gohighlevel-crm": {
+    title: "GoHighLevel CRM Setup & Automation | Sheun Hub",
+    heading: "Complete GoHighLevel CRM Customization for Maximum Conversion",
+    description: "Turn GoHighLevel into a high-velocity revenue engine with custom pipelines, automated lead nurturing, SMS/Email workflows, and booking calendars.",
+    keywords: "GoHighLevel CRM setup, GHL automation, speed to lead, A2P 10DLC, missed call text back, Sheun Hub",
+    badge: "CRM Architecture",
+    contentHtml: `
+      <article>
+        <h1>Complete GoHighLevel CRM Customization for Maximum Conversion</h1>
+        <p>By Sheun Hub Automation Division | Lead Engineer: Emmanuel Adedayo (Sheun)</p>
+        <p>Stop losing leads in clunky, unconfigured CRM setups. We design, build, and optimize complete GoHighLevel snapshot ecosystems with automated multi-channel sequences, AI booking bots, and custom dashboard reporting.</p>
+        <h2>Key Benefits</h2>
+        <ul>
+          <li>Sub-60s Speed-to-Lead Response across SMS, WhatsApp, and Email.</li>
+          <li>Complete Software Consolidation: Save $500+/mo on redundant tools.</li>
+          <li>100% Compliant A2P 10DLC Carrier Registration.</li>
+        </ul>
+      </article>
+    `
+  },
+  "ai-chatbots": {
+    title: "AI Chatbot Development | Sheun Hub",
+    heading: "Custom AI Chatbots That Answer Questions, Qualify Leads & Book Appointments",
+    description: "Deploy intelligent, custom-trained AI chatbots on your website, WhatsApp, and Slack that answer queries and qualify leads.",
+    keywords: "AI chatbots, RAG chatbot, customer support AI, website bot, WhatsApp chatbot, Sheun Hub",
+    badge: "Conversational AI",
+    contentHtml: `
+      <article>
+        <h1>Custom AI Chatbots That Answer Questions, Qualify Leads & Book Appointments</h1>
+        <p>By Sheun Hub Automation Division | Lead Engineer: Emmanuel Adedayo (Sheun)</p>
+        <p>Move beyond useless rule-based decision tree bots. We build custom conversational AI assistants trained on your knowledge base, documentation, and product catalog that interact naturally in 50+ languages.</p>
+        <h2>Key Benefits</h2>
+        <ul>
+          <li>70% Reduction in Tier-1 Customer Support Tickets.</li>
+          <li>Retrieval-Augmented Generation (RAG) for zero hallucinations.</li>
+          <li>Direct calendar booking and CRM pipeline synchronization.</li>
+        </ul>
+      </article>
+    `
+  },
+  "ai-voice-agents": {
+    title: "AI Voice Agent & AI Calling Solutions | Sheun Hub",
+    heading: "Human-Sounding AI Voice Agents for Inbound & Outbound Phone Calls",
+    description: "Deploy human-sounding AI voice callers for inbound phone support, outbound lead qualification, and appointment reminders.",
+    keywords: "AI voice agents, AI calling, ElevenLabs, Vapi, Retell AI, sub-600ms latency phone bot, Sheun Hub",
+    badge: "Voice Intelligence",
+    contentHtml: `
+      <article>
+        <h1>Human-Sounding AI Voice Agents for Inbound & Outbound Phone Calls</h1>
+        <p>By Sheun Hub Automation Division | Lead Engineer: Emmanuel Adedayo (Sheun)</p>
+        <p>Experience conversational phone AI with latency under 600ms. Our AI Voice Agents answer inbound phone lines, make outbound sales follow-up calls, qualify leads, and update CRMs in real time.</p>
+        <h2>Key Benefits</h2>
+        <ul>
+          <li>100% Inbound Call Answer Rate: Zero missed revenue opportunities.</li>
+          <li>Sub-600ms Response Latency for completely natural conversations.</li>
+          <li>80% Cost Reduction compared to traditional offshore call centers.</li>
+        </ul>
+      </article>
+    `
+  },
+  "business-process-automation": {
+    title: "Business Process Automation | Sheun Hub",
+    heading: "Enterprise Business Process Automation (BPA) for Frictionless Operations",
+    description: "Streamline complex operational bottlenecks, approval hierarchies, employee onboarding, and cross-departmental data flows.",
+    keywords: "business process automation, BPA, enterprise operations, workflow audit, approval flows, Sheun Hub",
+    badge: "Enterprise Operations",
+    contentHtml: `
+      <article>
+        <h1>Enterprise Business Process Automation (BPA) for Frictionless Operations</h1>
+        <p>By Sheun Hub Automation Division | Lead Engineer: Emmanuel Adedayo (Sheun)</p>
+        <p>Eliminate operational drag. We map, re-architect, and automate end-to-end business operations across finance, HR, inventory, procurement, and client management.</p>
+        <h2>Key Benefits</h2>
+        <ul>
+          <li>60% Reduction in Administrative Overhead.</li>
+          <li>Standardized Operational Compliance and Audit Trails.</li>
+          <li>5x Faster Invoicing and Vendor Approval Cycles.</li>
+        </ul>
+      </article>
+    `
+  },
+  "crm-integration": {
+    title: "CRM Integration & Migration | Sheun Hub",
+    heading: "Flawless CRM Migrations & Real-Time Data Synchronization",
+    description: "Unify your fragmented customer data with bi-directional CRM synchronizations and zero-downtime data migrations.",
+    keywords: "CRM migration, HubSpot migration, Salesforce sync, GoHighLevel migration, zero data loss, Sheun Hub",
+    badge: "Data Infrastructure",
+    contentHtml: `
+      <article>
+        <h1>Flawless CRM Migrations & Real-Time Data Synchronization</h1>
+        <p>By Sheun Hub Automation Division | Lead Engineer: Emmanuel Adedayo (Sheun)</p>
+        <p>Connect your CRM with your entire software stack. We execute zero-loss data migrations between Salesforce, HubSpot, GoHighLevel, and Zoho, establishing real-time bi-directional data flow.</p>
+        <h2>Key Benefits</h2>
+        <ul>
+          <li>100% Data Preservation Guarantee for deals, notes, and contacts.</li>
+          <li>Automated De-duplication and Data Cleansing prior to cutover.</li>
+          <li>Zero Business Downtime during staging migrations.</li>
+        </ul>
+      </article>
+    `
+  },
+  "email-marketing-automation": {
+    title: "Email & Marketing Automation | Sheun Hub",
+    heading: "Hyper-Personalized Email & Marketing Automation That Drives Conversions",
+    description: "Drive predictable recurring revenue with hyper-personalized behavior-triggered email and SMS marketing workflows.",
+    keywords: "email marketing automation, Klaviyo flows, behavioral triggers, SMS marketing, cart recovery, Sheun Hub",
+    badge: "Revenue Growth",
+    contentHtml: `
+      <article>
+        <h1>Hyper-Personalized Email & Marketing Automation That Drives Conversions</h1>
+        <p>By Sheun Hub Automation Division | Lead Engineer: Emmanuel Adedayo (Sheun)</p>
+        <p>Stop sending generic batch-and-blast email blasts. We build advanced behavioral marketing funnels that track user actions, segment buyer profiles dynamically, and send targeted SMS and email messages.</p>
+        <h2>Key Benefits</h2>
+        <ul>
+          <li>35%+ Higher Open Rates through Technical Deliverability Warming.</li>
+          <li>4x Higher Revenue per Contact compared to manual broadcasts.</li>
+          <li>25% Cart and Form Recovery Rate with automated multi-touch flows.</li>
+        </ul>
+      </article>
+    `
+  },
+  "custom-api-n8n-zapier": {
+    title: "Custom API Integrations, Zapier, Make.com & n8n | Sheun Hub",
+    heading: "Custom API & Middleware Engineering for Incompatible Software Stacks",
+    description: "Bridge the gap between incompatible software with custom API webhooks, serverless microservices, and self-hosted n8n instances.",
+    keywords: "custom API integration, self-hosted n8n, Make.com, Zapier developer, webhooks, microservices, Sheun Hub",
+    badge: "Custom Engineering",
+    contentHtml: `
+      <article>
+        <h1>Custom API & Middleware Engineering for Incompatible Software Stacks</h1>
+        <p>By Sheun Hub Automation Division | Lead Engineer: Emmanuel Adedayo (Sheun)</p>
+        <p>When native Zapier connectors fall short, we build custom API integrations, serverless webhooks, and enterprise n8n workflow engines that connect any software system securely.</p>
+        <h2>Key Benefits</h2>
+        <ul>
+          <li>Connect Any Legacy or Custom Software with API/SQL Access.</li>
+          <li>Save 90% on Monthly Integration Costs with Self-Hosted n8n.</li>
+          <li>Enterprise-Scale Webhook and Payload Handling with Queue Management.</li>
+        </ul>
+      </article>
+    `
+  }
+};
+
 function generateSchemaForRoute(route, pageInfo, blogPost) {
   const canonicalUrl = `https://www.sheun.online${route === '/' ? '' : route}`;
   
@@ -564,6 +911,99 @@ function generateSchemaForRoute(route, pageInfo, blogPost) {
           }
         }
       ]
+    };
+  }
+
+  if (route === '/automation') {
+    return {
+      "@context": "https://schema.org",
+      "@type": "ProfessionalService",
+      "@id": "https://www.sheun.online/automation#service",
+      "name": "Sheun Hub Automation Division",
+      "parentOrganization": {
+        "@type": "ProfessionalService",
+        "@id": "https://www.sheun.online/#organization",
+        "name": "Sheun Hub",
+        "url": "https://www.sheun.online"
+      },
+      "url": "https://www.sheun.online/automation",
+      "logo": "https://www.sheun.online/logo.png",
+      "image": "https://www.sheun.online/og-image.jpg",
+      "description": "Custom AI voice agents, GoHighLevel CRM architectures, and automated API pipelines that eliminate manual tasks and scale business operations.",
+      "founder": {
+        "@type": "Person",
+        "name": "Emmanuel Adedayo (Sheun)",
+        "jobTitle": "Founder & Lead Developer",
+        "url": "https://www.sheun.online/about",
+        "sameAs": [
+          "https://github.com/sheunhost",
+          "https://twitter.com/sheunhub",
+          "https://www.linkedin.com/in/sheun-hub-26b876321"
+        ]
+      },
+      "priceRange": "$$$",
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "GB"
+      }
+    };
+  }
+
+  if (route.startsWith('/automation/services/')) {
+    return {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "@id": `${canonicalUrl}#service`,
+      "name": pageInfo.title,
+      "provider": {
+        "@type": "ProfessionalService",
+        "@id": "https://www.sheun.online/automation#service",
+        "name": "Sheun Hub Automation Division",
+        "url": "https://www.sheun.online/automation"
+      },
+      "description": pageInfo.description,
+      "areaServed": "Worldwide",
+      "serviceType": pageInfo.badge || "AI Automation",
+      "url": canonicalUrl
+    };
+  }
+
+  if (route.startsWith('/automation')) {
+    return {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "@id": `${canonicalUrl}#webpage`,
+      "url": canonicalUrl,
+      "name": pageInfo.title,
+      "description": pageInfo.description,
+      "isPartOf": {
+        "@type": "WebSite",
+        "name": "Sheun Hub",
+        "url": "https://www.sheun.online"
+      },
+      "breadcrumb": {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://www.sheun.online"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Automation",
+            "item": "https://www.sheun.online/automation"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": pageInfo.heading || pageInfo.title,
+            "item": canonicalUrl
+          }
+        ]
+      }
     };
   }
 
@@ -666,7 +1106,7 @@ ${jsonLdString}
   html = html.replace('</head>', `${metaTags}\n  </head>`);
 
   // Body content fallback for non-JS crawlers
-  const bodyContent = blogPost ? blogPost.contentHtml : `
+  const bodyContent = blogPost ? blogPost.contentHtml : (pageInfo.contentHtml || `
     <main>
       <h1>${pageInfo.heading || pageInfo.title}</h1>
       <p>${pageInfo.description}</p>
@@ -676,15 +1116,16 @@ ${jsonLdString}
         <a href="/services">Services</a> | 
         <a href="/portfolio">Portfolio</a> | 
         <a href="/blog">Blog</a> | 
-        <a href="/contact">Contact</a>
+        <a href="/contact">Contact</a> | 
+        <a href="/automation">Automation</a>
       </nav>
     </main>
-  `;
+  `);
 
   // Inject into #root
   html = html.replace(
-    '<div id="root"></div>',
-    `<div id="root">\n      <noscript>\n${bodyContent}\n      </noscript>\n    </div>`
+    /<div id="root">[\s\S]*?<\/div>/i,
+    `<div id="root">\n${bodyContent}\n    </div>`
   );
 
   return html;
@@ -719,7 +1160,25 @@ async function runPrerender() {
     });
   }
 
-  // 3. Blog Numeric URLs (/blog/1 to /blog/8)
+  // 3. Automation Pages
+  for (const [route, pageInfo] of Object.entries(automationPages)) {
+    allTargets.push({
+      route,
+      pageInfo,
+      blogPost: undefined
+    });
+  }
+
+  // 4. Automation Services (/automation/services/ai-workflow-automation, etc.)
+  for (const [serviceKey, serviceInfo] of Object.entries(automationServices)) {
+    allTargets.push({
+      route: `/automation/services/${serviceKey}`,
+      pageInfo: serviceInfo,
+      blogPost: undefined
+    });
+  }
+
+  // 5. Blog Numeric URLs (/blog/1 to /blog/8)
   for (const [id, post] of Object.entries(blogPosts)) {
     allTargets.push({
       route: `/blog/${id}`,
@@ -734,7 +1193,7 @@ async function runPrerender() {
     });
   }
 
-  // 4. Blog Slug URLs (/blog/shopify-speed-optimization, etc.)
+  // 6. Blog Slug URLs (/blog/shopify-speed-optimization, etc.)
   for (const [id, post] of Object.entries(blogPosts)) {
     allTargets.push({
       route: `/blog/${post.slug}`,

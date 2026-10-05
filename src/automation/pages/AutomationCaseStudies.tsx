@@ -6,7 +6,7 @@ import { AUTOMATION_CASE_STUDIES } from "../data/automationData";
 export default function AutomationCaseStudies() {
   return (
     <AutomationPageWrapper
-      title="Automation Case Studies & Verified Results | Sheun Automation"
+      title="Automation Case Studies & Verified Results | Sheun Hub"
       description="Explore real case studies showing how AI workflow automation, GoHighLevel setups, and AI voice agents drove measurable revenue and time savings."
     >
       <section className="relative pt-32 pb-16 bg-slate-950 border-b border-slate-800 text-center">

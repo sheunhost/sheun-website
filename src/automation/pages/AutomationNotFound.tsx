@@ -5,8 +5,8 @@ import AutomationPageWrapper from "../components/AutomationPageWrapper";
 export default function AutomationNotFound() {
   return (
     <AutomationPageWrapper
-      title="404 Page Not Found | Sheun Automation"
-      description="The requested page could not be located on Sheun Automation."
+      title="404 Page Not Found | Sheun Hub"
+      description="The requested page could not be located on Sheun Hub."
     >
       <section className="min-h-[80vh] pt-32 pb-20 flex items-center justify-center bg-slate-950 text-center">
         <div className="max-w-xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">

@@ -9,7 +9,7 @@ export default function AutomationFAQ() {
 
   return (
     <AutomationPageWrapper
-      title="Automation Frequently Asked Questions | Sheun Automation"
+      title="Automation Frequently Asked Questions | Sheun Hub"
       description="Answers to common questions regarding AI workflow automation, GoHighLevel CRM setup, AI chatbots, voice agents, data security, and implementation timelines."
     >
       <section className="relative pt-32 pb-16 bg-slate-950 border-b border-slate-800 text-center">

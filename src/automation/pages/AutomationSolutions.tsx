@@ -50,7 +50,7 @@ export default function AutomationSolutions() {
 
   return (
     <AutomationPageWrapper
-      title="Turnkey AI Automation Solutions | Sheun Automation"
+      title="Turnkey AI Automation Solutions | Sheun Hub"
       description="Pre-architected AI workflow solutions engineered for instant deployment across sales, customer care, operations, and data infrastructure."
     >
       <section className="relative pt-32 pb-16 bg-slate-950 border-b border-slate-800 text-center">

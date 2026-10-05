@@ -10,7 +10,7 @@ const ICON_MAP: Record<string, any> = {
 export default function AutomationIndustries() {
   return (
     <AutomationPageWrapper
-      title="Industry-Specific AI Automation Solutions | Sheun Automation"
+      title="Industry-Specific AI Automation Solutions | Sheun Hub"
       description="Tailored AI workflow blueprints for Healthcare, Real Estate, Legal, Marketing Agencies, E-commerce, Finance, Construction, and Hospitality."
     >
       <section className="relative pt-32 pb-16 bg-slate-950 border-b border-slate-800 text-center">

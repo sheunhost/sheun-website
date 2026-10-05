@@ -5,7 +5,7 @@ import AutomationPageWrapper from "../components/AutomationPageWrapper";
 export default function AutomationAbout() {
   return (
     <AutomationPageWrapper
-      title="About | Sheun Automation"
+      title="About Automation Systems & Engineering | Sheun Hub"
       description="We are a boutique team of automation specialists building deterministic systems for scaling enterprises."
     >
       {/* 1. HERO SECTION */}

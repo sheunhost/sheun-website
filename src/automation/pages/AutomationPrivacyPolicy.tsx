@@ -5,8 +5,8 @@ import AutomationPageWrapper from "../components/AutomationPageWrapper";
 export default function AutomationPrivacyPolicy() {
   return (
     <AutomationPageWrapper
-      title="Privacy Policy | Sheun Automation"
-      description="Sheun Automation Privacy Policy outlining our data encryption, SOC2 API compliance, and strict commitment to client data protection."
+      title="Privacy Policy - Automation Division | Sheun Hub"
+      description="Sheun Hub Automation Division Privacy Policy outlining our data encryption, SOC2 API compliance, and strict commitment to client data protection."
     >
       <section className="pt-32 pb-16 bg-slate-950 border-b border-slate-800 text-center">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-4">

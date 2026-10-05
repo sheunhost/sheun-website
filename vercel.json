@@ -3,15 +3,75 @@
   "trailingSlash": false,
   "redirects": [
     {
-      "source": "/(.*)",
+      "source": "/:path*",
       "has": [
         {
           "type": "host",
           "value": "sheun.online"
         }
       ],
-      "destination": "https://www.sheun.online/$1",
-      "statusCode": 301
+      "destination": "https://www.sheun.online/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/shopify-migration",
+      "destination": "/services/migration",
+      "permanent": true
+    },
+    {
+      "source": "/seo-sprint",
+      "destination": "/shopify-seo-sprint",
+      "permanent": true
+    },
+    {
+      "source": "/audit",
+      "destination": "/shopify-store-audit",
+      "permanent": true
+    },
+    {
+      "source": "/automation/services/workflow",
+      "destination": "/automation/services/ai-workflow-automation",
+      "permanent": true
+    },
+    {
+      "source": "/automation/services/gohighlevel",
+      "destination": "/automation/services/gohighlevel-crm",
+      "permanent": true
+    },
+    {
+      "source": "/automation/services/chatbot",
+      "destination": "/automation/services/ai-chatbots",
+      "permanent": true
+    },
+    {
+      "source": "/automation/services/voice",
+      "destination": "/automation/services/ai-voice-agents",
+      "permanent": true
+    },
+    {
+      "source": "/automation/services/business-process",
+      "destination": "/automation/services/business-process-automation",
+      "permanent": true
+    },
+    {
+      "source": "/automation/services/crm-migration",
+      "destination": "/automation/services/crm-integration",
+      "permanent": true
+    },
+    {
+      "source": "/automation/services/email-marketing",
+      "destination": "/automation/services/email-marketing-automation",
+      "permanent": true
+    },
+    {
+      "source": "/automation/services/api",
+      "destination": "/automation/services/custom-api-n8n-zapier",
+      "permanent": true
+    },
+    {
+      "source": "/visualizer",
+      "destination": "/portfolio",
+      "permanent": true
     }
   ],
   "rewrites": [
@@ -19,3 +79,4 @@
     { "source": "/(.*)", "destination": "/index.html" }
   ]
 }
+

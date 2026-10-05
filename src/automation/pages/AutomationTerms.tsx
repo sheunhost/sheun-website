@@ -5,8 +5,8 @@ import AutomationPageWrapper from "../components/AutomationPageWrapper";
 export default function AutomationTerms() {
   return (
     <AutomationPageWrapper
-      title="Terms of Service | Sheun Automation"
-      description="Sheun Automation Terms of Service governing AI workflow development, CRM custom deployments, SLA support terms, and client intellectual property."
+      title="Terms of Service - Automation Division | Sheun Hub"
+      description="Sheun Hub Automation Division Terms of Service governing AI workflow development, CRM custom deployments, SLA support terms, and client intellectual property."
     >
       <section className="pt-32 pb-16 bg-slate-950 border-b border-slate-800 text-center">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-4">

@@ -41,8 +41,8 @@ export default function AutomationServiceDetail() {
     "name": service.title,
     "provider": {
       "@type": "ProfessionalService",
-      "name": "Sheun Automation",
-      "url": "https://sheun.online/automation"
+      "name": "Sheun Hub Automation Division",
+      "url": "https://www.sheun.online/automation"
     },
     "description": service.shortDescription,
     "areaServed": "Worldwide",
@@ -56,7 +56,7 @@ export default function AutomationServiceDetail() {
 
   return (
     <AutomationPageWrapper
-      title={`${service.title} | Sheun Automation`}
+      title={`${service.title} | Sheun Hub`}
       description={service.shortDescription}
       canonical={`/automation/services/${service.slug}`}
       schema={serviceSchema}

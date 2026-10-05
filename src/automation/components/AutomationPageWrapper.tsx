@@ -30,11 +30,11 @@ export default function AutomationPageWrapper({
 
   const fullTitle = title 
     ? title 
-    : "Sheun Automation | AI Automation, Workflows & CRM Systems";
+    : "AI Automation, Workflows & CRM Systems | Sheun Hub";
 
-  const defaultDesc = description || "Sheun Automation builds intelligent AI workflows, custom GoHighLevel CRMs, AI chatbots, voice agents, and business process automations that scale operations without extra headcount.";
+  const defaultDesc = description || "Sheun Hub builds intelligent AI workflows, custom GoHighLevel CRMs, AI chatbots, voice agents, and business process automations that scale operations without extra headcount.";
   
-  const defaultImage = image || "https://www.sheun.online/og-image.png";
+  const defaultImage = image || "https://www.sheun.online/og-image.jpg";
   
   const currentPath = canonical || location.pathname;
   const canonicalUrl = `https://www.sheun.online${currentPath === "/" ? "/automation" : currentPath}`;
@@ -49,21 +49,28 @@ export default function AutomationPageWrapper({
       "name": "Sheun Hub",
       "url": "https://www.sheun.online"
     },
-    "alternateName": "Sheun AI Automation & Workflow Division",
+    "alternateName": "Sheun Hub AI Automation & Workflow Division",
     "url": "https://www.sheun.online/automation",
     "logo": "https://www.sheun.online/logo.png",
     "image": defaultImage,
     "email": "sheunhost@gmail.com",
     "founder": {
       "@type": "Person",
-      "name": "Sheun"
+      "name": "Emmanuel Adedayo (Sheun)",
+      "jobTitle": "Founder & Lead Developer",
+      "url": "https://www.sheun.online/about",
+      "sameAs": [
+        "https://github.com/sheunhost",
+        "https://twitter.com/sheunhub",
+        "https://www.linkedin.com/in/sheun-hub-26b876321"
+      ]
     },
     "description": defaultDesc,
     "slogan": "Automate Smarter. Scale Faster.",
     "priceRange": "$$$",
     "address": {
       "@type": "PostalAddress",
-      "addressCountry": "US"
+      "addressCountry": "GB"
     },
     "sameAs": [
       "https://github.com/sheunhost",
