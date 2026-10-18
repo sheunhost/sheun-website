@@ -42,20 +42,49 @@ export function disposeThreeScene(scene: any, renderer: any) {
         object.geometry.dispose();
       }
       if (object.material) {
-        if (Array.isArray(object.material)) {
-          object.material.forEach((mat: any) => {
-            if (mat.map) mat.map.dispose();
+        const disposeMat = (mat: any) => {
+          if (!mat) return;
+          const textureKeys = [
+            "map",
+            "lightMap",
+            "bumpMap",
+            "normalMap",
+            "specularMap",
+            "envMap",
+            "alphaMap",
+            "roughnessMap",
+            "metalnessMap",
+            "displacementMap",
+            "emissiveMap"
+          ];
+          for (const key of textureKeys) {
+            if (mat[key] && typeof mat[key].dispose === "function") {
+              mat[key].dispose();
+            }
+          }
+          if (typeof mat.dispose === "function") {
             mat.dispose();
-          });
+          }
+        };
+
+        if (Array.isArray(object.material)) {
+          object.material.forEach(disposeMat);
         } else {
-          if (object.material.map) object.material.map.dispose();
-          object.material.dispose();
+          disposeMat(object.material);
         }
       }
     });
+
+    // Detach and clean all remaining children
+    while (scene.children && scene.children.length > 0) {
+      scene.remove(scene.children[0]);
+    }
   }
+
   if (renderer) {
-    renderer.dispose();
+    if (typeof renderer.dispose === "function") {
+      renderer.dispose();
+    }
     if (typeof renderer.forceContextLoss === "function") {
       renderer.forceContextLoss();
     }

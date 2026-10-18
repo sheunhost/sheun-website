@@ -14,6 +14,7 @@ import { TiltCard } from "../components/TiltCard";
 import { Marquee } from "../components/Marquee";
 import { WordRotator } from "../components/WordRotator";
 import Shopify3DEngine from "../components/Shopify3DEngine";
+import ThreeScene from "../components/ThreeScene";
 
 const stats = [
   { label: "Stores Built", value: "20+" },
@@ -711,56 +712,91 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="lg:col-span-5 relative h-[500px] lg:h-[700px] flex items-center justify-center">
-            <div className="relative w-full max-w-md aspect-[4/5]">
-              {/* Main Card - Recipe 12 Oval Mask Feel */}
-              <div
-                className="absolute inset-0 bg-white/5 backdrop-blur-3xl border border-white/10 rounded-3xl shadow-2xl overflow-hidden group"
-              >
-                <img 
-                  src="https://mapplinks.com/wp-content/uploads/2020/06/screen1.png" 
-                  alt="Sheun Hub - Shopify Development and Growth Expert" 
-                  referrerPolicy="no-referrer"
-                  width="448"
-                  height="560"
-                  decoding="async"
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-[2s]" 
-                  loading="lazy" 
+          <div className="lg:col-span-5 relative h-[520px] lg:h-[700px] flex items-center justify-center">
+            <div className="relative w-full max-w-md aspect-[4/5] rounded-3xl bg-white/5 backdrop-blur-3xl border border-white/10 shadow-2xl overflow-hidden group">
+              {/* 3D Interactive Canvas Stage */}
+              <div className="absolute inset-0">
+                <ThreeScene
+                  preset="hologram"
+                  className="w-full h-full relative"
+                  canvasClassName="w-full h-full block"
+                  rootMargin="150px"
+                  cameraFov={42}
+                  cameraPosition={[0, 0, 5.8]}
+                  fallback={
+                    <div className="w-full h-full relative">
+                      <img 
+                        src="https://mapplinks.com/wp-content/uploads/2020/06/screen1.png" 
+                        alt="Sheun Hub - Shopify Development and Growth Expert" 
+                        referrerPolicy="no-referrer"
+                        width="448"
+                        height="560"
+                        decoding="async"
+                        className="w-full h-full object-cover" 
+                        loading="lazy" 
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-navy via-navy/40 to-transparent" />
+                    </div>
+                  }
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-navy via-navy/40 to-transparent" />
-                <div className="absolute bottom-16 left-12 right-12 space-y-6">
-                  <div className="flex gap-2">
-                    {[...Array(5)].map((_, i) => <Star key={i} size={12} className="fill-[#FF6B4A] text-[#FF6B4A]" />)}
-                  </div>
-                  <h3 className="text-white font-bold text-4xl tracking-tighter leading-none">Top Rated <br />Shopify Expert.</h3>
-                  <p className="text-white/60 text-lg font-serif italic">Top Rated Shopify Specialist</p>
-                  
-                  <div className="flex gap-4 pt-4 border-t border-white/10">
-                    <a href="https://www.linkedin.com/in/sheun-hub-26b876321" target="_blank" rel="noopener noreferrer" className="p-2 bg-white/5 hover:bg-[#6D28D9] hover:text-white rounded-full text-white transition-all flex items-center justify-center overflow-hidden" title="LinkedIn">
-                      <img src="https://images.rawpixel.com/image_png_social_square/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvdjk4Mi1kMS0xMC5wbmc.png" alt="LinkedIn" width="20" height="20" decoding="async" className="w-5 h-5 object-contain" />
-                    </a>
-                    <a href="https://www.upwork.com/freelancers/~017eb19011cd354946" target="_blank" rel="noopener noreferrer" className="p-2 bg-white/5 hover:bg-[#6D28D9] hover:text-white rounded-full text-white transition-all flex items-center justify-center overflow-hidden" title="Upwork">
-                      <img src="https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/upwork-icon.png" alt="Upwork" width="20" height="20" decoding="async" className="w-5 h-5 object-contain" />
-                    </a>
-                    <a href="mailto:sheunhost@gmail.com" className="p-2 bg-white/5 hover:bg-[#6D28D9] hover:text-white rounded-full text-white transition-all flex items-center justify-center overflow-hidden" title="Email">
-                      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Gmail_icon_%282020%29.svg/960px-Gmail_icon_%282020%29.svg.png?_=20221017173631" alt="Gmail" width="20" height="20" decoding="async" className="w-5 h-5 object-contain" />
-                    </a>
-                  </div>
+              </div>
+
+              {/* Ambient Background Gradient to blend 3D canvas into navy hero */}
+              <div className="absolute inset-0 bg-gradient-to-t from-navy via-navy/40 to-transparent pointer-events-none" />
+
+              {/* Top Engine Status Badge */}
+              <div className="absolute top-4 left-4 right-4 flex items-center justify-between z-20 pointer-events-none">
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-navy/80 backdrop-blur-md border border-white/10 text-white text-[10px] font-mono font-bold tracking-wide">
+                  <span className="w-2 h-2 rounded-full bg-[#06b6d4] animate-pulse" />
+                  <span>3D Architecture Engine</span>
+                </div>
+                <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-white/10 backdrop-blur-md border border-white/10 text-[10px] text-white/70 font-mono">
+                  <span>60 FPS</span>
                 </div>
               </div>
 
-              {/* Floating Elements - Hardware Feel Recipe 3 */}
-              <div
-                className="absolute -top-12 -right-12 w-64 h-64 bg-white/5 backdrop-blur-2xl border border-white/10 rounded-3xl shadow-2xl p-1 hidden sm:block"
-              >
-                <div className="w-full h-full rounded-3xl bg-navy/60 flex flex-col items-center justify-center gap-6 border border-white/5">
-                  <div className="w-20 h-20 bg-gradient-to-br from-[#FF6B4A]/15 via-[#D946EF]/15 to-[#6D28D9]/15 rounded-3xl flex items-center justify-center text-[#FF6B4A] shadow-inner">
-                    <ShoppingCart size={40} />
+              {/* Floating Content Card (HTML for crawlability & accessibility) */}
+              <div className="absolute bottom-6 left-6 right-6 space-y-4 z-20 pointer-events-auto">
+                <div className="flex gap-1.5">
+                  {[...Array(5)].map((_, i) => <Star key={i} size={14} className="fill-[#FF6B4A] text-[#FF6B4A]" />)}
+                </div>
+                <div>
+                  <h3 className="text-white font-bold text-3xl sm:text-4xl tracking-tighter leading-tight">
+                    Top Rated <br />Shopify Expert.
+                  </h3>
+                  <p className="text-white/70 text-sm sm:text-base font-serif italic mt-1">
+                    Certified Shopify Partner &amp; Lead Systems Engineer
+                  </p>
+                </div>
+                
+                <div className="flex items-center justify-between pt-3 border-t border-white/10">
+                  <div className="flex gap-3">
+                    <a href="https://www.linkedin.com/in/sheun-hub-26b876321" target="_blank" rel="noopener noreferrer" className="p-2 bg-white/10 hover:bg-[#6D28D9] hover:text-white rounded-full text-white transition-all flex items-center justify-center overflow-hidden" title="LinkedIn">
+                      <img src="https://images.rawpixel.com/image_png_social_square/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvdjk4Mi1kMS0xMC5wbmc.png" alt="LinkedIn" width="18" height="18" decoding="async" className="w-4 h-4 object-contain" />
+                    </a>
+                    <a href="https://www.upwork.com/freelancers/~017eb19011cd354946" target="_blank" rel="noopener noreferrer" className="p-2 bg-white/10 hover:bg-[#6D28D9] hover:text-white rounded-full text-white transition-all flex items-center justify-center overflow-hidden" title="Upwork">
+                      <img src="https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/upwork-icon.png" alt="Upwork" width="18" height="18" decoding="async" className="w-4 h-4 object-contain" />
+                    </a>
+                    <a href="mailto:sheunhost@gmail.com" className="p-2 bg-white/10 hover:bg-[#6D28D9] hover:text-white rounded-full text-white transition-all flex items-center justify-center overflow-hidden" title="Email">
+                      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Gmail_icon_%282020%29.svg/960px-Gmail_icon_%282020%29.svg.png?_=20221017173631" alt="Gmail" width="18" height="18" decoding="async" className="w-4 h-4 object-contain" />
+                    </a>
                   </div>
-                  <div className="text-center">
-                    <p className="text-transparent bg-clip-text bg-gradient-to-r from-[#FF6B4A] via-[#D946EF] to-[#8B5CF6] font-bold text-3xl tracking-tighter">+142%</p>
-                    <p className="text-white/30 text-[10px] uppercase font-bold tracking-[0.3em] mt-1">Avg. ROI Increase</p>
-                  </div>
+                  <span className="text-[11px] font-mono text-cyan-300 bg-cyan-950/60 border border-cyan-800/40 px-2.5 py-1 rounded-lg">
+                    Interactive 3D
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            {/* Floating Metric Card */}
+            <div className="absolute -top-8 -right-6 w-56 h-52 bg-white/5 backdrop-blur-2xl border border-white/10 rounded-3xl shadow-2xl p-1 hidden sm:block z-30 pointer-events-none">
+              <div className="w-full h-full rounded-3xl bg-navy/80 flex flex-col items-center justify-center gap-4 border border-white/5 p-4 text-center">
+                <div className="w-14 h-14 bg-gradient-to-br from-[#FF6B4A]/20 via-[#D946EF]/20 to-[#6D28D9]/20 rounded-2xl flex items-center justify-center text-[#FF6B4A] shadow-inner">
+                  <ShoppingCart size={28} />
+                </div>
+                <div>
+                  <p className="text-transparent bg-clip-text bg-gradient-to-r from-[#FF6B4A] via-[#D946EF] to-[#8B5CF6] font-bold text-2xl tracking-tighter">+142%</p>
+                  <p className="text-white/40 text-[9px] uppercase font-bold tracking-[0.25em] mt-0.5">Avg. ROI Increase</p>
                 </div>
               </div>
             </div>
