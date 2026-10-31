@@ -5,7 +5,7 @@
 
 import { BrowserRouter as Router, Routes, Route, Navigate, useLocation } from "react-router-dom";
 import { HelmetProvider } from "react-helmet-async";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence, LazyMotion, domAnimation } from "framer-motion";
 import { lazy, Suspense } from "react";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
@@ -150,16 +150,22 @@ function Layout() {
   );
 }
 
-import { LazyMotion, domAnimation } from "framer-motion";
+export function AppContent() {
+  return (
+    <>
+      <GoogleAnalytics />
+      <ScrollToTopOnNavigation />
+      <Layout />
+    </>
+  );
+}
 
 export default function App() {
   return (
     <LazyMotion features={domAnimation}>
       <HelmetProvider>
         <Router>
-          <GoogleAnalytics />
-          <ScrollToTopOnNavigation />
-          <Layout />
+          <AppContent />
         </Router>
       </HelmetProvider>
     </LazyMotion>

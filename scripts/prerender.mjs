@@ -1,7 +1,20 @@
 import fs from 'fs';
 import path from 'path';
+import { createRequire } from 'module';
 
+const require = createRequire(import.meta.url);
 const distPath = path.resolve(process.cwd(), 'dist');
+
+let renderPage = null;
+try {
+  const serverRenderPath = path.resolve(distPath, 'server-render.cjs');
+  if (fs.existsSync(serverRenderPath)) {
+    const serverMod = require(serverRenderPath);
+    renderPage = serverMod.renderPage;
+  }
+} catch (err) {
+  console.warn('Could not load dist/server-render.cjs:', err.message);
+}
 
 const blogPosts = {
   "1": {
@@ -1130,78 +1143,21 @@ ${jsonLdString}
     '<link rel="preload" as="style" href="$1" onload="this.onload=null;this.rel=\'stylesheet\'"><noscript><link rel="stylesheet" href="$1"></noscript>'
   );
 
-  // Prerendered Hero HTML inside #root for the homepage so mobile LCP and FCP render immediately
-  const homepageHeroHtml = (route === '/') ? `
-    <div class="min-h-screen flex flex-col bg-white dark:bg-navy text-[#0F172A] dark:text-white transition-colors duration-300">
-      <div class="fixed top-0 left-0 right-0 h-[3px] bg-gradient-to-r from-[#FF6B4A] via-[#D946EF] to-[#6D28D9] z-[100] shadow-[0_1px_10px_rgba(217,70,239,0.35)]"></div>
-      <nav class="fixed top-0 left-0 right-0 z-50 transition-all duration-500 bg-navy/60 backdrop-blur-md py-6 md:py-7 border-b border-white/10">
-        <div class="container mx-auto px-6 flex items-center justify-between">
-          <div class="flex items-center gap-8 lg:gap-10">
-            <a href="/" class="flex items-center group" aria-label="Sheun Hub Home">
-              <img src="/logo.webp" alt="Sheun Hub" width="112" height="112" loading="eager" fetchpriority="high" class="rounded-full object-cover shadow-lg border-2 border-[#D946EF]/30 h-20 w-20 md:h-24 md:w-24 lg:h-28 lg:w-28" />
-            </a>
-            <div class="hidden lg:flex items-center space-x-6 xl:space-x-8 text-white/90 font-medium text-sm">
-              <a href="/" class="text-white font-bold">Home</a>
-              <a href="/services" class="hover:text-white transition-colors">Services</a>
-              <a href="/portfolio" class="hover:text-white transition-colors">Portfolio</a>
-              <a href="/shopify-seo-sprint" class="hover:text-white transition-colors">SEO Sprint</a>
-              <a href="/blog" class="hover:text-white transition-colors">Blog</a>
-              <a href="/calculator" class="hover:text-white transition-colors">Calculator</a>
-              <a href="/about" class="hover:text-white transition-colors">About</a>
-            </div>
-          </div>
-          <div class="hidden sm:flex items-center gap-4">
-            <a href="/apply" class="px-6 py-2.5 rounded-full font-bold text-xs uppercase tracking-wider bg-white text-navy hover:bg-white/90 transition-all">Get Started</a>
-          </div>
-        </div>
-      </nav>
-      <main id="main-content" class="flex-grow">
-        <section class="relative min-h-screen flex items-center pt-48 pb-20 bg-navy-gradient overflow-hidden text-white bg-[#08090B]">
-          <div class="container mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-16 items-center relative z-10">
-            <div class="lg:col-span-7 space-y-12">
-              <div class="space-y-8">
-                <div class="inline-flex items-center gap-3 bg-white/5 backdrop-blur-xl border border-white/10 px-6 py-2 rounded-full">
-                  <div class="w-2 h-2 bg-[#FF6B4A] rounded-full animate-ping"></div>
-                  <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#FF6B4A] via-[#D946EF] to-[#8B5CF6] text-[10px] font-bold uppercase tracking-[0.2em]">Available for new projects</span>
-                </div>
-                <h1 class="text-5xl md:text-[100px] font-bold text-white leading-[0.8] tracking-[-0.05em]">
-                  <span class="block mb-4">
-                    <span>Shopify Development</span><br />
-                    <span>&amp; <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#FF6B4A] via-[#D946EF] to-[#8B5CF6]">Growth</span></span>
-                  </span>
-                  <span class="text-white italic font-serif font-light opacity-40 block">by Sheun Hub.</span>
-                </h1>
-                <p class="text-white/60 text-xl md:text-2xl max-w-xl leading-relaxed font-light font-serif italic">
-                  Scale your brand with a specialist in Custom Shopify Development and E-commerce Growth. From custom theme builds to technical store optimization, Sheun Hub helps businesses maximize revenue on the Shopify platform.
-                </p>
-              </div>
-              <div class="flex flex-col sm:flex-row items-center gap-8">
-                <a href="/apply" class="w-full sm:w-auto bg-gradient-to-r from-[#FF6B4A] via-[#D946EF] to-[#6D28D9] text-white px-8 md:px-12 py-4 md:py-6 rounded-full font-bold text-lg text-center">Get Started</a>
-                <a href="/services" class="text-white font-bold hover:text-[#D946EF] transition-colors">Explore Services</a>
-                <a href="/portfolio" class="w-full sm:w-auto text-white/80 hover:text-white px-8 py-4 rounded-full font-bold text-lg text-center">View Portfolio</a>
-              </div>
-              <div class="flex flex-wrap items-center gap-12 pt-8 border-t border-white/5">
-                <div class="space-y-2"><p class="text-[10px] font-bold uppercase tracking-[0.3em] text-white/30">Stores Built</p><p class="text-2xl font-bold text-white tracking-tight">20+</p></div>
-                <div class="space-y-2"><p class="text-[10px] font-bold uppercase tracking-[0.3em] text-white/30">Rating</p><p class="text-2xl font-bold text-white tracking-tight">5.0 Stars</p></div>
-                <div class="space-y-2"><p class="text-[10px] font-bold uppercase tracking-[0.3em] text-white/30">Upwork</p><p class="text-2xl font-bold text-white tracking-tight">Top Rated</p></div>
-                <div class="space-y-2"><p class="text-[10px] font-bold uppercase tracking-[0.3em] text-white/30">Trust</p><p class="text-2xl font-bold text-white tracking-tight">100% Secure</p></div>
-              </div>
-            </div>
-            <div class="lg:col-span-5 relative h-[520px] lg:h-[700px] flex items-center justify-center">
-              <div class="relative w-full max-w-md aspect-[4/5] rounded-3xl bg-white/5 backdrop-blur-3xl border border-white/10 shadow-2xl overflow-hidden">
-                <img src="/hero-mockup.webp" srcset="/hero-mockup-mobile.webp 380w, /hero-mockup.webp 448w" sizes="(max-width: 768px) 380px, 448px" alt="Shopify High Conversion Store Interface - Sheun Hub" width="448" height="560" fetchpriority="high" loading="eager" decoding="async" class="w-full h-full object-cover" />
-                <div class="absolute inset-0 bg-gradient-to-t from-navy via-navy/40 to-transparent pointer-events-none"></div>
-              </div>
-            </div>
-          </div>
-        </section>
-      </main>
-    </div>` : '';
+  // Prerendered React HTML inside #root generated via react-dom/server
+  let prerenderedRootHtml = '';
+  if (renderPage) {
+    try {
+      const res = renderPage(route);
+      prerenderedRootHtml = res.html || '';
+    } catch (e) {
+      console.warn(`renderPage failed for route ${route}:`, e.message);
+    }
+  }
 
   // Inject prerendered root for React and place route-specific semantic HTML inside noscript for crawlers
   html = html.replace(
     /<div id="root">[\s\S]*?<\/div>(\s*<!--[\s\S]*?-->)?(\s*<noscript>[\s\S]*?<\/noscript>)?/i,
-    `<div id="root">${homepageHeroHtml}</div>\n    <noscript>\n${bodyContent}\n    </noscript>`
+    `<div id="root">${prerenderedRootHtml}</div>\n    <noscript>\n${bodyContent}\n    </noscript>`
   );
 
   return html;

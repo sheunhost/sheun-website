@@ -26,16 +26,18 @@ export function ThemeProvider({
   storageKey = "ui-theme",
   ...props
 }: ThemeProviderProps) {
-  const [theme, setTheme] = useState<Theme>(() => {
+  const [theme, setThemeState] = useState<Theme>(defaultTheme);
+
+  useEffect(() => {
     try {
       if (typeof window !== "undefined" && window.localStorage) {
-        return (localStorage.getItem(storageKey) as Theme) || defaultTheme;
+        const stored = localStorage.getItem(storageKey) as Theme;
+        if (stored && (stored === "dark" || stored === "light")) {
+          setThemeState(stored);
+        }
       }
-    } catch {
-      // In private browsing or storage-restricted environments
-    }
-    return defaultTheme;
-  });
+    } catch {}
+  }, [storageKey]);
 
   useEffect(() => {
     try {
@@ -53,7 +55,7 @@ export function ThemeProvider({
           localStorage.setItem(storageKey, newTheme);
         }
       } catch {}
-      setTheme(newTheme);
+      setThemeState(newTheme);
     },
   };
 
