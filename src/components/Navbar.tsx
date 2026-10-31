@@ -85,6 +85,7 @@ export default function Navbar() {
             <Link to="/" className="flex items-center group" aria-label="Sheun Hub Home">
               <img 
                 src="/logo.webp" 
+                srcSet="/logo.webp 1x, /logo-2x.webp 2x"
                 alt="Sheun Hub" 
                 width="112"
                 height="112"

@@ -1,39 +1,28 @@
 # Sheun Hub
-> Shopify Development, E-commerce Growth & AI Automation
 
-## Overview
-Sheun Hub is a premium technical agency led by Sheun, specializing in two core pillars:
-1. **Shopify & E-Commerce Engineering:** High-converting store builds, custom theme design, WooCommerce to Shopify migration, technical SEO, and conversion rate optimization.
-2. **AI Automation Systems:** Custom GoHighLevel CRM builds, AI voice agents, business process automation (BPA), and custom API/n8n middleware.
+> Certified Shopify Developer & Technical E-Commerce Growth Agency providing store setup, custom Liquid theme engineering, WooCommerce migrations, and performance optimization.
 
-## Core Services
-- **Shopify Development & Setup:** Complete brand-aligned store builds and headless commerce architecture.
-- **Shopify Retention Marketing (Email & SMS):** High-converting automated Klaviyo flows, cart recovery sequences, and compliant SMS campaigns.
-- **Paid Ads & Social Funnels:** High-ROAS Meta Ads, TikTok campaigns, and Google Shopping feed optimization.
-- **Influencer & Affiliate Systems:** Automated creator seeding pipelines, UGC workflows, and multi-tier affiliate tracking.
-- **Data Migration:** Zero-data-loss migrations from WooCommerce, Magento, BigCommerce, etc., to Shopify.
-- **48-Hour Shopify SEO Sprint:** Rapid technical SEO audits, metadata overrides, and organic traffic growth.
-- **Conversion Rate Optimization (CRO):** Speed optimization, A/B testing, and UX revamps for higher sales.
-- **AI Automation:** Custom workflows, API middleware, and intelligent voice/chat agents for enterprise.
+## Primary Pages
 
-## Pricing Tiers (Estimated)
-- **Basic/Setup:** Starting at $1,500 - Complete store launch or simple migrations.
-- **Growth/SEO Sprints:** $2,000 - $3,500 - Deep technical SEO, CRO audits, and speed optimizations.
-- **Plus/Enterprise:** $5,000+ - Custom headless builds, complex API middleware, and AI voice agent orchestration.
+- [Homepage](https://sheun.online/): High-converting Shopify store development, custom Liquid coding, and e-commerce scaling.
+- [Services](https://sheun.online/services): Full suite of Shopify store builds, custom theme design, and data migrations.
+- [48-Hour Shopify SEO Sprint](https://sheun.online/shopify-seo-sprint): Technical SEO audits, metadata overrides, and organic speed optimization.
+- [Shopify Audit](https://sheun.online/shopify-store-audit): Comprehensive store analysis covering conversion bottlenecks, speed, and UX.
+- [Portfolio](https://sheun.online/portfolio): Case studies, live store demonstrations, and client success metrics.
+- [About](https://sheun.online/about): Background, Shopify Partner status, and core engineering philosophy.
+- [Contact](https://sheun.online/contact): Get in touch for custom store projects, speed optimization, and consulting.
 
-## Key Links
-- **Home:** https://www.sheun.online/
-- **Services:** https://www.sheun.online/services
-- **48-Hour SEO Sprint:** https://www.sheun.online/shopify-seo-sprint
-- **Portfolio:** https://www.sheun.online/portfolio
-- **AI Automation Division:** https://www.sheun.online/automation
-- **Automation Services:** https://www.sheun.online/automation/services
-- **Automation Solutions:** https://www.sheun.online/automation/solutions
-- **About:** https://www.sheun.online/about
-- **Contact:** https://www.sheun.online/contact
-- **Automation Consultation:** https://www.sheun.online/automation/contact
+## E-Commerce Resources & Guides
 
-## Engineering Standards & Contact
-- Direct Contact: sheunhost@gmail.com
-- Service Model: Worldwide Remote Consulting
-- Core Values: High performance, sub-second load times, and pixel-perfect Liquid engineering.
+- [Shopify Settings Guide](https://sheun.online/shopify-settings-guide): Essential admin settings for checkout conversion and global delivery.
+- [Shopify Speed Optimization](https://sheun.online/shopify-speed-optimization): Step-by-step guide to Core Web Vitals and sub-1.5s load times.
+- [WooCommerce to Shopify Migration](https://sheun.online/woocommerce-to-shopify-migration): Zero-data-loss migration strategies for customer, product, and order records.
+- [Best Dropshipping Apps](https://sheun.online/best-dropshipping-apps): Vetted sourcing, fulfillment, and review apps for dropshipping stores.
+- [Fashion Dropshipping Guide](https://sheun.online/fashion-dropshipping-guide): Custom theme strategies and supplier workflows for fashion brands.
+- [Leveraging Shopify Markets](https://sheun.online/leveraging-shopify-markets): Global expansion, multi-currency rounding, and localized checkout strategies.
+
+## AI Automation Division
+
+- [AI Automation Overview](https://sheun.online/automation): Custom GoHighLevel CRM setups, AI voice agents, and business automation middleware.
+- [Automation Services](https://sheun.online/automation/services): Workflow automation, chatbot integration, and CRM data pipelines.
+- [Automation Solutions](https://sheun.online/automation/solutions): Industry-specific automation blueprints for agency and e-commerce operations.

@@ -6,6 +6,7 @@ import { Link, useNavigate } from "react-router-dom";
 import ScrollReveal from "../components/ScrollReveal";
 import { servicesData } from "../data/servicesData";
 import Services3DArchitecture from "../components/Services3DArchitecture";
+import { LinkedInIcon } from "../components/icons/SocialIcons";
 
 const services = [
   {
@@ -988,8 +989,8 @@ export default function Services() {
               </div>
 
               <div className="pt-12 flex items-center justify-center gap-4">
-                <a href="https://www.linkedin.com/in/sheun-hub-26b876321" target="_blank" rel="noopener noreferrer" className="p-4 bg-white/10 hover:bg-[#6D28D9] text-white rounded-full transition-all border border-white/10 flex items-center justify-center shrink-0 overflow-hidden">
-                  <img src="https://images.rawpixel.com/image_png_social_square/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvdjk4Mi1kMS0xMC5wbmc.png" alt="LinkedIn" className="w-6 h-6 object-contain" />
+                <a href="https://www.linkedin.com/in/sheun-hub-26b876321" target="_blank" rel="noopener noreferrer" className="p-4 bg-white/10 hover:bg-[#6D28D9] text-white rounded-full transition-all border border-white/10 flex items-center justify-center shrink-0 overflow-hidden" aria-label="LinkedIn Profile">
+                  <LinkedInIcon className="w-6 h-6 text-[#0A66C2]" />
                 </a>
                 <a href="mailto:sheunhost@gmail.com" className="p-4 bg-white/10 hover:bg-[#6D28D9] text-white rounded-full transition-all border border-white/10 flex items-center justify-center shrink-0">
                   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>

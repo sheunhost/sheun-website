@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { ShieldCheck, Search, HeadphonesIcon, Lock, Zap, Award } from "lucide-react";
 import ConfigChecker from "./ConfigChecker";
+import { GmailIcon, LinkedInIcon, UpworkIcon } from "./icons/SocialIcons";
 
 export default function Footer() {
   return (
@@ -20,50 +21,51 @@ export default function Footer() {
             <Link to="/" className="inline-block" aria-label="Sheun Hub Home">
               <img 
                 src="/logo.webp" 
+                srcSet="/logo.webp 1x, /logo-2x.webp 2x"
                 alt="Sheun Hub" 
-                width="80"
-                height="80"
+                width="112"
+                height="112"
                 loading="lazy"
                 className="h-20 w-auto object-contain drop-shadow-xl" 
               />
             </Link>
-            <p className="text-white/40 text-lg leading-relaxed font-serif italic">
+            <p className="text-white/70 text-lg leading-relaxed font-serif italic">
               Your Shopify Growth Partner. Building high-converting eCommerce experiences.
             </p>
           </div>
 
           {/* Services */}
           <div>
-            <h4 className="text-sm font-bold uppercase tracking-[0.3em] text-white/20 mb-8">Services</h4>
+            <p className="text-sm font-bold uppercase tracking-[0.3em] text-white/70 mb-8">Services</p>
             <ul className="space-y-4 font-medium">
-              <li><Link to="/services" className="text-white/60 hover:text-[#8B5CF6] transition-colors">Store Setup</Link></li>
-              <li><Link to="/services" className="text-white/60 hover:text-[#8B5CF6] transition-colors">Custom Dev</Link></li>
-              <li><Link to="/services" className="text-white/60 hover:text-[#8B5CF6] transition-colors">Migrations</Link></li>
-              <li><Link to="/services" className="text-white/60 hover:text-[#8B5CF6] transition-colors">SEO & Speed</Link></li>
+              <li><Link to="/services" className="text-white/80 hover:text-[#8B5CF6] transition-colors">Store Setup</Link></li>
+              <li><Link to="/services" className="text-white/80 hover:text-[#8B5CF6] transition-colors">Custom Dev</Link></li>
+              <li><Link to="/services" className="text-white/80 hover:text-[#8B5CF6] transition-colors">Migrations</Link></li>
+              <li><Link to="/services" className="text-white/80 hover:text-[#8B5CF6] transition-colors">SEO & Speed</Link></li>
               <li><Link to="/shopify-seo-sprint" className="text-[#D946EF] font-bold hover:text-white transition-colors">48-Hr SEO Sprint ($250)</Link></li>
               <li><Link to="/shopify-store-audit" className="text-[#FF6B4A] font-bold hover:text-white transition-colors">Shopify Store Audit ($197)</Link></li>
-              <li><Link to="/shopify-not-converting" className="text-white/40 hover:text-[#8B5CF6] transition-colors">Fix Low Sales (Tips)</Link></li>
+              <li><Link to="/shopify-not-converting" className="text-white/70 hover:text-[#8B5CF6] transition-colors">Fix Low Sales (Tips)</Link></li>
             </ul>
           </div>
 
           {/* Resources */}
           <div>
-            <h4 className="text-sm font-bold uppercase tracking-[0.3em] text-white/20 mb-8">Resources</h4>
+            <p className="text-sm font-bold uppercase tracking-[0.3em] text-white/70 mb-8">Resources</p>
             <ul className="space-y-4 font-medium">
-              <li><Link to="/about" className="text-white/60 hover:text-[#8B5CF6] transition-colors">About</Link></li>
-              <li><Link to="/portfolio" className="text-white/60 hover:text-[#8B5CF6] transition-colors">Portfolio</Link></li>
-              <li><Link to="/blog" className="text-white/60 hover:text-[#8B5CF6] transition-colors">Blog</Link></li>
-              <li><Link to="/apply#apply-form" className="text-white/60 hover:text-[#8B5CF6] transition-colors">Apply</Link></li>
+              <li><Link to="/about" className="text-white/80 hover:text-[#8B5CF6] transition-colors">About</Link></li>
+              <li><Link to="/portfolio" className="text-white/80 hover:text-[#8B5CF6] transition-colors">Portfolio</Link></li>
+              <li><Link to="/blog" className="text-white/80 hover:text-[#8B5CF6] transition-colors">Blog</Link></li>
+              <li><Link to="/apply#apply-form" className="text-white/80 hover:text-[#8B5CF6] transition-colors">Apply</Link></li>
             </ul>
           </div>
 
           {/* Social */}
           <div>
-            <h4 className="text-sm font-bold uppercase tracking-[0.3em] text-white/20 mb-8">Social & Contact</h4>
+            <p className="text-sm font-bold uppercase tracking-[0.3em] text-white/70 mb-8">Social & Contact</p>
             <ul className="space-y-4 font-medium">
-              <li><a href="mailto:sheunhost@gmail.com" className="text-white/60 hover:text-[#8B5CF6] transition-colors flex items-center gap-3"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Gmail_icon_%282020%29.svg/960px-Gmail_icon_%282020%29.svg.png?_=20221017173631" alt="" aria-hidden="true" className="w-4 h-4 object-contain" /> Email</a></li>
-              <li><a href="https://www.linkedin.com/in/sheun-hub-26b876321" target="_blank" rel="noopener noreferrer" className="text-white/60 hover:text-[#8B5CF6] transition-colors flex items-center gap-3"><img src="https://images.rawpixel.com/image_png_social_square/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvdjk4Mi1kMS0xMC5wbmc.png" alt="" aria-hidden="true" className="w-4 h-4 object-contain" /> LinkedIn</a></li>
-              <li><a href="https://www.upwork.com/freelancers/~017eb19011cd354946" target="_blank" rel="noopener noreferrer" className="text-white/60 hover:text-[#8B5CF6] transition-colors flex items-center gap-3"><img src="https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/upwork-icon.png" alt="" aria-hidden="true" className="w-4 h-4 object-contain" /> Upwork</a></li>
+              <li><a href="mailto:sheunhost@gmail.com" className="text-white/80 hover:text-[#8B5CF6] transition-colors flex items-center gap-3"><GmailIcon className="w-5 h-5 text-[#EA4335]" /> Email</a></li>
+              <li><a href="https://www.linkedin.com/in/sheun-hub-26b876321" target="_blank" rel="noopener noreferrer" className="text-white/80 hover:text-[#8B5CF6] transition-colors flex items-center gap-3"><LinkedInIcon className="w-5 h-5 text-[#0A66C2]" /> LinkedIn</a></li>
+              <li><a href="https://www.upwork.com/freelancers/~017eb19011cd354946" target="_blank" rel="noopener noreferrer" className="text-white/80 hover:text-[#8B5CF6] transition-colors flex items-center gap-3"><UpworkIcon className="w-5 h-5 text-[#14A800]" /> Upwork</a></li>
             </ul>
           </div>
         </div>

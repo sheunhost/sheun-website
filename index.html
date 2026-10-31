@@ -153,20 +153,22 @@
 
       (function() {
         var gtmLoaded = false;
+        var timer = null;
         function loadGTM() {
           if (gtmLoaded) return;
           gtmLoaded = true;
+          if (timer) clearTimeout(timer);
           var script = document.createElement('script');
           script.async = true;
           script.src = 'https://www.googletagmanager.com/gtag/js?id=AW-18133653660';
           document.head.appendChild(script);
         }
         if (document.readyState === 'complete') {
-          setTimeout(loadGTM, 1500);
+          timer = setTimeout(loadGTM, 4000);
         } else {
-          window.addEventListener('load', function() { setTimeout(loadGTM, 1500); }, { once: true });
+          window.addEventListener('load', function() { timer = setTimeout(loadGTM, 4000); }, { once: true });
         }
-        ['pointerdown', 'scroll', 'keydown', 'touchstart'].forEach(function(evt) {
+        ['pointerdown', 'scroll', 'keydown', 'touchstart', 'mousemove'].forEach(function(evt) {
           window.addEventListener(evt, loadGTM, { once: true, passive: true });
         });
       })();

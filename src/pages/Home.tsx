@@ -7,13 +7,15 @@ import { useState, FormEvent, useEffect, lazy, Suspense } from "react";
 import { AnimatePresence } from "framer-motion";
 import { cn, openCalendlyPopup } from "../lib/utils";
 import ScrollReveal from "../components/ScrollReveal";
-import { ImpactMetrics } from "../components/ImpactMetrics";
 import { TiltCard } from "../components/TiltCard";
 
 import { Marquee } from "../components/Marquee";
 import { WordRotator } from "../components/WordRotator";
+import { IntersectionWrapper } from "../components/IntersectionBoundary";
+import { GmailIcon, LinkedInIcon, UpworkIcon, WhatsAppIcon } from "../components/icons/SocialIcons";
 
 const Shopify3DEngine = lazy(() => import("../components/Shopify3DEngine"));
+const ImpactMetrics = lazy(() => import("../components/ImpactMetrics").then(m => ({ default: m.ImpactMetrics })));
 
 const stats = [
   { label: "Stores Built", value: "20+" },
@@ -745,13 +747,13 @@ export default function Home() {
                 <div className="flex items-center justify-between pt-3 border-t border-white/10">
                   <div className="flex gap-3">
                     <a href="https://www.linkedin.com/in/sheun-hub-26b876321" target="_blank" rel="noopener noreferrer" className="p-2 bg-white/10 hover:bg-[#6D28D9] hover:text-white rounded-full text-white transition-all flex items-center justify-center overflow-hidden" aria-label="LinkedIn profile">
-                      <img src="https://images.rawpixel.com/image_png_social_square/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvdjk4Mi1kMS0xMC5wbmc.png" alt="" aria-hidden="true" width="18" height="18" decoding="async" className="w-4 h-4 object-contain" />
+                      <LinkedInIcon className="w-4 h-4 text-[#0A66C2]" />
                     </a>
                     <a href="https://www.upwork.com/freelancers/~017eb19011cd354946" target="_blank" rel="noopener noreferrer" className="p-2 bg-white/10 hover:bg-[#6D28D9] hover:text-white rounded-full text-white transition-all flex items-center justify-center overflow-hidden" aria-label="Upwork profile">
-                      <img src="https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/upwork-icon.png" alt="" aria-hidden="true" width="18" height="18" decoding="async" className="w-4 h-4 object-contain" />
+                      <UpworkIcon className="w-4 h-4 text-[#14A800]" />
                     </a>
                     <a href="mailto:sheunhost@gmail.com" className="p-2 bg-white/10 hover:bg-[#6D28D9] hover:text-white rounded-full text-white transition-all flex items-center justify-center overflow-hidden" aria-label="Email Sheun Hub">
-                      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Gmail_icon_%282020%29.svg/960px-Gmail_icon_%282020%29.svg.png?_=20221017173631" alt="" aria-hidden="true" width="18" height="18" decoding="async" className="w-4 h-4 object-contain" />
+                      <GmailIcon className="w-4 h-4 text-[#EA4335]" />
                     </a>
                   </div>
                   <span className="text-[11px] font-mono text-cyan-300 bg-cyan-950/60 border border-cyan-800/40 px-2.5 py-1 rounded-lg">
@@ -831,9 +833,9 @@ export default function Home() {
     </section>
 
     {/* Progressive 3D Shopify Performance Engine (Isolated, Non-LCP, WebGL-Optimized) */}
-    <Suspense fallback={<div className="h-48 bg-navy/5" />}>
+    <IntersectionWrapper fallback={<div className="h-48 bg-navy/5" />}>
       <Shopify3DEngine />
-    </Suspense>
+    </IntersectionWrapper>
 
     {/* Pain Points Section */}
     <ScrollReveal>
@@ -1027,7 +1029,9 @@ export default function Home() {
       </section>
     </ScrollReveal>
 
-    <ImpactMetrics />
+    <IntersectionWrapper fallback={<div className="h-64 bg-navy/5" />}>
+      <ImpactMetrics />
+    </IntersectionWrapper>
 
     {/* Credibility & Comparison Section */}
     <ScrollReveal>
@@ -1484,11 +1488,7 @@ export default function Home() {
                 ].map((item, i) => (
                   <div key={i} className="flex flex-col sm:flex-row items-center sm:items-start gap-6 group text-center sm:text-left">
                     <div className="w-14 h-14 bg-light dark:bg-white/10 rounded-2xl flex items-center justify-center text-navy dark:text-white group-hover:bg-[#6D28D9] group-hover:text-white transition-all shrink-0 overflow-hidden">
-                      {item.icon === "whatsapp" ? (
-                        <img src="https://cdn-icons-png.flaticon.com/512/3670/3670051.png" alt="WhatsApp" className="w-6 h-6 object-contain" />
-                      ) : (
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Gmail_icon_%282020%29.svg/960px-Gmail_icon_%282020%29.svg.png?_=20221017173631" alt="Gmail" className="w-6 h-6 object-contain" />
-                      )}
+                      <GmailIcon className="w-6 h-6 text-[#EA4335]" />
                     </div>
                     <div className="min-w-0 flex-grow">
                       <p className="text-[10px] font-bold text-navy dark:text-white/40 uppercase tracking-widest">{item.label}</p>
@@ -1634,7 +1634,7 @@ export default function Home() {
           <div className="max-w-5xl mx-auto bg-white dark:bg-white/5 rounded-2xl p-10 md:p-16 shadow-xl border border-navy/5 dark:border-white/10 flex flex-col md:flex-row items-center gap-12">
             <div className="flex-1 space-y-6 text-center md:text-left">
               <div className="inline-flex items-center justify-center w-16 h-16 bg-[#6D28D9]/10 text-[#8B5CF6] rounded-2xl mb-2 overflow-hidden">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Gmail_icon_%282020%29.svg/960px-Gmail_icon_%282020%29.svg.png?_=20221017173631" alt="Gmail" className="w-8 h-8 object-contain" />
+                <GmailIcon className="w-8 h-8 text-[#EA4335]" />
               </div>
               <h2 className="text-4xl md:text-5xl font-bold text-navy dark:text-white tracking-tight">
                 Join the <span className="italic font-serif font-light text-navy dark:text-white/40">Newsletter</span>

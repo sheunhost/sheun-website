@@ -5,6 +5,7 @@ import { useState, FormEvent, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 
 import ScrollReveal from "../components/ScrollReveal";
+import { GmailIcon } from "../components/icons/SocialIcons";
 
 const qualifications = [
   "Want real revenue growth",
@@ -450,7 +451,7 @@ export default function Apply() {
                                     <label htmlFor="email" className="text-[10px] font-black uppercase tracking-[0.4em] text-navy/40 dark:text-white/40 ml-4">Email Address</label>
                                     <div className="relative group">
                                       <div className="absolute left-6 top-1/2 -translate-y-1/2 flex items-center justify-center">
-                                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Gmail_icon_%282020%29.svg/960px-Gmail_icon_%282020%29.svg.png?_=20221017173631" alt="Gmail" className="w-5 h-5 object-contain" />
+                                        <GmailIcon className="w-5 h-5 text-[#EA4335]" />
                                       </div>
                                       <input 
                                         required 

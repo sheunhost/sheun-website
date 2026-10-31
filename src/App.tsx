@@ -14,8 +14,9 @@ import ScrollToTopOnNavigation from "./components/ScrollToTopOnNavigation";
 import FloatingCalendly from "./components/FloatingCalendly";
 import GoogleAnalytics from "./components/GoogleAnalytics";
 
-// Lazy load components
-const Home = lazy(() => import("./pages/Home"));
+import Home from "./pages/Home";
+
+// Lazy load other page components
 const About = lazy(() => import("./pages/About"));
 const Services = lazy(() => import("./pages/Services"));
 const ServiceDetail = lazy(() => import("./pages/ServiceDetail"));
@@ -53,8 +54,8 @@ const AutomationTerms = lazy(() => import("./automation/pages/AutomationTerms"))
 const AutomationThankYou = lazy(() => import("./automation/pages/AutomationThankYou"));
 const AutomationNotFound = lazy(() => import("./automation/pages/AutomationNotFound"));
 
-import AutomationNavbar from "./automation/components/AutomationNavbar";
-import AutomationFooter from "./automation/components/AutomationFooter";
+const AutomationNavbar = lazy(() => import("./automation/components/AutomationNavbar"));
+const AutomationFooter = lazy(() => import("./automation/components/AutomationFooter"));
 
 // Loading fallback
 const PageLoader = () => (
@@ -134,11 +135,15 @@ function Layout() {
 
   return (
     <div className="min-h-screen flex flex-col bg-white dark:bg-navy text-[#0F172A] dark:text-white transition-colors duration-300">
-      {isAutomation ? <AutomationNavbar /> : <Navbar />}
+      <Suspense fallback={<div className="h-20 bg-navy/60" />}>
+        {isAutomation ? <AutomationNavbar /> : <Navbar />}
+      </Suspense>
       <main id="main-content" className="flex-grow">
         <AnimatedRoutes />
       </main>
-      {isAutomation ? <AutomationFooter /> : <Footer />}
+      <Suspense fallback={null}>
+        {isAutomation ? <AutomationFooter /> : <Footer />}
+      </Suspense>
       <FloatingCalendly />
       <ScrollToTop />
     </div>

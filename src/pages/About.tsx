@@ -4,6 +4,7 @@ import PageWrapper from "../components/PageWrapper";
 import { Link, useNavigate } from "react-router-dom";
 import ScrollReveal from "../components/ScrollReveal";
 import About3DGlobe from "../components/About3DGlobe";
+import { LinkedInIcon, UpworkIcon, GmailIcon } from "../components/icons/SocialIcons";
 
 const timeline = [
   { year: "2023", title: "Graduated, OAU", desc: "B.Sc. Business Management from Obafemi Awolowo University." },
@@ -400,22 +401,34 @@ export default function About() {
               </div>
 
               <div className="pt-8 flex justify-center gap-4">
-                {[
-                  { name: "LinkedIn", url: "https://www.linkedin.com/in/sheun-hub-26b876321", logo: "https://images.rawpixel.com/image_png_social_square/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvdjk4Mi1kMS0xMC5wbmc.png" },
-                  { name: "Upwork", url: "https://www.upwork.com/freelancers/~017eb19011cd354946", logo: "https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/upwork-icon.png" },
-                  { name: "Gmail", url: "mailto:sheunhost@gmail.com", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Gmail_icon_%282020%29.svg/960px-Gmail_icon_%282020%29.svg.png?_=20221017173631" }
-                ].map((item, i) => (
-                  <a 
-                    key={i}
-                    href={item.url} 
-                    target="_blank" 
-                    rel="noopener noreferrer" 
-                    className="p-3 bg-white/5 hover:bg-[#6D28D9] hover:text-white text-white rounded-2xl border border-white/10 flex items-center justify-center transition-all overflow-hidden" 
-                    title={item.name}
-                  >
-                    <img src={item.logo} alt={item.name} width="20" height="20" decoding="async" className="w-5 h-5 object-contain" />
-                  </a>
-                ))}
+                <a 
+                  href="https://www.linkedin.com/in/sheun-hub-26b876321" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="p-3 bg-white/5 hover:bg-[#6D28D9] hover:text-white text-white rounded-2xl border border-white/10 flex items-center justify-center transition-all overflow-hidden" 
+                  title="LinkedIn"
+                  aria-label="LinkedIn Profile"
+                >
+                  <LinkedInIcon className="w-5 h-5 text-[#0A66C2]" />
+                </a>
+                <a 
+                  href="https://www.upwork.com/freelancers/~017eb19011cd354946" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="p-3 bg-white/5 hover:bg-[#6D28D9] hover:text-white text-white rounded-2xl border border-white/10 flex items-center justify-center transition-all overflow-hidden" 
+                  title="Upwork"
+                  aria-label="Upwork Profile"
+                >
+                  <UpworkIcon className="w-5 h-5 text-[#14A800]" />
+                </a>
+                <a 
+                  href="mailto:sheunhost@gmail.com" 
+                  className="p-3 bg-white/5 hover:bg-[#6D28D9] hover:text-white text-white rounded-2xl border border-white/10 flex items-center justify-center transition-all overflow-hidden" 
+                  title="Gmail"
+                  aria-label="Email Sheun Hub"
+                >
+                  <GmailIcon className="w-5 h-5 text-[#EA4335]" />
+                </a>
               </div>
             </motion.div>
           </div>

@@ -22,16 +22,22 @@ async function optimizeImages() {
     totalSaved += (origSize - newSize);
     console.log(`Optimized logo.png: ${(origSize/1024).toFixed(1)} KB -> ${(newSize/1024).toFixed(1)} KB`);
 
-    // WebP version
+    // WebP 1x (112x112) and 2x (224x224) versions
     const origWebpSize = fs.existsSync(logoWebpPath) ? fs.statSync(logoWebpPath).size : 0;
     await sharp(backupPng)
-      .resize(256, 256, { fit: 'inside' })
-      .webp({ quality: 85 })
+      .resize(112, 112, { fit: 'inside' })
+      .webp({ quality: 80 })
       .toFile('public/logo-optimized.webp');
     const newWebpSize = fs.statSync('public/logo-optimized.webp').size;
     fs.renameSync('public/logo-optimized.webp', logoWebpPath);
+
+    await sharp(backupPng)
+      .resize(224, 224, { fit: 'inside' })
+      .webp({ quality: 80 })
+      .toFile('public/logo-2x.webp');
+
     totalSaved += Math.max(0, origWebpSize - newWebpSize);
-    console.log(`Optimized logo.webp: ${(origWebpSize/1024).toFixed(1)} KB -> ${(newWebpSize/1024).toFixed(1)} KB`);
+    console.log(`Optimized logo.webp: ${(origWebpSize/1024).toFixed(1)} KB -> ${(newWebpSize/1024).toFixed(1)} KB & created logo-2x.webp`);
   }
 
   // 2. Favicon (Browser icon is 32x32 or 48x48)

@@ -4,6 +4,7 @@ import PageWrapper from "../components/PageWrapper";
 import { useState, FormEvent } from "react";
 import { Link } from "react-router-dom";
 import ScrollReveal from "../components/ScrollReveal";
+import { GmailIcon, LinkedInIcon } from "../components/icons/SocialIcons";
 
 export default function Contact() {
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -220,11 +221,11 @@ export default function Contact() {
                   className="sm:col-span-2 group relative p-10 bg-navy dark:bg-white/5 dark:border dark:border-white/10 text-white rounded-[40px] overflow-hidden shadow-2xl transition-all hover:bg-navy/95 dark:hover:bg-white/10"
                 >
                   <div className="absolute top-0 right-0 p-10 opacity-20 group-hover:opacity-40 transition-opacity">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Gmail_icon_%282020%29.svg/960px-Gmail_icon_%282020%29.svg.png?_=20221017173631" alt="Gmail" width="120" height="120" decoding="async" className="w-[120px] h-[120px] object-contain" />
+                    <GmailIcon className="w-[120px] h-[120px] text-[#EA4335]" />
                   </div>
                   <div className="relative z-10 space-y-10">
                     <div className="w-16 h-16 bg-white/10 rounded-2xl flex items-center justify-center backdrop-blur-md overflow-hidden">
-                      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Gmail_icon_%282020%29.svg/960px-Gmail_icon_%282020%29.svg.png?_=20221017173631" alt="Gmail" width="32" height="32" decoding="async" className="w-8 h-8 object-contain" />
+                      <GmailIcon className="w-8 h-8 text-[#EA4335]" />
                     </div>
                     <div className="space-y-3">
                       <h3 className="text-4xl font-bold tracking-tighter">Email us directly.</h3>
@@ -245,7 +246,7 @@ export default function Contact() {
                 >
                   <div className="space-y-10">
                     <div className="w-14 h-14 bg-white dark:bg-white/10 rounded-2xl flex items-center justify-center shadow-sm group-hover:bg-green transition-colors overflow-hidden">
-                      <img src="https://images.rawpixel.com/image_png_social_square/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvdjk4Mi1kMS0xMC5wbmc.png" alt="LinkedIn" width="32" height="32" decoding="async" className="w-8 h-8 object-contain" />
+                      <LinkedInIcon className="w-8 h-8 text-[#0A66C2]" />
                     </div>
                     <div className="space-y-2">
                       <p className="text-navy dark:text-white font-bold text-xl uppercase tracking-tighter">LinkedIn</p>
