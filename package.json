@@ -52,9 +52,6 @@
     "vite": "^6.2.0"
   },
   "engines": {
-    "node": ">=24.0.0"
-  },
-  "overrides": {
-    "node-domexception": "file:./lib/node-domexception"
+    "node": ">=20.0.0"
   }
 }
