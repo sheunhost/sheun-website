@@ -1189,7 +1189,7 @@ ${jsonLdString}
             </div>
             <div class="lg:col-span-5 relative h-[520px] lg:h-[700px] flex items-center justify-center">
               <div class="relative w-full max-w-md aspect-[4/5] rounded-3xl bg-white/5 backdrop-blur-3xl border border-white/10 shadow-2xl overflow-hidden">
-                <img src="/hero-mockup.webp" alt="Shopify High Conversion Store Interface - Sheun Hub" width="448" height="560" fetchpriority="high" loading="eager" class="w-full h-full object-cover" />
+                <img src="/hero-mockup.webp" srcset="/hero-mockup-mobile.webp 380w, /hero-mockup.webp 448w" sizes="(max-width: 768px) 380px, 448px" alt="Shopify High Conversion Store Interface - Sheun Hub" width="448" height="560" fetchpriority="high" loading="eager" decoding="async" class="w-full h-full object-cover" />
                 <div class="absolute inset-0 bg-gradient-to-t from-navy via-navy/40 to-transparent pointer-events-none"></div>
               </div>
             </div>

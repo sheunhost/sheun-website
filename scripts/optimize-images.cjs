@@ -67,7 +67,7 @@ async function optimizeImages() {
     const origWebpSize = fs.existsSync(founderWebpPath) ? fs.statSync(founderWebpPath).size : 0;
     await sharp(buf)
       .resize(450, 450, { fit: 'cover' })
-      .webp({ quality: 80 })
+      .webp({ quality: 78 })
       .toFile('public/about/founder-optimized.webp');
     const newWebpSize = fs.statSync('public/about/founder-optimized.webp').size;
     fs.renameSync('public/about/founder-optimized.webp', founderWebpPath);
@@ -75,30 +75,28 @@ async function optimizeImages() {
     console.log(`Optimized sheun-founder.webp: ${(origWebpSize/1024).toFixed(1)} KB -> ${(newWebpSize/1024).toFixed(1)} KB`);
   }
 
-  // 4. Hero store mockup image - save locally to prevent external 3rd-party latency
+  // 4. Hero store mockup image - Desktop and Mobile variants
   const heroMockupPath = 'public/hero-mockup.webp';
-  if (!fs.existsSync(heroMockupPath)) {
-    try {
-      console.log('Generating local hero mockup asset...');
-      // Create local optimized webp from placeholder or fetch
-      const https = require('https');
-      const fetchBuffer = (url) => new Promise((resolve, reject) => {
-        https.get(url, (res) => {
-          const chunks = [];
-          res.on('data', c => chunks.push(c));
-          res.on('end', () => resolve(Buffer.concat(chunks)));
-          res.on('error', reject);
-        });
-      });
-      const imgBuf = await fetchBuffer('https://mapplinks.com/wp-content/uploads/2020/06/screen1.png');
-      await sharp(imgBuf)
-        .resize(450, 560, { fit: 'cover' })
-        .webp({ quality: 80 })
-        .toFile(heroMockupPath);
-      console.log(`Saved local hero-mockup.webp (${(fs.statSync(heroMockupPath).size/1024).toFixed(1)} KB)`);
-    } catch (e) {
-      console.warn('Could not fetch external hero mockup, skipping local caching of mockup:', e.message);
-    }
+  const heroMockupMobilePath = 'public/hero-mockup-mobile.webp';
+  if (fs.existsSync(heroMockupPath)) {
+    const origSize = fs.statSync(heroMockupPath).size;
+    const buf = fs.readFileSync(heroMockupPath);
+    await sharp(buf)
+      .resize(448, 560, { fit: 'cover' })
+      .webp({ quality: 80, effort: 6 })
+      .toFile('public/hero-mockup-opt.webp');
+    fs.renameSync('public/hero-mockup-opt.webp', heroMockupPath);
+    
+    // Create 380px mobile variant
+    await sharp(buf)
+      .resize(380, 475, { fit: 'cover' })
+      .webp({ quality: 75, effort: 6 })
+      .toFile(heroMockupMobilePath);
+    
+    const newSize = fs.statSync(heroMockupPath).size;
+    const mobileSize = fs.statSync(heroMockupMobilePath).size;
+    totalSaved += Math.max(0, origSize - newSize);
+    console.log(`Optimized hero-mockup.webp (${(newSize/1024).toFixed(1)} KB) & created hero-mockup-mobile.webp (${(mobileSize/1024).toFixed(1)} KB)`);
   }
 
   console.log(`Total image savings: ${(totalSaved / 1024).toFixed(1)} KB (target >= 450 KiB exceeded!)`);

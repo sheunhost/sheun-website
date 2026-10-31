@@ -3,7 +3,7 @@ import { ArrowRight, Star, ShoppingBag, Globe, Trophy, CheckCircle2, Layout, Ref
 import { Link, useNavigate } from "react-router-dom";
 import PageWrapper from "../components/PageWrapper";
 import { SEO } from "../components/SEO";
-import { useState, FormEvent, useEffect } from "react";
+import { useState, FormEvent, useEffect, lazy, Suspense } from "react";
 import { AnimatePresence } from "framer-motion";
 import { cn, openCalendlyPopup } from "../lib/utils";
 import ScrollReveal from "../components/ScrollReveal";
@@ -12,7 +12,8 @@ import { TiltCard } from "../components/TiltCard";
 
 import { Marquee } from "../components/Marquee";
 import { WordRotator } from "../components/WordRotator";
-import Shopify3DEngine from "../components/Shopify3DEngine";
+
+const Shopify3DEngine = lazy(() => import("../components/Shopify3DEngine"));
 
 const stats = [
   { label: "Stores Built", value: "20+" },
@@ -714,7 +715,9 @@ export default function Home() {
             <div className="relative w-full max-w-md aspect-[4/5] rounded-3xl bg-white/5 backdrop-blur-3xl border border-white/10 shadow-2xl overflow-hidden group">
               {/* Optimized Local Hero Store Showcase Image */}
               <img 
-                src="/hero-mockup.webp" 
+                src="/hero-mockup.webp"
+                srcSet="/hero-mockup-mobile.webp 380w, /hero-mockup.webp 448w"
+                sizes="(max-width: 768px) 380px, 448px" 
                 alt="Shopify High Conversion Store Interface - Sheun Hub" 
                 width="448"
                 height="560"
@@ -828,7 +831,9 @@ export default function Home() {
     </section>
 
     {/* Progressive 3D Shopify Performance Engine (Isolated, Non-LCP, WebGL-Optimized) */}
-    <Shopify3DEngine />
+    <Suspense fallback={<div className="h-48 bg-navy/5" />}>
+      <Shopify3DEngine />
+    </Suspense>
 
     {/* Pain Points Section */}
     <ScrollReveal>

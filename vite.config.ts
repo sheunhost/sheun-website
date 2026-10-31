@@ -32,6 +32,7 @@ export default defineConfig(({ mode }) => {
         output: {
           manualChunks: {
             'react-vendor': ['react', 'react/jsx-runtime', 'react-dom', 'react-router-dom', 'react-helmet-async'],
+            'three-vendor': ['three'],
             'framer-motion': ['framer-motion'],
             'lucide-icons': ['lucide-react']
           }
