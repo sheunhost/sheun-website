@@ -150,14 +150,18 @@ function Layout() {
   );
 }
 
+import { LazyMotion, domAnimation } from "framer-motion";
+
 export default function App() {
   return (
-    <HelmetProvider>
-      <Router>
-        <GoogleAnalytics />
-        <ScrollToTopOnNavigation />
-        <Layout />
-      </Router>
-    </HelmetProvider>
+    <LazyMotion features={domAnimation}>
+      <HelmetProvider>
+        <Router>
+          <GoogleAnalytics />
+          <ScrollToTopOnNavigation />
+          <Layout />
+        </Router>
+      </HelmetProvider>
+    </LazyMotion>
   );
 }

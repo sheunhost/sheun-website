@@ -1,16 +1,23 @@
-import {StrictMode} from 'react';
-import {createRoot} from 'react-dom/client';
+import { StrictMode } from 'react';
+import { hydrateRoot, createRoot } from 'react-dom/client';
 import { HelmetProvider } from 'react-helmet-async';
 import { ThemeProvider } from './components/ThemeProvider';
 import App from './App';
 import './index.css';
 
-createRoot(document.getElementById('root')!).render(
+const container = document.getElementById('root')!;
+const rootContent = (
   <StrictMode>
     <HelmetProvider>
       <ThemeProvider defaultTheme="light" storageKey="ui-theme">
         <App />
       </ThemeProvider>
     </HelmetProvider>
-  </StrictMode>,
+  </StrictMode>
 );
+
+if (container.hasChildNodes()) {
+  hydrateRoot(container, rootContent);
+} else {
+  createRoot(container).render(rootContent);
+}

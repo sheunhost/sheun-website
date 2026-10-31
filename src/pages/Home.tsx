@@ -664,14 +664,14 @@ export default function Home() {
                     <TiltCard depth={20}>
                       <div className={`bg-white/5 border border-white/10 ${item.border} p-6 rounded-2xl h-full backdrop-blur-sm shadow-xl transition-all`}>
                         <div style={{ color: item.color }} className="text-sm font-bold uppercase tracking-widest mb-1">{item.title}</div>
-                        <p className="text-white/40 text-xs italic font-serif">{item.desc}</p>
+                        <p className="text-white/70 text-xs italic font-serif">{item.desc}</p>
                       </div>
                     </TiltCard>
                   </div>
                 ))}
               </div>
 
-                <p className="text-white/60 text-xl md:text-2xl max-w-xl leading-relaxed font-light font-serif italic">
+                <p className="text-white/80 text-xl md:text-2xl max-w-xl leading-relaxed font-light font-serif italic">
                   Scale your brand with a specialist in Custom Shopify Development and E-commerce Growth. From custom theme builds to technical store optimization, Sheun Hub helps businesses maximize revenue on the Shopify platform.
                 </p>
             </div>
@@ -706,7 +706,7 @@ export default function Home() {
                 { label: "Trust", value: "100% Secure" },
               ].map((stat, i) => (
                 <div key={i} className="space-y-2">
-                  <p className="text-[10px] font-bold uppercase tracking-[0.3em] text-white/30">{stat.label}</p>
+                  <p className="text-[10px] font-bold uppercase tracking-[0.3em] text-white/70">{stat.label}</p>
                   <p className="text-2xl font-bold text-white tracking-tight">{stat.value}</p>
                 </div>
               ))}
@@ -789,7 +789,7 @@ export default function Home() {
       <Marquee speed={40}>
         {['SHOPIFY EXPERT', 'CUSTOM LIQUID', 'HEADLESS COMMERCE', 'CRO SPECIALIST', 'SPEED OPTIMIZATION', 'TECHNICAL SEO', 'REACT & VITE', 'TAILWIND CSS'].map((text, i) => (
           <div key={i} className="flex items-center gap-16">
-            <span className="text-white/40 font-bold text-sm tracking-[0.4em] uppercase">{text}</span>
+            <span className="text-white/70 font-bold text-sm tracking-[0.4em] uppercase">{text}</span>
             <span className="text-[#D946EF]/50 text-xl font-bold">•</span>
           </div>
         ))}
