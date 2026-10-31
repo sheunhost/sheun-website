@@ -17,6 +17,7 @@ export default function FloatingCalendly() {
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.95 }}
         onClick={openCalendlyPopup}
+        aria-label="Book Strategy Call"
         className="bg-navy text-white px-5 md:px-8 py-3 md:py-4 rounded-full font-bold shadow-2xl flex items-center justify-center gap-3 border border-white/10 group cursor-pointer"
       >
         <div className="w-8 h-8 rounded-full bg-[#6D28D9] text-white flex items-center justify-center group-hover:bg-[#8B5CF6] transition-colors shrink-0">

@@ -147,9 +147,9 @@ export default function WooCommerceToShopifyMigration({ isEmbedded = false }: { 
       articleSection="Shopify Tips"
     >
       <BlogArticleHeader post={postData} />
-      <main className="bg-white dark:bg-navy">
+      <div className="bg-white dark:bg-navy">
         {articleBody}
-      </main>
+      </div>
       <div className="container mx-auto px-6 max-w-4xl">
         <SocialShare
           url="https://www.sheun.online/woocommerce-to-shopify-migration"

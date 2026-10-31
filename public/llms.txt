@@ -35,5 +35,5 @@ Sheun Hub is a premium technical agency led by Sheun, specializing in two core p
 
 ## Engineering Standards & Contact
 - Direct Contact: sheunhost@gmail.com
-- Headquartered: UK / Worldwide Service
-- Core Values: Sub-600ms AI latency, 48-hour sprints, and pixel-perfect Liquid engineering.
+- Service Model: Worldwide Remote Consulting
+- Core Values: High performance, sub-second load times, and pixel-perfect Liquid engineering.

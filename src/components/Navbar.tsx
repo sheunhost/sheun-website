@@ -65,11 +65,12 @@ export default function Navbar() {
   }, []);
 
   return (
-    <>
+    <header>
       {/* Top Wall 3-Color Gradient Bar (Orange/Coral -> Pink/Magenta -> Purple/Deep Violet) */}
       <div className="fixed top-0 left-0 right-0 h-[3px] bg-gradient-to-r from-[#FF6B4A] via-[#D946EF] to-[#6D28D9] z-[100] shadow-[0_1px_10px_rgba(217,70,239,0.35)]" />
 
       <nav
+        aria-label="Main navigation"
         className={cn(
           "fixed top-0 left-0 right-0 z-50 transition-all duration-500",
           isScrolled 
@@ -81,12 +82,14 @@ export default function Navbar() {
       >
         <div className="container mx-auto px-6 flex items-center justify-between">
           <div className="flex items-center gap-8 lg:gap-10">
-            <Link to="/" className="flex items-center group">
+            <Link to="/" className="flex items-center group" aria-label="Sheun Hub Home">
               <img 
-                src="/logo.png" 
-                alt="Sheun Hub - Shopify Development and Growth Expert" 
-                referrerPolicy="no-referrer"
-                loading="lazy"
+                src="/logo.webp" 
+                alt="Sheun Hub" 
+                width="112"
+                height="112"
+                loading="eager"
+                fetchPriority="high"
                 className={cn(
                   "rounded-full object-cover shadow-lg border-2 border-[#D946EF]/30 group-hover:border-[#FF6B4A]/60 transition-all duration-500",
                   isScrolled ? "h-16 w-16 md:h-20 md:w-20" : "h-20 w-20 md:h-24 md:w-24 lg:h-28 lg:w-28"
@@ -195,6 +198,6 @@ export default function Navbar() {
         )}
       </AnimatePresence>
     </nav>
-    </>
+    </header>
   );
 }

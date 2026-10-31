@@ -60,9 +60,10 @@ export default function AutomationFooter() {
         <div className="mb-16 p-6 sm:p-8 rounded-3xl bg-slate-800/80 border border-slate-700/80 flex flex-col md:flex-row items-center justify-between gap-6 shadow-xl">
           <div className="flex items-center gap-4">
             <img 
-              src="/logo.png" 
+              src="/logo.webp" 
               alt="Sheun Hub" 
-              referrerPolicy="no-referrer"
+              width="56"
+              height="56"
               loading="lazy"
               className="w-14 h-14 rounded-full object-cover shadow-sm border border-cyan-400/40 shrink-0"
             />
@@ -93,9 +94,10 @@ export default function AutomationFooter() {
           <div className="lg:col-span-2 space-y-5">
             <Link to="/automation" className="inline-block group" aria-label="Sheun Hub">
               <img 
-                src="/logo.png" 
+                src="/logo.webp" 
                 alt="Sheun Hub" 
-                referrerPolicy="no-referrer"
+                width="56"
+                height="56"
                 loading="lazy"
                 className="h-14 w-14 rounded-full object-cover shadow-sm border border-cyan-400/40"
               />
@@ -117,8 +119,11 @@ export default function AutomationFooter() {
                 </div>
               ) : (
                 <form onSubmit={handleNewsletterSubmit} className="flex gap-2">
+                  <label htmlFor="automation-newsletter-email" className="sr-only">Work email address</label>
                   <input
+                    id="automation-newsletter-email"
                     type="email"
+                    aria-label="Work email address for blueprints"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     placeholder="Enter your work email"

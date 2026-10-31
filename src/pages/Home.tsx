@@ -712,16 +712,16 @@ export default function Home() {
 
           <div className="lg:col-span-5 relative h-[520px] lg:h-[700px] flex items-center justify-center">
             <div className="relative w-full max-w-md aspect-[4/5] rounded-3xl bg-white/5 backdrop-blur-3xl border border-white/10 shadow-2xl overflow-hidden group">
-              {/* Previous Stable Hero Store Showcase Image */}
+              {/* Optimized Local Hero Store Showcase Image */}
               <img 
-                src="https://mapplinks.com/wp-content/uploads/2020/06/screen1.png" 
+                src="/hero-mockup.webp" 
                 alt="Shopify High Conversion Store Interface - Sheun Hub" 
-                referrerPolicy="no-referrer"
                 width="448"
                 height="560"
+                fetchPriority="high"
+                loading="eager" 
                 decoding="async"
                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" 
-                loading="eager" 
               />
               <div className="absolute inset-0 bg-gradient-to-t from-navy via-navy/40 to-transparent pointer-events-none" />
 
@@ -731,9 +731,9 @@ export default function Home() {
                   {[...Array(5)].map((_, i) => <Star key={i} size={14} className="fill-[#FF6B4A] text-[#FF6B4A]" />)}
                 </div>
                 <div>
-                  <h3 className="text-white font-bold text-3xl sm:text-4xl tracking-tighter leading-tight">
+                  <h2 className="text-white font-bold text-3xl sm:text-4xl tracking-tighter leading-tight">
                     Top Rated <br />Shopify Expert.
-                  </h3>
+                  </h2>
                   <p className="text-white/70 text-sm sm:text-base font-serif italic mt-1">
                     Certified Shopify Partner &amp; Lead Systems Engineer
                   </p>
@@ -741,14 +741,14 @@ export default function Home() {
                 
                 <div className="flex items-center justify-between pt-3 border-t border-white/10">
                   <div className="flex gap-3">
-                    <a href="https://www.linkedin.com/in/sheun-hub-26b876321" target="_blank" rel="noopener noreferrer" className="p-2 bg-white/10 hover:bg-[#6D28D9] hover:text-white rounded-full text-white transition-all flex items-center justify-center overflow-hidden" title="LinkedIn">
-                      <img src="https://images.rawpixel.com/image_png_social_square/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvdjk4Mi1kMS0xMC5wbmc.png" alt="LinkedIn" width="18" height="18" decoding="async" className="w-4 h-4 object-contain" />
+                    <a href="https://www.linkedin.com/in/sheun-hub-26b876321" target="_blank" rel="noopener noreferrer" className="p-2 bg-white/10 hover:bg-[#6D28D9] hover:text-white rounded-full text-white transition-all flex items-center justify-center overflow-hidden" aria-label="LinkedIn profile">
+                      <img src="https://images.rawpixel.com/image_png_social_square/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvdjk4Mi1kMS0xMC5wbmc.png" alt="" aria-hidden="true" width="18" height="18" decoding="async" className="w-4 h-4 object-contain" />
                     </a>
-                    <a href="https://www.upwork.com/freelancers/~017eb19011cd354946" target="_blank" rel="noopener noreferrer" className="p-2 bg-white/10 hover:bg-[#6D28D9] hover:text-white rounded-full text-white transition-all flex items-center justify-center overflow-hidden" title="Upwork">
-                      <img src="https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/upwork-icon.png" alt="Upwork" width="18" height="18" decoding="async" className="w-4 h-4 object-contain" />
+                    <a href="https://www.upwork.com/freelancers/~017eb19011cd354946" target="_blank" rel="noopener noreferrer" className="p-2 bg-white/10 hover:bg-[#6D28D9] hover:text-white rounded-full text-white transition-all flex items-center justify-center overflow-hidden" aria-label="Upwork profile">
+                      <img src="https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/upwork-icon.png" alt="" aria-hidden="true" width="18" height="18" decoding="async" className="w-4 h-4 object-contain" />
                     </a>
-                    <a href="mailto:sheunhost@gmail.com" className="p-2 bg-white/10 hover:bg-[#6D28D9] hover:text-white rounded-full text-white transition-all flex items-center justify-center overflow-hidden" title="Email">
-                      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Gmail_icon_%282020%29.svg/960px-Gmail_icon_%282020%29.svg.png?_=20221017173631" alt="Gmail" width="18" height="18" decoding="async" className="w-4 h-4 object-contain" />
+                    <a href="mailto:sheunhost@gmail.com" className="p-2 bg-white/10 hover:bg-[#6D28D9] hover:text-white rounded-full text-white transition-all flex items-center justify-center overflow-hidden" aria-label="Email Sheun Hub">
+                      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Gmail_icon_%282020%29.svg/960px-Gmail_icon_%282020%29.svg.png?_=20221017173631" alt="" aria-hidden="true" width="18" height="18" decoding="async" className="w-4 h-4 object-contain" />
                     </a>
                   </div>
                   <span className="text-[11px] font-mono text-cyan-300 bg-cyan-950/60 border border-cyan-800/40 px-2.5 py-1 rounded-lg">
@@ -1523,21 +1523,25 @@ export default function Home() {
                     >
                       <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
                         <div className="space-y-3">
-                          <label className="text-[10px] font-bold text-navy dark:text-white/40 uppercase tracking-widest ml-4">Full Name</label>
+                          <label htmlFor="contact-name" className="text-[10px] font-bold text-navy dark:text-white/40 uppercase tracking-widest ml-4">Full Name</label>
                           <input
+                            id="contact-name"
                             required
                             type="text"
                             name="name"
+                            aria-label="Full Name"
                             placeholder="John Doe"
                             className="w-full bg-white dark:bg-white/10 border-b-2 border-navy/5 dark:border-white/10 rounded-3xl py-5 px-8 focus:border-[#8B5CF6] outline-none transition-all font-medium text-navy dark:text-white placeholder:text-navy/40 dark:placeholder:text-white/40"
                           />
                         </div>
                         <div className="space-y-3">
-                          <label className="text-[10px] font-bold text-navy dark:text-white/40 uppercase tracking-widest ml-4">Email Address</label>
+                          <label htmlFor="contact-email" className="text-[10px] font-bold text-navy dark:text-white/40 uppercase tracking-widest ml-4">Email Address</label>
                           <input
+                            id="contact-email"
                             required
                             type="email"
                             name="email"
+                            aria-label="Email Address"
                             placeholder="john@example.com"
                             className={`w-full bg-white dark:bg-white/10 border-b-2 ${emailErrorContact ? 'border-red-500' : 'border-navy/5 dark:border-white/10'} rounded-3xl py-5 px-8 focus:border-[#8B5CF6] outline-none transition-all font-medium text-navy dark:text-white placeholder:text-navy/40 dark:placeholder:text-white/40`}
                           />
@@ -1546,9 +1550,9 @@ export default function Home() {
                       </div>
 
                       <div className="space-y-3">
-                        <label className="text-[10px] font-bold text-navy dark:text-white/40 uppercase tracking-widest ml-4">Project Type</label>
+                        <label htmlFor="contact-project-type" className="text-[10px] font-bold text-navy dark:text-white/40 uppercase tracking-widest ml-4">Project Type</label>
                         <div className="relative">
-                          <select name="project_type" className="w-full bg-white dark:bg-navy border-b-2 border-navy/5 dark:border-white/10 rounded-3xl py-5 px-8 focus:border-[#8B5CF6] outline-none transition-all appearance-none font-medium text-navy dark:text-white">
+                          <select id="contact-project-type" name="project_type" aria-label="Project Type" className="w-full bg-white dark:bg-navy border-b-2 border-navy/5 dark:border-white/10 rounded-3xl py-5 px-8 focus:border-[#8B5CF6] outline-none transition-all appearance-none font-medium text-navy dark:text-white">
                             <option className="bg-white dark:bg-navy text-navy dark:text-white">New Store Build</option>
                             <option className="bg-white dark:bg-navy text-navy dark:text-white">Dropshipping Store</option>
                             <option className="bg-white dark:bg-navy text-navy dark:text-white">Shopify Migration Service</option>
@@ -1561,11 +1565,13 @@ export default function Home() {
                       </div>
 
                       <div className="space-y-3">
-                        <label className="text-[10px] font-bold text-navy dark:text-white/40 uppercase tracking-widest ml-4">Message</label>
+                        <label htmlFor="contact-message" className="text-[10px] font-bold text-navy dark:text-white/40 uppercase tracking-widest ml-4">Message</label>
                         <textarea
+                          id="contact-message"
                           required
                           name="message"
                           rows={5}
+                          aria-label="Message"
                           placeholder="Tell us about your project goals..."
                           className="w-full bg-white dark:bg-white/10 border-b-2 border-navy/5 dark:border-white/10 rounded-2xl py-6 px-8 focus:border-[#8B5CF6] outline-none transition-all resize-none font-medium text-navy dark:text-white placeholder:text-navy/40 dark:placeholder:text-white/40"
                         />
@@ -1643,9 +1649,12 @@ export default function Home() {
                     onSubmit={handleSubscribe} 
                     className="relative flex flex-col sm:flex-row items-center gap-4 sm:gap-0"
                   >
+                    <label htmlFor="newsletter-email" className="sr-only">Email address for weekly tips</label>
                     <input 
+                      id="newsletter-email"
                       type="email" 
                       name="email" 
+                      aria-label="Email address for weekly tips"
                       required
                       placeholder="Enter your email address" 
                       className={`w-full bg-light dark:bg-white/10 border-2 ${emailErrorSubscribe ? 'border-red-500' : 'border-navy/5 dark:border-white/10'} rounded-full py-6 pl-8 pr-8 sm:pr-40 focus:border-[#8B5CF6] outline-none transition-all font-medium text-navy dark:text-white placeholder:text-navy/40 dark:placeholder:text-white/40`}

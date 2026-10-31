@@ -17,11 +17,12 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16 mb-24">
           {/* Company */}
           <div className="space-y-8">
-            <Link to="/" className="inline-block">
+            <Link to="/" className="inline-block" aria-label="Sheun Hub Home">
               <img 
-                src="/logo.png" 
-                alt="Sheun Hub - Shopify Development and Growth Expert" 
-                referrerPolicy="no-referrer"
+                src="/logo.webp" 
+                alt="Sheun Hub" 
+                width="80"
+                height="80"
                 loading="lazy"
                 className="h-20 w-auto object-contain drop-shadow-xl" 
               />
@@ -60,9 +61,9 @@ export default function Footer() {
           <div>
             <h4 className="text-sm font-bold uppercase tracking-[0.3em] text-white/20 mb-8">Social & Contact</h4>
             <ul className="space-y-4 font-medium">
-              <li><a href="mailto:sheunhost@gmail.com" className="text-white/60 hover:text-[#8B5CF6] transition-colors flex items-center gap-3"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Gmail_icon_%282020%29.svg/960px-Gmail_icon_%282020%29.svg.png?_=20221017173631" alt="Gmail" className="w-4 h-4 object-contain" /> Email</a></li>
-              <li><a href="https://www.linkedin.com/in/sheun-hub-26b876321" target="_blank" rel="noopener noreferrer" className="text-white/60 hover:text-[#8B5CF6] transition-colors flex items-center gap-3"><img src="https://images.rawpixel.com/image_png_social_square/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvdjk4Mi1kMS0xMC5wbmc.png" alt="LinkedIn" className="w-4 h-4 object-contain" /> LinkedIn</a></li>
-              <li><a href="https://www.upwork.com/freelancers/~017eb19011cd354946" target="_blank" rel="noopener noreferrer" className="text-white/60 hover:text-[#8B5CF6] transition-colors flex items-center gap-3"><img src="https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/upwork-icon.png" alt="Upwork" className="w-4 h-4 object-contain" /> Upwork</a></li>
+              <li><a href="mailto:sheunhost@gmail.com" className="text-white/60 hover:text-[#8B5CF6] transition-colors flex items-center gap-3"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Gmail_icon_%282020%29.svg/960px-Gmail_icon_%282020%29.svg.png?_=20221017173631" alt="" aria-hidden="true" className="w-4 h-4 object-contain" /> Email</a></li>
+              <li><a href="https://www.linkedin.com/in/sheun-hub-26b876321" target="_blank" rel="noopener noreferrer" className="text-white/60 hover:text-[#8B5CF6] transition-colors flex items-center gap-3"><img src="https://images.rawpixel.com/image_png_social_square/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvdjk4Mi1kMS0xMC5wbmc.png" alt="" aria-hidden="true" className="w-4 h-4 object-contain" /> LinkedIn</a></li>
+              <li><a href="https://www.upwork.com/freelancers/~017eb19011cd354946" target="_blank" rel="noopener noreferrer" className="text-white/60 hover:text-[#8B5CF6] transition-colors flex items-center gap-3"><img src="https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/upwork-icon.png" alt="" aria-hidden="true" className="w-4 h-4 object-contain" /> Upwork</a></li>
             </ul>
           </div>
         </div>

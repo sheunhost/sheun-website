@@ -194,9 +194,9 @@ export default function ConversionKillers({ isEmbedded = false }: { isEmbedded?:
       articleSection="CRO & Strategy"
     >
       <BlogArticleHeader post={postData} />
-      <main className="bg-white dark:bg-navy">
+      <div className="bg-white dark:bg-navy">
         {articleBody}
-      </main>
+      </div>
       <div className="container mx-auto px-6 max-w-4xl">
         <SocialShare
           url="https://www.sheun.online/conversion-killers"

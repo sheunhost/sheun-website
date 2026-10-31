@@ -64,9 +64,9 @@ export default function BlogPost() {
       <BlogArticleHeader post={postData} />
 
       {/* Main Article Content */}
-      <main className="w-full bg-white dark:bg-navy">
+      <div className="w-full bg-white dark:bg-navy">
         {getComponent(postData.id)}
-      </main>
+      </div>
 
       {/* Single Organized Social Sharing Section */}
       <div className="container mx-auto px-6 max-w-4xl">

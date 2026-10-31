@@ -56,10 +56,12 @@ export default function AutomationNavbar() {
               aria-label="Sheun Hub"
             >
               <img 
-                src="/logo.png" 
+                src="/logo.webp" 
                 alt="Sheun Hub" 
-                referrerPolicy="no-referrer"
-                loading="lazy"
+                width="48"
+                height="48"
+                loading="eager"
+                fetchPriority="high"
                 className="h-11 w-11 sm:h-13 sm:w-13 rounded-full object-cover shadow-sm border-2 border-cyan-400/40 group-hover:border-[#FF6B4A]/70 transition-all duration-300" 
               />
             </Link>
