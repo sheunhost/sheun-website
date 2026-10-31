@@ -135,9 +135,9 @@ function Layout() {
   return (
     <div className="min-h-screen flex flex-col bg-white dark:bg-navy text-[#0F172A] dark:text-white transition-colors duration-300">
       {isAutomation ? <AutomationNavbar /> : <Navbar />}
-      <main className="flex-grow">
+      <div className="flex-grow">
         <AnimatedRoutes />
-      </main>
+      </div>
       {isAutomation ? <AutomationFooter /> : <Footer />}
       <FloatingCalendly />
       <ScrollToTop />

@@ -26,22 +26,34 @@ export function ThemeProvider({
   storageKey = "ui-theme",
   ...props
 }: ThemeProviderProps) {
-  const [theme, setTheme] = useState<Theme>(
-    () => (localStorage.getItem(storageKey) as Theme) || defaultTheme
-  );
+  const [theme, setTheme] = useState<Theme>(() => {
+    try {
+      if (typeof window !== "undefined" && window.localStorage) {
+        return (localStorage.getItem(storageKey) as Theme) || defaultTheme;
+      }
+    } catch {
+      // In private browsing or storage-restricted environments
+    }
+    return defaultTheme;
+  });
 
   useEffect(() => {
-    const root = window.document.documentElement;
-
-    root.classList.remove("light", "dark");
-    root.classList.add(theme);
+    try {
+      const root = window.document.documentElement;
+      root.classList.remove("light", "dark");
+      root.classList.add(theme);
+    } catch {}
   }, [theme]);
 
   const value = {
     theme,
-    setTheme: (theme: Theme) => {
-      localStorage.setItem(storageKey, theme);
-      setTheme(theme);
+    setTheme: (newTheme: Theme) => {
+      try {
+        if (typeof window !== "undefined" && window.localStorage) {
+          localStorage.setItem(storageKey, newTheme);
+        }
+      } catch {}
+      setTheme(newTheme);
     },
   };
 

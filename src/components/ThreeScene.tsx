@@ -542,7 +542,15 @@ export default function ThreeScene({
       onPointerMove={handlePointerMove}
       onPointerLeave={handlePointerLeave}
     >
-      <canvas ref={canvasRef} className={canvasClassName} />
+      {!threeLoaded && fallback && (
+        <div className="absolute inset-0 z-0">
+          {fallback}
+        </div>
+      )}
+      <canvas 
+        ref={canvasRef} 
+        className={`${canvasClassName} transition-opacity duration-500 ${threeLoaded ? 'opacity-100 relative z-10' : 'opacity-0'}`} 
+      />
       {children}
     </div>
   );

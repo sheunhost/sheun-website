@@ -1122,10 +1122,10 @@ ${jsonLdString}
     </main>
   `);
 
-  // Inject into #root
+  // Inject clean root for React and place route-specific semantic HTML inside noscript for crawlers
   html = html.replace(
-    /<div id="root">[\s\S]*?<\/div>/i,
-    `<div id="root">\n${bodyContent}\n    </div>`
+    /<div id="root">[\s\S]*?<\/div>(\s*<!--[\s\S]*?-->)?(\s*<noscript>[\s\S]*?<\/noscript>)?/i,
+    `<div id="root"></div>\n    <noscript>\n${bodyContent}\n    </noscript>`
   );
 
   return html;

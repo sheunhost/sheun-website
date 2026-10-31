@@ -1,7 +1,6 @@
 import { motion } from "framer-motion";
 import { ArrowRight, Star, ShoppingBag, Globe, Trophy, CheckCircle2, Layout, RefreshCw, ShoppingCart, Palette, ExternalLink, Zap, Code2, Rocket, MessageSquare, Send, Mail, ChevronDown, Quote, TrendingUp, Target, AlertCircle, BarChart3, Search, Lightbulb, Info, AlertTriangle, X, Clock, DollarSign, ListChecks, ChevronLeft, ChevronRight, ShieldCheck, Lock } from "lucide-react";
 import { Link, useNavigate } from "react-router-dom";
-import { GoogleGenAI } from "@google/genai";
 import PageWrapper from "../components/PageWrapper";
 import { SEO } from "../components/SEO";
 import { useState, FormEvent, useEffect } from "react";
@@ -14,7 +13,6 @@ import { TiltCard } from "../components/TiltCard";
 import { Marquee } from "../components/Marquee";
 import { WordRotator } from "../components/WordRotator";
 import Shopify3DEngine from "../components/Shopify3DEngine";
-import ThreeScene from "../components/ThreeScene";
 
 const stats = [
   { label: "Stores Built", value: "20+" },
@@ -714,46 +712,18 @@ export default function Home() {
 
           <div className="lg:col-span-5 relative h-[520px] lg:h-[700px] flex items-center justify-center">
             <div className="relative w-full max-w-md aspect-[4/5] rounded-3xl bg-white/5 backdrop-blur-3xl border border-white/10 shadow-2xl overflow-hidden group">
-              {/* 3D Interactive Canvas Stage */}
-              <div className="absolute inset-0">
-                <ThreeScene
-                  preset="hologram"
-                  className="w-full h-full relative"
-                  canvasClassName="w-full h-full block"
-                  rootMargin="150px"
-                  cameraFov={42}
-                  cameraPosition={[0, 0, 5.8]}
-                  fallback={
-                    <div className="w-full h-full relative">
-                      <img 
-                        src="https://mapplinks.com/wp-content/uploads/2020/06/screen1.png" 
-                        alt="Sheun Hub - Shopify Development and Growth Expert" 
-                        referrerPolicy="no-referrer"
-                        width="448"
-                        height="560"
-                        decoding="async"
-                        className="w-full h-full object-cover" 
-                        loading="lazy" 
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-navy via-navy/40 to-transparent" />
-                    </div>
-                  }
-                />
-              </div>
-
-              {/* Ambient Background Gradient to blend 3D canvas into navy hero */}
+              {/* Previous Stable Hero Store Showcase Image */}
+              <img 
+                src="https://mapplinks.com/wp-content/uploads/2020/06/screen1.png" 
+                alt="Shopify High Conversion Store Interface - Sheun Hub" 
+                referrerPolicy="no-referrer"
+                width="448"
+                height="560"
+                decoding="async"
+                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" 
+                loading="eager" 
+              />
               <div className="absolute inset-0 bg-gradient-to-t from-navy via-navy/40 to-transparent pointer-events-none" />
-
-              {/* Top Engine Status Badge */}
-              <div className="absolute top-4 left-4 right-4 flex items-center justify-between z-20 pointer-events-none">
-                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-navy/80 backdrop-blur-md border border-white/10 text-white text-[10px] font-mono font-bold tracking-wide">
-                  <span className="w-2 h-2 rounded-full bg-[#06b6d4] animate-pulse" />
-                  <span>3D Architecture Engine</span>
-                </div>
-                <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-white/10 backdrop-blur-md border border-white/10 text-[10px] text-white/70 font-mono">
-                  <span>60 FPS</span>
-                </div>
-              </div>
 
               {/* Floating Content Card (HTML for crawlability & accessibility) */}
               <div className="absolute bottom-6 left-6 right-6 space-y-4 z-20 pointer-events-auto">
