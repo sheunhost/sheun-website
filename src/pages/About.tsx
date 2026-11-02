@@ -8,7 +8,7 @@ import { LinkedInIcon, UpworkIcon, GmailIcon } from "../components/icons/SocialI
 
 const timeline = [
   { year: "2023", title: "Graduated, OAU", desc: "B.Sc. Business Management from Obafemi Awolowo University." },
-  { year: "2023", title: "Certified Shopify Partner", desc: "Officially recognized as a Shopify Partner." },
+  { year: "2023", title: "Shopify Partner", desc: "Officially recognized as a Shopify Partner." },
   { year: "2024", title: "Started Freelancing", desc: "Started on Upwork, received first 5-star review." },
   { year: "2024", title: "Top Rated Specialist", desc: "Achieved Top Rated status on Upwork with consistent quality." },
   { year: "Present", title: "Global Impact", desc: "Building stores for clients worldwide, primarily in the USA." },
@@ -31,20 +31,20 @@ export default function About() {
 
   return (
     <PageWrapper 
-      title="About Sheun Hub | Certified Shopify Partner & Developer" 
-      description="Meet Sheun Hub, a certified Shopify Partner, developer, and SEO expert. Helping merchants worldwide build high-performance Shopify stores, migrations, and SEO sprints."
+      title="About Sheun Hub | Shopify Partner & Developer" 
+      description="Meet Sheun Hub, a Shopify Partner, developer, and SEO expert. Helping merchants worldwide build high-performance Shopify stores, migrations, and SEO sprints."
       keywords="shopify developer, freelance shopify developer, About Sheun Hub, Shopify Partner, custom liquid themes, WooCommerce to Shopify migration"
       canonical="/about"
       schema={{
         "@context": "https://schema.org",
         "@type": "AboutPage",
-        "name": "About Sheun Hub - Certified Shopify Partner & SEO Consultant",
-        "description": "Learn more about Sheun Hub, a certified Shopify Partner and remote e-commerce developer helping brands worldwide scale with speed, migrations, and SEO sprints.",
+        "name": "About Sheun Hub - Shopify Partner & SEO Consultant",
+        "description": "Learn more about Sheun Hub, a Shopify Partner and remote e-commerce developer helping brands worldwide scale with speed, migrations, and SEO sprints.",
         "url": "https://sheun.online/about",
         "mainEntity": {
           "@type": "Person",
           "name": "Emmanuel Adedayo (Sheun)",
-          "jobTitle": "Founder & Certified Shopify Developer",
+          "jobTitle": "Founder & Shopify Developer",
           "image": "https://www.sheun.online/about/sheun-founder.webp",
           "knowsAbout": ["Shopify API", "Liquid Programming", "WooCommerce Migrations", "Shopify SEO Sprints", "Conversion Rate Optimization (CRO)", "UI/UX Design"],
           "url": "https://sheun.online/about",
@@ -57,7 +57,7 @@ export default function About() {
       }}
     >
       {/* About Hero - Premium High-Impact Grid */}
-      <section className="relative pt-36 pb-24 md:pt-48 lg:pt-52 md:pb-32 bg-[#FFFFFF] dark:bg-navy overflow-hidden border-b border-[#E2E8F0] dark:border-white/10">
+      <section className="relative page-hero-padding pb-24 md:pb-32 bg-[#FFFFFF] dark:bg-navy overflow-hidden border-b border-[#E2E8F0] dark:border-white/10">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#6D28D9]/10 rounded-full blur-[140px] pointer-events-none z-0"></div>
         <div className="container mx-auto px-6 max-w-7xl relative z-10">
           <div className="grid lg:grid-cols-12 gap-12 lg:gap-20 items-center">
@@ -68,9 +68,9 @@ export default function About() {
               transition={{ duration: 0.8 }}
               className="lg:col-span-6 space-y-8"
             >
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#6D28D9]/10 border border-[#8B5CF6]/30 text-xs font-bold uppercase tracking-wider text-[#8B5CF6] mt-6 md:mt-10 shadow-sm">
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#6D28D9]/10 border border-[#8B5CF6]/30 text-xs font-bold uppercase tracking-wider text-[#8B5CF6] shadow-sm">
                 <Star size={14} className="fill-current" />
-                <span>Certified Shopify Partner & Developer</span>
+                <span>Shopify Partner & Developer</span>
               </div>
               
               <h1 className="text-5xl md:text-7xl font-extrabold text-[#0F172A] dark:text-white tracking-tight leading-[1.1]">
@@ -79,7 +79,7 @@ export default function About() {
               </h1>
               
               <p className="text-[#475569] dark:text-white/70 text-lg sm:text-xl font-serif italic max-w-xl leading-relaxed">
-                B.Sc. Business Management graduate from Obafemi Awolowo University (OAU), Certified Shopify Partner, Top-Rated specialist, and dedicated e-commerce technical developer.
+                B.Sc. Business Management graduate from Obafemi Awolowo University (OAU), Shopify Partner, Top-Rated specialist, and dedicated e-commerce technical developer.
               </p>
               
               <div className="grid grid-cols-2 gap-4 pt-2">
@@ -89,7 +89,7 @@ export default function About() {
                 </div>
                 <div className="flex items-center gap-2 text-xs sm:text-sm font-bold text-[#0F172A] dark:text-white bg-[#F4F4F5] dark:bg-white/5 py-3 px-4 rounded-2xl border border-[#E2E8F0] dark:border-white/10 shadow-sm">
                   <CheckCircle2 size={18} className="text-[#8B5CF6] shrink-0" />
-                  <span>Certified Shopify Partner</span>
+                  <span>Shopify Partner</span>
                 </div>
                 <div className="flex items-center gap-2 text-xs sm:text-sm font-bold text-[#0F172A] dark:text-white bg-[#F4F4F5] dark:bg-white/5 py-3 px-4 rounded-2xl border border-[#E2E8F0] dark:border-white/10 shadow-sm">
                   <Award size={18} className="text-[#8B5CF6] shrink-0" />
@@ -161,7 +161,7 @@ export default function About() {
                 <div className="lg:col-span-12 space-y-6">
                   <div className="space-y-4 text-[#334155] dark:text-white/80 text-base sm:text-lg leading-relaxed font-sans">
                     <p>
-                      I am Sheun Hub—a B.Sc. Business Management graduate from Obafemi Awolowo University (OAU), a Certified Shopify Partner, and a Top-Rated Specialist. My mission is to bridge high-level commercial strategy with hands-on software engineering. On the e-commerce development front, I simplify technical complexities for ambitious merchants worldwide. Whether crafting bespoke Liquid themes, executing lightning-fast WooCommerce-to-Shopify migrations, or conducting technical SEO sprints, I build store environments designed strictly for rapid loading speeds and frictionless conversion.
+                      I am Sheun Hub—a B.Sc. Business Management graduate from Obafemi Awolowo University (OAU), a Shopify Partner, and a Top-Rated Specialist. My mission is to bridge high-level commercial strategy with hands-on software engineering. On the e-commerce development front, I simplify technical complexities for ambitious merchants worldwide. Whether crafting bespoke Liquid themes, executing lightning-fast WooCommerce-to-Shopify migrations, or conducting technical SEO sprints, I build store environments designed strictly for rapid loading speeds and frictionless conversion.
                     </p>
                     <p>
                       Beyond e-commerce engineering, I architect intelligent B2B automation systems that eliminate manual overhead. From custom n8n and Zapier API workflows to AI voice agents, smart chatbots, and full GoHighLevel CRM infrastructure, my solutions turn chaotic business processes into autonomous revenue engines. I don't work in isolation—I lead a curated collective of specialized UI/UX designers, backend developers, and CRM systems architects. Together, our team ensures every project receives dedicated expertise, enterprise-grade precision, and continuous post-launch support.

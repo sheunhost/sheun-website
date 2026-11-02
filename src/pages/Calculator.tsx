@@ -43,7 +43,7 @@ export default function Calculator() {
       }}
     >
       {/* Hero Section */}
-      <section className="pt-32 pb-20 bg-navy relative overflow-hidden">
+      <section className="page-hero-padding pb-20 bg-navy relative overflow-hidden">
         <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-5 mix-blend-overlay"></div>
         <div className="absolute top-0 right-0 w-1/2 h-full bg-green/5 blur-[120px] rounded-full pointer-events-none"></div>
 

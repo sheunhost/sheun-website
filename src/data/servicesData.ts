@@ -149,9 +149,9 @@ export const servicesData = {
         "link": "/portfolio#p3"
       },
       {
-        "name": "Hairburst USA",
-        "result": "Sourced 20+ viral products",
-        "link": "/portfolio#hairburst_1"
+        "name": "Summer Collection",
+        "result": "Trending fashion streetwear store",
+        "link": "/portfolio#f2"
       }
     ],
     "testimonial": {
@@ -384,9 +384,9 @@ export const servicesData = {
     },
     "recentWork": [
       {
-        "name": "Hairburst USA",
+        "name": "LumiereSkin",
         "result": "Complex international checkout customization",
-        "link": "/portfolio#hairburst_1"
+        "link": "/portfolio#b2"
       },
       {
         "name": "Custom Shopify Store",
@@ -397,9 +397,9 @@ export const servicesData = {
     "testimonial": {
       "quote": "The checkout customizations have saved our team hundreds of hours. A true Shopify Plus expert.",
       "author": "James L.",
-      "role": "Operations, Hairburst"
+      "role": "Operations, LumiereSkin"
     },
-    "comparison": "Only certified partners understand the complexities of Shopify Plus. I ensure your B2B wholesale channels and checkout scripts are securely integrated."
+    "comparison": "Only Shopify partners understand the complexities of Shopify Plus. I ensure your B2B wholesale channels and checkout scripts are securely integrated."
   },
   "bug": {
     "title": "Bug Fixing",
@@ -709,9 +709,9 @@ export const servicesData = {
         "link": "/portfolio#b3"
       },
       {
-        "name": "Hairburst USA",
-        "result": "Recharge subscriptions integrated",
-        "link": "/portfolio#hairburst_1"
+        "name": "OFINO",
+        "result": "Subscription flows integrated",
+        "link": "/portfolio#b3"
       }
     ],
     "testimonial": {

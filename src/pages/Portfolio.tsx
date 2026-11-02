@@ -1,14 +1,12 @@
 import { motion, AnimatePresence } from "framer-motion";
-import { ExternalLink, Star, ShoppingBag, Globe, Trophy, ArrowRight, X, Mail  } from "lucide-react";
+import { ExternalLink, Star, ShoppingBag, Globe, Trophy, ArrowRight, X, Mail, Monitor, Smartphone, Sparkles, CheckCircle2 } from "lucide-react";
 import PageWrapper from "../components/PageWrapper";
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import ScrollReveal from "../components/ScrollReveal";
-import Portfolio3DStage from "../components/Portfolio3DStage";
 import { LinkedInIcon, GmailIcon } from "../components/icons/SocialIcons";
 
-
-const categories = ["All", "👗 Fashion", "💄 Beauty & Skincare", "🐾 Pets", "📱 Gadgets"];
+const categories = ["All", "👗 Fashion", "💄 Beauty & Skincare", "🐾 Pets"];
 
 type Project = {
   id: string;
@@ -31,7 +29,7 @@ const projects: Project[] = [
     tag: "🏆 Featured Design",
     category: "👗 Fashion",
     desc: "A custom high-converting Shopify store design focused on modern aesthetics and streamlined user experience.",
-    image: "https://plain-weur-prod-public.komododecks.com/202605/08/mORKcj6Dvv23Z1UjwufJ/image.png",
+    image: "/portfolio/store-1.webp",
     label: "🎨 Past Project design by Sheun Hub"
   },
   {
@@ -40,7 +38,7 @@ const projects: Project[] = [
     tag: "🏆 Featured Design",
     category: "👗 Fashion",
     desc: "A custom high-converting Shopify store design focused on modern aesthetics and streamlined user experience.",
-    image: "https://plain-weur-prod-public.komododecks.com/202605/08/chrM0xrj9IVak4lT2pwY/image.png",
+    image: "/portfolio/store-2.webp",
     label: "🎨 Past Project design by Sheun Hub"
   },
   {
@@ -49,16 +47,7 @@ const projects: Project[] = [
     tag: "🏆 Featured Design",
     category: "👗 Fashion",
     desc: "A custom high-converting Shopify store design focused on modern aesthetics and streamlined user experience.",
-    image: "https://plain-weur-prod-public.komododecks.com/202605/08/ZGtAaDfh0M9sZiKPK2CX/image.png",
-    label: "🎨 Past Project design by Sheun Hub"
-  },
-  {
-    id: "hairburst_1",
-    name: "Hairburst USA",
-    tag: "💄 Beauty — Hair Care",
-    category: "💄 Beauty & Skincare",
-    desc: "A custom high-converting Shopify store design focused on modern aesthetics and streamlined user experience for hair vitamins.",
-    image: "https://i.ibb.co/yBKMgy3Q/Hair-Growth-Vitamins-Cosmetics-Hairburst-USA-05-08-2026-03-16-AM.png",
+    image: "/portfolio/store-3.webp",
     label: "🎨 Past Project design by Sheun Hub"
   },
   {
@@ -67,7 +56,7 @@ const projects: Project[] = [
     tag: "💄 Beauty — Luxury Skincare",
     category: "💄 Beauty & Skincare",
     desc: "Designed with a clean visual hierarchy and user-focused layout, LumiereSkin presents its skincare collection through soft, elegant sections and immersive visuals. The website highlights key elements like product benefits, natural ingredients, and daily skincare essentials in a structured and easy-to-follow flow. Balanced spacing and minimal distractions create a calm browsing experience, making the interface feel modern, refined, and effortlessly soothing to explore. ✨🧴🌿",
-    image: "https://cdn.dribbble.com/userupload/47314439/file/c6086620d425f60ad8dac40f74cfe1b4.png?resize=752x3909&vertical=center",
+    image: "/portfolio/lumiereskin.webp",
     label: "🎨 Past Project design by Sheun Hub"
   },
   {
@@ -76,7 +65,7 @@ const projects: Project[] = [
     tag: "👗 Fashion — Streetwear",
     category: "👗 Fashion",
     desc: "Hi There,\n\nThis is a Website concept for a Trendy Fashion E-commerce Website.\n\nHope you guys will like it.\n\nLet me know your thoughts on that. Your feedback and appreciation is always welcome 🙂\n\nI'm available for new projects",
-    image: "https://cdn.dribbble.com/userupload/37390836/file/original-13c3c213f022ab00791a6abaa9447322.png?resize=850x638&vertical=center",
+    image: "/portfolio/summer.webp",
     label: "🎨 Past Project design by Sheun Hub"
   },
   {
@@ -85,7 +74,7 @@ const projects: Project[] = [
     tag: "👗 Fashion — Unisex Streetwear",
     category: "👗 Fashion",
     desc: "A bold, gender-neutral fashion concept designed for the modern era. Featuring high-contrast layouts, versatile product displays for both male and female collections, and a seamless shopping experience.",
-    image: "https://cdn.dribbble.com/userupload/36920984/file/original-ff98dfbecece4eba4c0ef25160306302.png?resize=752x&vertical=center",
+    image: "/portfolio/momento.webp",
     label: "🎨 Past Project design by Sheun Hub"
   },
   {
@@ -94,7 +83,7 @@ const projects: Project[] = [
     tag: "💄 Beauty — Luxury Skincare",
     category: "💄 Beauty & Skincare",
     desc: "A clean and modern skincare website design concept focused on elegance and simplicity. The layout highlights product collections, beauty treatments, and customer-focused experiences with a minimal yet luxurious aesthetic. Designed to enhance user experience while keeping the brand’s natural and glowing identity at the core.",
-    image: "https://cdn.dribbble.com/userupload/44540941/file/e348fef4b20fc2fa3b6d93da41e73932.jpg?resize=1024x768&vertical=center",
+    image: "/portfolio/ofino.webp",
     label: "🎨 Past Project design by Sheun Hub"
   },
   {
@@ -103,8 +92,32 @@ const projects: Project[] = [
     tag: "🐾 Pets — Premium Care",
     category: "🐾 Pets",
     desc: "Expert Pet Care with Love & Trust! Grooming, Health, Nutrition & More, Because Your Furry Friend Deserves the Best!",
-    image: "https://cdn.dribbble.com/userupload/37449048/file/original-6a6b4e4e7ebfed9f6502c61669a61580.png?resize=1024x3374&vertical=center",
+    image: "/portfolio/pupps.webp",
     label: "🎨 Past Project design by Sheun Hub"
+  }
+];
+
+const viewModes = [
+  {
+    id: "desktop",
+    name: "Online Store 2.0 Desktop Viewport",
+    badge: "Fluid Grid",
+    desc: "Multi-column product showcases, sticky filter navigation, and immersive visual storytelling.",
+    color: "#10B981"
+  },
+  {
+    id: "mobile",
+    name: "Thumb-First Mobile UX",
+    badge: "Sub-Second Tap",
+    desc: "Sticky Add-To-Cart drawers, swipeable gallery carousels, and minimal finger reach fatigue.",
+    color: "#8B5CF6"
+  },
+  {
+    id: "checkout",
+    name: "Frictionless Single-Page Checkout",
+    badge: "High CRO",
+    desc: "Accelerated express checkouts (Shop Pay, Apple Pay) with automated address completion.",
+    color: "#D946EF"
   }
 ];
 
@@ -151,171 +164,270 @@ export default function Portfolio() {
       }}
     >
       {/* Portfolio Hero - Premium High-Impact Grid */}
-        <section className="relative pt-32 pb-24 md:pt-40 md:pb-32 bg-[#FFFFFF] dark:bg-navy overflow-hidden border-b border-[#E2E8F0] dark:border-white/10">
-          {/* Subtle Background Gradients & Glows */}
-          <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-[#10b981]/5 rounded-full blur-[140px] pointer-events-none -z-10 animate-pulse"></div>
-          <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-[#2563EB]/5 rounded-full blur-[140px] pointer-events-none -z-10"></div>
-          <div className="absolute inset-0 bg-[linear-gradient(to_right,#E2E8F015_1px,transparent_1px),linear-gradient(to_bottom,#E2E8F015_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_50%,#000_70%,transparent_100%)] -z-10"></div>
+      <section className="relative page-hero-padding pb-24 md:pb-32 bg-[#FFFFFF] dark:bg-navy overflow-hidden border-b border-[#E2E8F0] dark:border-white/10">
+        {/* Subtle Background Gradients & Glows */}
+        <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-[#10b981]/5 rounded-full blur-[140px] pointer-events-none -z-10 animate-pulse"></div>
+        <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-[#2563EB]/5 rounded-full blur-[140px] pointer-events-none -z-10"></div>
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,#E2E8F015_1px,transparent_1px),linear-gradient(to_bottom,#E2E8F015_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_50%,#000_70%,transparent_100%)] -z-10"></div>
 
-          <div className="container mx-auto px-6 max-w-7xl relative z-10">
-            <div className="max-w-4xl space-y-8">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#F4F4F5] dark:bg-white/10 border border-[#E2E8F0] dark:border-white/10 text-xs font-semibold uppercase tracking-wider text-[#0F172A] dark:text-white">
-                <span className="flex h-2 w-2 rounded-full bg-[#10b981] animate-ping"></span>
-                Certified Shopify Partner & Proof of Work
+        <div className="container mx-auto px-6 max-w-7xl relative z-10">
+          <div className="max-w-4xl space-y-8">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#F4F4F5] dark:bg-white/10 border border-[#E2E8F0] dark:border-white/10 text-xs font-semibold uppercase tracking-wider text-[#0F172A] dark:text-white">
+              <span className="flex h-2 w-2 rounded-full bg-[#10b981] animate-ping"></span>
+              Shopify Partner & Proof of Work
+            </div>
+
+            <h1 className="text-5xl sm:text-7xl lg:text-8xl font-bold text-[#0F172A] dark:text-white tracking-tight leading-[1.05] font-sans">
+              Proven <span className="whitespace-nowrap">E-Commerce</span> <span className="text-[#10b981] underline decoration-[#10b981]/20 underline-offset-8">Designs</span> & Builds.
+            </h1>
+
+            <p className="text-[#475569] dark:text-white/70 text-lg sm:text-xl leading-relaxed max-w-2xl font-sans">
+              Explore custom Shopify theme designs, WooCommerce migration layouts, custom page template solutions, and high-performance product displays crafted by Sheun Hub.
+            </p>
+
+            {/* Stats Row */}
+            <div className="flex flex-wrap items-center gap-6 sm:gap-8 bg-[#F8FAFC] dark:bg-white/5 border border-[#E2E8F0] dark:border-white/10 p-6 rounded-3xl w-fit shadow-sm">
+              <div className="flex items-center gap-3 text-[#0F172A] dark:text-white font-bold">
+                <span className="text-xl">🛍️</span>
+                <span className="text-xs uppercase tracking-wider">8+ Projects</span>
+              </div>
+              <div className="w-px h-8 bg-[#E2E8F0] dark:bg-white/10 hidden sm:block" />
+              <div className="flex items-center gap-3 text-[#0F172A] dark:text-white font-bold">
+                <span className="text-xl">👗</span>
+                <span className="text-xs uppercase tracking-wider">3 Niches</span>
+              </div>
+              <div className="w-px h-8 bg-[#E2E8F0] dark:bg-white/10 hidden sm:block" />
+              <div className="flex items-center gap-3 text-[#0F172A] dark:text-white font-bold">
+                <span className="text-xl">⭐</span>
+                <span className="text-xs uppercase tracking-wider">5-Star Rated</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Responsive Fidelity Section (Static Replaces 3D Stage) */}
+      <section className="py-20 md:py-28 bg-[#FFFFFF] dark:bg-navy border-b border-[#E2E8F0] dark:border-white/10 relative overflow-hidden">
+        <div className="container mx-auto px-6 max-w-7xl">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            
+            {/* Left Column: Static Info & Feature Items */}
+            <div className="lg:col-span-6 space-y-6">
+              <div className="space-y-3">
+                <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#10B981]/10 border border-[#10B981]/30 text-xs font-bold uppercase tracking-wider text-[#10B981]">
+                  <Sparkles size={14} />
+                  Multi-Viewport Architecture
+                </div>
+                <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#0F172A] dark:text-white tracking-tight leading-[1.15]">
+                  Responsive Fidelity <br />
+                  <span className="text-[#10B981] underline decoration-[#10B981]/30 underline-offset-8">Across Every Screen</span>
+                </h2>
+                <p className="text-[#475569] dark:text-white/70 text-base leading-relaxed">
+                  Over 72% of Shopify revenue happens on mobile devices. Every project we engineer is balanced across desktop fluid grids, touch-optimized interactions, and frictionless checkouts.
+                </p>
               </div>
 
-              <h1 className="text-5xl sm:text-7xl lg:text-8xl font-bold text-[#0F172A] dark:text-white tracking-tight leading-[1.05] font-sans">
-                Proven E-Commerce <span className="text-[#10b981] underline decoration-[#10b981]/20 underline-offset-8">Designs</span> & Builds.
-              </h1>
+              <div className="space-y-3 pt-2">
+                {viewModes.map((mode, i) => (
+                  <div
+                    key={mode.id}
+                    className="p-4 sm:p-5 rounded-2xl border bg-white dark:bg-white/5 border-[#E2E8F0] dark:border-white/10"
+                  >
+                    <div className="flex items-start justify-between gap-3">
+                      <div className="space-y-1">
+                        <div className="flex items-center gap-2.5">
+                          <span 
+                            className="w-2.5 h-2.5 rounded-full" 
+                            style={{ backgroundColor: mode.color }} 
+                          />
+                          <h3 className="font-bold text-[#0F172A] dark:text-white text-sm sm:text-base">
+                            {mode.name}
+                          </h3>
+                        </div>
+                        <p className="text-xs text-[#475569] dark:text-white/70 pl-5 leading-relaxed">
+                          {mode.desc}
+                        </p>
+                      </div>
+                      <span className="text-[10px] font-mono font-bold uppercase px-2.5 py-1 rounded-full shrink-0 bg-slate-100 dark:bg-white/10 text-[#0F172A] dark:text-white">
+                        {mode.badge}
+                      </span>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
 
-              <p className="text-[#475569] dark:text-white/70 text-lg sm:text-xl leading-relaxed max-w-2xl font-sans">
-                Explore custom Shopify theme designs, WooCommerce migration layouts, custom page template solutions, and high-performance product displays crafted by Sheun Hub.
-              </p>
+            {/* Right Column: Static Mockup Image */}
+            <div className="lg:col-span-6">
+              <div className="relative w-full aspect-square max-w-[480px] mx-auto rounded-3xl bg-[#08090B] border border-[#E2E8F0] dark:border-white/10 p-4 shadow-2xl overflow-hidden group">
+                <img 
+                  src="/portfolio/store-1.webp" 
+                  alt="Responsive Shopify store desktop and mobile mockup by Sheun Hub"
+                  width="600"
+                  height="600"
+                  loading="lazy"
+                  className="w-full h-full object-cover rounded-2xl"
+                />
+                <div className="absolute bottom-4 left-1/2 -translate-x-1/2 z-20 pointer-events-none">
+                  <span className="text-[10px] uppercase font-bold tracking-widest text-white/90 bg-black/70 px-3.5 py-1.5 rounded-full border border-white/20">
+                    Responsive Device Geometry
+                  </span>
+                </div>
+              </div>
+            </div>
 
-              {/* Stats Row */}
-              <div className="flex flex-wrap items-center gap-6 sm:gap-8 bg-[#F8FAFC] dark:bg-white/5 border border-[#E2E8F0] dark:border-white/10 p-6 rounded-3xl w-fit shadow-sm">
-                <div className="flex items-center gap-3 text-[#0F172A] dark:text-white font-bold">
-                  <span className="text-xl">🛍️</span>
-                  <span className="text-xs uppercase tracking-wider">10+ Projects</span>
+          </div>
+        </div>
+      </section>
+
+      {/* Portfolio Gallery */}
+      <ScrollReveal>
+        <section className="py-24 bg-[#F8FAFC] dark:bg-navy min-h-screen border-b border-[#E2E8F0] dark:border-white/10">
+          <div className="container mx-auto px-6 max-w-7xl">
+            
+            {/* Category Filters */}
+            <div className="flex flex-wrap justify-center gap-2 mb-16">
+              {categories.map((cat, i) => (
+                <button
+                  key={i}
+                  onClick={() => setActiveCategory(cat)}
+                  className={`px-5 py-2.5 rounded-full text-xs font-bold transition-all border shadow-sm ${
+                    activeCategory === cat
+                      ? "bg-[#10b981] text-[#0F172A] dark:text-white border-[#10b981]"
+                      : "bg-white dark:bg-white/5 text-[#71717a] dark:text-white/70 border-[#E2E8F0] dark:border-white/10 hover:bg-[#F4F4F5] dark:hover:bg-white/10 hover:text-[#0F172A] dark:hover:text-white"
+                  }`}
+                >
+                  {cat}
+                </button>
+              ))}
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {filteredProjects.filter(p => p.image && p.image.trim() !== "").map((project, i) => (
+                <div 
+                  key={`gallery-${i}`} 
+                  className="relative rounded-3xl overflow-hidden cursor-pointer group hover:shadow-2xl transition-all border border-[#E2E8F0] dark:border-white/10 bg-white dark:bg-white/5 p-4"
+                  onClick={() => {
+                    setFullScreenIndex(projects.findIndex(p => p.id === project.id));
+                  }}
+                >
+                  <div className="relative aspect-[4/5] rounded-2xl overflow-hidden bg-[#F4F4F5] dark:bg-white/10 border border-[#E2E8F0] dark:border-white/10">
+                    <img 
+                      src={project.image} 
+                      alt={`${project.name} - Custom Shopify Store Design by Sheun Hub`} 
+                      referrerPolicy="no-referrer"
+                      width="400"
+                      height="500"
+                      decoding="async"
+                      className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700"
+                      loading="lazy"
+                    />
+                    <div className="absolute inset-0 bg-[#0F172A]/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center p-6 text-center backdrop-blur-xs">
+                      <span className="text-white font-bold text-xs bg-white/20 px-6 py-3 rounded-full backdrop-blur-md border border-white/20 shadow-lg">
+                        View Full Screen
+                      </span>
+                    </div>
+                  </div>
+
+                  {/* Info block under card */}
+                  <div className="pt-5 pb-2 px-1 space-y-2">
+                    <div className="flex items-center justify-between">
+                      <span className="text-[10px] font-bold uppercase tracking-widest text-[#10b981]">
+                        {project.tag}
+                      </span>
+                      <span className="text-xs font-bold text-[#71717a] dark:text-white/70">
+                        {project.category.replace(/[^\w\s&]/g, "").trim()}
+                      </span>
+                    </div>
+                    <h3 className="text-xl font-bold text-[#0F172A] dark:text-white group-hover:text-[#10b981] transition-colors">{project.name}</h3>
+                  </div>
                 </div>
-                <div className="w-px h-8 bg-[#E2E8F0] dark:bg-white/10 hidden sm:block" />
-                <div className="flex items-center gap-3 text-[#0F172A] dark:text-white font-bold">
-                  <span className="text-xl">👗</span>
-                  <span className="text-xs uppercase tracking-wider">4 Niches</span>
+              ))}
+
+              {/* 9th Grid Item: Start Your Project CTA Card to fill last row perfectly without empty gap */}
+              {activeCategory === "All" && (
+                <div className="relative rounded-3xl overflow-hidden group hover:shadow-2xl transition-all border border-[#10b981]/30 dark:border-[#10b981]/30 bg-gradient-to-br from-[#09090b] to-[#1e293b] text-white p-8 flex flex-col justify-between">
+                  <div className="space-y-4">
+                    <span className="text-[10px] font-bold uppercase tracking-widest px-3 py-1.5 rounded-full bg-[#10b981]/20 text-[#10b981]">
+                      🚀 Your Brand Here
+                    </span>
+                    <h3 className="text-2xl font-bold tracking-tight">Ready for a Custom Store Build?</h3>
+                    <p className="text-white/70 text-sm leading-relaxed">
+                      Let's engineer a high-converting, lightning-fast Shopify store tailored specifically to your revenue goals.
+                    </p>
+                  </div>
+                  <div className="pt-8">
+                    <Link to="/apply" className="inline-flex items-center justify-center gap-2 w-full bg-[#10b981] text-[#09090b] px-6 py-4 rounded-2xl font-bold text-sm hover:bg-[#059669] transition-colors shadow-lg">
+                      Start Your Project <ArrowRight size={16} />
+                    </Link>
+                  </div>
                 </div>
-                <div className="w-px h-8 bg-[#E2E8F0] dark:bg-white/10 hidden sm:block" />
-                <div className="flex items-center gap-3 text-[#0F172A] dark:text-white font-bold">
-                  <span className="text-xl">⭐</span>
-                  <span className="text-xs uppercase tracking-wider">5-Star Rated</span>
+              )}
+            </div>
+
+            <div className="mt-32 bg-[#09090b] text-white rounded-[40px] p-8 md:p-16 text-center space-y-10 relative overflow-hidden border border-white/10">
+              <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,_rgba(16,185,129,0.15)_0%,_transparent_70%)]" />
+              <div className="relative z-10 max-w-3xl mx-auto space-y-8">
+                <h2 className="text-5xl md:text-7xl font-bold text-white tracking-tight leading-none">
+                  Ready to build <br />
+                  <span className="text-[#10b981] underline decoration-[#10b981]/20 underline-offset-8 italic font-serif font-light">your vision?</span>
+                </h2>
+                <div className="flex flex-col sm:flex-row justify-center items-center gap-6 pt-4">
+                  <Link to="/apply#apply-form" className="w-full sm:w-auto bg-[#10b981] text-[#09090b] px-12 py-5 rounded-2xl font-bold text-lg hover:bg-[#059669] transition-all duration-300 shadow-lg">
+                    Start a Project
+                  </Link>
+                  <div className="flex items-center gap-4">
+                    <a href="https://www.linkedin.com/in/sheun-hub-26b876321" target="_blank" rel="noopener noreferrer" className="p-4 bg-white/5 hover:bg-[#10b981] hover:text-[#09090b] text-white rounded-2xl transition-all border border-white/10 shrink-0 flex items-center justify-center overflow-hidden" aria-label="LinkedIn profile">
+                      <LinkedInIcon className="w-5 h-5 text-[#0A66C2]" />
+                    </a>
+                    <a href="mailto:sheunhost@gmail.com" className="p-4 bg-white/5 hover:bg-[#10b981] hover:text-[#09090b] text-white rounded-2xl transition-all border border-white/10 shrink-0 flex items-center justify-center overflow-hidden" aria-label="Email Sheun Hub">
+                      <GmailIcon className="w-5 h-5 text-[#EA4335]" />
+                    </a>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </section>
+      </ScrollReveal>
 
-    {/* Responsive 3D Viewport Stage */}
-    <Portfolio3DStage />
-
-    {/* Portfolio Gallery */}
-    <ScrollReveal>
-      <section className="py-24 bg-[#F8FAFC] dark:bg-navy min-h-screen border-b border-[#E2E8F0] dark:border-white/10">
-        <div className="container mx-auto px-6 max-w-7xl">
-          
-          {/* Category Filters */}
-          <div className="flex flex-wrap justify-center gap-2 mb-16">
-            {categories.map((cat, i) => (
-              <button
-                key={i}
-                onClick={() => setActiveCategory(cat)}
-                className={`px-5 py-2.5 rounded-full text-xs font-bold transition-all border shadow-sm ${
-                  activeCategory === cat
-                    ? "bg-[#10b981] text-[#0F172A] dark:text-white border-[#10b981]"
-                    : "bg-white dark:bg-white/5 text-[#71717a] dark:text-white/70 border-[#E2E8F0] dark:border-white/10 hover:bg-[#F4F4F5] dark:hover:bg-white/10 hover:text-[#0F172A] dark:hover:text-white"
-                }`}
-              >
-                {cat}
-              </button>
-            ))}
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {filteredProjects.filter(p => p.image && p.image.trim() !== "").map((project, i) => (
-              <div 
-                key={`gallery-${i}`} 
-                className="relative rounded-3xl overflow-hidden cursor-pointer group hover:shadow-2xl transition-all border border-[#E2E8F0] dark:border-white/10 bg-white dark:bg-white/5 p-4"
-                onClick={() => {
-                  setFullScreenIndex(projects.findIndex(p => p.id === project.id));
-                }}
-              >
-                <div className="relative aspect-[4/5] rounded-2xl overflow-hidden bg-[#F4F4F5] dark:bg-white/10 border border-[#E2E8F0] dark:border-white/10">
-                  <img 
-                    src={project.image} 
-                    alt={`${project.name} - Custom Shopify Store Design by Sheun Hub`} 
-                    referrerPolicy="no-referrer"
-                    width="400"
-                    height="500"
-                    decoding="async"
-                    className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700"
-                    loading="lazy"
-                  />
-                  <div className="absolute inset-0 bg-[#0F172A]/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center p-6 text-center backdrop-blur-xs">
-                    <span className="text-white font-bold text-xs bg-white/20 px-6 py-3 rounded-full backdrop-blur-md border border-white/20 shadow-lg">
-                      View Full Screen
-                    </span>
-                  </div>
-                </div>
-
-                {/* Info block under card */}
-                <div className="pt-5 pb-2 px-1 space-y-2">
-                  <div className="flex items-center justify-between">
-                    <span className="text-[10px] font-bold uppercase tracking-widest text-[#10b981]">
-                      {project.tag}
-                    </span>
-                    <span className="text-xs font-bold text-[#71717a] dark:text-white/70">
-                      {project.category.replace(/[^\w\s&]/g, "").trim()}
-                    </span>
-                  </div>
-                  <h3 className="text-xl font-bold text-[#0F172A] dark:text-white group-hover:text-[#10b981] transition-colors">{project.name}</h3>
-                </div>
-              </div>
-            ))}
-          </div>
-
-          <div className="mt-32 bg-[#09090b] text-white rounded-[40px] p-8 md:p-16 text-center space-y-10 relative overflow-hidden border border-white/10">
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,_rgba(16,185,129,0.15)_0%,_transparent_70%)]" />
-            <div className="relative z-10 max-w-3xl mx-auto space-y-8">
-              <h2 className="text-5xl md:text-7xl font-bold text-white tracking-tight leading-none">
-                Ready to build <br />
-                <span className="text-[#10b981] underline decoration-[#10b981]/20 underline-offset-8 italic font-serif font-light">your vision?</span>
+      {/* Portfolio SEO Content (Improved readability: dark text with AA contrast, no italic for whole intro, proper heading levels) */}
+      <ScrollReveal>
+        <section className="py-24 bg-white dark:bg-navy border-t border-slate-200 dark:border-white/5">
+          <div className="container mx-auto px-6">
+            <div className="max-w-4xl mx-auto space-y-8 text-[#0F172A] dark:text-white/90 leading-relaxed font-sans text-base sm:text-lg">
+              <h2 className="text-3xl md:text-4xl font-bold font-sans tracking-tight text-[#0F172A] dark:text-white">
+                Showcase of High-Converting Custom Shopify Stores
               </h2>
-              <div className="flex flex-col sm:flex-row justify-center items-center gap-6 pt-4">
-                <Link to="/apply#apply-form" className="w-full sm:w-auto bg-[#10b981] text-[#09090b] px-12 py-5 rounded-2xl font-bold text-lg hover:bg-[#059669] transition-all duration-300 shadow-lg">
-                  Start a Project
-                </Link>
-                <div className="flex items-center gap-4">
-                  <a href="https://www.linkedin.com/in/sheun-hub-26b876321" target="_blank" rel="noopener noreferrer" className="p-4 bg-white/5 hover:bg-[#10b981] hover:text-[#09090b] text-white rounded-2xl transition-all border border-white/10 shrink-0 flex items-center justify-center overflow-hidden" aria-label="LinkedIn Profile">
-                    <LinkedInIcon className="w-5 h-5 text-[#0A66C2]" />
-                  </a>
-                  <a href="mailto:sheunhost@gmail.com" className="p-4 bg-white/5 hover:bg-[#10b981] hover:text-[#09090b] text-white rounded-2xl transition-all border border-white/10 shrink-0 flex items-center justify-center overflow-hidden" aria-label="Email Sheun Hub">
-                    <GmailIcon className="w-5 h-5 text-[#EA4335]" />
-                  </a>
-                </div>
-              </div>
+              <p className="text-[#334155] dark:text-white/80 leading-relaxed font-sans text-lg">
+                Welcome to our portfolio, a curated gallery of high-performing e-commerce stores designed, developed, and optimized entirely by Sheun Hub. As a seasoned Shopify Partner, our focus isn’t just on making websites that look pretty: we build custom Shopify stores engineered specifically to convert traffic into loyal, paying customers.
+              </p>
+
+              <h3 className="text-2xl font-bold font-sans tracking-tight text-[#0F172A] dark:text-white pt-4">
+                Diverse E-commerce Case Studies
+              </h3>
+              <p className="text-[#334155] dark:text-white/80 leading-relaxed">
+                Every business has a unique target audience and functional requirement. Browse through our design concepts and real-world client builds across several highly competitive niches. Whether it’s a minimalist layout for a <strong>Luxury Beauty & Skincare</strong> brand, a bold and dynamic interface for an <strong>Apparel Fashion</strong> store, or a highly trustworthy and engaging design for <strong>Pet Care Supplies</strong>, these examples demonstrate versatility and technical mastery.
+              </p>
+              <p className="text-[#334155] dark:text-white/80 leading-relaxed">
+                By leveraging custom Liquid coding, we break free from the constraints of standardized templates to create highly immersive buying experiences tailored specifically to your audience. This bespoke approach is exactly what top-tier dropshipping stores and scaling local businesses use to establish brand authority and outpace their competitors online.
+              </p>
+
+              <h3 className="text-2xl font-bold font-sans tracking-tight text-[#0F172A] dark:text-white pt-4">
+                Optimized for E-commerce Growth
+              </h3>
+              <p className="text-[#334155] dark:text-white/80 leading-relaxed">
+                A visually stunning store is obsolete if it takes too long to load. Each of these custom Shopify store builds is backed by rigorous <strong>Speed Optimization</strong> and <strong>Technical SEO</strong>. Fast loading times mean a lower bounce rate and a higher ranking on Google. We implement clean site architecture, strategic internal linking, and optimized asset delivery so your storefront scales smoothly without breaking under high-traffic events, like Black Friday drops or viral social media marketing bursts.
+              </p>
+              <p className="text-[#334155] dark:text-white/80 leading-relaxed">
+                For dropshipping business owners, conversion is everything. That’s why these portfolio pieces feature strategically placed trust badges, seamless checkout workflows, upsell integrations, and compelling product spotlight sections. Our UI/UX design philosophy is heavily influenced by deep <strong>Conversion Rate Optimization (CRO)</strong> principles. Every button, every color contrast, and every layout decision is made precisely to guide the customer closer to purchase. Review the portfolio, gather inspiration, and let’s discuss building your brand's vision.
+              </p>
             </div>
           </div>
-        </div>
-      </section>
-    </ScrollReveal>
+        </section>
+      </ScrollReveal>
 
-    {/* Portfolio SEO Content */}
-    <ScrollReveal>
-      <section className="py-24 bg-light dark:bg-navy border-t border-navy/5 dark:border-white/5">
-        <div className="container mx-auto px-6">
-          <div className="max-w-4xl mx-auto prose prose-lg prose-headings:text-navy dark:prose-headings:text-white prose-a:text-green text-navy/70 dark:text-white/70 leading-relaxed">
-            <h2 className="text-3xl md:text-4xl font-bold font-sans not-italic mb-6 tracking-tight">Showcase of High-Converting Custom Shopify Stores</h2>
-            <p className="mb-6 font-serif italic text-xl">
-              Welcome to our portfolio, a curated gallery of high-performing e-commerce stores designed, developed, and optimized entirely by Sheun Hub. As a seasoned Shopify Partner, our focus isn’t just on making websites that look pretty: we build custom Shopify stores engineered specifically to convert traffic into loyal, paying customers.
-            </p>
-            <h3 className="text-2xl font-bold font-sans not-italic mt-12 mb-4 tracking-tight">Diverse E-commerce Case Studies</h3>
-            <p className="mb-4">
-              Every business has a unique target audience and functional requirement. Browse through our design concepts and real-world client builds across several highly competitive niches. Whether it’s a minimalist layout for a <strong>Luxury Beauty & Skincare</strong> brand, a bold and dynamic interface for an <strong>Apparel Fashion</strong> store, or a highly trustworthy and engaging design for <strong>Pet Care Supplies & Gadgets</strong>, these examples demonstrate versatility and technical mastery.
-            </p>
-            <p className="mb-4">
-              By leveraging custom Liquid coding, we break free from the constraints of standardized templates to create highly immersive buying experiences tailored specifically to your audience. This bespoke approach is exactly what top-tier dropshipping stores and scaling local businesses use to establish brand authority and outpace their competitors online.
-            </p>
-            <h3 className="text-2xl font-bold font-sans not-italic mt-12 mb-4 tracking-tight">Optimized for E-commerce Growth</h3>
-            <p className="mb-4">
-              A visually stunning store is obsolete if it takes too long to load. Each of these custom Shopify store builds is backed by rigorous <strong>Speed Optimization</strong> and <strong>Technical SEO</strong>. Fast loading times mean a lower bounce rate and a higher ranking on GoogleWe implement clean site architecture, strategic internal linking, and optimized asset delivery so your storefront scales smoothly without breaking under high-traffic events, like Black Friday drops or viral social media marketing bursts.
-            </p>
-            <p className="mb-4">
-              For dropshipping business owners, conversion is everything. That’s why these portfolio pieces feature strategically placed trust badges, seamless checkout workflows, upsell integrations, and compelling product spotlight sections. Our UI/UX design philosophy is heavily influenced by deep <strong>Conversion Rate Optimization (CRO)</strong> principles. Every button, every color contrast, and every layout decision is made precisely to guide the customer closer to purchase. Review the portfolio, gather inspiration, and let’s discuss building your brand's vision.
-            </p>
-          </div>
-        </div>
-      </section>
-    </ScrollReveal>
-
-    {/* Project Modal */}
+      {/* Project Modal */}
       <AnimatePresence>
         {selectedProject && (
           <motion.div
@@ -335,6 +447,7 @@ export default function Portfolio() {
               <button
                 onClick={() => setSelectedProject(null)}
                 className="absolute top-6 right-6 w-10 h-10 bg-[#F4F4F5] dark:bg-white/10 hover:bg-[#E2E8F0] rounded-full flex items-center justify-center text-[#0F172A] dark:text-white transition-colors z-20"
+                aria-label="Close modal"
               >
                 <X size={18} />
               </button>
@@ -432,6 +545,7 @@ export default function Portfolio() {
             <div className="absolute top-6 right-6 md:top-10 md:right-10 z-50">
               <button
                 onClick={() => setFullScreenIndex(null)}
+                aria-label="Close full screen view"
                 className="w-12 h-12 md:w-16 md:h-16 bg-white/10 rounded-full flex items-center justify-center text-white hover:bg-[#10b981] hover:text-[#09090b] transition-all shadow-2xl backdrop-blur-md"
               >
                 <X size={24} />
@@ -442,6 +556,7 @@ export default function Portfolio() {
             <div className="absolute inset-y-0 left-0 flex items-center px-4 md:px-10 z-40 pointer-events-none">
               <button
                 onClick={handlePrev}
+                aria-label="Previous project"
                 className="w-12 h-12 md:w-16 md:h-16 bg-white/10 rounded-full flex items-center justify-center text-white hover:bg-[#10b981] hover:text-[#09090b] transition-all shadow-2xl backdrop-blur-md pointer-events-auto group"
               >
                 <ArrowRight size={24} className="rotate-180 group-active:scale-90 transition-transform" />
@@ -451,6 +566,7 @@ export default function Portfolio() {
             <div className="absolute inset-y-0 right-0 flex items-center px-4 md:px-10 z-40 pointer-events-none">
               <button
                 onClick={handleNext}
+                aria-label="Next project"
                 className="w-12 h-12 md:w-16 md:h-16 bg-white/10 rounded-full flex items-center justify-center text-white hover:bg-[#10b981] hover:text-[#09090b] transition-all shadow-2xl backdrop-blur-md pointer-events-auto group"
               >
                 <ArrowRight size={24} className="group-active:scale-90 transition-transform" />

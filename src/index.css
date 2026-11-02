@@ -56,6 +56,15 @@
 }
 
 @layer utilities {
+  .page-hero-padding {
+    padding-top: 140px;
+  }
+  @media (min-width: 768px) {
+    .page-hero-padding {
+      padding-top: 170px;
+    }
+  }
+
   .bg-navy-gradient {
     background: linear-gradient(180deg, #08090B 0%, #121318 100%);
   }

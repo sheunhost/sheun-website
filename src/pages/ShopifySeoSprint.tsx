@@ -279,7 +279,7 @@ export default function ShopifySeoSprint() {
       schema={[serviceSchema, faqSchema]}
     >
       {/* SECTION 1: HERO */}
-      <section className="relative pt-32 pb-24 md:pt-40 md:pb-32 bg-[#FFFFFF] dark:bg-navy overflow-hidden border-b border-[#E2E8F0] dark:border-white/10">
+      <section className="relative page-hero-padding pb-24 md:pb-32 bg-[#FFFFFF] dark:bg-navy overflow-hidden border-b border-[#E2E8F0] dark:border-white/10">
         {/* Top Wall 3-Color Gradient Separator */}
         <div className="absolute top-0 left-0 right-0 h-[3px] bg-gradient-to-r from-[#FF6B4A] via-[#D946EF] to-[#6D28D9] z-20" />
 

@@ -740,7 +740,7 @@ export default function Home() {
                     Top Rated <br />Shopify Expert.
                   </h2>
                   <p className="text-white/70 text-sm sm:text-base font-serif italic mt-1">
-                    Certified Shopify Partner &amp; Lead Systems Engineer
+                    Shopify Partner &amp; Lead Systems Engineer
                   </p>
                 </div>
                 

@@ -76,7 +76,7 @@ export default function ShopifyAudit() {
       canonical="/shopify-store-audit"
     >
       {/* Hero Section */}
-      <section className="pt-32 pb-20 bg-white dark:bg-navy relative overflow-hidden">
+      <section className="page-hero-padding pb-20 bg-white dark:bg-navy relative overflow-hidden">
         {/* Top Wall 3-Color Gradient Separator */}
         <div className="absolute top-0 left-0 right-0 h-[3px] bg-gradient-to-r from-[#FF6B4A] via-[#D946EF] to-[#6D28D9] z-20" />
 

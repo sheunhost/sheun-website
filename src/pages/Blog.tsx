@@ -108,7 +108,7 @@ export default function Blog() {
       }}
     >
       {/* Blog Hero */}
-      <section className="pt-48 pb-16 bg-navy-gradient relative overflow-hidden">
+      <section className="page-hero-padding pb-16 bg-navy-gradient relative overflow-hidden">
         <div className="absolute inset-0 opacity-10">
           <div className="absolute top-0 right-0 w-1/3 h-full bg-green/5 -skew-x-12 translate-x-1/2" />
         </div>

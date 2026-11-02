@@ -78,6 +78,7 @@ function AnimatedRoutes() {
           <Route path="/services/:id" element={<ServiceDetail />} />
           <Route path="/shopify-migration" element={<Navigate to="/services/migration" replace />} />
           <Route path="/portfolio" element={<Portfolio />} />
+          <Route path="/portfolio/hairburst_1" element={<Navigate to="/portfolio" replace />} />
           <Route path="/visualizer" element={<Navigate to="/portfolio" replace />} />
           <Route path="/blog" element={<Blog />} />
           <Route path="/blog/:id" element={<BlogPost />} />
