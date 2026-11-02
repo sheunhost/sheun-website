@@ -452,7 +452,7 @@ export default function Services() {
                 Growth-Driven E-Commerce Solutions
               </div>
 
-              <h1 className="text-5xl sm:text-7xl lg:text-8xl font-bold text-[#0F172A] dark:text-white tracking-tight leading-[1.05] font-sans">
+              <h1 className="text-3xl sm:text-5xl lg:text-6xl font-bold text-[#0F172A] dark:text-white tracking-tight leading-tight font-sans">
                 Shopify <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FF6B4A] via-[#D946EF] to-[#8B5CF6] underline decoration-[#D946EF]/30 underline-offset-8">Services</span> & Specialized Actions.
               </h1>
 
