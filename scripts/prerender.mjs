@@ -1112,7 +1112,7 @@ ${jsonLdString}
   html = html.replace(/<meta name="twitter:.*?\/>/gi, '');
   html = html.replace(/<link rel="canonical".*?\/>/gi, '');
 
-  html = html.replace('</head>', `${metaTags}\n  </head>`);
+  html = html.replace('</head>', () => `${metaTags}\n  </head>`);
 
   // Remove hero-mockup and logo image preloads for non-home routes to free up bandwidth
   if (route !== '/') {
@@ -1155,9 +1155,10 @@ ${jsonLdString}
   }
 
   // Inject prerendered root for React and place route-specific semantic HTML inside noscript for crawlers
+  // Use function replacer so any '$' in HTML (e.g. $250, $197) is NOT treated as a regex backreference
   html = html.replace(
     /<div id="root">[\s\S]*?<\/div>(\s*<!--[\s\S]*?-->)?(\s*<noscript>[\s\S]*?<\/noscript>)?/i,
-    `<div id="root">${prerenderedRootHtml}</div>\n    <noscript>\n${bodyContent}\n    </noscript>`
+    () => `<div id="root">${prerenderedRootHtml}</div>\n    <noscript>\n${bodyContent}\n    </noscript>`
   );
 
   return html;
