@@ -36,7 +36,7 @@ export const blogPostsData: Record<string, BlogPostData> = {
     datePublished: "2026-04-12T08:00:00Z",
     dateModified: "2026-09-21T08:00:00Z",
     readTime: "8 min read",
-    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1200&h=630&auto=format&fit=crop&q=80",
+    image: "/blog/blog-1.webp",
     excerpt: "Hidden configuration errors in your Shopify admin can stifle your growth. In this technical audit, we reveal the high-impact settings from tax calculation triggers to checkout script optimization.",
     featured: true,
     relevantServices: [
@@ -66,7 +66,7 @@ export const blogPostsData: Record<string, BlogPostData> = {
     datePublished: "2026-04-10T08:00:00Z",
     dateModified: "2026-09-21T08:00:00Z",
     readTime: "12 min read",
-    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&h=630&auto=format&fit=crop&q=80",
+    image: "/blog/blog-2.webp",
     excerpt: "Mobile conversion rates are directly proportional to page load speeds. Our performance framework covers server-side Liquid logic, AVIF image formats, and script pruning for <1.5s load times.",
     relevantServices: [
       {
@@ -95,7 +95,7 @@ export const blogPostsData: Record<string, BlogPostData> = {
     datePublished: "2026-04-08T08:00:00Z",
     dateModified: "2026-09-21T08:00:00Z",
     readTime: "10 min read",
-    image: "https://images.unsplash.com/photo-1556742049-0a67e55722c3?w=1200&h=630&auto=format&fit=crop&q=80",
+    image: "/blog/blog-3.webp",
     excerpt: "Efficiency is the path to profit in a competitive ad market. We analyze the technical Core Four ecosystem: Zendrop, Loox, ReConvert, and Klaviyo for lifecycle retention.",
     relevantServices: [
       {
@@ -130,7 +130,7 @@ export const blogPostsData: Record<string, BlogPostData> = {
     datePublished: "2026-04-05T08:00:00Z",
     dateModified: "2026-09-21T08:00:00Z",
     readTime: "15 min read",
-    image: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=1200&h=630&auto=format&fit=crop&q=80",
+    image: "/blog/blog-4.webp",
     excerpt: "Fashion requires a different architectural DNA. From multi-variant image handling to architecting an influencer-ready storefront, we break down the strategic blueprint.",
     relevantServices: [
       {
@@ -165,7 +165,7 @@ export const blogPostsData: Record<string, BlogPostData> = {
     datePublished: "2026-04-02T08:00:00Z",
     dateModified: "2026-09-21T08:00:00Z",
     readTime: "20 min read",
-    image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=1200&h=630&auto=format&fit=crop&q=80",
+    image: "/blog/blog-5.webp",
     excerpt: "Migrating platforms shouldn't mean sacrificing your organic traffic. This technical manual details our zero-loss migration protocol, including URL regex matching and metadata synchronization.",
     relevantServices: [
       {
@@ -194,7 +194,7 @@ export const blogPostsData: Record<string, BlogPostData> = {
     datePublished: "2026-03-30T08:00:00Z",
     dateModified: "2026-09-21T08:00:00Z",
     readTime: "25 min read",
-    image: "https://images.unsplash.com/photo-1571721795195-a2ca2d3370a9?w=1200&h=630&auto=format&fit=crop&q=80",
+    image: "/blog/blog-6.webp",
     excerpt: "Break free from the paid ad cycle. This comprehensive primer introduces you to technical and on-page SEO for Shopify, helping you build compounding organic sales.",
     relevantServices: [
       {
@@ -223,7 +223,7 @@ export const blogPostsData: Record<string, BlogPostData> = {
     datePublished: "2026-05-01T08:00:00Z",
     dateModified: "2026-09-21T08:00:00Z",
     readTime: "10 min read",
-    image: "https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?w=1200&h=630&auto=format&fit=crop&q=80",
+    image: "/blog/blog-7.webp",
     excerpt: "Unlock global revenue with Shopify Markets. A comprehensive guide on currency conversion, language localization, and international shipping strategies.",
     relevantServices: [
       {
@@ -252,7 +252,7 @@ export const blogPostsData: Record<string, BlogPostData> = {
     datePublished: "2026-05-15T08:00:00Z",
     dateModified: "2026-09-21T08:00:00Z",
     readTime: "12 min read",
-    image: "https://images.unsplash.com/photo-1551836022-d5d88e9218df?w=1200&h=630&auto=format&fit=crop&q=80",
+    image: "/blog/blog-8.webp",
     excerpt: "Is your Shopify store getting traffic but no sales? Discover the 5 most common conversion killers from weak hero copy to slow mobile performance.",
     relevantServices: [
       {

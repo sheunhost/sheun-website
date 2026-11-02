@@ -602,12 +602,12 @@ export default function Home() {
       }}
     >
       {/* Hero Section */}
-        <section className="relative min-h-screen flex items-center pt-48 pb-20 bg-navy-gradient overflow-hidden">
+        <section className="relative flex items-center pt-24 md:pt-36 pb-16 md:pb-24 bg-navy-gradient overflow-hidden">
           {/* Rail Text - Recipe 11 */}
         <div className="absolute left-6 top-1/2 -translate-y-1/2 hidden xl:block z-20">
           <div className="flex flex-col items-center gap-8">
             <div className="w-px h-24 bg-[#8B5CF6]/20" />
-            <span className="[writing-mode:vertical-rl] rotate-180 text-[10px] font-bold uppercase tracking-[0.4em] text-white/30">
+            <span className="[writing-mode:vertical-rl] rotate-180 text-[10px] font-bold uppercase tracking-[0.12em] md:tracking-[0.4em] text-white/30">
               Shopify Partner · 2026 Edition
             </span>
           </div>
@@ -621,17 +621,17 @@ export default function Home() {
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_#8B5CF6_1px,_transparent_1px)] bg-[size:60px_60px] opacity-[0.03]" />
         </div>
 
-        <div className="container mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-16 items-center relative z-10">
-          <div className="lg:col-span-7 space-y-12">
+        <div className="container mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center relative z-10">
+          <div className="lg:col-span-7 space-y-8 md:space-y-12">
             <div
-              className="space-y-8"
+              className="space-y-6 md:space-y-8"
             >
-              <div className="inline-flex items-center gap-3 bg-white/5 backdrop-blur-xl border border-white/10 px-6 py-2 rounded-full">
+              <div className="inline-flex items-center gap-3 bg-white/5 backdrop-blur-xl border border-white/10 px-5 py-2 rounded-full">
                 <div className="w-2 h-2 bg-[#FF6B4A] rounded-full animate-ping" />
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FF6B4A] via-[#D946EF] to-[#8B5CF6] text-[10px] font-bold uppercase tracking-[0.2em]">Available for new projects</span>
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FF6B4A] via-[#D946EF] to-[#8B5CF6] text-[10px] font-bold uppercase tracking-[0.12em] md:tracking-[0.2em]">Available for new projects</span>
               </div>
 
-              <h1 className="text-5xl md:text-[100px] font-bold text-white leading-[0.8] tracking-[-0.05em] text-balance">
+              <h1 className="hero-h1 font-bold text-white tracking-tight text-balance">
                 <span className="block mb-4">
                   <span
                     key="headline-1"
@@ -677,21 +677,21 @@ export default function Home() {
             </div>
 
             <div 
-              className="flex flex-col sm:flex-row items-center gap-8"
+              className="flex flex-col sm:flex-row items-center gap-4 sm:gap-6"
             >
               <Link 
                 to="/apply" 
-                className="w-full sm:w-auto bg-gradient-to-r from-[#FF6B4A] via-[#D946EF] to-[#6D28D9] text-white hover:opacity-95 px-8 md:px-12 py-4 md:py-6 rounded-full font-bold text-lg hover:scale-105 transition-all duration-500 shadow-xl shadow-[#D946EF]/25 flex items-center justify-center gap-3 text-center"
+                className="w-full sm:w-auto bg-gradient-to-r from-[#FF6B4A] via-[#D946EF] to-[#6D28D9] text-white hover:opacity-95 px-8 md:px-12 py-4 rounded-full font-bold text-base md:text-lg hover:scale-105 transition-all duration-500 shadow-xl shadow-[#D946EF]/25 flex items-center justify-center gap-3 text-center min-h-[48px]"
               >
                 Get Started <ArrowRight size={20} />
               </Link>
               <Link 
                 to="/services" 
-                className="text-white font-bold hover:text-[#D946EF] transition-colors flex items-center gap-2"
+                className="text-white font-bold hover:text-[#D946EF] transition-colors flex items-center gap-2 min-h-[44px] px-3 py-2"
               >
                 Explore Services <ChevronDown size={16} />
               </Link>
-              <Link to="/portfolio" className="w-full sm:w-auto text-white/80 hover:text-white px-8 py-4 rounded-full font-bold text-lg transition-all flex items-center justify-center gap-4 group text-center">
+              <Link to="/portfolio" className="w-full sm:w-auto text-white/80 hover:text-white px-6 py-3 rounded-full font-bold text-base md:text-lg transition-all flex items-center justify-center gap-3 group text-center min-h-[48px]">
                 View Portfolio <div className="w-8 h-px bg-white/20 group-hover:w-16 group-hover:bg-[#FF6B4A] transition-all duration-500" />
               </Link>
             </div>
@@ -850,7 +850,7 @@ export default function Home() {
               <AlertTriangle size={14} className="text-[#F59E0B]" />
               The Reality of E-Commerce
             </div>
-            <h2 className="text-5xl md:text-7xl font-bold text-navy dark:text-white tracking-tighter">
+            <h2 className="section-h2 font-bold text-navy dark:text-white tracking-tight">
               Is your Shopify store <br />
               <span className="text-[#8B5CF6] underline decoration-[#8B5CF6]/20 underline-offset-8 italic font-serif font-light">working for you?</span>
             </h2>
@@ -1396,7 +1396,7 @@ export default function Home() {
       <section className="py-32 bg-navy relative overflow-hidden">
         <div className="container mx-auto px-6">
           <div className="max-w-4xl mx-auto text-center space-y-12">
-            <h2 className="text-5xl md:text-7xl font-bold text-white tracking-tighter">
+            <h2 className="section-h2 font-bold text-white tracking-tight">
               Ready to scale <br />
               <span className="text-[#8B5CF6] italic font-serif font-light">Your Shopify store?</span>
             </h2>
@@ -1404,7 +1404,7 @@ export default function Home() {
               Join the high-performing brands that have transformed their e-commerce presence with bespoke development and strategic growth.
             </p>
             <div className="pt-8">
-              <Link to="/apply" className="inline-flex items-center gap-3 bg-[#6D28D9] text-white hover:bg-[#8B5CF6] font-bold px-8 md:px-12 py-4 md:py-6 rounded-full hover:scale-105 transition-all duration-300 text-lg shadow-2xl shadow-[#6D28D9]/30">
+              <Link to="/apply" className="inline-flex items-center gap-3 bg-[#6D28D9] text-white hover:bg-[#8B5CF6] font-bold px-8 md:px-12 py-4 rounded-full hover:scale-105 transition-all duration-300 text-lg shadow-2xl shadow-[#6D28D9]/30 min-h-[48px]">
                 Apply for Growth Plan <ArrowRight size={24} />
               </Link>
             </div>
@@ -1415,11 +1415,11 @@ export default function Home() {
 
     {/* Why Partner With Us */}
     <ScrollReveal>
-      <section className="py-32 bg-navy text-white relative overflow-hidden">
+      <section className="py-24 md:py-32 bg-navy text-white relative overflow-hidden">
         <div className="container mx-auto px-6">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
-            <div className="space-y-10">
-              <h2 className="text-5xl md:text-7xl font-bold tracking-tight">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+            <div className="space-y-8 md:space-y-10">
+              <h2 className="section-h2 font-bold tracking-tight">
                 The Sheun Hub <br />
                 <span className="text-[#8B5CF6] italic font-serif font-light">Advantage</span>.
               </h2>
@@ -1472,8 +1472,8 @@ export default function Home() {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-20 items-start">
             <div className="lg:col-span-5 space-y-12">
               <div className="space-y-6">
-                <p className="text-navy dark:text-white/40 text-[10px] font-bold uppercase tracking-[0.3em]">Contact</p>
-                <h2 className="text-5xl md:text-7xl font-bold text-navy dark:text-white tracking-tight leading-none">
+                <p className="text-navy dark:text-white/40 text-[10px] font-bold uppercase tracking-[0.12em] md:tracking-[0.3em]">Contact</p>
+                <h2 className="section-h2 font-bold text-navy dark:text-white tracking-tight leading-none">
                   Let's Start <br />
                   <span className="italic font-serif font-light text-navy dark:text-white/40">Your Project</span>.
                 </h2>
@@ -1705,26 +1705,26 @@ export default function Home() {
 
     {/* CTA Banner - Recipe 2 */}
     <ScrollReveal>
-      <section className="py-48 bg-navy-gradient relative overflow-hidden">
+      <section className="py-24 md:py-36 bg-navy-gradient relative overflow-hidden">
         {/* Top Wall 3-Color Gradient Separator */}
         <div className="absolute top-0 left-0 right-0 h-[3px] bg-gradient-to-r from-[#FF6B4A] via-[#D946EF] to-[#6D28D9]" />
         
         <div className="absolute inset-0 bg-[#6D28D9]/5 opacity-50" />
         <div className="container mx-auto px-6 relative z-10 text-center">
           <div
-            className="max-w-5xl mx-auto space-y-16"
+            className="max-w-5xl mx-auto space-y-12"
           >
-            <h2 className="text-5xl md:text-[160px] font-bold text-white leading-[0.8] tracking-[-0.06em] uppercase">
+            <h2 className="hero-h1 font-bold text-white tracking-tight uppercase">
               Ready to <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FF6B4A] via-[#D946EF] to-[#8B5CF6] italic font-serif font-light lowercase">Grow?</span>
             </h2>
-            <p className="text-white/60 text-2xl md:text-3xl max-w-3xl mx-auto leading-relaxed font-serif italic">
+            <p className="text-white/60 text-xl md:text-2xl max-w-3xl mx-auto leading-relaxed font-serif italic">
               Let's build a store that doesn't just look good, but converts visitors into loyal customers.
             </p>
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-12">
-              <Link to="/contact#contact-form" className="w-full sm:w-auto bg-gradient-to-r from-[#FF6B4A] via-[#D946EF] to-[#6D28D9] text-white hover:opacity-95 px-8 md:px-16 py-4 md:py-8 rounded-full font-bold text-xl md:text-2xl hover:scale-105 transition-all duration-500 shadow-2xl shadow-[#D946EF]/40 flex items-center justify-center text-center">
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
+              <Link to="/contact#contact-form" className="w-full sm:w-auto bg-gradient-to-r from-[#FF6B4A] via-[#D946EF] to-[#6D28D9] text-white hover:opacity-95 px-8 md:px-12 py-4 rounded-full font-bold text-lg hover:scale-105 transition-all duration-500 shadow-2xl shadow-[#D946EF]/40 flex items-center justify-center text-center min-h-[48px]">
                 Get Your Free Growth Plan
               </Link>
-              <Link to="/portfolio" className="w-full sm:w-auto text-white font-bold text-2xl flex items-center justify-center gap-6 group text-center">
+              <Link to="/portfolio" className="w-full sm:w-auto text-white font-bold text-lg flex items-center justify-center gap-4 group text-center min-h-[48px]">
                 View Portfolio <div className="w-12 h-px bg-white/20 group-hover:w-20 group-hover:bg-[#FF6B4A] transition-all duration-500" />
               </Link>
             </div>

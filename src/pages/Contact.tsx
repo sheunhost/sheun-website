@@ -172,7 +172,7 @@ export default function Contact() {
               </motion.div>
               
               <motion.h1 
-                className="text-7xl md:text-[150px] font-bold text-white tracking-tighter leading-[0.75]"
+                className="hero-h1 font-bold text-white tracking-tight"
               >
                 <motion.span initial={{ opacity: 0, x: -40 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.2 }} className="block">Let's build</motion.span>
                 <motion.span initial={{ opacity: 0, x: -40 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.3 }} className="italic font-serif font-light text-white/30 block ml-[0.1em]">momentum.</motion.span>

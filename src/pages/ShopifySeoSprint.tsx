@@ -305,7 +305,7 @@ export default function ShopifySeoSprint() {
                 </span>
               </div>
 
-              <h1 className="text-4xl sm:text-6xl lg:text-7xl font-bold text-[#0F172A] dark:text-white tracking-tight leading-[1.08] font-sans">
+              <h1 className="page-h1 font-bold text-[#0F172A] dark:text-white tracking-tight font-sans">
                 Increase Your Shopify <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FF6B4A] via-[#D946EF] to-[#8B5CF6] underline decoration-[#D946EF]/30 underline-offset-8">Organic Traffic</span> Without Paying for Ads.
               </h1>
 

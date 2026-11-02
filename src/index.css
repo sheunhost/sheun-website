@@ -56,12 +56,29 @@
 }
 
 @layer utilities {
+  .hero-h1 {
+    font-size: clamp(2.125rem, 6vw, 4.5rem);
+    line-height: 1.15;
+  }
+  .page-h1 {
+    font-size: clamp(1.75rem, 5vw, 3.5rem);
+    line-height: 1.15;
+  }
+  .section-h2 {
+    font-size: clamp(1.5rem, 3.5vw, 2.75rem);
+    line-height: 1.18;
+  }
+  .section-h3 {
+    font-size: clamp(1.125rem, 2vw, 1.75rem);
+    line-height: 1.18;
+  }
+
   .page-hero-padding {
-    padding-top: 140px;
+    padding-top: 80px;
   }
   @media (min-width: 768px) {
     .page-hero-padding {
-      padding-top: 170px;
+      padding-top: 112px;
     }
   }
 

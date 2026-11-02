@@ -73,7 +73,7 @@ export default function About() {
                 <span>Shopify Partner & Developer</span>
               </div>
               
-              <h1 className="text-5xl md:text-7xl font-extrabold text-[#0F172A] dark:text-white tracking-tight leading-[1.1]">
+              <h1 className="page-h1 font-extrabold text-[#0F172A] dark:text-white tracking-tight">
                 Ecommerce Engineering & <br />
                 <span className="text-[#8B5CF6] italic font-serif font-light">Strategy.</span>
               </h1>

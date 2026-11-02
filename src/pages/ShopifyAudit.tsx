@@ -99,7 +99,7 @@ export default function ShopifyAudit() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.1 }}
-              className="text-5xl md:text-7xl font-bold text-navy dark:text-white mb-8 leading-tight tracking-tight"
+              className="page-h1 font-bold text-navy dark:text-white mb-8 tracking-tight"
             >
               Shopify Store Audit — <br />
               <span className="italic font-serif font-light text-transparent bg-clip-text bg-gradient-to-r from-[#FF6B4A] via-[#D946EF] to-[#8B5CF6]">Know Exactly</span> What Is Hurting Your Sales.

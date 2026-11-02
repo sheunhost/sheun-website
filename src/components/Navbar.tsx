@@ -72,16 +72,16 @@ export default function Navbar() {
       <nav
         aria-label="Main navigation"
         className={cn(
-          "fixed top-0 left-0 right-0 z-50 transition-all duration-500",
+          "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
           isScrolled 
-            ? "bg-white/95 dark:bg-navy/95 backdrop-blur-xl shadow-[0_8px_32px_rgba(0,0,0,0.12)] py-4 border-b border-slate-200/80 dark:border-white/10" 
+            ? "bg-white/95 dark:bg-navy/95 backdrop-blur-xl shadow-[0_8px_32px_rgba(0,0,0,0.12)] py-2.5 md:py-4 border-b border-slate-200/80 dark:border-white/10" 
             : isDarkHero
-              ? "bg-navy/60 backdrop-blur-md py-6 md:py-7 border-b border-white/10"
-              : "bg-white/60 dark:bg-navy/60 backdrop-blur-md py-6 md:py-7 border-b border-slate-200/40 dark:border-white/10"
+              ? "bg-navy/60 backdrop-blur-md py-2.5 md:py-6 border-b border-white/10"
+              : "bg-white/60 dark:bg-navy/60 backdrop-blur-md py-2.5 md:py-6 border-b border-slate-200/40 dark:border-white/10"
         )}
       >
-        <div className="container mx-auto px-6 flex items-center justify-between">
-          <div className="flex items-center gap-8 lg:gap-10">
+        <div className="container mx-auto px-4 sm:px-6 flex items-center justify-between">
+          <div className="flex items-center gap-6 lg:gap-10">
             <Link to="/" className="flex items-center group" aria-label="Sheun Hub Home">
               <img 
                 src="/logo.webp" 
@@ -91,10 +91,7 @@ export default function Navbar() {
                 height="112"
                 loading="eager"
                 fetchPriority="high"
-                className={cn(
-                  "rounded-full object-cover shadow-lg border-2 border-[#D946EF]/30 group-hover:border-[#FF6B4A]/60 transition-all duration-500",
-                  isScrolled ? "h-16 w-16 md:h-20 md:w-20" : "h-20 w-20 md:h-24 md:w-24 lg:h-28 lg:w-28"
-                )} 
+                className="rounded-full object-cover shadow-lg border-2 border-[#D946EF]/30 group-hover:border-[#FF6B4A]/60 transition-all duration-300 h-11 w-11 md:h-20 md:w-20 lg:h-24 lg:w-24"
               />
             </Link>
 
@@ -145,11 +142,11 @@ export default function Navbar() {
           </div>
 
         {/* Mobile Toggle & Theme */}
-        <div className="flex items-center gap-4 lg:hidden">
+        <div className="flex items-center gap-3 lg:hidden">
           <ThemeToggle isDarkBackground={isDarkBackground} />
           <button
             className={cn(
-              "p-2 rounded-xl transition-all duration-300",
+              "p-2.5 min-w-[44px] min-h-[44px] rounded-xl flex items-center justify-center transition-all duration-300",
               isDarkBackground
                 ? "text-white hover:bg-white/10"
                 : "text-[#0F172A] dark:text-white hover:bg-navy/5 dark:hover:bg-white/5"
@@ -158,11 +155,11 @@ export default function Navbar() {
             aria-label="Toggle navigation menu"
           >
             {isMobileMenuOpen ? (
-              <X size={32} className={isDarkBackground ? "text-white" : "text-[#0F172A] dark:text-white"} />
+              <X size={26} className={isDarkBackground ? "text-white" : "text-[#0F172A] dark:text-white"} />
             ) : (
-              <div className="space-y-1.5 p-1">
+              <div className="space-y-1.5 p-0.5">
                 <div className={cn("w-6 h-0.5 rounded-full transition-all duration-300", isDarkBackground ? "bg-white" : "bg-[#0F172A] dark:bg-white")}></div>
-                <div className={cn("w-8 h-0.5 rounded-full transition-all duration-300", isDarkBackground ? "bg-white" : "bg-[#0F172A] dark:bg-white")}></div>
+                <div className={cn("w-7 h-0.5 rounded-full transition-all duration-300", isDarkBackground ? "bg-white" : "bg-[#0F172A] dark:bg-white")}></div>
                 <div className={cn("w-5 h-0.5 rounded-full transition-all duration-300", isDarkBackground ? "bg-white" : "bg-[#0F172A] dark:bg-white")}></div>
               </div>
             )}
