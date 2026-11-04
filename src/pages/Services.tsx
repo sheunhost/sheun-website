@@ -447,7 +447,7 @@ export default function Services() {
 
           <div className="container mx-auto px-6 max-w-7xl relative z-10">
             <div className="max-w-4xl space-y-8">
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-[#FF6B4A]/10 via-[#D946EF]/10 to-[#6D28D9]/10 border border-[#D946EF]/30 text-xs font-bold uppercase tracking-wider text-[#D946EF] mt-8 md:mt-14 shadow-sm">
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-[#FF6B4A]/10 via-[#D946EF]/10 to-[#6D28D9]/10 border border-[#D946EF]/30 text-xs font-bold uppercase tracking-wider text-[#D946EF] shadow-sm">
                 <span className="flex h-2 w-2 rounded-full bg-[#FF6B4A] animate-ping"></span>
                 Growth-Driven E-Commerce Solutions
               </div>

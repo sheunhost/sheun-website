@@ -40,14 +40,14 @@ export default function AutomationNavbar() {
       <div className="fixed top-0 left-0 right-0 h-[3px] bg-gradient-to-r from-[#FF6B4A] via-cyan-400 to-[#6D28D9] z-[100] shadow-[0_1px_10px_rgba(6,182,212,0.35)]" />
 
       <header 
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        className={`fixed top-0 left-0 right-0 z-50 h-[var(--header-h)] flex items-center transition-colors duration-300 ${
           isScrolled 
-            ? "bg-white/95 backdrop-blur-xl border-b border-[#E2E8F0] shadow-[0_4px_20px_rgba(0,0,0,0.06)] py-3" 
-            : "bg-white/80 backdrop-blur-md border-b border-[#E2E8F0]/60 py-4"
+            ? "bg-white/95 backdrop-blur-xl border-b border-[#E2E8F0] shadow-[0_4px_20px_rgba(0,0,0,0.06)]" 
+            : "bg-white/80 backdrop-blur-md border-b border-[#E2E8F0]/60"
         }`}
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+          <div className="flex items-center justify-between h-full">
             
             {/* Primary Multi-Colored Geometric Logo */}
             <Link 

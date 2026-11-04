@@ -34,9 +34,20 @@
   }
 }
 
+:root {
+  --header-h: 64px;
+}
+
+@media (min-width: 768px) {
+  :root {
+    --header-h: 80px;
+  }
+}
+
 @layer base {
   html {
     scroll-behavior: smooth;
+    scroll-padding-top: var(--header-h);
     overflow-x: clip;
   }
 
@@ -74,11 +85,11 @@
   }
 
   .page-hero-padding {
-    padding-top: 80px;
+    padding-top: 24px;
   }
   @media (min-width: 768px) {
     .page-hero-padding {
-      padding-top: 112px;
+      padding-top: 32px;
     }
   }
 

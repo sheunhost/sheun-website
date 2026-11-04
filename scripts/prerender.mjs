@@ -27,7 +27,7 @@ const blogPosts = {
     category: "Shopify Tips",
     datePublished: "2026-04-12T08:00:00Z",
     dateModified: "2026-09-21T08:00:00Z",
-    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1200&h=630&auto=format&fit=crop&q=80",
+    image: "https://www.sheun.online/blog/blog-1.jpg",
     excerpt: "Hidden configuration errors in your Shopify admin can stifle your growth. In this technical audit, we reveal the high-impact settings from tax calculation triggers to checkout script optimization.",
     contentHtml: `
       <article>
@@ -60,7 +60,7 @@ const blogPosts = {
     category: "Shopify Tips",
     datePublished: "2026-04-10T08:00:00Z",
     dateModified: "2026-09-21T08:00:00Z",
-    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&h=630&auto=format&fit=crop&q=80",
+    image: "https://www.sheun.online/blog/blog-2.jpg",
     excerpt: "Mobile conversion rates are directly proportional to page load speeds. Our performance framework covers server-side Liquid logic, AVIF image formats, and script pruning for <1.5s load times.",
     contentHtml: `
       <article>
@@ -87,7 +87,7 @@ const blogPosts = {
     category: "Dropshipping",
     datePublished: "2026-04-08T08:00:00Z",
     dateModified: "2026-09-21T08:00:00Z",
-    image: "https://images.unsplash.com/photo-1556742049-0a67e55722c3?w=1200&h=630&auto=format&fit=crop&q=80",
+    image: "https://www.sheun.online/blog/blog-3.jpg",
     excerpt: "Efficiency is the path to profit in a competitive ad market. We analyze the technical Core Four ecosystem: Zendrop, Loox, ReConvert, and Klaviyo for lifecycle retention.",
     contentHtml: `
       <article>
@@ -114,7 +114,7 @@ const blogPosts = {
     category: "Dropshipping",
     datePublished: "2026-04-05T08:00:00Z",
     dateModified: "2026-09-21T08:00:00Z",
-    image: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=1200&h=630&auto=format&fit=crop&q=80",
+    image: "https://www.sheun.online/blog/blog-4.jpg",
     excerpt: "Fashion requires a different architectural DNA. From multi-variant image handling to architecting an influencer-ready storefront, we break down the strategic blueprint.",
     contentHtml: `
       <article>
@@ -141,7 +141,7 @@ const blogPosts = {
     category: "Shopify Tips",
     datePublished: "2026-03-28T08:00:00Z",
     dateModified: "2026-09-21T08:00:00Z",
-    image: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=1200&h=630&auto=format&fit=crop&q=80",
+    image: "https://www.sheun.online/blog/blog-5.jpg",
     excerpt: "Migrating platforms should accelerate your sales, not destroy your hard-earned search rankings. Follow our battle-tested URL mapping and SEO preservation protocol.",
     contentHtml: `
       <article>
@@ -169,7 +169,7 @@ const blogPosts = {
     category: "SEO",
     datePublished: "2026-03-25T08:00:00Z",
     dateModified: "2026-09-21T08:00:00Z",
-    image: "https://images.unsplash.com/photo-1571867424488-4565932edb41?w=1200&h=630&auto=format&fit=crop&q=80",
+    image: "https://www.sheun.online/blog/blog-6.jpg",
     excerpt: "Organic search traffic converts at a much higher rate than cold ad traffic. Learn how to rank your collection pages, optimize product schemas, and earn top Google rankings.",
     contentHtml: `
       <article>
@@ -196,7 +196,7 @@ const blogPosts = {
     category: "Shopify Tips",
     datePublished: "2026-03-20T08:00:00Z",
     dateModified: "2026-09-21T08:00:00Z",
-    image: "https://images.unsplash.com/photo-1526304640581-d334cdbbf45e?w=1200&h=630&auto=format&fit=crop&q=80",
+    image: "https://www.sheun.online/blog/blog-7.jpg",
     excerpt: "Expanding into international markets is the fastest route to scale. Master currency conversion rules, country-specific pricing, and localized checkout experiences.",
     contentHtml: `
       <article>
@@ -223,7 +223,7 @@ const blogPosts = {
     category: "CRO",
     datePublished: "2026-03-15T08:00:00Z",
     dateModified: "2026-09-21T08:00:00Z",
-    image: "https://images.unsplash.com/photo-1556740758-90de374c12ad?w=1200&h=630&auto=format&fit=crop&q=80",
+    image: "https://www.sheun.online/blog/blog-8.jpg",
     excerpt: "You're driving traffic, but visitors leave without buying. Identify the 8 silent friction points causing cart abandonment and learn how to fix them for maximum conversions.",
     contentHtml: `
       <article>

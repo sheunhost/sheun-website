@@ -72,17 +72,17 @@ export default function Navbar() {
       <nav
         aria-label="Main navigation"
         className={cn(
-          "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
+          "fixed top-0 left-0 right-0 z-50 h-[var(--header-h)] flex items-center transition-colors duration-300",
           isScrolled 
-            ? "bg-white/95 dark:bg-navy/95 backdrop-blur-xl shadow-[0_8px_32px_rgba(0,0,0,0.12)] py-2.5 md:py-4 border-b border-slate-200/80 dark:border-white/10" 
+            ? "bg-white/95 dark:bg-navy/95 backdrop-blur-xl shadow-[0_8px_32px_rgba(0,0,0,0.12)] border-b border-slate-200/80 dark:border-white/10" 
             : isDarkHero
-              ? "bg-navy/60 backdrop-blur-md py-2.5 md:py-6 border-b border-white/10"
-              : "bg-white/60 dark:bg-navy/60 backdrop-blur-md py-2.5 md:py-6 border-b border-slate-200/40 dark:border-white/10"
+              ? "bg-navy/80 backdrop-blur-md border-b border-white/10"
+              : "bg-white/80 dark:bg-navy/80 backdrop-blur-md border-b border-slate-200/40 dark:border-white/10"
         )}
       >
-        <div className="container mx-auto px-4 sm:px-6 flex items-center justify-between">
-          <div className="flex items-center gap-6 lg:gap-10">
-            <Link to="/" className="flex items-center group" aria-label="Sheun Hub Home">
+        <div className="container mx-auto px-4 sm:px-6 flex items-center justify-between h-full">
+          <div className="flex items-center gap-6 lg:gap-10 h-full">
+            <Link to="/" className="flex items-center group shrink-0" aria-label="Sheun Hub Home">
               <img 
                 src="/logo.webp" 
                 srcSet="/logo.webp 1x, /logo-2x.webp 2x"
@@ -91,7 +91,7 @@ export default function Navbar() {
                 height="112"
                 loading="eager"
                 fetchPriority="high"
-                className="rounded-full object-cover shadow-lg border-2 border-[#D946EF]/30 group-hover:border-[#FF6B4A]/60 transition-all duration-300 h-11 w-11 md:h-20 md:w-20 lg:h-24 lg:w-24"
+                className="rounded-full object-cover shadow-lg border-2 border-[#D946EF]/30 group-hover:border-[#FF6B4A]/60 transition-all duration-300 h-10 w-10 md:h-12 md:w-12 lg:h-14 lg:w-14"
               />
             </Link>
 

@@ -179,7 +179,7 @@ export default function Apply() {
       }}
     >
       {/* Simple, Trust-Building Hero */}
-        <section className="pt-40 pb-20 bg-navy-gradient relative overflow-hidden">
+        <section className="page-hero-padding pb-20 bg-navy-gradient relative overflow-hidden">
         <div className="absolute inset-0 z-0">
           <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_50%_0%,_rgba(103,255,193,0.15)_0%,_transparent_70%)]" />
         </div>

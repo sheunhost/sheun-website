@@ -8,7 +8,7 @@ interface BlogArticleHeaderProps {
 
 export default function BlogArticleHeader({ post }: BlogArticleHeaderProps) {
   return (
-    <header className="w-full pt-32 pb-12 bg-navy-gradient text-white relative overflow-hidden">
+    <header className="w-full page-hero-padding pb-12 bg-navy-gradient text-white relative overflow-hidden">
       {/* Subtle background ambient glow */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
         <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-[#6D28D9]/20 rounded-full blur-[140px]" />
@@ -74,10 +74,18 @@ export default function BlogArticleHeader({ post }: BlogArticleHeaderProps) {
             <div className="relative w-full aspect-[16/9] md:aspect-[21/9] rounded-2xl md:rounded-3xl overflow-hidden shadow-2xl border border-white/10 bg-navy/50 group">
               <img
                 src={post.image}
+                srcSet={`${post.image.replace('.webp', '-card.webp')} 400w, ${post.image} 1200w`}
+                sizes="(max-width: 768px) 100vw, 1200px"
                 alt={post.heading}
+                width="1200"
+                height="750"
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
                 loading="eager"
                 decoding="async"
+                onError={(e) => {
+                  e.currentTarget.onerror = null;
+                  e.currentTarget.src = "/blog/placeholder.webp";
+                }}
               />
               <div className="absolute inset-0 bg-gradient-to-t from-navy/40 via-transparent to-transparent pointer-events-none" />
             </div>

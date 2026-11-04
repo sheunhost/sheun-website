@@ -215,9 +215,16 @@ export default function Blog() {
               <div className="aspect-[16/10] lg:aspect-[4/3] overflow-hidden relative">
                 <img
                   src={featuredPost.image}
+                  srcSet={`${featuredPost.image.replace('.webp', '-card.webp')} 400w, ${featuredPost.image} 1200w`}
+                  sizes="(max-width: 1024px) 100vw, 50vw"
                   alt={featuredPost.title}
                   width="800"
                   height="600"
+                  decoding="async"
+                  onError={(e) => {
+                    e.currentTarget.onerror = null;
+                    e.currentTarget.src = "/blog/placeholder.webp";
+                  }}
                   className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700"
                   loading="eager"
                 />
@@ -291,12 +298,19 @@ export default function Blog() {
                 <Link to={`/blog/${post.id}`} className="block">
                   <div className="aspect-[16/9] rounded-2xl overflow-hidden relative shadow-md">
                     <img
-                      src={post.image}
+                      src={post.image.replace('.webp', '-card.webp')}
+                      srcSet={`${post.image.replace('.webp', '-card.webp')} 400w, ${post.image} 1200w`}
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                       alt={post.title}
                       width="400"
-                      height="225"
+                      height="250"
+                      decoding="async"
+                      onError={(e) => {
+                        e.currentTarget.onerror = null;
+                        e.currentTarget.src = "/blog/placeholder-card.webp";
+                      }}
                       className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700"
-                      loading="lazy"
+                      loading={post.id <= 3 ? "eager" : "lazy"}
                     />
                     <div className="absolute top-4 left-4">
                       <span className="bg-white/90 dark:bg-navy/90 backdrop-blur-xl text-navy dark:text-white text-[10px] font-bold uppercase tracking-[0.2em] px-4 py-1.5 rounded-full shadow-md">

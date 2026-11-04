@@ -8,7 +8,7 @@ export default function PrivacyPolicy() {
       title="Privacy Policy | Sheun Hub"
       description="Read the Privacy Policy for Sheun Hub to understand how we collect, use, and protect your personal information and data during our Shopify development and SEO services."
     >
-      <section className="pt-48 pb-32 bg-navy relative overflow-hidden">
+      <section className="page-hero-padding pb-16 md:pb-24 bg-navy relative overflow-hidden">
         <div className="container mx-auto px-6 relative z-10">
           <div className="max-w-4xl space-y-8">
             <h1 className="text-5xl md:text-7xl font-bold text-white tracking-tighter">

@@ -139,7 +139,7 @@ function Layout() {
       <Suspense fallback={<div className="h-20 bg-navy/60" />}>
         {isAutomation ? <AutomationNavbar /> : <Navbar />}
       </Suspense>
-      <main id="main-content" className="flex-grow">
+      <main id="main-content" className="flex-grow pt-[var(--header-h)]">
         <AnimatedRoutes />
       </main>
       <Suspense fallback={null}>
