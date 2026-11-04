@@ -682,7 +682,6 @@ export default function Apply() {
               <div ref={scrollRef} className="flex overflow-x-auto gap-6 md:gap-8 pb-12 snap-x snap-mandatory scroll-smooth [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
                 {[
                   "1190279942",
-                  "1190279951",
                   "1190279899",
                   "1190279909",
                   "1190279925"
