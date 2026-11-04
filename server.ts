@@ -3,8 +3,7 @@ import path from "path";
 import axios from "axios";
 import cors from "cors";
 import dotenv from "dotenv";
-import { WebSocketServer, WebSocket } from "ws";
-import { GoogleGenAI, Modality } from "@google/genai";
+import { GoogleGenAI } from "@google/genai";
 
 dotenv.config();
 
@@ -98,6 +97,55 @@ async function startServer() {
     }
   });
 
+  // Gemini 3.8 Flash AI Chatbot Endpoint
+  app.post("/api/gemini/chat", async (req, res) => {
+    const { messages, prompt } = req.body;
+
+    const apiKey = process.env.GEMINI_API_KEY;
+    if (!apiKey) {
+      console.error("[Gemini Chat] Missing GEMINI_API_KEY");
+      return res.status(500).json({
+        error: "GEMINI_API_KEY environment variable is not configured on the server.",
+      });
+    }
+
+    try {
+      const ai = new GoogleGenAI({
+        apiKey,
+        httpOptions: {
+          headers: {
+            "User-Agent": "aistudio-build",
+          },
+        },
+      });
+
+      const contents = Array.isArray(messages) && messages.length > 0
+        ? messages.map((m: { role: string; content: string }) => ({
+            role: m.role === "user" ? "user" : "model",
+            parts: [{ text: m.content }],
+          }))
+        : [{ role: "user", parts: [{ text: prompt || "Hello" }] }];
+
+      const response = await ai.models.generateContent({
+        model: "gemini-3.8-flash",
+        contents,
+        config: {
+          systemInstruction:
+            "You are Sheun Hub's AI Assistant and Shopify Growth Specialist. You help store merchants and business owners with Shopify store development, WooCommerce to Shopify migrations, speed optimization (Core Web Vitals), 48-Hour Technical SEO Sprints, Conversion Rate Optimization (CRO), custom Liquid sections, and e-commerce growth strategies. Speak in a helpful, friendly, knowledgeable, professional tone. Keep answers clear, well-structured, and concise.",
+        },
+      });
+
+      const reply = response.text || "I am analyzing your e-commerce project goals. How else can I assist with your Shopify store?";
+      res.json({ reply });
+    } catch (err: any) {
+      console.error("[Gemini Chat] API Error:", err);
+      res.status(500).json({
+        error: "Failed to process AI chat response",
+        details: err?.message || "Unknown error",
+      });
+    }
+  });
+
   // Vite middleware for development
   if (process.env.NODE_ENV !== "production") {
     const { createServer: createViteServer } = await import("vite");
@@ -114,134 +162,8 @@ async function startServer() {
     });
   }
 
-  const server = app.listen(PORT, "0.0.0.0", () => {
+  app.listen(PORT, "0.0.0.0", () => {
     console.log(`Server running on http://localhost:${PORT}`);
-  });
-
-  // WebSocket Server for Gemini 3.8 Live API Voice Conversations
-  const wss = new WebSocketServer({ noServer: true });
-
-  server.on("upgrade", (request, socket, head) => {
-    const pathname = new URL(request.url || "", `http://${request.headers.host}`).pathname;
-    if (pathname === "/api/live") {
-      wss.handleUpgrade(request, socket, head, (ws) => {
-        wss.emit("connection", ws, request);
-      });
-    } else {
-      socket.destroy();
-    }
-  });
-
-  wss.on("connection", async (clientWs: WebSocket) => {
-    console.log("[WebSocket] Client connected for Gemini 3.8 Live API voice session");
-
-    const apiKey = process.env.GEMINI_API_KEY;
-    if (!apiKey) {
-      console.error("[WebSocket] Missing GEMINI_API_KEY env variable");
-      clientWs.send(
-        JSON.stringify({
-          error: "GEMINI_API_KEY is not configured in server environment variables.",
-        })
-      );
-      clientWs.close();
-      return;
-    }
-
-    try {
-      const ai = new GoogleGenAI({
-        apiKey,
-        httpOptions: {
-          headers: {
-            "User-Agent": "aistudio-build",
-          },
-        },
-      });
-
-      let sessionClosed = false;
-
-      const session = await ai.live.connect({
-        model: "gemini-3.8-live",
-        config: {
-          responseModalities: [Modality.AUDIO],
-          speechConfig: {
-            voiceConfig: { prebuiltVoiceConfig: { voiceName: "Zephyr" } },
-          },
-          systemInstruction:
-            "You are Sheun Hub's interactive AI voice assistant and e-commerce growth specialist. You help merchants and business owners with Shopify development, store migrations, CRO, speed optimization, and custom Liquid development. Speak in a natural, professional, helpful tone. Keep spoken responses clear and concise.",
-          inputAudioTranscription: {},
-          outputAudioTranscription: {},
-        },
-        callbacks: {
-          onmessage: (message) => {
-            if (sessionClosed || clientWs.readyState !== WebSocket.OPEN) return;
-
-            const content = message.serverContent;
-            if (content?.inputTranscription?.text) {
-              clientWs.send(JSON.stringify({ inputTranscript: content.inputTranscription.text }));
-            }
-            if (content?.outputTranscription?.text) {
-              clientWs.send(JSON.stringify({ outputTranscript: content.outputTranscription.text }));
-            }
-            for (const part of content?.modelTurn?.parts ?? []) {
-              if (part.inlineData?.data) {
-                clientWs.send(JSON.stringify({ audio: part.inlineData.data }));
-              }
-            }
-            if (content?.interrupted) {
-              clientWs.send(JSON.stringify({ interrupted: true }));
-            }
-          },
-          onclose: () => {
-            console.log("[WebSocket] Gemini 3.8 Live session closed");
-            if (clientWs.readyState === WebSocket.OPEN) {
-              clientWs.send(JSON.stringify({ status: "disconnected" }));
-              clientWs.close();
-            }
-          },
-          onerror: (err) => {
-            console.error("[WebSocket] Gemini 3.8 Live session error:", err);
-            if (clientWs.readyState === WebSocket.OPEN) {
-              clientWs.send(JSON.stringify({ error: err?.message || "Live API error" }));
-            }
-          },
-        },
-      });
-
-      clientWs.on("message", (data) => {
-        if (sessionClosed) return;
-        try {
-          const parsed = JSON.parse(data.toString());
-          if (parsed.audio) {
-            session.sendRealtimeInput({
-              audio: { data: parsed.audio, mimeType: "audio/pcm;rate=16000" },
-            });
-          } else if (parsed.text) {
-            session.sendRealtimeInput({
-              text: parsed.text,
-            });
-          }
-        } catch (e) {
-          console.error("[WebSocket] Error handling client message:", e);
-        }
-      });
-
-      clientWs.on("close", () => {
-        sessionClosed = true;
-        try {
-          session.close();
-        } catch (_) {}
-      });
-    } catch (err: any) {
-      console.error("[WebSocket] Failed to connect Gemini 3.8 Live session:", err);
-      if (clientWs.readyState === WebSocket.OPEN) {
-        clientWs.send(
-          JSON.stringify({
-            error: err?.message || "Failed to initialize Gemini 3.8 Live API session.",
-          })
-        );
-        clientWs.close();
-      }
-    }
   });
 }
 

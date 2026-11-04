@@ -12,7 +12,7 @@ import Footer from "./components/Footer";
 import ScrollToTop from "./components/ScrollToTop";
 import ScrollToTopOnNavigation from "./components/ScrollToTopOnNavigation";
 import FloatingCalendly from "./components/FloatingCalendly";
-import FloatingVoiceAssistant from "./components/FloatingVoiceAssistant";
+import FloatingChatbot from "./components/FloatingChatbot";
 import GoogleAnalytics from "./components/GoogleAnalytics";
 
 import Home from "./pages/Home";
@@ -147,7 +147,7 @@ function Layout() {
         {isAutomation ? <AutomationFooter /> : <Footer />}
       </Suspense>
       <FloatingCalendly />
-      <FloatingVoiceAssistant />
+      <FloatingChatbot />
       <ScrollToTop />
     </div>
   );
