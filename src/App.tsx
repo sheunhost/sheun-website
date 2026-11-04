@@ -13,6 +13,7 @@ import ScrollToTop from "./components/ScrollToTop";
 import ScrollToTopOnNavigation from "./components/ScrollToTopOnNavigation";
 import FloatingCalendly from "./components/FloatingCalendly";
 import FloatingChatbot from "./components/FloatingChatbot";
+import DirectCallBookingModal from "./components/DirectCallBookingModal";
 import GoogleAnalytics from "./components/GoogleAnalytics";
 
 import Home from "./pages/Home";
@@ -147,6 +148,7 @@ function Layout() {
         {isAutomation ? <AutomationFooter /> : <Footer />}
       </Suspense>
       <FloatingCalendly />
+      <DirectCallBookingModal />
       <FloatingChatbot />
       <ScrollToTop />
     </div>

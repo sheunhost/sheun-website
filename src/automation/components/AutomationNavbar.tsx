@@ -219,7 +219,7 @@ export default function AutomationNavbar() {
                   className="w-full flex items-center justify-center gap-2 px-5 py-3 rounded-xl font-bold text-sm text-white bg-gradient-to-r from-cyan-500 to-[#6D28D9] shadow-md shadow-cyan-500/20 cursor-pointer"
                 >
                   <Calendar className="w-4 h-4" />
-                  Book Strategy Call (Calendly)
+                  Book Strategy Call
                 </button>
                 <div className="text-center pt-2">
                   <Link to="/" className="text-xs text-slate-500 hover:text-cyan-700 font-semibold">

@@ -143,7 +143,7 @@ export default function AutomationContact() {
                   className="w-full py-4 rounded-2xl font-bold text-sm text-white bg-gradient-to-r from-cyan-500 via-cyan-600 to-[#6D28D9] hover:opacity-95 shadow-md shadow-cyan-500/20 transition-all flex items-center justify-center gap-2 cursor-pointer"
                 >
                   <Calendar className="w-4 h-4" />
-                  <span>Open Calendly &amp; Select Time</span>
+                  <span>Book Strategy Call Directly</span>
                   <ArrowRight className="w-4 h-4" />
                 </button>
               </div>
