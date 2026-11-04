@@ -446,16 +446,6 @@ export default function Home() {
       });
       const data = await response.json();
       if (data.success) {
-        // Sync to Mailchimp
-        fetch("/api/connect/subscribe", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ 
-            email,
-            firstName: formData.get("name")?.toString().split(" ")[0] || ""
-          })
-        }).catch(err => console.error("Mailchimp Sync Error:", err));
-
         setPlanRequested(true);
         form.reset();
       } else {
@@ -485,7 +475,7 @@ export default function Home() {
     formData.append("subject", "New Newsletter Subscriber");
 
     try {
-      // 1. Submit to Web3Forms for email notification
+      // Submit to Web3Forms for email notification
       const response = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
         body: formData
@@ -494,23 +484,6 @@ export default function Home() {
       const data = await response.json();
 
       if (data.success) {
-        // 2. Submit to Mailchimp (Background)
-        fetch("/api/connect/subscribe", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ email })
-        })
-        .then(async r => {
-          if (!r.ok) {
-            const err = await r.json();
-            throw new Error(err.details || err.error || "Mailchimp sync failed");
-          }
-          console.log("Mailchimp sync success");
-        })
-        .catch(err => {
-          console.error("Mailchimp Sync Error:", err);
-        });
-
         setIsSubscribeSuccess(true);
         form.reset();
         setTimeout(() => setIsSubscribeSuccess(false), 5000);
@@ -542,7 +515,7 @@ export default function Home() {
     formData.append("access_key", "c0573f7d-6191-4374-bc31-ee70ee9fa226");
 
     try {
-      // 1. Submit to Web3Forms for email notification
+      // Submit to Web3Forms for email notification
       const response = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
         body: formData
@@ -551,18 +524,6 @@ export default function Home() {
       const data = await response.json();
 
       if (data.success) {
-        // 2. Submit to Mailchimp (Background)
-        const name = (formData.get("name") as string) || "";
-        fetch("/api/connect/subscribe", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({
-            email,
-            firstName: name.split(" ")[0],
-            lastName: name.split(" ").slice(1).join(" ")
-          })
-        }).catch(err => console.error("Mailchimp Sync Error:", err));
-
         setIsSuccess(true);
         form.reset();
       } else {

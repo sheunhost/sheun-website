@@ -17,84 +17,16 @@ async function startServer() {
   // Health check and Config verify
   app.get("/api/connect/status", (req, res) => {
     res.json({
-      configured: !!process.env.MAILCHIMP_API_KEY && !!process.env.MAILCHIMP_LIST_ID,
-      apiKeyPresent: !!process.env.MAILCHIMP_API_KEY,
-      listIdPresent: !!process.env.MAILCHIMP_LIST_ID,
+      status: "healthy",
+      timestamp: new Date().toISOString(),
       geminiKeyPresent: !!process.env.GEMINI_API_KEY,
-      apiKeyLast4: process.env.MAILCHIMP_API_KEY ? `...${process.env.MAILCHIMP_API_KEY.slice(-4)}` : null,
-      listId: process.env.MAILCHIMP_LIST_ID || null,
       nodeEnv: process.env.NODE_ENV || "development",
     });
   });
 
-  // Mailchimp API Endpoints
-  app.post("/api/connect/subscribe", async (req, res) => {
-    const { email, firstName, lastName } = req.body;
-    console.log(`[Mailchimp] Subscription request for: ${email}`);
-
-    if (!email) {
-      return res.status(400).json({ error: "Email is required" });
-    }
-
-    const API_KEY = process.env.MAILCHIMP_API_KEY?.trim();
-    const LIST_ID = process.env.MAILCHIMP_LIST_ID?.trim();
-
-    if (!API_KEY || !LIST_ID) {
-      console.error("[Mailchimp] Missing configuration:", { hasKey: !!API_KEY, hasList: !!LIST_ID });
-      return res.status(500).json({ error: "Mailchimp integration not fully configured in environment variables." });
-    }
-
-    const DATACENTER = API_KEY.split("-")[1];
-    if (!DATACENTER) {
-      console.error("[Mailchimp] Invalid API key format (missing datacenter suffix like -us8)");
-      return res.status(500).json({ error: "Invalid Mailchimp API key format." });
-    }
-
-    const url = `https://${DATACENTER}.api.mailchimp.com/3.0/lists/${LIST_ID}/members`;
-
-    try {
-      const response = await axios.post(
-        url,
-        {
-          email_address: email,
-          status: "subscribed",
-          merge_fields: {
-            FNAME: firstName || "",
-            LNAME: lastName || "",
-          },
-        },
-        {
-          headers: {
-            Authorization: `apikey ${API_KEY}`,
-            "Content-Type": "application/json",
-          },
-        }
-      );
-
-      console.log(`[Mailchimp] Successfully subscribed ${email}`);
-      res.status(200).json({ success: true, message: "Subscription successful" });
-    } catch (error: any) {
-      const errorData = error.response?.data;
-      console.error("[Mailchimp] API Error:", JSON.stringify(errorData) || error.message);
-
-      if (errorData?.title === "Member Exists") {
-        console.log(`[Mailchimp] ${email} is already subscribed.`);
-        return res.status(200).json({ success: true, message: "Already subscribed" });
-      }
-
-      if (errorData?.title === "Forgotten Email Not Subscribed") {
-        console.log(`[Mailchimp] ${email} was permanently deleted and cannot be re-imported.`);
-        return res.status(400).json({
-          error: "This email was previously deleted and cannot be re-added automatically. Please contact us directly to be manually re-subscribed.",
-          details: errorData.detail,
-        });
-      }
-
-      res.status(error.response?.status || 500).json({
-        error: "Failed to subscribe to Mailchimp",
-        details: errorData?.detail || errorData?.title || error.message,
-      });
-    }
+  // Subscription endpoint (Web3Forms handles direct form notifications)
+  app.post("/api/connect/subscribe", (req, res) => {
+    res.status(200).json({ success: true, message: "Subscription received" });
   });
 
   // SEO Review Booking Notification Endpoint
@@ -131,33 +63,6 @@ async function startServer() {
 
     console.log("[Backend: Formatted Email Notification Content]:\n" + emailTemplate);
 
-    // Background Mailchimp subscriber sync
-    const apiKey = process.env.MAILCHIMP_API_KEY?.trim();
-    const listId = process.env.MAILCHIMP_LIST_ID?.trim();
-    if (apiKey && listId) {
-      const datacenter = apiKey.split("-")[1];
-      if (datacenter) {
-        axios.post(
-          `https://${datacenter}.api.mailchimp.com/3.0/lists/${listId}/members`,
-          {
-            email_address: workEmail,
-            status: "subscribed",
-            merge_fields: {
-              FNAME: customerName.split(" ")[0] || customerName,
-              LNAME: customerName.split(" ").slice(1).join(" ") || ""
-            }
-          },
-          {
-            headers: {
-              Authorization: `apikey ${apiKey}`,
-              "Content-Type": "application/json"
-            }
-          }
-        ).catch(err => {
-          console.warn("[Backend: Mailchimp Background Sync]", err.message);
-        });
-      }
-    }
 
     return res.status(200).json({
       success: true,

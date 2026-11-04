@@ -127,17 +127,6 @@ export default function Apply() {
       const data = await response.json();
 
       if (data.success) {
-        // 2. Submit to Mailchimp (Background)
-        fetch("/api/connect/subscribe", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({
-            email: formData.email,
-            firstName: formData.name.split(" ")[0],
-            lastName: formData.name.split(" ").slice(1).join(" ")
-          })
-        }).catch(err => console.error("Mailchimp Sync Error:", err));
-
         setIsSuccess(true);
         form.reset();
         

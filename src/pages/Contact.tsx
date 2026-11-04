@@ -87,27 +87,6 @@ export default function Contact() {
       const data = await response.json();
 
       if (data.success) {
-        // 2. Submit to Mailchimp (Background)
-        const email = formData.get("email") as string;
-        const name = (formData.get("name") as string) || "";
-        fetch("/api/connect/subscribe", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({
-            email,
-            firstName: name.split(" ")[0],
-            lastName: name.split(" ").slice(1).join(" ")
-          })
-        })
-        .then(async r => {
-          if (!r.ok) {
-            const err = await r.json();
-            throw new Error(err.details || err.error || "Mailchimp sync failed");
-          }
-          console.log("Mailchimp sync success");
-        })
-        .catch(err => console.error("Mailchimp Sync Error:", err));
-
         if (type === 'contact') setIsSuccess(true);
         else setIsAuditSuccess(true);
         

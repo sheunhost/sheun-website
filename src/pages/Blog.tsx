@@ -93,23 +93,44 @@ export default function Blog() {
 
   const featuredPost = posts.find(p => p.featured);
 
+  const [isSubscribing, setIsSubscribing] = useState(false);
+  const [subscribeSuccess, setSubscribeSuccess] = useState(false);
+  const [subscribeError, setSubscribeError] = useState("");
+
   const handleSubscribe = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const form = e.currentTarget;
     const emailInput = form.querySelector('input[type="email"]') as HTMLInputElement;
-    const email = emailInput?.value;
+    const email = emailInput?.value?.trim();
     if (!email) return;
+
+    setIsSubscribing(true);
+    setSubscribeError("");
+
+    const formData = new FormData();
+    formData.append("access_key", "c0573f7d-6191-4374-bc31-ee70ee9fa226");
+    formData.append("subject", "New Blog Newsletter Subscriber");
+    formData.append("from_name", "Sheun Hub Blog Newsletter");
+    formData.append("email", email);
+
     try {
-      await fetch("/api/connect/subscribe", {
+      const response = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email })
+        body: formData
       });
-      alert("Successfully subscribed to Shopify Tips!");
-      form.reset();
+      const data = await response.json();
+      if (data.success) {
+        setSubscribeSuccess(true);
+        form.reset();
+        setTimeout(() => setSubscribeSuccess(false), 5000);
+      } else {
+        setSubscribeError("Subscription failed. Please try again.");
+      }
     } catch (err) {
-      console.error(err);
-      alert("Subscription error. Please try again.");
+      console.error("Subscription error:", err);
+      setSubscribeError("Connection error. Please try again.");
+    } finally {
+      setIsSubscribing(false);
     }
   };
 
@@ -374,14 +395,29 @@ export default function Blog() {
               <form onSubmit={handleSubscribe} className="flex flex-col sm:flex-row lg:flex-col gap-4 min-w-0">
                 <input
                   type="email"
+                  name="email"
                   required
                   placeholder="Enter your email"
                   className="w-full min-w-0 bg-white/5 border border-white/10 rounded-full py-5 px-8 text-white outline-none focus:border-green transition-all text-base sm:text-lg placeholder:text-white/30"
                 />
-                <button type="submit" className="w-full sm:w-auto lg:w-full bg-green text-navy px-8 py-5 rounded-full font-bold text-base sm:text-lg hover:scale-105 transition-all duration-500 shadow-xl green-glow flex items-center justify-center text-center shrink-0">
-                  Subscribe
+                <button 
+                  type="submit" 
+                  disabled={isSubscribing}
+                  className="w-full sm:w-auto lg:w-full bg-green text-navy px-8 py-5 rounded-full font-bold text-base sm:text-lg hover:scale-105 transition-all duration-500 shadow-xl green-glow flex items-center justify-center text-center shrink-0 disabled:opacity-75 disabled:cursor-not-allowed"
+                >
+                  {isSubscribing ? "Subscribing..." : "Subscribe"}
                 </button>
               </form>
+              {subscribeSuccess && (
+                <p className="text-green text-sm font-semibold">
+                  ✓ Successfully subscribed to Shopify Tips!
+                </p>
+              )}
+              {subscribeError && (
+                <p className="text-red-400 text-sm font-semibold">
+                  {subscribeError}
+                </p>
+              )}
               <p className="text-white/50 text-xs sm:text-sm font-serif italic">
                 By subscribing, you agree to our Privacy Policy and Terms of Service.
               </p>

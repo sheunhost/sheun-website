@@ -190,19 +190,7 @@ export default function AutomationHome() {
       const result = await response.json();
 
       if (result.success) {
-        // 2. Submit to Mailchimp/CRM backend hub
-        const nameParts = formData.fullName.trim().split(" ");
-        fetch("/api/connect/subscribe", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({
-            email: formData.email,
-            firstName: nameParts[0] || "",
-            lastName: nameParts.slice(1).join(" ") || ""
-          })
-        }).catch(err => console.error("CRM Sync Error:", err));
-
-        // 3. Google Ads Conversion Tracking
+        // Google Ads Conversion Tracking
         if (typeof (window as any).gtag !== 'undefined') {
           (window as any).gtag('event', 'conversion', {'send_to': 'AW-18133653660/tyjNCN6l37IcEJyx5sZD'});
         }

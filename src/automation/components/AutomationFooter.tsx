@@ -22,23 +22,18 @@ export default function AutomationFooter() {
       formData.append("subject", "New Automation Newsletter Subscriber");
       formData.append("email", email);
 
-      fetch("https://api.web3forms.com/submit", {
+      const response = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
         body: formData
-      }).catch(err => console.error("Web3Forms error:", err));
-
-      // 2. Submit to Mailchimp/CRM Hub
-      await fetch("/api/connect/subscribe", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email })
       });
+      const data = await response.json();
 
-      setIsSubscribed(true);
-      setEmail("");
+      if (data.success) {
+        setIsSubscribed(true);
+        setEmail("");
+      }
     } catch (err) {
       console.error("Newsletter subscription error:", err);
-      // Still show success since Web3Forms fired
       setIsSubscribed(true);
     } finally {
       setIsSubmitting(false);
