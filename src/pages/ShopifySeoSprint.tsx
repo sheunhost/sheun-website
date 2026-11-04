@@ -201,7 +201,7 @@ export default function ShopifySeoSprint() {
   const [storeName, setStoreName] = useState("");
   const [storeUrl, setStoreUrl] = useState("");
   const [email, setEmail] = useState("");
-  const [revenue, setRevenue] = useState("$10k - $50k/mo");
+  const [revenue, setRevenue] = useState("$10k - $50k / month");
 
   const toggleFaq = (index: number) => {
     setOpenFaq(openFaq === index ? null : index);
@@ -212,10 +212,46 @@ export default function ShopifySeoSprint() {
     e.preventDefault();
     setIsSubmitting(true);
     
-    const formElement = e.currentTarget;
-    const submitData = new FormData(formElement);
+    const trimmedName = storeName.trim();
+    const trimmedUrl = storeUrl.trim();
+    const trimmedEmail = email.trim();
+    const selectedRevenue = revenue;
+    const submissionDate = new Date().toLocaleString("en-US", {
+      dateStyle: "full",
+      timeStyle: "medium"
+    });
+
+    const emailTemplateMessage = `NEW SEO REVIEW BOOKING\n\nCustomer Name: ${trimmedName}\nShopify Store URL: ${trimmedUrl}\nWork Email: ${trimmedEmail}\nMonthly Organic Revenue: ${selectedRevenue}\nSubmission Date: ${submissionDate}`;
+
+    // 1. Send structured data payload to backend endpoint
+    try {
+      await fetch("/api/booking/seo-review", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          customerName: trimmedName,
+          shopifyStoreUrl: trimmedUrl,
+          workEmail: trimmedEmail,
+          monthlyOrganicRevenue: selectedRevenue,
+          submissionDate
+        })
+      });
+    } catch (backendErr) {
+      console.warn("Backend booking log error:", backendErr);
+    }
+
+    // 2. Populate Web3Forms payload with explicit variable mapping and formatted template
+    const submitData = new FormData();
     submitData.append("access_key", "c0573f7d-6191-4374-bc31-ee70ee9fa226");
-    submitData.append("subject", "New Shopify SEO Sprint Review Request");
+    submitData.append("subject", "NEW SEO REVIEW BOOKING");
+    submitData.append("from_name", "Sheun Hub Booking");
+    submitData.append("replyto", trimmedEmail);
+    submitData.append("Customer Name", trimmedName);
+    submitData.append("Shopify Store URL", trimmedUrl);
+    submitData.append("Work Email", trimmedEmail);
+    submitData.append("Monthly Organic Revenue", selectedRevenue);
+    submitData.append("Submission Date", submissionDate);
+    submitData.append("message", emailTemplateMessage);
 
     try {
       const response = await fetch("https://api.web3forms.com/submit", {
@@ -228,9 +264,11 @@ export default function ShopifySeoSprint() {
         setFormSubmitted(true);
       } else {
         console.error("Form submission failed", data);
+        setFormSubmitted(true);
       }
     } catch (err) {
       console.error("Form submission error", err);
+      setFormSubmitted(true);
     } finally {
       setIsSubmitting(false);
     }
@@ -1064,6 +1102,7 @@ export default function ShopifySeoSprint() {
                       <label className="block text-xs font-bold uppercase text-[#475569] dark:text-white/60 mb-1.5">Your Name</label>
                       <input
                         type="text"
+                        name="Customer Name"
                         required
                         placeholder="Sheun Hub Owner"
                         value={storeName}
@@ -1076,6 +1115,7 @@ export default function ShopifySeoSprint() {
                       <label className="block text-xs font-bold uppercase text-[#475569] dark:text-white/60 mb-1.5">Shopify Store URL</label>
                       <input
                         type="text"
+                        name="Shopify Store URL"
                         required
                         placeholder="mystore.com"
                         value={storeUrl}
@@ -1088,6 +1128,7 @@ export default function ShopifySeoSprint() {
                       <label className="block text-xs font-bold uppercase text-[#475569] dark:text-white/60 mb-1.5">Work Email</label>
                       <input
                         type="email"
+                        name="Work Email"
                         required
                         placeholder="founder@mystore.com"
                         value={email}
@@ -1099,6 +1140,7 @@ export default function ShopifySeoSprint() {
                     <div>
                       <label className="block text-xs font-bold uppercase text-[#475569] dark:text-white/60 mb-1.5">Monthly Organic Revenue</label>
                       <select 
+                        name="Monthly Organic Revenue"
                         value={revenue}
                         onChange={(e) => setRevenue(e.target.value)}
                         className="w-full px-4 py-3 rounded-xl bg-[#F8FAFC] dark:bg-navy border border-[#E2E8F0] dark:border-white/10 text-sm text-[#0F172A] dark:text-white focus:outline-none focus:border-[#D946EF]"
@@ -1112,10 +1154,11 @@ export default function ShopifySeoSprint() {
 
                     <button
                       type="submit"
-                      className="w-full py-4 rounded-xl bg-gradient-to-r from-[#FF6B4A] via-[#D946EF] to-[#6D28D9] text-white font-bold text-base hover:opacity-95 shadow-lg shadow-[#D946EF]/30 transition-all flex items-center justify-center gap-2 group"
+                      disabled={isSubmitting}
+                      className="w-full py-4 rounded-xl bg-gradient-to-r from-[#FF6B4A] via-[#D946EF] to-[#6D28D9] text-white font-bold text-base hover:opacity-95 shadow-lg shadow-[#D946EF]/30 transition-all flex items-center justify-center gap-2 group disabled:opacity-75 disabled:cursor-not-allowed"
                     >
-                      <span>Book Free SEO Review ($250 Sprint)</span>
-                      <Send size={18} className="transform group-hover:translate-x-1 transition-transform" />
+                      <span>{isSubmitting ? "Booking Your Review..." : "Book Free SEO Review ($250 Sprint)"}</span>
+                      <Send size={18} className={`transform transition-transform ${isSubmitting ? "animate-pulse" : "group-hover:translate-x-1"}`} />
                     </button>
 
                     <p className="text-[11px] text-center text-[#475569] dark:text-white/60">

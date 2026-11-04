@@ -97,6 +97,82 @@ async function startServer() {
     }
   });
 
+  // SEO Review Booking Notification Endpoint
+  app.post("/api/booking/seo-review", async (req, res) => {
+    const {
+      customerName,
+      shopifyStoreUrl,
+      workEmail,
+      monthlyOrganicRevenue,
+      submissionDate
+    } = req.body;
+
+    console.log("[Backend: SEO Review Booking Received]", {
+      customerName,
+      shopifyStoreUrl,
+      workEmail,
+      monthlyOrganicRevenue,
+      submissionDate
+    });
+
+    if (!customerName || !shopifyStoreUrl || !workEmail) {
+      return res.status(400).json({
+        success: false,
+        error: "Missing required fields: Customer Name, Shopify Store URL, and Work Email are required."
+      });
+    }
+
+    const formattedDate = submissionDate || new Date().toLocaleString("en-US", {
+      dateStyle: "full",
+      timeStyle: "medium"
+    });
+
+    const emailTemplate = `NEW SEO REVIEW BOOKING\n\nCustomer Name: ${customerName}\nShopify Store URL: ${shopifyStoreUrl}\nWork Email: ${workEmail}\nMonthly Organic Revenue: ${monthlyOrganicRevenue || "Not specified"}\nSubmission Date: ${formattedDate}`;
+
+    console.log("[Backend: Formatted Email Notification Content]:\n" + emailTemplate);
+
+    // Background Mailchimp subscriber sync
+    const apiKey = process.env.MAILCHIMP_API_KEY?.trim();
+    const listId = process.env.MAILCHIMP_LIST_ID?.trim();
+    if (apiKey && listId) {
+      const datacenter = apiKey.split("-")[1];
+      if (datacenter) {
+        axios.post(
+          `https://${datacenter}.api.mailchimp.com/3.0/lists/${listId}/members`,
+          {
+            email_address: workEmail,
+            status: "subscribed",
+            merge_fields: {
+              FNAME: customerName.split(" ")[0] || customerName,
+              LNAME: customerName.split(" ").slice(1).join(" ") || ""
+            }
+          },
+          {
+            headers: {
+              Authorization: `apikey ${apiKey}`,
+              "Content-Type": "application/json"
+            }
+          }
+        ).catch(err => {
+          console.warn("[Backend: Mailchimp Background Sync]", err.message);
+        });
+      }
+    }
+
+    return res.status(200).json({
+      success: true,
+      message: "SEO Review Booking received and processed successfully",
+      data: {
+        customerName,
+        shopifyStoreUrl,
+        workEmail,
+        monthlyOrganicRevenue: monthlyOrganicRevenue || "Not specified",
+        submissionDate: formattedDate,
+        emailTemplate
+      }
+    });
+  });
+
   // Gemini 3.8 Flash AI Chatbot Endpoint
   app.post("/api/gemini/chat", async (req, res) => {
     const { messages, prompt } = req.body;
