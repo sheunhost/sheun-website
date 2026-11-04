@@ -234,15 +234,8 @@ export default function Apply() {
             </div>
 
             <div className="flex flex-wrap items-center justify-center gap-8 mt-12 pt-8 border-t border-white/10">
-              <div className="flex -space-x-4">
-                {[1, 2, 3].map(i => (
-                  <div key={i} className="w-12 h-12 rounded-full border-2 border-navy bg-white/10 overflow-hidden ring-2 ring-white/5">
-                    <img src={`https://picsum.photos/seed/client${i}/100/100`} alt="Client" referrerPolicy="no-referrer" />
-                  </div>
-                ))}
-              </div>
-              <div className="text-left">
-                <div className="flex gap-1 mb-1">
+              <div className="text-center">
+                <div className="flex justify-center gap-1 mb-1">
                   {[...Array(5)].map((_, i) => <Star key={i} size={10} className="fill-green text-green" />)}
                 </div>
                 <p className="text-[10px] font-bold text-white/40 uppercase tracking-widest leading-none">150+ Brands Scaled · 5.0 Rating</p>

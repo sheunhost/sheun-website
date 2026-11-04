@@ -254,31 +254,27 @@ const faqs = [
 
 const testimonials = [
   {
-    name: "Sarah Jenkins",
+    name: "Sarah",
     role: "Founder, Glow Beauty",
     content: "Sheun Hub completely transformed our Shopify store. Our conversion rate doubled in the first month after the redesign!",
-    image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80&w=200",
     rating: 5
   },
   {
-    name: "Marcus Chen",
+    name: "Marcus",
     role: "CEO, TechHaven",
     content: "The migration from WooCommerce to Shopify was flawless. We didn't lose a single order during the transition.",
-    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=200",
     rating: 5
   },
   {
-    name: "David Miller",
+    name: "David",
     role: "Director, Urban Gear",
     content: "The Growth Plan alone was worth it. We've seen a 40% increase in organic traffic and sales within just 3 weeks.",
-    image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&q=80&w=200",
     rating: 5
   },
   {
-    name: "Mia Thompson",
+    name: "Mia",
     role: "Owner, Bloom Florals",
     content: "Our site looks completely premium now. The UI improvements alone increased our average order value by 15%.",
-    image: "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?auto=format&fit=crop&q=80&w=200",
     rating: 5
   }
 ];
@@ -722,20 +718,6 @@ export default function Services() {
                   transition={{ duration: 0.5 }}
                   className="bg-light dark:bg-white/5 p-6 md:p-10 rounded-3xl shadow-xl border border-navy/5 flex flex-col md:flex-row items-center gap-8"
                 >
-                  <div className="shrink-0 relative">
-                    <div className="w-12 h-12 md:w-16 md:h-16 rounded-full overflow-hidden border-2 border-white shadow-md relative z-10">
-                      <img 
-                        src={testimonials[testimonialIndex].image} 
-                        alt={testimonials[testimonialIndex].name} 
-                        className="w-full h-full object-cover" 
-                        referrerPolicy="no-referrer"
-                      />
-                    </div>
-                    <div className="absolute -bottom-1 -right-1 w-6 h-6 bg-[#6D28D9] text-white rounded-full flex items-center justify-center shadow z-20">
-                      <Quote size={10} />
-                    </div>
-                  </div>
-
                   <div className="space-y-4 flex-grow text-center md:text-left">
                     <div className="flex items-center justify-center md:justify-start gap-1">
                       {[...Array(testimonials[testimonialIndex].rating || 5)].map((_, j) => (
@@ -904,18 +886,6 @@ export default function Services() {
                     </div>
 
                     <div className="pt-8 border-t border-white/5 flex items-center justify-center lg:justify-start gap-10">
-                      <div className="flex -space-x-3">
-                        {[1, 2, 3, 4].map(i => (
-                          <div key={i} className="w-10 h-10 rounded-full border-2 border-navy overflow-hidden">
-                            <img 
-                              src={`https://i.pravatar.cc/150?u=${i + 10}`} 
-                              alt="Client" 
-                              className="w-full h-full object-cover grayscale" 
-                              referrerPolicy="no-referrer"
-                            />
-                          </div>
-                        ))}
-                      </div>
                       <p className="text-[10px] uppercase tracking-widest text-white/30 font-bold">120+ Brands Scaled</p>
                     </div>
                   </div>

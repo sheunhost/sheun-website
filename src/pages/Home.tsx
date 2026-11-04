@@ -51,22 +51,22 @@ const services = [
 
 const testimonials = [
   {
-    name: "Sarah Jenkins",
+    name: "Sarah",
     rating: 5,
     content: "Sheun Hub completely transformed our online presence. Our conversion rate doubled within the first month after the redesign.",
   },
   {
-    name: "Michael Chen",
+    name: "Michael",
     rating: 5,
     content: "The level of expertise in Shopify development is unmatched. They handled our complex migration flawlessly without any downtime.",
   },
   {
-    name: "Emma Watson",
+    name: "Emma",
     rating: 5,
     content: "Incredible attention to detail and UX. Our new custom theme perfectly captures our brand identity while being lightning fast.",
   },
   {
-    name: "David Rodriguez",
+    name: "David",
     rating: 5,
     content: "The best investment we've made for our e-commerce business. The technical SEO improvements alone brought in massive organic traffic.",
   },

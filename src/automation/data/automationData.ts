@@ -745,7 +745,7 @@ export const AUTOMATION_CASE_STUDIES: AutomationCaseStudy[] = [
     workflowDiagram: ["Inbound Phone Call", "AI Voice Agent Verification", "Dentrix EHR Calendar Lookup", "SMS Confirmation & Intake Link", "Automated Google Review Post-Visit"],
     testimonial: {
       quote: "The AI Voice Agent changed our dental practice completely. Patients love that they can call at 9 PM on a Sunday and book an appointment in under two minutes without waiting on hold.",
-      author: "Dr. Marcus Vance",
+      author: "Marcus",
       role: "Managing Clinical Partner",
       company: "Apex Dental Network"
     }
@@ -766,7 +766,7 @@ export const AUTOMATION_CASE_STUDIES: AutomationCaseStudy[] = [
     workflowDiagram: ["Client Intake Form", "AI Contract Auto-Generation", "DocuSign Execution Trigger", "Clio CRM & Drive Vault Provisioning", "Automated Slack Notification"],
     testimonial: {
       quote: "Our intake process used to be our biggest vulnerability. Sheun Automation built a bulletproof pipeline that cut our onboarding timeline down to hours while impressing our high-net-worth clients.",
-      author: "Eleanor Vance, Esq.",
+      author: "Eleanor",
       role: "Senior Managing Partner",
       company: "Sterling Legal Partners"
     }
@@ -787,7 +787,7 @@ export const AUTOMATION_CASE_STUDIES: AutomationCaseStudy[] = [
     workflowDiagram: ["Lead Ad Capture", "Make.com Data Scrub & Scoring", "Client GHL CRM Auto-Push", "Client SMS Alert Trigger", "Live Dashboard Data Sync"],
     testimonial: {
       quote: "Sheun Automation is our secret weapon. They transformed our agency operations so we can onboard 10 new clients a week with zero additional operational stress.",
-      author: "David Ross",
+      author: "David",
       role: "Founder & CEO",
       company: "ScaleUp Media Agency"
     }
@@ -808,7 +808,7 @@ export const AUTOMATION_CASE_STUDIES: AutomationCaseStudy[] = [
     workflowDiagram: ["Cart Abandonment Trigger", "AI Behavior Analysis", "WhatsApp/SMS Personalized Recovery", "Shopify Discount Auto-Apply", "Post-Purchase AI Care Bot"],
     testimonial: {
       quote: "The ROI was instantaneous. The automated WhatsApp recovery sequence alone paid for the entire automation engineering investment within the first two weeks.",
-      author: "Sophia Chen",
+      author: "Sophia",
       role: "Head of Digital Growth",
       company: "Luxe Apparel & Co."
     }
