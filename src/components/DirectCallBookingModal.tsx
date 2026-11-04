@@ -12,7 +12,7 @@ export default function DirectCallBookingModal() {
   const [email, setEmail] = useState("");
   const [storeUrl, setStoreUrl] = useState("");
   const [date, setDate] = useState("");
-  const [timeSlot, setTimeSlot] = useState("14:00 - 15:00 UTC (09:00 AM - 10:00 AM EST)");
+  const [timeSlot, setTimeSlot] = useState("14:00 - 14:30 UTC (09:00 AM - 09:30 AM EST)");
   const [topic, setTopic] = useState("Shopify SEO & Conversion Optimization");
   const [notes, setNotes] = useState("");
 
@@ -53,18 +53,19 @@ export default function DirectCallBookingModal() {
       timeStyle: "medium"
     });
 
-    const formattedMessage = `NEW DIRECT STRATEGY CALL BOOKING\n\nCustomer Name: ${name.trim()}\nWork Email: ${email.trim()}\nShopify Store / Website: ${storeUrl.trim()}\nPreferred Date: ${date}\nPreferred Time Slot: ${timeSlot}\nCall Focus: ${topic}\nProject Notes: ${notes.trim() || "None provided"}\nSubmission Date: ${submissionDate}`;
+    const formattedMessage = `NEW FREE 30-MINUTE STRATEGY CALL BOOKING\n\nDuration: 30 Minutes (Free 1-on-1 Session)\nCustomer Name: ${name.trim()}\nWork Email: ${email.trim()}\nShopify Store / Website: ${storeUrl.trim()}\nPreferred Date: ${date}\nPreferred 30-Min Slot: ${timeSlot}\nCall Focus: ${topic}\nProject Notes: ${notes.trim() || "None provided"}\nSubmission Date: ${submissionDate}`;
 
     const formData = new FormData();
     formData.append("access_key", "c0573f7d-6191-4374-bc31-ee70ee9fa226");
-    formData.append("subject", `NEW CALL BOOKING: ${name.trim()} (${date})`);
+    formData.append("subject", `NEW 30-MIN CALL BOOKING: ${name.trim()} (${date})`);
     formData.append("from_name", "Sheun Hub Direct Call Booking");
     formData.append("replyto", email.trim());
+    formData.append("Call Duration", "30 Minutes (Free Call)");
     formData.append("Customer Name", name.trim());
     formData.append("Work Email", email.trim());
     formData.append("Shopify Store URL", storeUrl.trim());
     formData.append("Preferred Call Date", date);
-    formData.append("Preferred Time Slot", timeSlot);
+    formData.append("Preferred 30-Min Slot", timeSlot);
     formData.append("Call Focus Topic", topic);
     formData.append("Project Notes", notes.trim() || "None provided");
     formData.append("message", formattedMessage);
@@ -145,14 +146,15 @@ export default function DirectCallBookingModal() {
                   <CheckCircle2 size={36} />
                 </div>
                 <div className="space-y-2">
-                  <h3 className="text-2xl font-bold">Call Request Confirmed!</h3>
+                  <h3 className="text-2xl font-bold">30-Minute Call Confirmed!</h3>
                   <p className="text-slate-600 dark:text-white/70 text-sm max-w-md mx-auto leading-relaxed">
-                    Thank you, <span className="font-semibold text-slate-900 dark:text-white">{name || "there"}</span>! Your direct strategy call booking has been received.
+                    Thank you, <span className="font-semibold text-slate-900 dark:text-white">{name || "there"}</span>! Your free 30-minute strategy call request has been received.
                   </p>
                 </div>
                 <div className="p-4 rounded-2xl bg-slate-50 dark:bg-white/5 border border-slate-200 dark:border-white/10 text-xs text-slate-600 dark:text-white/80 space-y-1 text-left">
-                  <p><strong>Scheduled Date:</strong> {date || "Earliest available slot"}</p>
-                  <p><strong>Time Window:</strong> {timeSlot}</p>
+                  <p><strong>Duration:</strong> 30 Minutes (Free 1-on-1 Strategy Session)</p>
+                  <p><strong>Scheduled Date:</strong> {date || "Earliest available date"}</p>
+                  <p><strong>Preferred 30-Min Slot:</strong> {timeSlot}</p>
                   <p><strong>Confirmation Email:</strong> {email}</p>
                   <p className="pt-2 text-emerald-600 dark:text-emerald-400 font-medium">
                     ✓ A Google Meet link and calendar invite will be delivered to your inbox from <span className="underline">sheunhost@gmail.com</span> within 2 hours.
@@ -161,7 +163,7 @@ export default function DirectCallBookingModal() {
                 <button
                   type="button"
                   onClick={handleReset}
-                  className="w-full py-3.5 rounded-xl bg-slate-900 dark:bg-white text-white dark:text-slate-900 font-bold text-sm hover:opacity-90 transition-opacity"
+                  className="w-full py-3.5 rounded-xl bg-slate-900 dark:bg-white text-white dark:text-slate-900 font-bold text-sm hover:opacity-90 transition-opacity cursor-pointer"
                 >
                   Close Window
                 </button>
@@ -172,11 +174,11 @@ export default function DirectCallBookingModal() {
                 <div className="space-y-1.5 pr-8">
                   <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#D946EF]/10 border border-[#D946EF]/20 text-[#D946EF] text-xs font-bold uppercase tracking-wider">
                     <Video size={13} />
-                    <span>Direct 1-on-1 Video Call</span>
+                    <span>Free 30-Minute Video Call</span>
                   </div>
-                  <h3 className="text-2xl font-bold tracking-tight">Book a Strategy Call</h3>
+                  <h3 className="text-2xl font-bold tracking-tight">Book a Free 30-Minute Strategy Call</h3>
                   <p className="text-xs sm:text-sm text-slate-600 dark:text-white/60">
-                    No sign-in or account required. Select your preferred date and time, and we will send your Google Meet invite directly.
+                    No sign-in or account required. Select your preferred date and 30-minute time slot, and we will send your Google Meet invite directly.
                   </p>
                 </div>
 
@@ -234,7 +236,7 @@ export default function DirectCallBookingModal() {
                   />
                 </div>
 
-                {/* Preferred Date & Time Window */}
+                {/* Preferred Date & 30-Minute Time Slot */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
                   <div>
                     <label className="block text-xs font-bold uppercase text-slate-600 dark:text-white/70 mb-1 flex items-center gap-1">
@@ -254,20 +256,25 @@ export default function DirectCallBookingModal() {
                   <div>
                     <label className="block text-xs font-bold uppercase text-slate-600 dark:text-white/70 mb-1 flex items-center gap-1">
                       <Clock size={13} className="text-[#D946EF]" />
-                      <span>Time Window *</span>
+                      <span>Preferred 30-Min Slot *</span>
                     </label>
                     <select
-                      name="Preferred Time Slot"
+                      name="Preferred 30-Min Slot"
                       value={timeSlot}
                       onChange={(e) => setTimeSlot(e.target.value)}
                       className="w-full px-3.5 py-2.5 rounded-xl bg-slate-50 dark:bg-[#0B132B] border border-slate-200 dark:border-white/10 text-sm focus:outline-none focus:border-[#D946EF]"
                     >
-                      <option value="10:00 - 11:00 UTC (05:00 AM - 06:00 AM EST)">10:00 AM - 11:00 AM UTC</option>
-                      <option value="12:00 - 13:00 UTC (07:00 AM - 08:00 AM EST)">12:00 PM - 01:00 PM UTC</option>
-                      <option value="14:00 - 15:00 UTC (09:00 AM - 10:00 AM EST)">02:00 PM - 03:00 PM UTC (09:00 AM EST)</option>
-                      <option value="16:00 - 17:00 UTC (11:00 AM - 12:00 PM EST)">04:00 PM - 05:00 PM UTC (11:00 AM EST)</option>
-                      <option value="18:00 - 19:00 UTC (01:00 PM - 02:00 PM EST)">06:00 PM - 07:00 PM UTC (01:00 PM EST)</option>
-                      <option value="20:00 - 21:00 UTC (03:00 PM - 04:00 PM EST)">08:00 PM - 09:00 PM UTC (03:00 PM EST)</option>
+                      <option value="10:00 - 10:30 UTC (05:00 AM - 05:30 AM EST)">10:00 AM - 10:30 AM UTC</option>
+                      <option value="11:00 - 11:30 UTC (06:00 AM - 06:30 AM EST)">11:00 AM - 11:30 AM UTC</option>
+                      <option value="12:00 - 12:30 UTC (07:00 AM - 07:30 AM EST)">12:00 PM - 12:30 PM UTC</option>
+                      <option value="13:00 - 13:30 UTC (08:00 AM - 08:30 AM EST)">01:00 PM - 01:30 PM UTC</option>
+                      <option value="14:00 - 14:30 UTC (09:00 AM - 09:30 AM EST)">02:00 PM - 02:30 PM UTC (09:00 AM EST)</option>
+                      <option value="15:00 - 15:30 UTC (10:00 AM - 10:30 AM EST)">03:00 PM - 03:30 PM UTC (10:00 AM EST)</option>
+                      <option value="16:00 - 16:30 UTC (11:00 AM - 11:30 AM EST)">04:00 PM - 04:30 PM UTC (11:00 AM EST)</option>
+                      <option value="17:00 - 17:30 UTC (12:00 PM - 12:30 PM EST)">05:00 PM - 05:30 PM UTC (12:00 PM EST)</option>
+                      <option value="18:00 - 18:30 UTC (01:00 PM - 01:30 PM EST)">06:00 PM - 06:30 PM UTC (01:00 PM EST)</option>
+                      <option value="19:00 - 19:30 UTC (02:00 PM - 02:30 PM EST)">07:00 PM - 07:30 PM UTC (02:00 PM EST)</option>
+                      <option value="20:00 - 20:30 UTC (03:00 PM - 03:30 PM EST)">08:00 PM - 08:30 PM UTC (03:00 PM EST)</option>
                     </select>
                   </div>
                 </div>
@@ -301,7 +308,7 @@ export default function DirectCallBookingModal() {
                   <textarea
                     rows={2}
                     name="Project Notes"
-                    placeholder="Briefly describe what you would like to discuss during our call..."
+                    placeholder="Briefly describe what you would like to discuss during our 30-minute call..."
                     value={notes}
                     onChange={(e) => setNotes(e.target.value)}
                     className="w-full px-3.5 py-2.5 rounded-xl bg-slate-50 dark:bg-white/5 border border-slate-200 dark:border-white/10 text-sm focus:outline-none focus:border-[#D946EF] resize-none"
@@ -314,7 +321,7 @@ export default function DirectCallBookingModal() {
                   disabled={isSubmitting}
                   className="w-full py-4 rounded-xl bg-gradient-to-r from-[#FF6B4A] via-[#D946EF] to-[#6D28D9] text-white font-bold text-base hover:opacity-95 shadow-lg shadow-[#D946EF]/30 transition-all flex items-center justify-center gap-2 group disabled:opacity-75 disabled:cursor-not-allowed cursor-pointer"
                 >
-                  <span>{isSubmitting ? "Confirming Call Booking..." : "Confirm Direct Strategy Call"}</span>
+                  <span>{isSubmitting ? "Confirming 30-Min Call..." : "Confirm Free 30-Minute Strategy Call"}</span>
                   <Send size={18} className={`transform transition-transform ${isSubmitting ? "animate-pulse" : "group-hover:translate-x-1"}`} />
                 </button>
 
@@ -322,7 +329,7 @@ export default function DirectCallBookingModal() {
                 <div className="pt-2 border-t border-slate-200 dark:border-white/10 flex flex-col sm:flex-row items-center justify-between gap-2 text-[11px] text-slate-500 dark:text-white/60">
                   <span className="flex items-center gap-1">
                     <ShieldCheck size={14} className="text-emerald-500" />
-                    100% Free Consultation. No account or login required.
+                    100% Free 30-Minute Session. No account or login required.
                   </span>
                   <a
                     href="https://calendly.com/sheunhost/30min"
